@@ -1,0 +1,190 @@
+QPlainTextEdit
+{
+    font: 10pt "DejaVu Sans Mono";
+    border-radius:10px;
+    background-color: palette(base);
+    padding: 2px;
+    margin: 2px;
+    border-style: solid;
+    border-width: 1px;
+    border-radius: 10px;
+    border-color: black;
+}
+
+QGroupBox
+{
+     border: 1px solid silver;
+}
+
+QCheckBox#CheckBoxParametreWidget
+{
+    margin: 2px;
+    padding: 2px;
+}
+
+QCheckBox::indicator#CheckBoxParametreWidget {
+     width: 25px;
+     height: 25px;
+ }
+
+QLabel#NomParametre {
+     font: italic;
+ }
+
+QPushButton:focus {
+        outline: none;
+}
+
+QPushButton#ButtonToolBar
+{
+    text-align: left;
+    padding: 2px;
+}
+
+QPushButton#ButtonToolBarSource
+{
+    text-align: left;
+    padding: 2px;
+    border-color: silver;
+    background-color: Cornflowerblue;
+    border-style: solid;
+    border-width: 1px;
+    border-radius: 4px;
+}
+
+QPushButton#ButtonToolBarSource:hover
+{
+    background-color: royalblue;
+}
+
+QPushButton#ButtonToolBarConversion
+{
+    text-align: left;
+    padding: 2px;
+    border-color: silver;
+    background-color: Coral;
+    border-style: solid;
+    border-width: 1px;
+    border-radius: 4px;
+}
+
+QPushButton#ButtonToolBarConversion:hover
+{
+    background-color: tomato;
+}
+
+QPushButton#ButtonToolBarSortie
+{
+    text-align: left;
+    padding: 2px;
+    border-color: silver;
+    background-color: yellow;
+    border-style: solid;
+    border-width: 1px;
+    border-radius: 4px;
+}
+
+QPushButton#ButtonToolBarSortie:hover
+{
+    background-color: gold;
+}
+
+QPushButton#BoutonFonctionWidget
+{
+    border-style: solid;
+    border-width: 2px;
+    border-radius: 10px;
+    margin: 2px;
+    padding: 2px;
+    border-color: rgba(0,0,0,128);
+    background-color: rgba(0,0,0,32);
+}
+
+QPushButton#BoutonFonctionWidget:hover
+{
+    border-color: rgba(0,0,0,128);
+    background-color: rgba(0,0,0,64);
+}
+
+QPushButton#BoutonParametreWidget
+{
+    border-style: solid;
+    border-width: 2px;
+    border-radius: 10px;
+    margin: 2px;
+    padding: 2px;
+    border-color: rgba(0,0,0,128);
+    background-color: rgba(0,0,0,32);
+}
+
+QPushButton#BoutonParametreWidget:hover
+{
+    border-color: rgba(0,0,0,128);
+    background-color: rgba(0,0,0,64);
+}
+
+base_fonction_widget {
+    border-style: solid;
+    border-width: 2px;
+    border-radius: 10px;
+    font: bold 14px;
+    min-width: 10em;
+    padding: 0px;
+    margin: 2px;
+}
+
+base_parametre_widget {
+    border-style: solid;
+    border-width: 1px;
+    border-radius: 10px;
+    font: bold 14px;
+    min-width: 10em;
+    padding: 2px;
+    margin: 2px;
+    border-color: black;
+    background-color: rgba(0,0,0,16);
+}
+
+base_fonction_widget#FonctionSourceWidget {
+    border-color: Darkslateblue;
+    background-color: Cornflowerblue;
+}
+
+base_fonction_widget#FonctionConversionWidget {
+    border-color: red;
+    background-color: Coral;
+}
+
+base_fonction_widget#FonctionSortieWidget {
+    border-color: gold;
+    background-color: yellow;
+}
+
+base_fonction_widget#FonctionInactiveWidget {
+    border-color: Darkgray;
+    background-color: silver;
+}
+
+QFrame#separation_source{
+    background-color: Cornflowerblue;
+}
+
+QFrame#separation_conversion{
+    background-color: red;
+}
+
+QFrame#separation_sortie{
+    background-color: gold;
+}
+
+QFrame#separation_inactive{
+    background-color: Darkgray;
+}
+
+QLabel#NomFonction {
+    font: bold 20px;
+}
+
+QTableWidget {
+    background-color: transparent;
+    }
