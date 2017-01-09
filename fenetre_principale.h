@@ -9,7 +9,6 @@
 #include <QVBoxLayout>
 #include <QStyle>
 
-#include "texte_edit.h"
 #include "selecteur_fonction_dialog.h"
 
 class explorateur;

@@ -106,14 +106,19 @@ void base_fonction::ajouter_parametre(type_id_parametre id, base_parametre *p)
 
 const texte &base_fonction::get_texte_parametre(type_id_parametre type) const
 {
+    // TODO : fonction bizarre : retour si pb ? la fonction est-elle appelée ?
     parametres_const_iterateur it = m_parametres.find(type);
 
     if ( it != m_parametres.end() )
     {
         const texte& t = it->second->get_texte_out();
+        return t;
     }
     else
+    {
         std::cout << "base_fonction::get_texte_parametre : impossible de trouver le parametre " << type << std::endl;
+        return texte();
+    }
 }
 
 void base_fonction::set_id(const type_id_fonction &id)

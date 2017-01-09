@@ -18,11 +18,8 @@ SOURCES += \
         main.cpp\
 	src/fenetre_principale.cpp \
         src/old_texte.cpp \
-    	src/utils.cpp \
-   	src/texte_edition_dialog.cpp \
-    	src/element.cpp \
-    	src/texte_edit.cpp \
-	src/projet.cpp \
+        src/element.cpp \
+        src/projet.cpp \
         src/parametre/base_parametre.cpp \
         src/explorateur/noeud_fonction.cpp \
         src/fonction/base_fonction.cpp \
@@ -72,7 +69,6 @@ SOURCES += \
 HEADERS  += \
 	fenetre_principale.h \
         old_texte.h \
-    	utils.h \
     	texte_edition_dialog.h \
     	element.h \
     	texte_edit.h \

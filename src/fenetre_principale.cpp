@@ -14,10 +14,7 @@
 #include "old_texte.h"
 #include "projet.h"
 #include "selecteur_fonction_dialog.h"
-#include "texte_edit.h"
-#include "texte_edition_dialog.h"
 #include "ui_fenetre_principale.h"
-#include "utils.h"
 
 #include <iostream>
 #include <QCheckBox>
