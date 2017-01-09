@@ -37,7 +37,7 @@ void vue_fonctions::ajouter_vue_fonction(base_fonction* fonction)
 #ifdef __linux__
     verticalHeader()->setResizeMode(QHeaderView::ResizeToContents);
 #elif _WIN32
-    // TODO
+    verticalHeader()->setSectionResizeMode(QHeaderView::ResizeToContents);
 #endif
 
     QStyle* style = QApplication::style();
