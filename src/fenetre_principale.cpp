@@ -25,6 +25,8 @@
 #include <QHBoxLayout>
 #include <QXmlStreamWriter>
 #include <QXmlStreamReader>
+#include <QFileDialog>
+#include <QMessageBox>
 #include <string>
 #include <vector>
 

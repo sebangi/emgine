@@ -10,17 +10,19 @@
 #define UI_FENETRE_PRINCIPALE_H
 
 #include <QtCore/QVariant>
-#include <QtGui/QAction>
-#include <QtGui/QApplication>
-#include <QtGui/QButtonGroup>
-#include <QtGui/QHeaderView>
-#include <QtGui/QMainWindow>
-#include <QtGui/QMenu>
-#include <QtGui/QMenuBar>
-#include <QtGui/QStatusBar>
-#include <QtGui/QToolBar>
-#include <QtGui/QVBoxLayout>
-#include <QtGui/QWidget>
+
+// pour linux ajouter QtGui/ si besoin :
+#include <QAction>
+#include <QApplication>
+#include <QButtonGroup>
+#include <QHeaderView>
+#include <QMainWindow>
+#include <QMenu>
+#include <QMenuBar>
+#include <QStatusBar>
+#include <QToolBar>
+#include <QVBoxLayout>
+#include <QWidget>
 
 QT_BEGIN_NAMESPACE
 
@@ -91,10 +93,14 @@ public:
 
     void retranslateUi(QMainWindow *fenetre_principale)
     {
+    #ifdef __linux__
         fenetre_principale->setWindowTitle(QApplication::translate("fenetre_principale", "Mon d\303\251codeur", 0, QApplication::UnicodeUTF8));
         menuFichier->setTitle(QApplication::translate("fenetre_principale", "Fichier", 0, QApplication::UnicodeUTF8));
         menuAide->setTitle(QApplication::translate("fenetre_principale", "Aide", 0, QApplication::UnicodeUTF8));
-    } // retranslateUi
+    #elif _WIN32
+        // windows code goes here
+    #endif
+      } // retranslateUi
 
 };
 

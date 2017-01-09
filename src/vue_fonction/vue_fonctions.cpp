@@ -6,6 +6,8 @@
 #include "explorateur/noeud_fonction.h"
 
 #include <QtGui>
+#include <QApplication>
+#include <QHeaderView>
 #include <iostream>
 
 vue_fonctions::vue_fonctions(QWidget *parent)
@@ -32,7 +34,11 @@ void vue_fonctions::ajouter_vue_fonction(base_fonction* fonction)
     setItem(rowCount() -1, 2, new QTableWidgetItem("essai"));
 
     horizontalHeader()->setStretchLastSection(true);
+#ifdef __linux__
     verticalHeader()->setResizeMode(QHeaderView::ResizeToContents);
+#elif _WIN32
+    // TODO
+#endif
 
     QStyle* style = QApplication::style();
     QPushButton * image = new QPushButton();

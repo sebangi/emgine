@@ -17,8 +17,6 @@ int main(int argc, char *argv[])
     QTextCodec::setCodecForLocale(QTextCodec::codecForName("UTF-8"));
 #elif _WIN32
     // windows code goes here
-#else
-
 #endif
 
     QFile File("stylesheet.qss");
