@@ -133,6 +133,16 @@ base_fonction_widget {
     margin: 2px;
 }
 
+base_fonction_widget_hover {
+    border-style: solid;
+    border-width: 2px;
+    border-radius: 10px;
+    font: bold 14px;
+    min-width: 10em;
+    padding: 0px;
+    margin: 2px;
+}
+
 base_parametre_widget {
     border-style: solid;
     border-width: 1px;
