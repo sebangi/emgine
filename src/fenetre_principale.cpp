@@ -492,9 +492,8 @@ void fenetre_principale::compiler(projet* p)
 {
     if ( p != NULL )
     {
-        set_projet_courant(p);
-
         s_compilateur->compiler( p );
+        set_projet_courant(p);
     }
 }
 
