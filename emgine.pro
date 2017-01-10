@@ -32,8 +32,8 @@ SOURCES += \
         src/fonction/fonction_source/fonction_base_source.cpp \
         src/fonction/fonction_source/fonction_source_booleen.cpp \
         src/fonction/fonction_source/fonction_source_entier.cpp \
-        src/selecteur_fonction_dialog.cpp \
-        src/bouton_choix_fonction.cpp \
+        src/fonction_widget/selecteur_fonction_dialog.cpp \
+        src/fonction_widget/bouton_choix_fonction.cpp \
     	src/explorateur/noeud_parametre.cpp \
     	src/fonction_widget/base_parametre_widget.cpp \
         src/explorateur/explorateur.cpp \
@@ -50,13 +50,13 @@ SOURCES += \
         src/fonction/fonction_sortie/fonction_sortie_texte.cpp \
         src/fonction/fonction_sortie/fonction_base_sortie.cpp \
         src/fonction_widget/fonction_sortie_texte_widget.cpp \
-        src/bibliotheque_fonctions.cpp \
-        src/vue_fonction/vue_fonctions.cpp \
+        src/fonction/bibliotheque_fonctions.cpp \
+        src/fonction_widget/vue_fonctions.cpp \
         src/projet/fonctions_conteneur.cpp
 
 HEADERS  += \
-        entete/bibliotheque_fonctions.h \
-        entete/bouton_choix_fonction.h \
+        entete/fonction/bibliotheque_fonctions.h \
+        entete/fonction_widget/bouton_choix_fonction.h \
         entete/compilation/compilateur.h \
         entete/compilation/log_compilation.h \
         entete/compilation/log_widget_item.h \
@@ -91,8 +91,8 @@ HEADERS  += \
         entete/projet/base_parametre.h \
         entete/projet/fonctions_conteneur.h \
         entete/projet/projet.h \
-        entete/selecteur_fonction_dialog.h \
-        entete/vue_fonction/vue_fonctions.h
+        entete/fonction_widget/selecteur_fonction_dialog.h \
+        entete/fonction_widget/vue_fonctions.h
 
 FORMS    += \
     entete/fenetre_principale.ui

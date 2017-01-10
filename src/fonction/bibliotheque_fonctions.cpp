@@ -1,4 +1,4 @@
-#include "entete/bibliotheque_fonctions.h"
+#include "entete/fonction/bibliotheque_fonctions.h"
 
 #include "entete/fonction/fonction_source/fonction_source_booleen.h"
 #include "entete/fonction/fonction_source/fonction_source_entier.h"

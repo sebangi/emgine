@@ -2,7 +2,7 @@
 #define SELECTEUR_FONCTION_DIALOG_H
 
 #include "entete/projet/base_fonction.h"
-#include "entete/bouton_choix_fonction.h"
+#include "entete/fonction_widget/bouton_choix_fonction.h"
 #include "entete/define.h"
 #include <QDialog>
 

@@ -4,7 +4,7 @@
 #include "entete/explorateur/noeud_fonction.h"
 #include "entete/projet/base_fonction.h"
 #include "entete/fonction/fonction_source/fonction_base_source.h"
-#include "entete/bibliotheque_fonctions.h"
+#include "entete/fonction/bibliotheque_fonctions.h"
 #include "entete/compilation/log_compilation.h"
 #include "entete/compilation/logs_compilation_widget.h"
 #include "entete/fenetre_principale.h"

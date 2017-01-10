@@ -1,4 +1,4 @@
-#include "entete/vue_fonction/vue_fonctions.h"
+#include "entete/fonction_widget/vue_fonctions.h"
 
 #include "entete/projet/base_fonction.h"
 #include "entete/fonction_widget/base_fonction_widget.h"

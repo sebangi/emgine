@@ -2,7 +2,7 @@
 
 #include "entete/explorateur/noeud_parametre.h"
 #include "entete/explorateur/noeud_fonction.h"
-#include "entete/bibliotheque_fonctions.h"
+#include "entete/fonction/bibliotheque_fonctions.h"
 #include "entete/fonction/fonction_source/fonction_source_booleen.h"
 #include "entete/fonction/fonction_source/fonction_source_texte.h"
 #include "entete/fonction/fonction_source/fonction_source_caractere.h"
