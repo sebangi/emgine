@@ -34,11 +34,7 @@ void vue_fonctions::ajouter_vue_fonction(base_fonction* fonction)
     setItem(rowCount() -1, 2, new QTableWidgetItem("essai"));
 
     horizontalHeader()->setStretchLastSection(true);
-#ifdef __linux__
-    verticalHeader()->setResizeMode(QHeaderView::ResizeToContents);
-#elif _WIN32
     verticalHeader()->setSectionResizeMode(QHeaderView::ResizeToContents);
-#endif
 
     QStyle* style = QApplication::style();
     QPushButton * image = new QPushButton();
