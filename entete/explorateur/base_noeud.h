@@ -21,7 +21,7 @@ class base_noeud : public QTreeWidgetItem
         };
 
     public:
-        base_noeud( type_noeud type );
+        base_noeud( objet_selectionnable * obj, type_noeud type );
         ~base_noeud();
 
         virtual fonctions_conteneur *get_fonctions_conteneur();

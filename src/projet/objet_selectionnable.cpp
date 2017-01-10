@@ -1,5 +1,6 @@
 #include "entete/projet/objet_selectionnable.h"
 #include "entete/projet/fonctions_conteneur.h"
+#include "entete/explorateur/base_noeud.h"
 
 objet_selectionnable* objet_selectionnable::s_objet_courant = NULL;
 
@@ -44,4 +45,9 @@ void objet_selectionnable::deselectionner()
         emit signal_os_deselectionne();
         s_objet_courant = NULL;
     }
+}
+
+void objet_selectionnable::set_noeud(base_noeud *noeud)
+{
+    m_noeud = noeud;
 }

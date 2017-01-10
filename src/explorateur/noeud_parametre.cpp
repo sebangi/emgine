@@ -10,9 +10,8 @@
 #include <QApplication>
 
 noeud_parametre::noeud_parametre( base_parametre * p )
-    : base_noeud( base_noeud::type_parametre )
+    : base_noeud( (objet_selectionnable *)p, base_noeud::type_parametre )
 {
-    m_objet = p;
     setFlags(Qt::ItemIsEnabled | Qt::ItemIsSelectable | Qt::ItemIsDropEnabled );
 
     setText(0, p->get_nom());

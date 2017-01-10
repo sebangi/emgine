@@ -9,9 +9,8 @@
 #include <QApplication>
 
 noeud_fonction::noeud_fonction( base_fonction * f )
-    : base_noeud( base_noeud::type_fonction )
+    : base_noeud( (objet_selectionnable *)f, base_noeud::type_fonction )
 {
-    m_objet = f;
     setFlags(Qt::ItemIsEnabled | Qt::ItemIsSelectable | Qt::ItemIsDragEnabled );
     setText(0, f->get_nom());
 

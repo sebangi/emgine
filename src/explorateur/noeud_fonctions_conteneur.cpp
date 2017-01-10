@@ -6,7 +6,7 @@
 #include <iostream>
 
 noeud_fonctions_conteneur::noeud_fonctions_conteneur( fonctions_conteneur * conteneur, type_noeud type )
-    : base_noeud( type )
+    : base_noeud( (objet_selectionnable*)conteneur, type )
 {
 
 }

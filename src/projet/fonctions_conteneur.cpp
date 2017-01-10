@@ -13,6 +13,8 @@ void fonctions_conteneur::ajouter_fonction(base_fonction *f)
 {
     m_fonctions.push_back(f);
 
+
+
     connect( f, SIGNAL(signal_destruction_fonction(base_fonction*)),
              this, SLOT(on_supprimer_fonction(base_fonction*)));
 }
