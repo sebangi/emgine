@@ -92,11 +92,11 @@ QPushButton#ButtonToolBarSortie:hover
 QPushButton#BoutonFonctionWidget
 {
     border-style: solid;
-    border-width: 2px;
+    border-width: 1px;
     border-radius: 10px;
     margin: 2px;
     padding: 2px;
-    border-color: rgba(0,0,0,128);
+    border-color: rgba(0,0,0,255);
     background-color: rgba(0,0,0,32);
 }
 
@@ -109,11 +109,11 @@ QPushButton#BoutonFonctionWidget:hover
 QPushButton#BoutonParametreWidget
 {
     border-style: solid;
-    border-width: 2px;
+    border-width: 1px;
     border-radius: 10px;
     margin: 2px;
     padding: 2px;
-    border-color: rgba(0,0,0,128);
+    border-color: rgba(0,0,0,255);
     background-color: rgba(0,0,0,32);
 }
 
@@ -133,18 +133,7 @@ base_fonction_widget {
     margin: 2px;
 }
 
-base_fonction_widget_hover {
-    border-style: solid;
-    border-width: 2px;
-    border-radius: 10px;
-    font: bold 14px;
-    min-width: 10em;
-    padding: 0px;
-    margin: 2px;
-    background-color: rgba(0,0,0,32);
-}
-
-base_parametre_widget {
+QWidget#base_parametre_widget {
     border-style: solid;
     border-width: 1px;
     border-radius: 10px;
@@ -154,6 +143,18 @@ base_parametre_widget {
     margin: 2px;
     border-color: black;
     background-color: rgba(0,0,0,16);
+}
+
+QWidget#base_parametre_widget_hovered {
+    border-style: solid;
+    border-width: 1px;
+    border-radius: 10px;
+    font: bold 14px;
+    min-width: 10em;
+    padding: 2px;
+    margin: 2px;
+    border-color: black;
+    background-color: rgba(0,0,0,64);
 }
 
 base_fonction_widget#FonctionSourceWidget {
@@ -193,6 +194,7 @@ QFrame#separation_inactive{
 }
 
 QLabel#NomFonction {
+    margin-left: 10px;
     font: bold 20px;
 }
 

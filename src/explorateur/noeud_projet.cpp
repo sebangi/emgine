@@ -21,8 +21,6 @@ noeud_projet::noeud_projet( projet * p )
 
 noeud_projet::~noeud_projet()
 {
-    if ( m_projet != NULL )
-        delete m_projet;
 }
 
 projet* noeud_projet::get_projet() const

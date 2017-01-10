@@ -54,9 +54,10 @@ void base_parametre_widget::init()
 
     m_aide_bouton = new QPushButton();
     m_aide_bouton->setObjectName("BoutonParametreWidget");
-    m_aide_bouton->setIcon( style->standardIcon( QStyle::SP_MessageBoxInformation ) );
-    m_aide_bouton->setIconSize(QSize(24,24));
-    m_aide_bouton->setFixedHeight(30);
+    QIcon icon1;
+    icon1.addFile(QString::fromUtf8("icons/info.png"), QSize(), QIcon::Normal, QIcon::Off);
+    m_aide_bouton->setIcon( icon1 );
+    m_aide_bouton->setFixedSize(30,30);
     connect(m_aide_bouton, SIGNAL(released()), this, SLOT(on_aide()));
     main_layout->addWidget(m_aide_bouton,1);
 
@@ -69,7 +70,7 @@ void base_parametre_widget::init()
 */
 void base_parametre_widget::update_object_name()
 {
-    setObjectName("ParametreWidget");
+    setObjectName("base_parametre_widget");
 
     style()->unpolish(this);
     style()->polish(this);
@@ -105,6 +106,26 @@ QString base_parametre_widget::calcul_valeur_courte() const
     }
 
     return s;
+}
+
+bool base_parametre_widget::event(QEvent* e)
+{
+    bool action = true;
+
+    if (e->type() == QEvent::Enter)
+        setObjectName("base_parametre_widget_hovered");
+    else if (e->type()==QEvent::Leave)
+        setObjectName("base_parametre_widget");
+    else
+        action = false;
+
+    if ( action )
+    {
+        style()->unpolish(this);
+        style()->polish(this);
+    }
+
+    return QWidget::event(e); // Or whatever parent class you have.
 }
 
 void base_parametre_widget::on_aide()

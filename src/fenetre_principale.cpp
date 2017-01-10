@@ -163,7 +163,7 @@ void fenetre_principale::init_widgets()
     setWindowTitle("Emgine");
 
     QIcon icon1;
-    icon1.addFile(QString::fromUtf8("/usr/share/icons/Humanity/actions/16/add.svg"), QSize(), QIcon::Normal, QIcon::Off);
+    icon1.addFile(QString::fromUtf8("icons/add.png"), QSize(), QIcon::Normal, QIcon::Off);
     m_toolbar_bouton_ajout_fonction_source->setIcon(icon1);
     m_toolbar_bouton_ajout_fonction_source->setText("Source");
     m_toolbar_bouton_ajout_fonction_conversion->setIcon(icon1);
@@ -171,9 +171,7 @@ void fenetre_principale::init_widgets()
     m_toolbar_bouton_ajout_fonction_sortie->setIcon(icon1);
     m_toolbar_bouton_ajout_fonction_sortie->setText("Sortie");
 
-    QIcon icon2;
-    icon2.addFile(QString::fromUtf8("/usr/share/icons/Humanity/actions/16/filenew.svg"), QSize(), QIcon::Normal, QIcon::Off);
-    m_toolbar_bouton_nouveau_projet->setIcon(icon2);
+    m_toolbar_bouton_nouveau_projet->setIcon(style->standardIcon( QStyle::SP_FileDialogNewFolder ));
     m_toolbar_bouton_nouveau_projet->setText("Projet");
 
     m_toolbar_bouton_ouvrir_projet->setIcon(style->standardIcon( QStyle::SP_DialogOpenButton ));
@@ -204,6 +202,9 @@ void fenetre_principale::init_widgets()
     m_ui->centralLayout->addWidget(top_widget,3);
     m_ui->centralLayout->addWidget(s_vue_logs, 1);
 
+    QIcon icon2;
+    icon2.addFile(QString::fromUtf8("icons/compile.png"), QSize(), QIcon::Normal, QIcon::Off);
+    m_toolbar_bouton_compiler->setIcon(icon2);
     m_toolbar_bouton_compiler->setText("Exécuter");
 }
 
@@ -496,7 +497,6 @@ void fenetre_principale::compiler(projet* p)
         set_projet_courant(p);
     }
 }
-
 
 void fenetre_principale::adjust_size_vue_fonction()
 {

@@ -64,7 +64,9 @@ void base_fonction_widget::init()
 
     m_aide_bouton = new QPushButton();
     m_aide_bouton->setObjectName("BoutonFonctionWidget");
-    m_aide_bouton->setIcon( style->standardIcon( QStyle::SP_MessageBoxInformation ) );
+    QIcon icon1;
+    icon1.addFile(QString::fromUtf8("icons/info.png"), QSize(), QIcon::Normal, QIcon::Off);
+    m_aide_bouton->setIcon( icon1 );
     m_aide_bouton->setIconSize(QSize(24,24));
     m_aide_bouton->setFixedHeight(32);
     connect(m_aide_bouton, SIGNAL(released()), this, SLOT(on_aide()));
@@ -73,12 +75,12 @@ void base_fonction_widget::init()
     QLabel * label = new QLabel( m_fonction->get_nom() );
     label->setObjectName("NomFonction");
     label->setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Expanding);
-    label->setAlignment(Qt::AlignCenter);
+    label->setAlignment(Qt::AlignLeft | Qt::AlignVCenter);
     toolbar->addWidget(label);
 
     m_fermer_bouton = new QPushButton();
     m_fermer_bouton->setObjectName("BoutonFonctionWidget");
-    m_fermer_bouton->setIcon( style->standardIcon( QStyle::SP_DialogCancelButton ) );
+    m_fermer_bouton->setIcon( style->standardIcon( QStyle::SP_DialogCloseButton ) );
     m_fermer_bouton->setIconSize(QSize(24,24));
     m_fermer_bouton->setFixedHeight(32);
     connect(m_fermer_bouton, SIGNAL(released()), this, SLOT(on_fermer()));

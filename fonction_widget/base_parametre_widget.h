@@ -23,6 +23,9 @@ class base_parametre_widget : public QWidget
         void voir();
         QString calcul_valeur_courte() const;
 
+    protected:
+        bool event(QEvent* e) override;
+
     signals:
         void signal_bpw_parametre_selectionne( base_parametre * );
 
