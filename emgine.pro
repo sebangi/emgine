@@ -95,7 +95,7 @@ HEADERS  += \
         entete/fonction_widget/vue_fonctions.h
 
 FORMS    += \
-    entete/fenetre_principale.ui
+    fenetre_principale.ui
 
 DISTFILES += \
     stylesheet.qss
