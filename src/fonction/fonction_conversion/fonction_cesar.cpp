@@ -1,15 +1,14 @@
-#include "fonction/fonction_conversion/fonction_cesar.h"
+#include "entete/fonction/fonction_conversion/fonction_cesar.h"
 
-#include "old_texte.h"
-#include "explorateur/noeud_fonction.h"
-#include "element/type_element.h"
-#include "element/base_element.h"
-#include "compilation/compilateur.h"
-#include "fenetre_principale.h"
-#include "compilation/log_compilation.h"
-#include "compilation/logs_compilation_widget.h"
-#include "compilation/log_widget_item.h"
-#include "element/texte.h"
+#include "entete/explorateur/noeud_fonction.h"
+#include "entete/element/type_element.h"
+#include "entete/element/base_element.h"
+#include "entete/compilation/compilateur.h"
+#include "entete/fenetre_principale.h"
+#include "entete/compilation/log_compilation.h"
+#include "entete/compilation/logs_compilation_widget.h"
+#include "entete/compilation/log_widget_item.h"
+#include "entete/element/texte.h"
 #include <iostream>
 
 /*! --------------------------------------------------------------------------------------

@@ -1,7 +1,7 @@
 /********************************************************************************
 ** Form generated from reading UI file 'fenetre_principale.ui'
 **
-** Created by: Qt User Interface Compiler version 4.8.6
+** Created by: Qt User Interface Compiler version 5.7.0
 **
 ** WARNING! All changes made in this file will be lost when recompiling UI file!
 ********************************************************************************/
@@ -10,19 +10,17 @@
 #define UI_FENETRE_PRINCIPALE_H
 
 #include <QtCore/QVariant>
-
-// pour linux ajouter QtGui/ si besoin :
-#include <QAction>
-#include <QApplication>
-#include <QButtonGroup>
-#include <QHeaderView>
-#include <QMainWindow>
-#include <QMenu>
-#include <QMenuBar>
-#include <QStatusBar>
-#include <QToolBar>
-#include <QVBoxLayout>
-#include <QWidget>
+#include <QtWidgets/QAction>
+#include <QtWidgets/QApplication>
+#include <QtWidgets/QButtonGroup>
+#include <QtWidgets/QHeaderView>
+#include <QtWidgets/QMainWindow>
+#include <QtWidgets/QMenu>
+#include <QtWidgets/QMenuBar>
+#include <QtWidgets/QStatusBar>
+#include <QtWidgets/QToolBar>
+#include <QtWidgets/QVBoxLayout>
+#include <QtWidgets/QWidget>
 
 QT_BEGIN_NAMESPACE
 
@@ -41,33 +39,33 @@ public:
     void setupUi(QMainWindow *fenetre_principale)
     {
         if (fenetre_principale->objectName().isEmpty())
-            fenetre_principale->setObjectName(QString::fromUtf8("fenetre_principale"));
+            fenetre_principale->setObjectName(QStringLiteral("fenetre_principale"));
         fenetre_principale->resize(650, 419);
         centralWidget = new QWidget(fenetre_principale);
-        centralWidget->setObjectName(QString::fromUtf8("centralWidget"));
+        centralWidget->setObjectName(QStringLiteral("centralWidget"));
         centralWidget->setAutoFillBackground(true);
         verticalLayout_2 = new QVBoxLayout(centralWidget);
         verticalLayout_2->setSpacing(0);
         verticalLayout_2->setContentsMargins(11, 11, 11, 11);
-        verticalLayout_2->setObjectName(QString::fromUtf8("verticalLayout_2"));
+        verticalLayout_2->setObjectName(QStringLiteral("verticalLayout_2"));
         verticalLayout_2->setContentsMargins(0, 0, 0, 0);
         centralLayout = new QVBoxLayout();
         centralLayout->setSpacing(0);
-        centralLayout->setObjectName(QString::fromUtf8("centralLayout"));
+        centralLayout->setObjectName(QStringLiteral("centralLayout"));
 
         verticalLayout_2->addLayout(centralLayout);
 
         fenetre_principale->setCentralWidget(centralWidget);
         menuBar = new QMenuBar(fenetre_principale);
-        menuBar->setObjectName(QString::fromUtf8("menuBar"));
+        menuBar->setObjectName(QStringLiteral("menuBar"));
         menuBar->setGeometry(QRect(0, 0, 650, 25));
         menuFichier = new QMenu(menuBar);
-        menuFichier->setObjectName(QString::fromUtf8("menuFichier"));
+        menuFichier->setObjectName(QStringLiteral("menuFichier"));
         menuAide = new QMenu(menuBar);
-        menuAide->setObjectName(QString::fromUtf8("menuAide"));
+        menuAide->setObjectName(QStringLiteral("menuAide"));
         fenetre_principale->setMenuBar(menuBar);
         mainToolBar = new QToolBar(fenetre_principale);
-        mainToolBar->setObjectName(QString::fromUtf8("mainToolBar"));
+        mainToolBar->setObjectName(QStringLiteral("mainToolBar"));
         QSizePolicy sizePolicy(QSizePolicy::Preferred, QSizePolicy::Fixed);
         sizePolicy.setHorizontalStretch(0);
         sizePolicy.setVerticalStretch(0);
@@ -80,7 +78,7 @@ public:
         mainToolBar->setFloatable(true);
         fenetre_principale->addToolBar(Qt::TopToolBarArea, mainToolBar);
         statusBar = new QStatusBar(fenetre_principale);
-        statusBar->setObjectName(QString::fromUtf8("statusBar"));
+        statusBar->setObjectName(QStringLiteral("statusBar"));
         fenetre_principale->setStatusBar(statusBar);
 
         menuBar->addAction(menuFichier->menuAction());
@@ -93,14 +91,10 @@ public:
 
     void retranslateUi(QMainWindow *fenetre_principale)
     {
-    #ifdef __linux__
-        fenetre_principale->setWindowTitle(QApplication::translate("fenetre_principale", "Mon d\303\251codeur", 0, QApplication::UnicodeUTF8));
-        menuFichier->setTitle(QApplication::translate("fenetre_principale", "Fichier", 0, QApplication::UnicodeUTF8));
-        menuAide->setTitle(QApplication::translate("fenetre_principale", "Aide", 0, QApplication::UnicodeUTF8));
-    #elif _WIN32
-        // windows code goes here
-    #endif
-      } // retranslateUi
+        fenetre_principale->setWindowTitle(QApplication::translate("fenetre_principale", "Mon d\303\251codeur", 0));
+        menuFichier->setTitle(QApplication::translate("fenetre_principale", "Fichier", 0));
+        menuAide->setTitle(QApplication::translate("fenetre_principale", "Aide", 0));
+    } // retranslateUi
 
 };
 

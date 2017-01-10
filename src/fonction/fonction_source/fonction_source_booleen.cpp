@@ -1,8 +1,8 @@
-#include "fonction/fonction_source/fonction_source_booleen.h"
+#include "entete/fonction/fonction_source/fonction_source_booleen.h"
 
-#include "fonction_widget/fonction_source_booleen_widget.h"
-#include "compilation/compilateur.h"
-#include "element/mot.h"
+#include "entete/fonction_widget/fonction_source_booleen_widget.h"
+#include "entete/compilation/compilateur.h"
+#include "entete/element/mot.h"
 
 fonction_source_booleen::fonction_source_booleen(fonctions_conteneur * conteneur,  bool valeur )
     : fonction_base_source(conteneur, "Oui ou Non ?"), m_valeur(valeur)

@@ -1,6 +1,6 @@
-#include "fonction/fonction_sortie/fonction_base_sortie.h"
+#include "entete/fonction/fonction_sortie/fonction_base_sortie.h"
 
-#include "explorateur/noeud_fonction.h"
+#include "entete/explorateur/noeud_fonction.h"
 #include <iostream>
 
 fonction_base_sortie::fonction_base_sortie(fonctions_conteneur * conteneur, const QString & nom)

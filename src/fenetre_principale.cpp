@@ -1,20 +1,19 @@
-#include "compilation/compilateur.h"
-#include "compilation/logs_compilation_widget.h"
-#include "explorateur/explorateur.h"
-#include "explorateur/noeud_fonction.h"
-#include "explorateur/noeud_parametre.h"
-#include "explorateur/noeud_projet.h"
-#include "explorateur/base_noeud.h"
-#include "fenetre_principale.h"
-#include "fonction/fonction_conversion/fonction_cesar.h"
-#include "fonction/fonction_source/fonction_source_texte.h"
-#include "fonction/fonction_sortie/fonction_sortie_texte.h"
-#include "fonction_widget/base_fonction_widget.h"
-#include "vue_fonction/vue_fonctions.h"
-#include "old_texte.h"
-#include "projet.h"
-#include "selecteur_fonction_dialog.h"
-#include "ui_fenetre_principale.h"
+#include "entete/compilation/compilateur.h"
+#include "entete/compilation/logs_compilation_widget.h"
+#include "entete/explorateur/explorateur.h"
+#include "entete/explorateur/noeud_fonction.h"
+#include "entete/explorateur/noeud_parametre.h"
+#include "entete/explorateur/noeud_projet.h"
+#include "entete/explorateur/base_noeud.h"
+#include "entete/fenetre_principale.h"
+#include "entete/fonction/fonction_conversion/fonction_cesar.h"
+#include "entete/fonction/fonction_source/fonction_source_texte.h"
+#include "entete/fonction/fonction_sortie/fonction_sortie_texte.h"
+#include "entete/fonction_widget/base_fonction_widget.h"
+#include "entete/vue_fonction/vue_fonctions.h"
+#include "entete/projet/projet.h"
+#include "entete/selecteur_fonction_dialog.h"
+#include "entete/ui_fenetre_principale.h"
 
 #include <iostream>
 #include <QCheckBox>
@@ -53,7 +52,7 @@ fenetre_principale::fenetre_principale(QWidget *parent) :
     creer_toolbar();
     creer_widgets();
     init_widgets();
-    resize(QSize(1000,700));
+    resize(QSize(1000,900));
 
     init_test();
 

@@ -1,12 +1,12 @@
-#include "compilation/compilateur.h"
+#include "entete/compilation/compilateur.h"
 
-#include "explorateur/noeud_projet.h"
-#include "explorateur/noeud_fonction.h"
-#include "explorateur/noeud_parametre.h"
-#include "fonction/base_fonction.h"
-#include "fenetre_principale.h"
-#include "compilation/logs_compilation_widget.h"
-#include "projet.h"
+#include "entete/explorateur/noeud_projet.h"
+#include "entete/explorateur/noeud_fonction.h"
+#include "entete/explorateur/noeud_parametre.h"
+#include "entete/projet/base_fonction.h"
+#include "entete/fenetre_principale.h"
+#include "entete/compilation/logs_compilation_widget.h"
+#include "entete/projet/projet.h"
 
 #include <iostream>
 

@@ -28,7 +28,7 @@ QCheckBox::indicator#CheckBoxParametreWidget {
  }
 
 QLabel#NomParametre {
-     font: italic;
+     font: italic 12px;
  }
 
 QPushButton:focus {
@@ -39,13 +39,24 @@ QPushButton#ButtonToolBar
 {
     text-align: left;
     padding: 2px;
+    margin: 1px;
+    border-color: grey;
+    border-style: solid;
+    border-width: 1px;
+    border-radius: 4px;
+}
+
+QPushButton#ButtonToolBar:hover
+{
+    background-color: silver;
 }
 
 QPushButton#ButtonToolBarSource
 {
     text-align: left;
     padding: 2px;
-    border-color: silver;
+    margin: 1px;
+    border-color: grey;
     background-color: Cornflowerblue;
     border-style: solid;
     border-width: 1px;
@@ -61,7 +72,8 @@ QPushButton#ButtonToolBarConversion
 {
     text-align: left;
     padding: 2px;
-    border-color: silver;
+    margin: 1px;
+    border-color: grey;
     background-color: Coral;
     border-style: solid;
     border-width: 1px;
@@ -77,7 +89,8 @@ QPushButton#ButtonToolBarSortie
 {
     text-align: left;
     padding: 2px;
-    border-color: silver;
+    margin: 1px;
+    border-color: grey;
     background-color: yellow;
     border-style: solid;
     border-width: 1px;

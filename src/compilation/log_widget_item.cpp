@@ -1,7 +1,7 @@
-#include "compilation/log_widget_item.h"
+#include "entete/compilation/log_widget_item.h"
 
-#include "fonction/base_fonction.h"
-#include "projet.h"
+#include "entete/projet/base_fonction.h"
+#include "entete/projet/projet.h"
 
 #include <iostream>
 

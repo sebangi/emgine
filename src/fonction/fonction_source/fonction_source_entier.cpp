@@ -1,5 +1,5 @@
-#include "fonction/fonction_source/fonction_source_entier.h"
-#include "compilation/compilateur.h"
+#include "entete/fonction/fonction_source/fonction_source_entier.h"
+#include "entete/compilation/compilateur.h"
 
 fonction_source_entier::fonction_source_entier(fonctions_conteneur * conteneur, int valeur)
     : fonction_base_source(conteneur, "Source de type entier"), m_valeur(valeur)

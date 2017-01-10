@@ -1,7 +1,7 @@
-#include "compilation/log_compilation.h"
-#include "projet.h"
-#include "fonction/base_fonction.h"
-#include "parametre/base_parametre.h"
+#include "entete/compilation/log_compilation.h"
+#include "entete/projet/projet.h"
+#include "entete/projet/base_fonction.h"
+#include "entete/projet/base_parametre.h"
 
 #include <iostream>
 

@@ -1,9 +1,9 @@
-#include "vue_fonction/vue_fonctions.h"
+#include "entete/vue_fonction/vue_fonctions.h"
 
-#include "fonction/base_fonction.h"
-#include "fonction_widget/base_fonction_widget.h"
-#include "explorateur/base_noeud.h"
-#include "explorateur/noeud_fonction.h"
+#include "entete/projet/base_fonction.h"
+#include "entete/fonction_widget/base_fonction_widget.h"
+#include "entete/explorateur/base_noeud.h"
+#include "entete/explorateur/noeud_fonction.h"
 
 #include <QtGui>
 #include <QApplication>

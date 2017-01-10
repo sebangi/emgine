@@ -1,8 +1,8 @@
-#include "fonction/fonction_source/fonction_source_texte.h"
+#include "entete/fonction/fonction_source/fonction_source_texte.h"
 
-#include "fonction_widget/fonction_source_texte_widget.h"
-#include "compilation/compilateur.h"
-#include "element/type_element.h"
+#include "entete/fonction_widget/fonction_source_texte_widget.h"
+#include "entete/compilation/compilateur.h"
+#include "entete/element/type_element.h"
 #include <iostream>
 
 fonction_source_texte::fonction_source_texte(fonctions_conteneur * conteneur, QString texte)

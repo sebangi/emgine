@@ -1,4 +1,4 @@
-#include "fonction_widget/base_parametre_widget.h"
+#include "entete/fonction_widget/base_parametre_widget.h"
 #include <QHBoxLayout>
 #include <QLabel>
 #include <QStyle>
@@ -6,11 +6,11 @@
 #include <QPainter>
 #include <QApplication>
 #include <QMessageBox>
-#include "parametre/base_parametre.h"
-#include "fonction/base_fonction.h"
-#include "fenetre_principale.h"
-#include "explorateur/explorateur.h"
-#include "explorateur/noeud_parametre.h"
+#include "entete/projet/base_parametre.h"
+#include "entete/projet/base_fonction.h"
+#include "entete/fenetre_principale.h"
+#include "entete/explorateur/explorateur.h"
+#include "entete/explorateur/noeud_parametre.h"
 #include <iostream>
 #include <math.h>
 

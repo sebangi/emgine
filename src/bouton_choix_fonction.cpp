@@ -1,6 +1,6 @@
-#include "bouton_choix_fonction.h"
-#include "fonction/base_fonction.h"
-#include "bibliotheque_fonctions.h"
+#include "entete/bouton_choix_fonction.h"
+#include "entete/projet/base_fonction.h"
+#include "entete/bibliotheque_fonctions.h"
 
 #include <iostream>
 

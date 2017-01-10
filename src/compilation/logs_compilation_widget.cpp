@@ -1,10 +1,10 @@
-#include "compilation/logs_compilation_widget.h"
-#include "compilation/log_compilation.h"
-#include "compilation/log_widget_item.h"
-#include "projet.h"
-#include "fonction/base_fonction.h"
-#include "parametre/base_parametre.h"
-#include "fenetre_principale.h"
+#include "entete/compilation/logs_compilation_widget.h"
+#include "entete/compilation/log_compilation.h"
+#include "entete/compilation/log_widget_item.h"
+#include "entete/projet/projet.h"
+#include "entete/projet/base_fonction.h"
+#include "entete/projet/base_parametre.h"
+#include "entete/fenetre_principale.h"
 
 #include <QHBoxLayout>
 #include <QLabel>

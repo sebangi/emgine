@@ -1,9 +1,9 @@
-#include "fonction/fonction_sortie/fonction_sortie_texte.h"
+#include "entete/fonction/fonction_sortie/fonction_sortie_texte.h"
 
-#include "fonction_widget/fonction_sortie_texte_widget.h"
-#include "compilation/compilateur.h"
-#include "element/type_element.h"
-#include "element/texte.h"
+#include "entete/fonction_widget/fonction_sortie_texte_widget.h"
+#include "entete/compilation/compilateur.h"
+#include "entete/element/type_element.h"
+#include "entete/element/texte.h"
 
 #include <iostream>
 
@@ -31,8 +31,7 @@ void fonction_sortie_texte::executer( compilateur &compil, const texte & texte_i
     m_texte = texte_in;
     texte_out = texte_in;
 
-    for ( type_set_widgets::iterator it = m_widgets.begin(); it != m_widgets.end(); ++it )
-        ((fonction_sortie_texte_widget*)(*it))->set_texte( texte_in );
+    emit signal_fst_texte_modifie();
 }
 
 /*! --------------------------------------------------------------------------------------

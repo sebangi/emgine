@@ -1,4 +1,4 @@
-#include "element/ligne.h"
+#include "entete/element/ligne.h"
 
 ligne::ligne()
     : vector<mot>()

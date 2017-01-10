@@ -1,5 +1,5 @@
-#include "selecteur_fonction_dialog.h"
-#include "define.h"
+#include "entete/selecteur_fonction_dialog.h"
+#include "entete/define.h"
 #include <QDialogButtonBox>
 #include <QVBoxLayout>
 #include <QGridLayout>

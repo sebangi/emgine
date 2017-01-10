@@ -1,4 +1,4 @@
-#include "fenetre_principale.h"
+#include "entete/fenetre_principale.h"
 
 #include <QApplication>
 #include <QTextCodec>

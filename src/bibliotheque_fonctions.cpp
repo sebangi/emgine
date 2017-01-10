@@ -1,13 +1,13 @@
-#include "bibliotheque_fonctions.h"
+#include "entete/bibliotheque_fonctions.h"
 
-#include "fonction/fonction_source/fonction_source_booleen.h"
-#include "fonction/fonction_source/fonction_source_entier.h"
-#include "fonction/fonction_source/fonction_source_texte.h"
-#include "fonction/fonction_source/fonction_source_caractere.h"
+#include "entete/fonction/fonction_source/fonction_source_booleen.h"
+#include "entete/fonction/fonction_source/fonction_source_entier.h"
+#include "entete/fonction/fonction_source/fonction_source_texte.h"
+#include "entete/fonction/fonction_source/fonction_source_caractere.h"
 
-#include "fonction/fonction_sortie/fonction_sortie_texte.h"
+#include "entete/fonction/fonction_sortie/fonction_sortie_texte.h"
 
-#include "fonction/fonction_conversion/fonction_cesar.h"
+#include "entete/fonction/fonction_conversion/fonction_cesar.h"
 
 QString bibliotheque_fonctions::nom_to_string(type_id_fonction id)
 {
@@ -32,7 +32,7 @@ QString bibliotheque_fonctions::nom_to_string(type_id_fonction id)
 base_fonction *bibliotheque_fonctions::get_fonction(type_id_fonction id)
 {
     switch ( id ) {
-        // SOURCESe
+        // SOURCES
         case f_source_booleen : return new fonction_source_booleen(NULL);
         case f_source_entier : return new fonction_source_entier(NULL);
         case f_source_texte : return new fonction_source_texte(NULL);

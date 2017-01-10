@@ -1,10 +1,10 @@
-#include "explorateur/explorateur.h"
-#include "explorateur/base_noeud.h"
-#include "explorateur/noeud_projet.h"
-#include "explorateur/noeud_fonction.h"
-#include "explorateur/noeud_parametre.h"
-#include "projet.h"
-#include "fenetre_principale.h"
+#include "entete/explorateur/explorateur.h"
+#include "entete/explorateur/base_noeud.h"
+#include "entete/explorateur/noeud_projet.h"
+#include "entete/explorateur/noeud_fonction.h"
+#include "entete/explorateur/noeud_parametre.h"
+#include "entete/projet/projet.h"
+#include "entete/fenetre_principale.h"
 #include <QAction>
 #include <QMenu>
 #include <QKeyEvent>

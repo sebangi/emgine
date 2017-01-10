@@ -1,4 +1,4 @@
-#include "fonction_widget/base_fonction_widget.h"
+#include "entete/fonction_widget/base_fonction_widget.h"
 #include <QVBoxLayout>
 #include <QSpacerItem>
 #include <QLabel>
@@ -7,9 +7,9 @@
 #include <QPainter>
 #include <QApplication>
 #include <QMessageBox>
-#include "fonction/base_fonction.h"
-#include "fonction_widget/base_parametre_widget.h"
-#include "fenetre_principale.h"
+#include "entete/projet/base_fonction.h"
+#include "entete/fonction_widget/base_parametre_widget.h"
+#include "entete/fenetre_principale.h"
 #include <iostream>
 
 base_fonction_widget::base_fonction_widget(base_fonction* fonction, QWidget* parent)

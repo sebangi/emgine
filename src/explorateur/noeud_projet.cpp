@@ -1,9 +1,9 @@
-#include "explorateur/noeud_projet.h"
-#include "explorateur/noeud_fonction.h"
-#include "projet.h"
-#include "fenetre_principale.h"
-#include "compilation/logs_compilation_widget.h"
-#include "fonction/base_fonction.h"
+#include "entete/explorateur/noeud_projet.h"
+#include "entete/explorateur/noeud_fonction.h"
+#include "entete/projet/projet.h"
+#include "entete/fenetre_principale.h"
+#include "entete/compilation/logs_compilation_widget.h"
+#include "entete/projet/base_fonction.h"
 
 #include <iostream>
 #include <QApplication>

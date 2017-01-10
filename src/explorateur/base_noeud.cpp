@@ -1,9 +1,9 @@
-#include "explorateur/base_noeud.h"
+#include "entete/explorateur/base_noeud.h"
 
-#include "projet.h"
-#include "fenetre_principale.h"
-#include "compilation/log_compilation.h"
-#include "compilation/logs_compilation_widget.h"
+#include "entete/projet/projet.h"
+#include "entete/fenetre_principale.h"
+#include "entete/compilation/log_compilation.h"
+#include "entete/compilation/logs_compilation_widget.h"
 
 #include <iostream>
 
