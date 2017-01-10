@@ -4,14 +4,15 @@
 #include "entete/projet/base_fonction.h"
 #include "entete/fenetre_principale.h"
 #include "entete/compilation/logs_compilation_widget.h"
+#include "entete/projet/objet_selectionnable.h"
 
 #include <iostream>
 #include <QApplication>
 
 noeud_parametre::noeud_parametre( base_parametre * p )
-    : base_noeud( base_noeud::type_parametre ),
-      m_parametre(p)
+    : base_noeud( base_noeud::type_parametre )
 {
+    m_objet = p;
     setFlags(Qt::ItemIsEnabled | Qt::ItemIsSelectable | Qt::ItemIsDropEnabled );
 
     setText(0, p->get_nom());
@@ -23,23 +24,21 @@ noeud_parametre::noeud_parametre( base_parametre * p )
 
 noeud_parametre::~noeud_parametre()
 {
-    if ( m_parametre != NULL )
-        delete m_parametre;
 }
 
 base_parametre* noeud_parametre::get_parametre() const
 {
-    return m_parametre;
+    return (base_parametre*)m_objet;
 }
 
 QString noeud_parametre::get_nom() const
 {
-    return m_parametre->get_fonction_parent()->get_nom() + " : paramètre " + m_parametre->get_nom();
+    return get_parametre()->get_fonction_parent()->get_nom() + " : paramètre " + get_parametre()->get_nom();
 }
 
 fonctions_conteneur *noeud_parametre::get_fonctions_conteneur()
 {
-    return m_parametre;
+    return (fonctions_conteneur*)m_objet;
 }
 
 

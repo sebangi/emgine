@@ -18,8 +18,10 @@ class noeud_parametre;
 */
 class base_parametre : public fonctions_conteneur
 {
+        Q_OBJECT
+
     public:
-        base_parametre(base_fonction * fonction_parent, QString nom, QString aide, bool requis, type_element m_type);
+        base_parametre(objet_selectionnable * parent, QString nom, QString aide, bool requis, type_element m_type);
         ~base_parametre();
 
         void sauvegarder( QXmlStreamWriter & stream ) const;

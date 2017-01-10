@@ -4,14 +4,15 @@
 #include "entete/fenetre_principale.h"
 #include "entete/compilation/logs_compilation_widget.h"
 #include "entete/projet/base_fonction.h"
+#include "entete/projet/objet_selectionnable.h"
 
 #include <iostream>
 #include <QApplication>
 
 noeud_projet::noeud_projet( projet * p )
-    : base_noeud( base_noeud::type_projet ),
-      m_projet(p)
+    : noeud_fonctions_conteneur( p, base_noeud::type_projet )
 {
+    m_objet = p;
     setFlags(Qt::ItemIsEnabled | Qt::ItemIsEditable | Qt::ItemIsSelectable | Qt::ItemIsDropEnabled );
     setText(0, p->get_nom());
 
@@ -25,16 +26,15 @@ noeud_projet::~noeud_projet()
 
 projet* noeud_projet::get_projet() const
 {
-    return m_projet;
+    return (projet*)m_objet;
 }
 
 QString noeud_projet::get_nom() const
 {
-    return  "projet " + m_projet->get_nom();
+    return  "projet " + get_projet()->get_nom();
 }
 
 fonctions_conteneur *noeud_projet::get_fonctions_conteneur()
 {
-    return m_projet;
+    return (fonctions_conteneur*)m_objet;
 }
-

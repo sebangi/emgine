@@ -15,9 +15,9 @@
  \brief Constructeur.
  \param nom Le nom de la fonction.
 */
-base_fonction::base_fonction(fonctions_conteneur * conteneur, const QString & nom, type_fonction type)
-    : m_nom(nom), m_type(type), m_id(fonction_indefini), m_est_active(true), m_parametre_visible(true),
-      m_conteneur(conteneur)
+base_fonction::base_fonction(fonctions_conteneur * parent, const QString & nom, type_fonction type)
+    : objet_selectionnable(parent), m_nom(nom), m_type(type), m_id(fonction_indefini), m_est_active(true), m_parametre_visible(true),
+      m_conteneur(parent)
 {
 
 }

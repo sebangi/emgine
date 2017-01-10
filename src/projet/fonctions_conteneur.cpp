@@ -3,14 +3,18 @@
 #include "entete/projet/base_fonction.h"
 #include <iostream>
 
+fonctions_conteneur::fonctions_conteneur( objet_selectionnable * parent )
+    : objet_selectionnable(parent)
+{
+
+}
+
 void fonctions_conteneur::ajouter_fonction(base_fonction *f)
 {
     m_fonctions.push_back(f);
 
     connect( f, SIGNAL(signal_destruction_fonction(base_fonction*)),
              this, SLOT(on_supprimer_fonction(base_fonction*)));
-
-    // TODO : event modification
 }
 
 void fonctions_conteneur::supprimer_fonction(base_fonction *f)

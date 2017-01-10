@@ -44,14 +44,13 @@ class fenetre_principale : public QMainWindow
         ~fenetre_principale();
 
         static void adjust_size_vue_fonction();
-        void set_noeud_courant( base_noeud * p );
         void set_projet_courant( projet * p );
 
         void ajouter_source( base_noeud * n );
         void ajouter_conversion( base_noeud * n );
         void ajouter_sortie( base_noeud * n );
-        void ajouter_fonction( base_noeud * n, base_fonction::type_fonction type );
-        void ajouter_fonction( base_noeud * n, base_fonction* f, bool init_defaut, bool afficher_vue );
+        void ajouter_fonction( fonctions_conteneur * conteneur, base_fonction::type_fonction type );
+        void ajouter_fonction( fonctions_conteneur * conteneur, base_fonction* f, bool init_defaut, bool afficher_vue );
         static void informe_supression_projet(projet * p);
         static void informe_supression_fonction(base_fonction * f);
         static void informe_supression_parametre(base_parametre * p);

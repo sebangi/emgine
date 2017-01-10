@@ -4,13 +4,14 @@
 #include "entete/fenetre_principale.h"
 #include "entete/fonction/fonction_source/fonction_base_source.h"
 #include "entete/compilation/logs_compilation_widget.h"
+#include "entete/projet/objet_selectionnable.h"
 
 #include <QApplication>
 
 noeud_fonction::noeud_fonction( base_fonction * f )
-    : base_noeud( base_noeud::type_fonction ),
-      m_fonction(f)
+    : base_noeud( base_noeud::type_fonction )
 {
+    m_objet = f;
     setFlags(Qt::ItemIsEnabled | Qt::ItemIsSelectable | Qt::ItemIsDragEnabled );
     setText(0, f->get_nom());
 
@@ -32,20 +33,19 @@ noeud_fonction::~noeud_fonction()
 
 base_fonction* noeud_fonction::get_fonction() const
 {
-    return m_fonction;
+    return (base_fonction *)m_objet;
 }
 
 void noeud_fonction::update_style()
 {
     QFont f = font(0);
-    f.setStrikeOut( ! m_fonction->est_active() );
+    f.setStrikeOut( ! get_fonction()->est_active() );
     setFont(0,f);
 }
 
-
 QString noeud_fonction::get_nom() const
 {
-    return m_fonction->get_nom();
+    return get_fonction()->get_nom();
 }
 
 

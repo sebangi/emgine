@@ -6,6 +6,7 @@
 #include "entete/compilation/compilateur.h"
 
 class fonctions_conteneur;
+class objet_selectionnable;
 
 class base_noeud : public QTreeWidgetItem
 {
@@ -26,6 +27,11 @@ class base_noeud : public QTreeWidgetItem
         virtual fonctions_conteneur *get_fonctions_conteneur();
 
         virtual QString get_nom() const = 0;
+
+        objet_selectionnable *get_objet() const;
+
+    protected:
+        objet_selectionnable * m_objet;
 };
 
 #endif // BASE_NOEUD_H

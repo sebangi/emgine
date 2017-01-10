@@ -1,11 +1,11 @@
 #ifndef NOEUD_PROJET_H
 #define NOEUD_PROJET_H
 
-#include "entete/explorateur/base_noeud.h"
+#include "entete/explorateur/noeud_fonctions_conteneur.h"
 
 class projet;
 
-class noeud_projet : public base_noeud
+class noeud_projet : public noeud_fonctions_conteneur
 {
      public:
         noeud_projet( projet* p );
@@ -16,9 +16,6 @@ class noeud_projet : public base_noeud
         void executer( compilateur & compil );
         void charger();
         fonctions_conteneur *get_fonctions_conteneur();
-
-    private:
-        projet* m_projet;
 };
 
 #endif // NOEUD_PROJET_H

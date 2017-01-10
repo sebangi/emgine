@@ -1,4 +1,4 @@
-#include "entete/selecteur_fonction_dialog.h"
+#include "entete/fonction_widget/selecteur_fonction_dialog.h"
 #include "entete/define.h"
 #include <QDialogButtonBox>
 #include <QVBoxLayout>

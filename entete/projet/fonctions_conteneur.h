@@ -2,11 +2,11 @@
 #define FONCTIONS_CONTENEUR_H
 
 #include <QList>
-#include <QObject>
+#include "entete/projet/objet_selectionnable.h"
 
 class base_fonction;
 
-class fonctions_conteneur : public QObject
+class fonctions_conteneur : public objet_selectionnable
 {
         Q_OBJECT
 
@@ -16,6 +16,7 @@ class fonctions_conteneur : public QObject
         typedef type_fonctions::const_iterator fonctions_const_iterateur;
 
     public:
+        fonctions_conteneur(objet_selectionnable * parent);
         void ajouter_fonction(base_fonction * f);
         void supprimer_fonction(base_fonction * f);
 

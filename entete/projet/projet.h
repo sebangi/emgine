@@ -17,6 +17,8 @@ class base_parametre;
 */
 class projet : public fonctions_conteneur
 {
+        Q_OBJECT
+
        public:
         projet();
         ~projet();

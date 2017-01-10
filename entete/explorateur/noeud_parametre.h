@@ -14,9 +14,6 @@ class noeud_parametre : public base_noeud
         base_parametre* get_parametre() const;
         QString get_nom() const;
         fonctions_conteneur *get_fonctions_conteneur();
-
-    private:
-        base_parametre* m_parametre;
 };
 
 #endif // NOEUD_PARAMETRE_H

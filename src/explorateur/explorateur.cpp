@@ -33,6 +33,7 @@ explorateur::explorateur(fenetre_principale* f, QWidget *parent)
             this,SLOT(on_currentItemChanged(QTreeWidgetItem*)));
 }
 
+/*
 void explorateur::set_projet_courant(projet *p)
 {
     QTreeWidgetItemIterator it(this);
@@ -52,7 +53,9 @@ void explorateur::set_projet_courant(projet *p)
         ++it;
     }
 }
+*/
 
+/*
 void explorateur::set_parametre_courant(base_parametre *p)
 {
     QTreeWidgetItemIterator it(this);
@@ -72,12 +75,16 @@ void explorateur::set_parametre_courant(base_parametre *p)
         ++it;
     }
 }
+*/
 
+/*
 base_noeud * explorateur::get_noeud_courant() const
 {
     return m_noeud_courant;
 }
+*/
 
+/*
 noeud_projet *explorateur::get_noeud_projet(base_noeud * n)
 {
     if ( n == NULL )
@@ -87,12 +94,14 @@ noeud_projet *explorateur::get_noeud_projet(base_noeud * n)
     else
         return get_noeud_projet( (base_noeud*)n->parent() );
 }
+*/
 
-
+/*
 noeud_projet *explorateur::get_projet_courant()
 {
     return get_noeud_projet( m_noeud_courant );
 }
+*/
 
 bool explorateur::chercher_noeud_fonction(base_fonction *f, QTreeWidgetItemIterator& it_rep)
 {
@@ -172,7 +181,9 @@ void explorateur::ajouter_noeud_fonction(base_noeud *n, base_fonction* f)
     n->addChild(noeud);
 
     for ( base_fonction::parametres_iterateur it = f->parametres_begin(); it != f->parametres_end(); ++it )
-        ajouter_noeud_parametre( noeud, it->second );
+    {   // TODO
+        //ajouter_noeud_parametre( noeud, it->second );
+    }
 
     expandItem(noeud);
 
@@ -183,6 +194,7 @@ void explorateur::ajouter_noeud_fonction(base_noeud *n, base_fonction* f)
              this, SLOT(on_externe_activation_fonction_change(base_fonction *)));
 }
 
+/*
 void explorateur::ajouter_noeud_parametre(base_noeud *n, base_parametre* p)
 {
     base_noeud* noeud = new noeud_parametre( p );
@@ -190,10 +202,14 @@ void explorateur::ajouter_noeud_parametre(base_noeud *n, base_parametre* p)
     n->addChild(noeud);
 
     for ( base_parametre::fonctions_iterateur it = p->fonctions_begin(); it != p->fonctions_end(); ++it )
-        ajouter_noeud_fonction( noeud, *it );
+    {
+        // TODO
+        //ajouter_noeud_fonction( noeud, *it );
+    }
 
     expandItem(noeud);
 }
+*/
 
 base_noeud *explorateur::get_noeud_context() const
 {
@@ -205,6 +221,7 @@ void explorateur::set_noeud_context(base_noeud *noeud_context)
     m_noeud_context = noeud_context;
 }
 
+/*
 bool explorateur::set_noeud_courant(base_noeud *noeud_courant)
 {
     if ( noeud_courant == NULL )
@@ -240,13 +257,15 @@ bool explorateur::set_noeud_courant(base_noeud *noeud_courant)
 
     return true;
 }
+*/
 
 /** --------------------------------------------------------------------------------------
  \brief Evénément click sur un item de l'explorateur de projets.
 */
 void explorateur::on_itemClicked(QTreeWidgetItem *item, int column)
 {
-    set_noeud_courant((base_noeud*)item);
+    ((base_noeud*)item)->get_objet()->selectionner();
+
     // TODO : event change selection
     // m_fenetre_principale->update_selection();
 }
@@ -256,7 +275,8 @@ void explorateur::on_itemClicked(QTreeWidgetItem *item, int column)
 */
 void explorateur::on_currentItemChanged(QTreeWidgetItem *item)
 {
-    set_noeud_courant((base_noeud*)item);
+    ((base_noeud*)item)->get_objet()->selectionner();
+
     // TODO : event change selection
     // m_fenetre_principale->update_selection();
 }
@@ -273,6 +293,8 @@ void explorateur::on_customContextMenuRequested(const QPoint &pos)
     if ( noeud_context == NULL )
         return;
 
+    // TODO
+    /*
     if ( noeud_context->type() == base_noeud::type_projet && get_noeud_courant() != noeud_context )
     {
         QIcon icon1;
@@ -306,6 +328,7 @@ void explorateur::on_customContextMenuRequested(const QPoint &pos)
         connect(newAct4, SIGNAL(triggered()), this, SLOT(on_ajout_sortie()));
         menu.addAction(newAct4);
     }
+    */
 
     QPoint pt(pos);
     menu.exec( mapToGlobal(pos) );
@@ -351,7 +374,7 @@ void explorateur::dropEvent(QDropEvent * event)
 
             QTreeWidget::dropEvent(event);
 
-            m_fenetre_principale->set_noeud_courant((base_noeud*)save_current);
+            ((base_noeud*)save_current)->get_objet()->selectionner();
             save_current->parent()->setExpanded(save_expanded);
             save_current->setExpanded(save_expanded);
             // TODO : event change selection
@@ -370,21 +393,25 @@ void explorateur::dropEvent(QDropEvent * event)
 
 void explorateur::on_set_noeud_courant()
 {
-    set_noeud_courant( m_noeud_context );
+    // TODO ?
+    // set_noeud_courant( m_noeud_context );
 }
 
 void explorateur::on_ajout_source()
 {
-    m_fenetre_principale->ajouter_source( m_noeud_context );
+    // TODO ?
+    // m_fenetre_principale->ajouter_source( m_noeud_context );
 }
 
 void explorateur::on_ajout_sortie()
 {
-    m_fenetre_principale->ajouter_sortie( m_noeud_context );
+    // TODO ?
+    // m_fenetre_principale->ajouter_sortie( m_noeud_context );
 }
 
 void explorateur::on_ajout_fonction()
 {
-    m_fenetre_principale->ajouter_conversion( m_noeud_context );
+    // TODO ?
+    // m_fenetre_principale->ajouter_conversion( m_noeud_context );
 }
 

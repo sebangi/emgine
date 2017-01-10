@@ -7,11 +7,12 @@
 #include <set>
 #include <map>
 #include <QXmlStreamWriter>
-#include <QObject>
 
 #include "entete/element/texte.h"
 #include "entete/define.h"
 #include "entete/projet/base_parametre.h"
+#include "entete/projet/objet_selectionnable.h"
+#include "entete/projet/fonctions_conteneur.h"
 
 class noeud_fonction;
 class base_fonction_widget;
@@ -21,7 +22,7 @@ class compilateur;
  \brief Classe décrivant une fonction de conversion d'un texte.
  \author Sébastien Angibaud
 */
-class base_fonction : public QObject
+class base_fonction : public objet_selectionnable
 {
         Q_OBJECT
 
@@ -39,7 +40,7 @@ class base_fonction : public QObject
         typedef type_parametres::const_iterator parametres_const_iterateur;
 
     public:
-        base_fonction( fonctions_conteneur * conteneur, const QString & nom, type_fonction type = fonction_conversion);
+        base_fonction( fonctions_conteneur * parent, const QString & nom, type_fonction type = fonction_conversion);
         virtual ~base_fonction();
         virtual void initialisation_par_defaut();
 

@@ -14,7 +14,7 @@
 unsigned int projet::s_nb_projets = 0;
 
 projet::projet()
-    : m_nouveau(true)
+    : fonctions_conteneur(NULL), m_nouveau(true)
 {
     s_nb_projets++;
 

@@ -12,6 +12,7 @@
 #include "entete/fonction_widget/base_fonction_widget.h"
 #include "entete/fonction_widget/vue_fonctions.h"
 #include "entete/projet/projet.h"
+#include "entete/projet/fonctions_conteneur.h"
 #include "entete/fonction_widget/selecteur_fonction_dialog.h"
 #include "entete/ui_fenetre_principale.h"
 
@@ -126,7 +127,7 @@ void fenetre_principale::creer_widgets()
     connect( s_explorateur,
              SIGNAL(noeud_courant_change(base_noeud*)),
              SLOT(on_externe_noeud_courant_change(base_noeud*))
-           );
+             );
 
     s_vue_fonctions = new vue_fonctions(this);
     s_vue_fonctions->verticalHeader()->hide();
@@ -146,7 +147,7 @@ void fenetre_principale::creer_widgets()
     connect( s_vue_fonctions->selectionModel(),
              SIGNAL(selectionChanged(const QItemSelection &, const QItemSelection &)),
              SLOT(on_vue_fonction_selectionChanged(const QItemSelection &, const QItemSelection &))
-           );
+             );
     connect( s_vue_fonctions, SIGNAL(signal_vf_parametre_selectionne(base_parametre*)),
              this, SLOT(on_externe_parametre_selectionne(base_parametre*)));
 
@@ -208,19 +209,12 @@ void fenetre_principale::init_widgets()
 }
 
 /** --------------------------------------------------------------------------------------
- \brief Selectionner le nouveau noeud courant.
-*/
-void fenetre_principale::set_noeud_courant( base_noeud * p )
-{
-    s_explorateur->set_noeud_courant(p);
-}
-
-/** --------------------------------------------------------------------------------------
  \brief Ajoute une source au projet courant.
 */
 void fenetre_principale::ajouter_source( base_noeud * n )
 {
-    ajouter_fonction( n, base_fonction::fonction_source);
+    // TODO
+    //    ajouter_fonction( n, base_fonction::fonction_source);
 }
 
 /** --------------------------------------------------------------------------------------
@@ -228,7 +222,8 @@ void fenetre_principale::ajouter_source( base_noeud * n )
 */
 void fenetre_principale::ajouter_conversion( base_noeud * n )
 {
-    ajouter_fonction( n, base_fonction::fonction_conversion);
+    // TODO
+    // ajouter_fonction( n, base_fonction::fonction_conversion);
 }
 
 /** --------------------------------------------------------------------------------------
@@ -236,15 +231,16 @@ void fenetre_principale::ajouter_conversion( base_noeud * n )
 */
 void fenetre_principale::ajouter_sortie( base_noeud * n )
 {
-    ajouter_fonction( n, base_fonction::fonction_sortie);
+    // TODO
+    // ajouter_fonction( n, base_fonction::fonction_sortie);
 }
 
 /** --------------------------------------------------------------------------------------
  \brief Ajoute une fonction à un noeud.
 */
-void fenetre_principale::ajouter_fonction( base_noeud * n, base_fonction::type_fonction type )
+void fenetre_principale::ajouter_fonction( fonctions_conteneur * conteneur, base_fonction::type_fonction type )
 {
-    if ( n != NULL )
+    if ( conteneur != NULL )
     {
         selecteur_fonction_dialog * dlg = new selecteur_fonction_dialog(type, m_ui->centralWidget);
 
@@ -258,7 +254,7 @@ void fenetre_principale::ajouter_fonction( base_noeud * n, base_fonction::type_f
             base_fonction * f = dlg->get_fonction();
 
             if ( f != NULL )
-                ajouter_fonction(n, f, true, true);
+                ajouter_fonction(conteneur, f, true, true);
         }
     }
 }
@@ -266,28 +262,23 @@ void fenetre_principale::ajouter_fonction( base_noeud * n, base_fonction::type_f
 /** --------------------------------------------------------------------------------------
  \brief Ajoute une fonction à un noeud.
 */
-void fenetre_principale::ajouter_fonction( base_noeud * n, base_fonction* f, bool init_defaut, bool afficher_vue )
+void fenetre_principale::ajouter_fonction( fonctions_conteneur * conteneur, base_fonction* f, bool init_defaut, bool afficher_vue )
 {
-    bool ajout = true;
-
     // Ajout dans le projet
-    if ( n->type() == base_noeud::type_projet )
-        ((noeud_projet*)n)->get_projet()->ajouter_fonction(f);
-    else if ( n->type() == base_noeud::type_parametre )
-            ((noeud_parametre*)n)->get_parametre()->ajouter_fonction(f);
-    else
-        ajout = false;
+    conteneur->ajouter_fonction(f);
 
     if ( init_defaut )
         f->initialisation_par_defaut();
 
-    if ( ajout )
-        s_explorateur->ajouter_noeud_fonction(n, f);
+    // TODO ?
+    //    if ( ajout )
+    //      s_explorateur->ajouter_noeud_fonction(n, f);
 
     if ( afficher_vue )
         s_vue_fonctions->ajouter_vue_fonction(f);
 
-    s_vue_fonctions->update_selection( s_explorateur->get_noeud_courant() );
+    // TODO ?
+    // s_vue_fonctions->update_selection( s_explorateur->get_noeud_courant() );
 }
 
 void fenetre_principale::informe_supression_projet(projet * p)
@@ -323,13 +314,14 @@ void fenetre_principale::init_test()
 {
     creer_projet();
 
-    noeud_projet * n =  s_explorateur->get_projet_courant();
-
-    if ( n  != NULL )
+    if ( objet_selectionnable::existe_selection() )
     {
-        ajouter_fonction( n, new fonction_source_texte(n->get_projet(), "UNHBH TM SDRS !"), true, true );
-        ajouter_fonction( n, new fonction_cesar(n->get_projet()), true, true );
-        ajouter_fonction( n, new fonction_sortie_texte(n->get_projet()), true, true );
+
+        fonctions_conteneur * p = objet_selectionnable::get_conteneur_courant();
+
+        ajouter_fonction( p, new fonction_source_texte(p, "UNHBH TM SDRS !"), true, true );
+        ajouter_fonction( p, new fonction_cesar(p), true, true );
+        ajouter_fonction( p, new fonction_sortie_texte(p), true, true );
     }
 }
 
@@ -354,7 +346,9 @@ void fenetre_principale::set_projet_courant( projet * p )
 {
     if ( p != NULL )
     {
-        s_explorateur->set_projet_courant(p);
+        // TODO : a retirer
+        // s_explorateur->set_projet_courant(p);
+
         // TODO : a retirer
         // s_vue_fonctions->update_vue_fonction( s_explorateur->get_noeud_courant() );
     }
@@ -385,8 +379,8 @@ void fenetre_principale::sauvegarder_projet_sous(projet * p)
     QFileDialog d(this);
     d.setDefaultSuffix("dec");
     QString nom_fichier = d.getSaveFileName( this,
-                                            tr("Sauvegarder le projet"), "projets",
-                                            tr("projet Decode (*.dec);;"));
+                                             tr("Sauvegarder le projet"), "projets",
+                                             tr("projet Decode (*.dec);;"));
 
     if (nom_fichier.isEmpty())
         return;
@@ -439,7 +433,7 @@ void fenetre_principale::ouvrir_projet(projet * p)
 
     if ( n != NULL )
     {
-        set_noeud_courant(n);
+        p->selectionner();
     }
     else
     {
@@ -461,7 +455,8 @@ void fenetre_principale::ouvrir_projet(projet * p)
             std::cout << "projet " << xml.name().toString().toStdString() << std::endl;
             p->set_nom_fichier(nom_fichier);
             p->charger(xml);
-            s_vue_fonctions->update_vue_fonction( s_explorateur->get_noeud_courant() );
+            // TODO : a retirer
+            // s_vue_fonctions->update_vue_fonction( s_explorateur->get_noeud_courant() );
         }
         else
             xml.skipCurrentElement();
@@ -477,12 +472,15 @@ void fenetre_principale::ouvrir_projet()
     // TODO : A REVOIR
     creer_projet();
 
-    noeud_projet * n = s_explorateur->get_projet_courant();
+    // TODO : a retirer
+    /*
+     * noeud_projet * n = s_explorateur->get_projet_courant();
 
     if ( n != NULL )
     {
         ouvrir_projet( n->get_projet() );
     }
+    */
 }
 
 /** --------------------------------------------------------------------------------------
@@ -509,6 +507,8 @@ void fenetre_principale::adjust_size_vue_fonction()
 */
 void fenetre_principale::on_ajouter_fonction_source_click()
 {
+    // TODO : a retirer
+    /*
     base_noeud* courant = s_explorateur->get_noeud_courant();
 
     if ( courant != NULL )
@@ -516,6 +516,7 @@ void fenetre_principale::on_ajouter_fonction_source_click()
         ajouter_source( courant );
         fenetre_principale::s_vue_fonctions->scrollToBottom();
     }
+    */
 }
 
 /** --------------------------------------------------------------------------------------
@@ -523,6 +524,8 @@ void fenetre_principale::on_ajouter_fonction_source_click()
 */
 void fenetre_principale::on_ajouter_fonction_conversion_click()
 {
+    // TODO : a retirer
+    /*
     base_noeud* courant = s_explorateur->get_noeud_courant();
 
     if ( courant != NULL )
@@ -530,6 +533,7 @@ void fenetre_principale::on_ajouter_fonction_conversion_click()
         ajouter_conversion( courant );
         fenetre_principale::s_vue_fonctions->scrollToBottom();
     }
+    */
 }
 
 /** --------------------------------------------------------------------------------------
@@ -537,6 +541,8 @@ void fenetre_principale::on_ajouter_fonction_conversion_click()
 */
 void fenetre_principale::on_ajouter_fonction_sortie_click()
 {
+    // TODO : a retirer
+    /*
     base_noeud* courant = s_explorateur->get_noeud_courant();
 
     if ( courant != NULL )
@@ -544,6 +550,7 @@ void fenetre_principale::on_ajouter_fonction_sortie_click()
         ajouter_sortie( courant );
         fenetre_principale::s_vue_fonctions->scrollToBottom();
     }
+    */
 }
 
 /** --------------------------------------------------------------------------------------
@@ -559,10 +566,14 @@ void fenetre_principale::on_nouveau_projet_click()
 */
 void fenetre_principale::on_sauvegarder_projet_click()
 {
+    // TODO : a retirer
+    /*
+
     noeud_projet * n = s_explorateur->get_projet_courant();
 
     if ( n != NULL )
         sauvegarder_projet( n->get_projet() );
+    */
 }
 
 /** --------------------------------------------------------------------------------------
@@ -570,10 +581,13 @@ void fenetre_principale::on_sauvegarder_projet_click()
 */
 void fenetre_principale::on_sauvegarder_projet_sous_click()
 {
+    // TODO : a retirer
+    /*
     noeud_projet * n = s_explorateur->get_projet_courant();
 
     if ( n != NULL )
         sauvegarder_projet_sous( n->get_projet() );
+    */
 }
 
 /** --------------------------------------------------------------------------------------
@@ -589,10 +603,13 @@ void fenetre_principale::on_ouvrir_projet_click()
 */
 void fenetre_principale::on_compiler_click()
 {
+    // TODO : a retirer
+    /*
     noeud_projet * n = s_explorateur->get_projet_courant();
 
     if ( n != NULL )
         compiler( n->get_projet() );
+    */
 }
 
 /** --------------------------------------------------------------------------------------
@@ -605,11 +622,11 @@ void fenetre_principale::on_vue_fonction_selectionChanged(const QItemSelection &
     if ( row >= 0 )
     {
         // TODO
-//        base_noeud * n =
-//                ((base_fonction_widget*)(s_vue_fonctions->cellWidget(row,1)))->get_fonction()->get_noeud();
-//        s_explorateur->clearSelection();
-//        s_explorateur->setItemSelected((QTreeWidgetItem*)n, true);
-//        update_selection();
+        //        base_noeud * n =
+        //                ((base_fonction_widget*)(s_vue_fonctions->cellWidget(row,1)))->get_fonction()->get_noeud();
+        //        s_explorateur->clearSelection();
+        //        s_explorateur->setItemSelected((QTreeWidgetItem*)n, true);
+        //        update_selection();
     }
 }
 
@@ -620,7 +637,10 @@ void fenetre_principale::on_externe_noeud_courant_change(base_noeud *noeud_coura
 
 void fenetre_principale::on_externe_parametre_selectionne(base_parametre* p)
 {
+    // TODO : a retirer
+    /*
     s_explorateur->set_parametre_courant( p );
+    */
 }
 
 

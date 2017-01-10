@@ -18,24 +18,24 @@ class explorateur : public QTreeWidget
     public:
         explorateur(fenetre_principale* f, QWidget *parent = 0);
 
-        void set_projet_courant(projet * p);
-        void set_parametre_courant(base_parametre * p);
+        //void set_projet_courant(projet * p);
+        //void set_parametre_courant(base_parametre * p);
 
         base_noeud * get_projet_selon_nom_fichier(const QString& nom_fichier);
         void ajouter_noeud_projet(projet* p);
         void ajouter_noeud_fonction(base_noeud *n, base_fonction* f);
 
-        bool set_noeud_courant(base_noeud *noeud_courant);
-        base_noeud *get_noeud_courant() const;
+        //bool set_noeud_courant(base_noeud *noeud_courant);
+        //base_noeud *get_noeud_courant() const;
 
         void set_noeud_context(base_noeud *noeud_context);
         base_noeud *get_noeud_context() const;
 
-        noeud_projet * get_noeud_projet(base_noeud * n);
-        noeud_projet * get_projet_courant();
+        //noeud_projet * get_noeud_projet(base_noeud * n);
+        //noeud_projet * get_projet_courant();
 
     private:
-        void ajouter_noeud_parametre(base_noeud *n, base_parametre* f);
+        //void ajouter_noeud_parametre(base_noeud *n, base_parametre* f);
         bool chercher_noeud_fonction(base_fonction *f, QTreeWidgetItemIterator& it_rep);
 
     private:

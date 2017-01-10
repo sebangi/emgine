@@ -1,0 +1,16 @@
+#ifndef NOEUD_FONCTIONS_CONTENEUR_H
+#define NOEUD_FONCTIONS_CONTENEUR_H
+
+#include "entete/explorateur/base_noeud.h"
+
+class fonctions_conteneur;
+class base_fonction;
+
+class noeud_fonctions_conteneur : public base_noeud
+{
+     public:
+        noeud_fonctions_conteneur( fonctions_conteneur * conteneur, type_noeud type );
+        ~noeud_fonctions_conteneur();
+};
+
+#endif // NOEUD_FONCTIONS_CONTENEUR_H

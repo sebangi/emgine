@@ -12,8 +12,8 @@
 
 #include <iostream>
 
-base_parametre::base_parametre(base_fonction * fonction_parent, QString nom, QString aide, bool requis, type_element type)
-    : m_fonction_parent(fonction_parent), m_nom(nom), m_aide(aide), m_requis(requis), m_type(type) , m_texte_out()
+base_parametre::base_parametre(objet_selectionnable * parent, QString nom, QString aide, bool requis, type_element type)
+    : fonctions_conteneur(parent), m_fonction_parent((base_fonction*)parent), m_nom(nom), m_aide(aide), m_requis(requis), m_type(type) , m_texte_out()
 {
 
 }

@@ -3,6 +3,8 @@
 
 #include "entete/projet/base_fonction.h"
 
+class fonctions_conteneur;
+
 class fonction_base_source : public base_fonction
 {
     public:

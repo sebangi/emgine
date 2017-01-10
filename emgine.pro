@@ -52,7 +52,9 @@ SOURCES += \
         src/fonction_widget/fonction_sortie_texte_widget.cpp \
         src/fonction/bibliotheque_fonctions.cpp \
         src/fonction_widget/vue_fonctions.cpp \
-        src/projet/fonctions_conteneur.cpp
+        src/projet/fonctions_conteneur.cpp \
+    src/projet/objet_selectionnable.cpp \
+    src/explorateur/noeud_fonctions_conteneur.cpp
 
 HEADERS  += \
         entete/fonction/bibliotheque_fonctions.h \
@@ -92,7 +94,9 @@ HEADERS  += \
         entete/projet/fonctions_conteneur.h \
         entete/projet/projet.h \
         entete/fonction_widget/selecteur_fonction_dialog.h \
-        entete/fonction_widget/vue_fonctions.h
+        entete/fonction_widget/vue_fonctions.h \
+    entete/projet/objet_selectionnable.h \
+    entete/explorateur/noeud_fonctions_conteneur.h
 
 FORMS    += \
     fenetre_principale.ui
