@@ -21,11 +21,6 @@ base_fonction_widget::base_fonction_widget(base_fonction* fonction, QWidget* par
 
 base_fonction_widget::~base_fonction_widget()
 {
-    if ( m_fonction != NULL )
-    {
-        disconnect( m_fonction, SIGNAL(signal_activation_fonction_change(base_fonction *)),
-                      this, SLOT(on_externe_activation_fonction_change(base_fonction *)));
-    }
 }
 
 void base_fonction_widget::paintEvent(QPaintEvent *)
@@ -245,7 +240,12 @@ void base_fonction_widget::on_fermer()
         switch (ret)
         {
             case QMessageBox::Yes:
-                delete m_fonction;
+                if ( m_fonction != NULL )
+                {
+                    disconnect( m_fonction, SIGNAL(signal_activation_fonction_change(base_fonction *)),
+                                  this, SLOT(on_externe_activation_fonction_change(base_fonction *)));
+                    delete m_fonction;
+                }
                 break;
         }
     }

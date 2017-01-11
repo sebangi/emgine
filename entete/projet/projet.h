@@ -32,6 +32,8 @@ class projet : public fonctions_conteneur
         QString get_description() const;
         bool est_nouveau() const;
 
+        bool est_projet() const;
+
         void set_nom(const QString &nom);
         void set_nom_fichier(const QString &nom_fichier);
 

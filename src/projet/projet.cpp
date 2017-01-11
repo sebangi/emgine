@@ -166,6 +166,11 @@ bool projet::est_nouveau() const
     return m_nouveau;
 }
 
+bool projet::est_projet() const
+{
+    return true;
+}
+
 QString projet::get_nom_fichier() const
 {
     return m_nom_fichier;

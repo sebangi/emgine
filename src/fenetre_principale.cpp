@@ -241,10 +241,7 @@ void fenetre_principale::ajouter_fonction( fonctions_conteneur * conteneur, base
         f->initialisation_par_defaut();
 
     conteneur->ajouter_fonction(f);
-
-    // TODO : le gerer
-    // if ( afficher_vue )
-    //     s_vue_fonctions->ajouter_vue_fonction(f);
+    f->selectionner();
 }
 
 void fenetre_principale::informe_supression_projet(projet * p)
@@ -281,6 +278,8 @@ void fenetre_principale::init_test()
     ajouter_fonction( p, new fonction_source_texte(p, "UNHBH TM SDRS !"), true, true );
     ajouter_fonction( p, new fonction_cesar(p), true, true );
     ajouter_fonction( p, new fonction_sortie_texte(p), true, true );
+
+    p->selectionner();
 }
 
 
@@ -529,12 +528,7 @@ void fenetre_principale::on_ouvrir_projet_click()
 */
 void fenetre_principale::on_compiler_click()
 {
-    // TODO : a retirer
-    /*
-    noeud_projet * n = s_explorateur->get_projet_courant();
-
-    if ( n != NULL )
-        compiler( n->get_projet() );
-    */
+    if ( objet_selectionnable::existe_selection() )
+        compiler( objet_selectionnable::get_projet_courant() );
 }
 

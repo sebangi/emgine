@@ -4,7 +4,7 @@
 #include <QObject>
 
 class fonctions_conteneur;
-class base_noeud;
+class projet;
 
 class objet_selectionnable : public QObject
 {
@@ -16,13 +16,16 @@ class objet_selectionnable : public QObject
         void selectionner();
         objet_selectionnable *get_conteneur();
         virtual bool est_conteneur() const;
+        virtual bool est_projet() const;
 
         static objet_selectionnable * get_selection();
         static fonctions_conteneur * get_conteneur_courant();
+        static projet * get_projet_courant();
         static bool existe_selection();
 
     private:
         void deselectionner();
+        static projet * get_projet_courant(objet_selectionnable * obj);
 
     signals:
         void signal_os_selectionne(objet_selectionnable*);

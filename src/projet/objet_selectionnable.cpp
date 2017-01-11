@@ -1,6 +1,5 @@
 #include "entete/projet/objet_selectionnable.h"
 #include "entete/projet/fonctions_conteneur.h"
-#include "entete/explorateur/base_noeud.h"
 
 #include <iostream>
 
@@ -42,6 +41,11 @@ bool objet_selectionnable::est_conteneur() const
     return false;
 }
 
+bool objet_selectionnable::est_projet() const
+{
+    return false;
+}
+
 objet_selectionnable *objet_selectionnable::get_selection()
 {
     return s_objet_courant;
@@ -50,7 +54,22 @@ objet_selectionnable *objet_selectionnable::get_selection()
 fonctions_conteneur *objet_selectionnable::get_conteneur_courant()
 {
     if ( existe_selection() )
-        return (fonctions_conteneur *)s_objet_courant;
+    {
+        if ( s_objet_courant->est_conteneur() )
+            return (fonctions_conteneur *)s_objet_courant;
+        else
+            return (fonctions_conteneur *)s_objet_courant->m_objet_parent;
+    }
+    else
+        return NULL;
+}
+
+projet * objet_selectionnable::get_projet_courant()
+{
+    if ( existe_selection() )
+    {
+        return get_projet_courant(s_objet_courant);
+    }
     else
         return NULL;
 }
@@ -69,3 +88,12 @@ void objet_selectionnable::deselectionner()
     }
 }
 
+projet * objet_selectionnable::get_projet_courant(objet_selectionnable * obj)
+{
+    if ( obj == NULL )
+        return NULL;
+    else if ( obj->est_projet() )
+        return (projet *)obj;
+    else
+        return get_projet_courant( obj->m_objet_parent );
+}
