@@ -214,9 +214,7 @@ void base_fonction_widget::aide()
 void base_fonction_widget::on_inverser_activation()
 {
     if ( m_fonction != NULL )
-    {
         m_fonction->inverser_activation();
-    }
 }
 
 /** --------------------------------------------------------------------------------------

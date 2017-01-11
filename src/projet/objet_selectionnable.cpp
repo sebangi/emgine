@@ -14,22 +14,19 @@ objet_selectionnable::objet_selectionnable(objet_selectionnable* parent)
 
 void objet_selectionnable::selectionner()
 {
-    std::cout <<  "objet_selectionnable::selectionner()" << std::endl;
-    std::cout <<  "DESELECTION" << std::endl;
     // déselectionner l'objet actuellement sélectionné
     if ( s_objet_courant != NULL )
     {
         if ( s_objet_courant != this )
             s_objet_courant->deselectionner();
     }
-    std::cout <<  "SELECTION" << std::endl;
+
     // sélection de l'objet
     if ( s_objet_courant != this )
     {
         s_objet_courant = this;
         emit signal_os_selectionne(this);
     }
-    std::cout <<  "FIN objet_selectionnable::selectionner()" << std::endl;
 }
 
 objet_selectionnable *objet_selectionnable::get_conteneur()
@@ -37,10 +34,7 @@ objet_selectionnable *objet_selectionnable::get_conteneur()
     if ( est_conteneur() )
         return this;
     else
-    {
-        std::cout << "recherche parent" << std::endl;
         return m_objet_parent->get_conteneur();
-    }
 }
 
 bool objet_selectionnable::est_conteneur() const

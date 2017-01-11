@@ -23,6 +23,8 @@ class vue_fonctions : public QTableWidget
 
     private:
         void init();
+        void ajouter_fonction(base_fonction *f);
+        void ajouter_parametre(base_parametre *f);
         void creer_vue_conteneur();
         void ajouter_vue_fonction(base_fonction* fonction);
         void ajouter_selectionnable(objet_selectionnable *obj);
@@ -39,6 +41,7 @@ class vue_fonctions : public QTableWidget
         liste_selectionnable m_selectionnables;
 
         fonctions_conteneur * m_conteneur_courant;
+        bool m_bloquer_selection;
 };
 
 #endif // VUE_FONCTIONS_H

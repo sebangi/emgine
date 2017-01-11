@@ -10,7 +10,7 @@
 #include <iostream>
 
 vue_fonctions::vue_fonctions(QWidget *parent)
-    : QTableWidget(parent), m_conteneur_courant(NULL)
+    : QTableWidget(parent), m_conteneur_courant(NULL), m_bloquer_selection(false)
 {
     init();
 }
@@ -23,6 +23,9 @@ void vue_fonctions::ajouter_projet(projet *p)
 
         connect( (fonctions_conteneur*)p, SIGNAL(signal_fc_creation_fonction(base_fonction*)),
                  this, SLOT(on_externe_creation_fonction(base_fonction*)));
+
+        for ( projet::fonctions_iterateur it = p->fonctions_begin(); it != p->fonctions_end(); ++it )
+            ajouter_fonction( *it );
 
         creer_vue_conteneur();
     }
@@ -52,12 +55,43 @@ void vue_fonctions::init()
              );
 }
 
+void vue_fonctions::ajouter_fonction(base_fonction *f)
+{
+    if ( f != NULL )
+    {
+        ajouter_selectionnable((objet_selectionnable*)f);
+
+        for ( base_fonction::parametres_iterateur it_p = f->parametres_begin(); it_p != f->parametres_end(); ++it_p )
+            ajouter_parametre( it_p->second );
+
+        connect( f, SIGNAL(signal_destruction_fonction(base_fonction*)),
+                 this, SLOT(on_externe_supprimer_fonction(base_fonction*)));
+    }
+}
+
+void vue_fonctions::ajouter_parametre(base_parametre* p)
+{
+    if ( p != NULL )
+    {
+        ajouter_selectionnable((objet_selectionnable*)p);
+
+        connect( (fonctions_conteneur*)p, SIGNAL(signal_fc_creation_fonction(base_fonction*)),
+                 this, SLOT(on_externe_creation_fonction(base_fonction*)));
+
+        for ( base_parametre::fonctions_iterateur it_f = p->fonctions_begin(); it_f != p->fonctions_end(); ++it_f )
+            ajouter_fonction( *it_f );
+    }
+}
+
 /** --------------------------------------------------------------------------------------
  \brief On crée la vue.
 */
 void vue_fonctions::creer_vue_conteneur()
 {
+    m_bloquer_selection = true;
     clearContents();
+    m_bloquer_selection = false;
+
     setRowCount(0);
     horizontalHeaderItem(1)->setText("");
 
@@ -72,46 +106,11 @@ void vue_fonctions::creer_vue_conteneur()
 }
 
 /** --------------------------------------------------------------------------------------
- \brief Gestion d'un clic sur le bouton bouton_decoder.
-*/
-/*
-void vue_fonctions::update_selection( base_noeud* courant )
-{
-    if ( courant != NULL )
-    {
-        for ( int i = 0; i != courant->childCount(); ++i )
-            if ( i < rowCount() )
-            {
-                ((QPushButton*)(cellWidget(i,0)))->setEnabled
-                        ( courant->child(i)->isSelected( ) );
-
-                if ( courant->child(i)->isSelected( ) )
-                {
-                    QTableWidgetItem * tableItem = item(i,2);
-
-                    setColumnHidden(2,false);
-                    scrollToItem( tableItem );
-                    setColumnHidden(2,true);
-                }
-            }
-    }
-}
-*/
-
-/** --------------------------------------------------------------------------------------
  \brief Ajoute la vue de la fonction.
 */
 void vue_fonctions::ajouter_vue_fonction(base_fonction* fonction)
 {
     base_fonction_widget * widget = fonction->generer_fonction_widget();
-    ajouter_selectionnable((objet_selectionnable*)fonction);
-
-    for ( base_fonction::parametres_iterateur it = fonction->parametres_begin();
-          it != fonction->parametres_end(); ++it )
-        ajouter_selectionnable((objet_selectionnable*)it->second);
-
-    connect( fonction, SIGNAL(signal_destruction_fonction(base_fonction*)),
-             this, SLOT(on_externe_supprimer_fonction(base_fonction*)));
 
     setRowCount(rowCount() + 1);
     setCellWidget(rowCount() -1, 1, (QWidget*)widget);
@@ -188,19 +187,17 @@ void vue_fonctions::on_externe_objet_selectionne(objet_selectionnable *obj)
         m_conteneur_courant = (fonctions_conteneur*)obj->get_conteneur();
         creer_vue_conteneur();
     }
-    else
-    {
-        for ( int i = 0; i != rowCount(); ++i )
-        {
-            if ( (objet_selectionnable *)((base_fonction_widget*)(cellWidget(i,1)))->get_fonction() == obj )
-            {
-                ((QPushButton*)(cellWidget(i,0)))->setEnabled( true );
 
-                QTableWidgetItem * tableItem = item(i,2);
-                setColumnHidden(2,false);
-                scrollToItem( tableItem );
-                setColumnHidden(2,true);
-            }
+    for ( int i = 0; i != rowCount(); ++i )
+    {
+        if ( (objet_selectionnable *)((base_fonction_widget*)(cellWidget(i,1)))->get_fonction() == obj )
+        {
+            ((QPushButton*)(cellWidget(i,0)))->setEnabled( true );
+
+            QTableWidgetItem * tableItem = item(i,2);
+            setColumnHidden(2,false);
+            scrollToItem( tableItem, EnsureVisible);
+            setColumnHidden(2,true);
         }
     }
 }
@@ -221,6 +218,7 @@ void vue_fonctions::on_externe_objet_deselectionne(objet_selectionnable *obj)
 
 void vue_fonctions::on_externe_creation_fonction(base_fonction* f)
 {
+    ajouter_fonction(f);
     ajouter_vue_fonction(f);
 }
 
@@ -229,10 +227,13 @@ void vue_fonctions::on_externe_creation_fonction(base_fonction* f)
 */
 void vue_fonctions::on_vue_fonction_selectionChanged(const QItemSelection &last_index, const QItemSelection & new_index)
 {
-    int row = currentRow();
+    if ( ! m_bloquer_selection )
+    {
+        int row = currentRow();
 
-    if ( row >= 0 )
+        if ( row >= 0 ) ;
         ( (objet_selectionnable *)( ( (base_fonction_widget*)( cellWidget(row,1) ) )->get_fonction() ) ) ->selectionner();
+    }
 }
 
 

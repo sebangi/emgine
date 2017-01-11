@@ -116,15 +116,10 @@ void explorateur::on_externe_activation_fonction_change(base_fonction * f)
 
 void explorateur::on_externe_objet_selectionne(objet_selectionnable *obj)
 {
-    std::cout << "explorateur::on_externe_objet_selectionne" << std::endl;
     map_selectionnable::iterator it = m_selectionnables.find(obj);
 
     if ( it != m_selectionnables.end() )
     {
-        std::cout << "\ttrouve" << std::endl;
-        std::cout << "\tobj = " << obj << std::endl;
-        std::cout << "\tconteneur = " << obj->get_conteneur() << std::endl;
-
         map_selectionnable::iterator it_conteneur = m_selectionnables.find(obj->get_conteneur());
         if ( it_conteneur != m_selectionnables.end() )
         {
@@ -135,9 +130,6 @@ void explorateur::on_externe_objet_selectionne(objet_selectionnable *obj)
 
         setItemSelected((QTreeWidgetItem*)(it->second), true);
     }
-    else
-       std::cout << "\tnon trouve" << std::endl;
-    std::cout << "fin explorateur::on_externe_objet_selectionne" << std::endl;
 }
 
 void explorateur::on_externe_objet_deselectionne(objet_selectionnable *obj)
@@ -216,8 +208,8 @@ void explorateur::ajouter_fonction(base_fonction* f)
 
         noeud_parent->addChild(noeud);
 
-        for ( base_fonction::parametres_iterateur it = f->parametres_begin(); it != f->parametres_end(); ++it )
-            ajouter_parametre( it->second );
+        for ( base_fonction::parametres_iterateur it_p = f->parametres_begin(); it_p != f->parametres_end(); ++it_p )
+            ajouter_parametre( it_p->second );
 
         expandItem(noeud);
 
@@ -238,10 +230,13 @@ void explorateur::ajouter_parametre(base_parametre* p)
         base_noeud* noeud = new noeud_parametre( p );
         ajouter_selectionnable((objet_selectionnable*)p, noeud);
 
+        connect( (fonctions_conteneur*)p, SIGNAL(signal_fc_creation_fonction(base_fonction*)),
+                 this, SLOT(on_externe_creation_fonction(base_fonction*)));
+
         noeud_parent->addChild(noeud);
 
-        for ( base_parametre::fonctions_iterateur it = p->fonctions_begin(); it != p->fonctions_end(); ++it )
-            ajouter_fonction( *it );
+        for ( base_parametre::fonctions_iterateur it_f = p->fonctions_begin(); it_f != p->fonctions_end(); ++it_f )
+            ajouter_fonction( *it_f );
 
         expandItem(noeud);
     }
@@ -280,7 +275,6 @@ void explorateur::on_itemClicked(QTreeWidgetItem *item, int column)
 */
 void explorateur::on_currentItemChanged(QTreeWidgetItem *item)
 {
-    std::cout << "ON_CURRENT_ITEM_CHANGE" << std::endl;
     ((base_noeud*)item)->get_objet()->selectionner();
 }
 

@@ -125,18 +125,7 @@ void base_parametre_widget::on_aide()
 
 void base_parametre_widget::mouseDoubleClickEvent( QMouseEvent * e )
 {
-    std::cout << "base_parametre_widget::mouseDoubleClickEvent" << std::endl;
-
     if ( e->button() == Qt::LeftButton )
-     {
-        std::cout << "parametre : " << std::endl;
-        std::cout << "\t base_parametre : " << m_parametre << std::endl;
-        std::cout << "\t fonctions_conteneur : " << (fonctions_conteneur*)m_parametre << std::endl;
-        std::cout << "\t objet_selectionnable : " << (objet_selectionnable*)m_parametre << std::endl;
         m_parametre->selectionner();
-    }
-
-    std::cout << "FIN base_parametre_widget::mouseDoubleClickEvent" << std::endl;
-
 }
 

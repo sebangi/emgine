@@ -57,6 +57,5 @@ fonctions_conteneur::fonctions_const_iterateur fonctions_conteneur::fonctions_co
 
 bool fonctions_conteneur::est_conteneur() const
 {
-    std::cout << "fonctions_conteneur::est_conteneur()" << std::endl;
     return true;
 }
