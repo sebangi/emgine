@@ -20,14 +20,10 @@ class base_parametre_widget : public QWidget
         void init();
         void update_object_name();
         void aide();
-        void voir();
         QString calcul_valeur_courte() const;
 
     protected:
         bool event(QEvent* e) override;
-
-    signals:
-        void signal_bpw_parametre_selectionne( base_parametre * );
 
     private slots:
         void on_aide();
@@ -35,7 +31,6 @@ class base_parametre_widget : public QWidget
 
     private:
         base_parametre* m_parametre;
-
         QPushButton *m_aide_bouton;
 };
 

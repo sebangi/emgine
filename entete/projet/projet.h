@@ -27,6 +27,7 @@ class projet : public fonctions_conteneur
         void charger(QXmlStreamReader & xml);
 
         QString get_nom() const;
+        QString get_titre() const;
         QString get_nom_fichier() const;
         QString get_description() const;
         bool est_nouveau() const;

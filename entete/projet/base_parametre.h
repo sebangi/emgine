@@ -25,7 +25,8 @@ class base_parametre : public fonctions_conteneur
         ~base_parametre();
 
         void sauvegarder( QXmlStreamWriter & stream ) const;
-        QString get_nom() const;
+        QString get_nom() const;        
+        QString get_titre() const;
         QString get_valeur_courte() const;
         QString get_aide() const;
         type_element get_type() const;

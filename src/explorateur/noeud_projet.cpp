@@ -28,11 +28,6 @@ projet* noeud_projet::get_projet() const
     return (projet*)m_objet;
 }
 
-QString noeud_projet::get_nom() const
-{
-    return  "projet " + get_projet()->get_nom();
-}
-
 fonctions_conteneur *noeud_projet::get_fonctions_conteneur()
 {
     return (fonctions_conteneur*)m_objet;

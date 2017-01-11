@@ -26,8 +26,6 @@ class base_noeud : public QTreeWidgetItem
 
         virtual fonctions_conteneur *get_fonctions_conteneur();
 
-        virtual QString get_nom() const = 0;
-
         objet_selectionnable *get_objet() const;
 
     protected:

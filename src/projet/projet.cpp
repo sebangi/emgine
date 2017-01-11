@@ -74,6 +74,11 @@ QString projet::get_nom() const
     return m_nom;
 }
 
+QString projet::get_titre() const
+{
+    return  "projet " + get_nom();
+}
+
 void projet::set_nom(const QString &nom)
 {
     m_nom = nom;
@@ -147,7 +152,7 @@ void projet::charger_fonction(QXmlStreamReader & xml)
             }
         }
 
-        m_fonctions.push_back(f);
+        ajouter_fonction(f);
     }
 }
 

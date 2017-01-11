@@ -25,6 +25,13 @@ class fonctions_conteneur : public objet_selectionnable
         fonctions_const_iterateur fonctions_const_begin() const;
         fonctions_const_iterateur fonctions_const_end() const;
 
+        virtual QString get_titre() const = 0;
+
+        bool est_conteneur() const;
+
+    signals:
+         void signal_fc_creation_fonction(base_fonction*);
+
     private slots:
         void on_supprimer_fonction(base_fonction *f);
 

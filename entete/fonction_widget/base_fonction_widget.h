@@ -21,7 +21,6 @@ class base_fonction_widget : public QWidget, public QTableWidgetItem
         ~base_fonction_widget();
         void paintEvent(QPaintEvent *);
         base_fonction *get_fonction();
-        void reset_fonction();
 
     private:
         void init();
@@ -31,17 +30,13 @@ class base_fonction_widget : public QWidget, public QTableWidgetItem
         void aide();
         void init_connect();
 
-    signals:
-        void signal_bfw_parametre_selectionne(base_parametre* p);
-
-    private slots:
+   private slots:
         void on_inverser_activation();
         void on_fermer();
         void on_parametre_switch();
         void on_aide();
 
         void on_externe_activation_fonction_change(base_fonction * f);
-        void on_externe_parametre_selectionne(base_parametre* p);
 
     protected:
         base_fonction* m_fonction;
