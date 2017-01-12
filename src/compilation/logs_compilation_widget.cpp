@@ -1,9 +1,6 @@
 #include "entete/compilation/logs_compilation_widget.h"
 #include "entete/compilation/log_compilation.h"
 #include "entete/compilation/log_widget_item.h"
-#include "entete/projet/projet.h"
-#include "entete/projet/base_fonction.h"
-#include "entete/projet/base_parametre.h"
 #include "entete/projet/objet_selectionnable.h"
 #include "entete/fenetre_principale.h"
 
@@ -21,11 +18,15 @@ logs_compilation_widget::logs_compilation_widget(QWidget *parent)
     init_widgets();
 }
 
-void logs_compilation_widget::ajouter_log(const log_compilation& log)
+void logs_compilation_widget::ajouter_log(log_compilation& log)
 {
     log_widget_item* item = new log_widget_item(log);
     m_liste->addItem( item );
     m_liste->scrollToBottom();
+
+    if ( log.get_selectionnable() != NULL )
+        connect( log.get_selectionnable(), SIGNAL(signal_os_destruction_selectionnable(objet_selectionnable*)),
+                this, SLOT(on_externe_destruction_selectionnable(objet_selectionnable*)));
 }
 
 void logs_compilation_widget::clear()
@@ -102,4 +103,13 @@ void logs_compilation_widget::onLogClicked(QListWidgetItem* item)
     objet_selectionnable * obj = ((log_widget_item*)item)->get_log().get_selectionnable() ;
     if ( obj != NULL )
         obj->selectionner();
+}
+
+void logs_compilation_widget::on_externe_destruction_selectionnable(objet_selectionnable *obj)
+{
+    disconnect( obj, SIGNAL(signal_destruction_fonction(objet_selectionnable*)),
+                this, SLOT(on_externe_destruction_selectionnable(objet_selectionnable*)));
+
+    for ( int i = 0; i != m_liste->count(); ++i )
+        ((log_widget_item*)m_liste->item(i))->informe_supression_selectionnable(obj);
 }

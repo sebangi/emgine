@@ -24,5 +24,6 @@ log_compilation& log_widget_item::get_log()
 
 void log_widget_item::informe_supression_selectionnable(objet_selectionnable *obj)
 {
+    m_log.informe_supression_selectionnable(obj);
 }
 
