@@ -44,13 +44,13 @@ void base_parametre_widget::init()
     nom->setObjectName("NomParametre");
     nom->setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Expanding);
     nom->setAlignment(Qt::AlignRight | Qt::AlignVCenter);
-    main_layout->addWidget(nom,5);
+    main_layout->addWidget(nom,3);
 
     QLabel * valeur = new QLabel( calcul_valeur_courte() );
     valeur->setObjectName("valeur_courte");
     valeur->setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Expanding);
     valeur->setAlignment(Qt::AlignLeft | Qt::AlignVCenter);
-    main_layout->addWidget(valeur,5);
+    main_layout->addWidget(valeur,7);
 
     m_aide_bouton = new QPushButton();
     m_aide_bouton->setObjectName("BoutonParametreWidget");
@@ -89,9 +89,9 @@ QString base_parametre_widget::calcul_valeur_courte() const
     QString s = m_parametre->get_valeur_courte();
 
     s.replace ( "\n", "|" );
-    if ( s.size() > 20 )
+    if ( s.size() > 50 )
     {
-        s = s.mid(0,20);
+        s = s.mid(0,50);
         s += "...";
     }
 
