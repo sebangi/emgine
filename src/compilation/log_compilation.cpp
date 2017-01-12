@@ -104,6 +104,18 @@ base_parametre *log_compilation::get_parametre()
     return m_parametre;
 }
 
+objet_selectionnable *log_compilation::get_selectionnable()
+{
+    if ( m_fonction != NULL )
+        return (objet_selectionnable*)m_fonction;
+    else if ( m_parametre != NULL )
+        return (objet_selectionnable*)m_parametre;
+    else if ( m_projet != NULL )
+        return (objet_selectionnable*)m_projet;
+    else
+        return NULL;
+}
+
 log_compilation::type_log log_compilation::get_type() const
 {
     return m_type;

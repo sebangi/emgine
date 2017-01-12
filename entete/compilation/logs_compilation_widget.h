@@ -18,9 +18,6 @@ class logs_compilation_widget : public QWidget
         logs_compilation_widget( QWidget *parent = 0 );
 
         void ajouter_log(const log_compilation& log);
-        void informe_supression_projet(projet * p);
-        void informe_supression_fonction(base_fonction * n);
-        void informe_supression_parametre(base_parametre * p);
         void clear();
 
     private:

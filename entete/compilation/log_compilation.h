@@ -7,6 +7,7 @@
 class projet;
 class base_fonction;
 class base_parametre;
+class objet_selectionnable;
 
 class log_compilation : public QObject
 {
@@ -40,6 +41,7 @@ class log_compilation : public QObject
         projet *get_projet();
         base_fonction *get_fonction();
         base_parametre *get_parametre();
+        objet_selectionnable *get_selectionnable();
 
         type_log get_type() const;
         QString get_type_string() const;

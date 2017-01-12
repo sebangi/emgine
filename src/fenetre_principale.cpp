@@ -172,7 +172,10 @@ void fenetre_principale::init_widgets()
     hor_lay->addWidget(s_vue_fonctions,2);
     top_widget->setLayout(hor_lay);
 
-    m_ui->centralLayout->addWidget(top_widget,3);
+    m_ui->centralLayout->setMargin(0);
+    m_ui->centralLayout->setSpacing(0);
+
+    m_ui->centralLayout->addWidget(top_widget,5);
     m_ui->centralLayout->addWidget(s_vue_logs, 1);
 
     QIcon icon2;
@@ -242,30 +245,6 @@ void fenetre_principale::ajouter_fonction( fonctions_conteneur * conteneur, base
 
     conteneur->ajouter_fonction(f);
     f->selectionner();
-}
-
-void fenetre_principale::informe_supression_projet(projet * p)
-{
-    for ( projet::fonctions_iterateur it = p->fonctions_begin(); it != p->fonctions_end(); ++it )
-        informe_supression_fonction( *it );
-
-    s_vue_logs->informe_supression_projet(p);
-}
-
-void fenetre_principale::informe_supression_fonction(base_fonction * f)
-{
-    for ( base_fonction::parametres_iterateur it = f->parametres_begin(); it != f->parametres_end(); ++it )
-        informe_supression_parametre( it->second );
-
-    s_vue_logs->informe_supression_fonction(f);
-}
-
-void fenetre_principale::informe_supression_parametre(base_parametre * p)
-{
-    for ( base_parametre::fonctions_iterateur it = p->fonctions_begin(); it != p->fonctions_end(); ++it )
-        informe_supression_fonction( *it );
-
-    s_vue_logs->informe_supression_parametre(p);
 }
 
 /** --------------------------------------------------------------------------------------
@@ -436,6 +415,7 @@ void fenetre_principale::compiler(projet* p)
     {
         s_compilateur->compiler( p );
         p->selectionner();
+        s_vue_fonctions->scrollToBottom();
     }
 }
 

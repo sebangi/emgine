@@ -174,7 +174,9 @@ void vue_fonctions::on_externe_supprimer_fonction(base_fonction *f)
         if ( ((base_fonction_widget *)(this->cellWidget(i,1)))->get_fonction() == f )
         {
             trouve = true;
+            m_bloquer_selection = true;
             this->removeRow(i);
+            m_bloquer_selection = false;
         }
 
     deconnecter((objet_selectionnable*)f);
@@ -187,23 +189,25 @@ void vue_fonctions::on_externe_objet_selectionne(objet_selectionnable *obj)
         m_conteneur_courant = (fonctions_conteneur*)obj->get_conteneur();
         creer_vue_conteneur();
     }
-
-    for ( int i = 0; i != rowCount(); ++i )
+    else
     {
-        if ( (objet_selectionnable *)((base_fonction_widget*)(cellWidget(i,1)))->get_fonction() == obj )
+        for ( int i = 0; i != rowCount(); ++i )
         {
-            ((QPushButton*)(cellWidget(i,0)))->setEnabled( true );
+            if ( (objet_selectionnable *)((base_fonction_widget*)(cellWidget(i,1)))->get_fonction() == obj )
+            {
+                ((QPushButton*)(cellWidget(i,0)))->setEnabled( true );
 
-            if ( i == rowCount() - 1 )
-            {
-               scrollToBottom();
-            }
-            else
-            {
-                QTableWidgetItem * tableItem = item(i,2);
-                setColumnHidden(2,false);
-                scrollToItem( tableItem, EnsureVisible);
-                setColumnHidden(2,true);
+                if ( i == rowCount() - 1 )
+                {
+                    scrollToBottom();
+                }
+                else
+                {
+                    QTableWidgetItem * tableItem = item(i,2);
+                    setColumnHidden(2,false);
+                    scrollToItem( tableItem, EnsureVisible);
+                    setColumnHidden(2,true);
+                }
             }
         }
     }
@@ -238,8 +242,8 @@ void vue_fonctions::on_vue_fonction_selectionChanged(const QItemSelection &last_
     {
         int row = currentRow();
 
-        if ( row >= 0 ) ;
-        ( (objet_selectionnable *)( ( (base_fonction_widget*)( cellWidget(row,1) ) )->get_fonction() ) ) ->selectionner();
+        if ( row >= 0 )
+            ( (objet_selectionnable *)( ( (base_fonction_widget*)( cellWidget(row,1) ) )->get_fonction() ) ) ->selectionner();
     }
 }
 

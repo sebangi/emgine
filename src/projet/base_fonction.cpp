@@ -27,6 +27,9 @@ base_fonction::~base_fonction()
         delete it->second;
     m_parametres.clear();
 
+    if ( s_objet_courant == this )
+        deselectionner();
+
     emit signal_destruction_fonction(this);
 }
 

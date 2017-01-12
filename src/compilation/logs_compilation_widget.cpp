@@ -4,6 +4,7 @@
 #include "entete/projet/projet.h"
 #include "entete/projet/base_fonction.h"
 #include "entete/projet/base_parametre.h"
+#include "entete/projet/objet_selectionnable.h"
 #include "entete/fenetre_principale.h"
 
 #include <QHBoxLayout>
@@ -27,24 +28,6 @@ void logs_compilation_widget::ajouter_log(const log_compilation& log)
     m_liste->scrollToBottom();
 }
 
-void logs_compilation_widget::informe_supression_projet(projet * p)
-{
-    for ( int i = 0; i != m_liste->count(); ++i )
-        ((log_widget_item*)m_liste->item(i))->informe_supression_projet(p);
-}
-
-void logs_compilation_widget::informe_supression_fonction(base_fonction * f)
-{
-    for ( int i = 0; i != m_liste->count(); ++i )
-        ((log_widget_item*)m_liste->item(i))->informe_supression_fonction(f);
-}
-
-void logs_compilation_widget::informe_supression_parametre(base_parametre * p)
-{
-    for ( int i = 0; i != m_liste->count(); ++i )
-        ((log_widget_item*)m_liste->item(i))->informe_supression_parametre(p);
-}
-
 void logs_compilation_widget::clear()
 {
     m_liste->clear();
@@ -52,6 +35,8 @@ void logs_compilation_widget::clear()
 
 void logs_compilation_widget::init_widgets()
 {
+    setObjectName("logs_compilation_widget");
+
     QStyle* style = QApplication::style();
     QVBoxLayout * lay = new QVBoxLayout();
     lay->setMargin(0);
@@ -85,7 +70,7 @@ void logs_compilation_widget::init_widgets()
     m_vue_widget->setLayout(vue_layout);
 
     m_liste = new QListWidget();
-    m_liste->setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Expanding);    
+    m_liste->setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Expanding);
     m_liste->setWrapping(false);
     vue_layout->addWidget(m_liste);
     connect( m_liste, SIGNAL(itemClicked(QListWidgetItem*)),
@@ -114,6 +99,7 @@ void logs_compilation_widget::on_cacher_switch()
 
 void logs_compilation_widget::onLogClicked(QListWidgetItem* item)
 {
-    // TODO : event selection log
- //   fenetre_principale::set_noeud_courant( ((log_widget_item*)item)->get_log().get_noeud() ) ;
+    objet_selectionnable * obj = ((log_widget_item*)item)->get_log().get_selectionnable() ;
+    if ( obj != NULL )
+        obj->selectionner();
 }

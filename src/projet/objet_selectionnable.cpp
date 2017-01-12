@@ -11,6 +11,11 @@ objet_selectionnable::objet_selectionnable(objet_selectionnable* parent)
 
 }
 
+objet_selectionnable::~objet_selectionnable()
+{
+    emit signal_os_destruction_selectionnable(this);
+}
+
 void objet_selectionnable::selectionner()
 {
     // déselectionner l'objet actuellement sélectionné

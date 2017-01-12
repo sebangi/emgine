@@ -12,6 +12,7 @@ class objet_selectionnable : public QObject
 
     public:
         objet_selectionnable(objet_selectionnable* parent = NULL);
+        ~objet_selectionnable();
 
         void selectionner();
         objet_selectionnable *get_conteneur();
@@ -23,13 +24,16 @@ class objet_selectionnable : public QObject
         static projet * get_projet_courant();
         static bool existe_selection();
 
-    private:
+    protected:
         void deselectionner();
+
+    private:
         static projet * get_projet_courant(objet_selectionnable * obj);
 
     signals:
         void signal_os_selectionne(objet_selectionnable*);
         void signal_os_deselectionne(objet_selectionnable*);
+        void signal_os_destruction_selectionnable(objet_selectionnable*);
 
     protected:
         // L'objet actuellement sélectionné

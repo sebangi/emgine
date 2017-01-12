@@ -50,9 +50,6 @@ class fenetre_principale : public QMainWindow
         void ajouter_sortie();
         void ajouter_fonction( fonctions_conteneur * conteneur, base_fonction::type_fonction type );
         void ajouter_fonction( fonctions_conteneur * conteneur, base_fonction* f, bool init_defaut, bool afficher_vue );
-        static void informe_supression_projet(projet * p);
-        static void informe_supression_fonction(base_fonction * f);
-        static void informe_supression_parametre(base_parametre * p);
 
     private:
         void init_test();
