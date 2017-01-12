@@ -252,7 +252,8 @@ void fenetre_principale::ajouter_fonction( fonctions_conteneur * conteneur, base
 */
 void fenetre_principale::init_test()
 {
-    projet * p  = creer_projet();
+    projet * p  = new projet();
+    ajouter_projet(p);
 
     ajouter_fonction( p, new fonction_source_texte(p, "UNHBH TM SDRS !"), true, true );
     ajouter_fonction( p, new fonction_cesar(p), true, true );
@@ -265,17 +266,13 @@ void fenetre_principale::init_test()
 /** --------------------------------------------------------------------------------------
  \brief Ajoute un nouveau projet.
 */
-projet * fenetre_principale::creer_projet()
+void fenetre_principale::ajouter_projet( projet * p )
 {
-    projet * p = new projet();
-
     s_projets.push_back( p );
     s_explorateur->ajouter_projet(p);
     s_vue_fonctions->ajouter_projet(p);
 
     p->selectionner();
-
-    return p;
 }
 
 /** --------------------------------------------------------------------------------------
@@ -341,67 +338,44 @@ void fenetre_principale::sauvegarder_projet(const QString & nom_fichier, projet 
 /** --------------------------------------------------------------------------------------
  \brief Ouvrir un projet.
 */
-void fenetre_principale::ouvrir_projet(projet * p)
+void fenetre_principale::ouvrir_projet()
 {
-    QString nom_fichier = QFileDialog::getOpenFileName( this,
-                                                        tr("Ouvrir un projet Decode"),
-                                                        "projets",
-                                                        tr("projet Decode (*.dec);;"));
+    QString nom_fichier =
+            QFileDialog::getOpenFileName( this, tr("Ouvrir un projet Decode"),
+                                          "projets", tr("projet Decode (*.dec);;"));
 
     if (nom_fichier.isEmpty())
         return;
 
-    base_noeud* n = NULL;
-    n = s_explorateur->get_projet_selon_nom_fichier(nom_fichier);
+    projet* existant = NULL;
+    existant = s_explorateur->get_projet_selon_nom_fichier(nom_fichier);
 
-    if ( n != NULL )
-    {
-        p->selectionner();
-    }
+    if ( existant != NULL )
+        existant->selectionner();
     else
     {
         QFile file(nom_fichier);
 
-        if (!file.open(QIODevice::ReadOnly))
+        if (! file.open(QIODevice::ReadOnly))
         {
-            QMessageBox::information(this, tr("Impossible d'ouvrir le fichier."),
-                                     file.errorString());
+            QMessageBox::information(this, tr("Impossible d'ouvrir le fichier."), file.errorString());
             return;
         }
 
+        projet * p = new projet();
         QXmlStreamReader xml(&file);
-
         xml.readNextStartElement();
 
         if( xml.name() == "projet" )
         {
-            std::cout << "projet " << xml.name().toString().toStdString() << std::endl;
             p->set_nom_fichier(nom_fichier);
             p->charger(xml);
         }
         else
             xml.skipCurrentElement();
+
+        ajouter_projet(p);
     }
-}
-
-
-/** --------------------------------------------------------------------------------------
- \brief Ouvrir un projet.
-*/
-void fenetre_principale::ouvrir_projet()
-{
-    // TODO : A REVOIR
-    creer_projet();
-
-    // TODO : a retirer
-    /*
-     * noeud_projet * n = s_explorateur->get_projet_courant();
-
-    if ( n != NULL )
-    {
-        ouvrir_projet( n->get_projet() );
-    }
-    */
 }
 
 /** --------------------------------------------------------------------------------------
@@ -446,7 +420,8 @@ void fenetre_principale::on_ajouter_fonction_sortie_click()
 */
 void fenetre_principale::on_nouveau_projet_click()
 {
-    creer_projet();
+    projet * p = new projet();
+    ajouter_projet(p);
 }
 
 /** --------------------------------------------------------------------------------------

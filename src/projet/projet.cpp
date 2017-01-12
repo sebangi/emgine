@@ -46,8 +46,6 @@ void projet::sauvegarder( QXmlStreamWriter & stream )
 
 void projet::charger(QXmlStreamReader & xml)
 {    
-    std::cout << "->" << "charger_projet" << std::endl;
-
     Q_ASSERT( xml.isStartElement() &&
               xml.name() == "projet" );
 
@@ -66,7 +64,6 @@ void projet::charger(QXmlStreamReader & xml)
         else
             xml.skipCurrentElement();
     }
-    std::cout << "<-" << "charger_projet" << std::endl;
 }
 
 QString projet::get_nom() const

@@ -221,6 +221,6 @@ void base_parametre::charger_fonction( QXmlStreamReader & xml )
             }
         }
 
-        m_fonctions.push_back(f);
+        ajouter_fonction(f);
     }
 }

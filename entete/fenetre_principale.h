@@ -55,13 +55,12 @@ class fenetre_principale : public QMainWindow
         void creer_toolbar();
         void creer_widgets();
 
-        projet * creer_projet();
+        void ajouter_projet( projet * p );
         void selectionner_projet();
         void sauvegarder_projet_sous(projet * p);
         void sauvegarder_projet( projet* p );
         void sauvegarder_projet( const QString & nom_fichier, projet * p);
         void ouvrir_projet();
-        void ouvrir_projet(projet * p);
         void compiler( projet* p );
 
     private slots:

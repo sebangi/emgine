@@ -108,7 +108,7 @@ void logs_compilation_widget::onLogClicked(QListWidgetItem* item)
 
 void logs_compilation_widget::on_externe_destruction_selectionnable(objet_selectionnable *obj)
 {
-    disconnect( obj, SIGNAL(signal_destruction_fonction(objet_selectionnable*)),
+    disconnect( obj, SIGNAL(signal_os_destruction_selectionnable(objet_selectionnable*)),
                 this, SLOT(on_externe_destruction_selectionnable(objet_selectionnable*)));
 
     for ( int i = 0; i != m_liste->count(); ++i )

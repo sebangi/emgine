@@ -23,13 +23,13 @@ class explorateur : public QTreeWidget
     public:
         explorateur(QWidget *parent = 0);
 
-        base_noeud * get_projet_selon_nom_fichier(const QString& nom_fichier);
+        projet * get_projet_selon_nom_fichier(const QString& nom_fichier);
         void ajouter_projet(projet* p);
+
+    private:
         void ajouter_fonction(base_fonction* f);
         void set_noeud_context(base_noeud *noeud_context);
         base_noeud *get_noeud_context() const;
-
-    private:
         void ajouter_parametre(base_parametre* f);
         void ajouter_selectionnable(objet_selectionnable * obj, base_noeud* noeud);
 

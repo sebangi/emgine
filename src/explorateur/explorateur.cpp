@@ -34,6 +34,25 @@ explorateur::explorateur(QWidget *parent)
             this,SLOT(on_currentItemChanged(QTreeWidgetItem*)));
 }
 
+projet * explorateur::get_projet_selon_nom_fichier(const QString &nom_fichier)
+{
+    projet * p = NULL;
+
+    QTreeWidgetItemIterator it(this);
+    while (*it)
+    {
+        if ( (*it)->type() == base_noeud::type_projet )
+        {
+            if ( ((noeud_projet*)(*it))->get_projet()->get_nom_fichier() == nom_fichier )
+                p = ((noeud_projet*)(*it))->get_projet();
+        }
+
+        ++it;
+    }
+
+    return p;
+}
+
 void explorateur::on_externe_activation_fonction_change(base_fonction * f)
 {
     map_selectionnable::iterator it = m_selectionnables.find(f);
@@ -87,25 +106,6 @@ void explorateur::on_externe_supprimer_fonction(base_fonction *f)
 
     if ( it != m_selectionnables.end() )
         it->second->parent()->removeChild(it->second);
-}
-
-base_noeud *explorateur::get_projet_selon_nom_fichier(const QString &nom_fichier)
-{
-    base_noeud * n = NULL;
-
-    QTreeWidgetItemIterator it(this);
-    while (*it)
-    {
-        if ( (*it)->type() == base_noeud::type_projet )
-        {
-            if ( ((noeud_projet*)(*it))->get_projet()->get_nom_fichier() == nom_fichier )
-                n = (base_noeud*)(*it);
-        }
-
-        ++it;
-    }
-
-    return n;
 }
 
 void explorateur::ajouter_projet(projet *p)
