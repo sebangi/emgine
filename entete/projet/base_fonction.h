@@ -65,8 +65,6 @@ class base_fonction : public objet_selectionnable
         type_fonction get_type() const;
         void set_noeud( noeud_fonction * n );
         noeud_fonction * get_noeud();
-        bool est_active() const;
-        void set_est_active(bool est_active);
         void inverser_activation();
 
         parametres_iterateur parametres_begin();
@@ -107,7 +105,6 @@ class base_fonction : public objet_selectionnable
     private:
         type_fonction m_type;
         type_id_fonction m_id;
-        bool m_est_active;
         bool m_parametre_visible;
         fonctions_conteneur * m_conteneur;
 };

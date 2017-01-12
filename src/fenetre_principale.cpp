@@ -179,7 +179,7 @@ void fenetre_principale::init_widgets()
     m_ui->centralLayout->addWidget(s_vue_logs, 1);
 
     QIcon icon2;
-    icon2.addFile(QString::fromUtf8("icons/compile.png"), QSize(), QIcon::Normal, QIcon::Off);
+    icon2.addFile(QString::fromUtf8("icons/grand_compile.png"), QSize(), QIcon::Normal, QIcon::Off);
     m_toolbar_bouton_compiler->setIcon(icon2);
     m_toolbar_bouton_compiler->setText("Exécuter");
 }

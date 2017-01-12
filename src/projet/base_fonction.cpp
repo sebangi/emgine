@@ -16,7 +16,7 @@
  \param nom Le nom de la fonction.
 */
 base_fonction::base_fonction(fonctions_conteneur * parent, const QString & nom, type_fonction type)
-    : objet_selectionnable(parent), m_nom(nom), m_type(type), m_id(fonction_indefini), m_est_active(true), m_parametre_visible(true),
+    : objet_selectionnable(parent), m_nom(nom), m_type(type), m_id(fonction_indefini), m_parametre_visible(true),
       m_conteneur(parent)
 {
 }
@@ -144,11 +144,6 @@ bool base_fonction::get_parametre_visible() const
     return m_parametre_visible;
 }
 
-void base_fonction::set_est_active(bool est_active)
-{
-    m_est_active = est_active;
-}
-
 void base_fonction::inverser_activation()
 {
     m_est_active = ! m_est_active;
@@ -180,11 +175,6 @@ base_parametre *base_fonction::get_parametre(type_id_parametre id)
     return m_parametres.find(id)->second;
 }
 
-bool base_fonction::est_active() const
-{
-    return m_est_active;
-}
-
 bool base_fonction::est_fonction_valide() const
 {
     bool result = est_valide();
@@ -197,7 +187,6 @@ bool base_fonction::est_fonction_valide() const
 
     return result;
 }
-
 
 void base_fonction::charger(QXmlStreamReader & xml)
 {

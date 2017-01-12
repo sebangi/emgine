@@ -19,6 +19,11 @@ class objet_selectionnable : public QObject
         virtual bool est_conteneur() const;
         virtual bool est_projet() const;
 
+        bool est_active() const;
+        void set_est_active(bool est_active);
+        bool est_active_avec_parent() const;
+        bool parents_actifs() const;
+
         static objet_selectionnable * get_selection();
         static fonctions_conteneur * get_conteneur_courant();
         static projet * get_projet_courant();
@@ -40,6 +45,8 @@ class objet_selectionnable : public QObject
         static objet_selectionnable* s_objet_courant;
 
         objet_selectionnable* m_objet_parent;
+
+        bool m_est_active;
 };
 
 #endif // OBJET_SELECTIONNABLE_H

@@ -58,8 +58,24 @@ void explorateur::on_externe_activation_fonction_change(base_fonction * f)
     map_selectionnable::iterator it = m_selectionnables.find(f);
 
     if ( it != m_selectionnables.end() )
+        mettre_a_jour_activation(it->second, ((noeud_fonction*)(it->second))->get_fonction()->est_active() );
+}
+
+void explorateur::mettre_a_jour_activation( base_noeud* n, bool actif )
+{
+    n->update_style( actif );
+
+    for ( int i = 0; i != n->childCount(); ++i )
     {
-        ((noeud_fonction*)(it->second))->update_style();
+        bool change = true;
+
+        if ( actif )
+            if ( n->child(i)->type() == base_noeud::type_fonction )
+                if ( ! ((noeud_fonction*)(n->child(i)))->get_fonction()->est_active() )
+                    change = false;
+
+        if ( change )
+            mettre_a_jour_activation( (base_noeud*)n->child(i), actif );
     }
 }
 

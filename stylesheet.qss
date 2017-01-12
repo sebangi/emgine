@@ -217,4 +217,11 @@ QTableWidget {
 
 QWidget#logs_compilation_widget {
     margin : 0px;
+    padding: 0px;
+}
+
+QListWidget {
+    margin-left : -1px;
+    margin-right : -1px;
+    padding: 0px;
 }

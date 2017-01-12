@@ -28,4 +28,10 @@ objet_selectionnable *base_noeud::get_objet() const
     return m_objet;
 }
 
+void base_noeud::update_style(bool actif)
+{
+    QFont f = font(0);
+    f.setStrikeOut( ! actif );
+    setFont(0,f);
+}
 

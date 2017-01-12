@@ -12,7 +12,7 @@ class noeud_fonction : public base_noeud
         ~noeud_fonction();
 
         base_fonction* get_fonction() const;
-        void update_style();
+        void update_style(bool actif);
 };
 
 

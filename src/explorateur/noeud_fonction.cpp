@@ -33,11 +33,5 @@ base_fonction* noeud_fonction::get_fonction() const
     return (base_fonction *)m_objet;
 }
 
-void noeud_fonction::update_style()
-{
-    QFont f = font(0);
-    f.setStrikeOut( ! get_fonction()->est_active() );
-    setFont(0,f);
-}
 
 

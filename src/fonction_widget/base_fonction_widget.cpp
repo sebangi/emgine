@@ -126,15 +126,29 @@ void base_fonction_widget::init()
 void base_fonction_widget::update_actif_bouton()
 {
     QStyle* style = QApplication::style();
+    QIcon icon1;
+
+    m_actif_bouton->setEnabled(true);
+
     if ( m_fonction != NULL )
     {
-        if ( m_fonction->est_active() )
-            m_actif_bouton->setIcon( style->standardIcon( QStyle::SP_MediaPause ) );
+        if ( m_fonction->est_active_avec_parent() )
+            icon1.addFile(QString::fromUtf8("icons/compile.png"), QSize(), QIcon::Normal, QIcon::Off);
         else
-            m_actif_bouton->setIcon( style->standardIcon( QStyle::SP_MediaPlay ) );
+        {
+            icon1.addFile(QString::fromUtf8("icons/non_compile.png"), QSize(), QIcon::Normal, QIcon::Off);
+            if ( ! m_fonction->parents_actifs() )
+                m_actif_bouton->setEnabled(false);
+        }
     }
     else
-        m_actif_bouton->setIcon( style->standardIcon( QStyle::SP_MediaPlay ) );
+    {
+        icon1.addFile( QString::fromUtf8("icons/non_compile.png"), QSize(), QIcon::Normal, QIcon::Off );
+        m_actif_bouton->setEnabled(false);
+    }
+
+
+    m_actif_bouton->setIcon( icon1 );
 }
 
 
@@ -163,7 +177,7 @@ void base_fonction_widget::update_object_name()
 {
     if ( m_fonction != NULL )
     {
-        if ( ! m_fonction->est_active() )
+        if ( ! m_fonction->est_active_avec_parent() )
             setObjectName("FonctionInactiveWidget");
         else if ( m_fonction->get_type() == base_fonction::fonction_source )
             setObjectName("FonctionSourceWidget");
@@ -177,7 +191,7 @@ void base_fonction_widget::update_object_name()
 
         if ( m_separation != NULL )
         {
-            if ( ! m_fonction->est_active() )
+            if ( ! m_fonction->est_active_avec_parent() )
                 m_separation->setObjectName("separation_inactive");
             else if (  m_fonction->get_type() == base_fonction::fonction_source  )
                 m_separation->setObjectName("separation_source");

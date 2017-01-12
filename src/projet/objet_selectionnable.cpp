@@ -1,12 +1,13 @@
 #include "entete/projet/objet_selectionnable.h"
 #include "entete/projet/fonctions_conteneur.h"
+#include "entete/projet/base_fonction.h"
 
 #include <iostream>
 
 objet_selectionnable* objet_selectionnable::s_objet_courant = NULL;
 
 objet_selectionnable::objet_selectionnable(objet_selectionnable* parent)
-    : m_objet_parent(parent)
+    : m_objet_parent(parent), m_est_active(true)
 {
 
 }
@@ -49,6 +50,32 @@ bool objet_selectionnable::est_conteneur() const
 bool objet_selectionnable::est_projet() const
 {
     return false;
+}
+
+void objet_selectionnable::set_est_active(bool est_active)
+{
+    m_est_active = est_active;
+}
+
+bool objet_selectionnable::est_active() const
+{
+    return m_est_active;
+}
+
+bool objet_selectionnable::est_active_avec_parent() const
+{
+    if ( m_objet_parent == NULL )
+        return m_est_active;
+    else
+        return m_est_active && m_objet_parent->est_active_avec_parent();
+}
+
+bool objet_selectionnable::parents_actifs() const
+{
+    if ( m_objet_parent == NULL )
+        return true;
+    else
+        return m_objet_parent->est_active_avec_parent();
 }
 
 objet_selectionnable *objet_selectionnable::get_selection()
