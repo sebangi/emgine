@@ -9,10 +9,9 @@
 #include <iostream>
 
 base_noeud::base_noeud( objet_selectionnable * obj, base_noeud::type_noeud type )
-    : QTreeWidgetItem( (int)type ), m_objet(obj)
+    : QTreeWidgetItem( (int)type )
 {    
     m_objet = obj;
-    obj->set_noeud(this);
 }
 
 base_noeud::~base_noeud()
@@ -28,4 +27,5 @@ objet_selectionnable *base_noeud::get_objet() const
 {
     return m_objet;
 }
+
 

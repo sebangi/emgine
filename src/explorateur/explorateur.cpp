@@ -4,14 +4,15 @@
 #include "entete/explorateur/noeud_fonction.h"
 #include "entete/explorateur/noeud_parametre.h"
 #include "entete/projet/projet.h"
+#include "entete/projet/objet_selectionnable.h"
 #include "entete/fenetre_principale.h"
 #include <QAction>
 #include <QMenu>
 #include <QKeyEvent>
 #include <iostream>
 
-explorateur::explorateur(fenetre_principale* f, QWidget *parent)
-    : QTreeWidget(parent), m_noeud_courant(NULL), m_noeud_context(NULL), m_fenetre_principale(f)
+explorateur::explorateur(QWidget *parent)
+    : QTreeWidget(parent), m_noeud_context(NULL)
 {
     setSelectionMode(QAbstractItemView::SingleSelection);
     setAcceptDrops(true);
@@ -103,41 +104,59 @@ noeud_projet *explorateur::get_projet_courant()
 }
 */
 
-bool explorateur::chercher_noeud_fonction(base_fonction *f, QTreeWidgetItemIterator& it_rep)
-{
-    QTreeWidgetItemIterator it = QTreeWidgetItemIterator(this);
-    bool trouve = false;
-
-    while (*it && ! trouve )
-    {
-        if ( (*it)->type() == base_noeud::type_fonction )
-        {
-            if ( ((noeud_fonction*)(*it))->get_fonction() == f )
-            {
-                it_rep = it;
-                trouve = true;
-            }
-        }
-        ++it;
-    }
-
-    return trouve;
-}
-
 void explorateur::on_externe_activation_fonction_change(base_fonction * f)
 {
-    QTreeWidgetItemIterator it(this);
+    map_selectionnable::iterator it = m_selectionnables.find(f);
 
-    if ( chercher_noeud_fonction( f, it ) )
-        ((noeud_fonction*)(*it))->update_style();
+    if ( it != m_selectionnables.end() )
+    {
+        ((noeud_fonction*)(it->second))->update_style();
+    }
+}
+
+void explorateur::on_externe_objet_selectionne(objet_selectionnable *obj)
+{
+    map_selectionnable::iterator it = m_selectionnables.find(obj);
+
+    if ( it != m_selectionnables.end() )
+    {
+        map_selectionnable::iterator it_conteneur = m_selectionnables.find(obj->get_conteneur());
+        if ( it_conteneur != m_selectionnables.end() )
+        {
+            QFont font = it_conteneur->second->font(0);
+            font.setBold(true);
+            it_conteneur->second->setFont(0, font);
+        }
+
+        setItemSelected((QTreeWidgetItem*)(it->second), true);
+    }
+}
+
+void explorateur::on_externe_objet_deselectionne(objet_selectionnable *obj)
+{
+    map_selectionnable::iterator it = m_selectionnables.find(obj->get_conteneur());
+
+    if ( it != m_selectionnables.end() )
+    {
+        QFont font = it->second->font(0);
+        font.setBold(false);
+        it->second->setFont(0, font);
+
+        clearSelection();
+    }
+}
+
+void explorateur::on_externe_creation_fonction(base_fonction* f)
+{
+    ajouter_fonction(f);
 }
 
 void explorateur::on_externe_supprimer_fonction(base_fonction *f)
 {
-    QTreeWidgetItemIterator it(this);
+    map_selectionnable::iterator it = m_selectionnables.find(f);
 
-    if ( chercher_noeud_fonction( f, it ) )
-        (*it)->parent()->removeChild(*it);
+    if ( it != m_selectionnables.end() )
+        it->second->parent()->removeChild(it->second);
 }
 
 base_noeud *explorateur::get_projet_selon_nom_fichier(const QString &nom_fichier)
@@ -159,57 +178,79 @@ base_noeud *explorateur::get_projet_selon_nom_fichier(const QString &nom_fichier
     return n;
 }
 
-void explorateur::ajouter_noeud_projet(projet *p)
+void explorateur::ajouter_projet(projet *p)
 {
     if ( p != NULL )
     {
         base_noeud* noeud = new noeud_projet( p );
+        ajouter_selectionnable((objet_selectionnable*)p, noeud);
+
+        connect( (fonctions_conteneur*)p, SIGNAL(signal_fc_creation_fonction(base_fonction*)),
+                 this, SLOT(on_externe_creation_fonction(base_fonction*)));
 
         insertTopLevelItem( 0, noeud );
 
         for ( projet::fonctions_iterateur it = p->fonctions_begin(); it != p->fonctions_end(); ++it )
-            ajouter_noeud_fonction( noeud, *it );
+            ajouter_fonction( *it );
 
         expandItem(noeud);
     }
 }
 
-void explorateur::ajouter_noeud_fonction(base_noeud *n, base_fonction* f)
-{
-    base_noeud* noeud = new noeud_fonction( f );
-
-    n->addChild(noeud);
-
-    for ( base_fonction::parametres_iterateur it = f->parametres_begin(); it != f->parametres_end(); ++it )
-    {   // TODO
-        //ajouter_noeud_parametre( noeud, it->second );
-    }
-
-    expandItem(noeud);
-
-    connect( f, SIGNAL(signal_destruction_fonction(base_fonction*)),
-             this, SLOT(on_externe_supprimer_fonction(base_fonction*)));
-
-    connect( f, SIGNAL(signal_activation_fonction_change(base_fonction *)),
-             this, SLOT(on_externe_activation_fonction_change(base_fonction *)));
-}
-
-/*
-void explorateur::ajouter_noeud_parametre(base_noeud *n, base_parametre* p)
-{
-    base_noeud* noeud = new noeud_parametre( p );
-
-    n->addChild(noeud);
-
-    for ( base_parametre::fonctions_iterateur it = p->fonctions_begin(); it != p->fonctions_end(); ++it )
+void explorateur::ajouter_fonction(base_fonction* f)
+{    
+    map_selectionnable::iterator it = m_selectionnables.find(f->get_conteneur());
+    if ( it != m_selectionnables.end() )
     {
-        // TODO
-        //ajouter_noeud_fonction( noeud, *it );
-    }
+        base_noeud* noeud_parent = it->second;
+        base_noeud* noeud = new noeud_fonction( f );
+        ajouter_selectionnable((objet_selectionnable*)f, noeud);
 
-    expandItem(noeud);
+        noeud_parent->addChild(noeud);
+
+        for ( base_fonction::parametres_iterateur it_p = f->parametres_begin(); it_p != f->parametres_end(); ++it_p )
+            ajouter_parametre( it_p->second );
+
+        expandItem(noeud);
+
+        connect( f, SIGNAL(signal_destruction_fonction(base_fonction*)),
+                 this, SLOT(on_externe_supprimer_fonction(base_fonction*)));
+
+        connect( f, SIGNAL(signal_activation_fonction_change(base_fonction *)),
+                 this, SLOT(on_externe_activation_fonction_change(base_fonction *)));
+    }
 }
-*/
+
+void explorateur::ajouter_parametre(base_parametre* p)
+{
+    map_selectionnable::iterator it = m_selectionnables.find(p->get_fonction_parent());
+    if ( it != m_selectionnables.end() )
+    {
+        base_noeud* noeud_parent = it->second;
+        base_noeud* noeud = new noeud_parametre( p );
+        ajouter_selectionnable((objet_selectionnable*)p, noeud);
+
+        connect( (fonctions_conteneur*)p, SIGNAL(signal_fc_creation_fonction(base_fonction*)),
+                 this, SLOT(on_externe_creation_fonction(base_fonction*)));
+
+        noeud_parent->addChild(noeud);
+
+        for ( base_parametre::fonctions_iterateur it_f = p->fonctions_begin(); it_f != p->fonctions_end(); ++it_f )
+            ajouter_fonction( *it_f );
+
+        expandItem(noeud);
+    }
+}
+
+void explorateur::ajouter_selectionnable(objet_selectionnable *obj, base_noeud *noeud)
+{
+    m_selectionnables[obj] = noeud;
+
+    connect( obj, SIGNAL(signal_os_selectionne(objet_selectionnable*)),
+             this, SLOT(on_externe_objet_selectionne(objet_selectionnable*)) );
+    connect( obj, SIGNAL(signal_os_deselectionne(objet_selectionnable*)),
+             this, SLOT(on_externe_objet_deselectionne(objet_selectionnable*)));
+}
 
 base_noeud *explorateur::get_noeud_context() const
 {
@@ -221,53 +262,12 @@ void explorateur::set_noeud_context(base_noeud *noeud_context)
     m_noeud_context = noeud_context;
 }
 
-/*
-bool explorateur::set_noeud_courant(base_noeud *noeud_courant)
-{
-    if ( noeud_courant == NULL )
-        return false;
-
-    if ( noeud_courant->type() == base_noeud::type_fonction )
-    {
-        bool result = set_noeud_courant((base_noeud*)noeud_courant->parent());
-        clearSelection();
-        setItemSelected((QTreeWidgetItem*)noeud_courant, true);
-        return result;
-    }
-
-    if ( noeud_courant == m_noeud_courant )
-        return false;
-
-    if ( m_noeud_courant != NULL )
-    {
-        QFont font = m_noeud_courant->font(0);
-        font.setBold(false);
-        m_noeud_courant->setFont(0, font);
-    }
-
-    m_noeud_courant = noeud_courant;
-    emit noeud_courant_change( m_noeud_courant );
-
-    QFont font = m_noeud_courant->font(0);
-    font.setBold(true);
-    m_noeud_courant->setFont(0, font);
-
-    clearSelection();
-    setItemSelected((QTreeWidgetItem*)m_noeud_courant, true);
-
-    return true;
-}
-*/
-
 /** --------------------------------------------------------------------------------------
  \brief Evénément click sur un item de l'explorateur de projets.
 */
 void explorateur::on_itemClicked(QTreeWidgetItem *item, int column)
 {
     ((base_noeud*)item)->get_objet()->selectionner();
-
-    // TODO : event change selection
-    // m_fenetre_principale->update_selection();
 }
 
 /** --------------------------------------------------------------------------------------
@@ -276,9 +276,6 @@ void explorateur::on_itemClicked(QTreeWidgetItem *item, int column)
 void explorateur::on_currentItemChanged(QTreeWidgetItem *item)
 {
     ((base_noeud*)item)->get_objet()->selectionner();
-
-    // TODO : event change selection
-    // m_fenetre_principale->update_selection();
 }
 
 void explorateur::on_customContextMenuRequested(const QPoint &pos)
@@ -393,8 +390,7 @@ void explorateur::dropEvent(QDropEvent * event)
 
 void explorateur::on_set_noeud_courant()
 {
-    // TODO ?
-    // set_noeud_courant( m_noeud_context );
+    m_noeud_context->get_objet()->selectionner();
 }
 
 void explorateur::on_ajout_source()

@@ -30,11 +30,6 @@ base_parametre* noeud_parametre::get_parametre() const
     return (base_parametre*)m_objet;
 }
 
-QString noeud_parametre::get_nom() const
-{
-    return get_parametre()->get_fonction_parent()->get_nom() + " : paramètre " + get_parametre()->get_nom();
-}
-
 fonctions_conteneur *noeud_parametre::get_fonctions_conteneur()
 {
     return (fonctions_conteneur*)m_objet;

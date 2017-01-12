@@ -122,35 +122,8 @@ void fenetre_principale::creer_toolbar()
 */
 void fenetre_principale::creer_widgets()
 {
-    s_explorateur = new explorateur(this, this);
-
-    connect( s_explorateur,
-             SIGNAL(noeud_courant_change(base_noeud*)),
-             SLOT(on_externe_noeud_courant_change(base_noeud*))
-             );
-
+    s_explorateur = new explorateur(this);
     s_vue_fonctions = new vue_fonctions(this);
-    s_vue_fonctions->verticalHeader()->hide();
-    s_vue_fonctions->setVerticalScrollBarPolicy(Qt::ScrollBarAlwaysOn);
-    s_vue_fonctions->setSelectionMode(QAbstractItemView::SingleSelection);
-    s_vue_fonctions->setSelectionBehavior(QAbstractItemView::SelectRows);
-    s_vue_fonctions->setColumnCount(3);
-    s_vue_fonctions->setColumnHidden(2,true);
-    s_vue_fonctions->setColumnWidth(0,50);
-    s_vue_fonctions->horizontalHeader()->setStretchLastSection(true);
-    s_vue_fonctions->setHorizontalHeaderItem(0, new QTableWidgetItem());
-    s_vue_fonctions->horizontalHeaderItem(0)->setText("");
-    s_vue_fonctions->setHorizontalHeaderItem(1, new QTableWidgetItem());
-    s_vue_fonctions->horizontalHeaderItem(1)->setText("");
-    s_vue_fonctions->setShowGrid(false);
-
-    connect( s_vue_fonctions->selectionModel(),
-             SIGNAL(selectionChanged(const QItemSelection &, const QItemSelection &)),
-             SLOT(on_vue_fonction_selectionChanged(const QItemSelection &, const QItemSelection &))
-             );
-    connect( s_vue_fonctions, SIGNAL(signal_vf_parametre_selectionne(base_parametre*)),
-             this, SLOT(on_externe_parametre_selectionne(base_parametre*)));
-
     s_vue_logs = new logs_compilation_widget(this);
 }
 
@@ -211,28 +184,28 @@ void fenetre_principale::init_widgets()
 /** --------------------------------------------------------------------------------------
  \brief Ajoute une source au projet courant.
 */
-void fenetre_principale::ajouter_source( base_noeud * n )
+void fenetre_principale::ajouter_source()
 {
-    // TODO
-    //    ajouter_fonction( n, base_fonction::fonction_source);
+    if ( objet_selectionnable::existe_selection() )
+        ajouter_fonction( objet_selectionnable::get_conteneur_courant(), base_fonction::fonction_source);
 }
 
 /** --------------------------------------------------------------------------------------
  \brief Ajoute une fonction de conversion au projet courant.
 */
-void fenetre_principale::ajouter_conversion( base_noeud * n )
+void fenetre_principale::ajouter_conversion( )
 {
-    // TODO
-    // ajouter_fonction( n, base_fonction::fonction_conversion);
+    if ( objet_selectionnable::existe_selection() )
+        ajouter_fonction( objet_selectionnable::get_conteneur_courant(), base_fonction::fonction_conversion);
 }
 
 /** --------------------------------------------------------------------------------------
  \brief Ajoute une sortie au projet courant.
 */
-void fenetre_principale::ajouter_sortie( base_noeud * n )
+void fenetre_principale::ajouter_sortie( )
 {
-    // TODO
-    // ajouter_fonction( n, base_fonction::fonction_sortie);
+    if ( objet_selectionnable::existe_selection() )
+        ajouter_fonction( objet_selectionnable::get_conteneur_courant(), base_fonction::fonction_sortie);
 }
 
 /** --------------------------------------------------------------------------------------
@@ -264,21 +237,11 @@ void fenetre_principale::ajouter_fonction( fonctions_conteneur * conteneur, base
 */
 void fenetre_principale::ajouter_fonction( fonctions_conteneur * conteneur, base_fonction* f, bool init_defaut, bool afficher_vue )
 {
-    // Ajout dans le projet
-    conteneur->ajouter_fonction(f);
-
     if ( init_defaut )
         f->initialisation_par_defaut();
 
-    // TODO ?
-    //    if ( ajout )
-    //      s_explorateur->ajouter_noeud_fonction(n, f);
-
-    if ( afficher_vue )
-        s_vue_fonctions->ajouter_vue_fonction(f);
-
-    // TODO ?
-    // s_vue_fonctions->update_selection( s_explorateur->get_noeud_courant() );
+    conteneur->ajouter_fonction(f);
+    f->selectionner();
 }
 
 void fenetre_principale::informe_supression_projet(projet * p)
@@ -305,55 +268,36 @@ void fenetre_principale::informe_supression_parametre(base_parametre * p)
     s_vue_logs->informe_supression_parametre(p);
 }
 
-
-
 /** --------------------------------------------------------------------------------------
  \brief Jeu de test.
 */
 void fenetre_principale::init_test()
 {
-    creer_projet();
+    projet * p  = creer_projet();
 
-    if ( objet_selectionnable::existe_selection() )
-    {
+    ajouter_fonction( p, new fonction_source_texte(p, "UNHBH TM SDRS !"), true, true );
+    ajouter_fonction( p, new fonction_cesar(p), true, true );
+    ajouter_fonction( p, new fonction_sortie_texte(p), true, true );
 
-        fonctions_conteneur * p = objet_selectionnable::get_conteneur_courant();
-
-        ajouter_fonction( p, new fonction_source_texte(p, "UNHBH TM SDRS !"), true, true );
-        ajouter_fonction( p, new fonction_cesar(p), true, true );
-        ajouter_fonction( p, new fonction_sortie_texte(p), true, true );
-    }
+    p->selectionner();
 }
 
 
 /** --------------------------------------------------------------------------------------
  \brief Ajoute un nouveau projet.
 */
-void fenetre_principale::creer_projet()
+projet * fenetre_principale::creer_projet()
 {
     projet * p = new projet();
 
     s_projets.push_back( p );
-    s_explorateur->ajouter_noeud_projet(p);
+    s_explorateur->ajouter_projet(p);
+    s_vue_fonctions->ajouter_projet(p);
 
-    set_projet_courant(p);
+    p->selectionner();
+
+    return p;
 }
-
-/** --------------------------------------------------------------------------------------
- \brief Sélectionne un projet.
-*/
-void fenetre_principale::set_projet_courant( projet * p )
-{
-    if ( p != NULL )
-    {
-        // TODO : a retirer
-        // s_explorateur->set_projet_courant(p);
-
-        // TODO : a retirer
-        // s_vue_fonctions->update_vue_fonction( s_explorateur->get_noeud_courant() );
-    }
-}
-
 
 /** --------------------------------------------------------------------------------------
  \brief Sauvegarder le projet.
@@ -491,7 +435,7 @@ void fenetre_principale::compiler(projet* p)
     if ( p != NULL )
     {
         s_compilateur->compiler( p );
-        set_projet_courant(p);
+        p->selectionner();
     }
 }
 
@@ -501,22 +445,15 @@ void fenetre_principale::adjust_size_vue_fonction()
         s_vue_fonctions->setRowHeight(i, s_vue_fonctions->cellWidget(i,1)->size().height());
 }
 
-
 /** --------------------------------------------------------------------------------------
  \brief Le bouton ajouter_fonction_source est activé.
 */
 void fenetre_principale::on_ajouter_fonction_source_click()
 {
-    // TODO : a retirer
-    /*
-    base_noeud* courant = s_explorateur->get_noeud_courant();
+    ajouter_source();
 
-    if ( courant != NULL )
-    {
-        ajouter_source( courant );
-        fenetre_principale::s_vue_fonctions->scrollToBottom();
-    }
-    */
+    // TODO ?
+    //    fenetre_principale::s_vue_fonctions->scrollToBottom();
 }
 
 /** --------------------------------------------------------------------------------------
@@ -524,16 +461,10 @@ void fenetre_principale::on_ajouter_fonction_source_click()
 */
 void fenetre_principale::on_ajouter_fonction_conversion_click()
 {
-    // TODO : a retirer
-    /*
-    base_noeud* courant = s_explorateur->get_noeud_courant();
+    ajouter_conversion();
 
-    if ( courant != NULL )
-    {
-        ajouter_conversion( courant );
-        fenetre_principale::s_vue_fonctions->scrollToBottom();
-    }
-    */
+    // TODO ?
+    //    fenetre_principale::s_vue_fonctions->scrollToBottom();
 }
 
 /** --------------------------------------------------------------------------------------
@@ -541,16 +472,10 @@ void fenetre_principale::on_ajouter_fonction_conversion_click()
 */
 void fenetre_principale::on_ajouter_fonction_sortie_click()
 {
-    // TODO : a retirer
-    /*
-    base_noeud* courant = s_explorateur->get_noeud_courant();
+    ajouter_sortie();
 
-    if ( courant != NULL )
-    {
-        ajouter_sortie( courant );
-        fenetre_principale::s_vue_fonctions->scrollToBottom();
-    }
-    */
+    // TODO ?
+    //    fenetre_principale::s_vue_fonctions->scrollToBottom();
 }
 
 /** --------------------------------------------------------------------------------------
@@ -603,45 +528,7 @@ void fenetre_principale::on_ouvrir_projet_click()
 */
 void fenetre_principale::on_compiler_click()
 {
-    // TODO : a retirer
-    /*
-    noeud_projet * n = s_explorateur->get_projet_courant();
-
-    if ( n != NULL )
-        compiler( n->get_projet() );
-    */
+    if ( objet_selectionnable::existe_selection() )
+        compiler( objet_selectionnable::get_projet_courant() );
 }
-
-/** --------------------------------------------------------------------------------------
- \brief La sélection de la vue_fonction change.
-*/
-void fenetre_principale::on_vue_fonction_selectionChanged(const QItemSelection &last_index, const QItemSelection & new_index)
-{
-    int row = s_vue_fonctions->currentRow();
-
-    if ( row >= 0 )
-    {
-        // TODO
-        //        base_noeud * n =
-        //                ((base_fonction_widget*)(s_vue_fonctions->cellWidget(row,1)))->get_fonction()->get_noeud();
-        //        s_explorateur->clearSelection();
-        //        s_explorateur->setItemSelected((QTreeWidgetItem*)n, true);
-        //        update_selection();
-    }
-}
-
-void fenetre_principale::on_externe_noeud_courant_change(base_noeud *noeud_courant)
-{
-    s_vue_fonctions->update_vue_fonction( noeud_courant );
-}
-
-void fenetre_principale::on_externe_parametre_selectionne(base_parametre* p)
-{
-    // TODO : a retirer
-    /*
-    s_explorateur->set_parametre_courant( p );
-    */
-}
-
-
 

@@ -13,7 +13,6 @@ class noeud_fonction : public base_noeud
 
         base_fonction* get_fonction() const;
         void update_style();
-        QString get_nom() const;
 };
 
 

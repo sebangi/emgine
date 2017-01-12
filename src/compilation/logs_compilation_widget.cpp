@@ -70,7 +70,7 @@ void logs_compilation_widget::init_widgets()
 
     m_cacher_bouton = new QPushButton();
     m_cacher_bouton->setObjectName("BoutonFonctionWidget");    
-    m_cacher_bouton->setIcon( style->standardIcon( QStyle::SP_DialogCancelButton ) );
+    m_cacher_bouton->setIcon( style->standardIcon( QStyle::SP_DialogCloseButton ) );
     m_cacher_bouton->setIconSize(QSize(24,24));
     m_cacher_bouton->setFixedHeight(32);
     connect(m_cacher_bouton, SIGNAL(released()), this, SLOT(on_cacher_switch()));

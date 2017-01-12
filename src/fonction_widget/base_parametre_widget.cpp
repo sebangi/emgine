@@ -84,16 +84,6 @@ void base_parametre_widget::aide()
     msgBox.exec();
 }
 
-void base_parametre_widget::voir()
-{
-    emit signal_bpw_parametre_selectionne( m_parametre );
-    // TODO : EVENT PARAMETRE SELECTED
-//    fenetre_principale::set_noeud_courant((base_noeud*)m_parametre->get_noeud());
-//    fenetre_principale::s_explorateur->clearSelection();
-//    fenetre_principale::s_explorateur->setItemSelected((QTreeWidgetItem*)m_parametre->get_noeud(), true);
-//    m_parametre->get_noeud()->setExpanded(true);
-}
-
 QString base_parametre_widget::calcul_valeur_courte() const
 {
     QString s = m_parametre->get_valeur_courte();
@@ -136,8 +126,6 @@ void base_parametre_widget::on_aide()
 void base_parametre_widget::mouseDoubleClickEvent( QMouseEvent * e )
 {
     if ( e->button() == Qt::LeftButton )
-    {
-       voir();
-    }
+        m_parametre->selectionner();
 }
 

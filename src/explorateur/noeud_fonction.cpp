@@ -22,8 +22,6 @@ noeud_fonction::noeud_fonction( base_fonction * f )
     else if ( f->get_type() == base_fonction::fonction_sortie )
         icon1.addFile(QString::fromUtf8("icons/icone_sortie.png"), QSize(), QIcon::Normal, QIcon::Off);
     setIcon( 0, icon1 );
-
-
 }
 
 noeud_fonction::~noeud_fonction()
@@ -40,11 +38,6 @@ void noeud_fonction::update_style()
     QFont f = font(0);
     f.setStrikeOut( ! get_fonction()->est_active() );
     setFont(0,f);
-}
-
-QString noeud_fonction::get_nom() const
-{
-    return get_fonction()->get_nom();
 }
 
 

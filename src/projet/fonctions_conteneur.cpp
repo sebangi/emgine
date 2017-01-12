@@ -11,12 +11,13 @@ fonctions_conteneur::fonctions_conteneur( objet_selectionnable * parent )
 
 void fonctions_conteneur::ajouter_fonction(base_fonction *f)
 {
+    f->set_conteneur(this);
     m_fonctions.push_back(f);
-
-
 
     connect( f, SIGNAL(signal_destruction_fonction(base_fonction*)),
              this, SLOT(on_supprimer_fonction(base_fonction*)));
+
+    emit signal_fc_creation_fonction(f);
 }
 
 void fonctions_conteneur::supprimer_fonction(base_fonction *f)
@@ -52,4 +53,9 @@ fonctions_conteneur::fonctions_const_iterateur fonctions_conteneur::fonctions_co
 fonctions_conteneur::fonctions_const_iterateur fonctions_conteneur::fonctions_const_end() const
 {
     return m_fonctions.constEnd();
+}
+
+bool fonctions_conteneur::est_conteneur() const
+{
+    return true;
 }

@@ -44,11 +44,10 @@ class fenetre_principale : public QMainWindow
         ~fenetre_principale();
 
         static void adjust_size_vue_fonction();
-        void set_projet_courant( projet * p );
 
-        void ajouter_source( base_noeud * n );
-        void ajouter_conversion( base_noeud * n );
-        void ajouter_sortie( base_noeud * n );
+        void ajouter_source();
+        void ajouter_conversion();
+        void ajouter_sortie();
         void ajouter_fonction( fonctions_conteneur * conteneur, base_fonction::type_fonction type );
         void ajouter_fonction( fonctions_conteneur * conteneur, base_fonction* f, bool init_defaut, bool afficher_vue );
         static void informe_supression_projet(projet * p);
@@ -61,8 +60,7 @@ class fenetre_principale : public QMainWindow
         void creer_toolbar();
         void creer_widgets();
 
-        void ajouter_vue_fonction(base_fonction* fonction);
-        void creer_projet();
+        projet * creer_projet();
         void selectionner_projet();
         void sauvegarder_projet_sous(projet * p);
         void sauvegarder_projet( projet* p );
@@ -80,10 +78,6 @@ class fenetre_principale : public QMainWindow
         void on_sauvegarder_projet_click();
         void on_ouvrir_projet_click();
         void on_compiler_click();
-        void on_vue_fonction_selectionChanged(const QItemSelection &last_index, const QItemSelection & new_index);
-
-        void on_externe_noeud_courant_change( base_noeud * noeud_courant );
-        void on_externe_parametre_selectionne(base_parametre* p);
 
     private:
         /** \brief La table des fonctions. */

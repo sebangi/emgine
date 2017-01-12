@@ -19,7 +19,6 @@ base_fonction::base_fonction(fonctions_conteneur * parent, const QString & nom, 
     : objet_selectionnable(parent), m_nom(nom), m_type(type), m_id(fonction_indefini), m_est_active(true), m_parametre_visible(true),
       m_conteneur(parent)
 {
-
 }
 
 base_fonction::~base_fonction()
@@ -114,6 +113,17 @@ const texte &base_fonction::get_texte_parametre(type_id_parametre type) const
         std::cout << "base_fonction::get_texte_parametre : impossible de trouver le parametre " << type << std::endl;
         return texte();
     }
+}
+
+void base_fonction::set_conteneur(fonctions_conteneur *conteneur)
+{
+    m_objet_parent = conteneur;
+    m_conteneur = conteneur;
+}
+
+fonctions_conteneur *base_fonction::get_conteneur() const
+{
+    return m_conteneur;
 }
 
 void base_fonction::set_id(const type_id_fonction &id)

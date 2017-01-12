@@ -44,6 +44,11 @@ QString base_parametre::get_nom() const
     return m_nom;
 }
 
+QString base_parametre::get_titre() const
+{
+    return get_fonction_parent()->get_nom() + " : paramètre " + get_nom();
+}
+
 QString base_parametre::get_valeur_courte() const
 {
     if ( m_fonctions.empty() )

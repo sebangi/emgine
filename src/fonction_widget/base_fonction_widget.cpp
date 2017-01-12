@@ -107,8 +107,6 @@ void base_fonction_widget::init()
         {
             base_parametre_widget* w = new base_parametre_widget(it->second);
             m_parametre_layout->addWidget(w);
-            connect( w, SIGNAL(signal_bpw_parametre_selectionne(base_parametre *)),
-                     this, SLOT(on_externe_parametre_selectionne(base_parametre*)));
         }
     }
 
@@ -211,9 +209,7 @@ void base_fonction_widget::aide()
 void base_fonction_widget::on_inverser_activation()
 {
     if ( m_fonction != NULL )
-    {
         m_fonction->inverser_activation();
-    }
 }
 
 /** --------------------------------------------------------------------------------------
@@ -244,7 +240,12 @@ void base_fonction_widget::on_fermer()
         switch (ret)
         {
             case QMessageBox::Yes:
-                delete m_fonction;
+                if ( m_fonction != NULL )
+                {
+                    disconnect( m_fonction, SIGNAL(signal_activation_fonction_change(base_fonction *)),
+                                  this, SLOT(on_externe_activation_fonction_change(base_fonction *)));
+                    delete m_fonction;
+                }
                 break;
         }
     }
@@ -272,12 +273,6 @@ void base_fonction_widget::on_aide()
     aide();
 }
 
-void base_fonction_widget::reset_fonction()
-{
-    m_fonction = NULL;
-}
-
-
 void base_fonction_widget::init_connect()
 {
     if ( m_fonction != NULL )
@@ -285,11 +280,6 @@ void base_fonction_widget::init_connect()
         connect( m_fonction, SIGNAL(signal_activation_fonction_change(base_fonction *)),
              this, SLOT(on_externe_activation_fonction_change(base_fonction *)));
     }
-}
-
-void base_fonction_widget::on_externe_parametre_selectionne(base_parametre* p)
-{
-    emit signal_bfw_parametre_selectionne(p);
 }
 
 
