@@ -264,7 +264,8 @@ void base_fonction_widget::on_parametre_switch()
         adjustSize();
         save_size.setHeight( size().height() );
         resize(save_size);
-        fenetre_principale::adjust_size_vue_fonction();
+
+        emit signal_bfw_size_change();
     }
 }
 

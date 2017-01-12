@@ -378,8 +378,6 @@ void fenetre_principale::ouvrir_projet(projet * p)
             std::cout << "projet " << xml.name().toString().toStdString() << std::endl;
             p->set_nom_fichier(nom_fichier);
             p->charger(xml);
-            // TODO : a retirer
-            // s_vue_fonctions->update_vue_fonction( s_explorateur->get_noeud_courant() );
         }
         else
             xml.skipCurrentElement();
@@ -419,21 +417,12 @@ void fenetre_principale::compiler(projet* p)
     }
 }
 
-void fenetre_principale::adjust_size_vue_fonction()
-{
-    for ( int i = 0; i < s_vue_fonctions->rowCount(); ++i )
-        s_vue_fonctions->setRowHeight(i, s_vue_fonctions->cellWidget(i,1)->size().height());
-}
-
 /** --------------------------------------------------------------------------------------
  \brief Le bouton ajouter_fonction_source est activé.
 */
 void fenetre_principale::on_ajouter_fonction_source_click()
 {
     ajouter_source();
-
-    // TODO ?
-    //    fenetre_principale::s_vue_fonctions->scrollToBottom();
 }
 
 /** --------------------------------------------------------------------------------------
@@ -442,9 +431,6 @@ void fenetre_principale::on_ajouter_fonction_source_click()
 void fenetre_principale::on_ajouter_fonction_conversion_click()
 {
     ajouter_conversion();
-
-    // TODO ?
-    //    fenetre_principale::s_vue_fonctions->scrollToBottom();
 }
 
 /** --------------------------------------------------------------------------------------
@@ -453,9 +439,6 @@ void fenetre_principale::on_ajouter_fonction_conversion_click()
 void fenetre_principale::on_ajouter_fonction_sortie_click()
 {
     ajouter_sortie();
-
-    // TODO ?
-    //    fenetre_principale::s_vue_fonctions->scrollToBottom();
 }
 
 /** --------------------------------------------------------------------------------------

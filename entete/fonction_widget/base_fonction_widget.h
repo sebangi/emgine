@@ -30,6 +30,9 @@ class base_fonction_widget : public QWidget, public QTableWidgetItem
         void aide();
         void init_connect();
 
+    signals:
+        void signal_bfw_size_change();
+
    private slots:
         void on_inverser_activation();
         void on_fermer();

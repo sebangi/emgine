@@ -18,14 +18,15 @@ logs_compilation_widget::logs_compilation_widget(QWidget *parent)
     init_widgets();
 }
 
-void logs_compilation_widget::ajouter_log(log_compilation& log)
+void logs_compilation_widget::ajouter_log(const log_compilation& log)
 {
     log_widget_item* item = new log_widget_item(log);
+
     m_liste->addItem( item );
     m_liste->scrollToBottom();
 
-    if ( log.get_selectionnable() != NULL )
-        connect( log.get_selectionnable(), SIGNAL(signal_os_destruction_selectionnable(objet_selectionnable*)),
+    if ( item->get_log().get_selectionnable() != NULL )
+        connect( item->get_log().get_selectionnable(), SIGNAL(signal_os_destruction_selectionnable(objet_selectionnable*)),
                 this, SLOT(on_externe_destruction_selectionnable(objet_selectionnable*)));
 }
 

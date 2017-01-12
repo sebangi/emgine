@@ -43,8 +43,6 @@ class fenetre_principale : public QMainWindow
         explicit fenetre_principale(QWidget *parent = 0);
         ~fenetre_principale();
 
-        static void adjust_size_vue_fonction();
-
         void ajouter_source();
         void ajouter_conversion();
         void ajouter_sortie();
