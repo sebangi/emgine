@@ -194,10 +194,17 @@ void vue_fonctions::on_externe_objet_selectionne(objet_selectionnable *obj)
         {
             ((QPushButton*)(cellWidget(i,0)))->setEnabled( true );
 
-            QTableWidgetItem * tableItem = item(i,2);
-            setColumnHidden(2,false);
-            scrollToItem( tableItem, EnsureVisible);
-            setColumnHidden(2,true);
+            if ( i == rowCount() - 1 )
+            {
+               scrollToBottom();
+            }
+            else
+            {
+                QTableWidgetItem * tableItem = item(i,2);
+                setColumnHidden(2,false);
+                scrollToItem( tableItem, EnsureVisible);
+                setColumnHidden(2,true);
+            }
         }
     }
 }
