@@ -33,9 +33,7 @@ class log_compilation : public QObject
         log_compilation( type_log type, base_parametre* f, QString get_message );
         log_compilation( const log_compilation& log );
 
-        void informe_supression_projet(projet * f);
-        void informe_supression_fonction(base_fonction * f);
-        void informe_supression_parametre(base_parametre * f);
+        void informe_supression_selectionnable(objet_selectionnable * obj);
 
         QString get_message() const;
         projet *get_projet();

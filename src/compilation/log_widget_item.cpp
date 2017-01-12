@@ -22,3 +22,7 @@ log_compilation& log_widget_item::get_log()
     return m_log;
 }
 
+void log_widget_item::informe_supression_selectionnable(objet_selectionnable *obj)
+{
+}
+

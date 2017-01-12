@@ -6,9 +6,7 @@
 #include <QListWidget>
 
 class log_compilation;
-class projet;
-class base_fonction;
-class base_parametre;
+class objet_selectionnable;
 
 class logs_compilation_widget : public QWidget
 {
@@ -17,7 +15,7 @@ class logs_compilation_widget : public QWidget
     public:
         logs_compilation_widget( QWidget *parent = 0 );
 
-        void ajouter_log(const log_compilation& log);
+        void ajouter_log(log_compilation& log);
         void clear();
 
     private:
@@ -27,6 +25,7 @@ class logs_compilation_widget : public QWidget
     private slots:
         void on_cacher_switch();
         void onLogClicked(QListWidgetItem* item);
+        void on_externe_destruction_selectionnable(objet_selectionnable* obj);
 
     private:
         QPushButton * m_cacher_bouton;

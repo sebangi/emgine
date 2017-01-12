@@ -40,37 +40,14 @@ log_compilation::log_compilation(const log_compilation &log)
 
 }
 
-void log_compilation::informe_supression_fonction(base_fonction * f)
+void log_compilation::informe_supression_selectionnable(objet_selectionnable *obj)
 {
-    std::cout << "informe_supression_fonction" << std::endl;
-    if ( m_fonction == f )
-    {
-        std::cout << "\tNULL" << std::endl;
-
+    if ( (objet_selectionnable *)m_fonction == obj)
         m_fonction = NULL;
-    }
-}
-
-void log_compilation::informe_supression_projet(projet * p)
-{
-    std::cout << "informe_supression_projet" << std::endl;
-    if ( m_projet == p )
-    {
-        std::cout << "\tNULL" << std::endl;
-
-        m_projet = NULL;
-    }
-}
-
-void log_compilation::informe_supression_parametre(base_parametre * p)
-{
-    std::cout << "informe_supression_parametre" << std::endl;
-    if ( m_parametre == p )
-    {
-        std::cout << "\tNULL" << std::endl;
-
+    else if ( (objet_selectionnable *)m_parametre == obj )
         m_parametre = NULL;
-    }
+    else if ( (objet_selectionnable *)m_projet == obj )
+        m_projet = NULL;
 }
 
 QString log_compilation::get_message() const
