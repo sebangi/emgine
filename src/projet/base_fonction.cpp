@@ -16,8 +16,8 @@
  \param nom Le nom de la fonction.
 */
 base_fonction::base_fonction(fonctions_conteneur * parent, const QString & nom, type_fonction type)
-    : objet_selectionnable(parent), m_nom(nom), m_type(type), m_id(fonction_indefini), m_parametre_visible(true),
-      m_conteneur(parent)
+    : objet_selectionnable(parent), m_nom(nom), m_type(type), m_id(fonction_indefini),
+      m_conteneur(parent), m_niveau_visibilite(1), m_max_niveau_visibilite(1)
 {
 }
 
@@ -62,6 +62,7 @@ void base_fonction::sauvegarder( QXmlStreamWriter & stream ) const
     stream.writeStartElement("fonction");
     stream.writeTextElement("id", QString::number(m_id));
     stream.writeTextElement("nom", m_nom);
+    stream.writeTextElement("niveau_visibilite", QString::number(m_niveau_visibilite));
     if ( m_type == fonction_source )
         stream.writeTextElement( "valeur", ((fonction_base_source*)(this))->get_string_valeur() );
 
@@ -118,6 +119,12 @@ const texte &base_fonction::get_texte_parametre(type_id_parametre type) const
     }
 }
 
+void base_fonction::augmenter_max_niveau_visibilite(int val)
+{
+    m_max_niveau_visibilite += val;
+    m_niveau_visibilite += val;
+}
+
 void base_fonction::set_conteneur(fonctions_conteneur *conteneur)
 {
     m_objet_parent = conteneur;
@@ -134,19 +141,39 @@ void base_fonction::set_id(const type_id_fonction &id)
     m_id = id;
 }
 
-void base_fonction::set_parametre_visible(bool parametre_visible)
+void base_fonction::change_niveau_visibilite()
 {
-    m_parametre_visible = parametre_visible;
+    m_niveau_visibilite -= 1;
+    if ( m_niveau_visibilite == 0 )
+        m_niveau_visibilite = m_max_niveau_visibilite;
+
+    emit signal_niveau_visibilite_change(this);
 }
 
-bool base_fonction::get_parametre_visible() const
+bool base_fonction::a_parametre() const
 {
-    return m_parametre_visible;
+    return ! m_parametres.empty();
+}
+
+int base_fonction::get_niveau_visibilite() const
+{
+    return m_niveau_visibilite;
+}
+
+int base_fonction::get_max_niveau_visibilite() const
+{
+    return m_max_niveau_visibilite;
+}
+
+void base_fonction::set_niveau_visibilite(int niveau_visibilite)
+{
+    m_niveau_visibilite = niveau_visibilite;
 }
 
 void base_fonction::inverser_activation()
 {
     m_est_active = ! m_est_active;
+
     emit signal_activation_fonction_change(this);
 }
 
@@ -189,6 +216,38 @@ bool base_fonction::est_fonction_valide() const
 }
 
 void base_fonction::charger(QXmlStreamReader & xml)
+{
+    while(xml.readNextStartElement())
+    {
+        if(xml.name() == "nom")
+        {
+            // ignoré
+            QString nom = xml.readElementText();
+        }
+        else if(xml.name() == "nom")
+        {
+            QString niveau_visibilite = xml.readElementText();
+            set_niveau_visibilite( niveau_visibilite.toInt() );
+        }
+        else if(xml.name() == "valeur")
+        {
+            QString valeur = xml.readElementText();
+            if ( get_type() == base_fonction::fonction_source )
+                ((fonction_base_source*)this)->set_string_valeur(valeur);
+        }
+        else if(xml.name() == "parametres")
+        {
+            charger_parametres(xml);
+        }
+        else
+        {
+            std::cout << "\t\t ignore : " << xml.name().toString().toStdString() << std::endl;
+            xml.skipCurrentElement();
+        }
+    }
+}
+
+void base_fonction::charger_parametres(QXmlStreamReader & xml)
 {
     Q_ASSERT(xml.isStartElement() &&
              xml.name() == "parametres");

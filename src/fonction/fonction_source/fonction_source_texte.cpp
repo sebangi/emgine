@@ -9,6 +9,7 @@ fonction_source_texte::fonction_source_texte(fonctions_conteneur * conteneur, QS
     : fonction_base_source(conteneur, "Texte"), m_texte(texte)
 {
     set_id(f_source_texte);
+    augmenter_max_niveau_visibilite(2);
 
     ajouter_parametre( PARAM_CARACTERE_SEPARATEUR,
                        new base_parametre( this, "Séparateur d'élément", "Les séparateurs d'éléments.", false,

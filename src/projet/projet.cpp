@@ -126,28 +126,7 @@ void projet::charger_fonction(QXmlStreamReader & xml)
         QString id = xml.readElementText();
         base_fonction * f = bibliotheque_fonctions::get_fonction( (type_id_fonction)id.toInt() );
 
-        while(xml.readNextStartElement())
-        {
-            if(xml.name() == "nom")
-            {
-                QString nom = xml.readElementText();
-            }
-            else if(xml.name() == "valeur")
-            {
-                QString valeur = xml.readElementText();
-                if ( f->get_type() == base_fonction::fonction_source )
-                    ((fonction_base_source*)f)->set_string_valeur(valeur);
-            }
-            else if(xml.name() == "parametres")
-            {
-                f->charger(xml);
-            }
-            else
-            {
-                std::cout << "\t\t ignore : " << xml.name().toString().toStdString() << std::endl;
-                xml.skipCurrentElement();
-            }
-        }
+        f->charger(xml);
 
         ajouter_fonction(f);
     }

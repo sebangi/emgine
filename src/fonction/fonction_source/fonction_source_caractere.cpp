@@ -7,6 +7,7 @@ fonction_source_caractere::fonction_source_caractere( fonctions_conteneur * cont
     : fonction_base_source(conteneur, "Source caractère"), m_valeur(valeur)
 {    
     set_id(f_source_caractere);
+    augmenter_max_niveau_visibilite(1);
 }
 
 fonction_source_caractere::~fonction_source_caractere()

@@ -5,6 +5,7 @@ fonction_source_entier::fonction_source_entier(fonctions_conteneur * conteneur, 
     : fonction_base_source(conteneur, "Source de type entier"), m_valeur(valeur)
 {    
     set_id(f_source_entier);
+    augmenter_max_niveau_visibilite(1);
 }
 
 fonction_source_entier::~fonction_source_entier()

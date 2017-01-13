@@ -23,7 +23,8 @@
 fonction_cesar::fonction_cesar( fonctions_conteneur * conteneur )
     : base_fonction(conteneur, "Chiffrement par Code César")
 {    
-    set_id(f_conversion_cesar);
+    set_id(f_conversion_cesar);    
+    augmenter_max_niveau_visibilite(1);
 
     ajouter_parametre( PARAM_DECALAGE,  new base_parametre( this, "Décalage", "Le décalage à réaliser sur une ligne. Un seul mot par ligne", true,
                                                             type_element_caractere | type_element_entier) );

@@ -113,19 +113,13 @@ void base_fonction_widget::init()
         }
     }
 
-    if ( m_fonction != NULL )
-    {
-        m_parametre_widget->setVisible( m_fonction->get_parametre_visible() );
-        m_specialisation_widget->setVisible( m_fonction->get_parametre_visible() );
-        m_separation->setVisible(m_fonction->get_parametre_visible());
-    }
-
     central_layout->addWidget( m_parametre_widget );
     central_layout->addWidget( m_specialisation_widget );
     setLayout(central_layout);
     update_actif_bouton();
     update_parametre_bouton();
     update_object_name();
+    update_visibilite();
 }
 
 /** --------------------------------------------------------------------------------------
@@ -169,13 +163,43 @@ void base_fonction_widget::update_parametre_bouton()
 
     if ( m_fonction != NULL )
     {
-        if ( m_fonction->get_parametre_visible() )
-            m_parametre_bouton->setIcon( style->standardIcon( QStyle::SP_TitleBarShadeButton ) );
+        if ( m_fonction->get_niveau_visibilite() >= 3 )
+            m_parametre_bouton->setIcon( style->standardIcon( QStyle::SP_FileDialogToParent ) );
+        else if ( m_fonction->get_niveau_visibilite() >= 2 )
+                m_parametre_bouton->setIcon( style->standardIcon( QStyle::SP_TitleBarShadeButton ) );
         else
             m_parametre_bouton->setIcon( style->standardIcon( QStyle::SP_TitleBarUnshadeButton ) );
     }
     else
         m_parametre_bouton->setIcon( style->standardIcon( QStyle::SP_TitleBarUnshadeButton ) );
+}
+
+
+/** --------------------------------------------------------------------------------------
+ \brief Mise à jour de la visibilité.
+*/
+void base_fonction_widget::update_visibilite()
+{
+    QSize save_size = size();
+
+    int niveau = m_fonction->get_niveau_visibilite();
+
+    if ( m_fonction->a_parametre() )
+    {
+        m_specialisation_widget->setVisible( niveau >= 2 );
+        m_parametre_widget->setVisible( niveau >= m_fonction->get_max_niveau_visibilite() );
+        m_separation->setVisible( niveau >= 2 );
+    }
+    else
+    {
+        m_specialisation_widget->setVisible( niveau >= 2 );
+        m_parametre_widget->setVisible( false );
+        m_separation->setVisible( niveau >= 2 );
+    }
+
+    adjustSize();
+    save_size.setHeight( size().height() );
+    resize(save_size);
 }
 
 /** --------------------------------------------------------------------------------------
@@ -243,6 +267,13 @@ void base_fonction_widget::on_externe_activation_fonction_change(base_fonction *
     update_object_name();
 }
 
+void base_fonction_widget::on_externe_niveau_visibilite_change(base_fonction* f)
+{
+    update_parametre_bouton();
+    update_visibilite();
+    emit signal_bfw_size_change();
+}
+
 /** --------------------------------------------------------------------------------------
  \brief Le bouton fermer est activé.
 */
@@ -265,7 +296,10 @@ void base_fonction_widget::on_fermer()
                 if ( m_fonction != NULL )
                 {
                     disconnect( m_fonction, SIGNAL(signal_activation_fonction_change(base_fonction *)),
-                                  this, SLOT(on_externe_activation_fonction_change(base_fonction *)));
+                                this, SLOT(on_externe_activation_fonction_change(base_fonction *)));
+                    disconnect( m_fonction, SIGNAL(signal_niveau_visibilite_change(base_fonction *)),
+                                this, SLOT(on_externe_niveau_visibilite_change(base_fonction *)));
+
                     delete m_fonction;
                 }
                 break;
@@ -276,21 +310,7 @@ void base_fonction_widget::on_fermer()
 void base_fonction_widget::on_parametre_switch()
 {
     if ( m_fonction != NULL )
-    {
-        m_fonction->set_parametre_visible( ! m_fonction->get_parametre_visible() );
-
-        update_parametre_bouton();
-        QSize save_size = size();
-        m_fonction->get_parametre_visible();
-        m_parametre_widget->setVisible( m_fonction->get_parametre_visible() );
-        m_specialisation_widget->setVisible( m_fonction->get_parametre_visible() );
-        m_separation->setVisible( m_fonction->get_parametre_visible() );
-        adjustSize();
-        save_size.setHeight( size().height() );
-        resize(save_size);
-
-        emit signal_bfw_size_change();
-    }
+        m_fonction->change_niveau_visibilite();
 }
 
 void base_fonction_widget::on_aide()
@@ -303,7 +323,10 @@ void base_fonction_widget::init_connect()
     if ( m_fonction != NULL )
     {
         connect( m_fonction, SIGNAL(signal_activation_fonction_change(base_fonction *)),
-             this, SLOT(on_externe_activation_fonction_change(base_fonction *)));
+                 this, SLOT(on_externe_activation_fonction_change(base_fonction *)));
+
+        connect( m_fonction, SIGNAL(signal_niveau_visibilite_change(base_fonction *)),
+                 this, SLOT(on_externe_niveau_visibilite_change(base_fonction *)));
     }
 }
 

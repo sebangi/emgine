@@ -8,6 +8,7 @@ fonction_source_booleen::fonction_source_booleen(fonctions_conteneur * conteneur
     : fonction_base_source(conteneur, "Oui ou Non ?"), m_valeur(valeur)
 {
     set_id(f_source_booleen);
+    augmenter_max_niveau_visibilite(1);
 }
 
 fonction_source_booleen::~fonction_source_booleen()
