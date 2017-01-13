@@ -64,7 +64,10 @@ void explorateur::on_externe_activation_fonction_change(base_fonction * f)
 void explorateur::mettre_a_jour_activation( base_noeud* n, bool actif )
 {
     if ( actif )
-        n->setExpanded( n->get_save_expanded() );
+    {
+        if ( ! n->isExpanded() )
+            n->setExpanded( n->get_save_expanded() );
+    }
     else
     {
         n->save_expanded();

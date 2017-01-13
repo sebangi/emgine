@@ -282,7 +282,6 @@ void fenetre_principale::sauvegarder_projet(projet* p)
 {
     if ( p != NULL )
     {
-        std::cout << "sauvegarder_projet 1" << std::endl;
         if ( p->est_nouveau() )
             sauvegarder_projet_sous( p );
         else
@@ -429,14 +428,8 @@ void fenetre_principale::on_nouveau_projet_click()
 */
 void fenetre_principale::on_sauvegarder_projet_click()
 {
-    // TODO : a retirer
-    /*
-
-    noeud_projet * n = s_explorateur->get_projet_courant();
-
-    if ( n != NULL )
-        sauvegarder_projet( n->get_projet() );
-    */
+    if ( objet_selectionnable::existe_selection() )
+        sauvegarder_projet( objet_selectionnable::get_projet_courant() );
 }
 
 /** --------------------------------------------------------------------------------------

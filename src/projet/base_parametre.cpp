@@ -33,7 +33,7 @@ void base_parametre::sauvegarder( QXmlStreamWriter & stream ) const
     stream.writeStartElement("fonctions");
 
     for ( base_parametre::fonctions_const_iterateur it = fonctions_const_begin(); it != fonctions_const_end(); ++it )
-        ;//it->second->sauvegarder(stream);
+        (*it)->sauvegarder(stream);
 
     stream.writeEndElement(); // Fonctions
     stream.writeEndElement(); // Paramètre
