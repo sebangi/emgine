@@ -87,17 +87,21 @@ void base_fonction_widget::init()
 
     central_layout->addWidget(toolbar);
 
-    m_parametre_widget = new QWidget();
+    m_separation = new QFrame;
+    m_separation->setFrameStyle(QFrame::HLine | QFrame::Raised);
+    central_layout->addWidget(m_separation);
 
+    m_parametre_widget = new QWidget();
     m_parametre_layout = new QVBoxLayout();
     m_parametre_layout->setMargin(0);
     m_parametre_layout->setSpacing(0);
-
     m_parametre_widget->setLayout(m_parametre_layout);
 
-    m_separation = new QFrame;
-    m_separation->setFrameStyle(QFrame::HLine | QFrame::Raised);
-    m_parametre_layout->addWidget(m_separation);
+    m_specialisation_widget = new QWidget();
+    m_specialisation_layout = new QVBoxLayout();
+    m_specialisation_layout->setMargin(0);
+    m_specialisation_layout->setSpacing(0);
+    m_specialisation_widget->setLayout(m_specialisation_layout);
 
     if ( m_fonction != NULL )
     {
@@ -110,9 +114,14 @@ void base_fonction_widget::init()
     }
 
     if ( m_fonction != NULL )
+    {
         m_parametre_widget->setVisible( m_fonction->get_parametre_visible() );
+        m_specialisation_widget->setVisible( m_fonction->get_parametre_visible() );
+        m_separation->setVisible(m_fonction->get_parametre_visible());
+    }
 
     central_layout->addWidget( m_parametre_widget );
+    central_layout->addWidget( m_specialisation_widget );
     setLayout(central_layout);
     update_actif_bouton();
     update_parametre_bouton();
@@ -274,6 +283,8 @@ void base_fonction_widget::on_parametre_switch()
         QSize save_size = size();
         m_fonction->get_parametre_visible();
         m_parametre_widget->setVisible( m_fonction->get_parametre_visible() );
+        m_specialisation_widget->setVisible( m_fonction->get_parametre_visible() );
+        m_separation->setVisible( m_fonction->get_parametre_visible() );
         adjustSize();
         save_size.setHeight( size().height() );
         resize(save_size);

@@ -11,6 +11,19 @@ QPlainTextEdit
     border-color: black;
 }
 
+QTextEdit
+{
+    font: 10pt "DejaVu Sans Mono";
+    border-radius:10px;
+    background-color: palette(base);
+    padding: 2px;
+    margin: 2px;
+    border-style: solid;
+    border-width: 1px;
+    border-radius: 10px;
+    border-color: black;
+}
+
 QGroupBox
 {
      border: 1px solid silver;
