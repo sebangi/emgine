@@ -63,20 +63,15 @@ void explorateur::on_externe_activation_fonction_change(base_fonction * f)
 
 void explorateur::mettre_a_jour_activation( base_noeud* n, bool actif )
 {
-    n->update_style( actif );
-
-    for ( int i = 0; i != n->childCount(); ++i )
+    if ( actif )
+        n->setExpanded( n->get_save_expanded() );
+    else
     {
-        bool change = true;
-
-        if ( actif )
-            if ( n->child(i)->type() == base_noeud::type_fonction )
-                if ( ! ((noeud_fonction*)(n->child(i)))->get_fonction()->est_active() )
-                    change = false;
-
-        if ( change )
-            mettre_a_jour_activation( (base_noeud*)n->child(i), actif );
+        n->save_expanded();
+        n->setExpanded(false);
     }
+
+    n->update_style( actif ); 
 }
 
 void explorateur::on_externe_objet_selectionne(objet_selectionnable *obj)

@@ -9,7 +9,7 @@
 #include <iostream>
 
 base_noeud::base_noeud( objet_selectionnable * obj, base_noeud::type_noeud type )
-    : QTreeWidgetItem( (int)type )
+    : QTreeWidgetItem( (int)type ), m_save_expanded(true)
 {    
     m_objet = obj;
 }
@@ -33,5 +33,15 @@ void base_noeud::update_style(bool actif)
     QFont f = font(0);
     f.setStrikeOut( ! actif );
     setFont(0,f);
+}
+
+bool base_noeud::get_save_expanded() const
+{
+    return m_save_expanded;
+}
+
+void base_noeud::save_expanded()
+{
+    m_save_expanded = isExpanded();
 }
 

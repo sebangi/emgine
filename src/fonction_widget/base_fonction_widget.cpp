@@ -161,17 +161,26 @@ void base_fonction_widget::update_parametre_bouton()
 {
     QStyle* style = QApplication::style();
 
+    QIcon icon1;
+
     if ( m_fonction != NULL )
     {
         if ( m_fonction->get_niveau_visibilite() >= 3 )
-            m_parametre_bouton->setIcon( style->standardIcon( QStyle::SP_FileDialogToParent ) );
+            icon1.addFile(QString::fromUtf8("icons/fleche_haut_double.png"), QSize(), QIcon::Normal, QIcon::Off);
         else if ( m_fonction->get_niveau_visibilite() >= 2 )
-                m_parametre_bouton->setIcon( style->standardIcon( QStyle::SP_TitleBarShadeButton ) );
+        {
+            if ( m_fonction->get_max_niveau_visibilite() >= 3 )
+                icon1.addFile(QString::fromUtf8("icons/fleche_haut_bas.png"), QSize(), QIcon::Normal, QIcon::Off);
+            else
+                icon1.addFile(QString::fromUtf8("icons/fleche_haut.png"), QSize(), QIcon::Normal, QIcon::Off);
+        }
         else
-            m_parametre_bouton->setIcon( style->standardIcon( QStyle::SP_TitleBarUnshadeButton ) );
+            icon1.addFile(QString::fromUtf8("icons/fleche_bas.png"), QSize(), QIcon::Normal, QIcon::Off);
     }
     else
-        m_parametre_bouton->setIcon( style->standardIcon( QStyle::SP_TitleBarUnshadeButton ) );
+        icon1.addFile(QString::fromUtf8("icons/fleche_bas.png"), QSize(), QIcon::Normal, QIcon::Off);
+
+    m_parametre_bouton->setIcon( icon1 );
 }
 
 
