@@ -41,7 +41,6 @@ class vue_fonctions : public QTableWidget
 
     private:
         liste_selectionnable m_selectionnables;
-
         fonctions_conteneur * m_conteneur_courant;
         bool m_bloquer_selection;
 };

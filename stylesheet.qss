@@ -107,8 +107,11 @@ QPushButton#BoutonFonctionWidget
     border-style: solid;
     border-width: 1px;
     border-radius: 10px;
-    margin: 2px;
-    padding: 2px;
+    margin-bottom: 0px;
+    margin-top: 0px;
+    margin-left: 2px;
+    margin-right: 2px;
+    padding: 0px;
     border-color: rgba(0,0,0,255);
     background-color: rgba(0,0,0,32);
 }
@@ -208,20 +211,32 @@ QFrame#separation_inactive{
 
 QLabel#NomFonction {
     margin-left: 10px;
-    font: bold 20px;
+    margin-bottom: 0px;
+    padding: 0px;
+    font: bold 16px;
 }
 
-QTableWidget {
+QTableWidget#s_vue_fonction
+{
     background-color: transparent;
+    border-style: solid;
+    border-width: 1px;
 }
 
-QWidget#logs_compilation_widget {
+QWidget#logs_compilation_widget
+{
+background-color: transparent;
     margin : 0px;
     padding: 0px;
+    border-style: solid;
+    border-width: 1px;
+    border-color: grey;
 }
 
 QListWidget {
-    margin-left : -1px;
-    margin-right : -1px;
+    margin-left : 0px;
+    margin-right : 0px;
+    margin-bottom : -1px;
+    margin-top : -1px;
     padding: 0px;
 }

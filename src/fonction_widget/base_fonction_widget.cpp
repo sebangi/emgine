@@ -31,7 +31,6 @@ void base_fonction_widget::paintEvent(QPaintEvent *)
     style()->drawPrimitive(QStyle::PE_Widget, &opt, &p, this);
 }
 
-
 base_fonction *base_fonction_widget::get_fonction()
 {
     return m_fonction;
@@ -43,7 +42,7 @@ void base_fonction_widget::init()
 
     QVBoxLayout * central_layout = new QVBoxLayout();
     central_layout->setMargin(5);
-    central_layout->setSpacing(5);
+    central_layout->setSpacing(0);
 
     QToolBar * toolbar = new QToolBar();
     toolbar->setMovable(false);

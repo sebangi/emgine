@@ -40,7 +40,7 @@ void logs_compilation_widget::init_widgets()
     setObjectName("logs_compilation_widget");
 
     QStyle* style = QApplication::style();
-    QVBoxLayout * lay = new QVBoxLayout();
+    QHBoxLayout * lay = new QHBoxLayout();
     lay->setMargin(0);
     lay->setSpacing(0);
 
@@ -49,11 +49,8 @@ void logs_compilation_widget::init_widgets()
     groupbox->setLayout(lay);
 
     QToolBar * toolbar = new QToolBar();
+    toolbar->setOrientation(Qt::Vertical);
     toolbar->setMovable(false);
-
-    QWidget* spacer = new QWidget();
-    spacer->setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Expanding);
-    toolbar->addWidget(spacer);
 
     m_cacher_bouton = new QPushButton();
     m_cacher_bouton->setObjectName("BoutonFonctionWidget");    

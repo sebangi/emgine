@@ -33,6 +33,7 @@ void vue_fonctions::ajouter_projet(projet *p)
 
 void vue_fonctions::init()
 {
+    setObjectName("vue_fonctions");
     verticalHeader()->hide();
     setVerticalScrollBarPolicy(Qt::ScrollBarAlwaysOn);
     setSelectionMode(QAbstractItemView::SingleSelection);
@@ -41,6 +42,7 @@ void vue_fonctions::init()
     setColumnHidden(2,true);
     setColumnWidth(0,50);
     horizontalHeader()->setStretchLastSection(true);
+    horizontalHeader()->setHighlightSections(false);
     setShowGrid(false);
 
     setRowCount(0);
@@ -48,6 +50,10 @@ void vue_fonctions::init()
     horizontalHeaderItem(0)->setText("");
     setHorizontalHeaderItem(1, new QTableWidgetItem());
     horizontalHeaderItem(1)->setText("");
+    QFont font = horizontalHeaderItem(1)->font();
+    font.setBold(true);
+    font.setPointSize(10);
+    horizontalHeaderItem(1)->setFont(font);
 
     connect( selectionModel(),
              SIGNAL(selectionChanged(const QItemSelection &, const QItemSelection &)),
@@ -257,7 +263,7 @@ void vue_fonctions::on_vue_fonction_selectionChanged(const QItemSelection &last_
         int row = currentRow();
 
         if ( row >= 0 )
-            ( (objet_selectionnable *)( ( (base_fonction_widget*)( cellWidget(row,1) ) )->get_fonction() ) ) ->selectionner();
+            ( (objet_selectionnable *)( ( (base_fonction_widget*)( cellWidget(row,1) ) )->get_fonction() ) )->selectionner();
     }
 }
 
