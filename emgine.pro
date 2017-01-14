@@ -102,5 +102,6 @@ FORMS    += \
     fenetre_principale.ui
 
 DISTFILES += \
-    stylesheet.qss
+    stylesheet.qss \
+    TODO.txt
 

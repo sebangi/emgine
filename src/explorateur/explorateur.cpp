@@ -62,23 +62,39 @@ void explorateur::on_externe_activation_fonction_change(base_fonction * f)
     map_selectionnable::iterator it = m_selectionnables.find(f);
 
     if ( it != m_selectionnables.end() )
-        mettre_a_jour_activation(it->second, ((noeud_fonction*)(it->second))->get_fonction()->est_active() );
+        mettre_a_jour_activation(it->second, ((noeud_fonction*)(it->second))->get_fonction()->est_active(), true );
 }
 
-void explorateur::mettre_a_jour_activation( base_noeud* n, bool actif )
+void explorateur::mettre_a_jour_activation( base_noeud* n, bool actif, bool change_expansion )
 {
-    if ( actif )
+    if ( change_expansion )
     {
-        if ( ! n->isExpanded() )
-            n->setExpanded( n->get_save_expanded() );
-    }
-    else
-    {
-        n->save_expanded();
-        n->setExpanded(false);
+        if ( actif )
+        {
+            if ( ! n->isExpanded() )
+                n->setExpanded( n->get_save_expanded() );
+        }
+        else
+        {
+            n->save_expanded();
+            n->setExpanded(false);
+        }
     }
 
-    n->update_style( actif ); 
+    for ( int i = 0; i != n->childCount(); ++i )
+        {
+            bool change = true;
+
+            if ( actif )
+                if ( n->child(i)->type() == base_noeud::type_fonction )
+                    if ( ! ((noeud_fonction*)(n->child(i)))->get_fonction()->est_active() )
+                        change = false;
+
+            if ( change )
+                mettre_a_jour_activation( (base_noeud*)n->child(i), actif, false );
+        }
+
+    n->update_style( actif );
 }
 
 void explorateur::on_externe_objet_selectionne(objet_selectionnable *obj)
@@ -141,7 +157,6 @@ void explorateur::ajouter_projet(projet *p)
         for ( projet::fonctions_iterateur it = p->fonctions_begin(); it != p->fonctions_end(); ++it )
             ajouter_fonction( *it );
 
-        std::cout << "projet etendu = "  <<  p->est_entendu() << std::endl;
         noeud->setExpanded( p->est_entendu() );
     }
 }
@@ -160,8 +175,8 @@ void explorateur::ajouter_fonction(base_fonction* f)
         for ( base_fonction::parametres_iterateur it_p = f->parametres_begin(); it_p != f->parametres_end(); ++it_p )
             ajouter_parametre( it_p->second );
 
+        mettre_a_jour_activation(noeud, f->est_active(), false);
         noeud->setExpanded( f->est_entendu() );
-        mettre_a_jour_activation(noeud, f->est_active());
 
         connect( f, SIGNAL(signal_destruction_fonction(base_fonction*)),
                  this, SLOT(on_externe_supprimer_fonction(base_fonction*)));
@@ -346,11 +361,6 @@ void explorateur::dropEvent(QDropEvent * event)
     {
         event->ignore();
     }
-}
-
-void explorateur::on_set_noeud_courant()
-{
-    m_noeud_context->get_objet()->selectionner();
 }
 
 void explorateur::on_ajout_source()

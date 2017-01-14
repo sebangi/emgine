@@ -32,7 +32,7 @@ class explorateur : public QTreeWidget
         base_noeud *get_noeud_context() const;
         void ajouter_parametre(base_parametre* f);
         void ajouter_selectionnable(objet_selectionnable * obj, base_noeud* noeud);
-        void mettre_a_jour_activation( base_noeud* n, bool actif );
+        void mettre_a_jour_activation( base_noeud* n, bool actif, bool change_expansion );
 
     private:
         void dragMoveEvent(QDragMoveEvent *e);
@@ -51,7 +51,6 @@ class explorateur : public QTreeWidget
         void on_customContextMenuRequested(const QPoint &pos);
         void on_currentItemChanged(QTreeWidgetItem *item);
 
-        void on_set_noeud_courant();
         void on_ajout_source();
         void on_ajout_sortie();
         void on_ajout_fonction();

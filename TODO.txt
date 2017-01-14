@@ -1,0 +1,28 @@
+La liste des choses à faire :
+
+ETAPE 1 : PRIORITAIRE
+* rétablir les menus des noeuds
+* réflexion sur le stockage des projets, textes sources...
+* sauvegarde d'un projet (et enregistrer sous)
+* reflexion et codage de la copie
+* sauvegarde d'une sortie
+* dans les sorties, ajouter la possibilité de voir le paramétrage induisant le résultat
+    -> pour cela : probablement complexifier la classe texte, voire travailler avec des QList<texte>
+* verifier la gestion des disconnect
+* verifier les delete
+* factoriser fonction_cesar.executer
+* vérifier les TODO restants et les retirer
+* Compléter le menu de l'application
+
+ETAPE 2 : VERSION 0.1
+* réflexion poussée sur les fonctionnalités de base à ajouter avant d'ajouter des fonctions
+    -> les coder
+* verifier ordre methodes
+* sort alphabetique (include + .pro)
+* documentation
+* faire sous git la version 0.1
+
+ETAPE 3 : NON PRIORITAIRE
+* gestion les dictionnaires
+* ajouter la fonction de source texte fichier (éditable et réenregistrable)
+* ajouter des fonctions de conversion
