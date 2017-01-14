@@ -26,12 +26,12 @@ fonction_cesar::fonction_cesar( fonctions_conteneur * conteneur )
     set_id(f_conversion_cesar);    
     augmenter_max_niveau_visibilite(1);
 
-    ajouter_parametre( PARAM_DECALAGE,  new base_parametre( this, "Décalage", "Le décalage à réaliser sur une ligne. Un seul mot par ligne", true,
-                                                            type_element_caractere | type_element_entier) );
-    ajouter_parametre( PARAM_SOUSTRACTIF, new base_parametre( this, "Soustractif", "Indique si le décalage est soustractif. Un seul mot par ligne", false,
-                                                              type_element_booleen) );
-    ajouter_parametre( PARAM_ALPHABET, new base_parametre( this, "Alphabet", "Alphabet utilisé sur une ligne. Un seul mot par ligne", false,
-                                                           type_element_booleen) );
+    ajouter_parametre( PARAM_DECALAGE,
+                       new base_parametre( this, "Décalage", "Le décalage à réaliser sur une ligne. Un seul mot par ligne", true) );
+    ajouter_parametre( PARAM_SOUSTRACTIF,
+                       new base_parametre( this, "Soustractif", "Indique si le décalage est soustractif. Un seul mot par ligne", false) );
+    ajouter_parametre( PARAM_ALPHABET,
+                       new base_parametre( this, "Alphabet", "Alphabet utilisé sur une ligne. Un seul mot par ligne", false) );
 }
 
 /*! --------------------------------------------------------------------------------------

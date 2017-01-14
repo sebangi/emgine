@@ -95,7 +95,8 @@ HEADERS  += \
         entete/fonction_widget/selecteur_fonction_dialog.h \
         entete/fonction_widget/vue_fonctions.h \
     entete/projet/objet_selectionnable.h \
-    entete/explorateur/noeud_fonctions_conteneur.h
+    entete/explorateur/noeud_fonctions_conteneur.h \
+    entete/element/type_element.h
 
 FORMS    += \
     fenetre_principale.ui

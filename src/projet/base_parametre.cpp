@@ -14,7 +14,7 @@
 
 base_parametre::base_parametre(objet_selectionnable * parent, QString nom, QString aide, bool requis)
     : fonctions_conteneur(parent), m_fonction_parent((base_fonction*)parent), m_nom(nom), m_aide(aide),
-      m_requis(requis), m_type(type) , m_texte_out()
+      m_requis(requis), m_texte_out()
 {
 
 }

@@ -129,3 +129,9 @@ void base_parametre_widget::mouseDoubleClickEvent( QMouseEvent * e )
         m_parametre->selectionner();
 }
 
+void base_parametre_widget::mouseReleaseEvent( QMouseEvent * e )
+{
+    if ( e->button() == Qt::LeftButton )
+        m_parametre->selectionner();
+}
+

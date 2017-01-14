@@ -128,11 +128,19 @@ void vue_fonctions::ajouter_vue_fonction(base_fonction* fonction)
     horizontalHeader()->setStretchLastSection(true);
     verticalHeader()->setSectionResizeMode(QHeaderView::ResizeToContents);
 
-    QStyle* style = QApplication::style();
     QPushButton * image = new QPushButton();
     image->setObjectName("NomParametre");
-    image->setIcon(style->standardIcon( QStyle::SP_MediaPlay ));
+    QIcon icon1;
+    if ( fonction->get_type() == base_fonction::fonction_source )
+        icon1.addFile(QString::fromUtf8("icons/selection_source.png"), QSize(), QIcon::Normal, QIcon::Off);
+    else if ( fonction->get_type() == base_fonction::fonction_conversion )
+        icon1.addFile(QString::fromUtf8("icons/selection_conversion.png"), QSize(), QIcon::Normal, QIcon::Off);
+    else
+        icon1.addFile(QString::fromUtf8("icons/selection_sortie.png"), QSize(), QIcon::Normal, QIcon::Off);
+
+    image->setIcon(icon1);
     image->setIconSize(QSize(32,32));
+
     setCellWidget(rowCount() -1, 0, image);
     image->setEnabled(false);
 }
@@ -192,7 +200,7 @@ void vue_fonctions::on_externe_supprimer_fonction(base_fonction *f)
         if ( widget->get_fonction() == f )
         {
             disconnect( widget, SIGNAL(signal_bfw_size_change()),
-                          this, SLOT(on_externe_fonction_widget_size_change()));
+                        this, SLOT(on_externe_fonction_widget_size_change()));
 
             trouve = true;
             m_bloquer_selection = true;

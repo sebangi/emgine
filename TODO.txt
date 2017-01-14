@@ -1,7 +1,7 @@
 La liste des choses à faire :
 
 ETAPE 1 : PRIORITAIRE
-* rétablir les menus des noeuds
+* compléter les menus des noeuds
 * réflexion sur le stockage des projets, textes sources...
 * sauvegarde d'un projet (et enregistrer sous)
 * reflexion et codage de la copie
@@ -11,6 +11,7 @@ ETAPE 1 : PRIORITAIRE
 * verifier la gestion des disconnect
 * passer s_vue_log en private
 * verifier les delete
+* reflexion sur les parametre de fonction_texte : faut-il itérer sur les lignes ?
 * factoriser fonction_cesar.executer
 * vérifier les TODO restants et les retirer
 * Compléter le menu de l'application
