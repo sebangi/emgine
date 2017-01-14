@@ -34,12 +34,20 @@ void objet_selectionnable::selectionner()
     }
 }
 
-objet_selectionnable *objet_selectionnable::get_conteneur()
+fonctions_conteneur * objet_selectionnable::get_conteneur()
 {
     if ( est_conteneur() )
-        return this;
+        return (fonctions_conteneur *)this;
     else
         return m_objet_parent->get_conteneur();
+}
+
+projet * objet_selectionnable::get_projet()
+{
+    if ( est_projet() )
+        return (projet *)this;
+    else
+        return m_objet_parent->get_projet();
 }
 
 bool objet_selectionnable::est_conteneur() const

@@ -125,6 +125,10 @@ void fenetre_principale::creer_widgets()
     s_explorateur = new explorateur(this);
     s_vue_fonctions = new vue_fonctions(this);
     s_vue_logs = new logs_compilation_widget(this);
+
+    connect( s_explorateur, SIGNAL(signal_e_ajout_source(fonctions_conteneur *, base_fonction::type_fonction)),
+             this, SLOT(on_externe_e_ajout_source(fonctions_conteneur *, base_fonction::type_fonction)));
+
 }
 
 /** --------------------------------------------------------------------------------------
@@ -224,9 +228,6 @@ void fenetre_principale::ajouter_fonction( fonctions_conteneur * conteneur, base
 
         if ( r == QDialog::Accepted )
         {
-            // TODO : gérer la ligne suivante
-            // set_noeud_courant(p);
-
             base_fonction * f = dlg->get_fonction();
 
             if ( f != NULL )
@@ -461,5 +462,10 @@ void fenetre_principale::on_compiler_click()
 {
     if ( objet_selectionnable::existe_selection() )
         compiler( objet_selectionnable::get_projet_courant() );
+}
+
+void fenetre_principale::on_externe_e_ajout_source(fonctions_conteneur *conteneur, base_fonction::type_fonction type)
+{
+    ajouter_fonction(conteneur, type);
 }
 

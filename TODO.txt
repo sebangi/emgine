@@ -9,6 +9,7 @@ ETAPE 1 : PRIORITAIRE
 * dans les sorties, ajouter la possibilité de voir le paramétrage induisant le résultat
     -> pour cela : probablement complexifier la classe texte, voire travailler avec des QList<texte>
 * verifier la gestion des disconnect
+* passer s_vue_log en private
 * verifier les delete
 * factoriser fonction_cesar.executer
 * vérifier les TODO restants et les retirer

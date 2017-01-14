@@ -17,7 +17,8 @@ class objet_selectionnable : public QObject
         ~objet_selectionnable();
 
         void selectionner();
-        objet_selectionnable *get_conteneur();
+        fonctions_conteneur *get_conteneur();
+        projet * get_projet();
         virtual bool est_conteneur() const;
         virtual bool est_projet() const;
 

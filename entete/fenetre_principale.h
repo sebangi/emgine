@@ -73,6 +73,8 @@ class fenetre_principale : public QMainWindow
         void on_ouvrir_projet_click();
         void on_compiler_click();
 
+        void on_externe_e_ajout_source(fonctions_conteneur * conteneur, base_fonction::type_fonction type);
+
     private:
         /** \brief La table des fonctions. */
         static vue_fonctions * s_vue_fonctions;

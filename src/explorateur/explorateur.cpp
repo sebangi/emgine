@@ -265,9 +265,8 @@ void explorateur::on_customContextMenuRequested(const QPoint &pos)
     if ( noeud_context == NULL )
         return;
 
-    // TODO
-    /*
-    if ( noeud_context->type() == base_noeud::type_projet && get_noeud_courant() != noeud_context )
+    if ( noeud_context->get_objet()->est_projet() &&
+         objet_selectionnable::get_projet_courant() != noeud_context->get_objet()->get_projet() )
     {
         QIcon icon1;
         icon1.addFile(QString::fromUtf8("/usr/share/icons/oxygen/32x32/actions/arrow-right.png"), QSize(), QIcon::Normal, QIcon::Off);
@@ -277,7 +276,7 @@ void explorateur::on_customContextMenuRequested(const QPoint &pos)
         menu.addAction(newAct1);
     }
 
-    if ( noeud_context->type() == base_noeud::type_projet || noeud_context->type() == base_noeud::type_parametre )
+    if ( noeud_context->get_objet()->est_conteneur() )
     {
         QIcon icon2;
         icon2.addFile(QString::fromUtf8("/usr/share/icons/oxygen/32x32/actions/arrow-right.png"), QSize(), QIcon::Normal, QIcon::Off);
@@ -290,7 +289,7 @@ void explorateur::on_customContextMenuRequested(const QPoint &pos)
         icon3.addFile(QString::fromUtf8("/usr/share/icons/oxygen/32x32/actions/arrow-right.png"), QSize(), QIcon::Normal, QIcon::Off);
         QAction *newAct3 = new QAction(icon3, tr("&Ajouter une fonction"), this);
         newAct3->setStatusTip(tr("Ajouter une fonction"));
-        connect(newAct3, SIGNAL(triggered()), this, SLOT(on_ajout_fonction()));
+        connect(newAct3, SIGNAL(triggered()), this, SLOT(on_ajout_fonction_conversion()));
         menu.addAction(newAct3);
 
         QIcon icon4;
@@ -300,7 +299,6 @@ void explorateur::on_customContextMenuRequested(const QPoint &pos)
         connect(newAct4, SIGNAL(triggered()), this, SLOT(on_ajout_sortie()));
         menu.addAction(newAct4);
     }
-    */
 
     QPoint pt(pos);
     menu.exec( mapToGlobal(pos) );
@@ -365,19 +363,16 @@ void explorateur::dropEvent(QDropEvent * event)
 
 void explorateur::on_ajout_source()
 {
-    // TODO ?
-    // m_fenetre_principale->ajouter_source( m_noeud_context );
+    emit signal_e_ajout_source(m_noeud_context->get_fonctions_conteneur(), base_fonction::fonction_source);
 }
 
 void explorateur::on_ajout_sortie()
 {
-    // TODO ?
-    // m_fenetre_principale->ajouter_sortie( m_noeud_context );
+    emit signal_e_ajout_source(m_noeud_context->get_fonctions_conteneur(), base_fonction::fonction_sortie);
 }
 
-void explorateur::on_ajout_fonction()
+void explorateur::on_ajout_fonction_conversion()
 {
-    // TODO ?
-    // m_fenetre_principale->ajouter_conversion( m_noeud_context );
+    emit signal_e_ajout_source(m_noeud_context->get_fonctions_conteneur(), base_fonction::fonction_conversion);
 }
 
