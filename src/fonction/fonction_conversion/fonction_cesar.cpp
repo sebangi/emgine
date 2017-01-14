@@ -39,7 +39,7 @@ fonction_cesar::fonction_cesar( fonctions_conteneur * conteneur )
 */
 void fonction_cesar::executer( compilateur &compil, const texte & texte_in, texte & texte_out )
 {    
-    construire_alphabet();
+    construire_alphabet(compil);
 
     executer_selon_soustractif(compil, texte_in, texte_out);
 }
@@ -62,7 +62,7 @@ QString fonction_cesar::get_aide() const
 /*! --------------------------------------------------------------------------------------
  \brief Indique si la fonction est valide.
 */
-bool fonction_cesar::est_valide() const
+bool fonction_cesar::est_valide(logs_compilation_widget * vue_logs) const
 {
     return true;
 }
@@ -72,7 +72,7 @@ QString fonction_cesar::get_valeur_courte() const
     return "[césar]";
 }
 
-void fonction_cesar::construire_alphabet()
+void fonction_cesar::construire_alphabet(compilateur &compil)
 {
     m_position_alphabet.clear();
     m_alphabet.clear();
@@ -81,7 +81,7 @@ void fonction_cesar::construire_alphabet()
 
     if ( t_alphabet.empty() )
     {
-        fenetre_principale::s_vue_logs->ajouter_log
+        compil.get_vue_logs()->ajouter_log
                 ( log_compilation( log_compilation::LOG_WARNING, (base_fonction*)this,
                                    "Le paramètre alphabet est vide.") );
     }
@@ -120,7 +120,7 @@ void fonction_cesar::executer_selon_soustractif( compilateur &compil, const text
 
     if ( t_soustractif.empty() )
     {
-        fenetre_principale::s_vue_logs->ajouter_log
+        compil.get_vue_logs()->ajouter_log
                 ( log_compilation( log_compilation::LOG_WARNING, (base_fonction*)this,
                                    "Le paramètre soustractif est vide.") );
     }
@@ -130,7 +130,7 @@ void fonction_cesar::executer_selon_soustractif( compilateur &compil, const text
         {
             if ( it_l->empty() )
             {
-                fenetre_principale::s_vue_logs->ajouter_log
+                compil.get_vue_logs()->ajouter_log
                         ( log_compilation( log_compilation::LOG_WARNING, (base_fonction*)this,
                                            "Le paramètre soustractif est vide sur une ligne.") );
             }
@@ -140,7 +140,7 @@ void fonction_cesar::executer_selon_soustractif( compilateur &compil, const text
 
                 if ( it_m->empty() )
                 {
-                    fenetre_principale::s_vue_logs->ajouter_log
+                    compil.get_vue_logs()->ajouter_log
                             ( log_compilation( log_compilation::LOG_WARNING, (base_fonction*)this,
                                                "Le paramètre soustractif est vide sur une ligne.") );
                 }
@@ -166,7 +166,7 @@ void fonction_cesar::executer_selon_decalage( compilateur &compil, const texte &
 
     if ( t_decalage.empty() )
     {
-        fenetre_principale::s_vue_logs->ajouter_log
+        compil.get_vue_logs()->ajouter_log
                 ( log_compilation( log_compilation::LOG_WARNING, (base_fonction*)this,
                                    "Le paramètre decalage est vide.") );
     }
@@ -176,7 +176,7 @@ void fonction_cesar::executer_selon_decalage( compilateur &compil, const texte &
         {
             if ( it_l->empty() )
             {
-                fenetre_principale::s_vue_logs->ajouter_log
+                compil.get_vue_logs()->ajouter_log
                         ( log_compilation( log_compilation::LOG_WARNING, (base_fonction*)this,
                                            "Le paramètre decalage est vide sur une ligne.") );
             }
@@ -186,7 +186,7 @@ void fonction_cesar::executer_selon_decalage( compilateur &compil, const texte &
 
                 if ( it_m->empty() )
                 {
-                    fenetre_principale::s_vue_logs->ajouter_log
+                    compil.get_vue_logs()->ajouter_log
                             ( log_compilation( log_compilation::LOG_WARNING, (base_fonction*)this,
                                                "Le paramètre decalage est vide sur une ligne.") );
                 }

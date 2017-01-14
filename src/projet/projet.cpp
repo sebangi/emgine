@@ -160,7 +160,7 @@ void projet::set_nom_fichier(const QString &nom_fichier)
     m_nom_fichier = nom_fichier;
 }
 
-bool projet::est_valide()
+bool projet::est_valide(logs_compilation_widget * vue_logs)
 {
     bool result = true;
 
@@ -171,14 +171,14 @@ bool projet::est_valide()
 
     if ( actifs.size() == 0 )
     {
-        fenetre_principale::s_vue_logs->ajouter_log
+        vue_logs->ajouter_log
                 ( log_compilation( log_compilation::LOG_ERREUR, this,
                                    "Le projet \"" + m_nom + "\" n'a aucune fonction active") );
         result = false;
     }
     else if ( ! actifs.front()->get_type() == base_fonction::fonction_source )
     {
-        fenetre_principale::s_vue_logs->ajouter_log
+        vue_logs->ajouter_log
                 ( log_compilation( log_compilation::LOG_ERREUR, this,
                                    "Le projet \"" + m_nom + "\" doit commencer par une fonction source active") );
         result = false;
@@ -186,7 +186,7 @@ bool projet::est_valide()
 
     for ( fonctions_iterateur it = actifs.begin(); it != actifs.end(); ++it )
     {
-        bool result_fonction = (*it)->est_fonction_valide();
+        bool result_fonction = (*it)->est_fonction_valide(vue_logs);
         result = result && result_fonction;
     }
 

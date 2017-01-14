@@ -18,7 +18,7 @@ noeud_fonction::noeud_fonction( base_fonction * f )
     if ( f->get_type() == base_fonction::fonction_source )
         icon1.addFile(QString::fromUtf8("icons/icone_source.png"), QSize(), QIcon::Normal, QIcon::Off);
     else if ( f->get_type() == base_fonction::fonction_conversion )
-        icon1.addFile(QString::fromUtf8("icons/icone_fonction.png"), QSize(), QIcon::Normal, QIcon::Off);
+        icon1.addFile(QString::fromUtf8("icons/icone_conversion.png"), QSize(), QIcon::Normal, QIcon::Off);
     else if ( f->get_type() == base_fonction::fonction_sortie )
         icon1.addFile(QString::fromUtf8("icons/icone_sortie.png"), QSize(), QIcon::Normal, QIcon::Off);
     setIcon( 0, icon1 );

@@ -88,7 +88,6 @@ class fenetre_principale : public QMainWindow
         /** \brief La liste des projets ouverts. */
         static type_projets s_projets;
 
-    public:
         /** \brief Le composant de compilation. */
         static logs_compilation_widget * s_vue_logs;
 

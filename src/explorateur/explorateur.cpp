@@ -38,6 +38,10 @@ explorateur::explorateur(QWidget *parent)
             this,SLOT(on_currentItemChanged(QTreeWidgetItem*)));
 }
 
+explorateur::~explorateur()
+{
+}
+
 projet * explorateur::get_projet_selon_nom_fichier(const QString &nom_fichier)
 {
     projet * p = NULL;
@@ -265,37 +269,26 @@ void explorateur::on_customContextMenuRequested(const QPoint &pos)
     if ( noeud_context == NULL )
         return;
 
-    if ( noeud_context->get_objet()->est_projet() &&
-         objet_selectionnable::get_projet_courant() != noeud_context->get_objet()->get_projet() )
-    {
-        QIcon icon1;
-        icon1.addFile(QString::fromUtf8("/usr/share/icons/oxygen/32x32/actions/arrow-right.png"), QSize(), QIcon::Normal, QIcon::Off);
-        QAction *newAct1 = new QAction(icon1, tr("&Définir comme projet actif"), this);
-        newAct1->setStatusTip(tr("Définir comme projet actif"));
-        connect(newAct1, SIGNAL(triggered()), this, SLOT(on_set_noeud_courant()));
-        menu.addAction(newAct1);
-    }
-
     if ( noeud_context->get_objet()->est_conteneur() )
     {
         QIcon icon2;
-        icon2.addFile(QString::fromUtf8("/usr/share/icons/oxygen/32x32/actions/arrow-right.png"), QSize(), QIcon::Normal, QIcon::Off);
+        icon2.addFile(QString::fromUtf8("icons/ajout_source.png"), QSize(), QIcon::Normal, QIcon::Off);
         QAction *newAct2 = new QAction(icon2, tr("&Ajouter une source"), this);
         newAct2->setStatusTip(tr("Ajouter une source"));
         connect(newAct2, SIGNAL(triggered()), this, SLOT(on_ajout_source()));
         menu.addAction(newAct2);
 
         QIcon icon3;
-        icon3.addFile(QString::fromUtf8("/usr/share/icons/oxygen/32x32/actions/arrow-right.png"), QSize(), QIcon::Normal, QIcon::Off);
-        QAction *newAct3 = new QAction(icon3, tr("&Ajouter une fonction"), this);
-        newAct3->setStatusTip(tr("Ajouter une fonction"));
+        icon3.addFile(QString::fromUtf8("icons/ajout_conversion.png"), QSize(), QIcon::Normal, QIcon::Off);
+        QAction *newAct3 = new QAction(icon3, tr("&Ajouter une conversion"), this);
+        newAct3->setStatusTip(tr("Ajouter une conversion"));
         connect(newAct3, SIGNAL(triggered()), this, SLOT(on_ajout_fonction_conversion()));
         menu.addAction(newAct3);
 
         QIcon icon4;
-        icon4.addFile(QString::fromUtf8("/usr/share/icons/oxygen/32x32/actions/arrow-right.png"), QSize(), QIcon::Normal, QIcon::Off);
+        icon4.addFile(QString::fromUtf8("icons/ajout_sortie.png"), QSize(), QIcon::Normal, QIcon::Off);
         QAction *newAct4 = new QAction(icon4, tr("&Ajouter une sortie"), this);
-        newAct4->setStatusTip(tr("Ajouter une source"));
+        newAct4->setStatusTip(tr("Ajouter une sortie"));
         connect(newAct4, SIGNAL(triggered()), this, SLOT(on_ajout_sortie()));
         menu.addAction(newAct4);
     }

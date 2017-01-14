@@ -6,8 +6,6 @@
 
 #include "entete/fonction/fonction_sortie/fonction_base_sortie.h"
 
-class base_fonction_widget;
-
 class fonction_sortie_texte : public fonction_base_sortie
 {
         Q_OBJECT
@@ -28,7 +26,7 @@ class fonction_sortie_texte : public fonction_base_sortie
         void signal_fst_texte_modifie();
 
     private:
-        bool est_valide() const;
+        bool est_valide(logs_compilation_widget * vue_logs) const;
 
     private:
         texte m_texte;

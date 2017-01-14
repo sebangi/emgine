@@ -11,6 +11,7 @@
 
 class base_fonction;
 class noeud_parametre;
+class logs_compilation_widget;
 
 /**
  \brief Classe décrivant un parametre d'une fonction.
@@ -21,7 +22,7 @@ class base_parametre : public fonctions_conteneur
         Q_OBJECT
 
     public:
-        base_parametre(objet_selectionnable * parent, QString nom, QString aide, bool requis, type_element m_type);
+        base_parametre(objet_selectionnable * parent, QString nom, QString aide, bool requis);
         ~base_parametre();
 
         void sauvegarder( QXmlStreamWriter & stream ) const;
@@ -43,7 +44,7 @@ class base_parametre : public fonctions_conteneur
         void set_texte_out(const texte &texte_out);
         void set_id(const type_id_parametre &value);
 
-        bool est_valide();
+        bool est_valide(logs_compilation_widget * vue_logs);
 
         void charger( QXmlStreamReader & xml );
 

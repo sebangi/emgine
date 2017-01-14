@@ -38,7 +38,7 @@ void fonction_sortie_texte::executer( compilateur &compil, const texte & texte_i
 /*! --------------------------------------------------------------------------------------
  \brief Indique si la fonction est valide.
 */
-bool fonction_sortie_texte::est_valide() const
+bool fonction_sortie_texte::est_valide(logs_compilation_widget * vue_logs) const
 {
     return true;
 }

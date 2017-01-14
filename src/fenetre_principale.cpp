@@ -56,8 +56,6 @@ fenetre_principale::fenetre_principale(QWidget *parent) :
     resize(QSize(1000,900));
 
     init_test();
-
-    s_compilateur = new compilateur();
 }
 
 /** --------------------------------------------------------------------------------------
@@ -125,6 +123,7 @@ void fenetre_principale::creer_widgets()
     s_explorateur = new explorateur(this);
     s_vue_fonctions = new vue_fonctions(this);
     s_vue_logs = new logs_compilation_widget(this);
+    s_compilateur = new compilateur(s_vue_logs);
 
     connect( s_explorateur, SIGNAL(signal_e_ajout_source(fonctions_conteneur *, base_fonction::type_fonction)),
              this, SLOT(on_externe_e_ajout_source(fonctions_conteneur *, base_fonction::type_fonction)));
@@ -254,6 +253,7 @@ void fenetre_principale::ajouter_fonction( fonctions_conteneur * conteneur, base
 void fenetre_principale::init_test()
 {
     projet * p  = new projet();
+    p->set_nom("Exemple");
     ajouter_projet(p);
 
     ajouter_fonction( p, new fonction_source_texte(p, "UNHBH TM SDRS !"), true, true );

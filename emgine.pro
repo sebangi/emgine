@@ -68,7 +68,6 @@ HEADERS  += \
         entete/element/ligne.h \
         entete/element/mot.h \
         entete/element/texte.h \
-        entete/element/type_element.h \
         entete/explorateur/base_noeud.h \
         entete/explorateur/explorateur.h \
         entete/explorateur/noeud_fonction.h \

@@ -12,8 +12,9 @@
 
 #include <iostream>
 
-base_parametre::base_parametre(objet_selectionnable * parent, QString nom, QString aide, bool requis, type_element type)
-    : fonctions_conteneur(parent), m_fonction_parent((base_fonction*)parent), m_nom(nom), m_aide(aide), m_requis(requis), m_type(type) , m_texte_out()
+base_parametre::base_parametre(objet_selectionnable * parent, QString nom, QString aide, bool requis)
+    : fonctions_conteneur(parent), m_fonction_parent((base_fonction*)parent), m_nom(nom), m_aide(aide),
+      m_requis(requis), m_type(type) , m_texte_out()
 {
 
 }
@@ -116,7 +117,7 @@ void base_parametre::set_id(const type_id_parametre &value)
     m_id = value;
 }
 
-bool base_parametre::est_valide()
+bool base_parametre::est_valide(logs_compilation_widget * vue_logs)
 {
     bool result = true;
 
@@ -127,7 +128,7 @@ bool base_parametre::est_valide()
 
     if ( actifs.size() == 0 )
     {
-        fenetre_principale::s_vue_logs->ajouter_log
+        vue_logs->ajouter_log
                 ( log_compilation( log_compilation::LOG_ERREUR, this,
                                    "Le parametre \"" + m_nom +
                                    "\" de la fonction \"" + m_fonction_parent->get_nom() +
@@ -136,7 +137,7 @@ bool base_parametre::est_valide()
     }
     else if ( ! actifs.front()->get_type() == base_fonction::fonction_source )
     {
-        fenetre_principale::s_vue_logs->ajouter_log
+        vue_logs->ajouter_log
                 ( log_compilation( log_compilation::LOG_ERREUR, this,
                                    "Le parametre \"" + m_nom +
                                    "\" de la fonction \"" + m_fonction_parent->get_nom() +
@@ -145,7 +146,7 @@ bool base_parametre::est_valide()
     }
 
     for ( fonctions_iterateur it = actifs.begin(); it != actifs.end(); ++it )
-        result = result && (*it)->est_fonction_valide();
+        result = result && (*it)->est_fonction_valide(vue_logs);
 
     return result;
 }

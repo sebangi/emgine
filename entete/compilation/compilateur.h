@@ -11,13 +11,16 @@ class projet;
 class fonction;
 class parametre;
 class log_compilation;
+class logs_compilation_widget;
 
 class compilateur
 {
     public:
-        compilateur();
+        compilateur(logs_compilation_widget * get_vue_logs);
 
         void compiler(projet* p);
+
+        logs_compilation_widget * get_vue_logs() const;
 
     private:
         bool est_valide(projet *p);
@@ -30,6 +33,7 @@ class compilateur
     private:
         bool m_en_cours;
         QStack< texte > m_pile_textes;
+        logs_compilation_widget * m_vue_logs;
 };
 
 #endif // COMPILATEUR_H

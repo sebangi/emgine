@@ -17,6 +17,7 @@
 class noeud_fonction;
 class base_fonction_widget;
 class compilateur;
+class logs_compilation_widget;
 
 /**
  \brief Classe décrivant une fonction de conversion d'un texte.
@@ -55,7 +56,7 @@ class base_fonction : public objet_selectionnable
         QString get_info_bulle() const;
 
         void sauvegarder( QXmlStreamWriter & stream ) const;
-        bool est_fonction_valide() const;
+        bool est_fonction_valide(logs_compilation_widget * vue_logs) const;
         virtual QString get_aide() const = 0;
         virtual QString get_valeur_courte() const = 0;
 
@@ -96,7 +97,7 @@ class base_fonction : public objet_selectionnable
     private:
         void charger_parametres(QXmlStreamReader & xm);
         void charger_parametre(QXmlStreamReader & xm);
-        virtual bool est_valide() const = 0;
+        virtual bool est_valide(logs_compilation_widget * vue_logs) const = 0;
 
     protected:
         void ajouter_parametre(type_id_parametre nom, base_parametre* p);

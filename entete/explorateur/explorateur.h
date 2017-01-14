@@ -22,6 +22,7 @@ class explorateur : public QTreeWidget
 
     public:
         explorateur(QWidget *parent = 0);
+        ~explorateur();
 
         projet * get_projet_selon_nom_fichier(const QString& nom_fichier);
         void ajouter_projet(projet* p);

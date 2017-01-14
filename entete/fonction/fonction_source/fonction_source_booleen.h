@@ -3,8 +3,6 @@
 
 #include "entete/fonction/fonction_source/fonction_base_source.h"
 
-class base_fonction_widget;
-
 class fonction_source_booleen : public fonction_base_source
 {
     public:
@@ -22,7 +20,7 @@ class fonction_source_booleen : public fonction_base_source
         void set_string_valeur(const QString & valeur);
 
     private:
-        bool est_valide() const;
+        bool est_valide(logs_compilation_widget * vue_logs) const;
 
     private:
         bool m_valeur;
