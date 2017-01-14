@@ -35,6 +35,7 @@ void projet::sauvegarder( QXmlStreamWriter & stream )
     stream.writeStartElement("projet");
     stream.writeTextElement("nom", m_nom);
     stream.writeTextElement("description", m_description);
+    objet_selectionnable::sauvegarder(stream);
     stream.writeStartElement("fonctions");
 
     for ( projet::fonctions_iterateur it = fonctions_begin(); it != fonctions_end(); ++it )
@@ -59,6 +60,8 @@ void projet::charger(QXmlStreamReader & xml)
             charger_nom(xml);
         else if (xml.name() == "description")
             charger_description(xml);
+        else if (xml.name() == "objet_selectionnable")
+            objet_selectionnable::charger(xml);
         else if (xml.name() == "fonctions")
             charger_fonctions(xml);
         else

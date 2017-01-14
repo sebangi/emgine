@@ -30,6 +30,10 @@ explorateur::explorateur(QWidget *parent)
             this, SLOT(on_customContextMenuRequested(const QPoint &)));
     connect(this, SIGNAL(itemClicked(QTreeWidgetItem*, int)),
             this, SLOT(on_itemClicked(QTreeWidgetItem*, int)));
+    connect(this, SIGNAL(itemExpanded(QTreeWidgetItem*)),
+            this, SLOT(on_itemExpanded(QTreeWidgetItem*)));
+    connect(this, SIGNAL(itemCollapsed(QTreeWidgetItem*)),
+            this, SLOT(on_itemCollapsed(QTreeWidgetItem*)));
     connect(this,SIGNAL(currentItemChanged(QTreeWidgetItem*,QTreeWidgetItem*)),
             this,SLOT(on_currentItemChanged(QTreeWidgetItem*)));
 }
@@ -137,7 +141,8 @@ void explorateur::ajouter_projet(projet *p)
         for ( projet::fonctions_iterateur it = p->fonctions_begin(); it != p->fonctions_end(); ++it )
             ajouter_fonction( *it );
 
-        expandItem(noeud);
+        std::cout << "projet etendu = "  <<  p->est_entendu() << std::endl;
+        noeud->setExpanded( p->est_entendu() );
     }
 }
 
@@ -155,7 +160,8 @@ void explorateur::ajouter_fonction(base_fonction* f)
         for ( base_fonction::parametres_iterateur it_p = f->parametres_begin(); it_p != f->parametres_end(); ++it_p )
             ajouter_parametre( it_p->second );
 
-        expandItem(noeud);
+        noeud->setExpanded( f->est_entendu() );
+        mettre_a_jour_activation(noeud, f->est_active());
 
         connect( f, SIGNAL(signal_destruction_fonction(base_fonction*)),
                  this, SLOT(on_externe_supprimer_fonction(base_fonction*)));
@@ -182,7 +188,7 @@ void explorateur::ajouter_parametre(base_parametre* p)
         for ( base_parametre::fonctions_iterateur it_f = p->fonctions_begin(); it_f != p->fonctions_end(); ++it_f )
             ajouter_fonction( *it_f );
 
-        expandItem(noeud);
+        noeud->setExpanded( p->est_entendu() );
     }
 }
 
@@ -204,6 +210,16 @@ base_noeud *explorateur::get_noeud_context() const
 void explorateur::set_noeud_context(base_noeud *noeud_context)
 {
     m_noeud_context = noeud_context;
+}
+
+void explorateur::on_itemExpanded(QTreeWidgetItem *item)
+{
+    ((base_noeud*)item)->get_objet()->set_est_etendu( true );
+}
+
+void explorateur::on_itemCollapsed(QTreeWidgetItem *item)
+{
+    ((base_noeud*)item)->get_objet()->set_est_etendu( false );
 }
 
 /** --------------------------------------------------------------------------------------

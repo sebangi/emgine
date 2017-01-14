@@ -17,7 +17,8 @@
 */
 base_fonction::base_fonction(fonctions_conteneur * parent, const QString & nom, type_fonction type)
     : objet_selectionnable(parent), m_nom(nom), m_type(type), m_id(fonction_indefini),
-      m_conteneur(parent), m_niveau_visibilite(1), m_max_niveau_visibilite(1)
+      m_conteneur(parent), m_niveau_visibilite(1), m_max_niveau_visibilite(1),
+      m_niveau_visibilite_avant_desactivation(1)
 {
 }
 
@@ -63,6 +64,9 @@ void base_fonction::sauvegarder( QXmlStreamWriter & stream ) const
     stream.writeTextElement("id", QString::number(m_id));
     stream.writeTextElement("nom", m_nom);
     stream.writeTextElement("niveau_visibilite", QString::number(m_niveau_visibilite));
+    stream.writeTextElement("active", QString::number(m_est_active));
+    objet_selectionnable::sauvegarder(stream);
+
     if ( m_type == fonction_source )
         stream.writeTextElement( "valeur", ((fonction_base_source*)(this))->get_string_valeur() );
 
@@ -71,8 +75,8 @@ void base_fonction::sauvegarder( QXmlStreamWriter & stream ) const
     for ( it = m_parametres.begin(); it != m_parametres.end(); ++it )
         it->second->sauvegarder(stream);
 
-    stream.writeEndElement(); // Fonction
-    stream.writeEndElement(); // Parametre
+    stream.writeEndElement(); // parametres
+    stream.writeEndElement(); // fonction
 }
 
 base_fonction_widget *base_fonction::generer_fonction_widget()
@@ -123,6 +127,7 @@ void base_fonction::augmenter_max_niveau_visibilite(int val)
 {
     m_max_niveau_visibilite += val;
     m_niveau_visibilite += val;
+    m_niveau_visibilite_avant_desactivation += val;
 }
 
 void base_fonction::set_conteneur(fonctions_conteneur *conteneur)
@@ -143,11 +148,30 @@ void base_fonction::set_id(const type_id_fonction &id)
 
 void base_fonction::change_niveau_visibilite()
 {
-    m_niveau_visibilite -= 1;
-    if ( m_niveau_visibilite == 0 )
-        m_niveau_visibilite = m_max_niveau_visibilite;
+    int niveau = m_niveau_visibilite - 1;
 
-    emit signal_niveau_visibilite_change(this);
+    if ( niveau == 0 )
+        niveau= m_max_niveau_visibilite;
+
+    set_niveau_visibilite(niveau);
+}
+
+void base_fonction::set_est_active(bool est_active)
+{
+    if ( est_active )
+    {
+        if ( get_niveau_visibilite() == 1 )
+            set_niveau_visibilite( m_niveau_visibilite_avant_desactivation );
+    }
+    else
+    {
+        m_niveau_visibilite_avant_desactivation = get_niveau_visibilite();
+        set_niveau_visibilite(1);
+    }
+
+    objet_selectionnable::set_est_active( est_active );
+
+    emit signal_activation_fonction_change(this);
 }
 
 bool base_fonction::a_parametre() const
@@ -168,13 +192,13 @@ int base_fonction::get_max_niveau_visibilite() const
 void base_fonction::set_niveau_visibilite(int niveau_visibilite)
 {
     m_niveau_visibilite = niveau_visibilite;
+
+    emit signal_niveau_visibilite_change(this);
 }
 
 void base_fonction::inverser_activation()
 {
-    m_est_active = ! m_est_active;
-
-    emit signal_activation_fonction_change(this);
+    set_est_active( ! m_est_active );
 }
 
 base_fonction::parametres_iterateur base_fonction::parametres_begin()
@@ -224,10 +248,15 @@ void base_fonction::charger(QXmlStreamReader & xml)
             // ignoré
             QString nom = xml.readElementText();
         }
-        else if(xml.name() == "nom")
+        else if(xml.name() == "niveau_visibilite")
         {
             QString niveau_visibilite = xml.readElementText();
             set_niveau_visibilite( niveau_visibilite.toInt() );
+        }
+        else if(xml.name() == "active")
+        {
+            QString active = xml.readElementText();
+            set_est_active( active.toInt() );
         }
         else if(xml.name() == "valeur")
         {
@@ -235,6 +264,8 @@ void base_fonction::charger(QXmlStreamReader & xml)
             if ( get_type() == base_fonction::fonction_source )
                 ((fonction_base_source*)this)->set_string_valeur(valeur);
         }
+        else if (xml.name() == "objet_selectionnable")
+            objet_selectionnable::charger(xml);
         else if(xml.name() == "parametres")
         {
             charger_parametres(xml);

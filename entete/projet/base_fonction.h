@@ -78,6 +78,7 @@ class base_fonction : public objet_selectionnable
         int get_max_niveau_visibilite() const;
         void set_niveau_visibilite( int niveau_visibilite );
         void change_niveau_visibilite();
+        void set_est_active(bool est_active);
 
         bool a_parametre() const;
 
@@ -115,6 +116,7 @@ class base_fonction : public objet_selectionnable
         fonctions_conteneur * m_conteneur;
         int m_niveau_visibilite;
         int m_max_niveau_visibilite;
+        int m_niveau_visibilite_avant_desactivation;
 };
 
 

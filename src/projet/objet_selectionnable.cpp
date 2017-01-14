@@ -7,7 +7,7 @@
 objet_selectionnable* objet_selectionnable::s_objet_courant = NULL;
 
 objet_selectionnable::objet_selectionnable(objet_selectionnable* parent)
-    : m_objet_parent(parent), m_est_active(true)
+    : m_objet_parent(parent), m_est_active(true), m_est_etendu(true)
 {
 
 }
@@ -53,7 +53,7 @@ bool objet_selectionnable::est_projet() const
 }
 
 void objet_selectionnable::set_est_active(bool est_active)
-{
+{    
     m_est_active = est_active;
 }
 
@@ -128,4 +128,38 @@ projet * objet_selectionnable::get_projet_courant(objet_selectionnable * obj)
         return (projet *)obj;
     else
         return get_projet_courant( obj->m_objet_parent );
+}
+
+void objet_selectionnable::set_est_etendu(bool est_entendu)
+{
+    m_est_etendu = est_entendu;
+}
+
+bool objet_selectionnable::est_entendu() const
+{
+    return m_est_etendu;
+}
+
+void objet_selectionnable::sauvegarder( QXmlStreamWriter & stream ) const
+{
+    stream.writeStartElement("objet_selectionnable");
+    stream.writeTextElement("est_etendu", QString::number(m_est_etendu));
+    stream.writeEndElement();
+}
+
+void objet_selectionnable::charger(QXmlStreamReader & xml)
+{
+    Q_ASSERT( xml.isStartElement() &&
+              xml.name() == "objet_selectionnable" );
+
+    while (xml.readNextStartElement())
+    {
+        if (xml.name() == "est_etendu")
+        {
+            QString est_etendu = xml.readElementText();
+            set_est_etendu( est_etendu.toInt() );
+        }
+        else
+            xml.skipCurrentElement();
+    }
 }

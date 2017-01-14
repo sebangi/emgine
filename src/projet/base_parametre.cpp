@@ -30,6 +30,8 @@ void base_parametre::sauvegarder( QXmlStreamWriter & stream ) const
     stream.writeStartElement("parametre");
     stream.writeTextElement("id", QString::number(m_id));
     stream.writeTextElement("nom", m_nom);
+    objet_selectionnable::sauvegarder(stream);
+
     stream.writeStartElement("fonctions");
 
     for ( base_parametre::fonctions_const_iterateur it = fonctions_const_begin(); it != fonctions_const_end(); ++it )
@@ -157,6 +159,8 @@ void base_parametre::charger(QXmlStreamReader & xml)
             QString nom = xml.readElementText();
             // on n'en fait rien; c'est seulement pour la lisibilité du fichier
         }
+        else if (xml.name() == "objet_selectionnable")
+            objet_selectionnable::charger(xml);
         else if(xml.name() == "fonctions")
         {
             charger_fonctions(xml);
