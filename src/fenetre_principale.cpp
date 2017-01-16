@@ -92,9 +92,11 @@ void fenetre_principale::creer_toolbar()
     m_toolbar_bouton_sauvegarder_projet->setObjectName("ButtonToolBar");
     m_toolbar_bouton_sauvegarder_projet_sous->setObjectName("ButtonToolBar");
     m_toolbar_bouton_ouvrir_projet->setObjectName("ButtonToolBar");
-    m_toolbar_bouton_ajout_fonction_source->setObjectName("ButtonToolBarSource");
-    m_toolbar_bouton_ajout_fonction_conversion->setObjectName("ButtonToolBarConversion");
-    m_toolbar_bouton_ajout_fonction_sortie->setObjectName("ButtonToolBarSortie");
+
+    m_toolbar_bouton_ajout_fonction_source->setObjectName("ButtonToolBar");
+    m_toolbar_bouton_ajout_fonction_conversion->setObjectName("ButtonToolBar");
+    m_toolbar_bouton_ajout_fonction_sortie->setObjectName("ButtonToolBar");
+
     m_toolbar_bouton_compiler->setObjectName("ButtonToolBar");
 
     m_ui->mainToolBar->addWidget(m_toolbar_bouton_nouveau_projet);
@@ -158,7 +160,7 @@ void fenetre_principale::init_widgets()
     m_toolbar_bouton_ajout_fonction_sortie->setText("Sortie");
 
     m_toolbar_bouton_nouveau_projet->setIcon(style->standardIcon( QStyle::SP_FileDialogNewFolder ));
-    m_toolbar_bouton_nouveau_projet->setText("Projet");
+    m_toolbar_bouton_nouveau_projet->setText("Nouveau projet");
 
     m_toolbar_bouton_ouvrir_projet->setIcon(style->standardIcon( QStyle::SP_DialogOpenButton ));
     m_toolbar_bouton_ouvrir_projet->setText("Ouvrir");
@@ -512,6 +514,7 @@ void fenetre_principale::on_externe_projet_etat_modification_change(projet *p, b
 void fenetre_principale::on_externe_objet_selectionne(objet_selectionnable *obj)
 {
     update_boutons_fonctions(obj, true);
+    update_boutons_projet(obj->get_projet());
 }
 
 void fenetre_principale::on_externe_objet_deselectionne(objet_selectionnable *obj)
