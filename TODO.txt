@@ -6,10 +6,10 @@ ETAPE 1 : PRIORITAIRE
 * sauvegarde d'un projet (et enregistrer sous)
 * reflexion et codage de la copie
 * sauvegarde d'une sortie
+* fonction_widget a séparer en 3 dossiers
 * dans les sorties, ajouter la possibilité de voir le paramétrage induisant le résultat
     -> pour cela : probablement complexifier la classe texte, voire travailler avec des QList<texte>
 * verifier la gestion des disconnect
-* passer s_vue_log en private
 * verifier les delete
 * reflexion sur les parametre de fonction_texte : faut-il itérer sur les lignes ?
 * factoriser fonction_cesar.executer

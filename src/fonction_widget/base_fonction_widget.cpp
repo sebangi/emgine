@@ -137,9 +137,13 @@ void base_fonction_widget::update_actif_bouton()
     if ( m_fonction != NULL )
     {
         if ( m_fonction->est_active_avec_parent() )
+        {
+            m_actif_bouton->setToolTip("Cliquer pour ne pas compiler la fonction");
             icon1.addFile(QString::fromUtf8("icons/compile.png"), QSize(), QIcon::Normal, QIcon::Off);
+        }
         else
         {
+            m_actif_bouton->setToolTip("Cliquer pour compiler la fonction");
             icon1.addFile(QString::fromUtf8("icons/non_compile.png"), QSize(), QIcon::Normal, QIcon::Off);
             if ( ! m_fonction->parents_actifs() )
                 m_actif_bouton->setEnabled(false);
@@ -147,10 +151,10 @@ void base_fonction_widget::update_actif_bouton()
     }
     else
     {
+        m_actif_bouton->setToolTip("Cliquer pour compiler la fonction");
         icon1.addFile( QString::fromUtf8("icons/non_compile.png"), QSize(), QIcon::Normal, QIcon::Off );
         m_actif_bouton->setEnabled(false);
     }
-
 
     m_actif_bouton->setIcon( icon1 );
 }
