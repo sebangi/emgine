@@ -416,10 +416,10 @@ void explorateur::on_ajout_fonction_conversion()
 
 void explorateur::on_enregistrer()
 {
-    emit signal_e_sauvegarder_projet(m_noeud_context->get_objet()->get_projet());
+    emit signal_e_enregistrer_projet(m_noeud_context->get_objet()->get_projet());
 }
 
 void explorateur::on_enregistrer_sous()
 {
-    emit signal_e_sauvegarder_projet_sous(m_noeud_context->get_objet()->get_projet());
+    emit signal_e_enregistrer_projet_sous(m_noeud_context->get_objet()->get_projet());
 }
