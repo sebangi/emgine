@@ -58,21 +58,21 @@ class fenetre_principale : public QMainWindow
 
         void ajouter_projet( projet * p );
         void selectionner_projet();
-        void sauvegarder_projet_sous(projet * p);
-        void sauvegarder_projet( projet* p );
-        void sauvegarder_projet( const QString & nom_fichier, projet * p);
+        void enregistrer_projet( const QString & nom_fichier, projet * p);
         void ouvrir_projet();
         void compiler( projet* p );
         void update_boutons_projet( projet * p );
         void update_boutons_fonctions( objet_selectionnable * obj, bool etat );
 
     private slots:
+        void enregistrer_projet_sous(projet * p);
+        void enregistrer_projet( projet* p );
         void on_ajouter_fonction_source_click();
         void on_ajouter_fonction_conversion_click();
         void on_ajouter_fonction_sortie_click();
         void on_nouveau_projet_click();
-        void on_sauvegarder_projet_sous_click();
-        void on_sauvegarder_projet_click();
+        void on_enregistrer_projet_sous_click();
+        void on_enregistrer_projet_click();
         void on_ouvrir_projet_click();
         void on_compiler_click();
 

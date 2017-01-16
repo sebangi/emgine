@@ -174,8 +174,8 @@ void fenetre_principale::init_widgets()
     connect( m_toolbar_bouton_ajout_fonction_conversion, SIGNAL(released()), this, SLOT(on_ajouter_fonction_conversion_click()));
     connect( m_toolbar_bouton_ajout_fonction_sortie, SIGNAL(released()), this, SLOT(on_ajouter_fonction_sortie_click()));
     connect( m_toolbar_bouton_nouveau_projet, SIGNAL(released()), this, SLOT(on_nouveau_projet_click()));
-    connect( m_toolbar_bouton_sauvegarder_projet, SIGNAL(released()), this, SLOT(on_sauvegarder_projet_click()));
-    connect( m_toolbar_bouton_sauvegarder_projet_sous, SIGNAL(released()), this, SLOT(on_sauvegarder_projet_sous_click()));
+    connect( m_toolbar_bouton_sauvegarder_projet, SIGNAL(released()), this, SLOT(on_enregistrer_projet_click()));
+    connect( m_toolbar_bouton_sauvegarder_projet_sous, SIGNAL(released()), this, SLOT(on_enregistrer_projet_sous_click()));
     connect( m_toolbar_bouton_ouvrir_projet, SIGNAL(released()), this, SLOT(on_ouvrir_projet_click()));
     connect( m_toolbar_bouton_compiler, SIGNAL(released()), this, SLOT(on_compiler_click()));
 
@@ -289,26 +289,32 @@ void fenetre_principale::ajouter_projet( projet * p )
 
     connect( p, SIGNAL(signal_p_projet_etat_modification_change(projet *, bool)),
              this, SLOT(on_externe_projet_etat_modification_change(projet *, bool)));
+
+    connect( p, SIGNAL(signal_p_enregistrer_projet(projet *)),
+             this, SLOT(enregistrer_projet(projet *)));
+
+    connect( p, SIGNAL(signal_p_enregistrer_projet_sous(projet *, bool)),
+             this, SLOT(enregistrer_projet_sous(projet *, bool)));
 }
 
 /** --------------------------------------------------------------------------------------
  \brief Sauvegarder le projet.
 */
-void fenetre_principale::sauvegarder_projet(projet* p)
+void fenetre_principale::enregistrer_projet(projet* p)
 {
     if ( p != NULL )
     {
         if ( p->est_nouveau() )
-            sauvegarder_projet_sous( p );
+            enregistrer_projet_sous( p );
         else
-            sauvegarder_projet( p->get_nom_fichier(), p );
+            enregistrer_projet( p->get_nom_fichier(), p );
     }
 }
 
 /** --------------------------------------------------------------------------------------
  \brief Sauvegarder le projet sous.
 */
-void fenetre_principale::sauvegarder_projet_sous(projet * p)
+void fenetre_principale::enregistrer_projet_sous(projet * p)
 {
     QFileDialog d(this);
     d.setDefaultSuffix("dec");
@@ -323,14 +329,14 @@ void fenetre_principale::sauvegarder_projet_sous(projet * p)
         if (!nom_fichier.endsWith(".dec"))
             nom_fichier += ".dec";
 
-        sauvegarder_projet(nom_fichier, p);
+        enregistrer_projet(nom_fichier, p);
     }
 }
 
 /** --------------------------------------------------------------------------------------
  \brief Sauvegarder le projet.
 */
-void fenetre_principale::sauvegarder_projet(const QString & nom_fichier, projet * p)
+void fenetre_principale::enregistrer_projet(const QString & nom_fichier, projet * p)
 {
     QFile file(nom_fichier);
     if (!file.open(QIODevice::WriteOnly)) {
@@ -408,7 +414,7 @@ void fenetre_principale::update_boutons_projet( projet * p )
 {
     if ( p != NULL )
     {
-        m_toolbar_bouton_sauvegarder_projet->setEnabled( ! p->est_nouveau() && p->est_modifie() );
+        m_toolbar_bouton_sauvegarder_projet->setEnabled( p->enregistrable() );
         m_toolbar_bouton_sauvegarder_projet_sous->setEnabled( true );
     }
     else
@@ -464,19 +470,19 @@ void fenetre_principale::on_nouveau_projet_click()
 /** --------------------------------------------------------------------------------------
  \brief Le bouton sauvegarder_projet est activé.
 */
-void fenetre_principale::on_sauvegarder_projet_click()
+void fenetre_principale::on_enregistrer_projet_click()
 {
     if ( objet_selectionnable::existe_selection() )
-        sauvegarder_projet( objet_selectionnable::get_projet_courant() );
+        enregistrer_projet( objet_selectionnable::get_projet_courant() );
 }
 
 /** --------------------------------------------------------------------------------------
  \brief Le bouton sauvegarder_projet_sous est activé.
 */
-void fenetre_principale::on_sauvegarder_projet_sous_click()
+void fenetre_principale::on_enregistrer_projet_sous_click()
 {
     if ( objet_selectionnable::existe_selection() )
-        sauvegarder_projet_sous( objet_selectionnable::get_projet_courant() );
+        enregistrer_projet_sous( objet_selectionnable::get_projet_courant() );
 }
 
 /** --------------------------------------------------------------------------------------

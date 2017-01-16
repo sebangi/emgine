@@ -41,6 +41,7 @@ class projet : public fonctions_conteneur
         bool est_valide(logs_compilation_widget * vue_logs);
         bool est_modifie() const;
         void set_est_modifie(bool est_modifie);
+        bool enregistrable() const;
 
     signals:
         void signal_p_projet_etat_modification_change( projet *, bool);

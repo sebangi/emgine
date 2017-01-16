@@ -83,7 +83,7 @@ QString projet::get_nom() const
 
 QString projet::get_titre() const
 {
-    return  "projet " + get_nom();
+    return get_nom();
 }
 
 void projet::set_nom(const QString &nom)
@@ -148,6 +148,11 @@ void projet::set_est_modifie(bool est_modifie)
     m_est_modifie = est_modifie;
 
     emit signal_p_projet_etat_modification_change((projet*)this, est_modifie);
+}
+
+bool projet::enregistrable() const
+{
+    return ! est_nouveau() && est_modifie();
 }
 
 bool projet::est_modifie() const

@@ -10,6 +10,7 @@
 #include <QMenu>
 #include <QKeyEvent>
 #include <iostream>
+#include <QApplication>
 
 explorateur::explorateur(QWidget *parent)
     : QTreeWidget(parent), m_noeud_context(NULL)
@@ -286,6 +287,7 @@ void explorateur::on_currentItemChanged(QTreeWidgetItem *item)
 
 void explorateur::on_customContextMenuRequested(const QPoint &pos)
 {
+    QStyle* style = QApplication::style();
     QTreeWidgetItem *node = itemAt( pos );
 
     set_noeud_context( (base_noeud*)node );
@@ -296,25 +298,41 @@ void explorateur::on_customContextMenuRequested(const QPoint &pos)
     if ( noeud_context == NULL )
         return;
 
+    if ( noeud_context->get_objet()->est_projet() )
+    {
+        QAction *newAct_enregistrer = new QAction(style->standardIcon( QStyle::SP_DialogSaveButton ), tr("&Enregistrer"), this);
+        newAct_enregistrer->setStatusTip(tr("Enregistrer"));
+        newAct_enregistrer->setEnabled( noeud_context->get_objet()->get_projet()->enregistrable() );
+        connect(newAct_enregistrer, SIGNAL(triggered()), this, SLOT(on_enregistrer()));
+        menu.addAction(newAct_enregistrer);
+
+        QAction *newAct_enregistrer_sous = new QAction(style->standardIcon( QStyle::SP_DialogSaveButton ), tr("&Enregistrer sous"), this);
+        newAct_enregistrer_sous->setStatusTip(tr("Enregistrer sous"));
+        connect(newAct_enregistrer_sous, SIGNAL(triggered()), this, SLOT(on_enregistrer_sous()));
+        menu.addAction(newAct_enregistrer_sous);
+
+        menu.addSeparator();
+    }
+
     if ( noeud_context->get_objet()->est_conteneur() )
     {
-        QIcon icon2;
-        icon2.addFile(QString::fromUtf8("icons/ajout_source.png"), QSize(), QIcon::Normal, QIcon::Off);
-        QAction *newAct2 = new QAction(icon2, tr("&Ajouter une source"), this);
+        QIcon icon_source;
+        icon_source.addFile(QString::fromUtf8("icons/ajout_source.png"), QSize(), QIcon::Normal, QIcon::Off);
+        QAction *newAct2 = new QAction(icon_source, tr("&Ajouter une source"), this);
         newAct2->setStatusTip(tr("Ajouter une source"));
         connect(newAct2, SIGNAL(triggered()), this, SLOT(on_ajout_source()));
         menu.addAction(newAct2);
 
-        QIcon icon3;
-        icon3.addFile(QString::fromUtf8("icons/ajout_conversion.png"), QSize(), QIcon::Normal, QIcon::Off);
-        QAction *newAct3 = new QAction(icon3, tr("&Ajouter une conversion"), this);
+        QIcon icon_conversion;
+        icon_conversion.addFile(QString::fromUtf8("icons/ajout_conversion.png"), QSize(), QIcon::Normal, QIcon::Off);
+        QAction *newAct3 = new QAction(icon_conversion, tr("&Ajouter une conversion"), this);
         newAct3->setStatusTip(tr("Ajouter une conversion"));
         connect(newAct3, SIGNAL(triggered()), this, SLOT(on_ajout_fonction_conversion()));
         menu.addAction(newAct3);
 
-        QIcon icon4;
-        icon4.addFile(QString::fromUtf8("icons/ajout_sortie.png"), QSize(), QIcon::Normal, QIcon::Off);
-        QAction *newAct4 = new QAction(icon4, tr("&Ajouter une sortie"), this);
+        QIcon icon_sortie;
+        icon_sortie.addFile(QString::fromUtf8("icons/ajout_sortie.png"), QSize(), QIcon::Normal, QIcon::Off);
+        QAction *newAct4 = new QAction(icon_sortie, tr("&Ajouter une sortie"), this);
         newAct4->setStatusTip(tr("Ajouter une sortie"));
         connect(newAct4, SIGNAL(triggered()), this, SLOT(on_ajout_sortie()));
         menu.addAction(newAct4);
@@ -396,3 +414,12 @@ void explorateur::on_ajout_fonction_conversion()
     emit signal_e_ajout_source(m_noeud_context->get_fonctions_conteneur(), base_fonction::fonction_conversion);
 }
 
+void explorateur::on_enregistrer()
+{
+    emit signal_e_sauvegarder_projet(m_noeud_context->get_objet()->get_projet());
+}
+
+void explorateur::on_enregistrer_sous()
+{
+    emit signal_e_sauvegarder_projet_sous(m_noeud_context->get_objet()->get_projet());
+}

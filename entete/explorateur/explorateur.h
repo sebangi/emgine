@@ -41,8 +41,10 @@ class explorateur : public QTreeWidget
 
     signals:
         void signal_e_ajout_source(fonctions_conteneur *, base_fonction::type_fonction);
-        void signal_e_objet_selectionne(objet_selectionnable* obj);
-        void signal_e_objet_deselectionne(objet_selectionnable* obj);
+        void signal_e_objet_selectionne(objet_selectionnable*);
+        void signal_e_objet_deselectionne(objet_selectionnable*);
+        void signal_e_sauvegarder_projet(projet *);
+        void signal_e_sauvegarder_projet_sous(projet *);
 
     private slots:
         void on_externe_supprimer_fonction(base_fonction * f);
@@ -62,6 +64,8 @@ class explorateur : public QTreeWidget
         void on_ajout_source();
         void on_ajout_sortie();
         void on_ajout_fonction_conversion();
+        void on_enregistrer();
+        void on_enregistrer_sous();
 
     private:
         /** \brief Le noeud du context actuel. */
