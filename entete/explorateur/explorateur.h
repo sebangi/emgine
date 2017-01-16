@@ -41,6 +41,8 @@ class explorateur : public QTreeWidget
 
     signals:
         void signal_e_ajout_source(fonctions_conteneur *, base_fonction::type_fonction);
+        void signal_e_objet_selectionne(objet_selectionnable* obj);
+        void signal_e_objet_deselectionne(objet_selectionnable* obj);
 
     private slots:
         void on_externe_supprimer_fonction(base_fonction * f);

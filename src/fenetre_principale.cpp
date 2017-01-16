@@ -128,7 +128,10 @@ void fenetre_principale::creer_widgets()
 
     connect( s_explorateur, SIGNAL(signal_e_ajout_source(fonctions_conteneur *, base_fonction::type_fonction)),
              this, SLOT(on_externe_e_ajout_source(fonctions_conteneur *, base_fonction::type_fonction)));
-
+    connect( s_explorateur, SIGNAL(signal_e_objet_selectionne(objet_selectionnable*)),
+             this, SLOT(on_externe_objet_selectionne(objet_selectionnable *)));
+    connect( s_explorateur, SIGNAL(signal_e_objet_deselectionne(objet_selectionnable*)),
+             this, SLOT(on_externe_objet_deselectionne(objet_selectionnable *)));
 }
 
 /** --------------------------------------------------------------------------------------
@@ -139,13 +142,19 @@ void fenetre_principale::init_widgets()
     QStyle* style = QApplication::style();
     setWindowTitle("Emgine");
 
-    QIcon icon1;
-    icon1.addFile(QString::fromUtf8("icons/add.png"), QSize(), QIcon::Normal, QIcon::Off);
-    m_toolbar_bouton_ajout_fonction_source->setIcon(icon1);
+    QIcon icone_source;
+    icone_source.addFile(QString::fromUtf8("icons/ajout_source.png"), QSize(), QIcon::Normal, QIcon::Off);
+    m_toolbar_bouton_ajout_fonction_source->setIcon(icone_source);
     m_toolbar_bouton_ajout_fonction_source->setText("Source");
-    m_toolbar_bouton_ajout_fonction_conversion->setIcon(icon1);
+
+    QIcon icone_conversion;
+    icone_conversion.addFile(QString::fromUtf8("icons/ajout_conversion.png"), QSize(), QIcon::Normal, QIcon::Off);
+    m_toolbar_bouton_ajout_fonction_conversion->setIcon(icone_conversion);
     m_toolbar_bouton_ajout_fonction_conversion->setText("Conversion");
-    m_toolbar_bouton_ajout_fonction_sortie->setIcon(icon1);
+
+    QIcon icone_sortie;
+    icone_sortie.addFile(QString::fromUtf8("icons/ajout_sortie.png"), QSize(), QIcon::Normal, QIcon::Off);
+    m_toolbar_bouton_ajout_fonction_sortie->setIcon(icone_sortie);
     m_toolbar_bouton_ajout_fonction_sortie->setText("Sortie");
 
     m_toolbar_bouton_nouveau_projet->setIcon(style->standardIcon( QStyle::SP_FileDialogNewFolder ));
@@ -182,9 +191,9 @@ void fenetre_principale::init_widgets()
     m_ui->centralLayout->addWidget(top_widget,5);
     m_ui->centralLayout->addWidget(s_vue_logs, 1);
 
-    QIcon icon2;
-    icon2.addFile(QString::fromUtf8("icons/grand_compile.png"), QSize(), QIcon::Normal, QIcon::Off);
-    m_toolbar_bouton_compiler->setIcon(icon2);
+    QIcon icon_compile;
+    icon_compile.addFile(QString::fromUtf8("icons/grand_compile.png"), QSize(), QIcon::Normal, QIcon::Off);
+    m_toolbar_bouton_compiler->setIcon(icon_compile);
     m_toolbar_bouton_compiler->setText("Exécuter");
 }
 
@@ -397,7 +406,26 @@ void fenetre_principale::compiler(projet* p)
 
 void fenetre_principale::update_boutons_projet( projet * p )
 {
-    m_toolbar_bouton_sauvegarder_projet->setEnabled( ! p->est_nouveau() && p->est_modifie() );
+    if ( p != NULL )
+    {
+        m_toolbar_bouton_sauvegarder_projet->setEnabled( ! p->est_nouveau() && p->est_modifie() );
+        m_toolbar_bouton_sauvegarder_projet_sous->setEnabled( true );
+    }
+    else
+    {
+        m_toolbar_bouton_sauvegarder_projet->setEnabled( false );
+        m_toolbar_bouton_sauvegarder_projet_sous->setEnabled( false );
+    }
+}
+
+void fenetre_principale::update_boutons_fonctions( objet_selectionnable * obj, bool etat )
+{
+    if ( obj != NULL )
+        etat = etat && obj->est_conteneur();
+
+    m_toolbar_bouton_ajout_fonction_source->setEnabled( etat );
+    m_toolbar_bouton_ajout_fonction_conversion->setEnabled( etat );
+    m_toolbar_bouton_ajout_fonction_sortie->setEnabled( etat );
 }
 
 /** --------------------------------------------------------------------------------------
@@ -480,3 +508,13 @@ void fenetre_principale::on_externe_projet_etat_modification_change(projet *p, b
             update_boutons_projet( p );
 }
 
+
+void fenetre_principale::on_externe_objet_selectionne(objet_selectionnable *obj)
+{
+    update_boutons_fonctions(obj, true);
+}
+
+void fenetre_principale::on_externe_objet_deselectionne(objet_selectionnable *obj)
+{
+    update_boutons_fonctions(obj, false);
+}

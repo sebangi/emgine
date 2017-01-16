@@ -119,6 +119,7 @@ void explorateur::on_externe_objet_selectionne(objet_selectionnable *obj)
         }
 
         setItemSelected((QTreeWidgetItem*)(it->second), true);
+        emit signal_e_objet_selectionne( obj );
     }
 }
 
@@ -133,6 +134,7 @@ void explorateur::on_externe_objet_deselectionne(objet_selectionnable *obj)
         it->second->setFont(0, font);
 
         clearSelection();
+        emit signal_e_objet_deselectionne( obj );
     }
 }
 
