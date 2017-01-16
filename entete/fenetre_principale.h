@@ -62,6 +62,7 @@ class fenetre_principale : public QMainWindow
         void sauvegarder_projet( const QString & nom_fichier, projet * p);
         void ouvrir_projet();
         void compiler( projet* p );
+        void update_boutons_projet( projet * p );
 
     private slots:
         void on_ajouter_fonction_source_click();
@@ -74,6 +75,7 @@ class fenetre_principale : public QMainWindow
         void on_compiler_click();
 
         void on_externe_e_ajout_source(fonctions_conteneur * conteneur, base_fonction::type_fonction type);
+        void on_externe_projet_etat_modification_change(projet * p, bool etat);
 
     private:
         /** \brief La table des fonctions. */

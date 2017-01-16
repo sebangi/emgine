@@ -27,5 +27,6 @@ void fonction_source_texte_widget::init()
 void fonction_source_texte_widget::on_textChanged()
 {
     ((fonction_source_texte*)m_fonction)->set_valeur( m_text_edit->toPlainText() );
+    m_fonction->modifier();
 }
 

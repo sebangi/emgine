@@ -14,7 +14,7 @@
 unsigned int projet::s_nb_projets = 0;
 
 projet::projet()
-    : fonctions_conteneur(NULL), m_nouveau(true)
+    : fonctions_conteneur(NULL), m_nouveau(true), m_est_modifie(false)
 {
     s_nb_projets++;
 
@@ -43,6 +43,9 @@ void projet::sauvegarder( QXmlStreamWriter & stream )
 
     stream.writeEndElement(); // Fonctions
     stream.writeEndElement(); // Projet
+
+    m_est_modifie = false;
+    emit signal_p_projet_etat_modification_change(this, false);
 }
 
 void projet::charger(QXmlStreamReader & xml)
@@ -67,6 +70,9 @@ void projet::charger(QXmlStreamReader & xml)
         else
             xml.skipCurrentElement();
     }
+
+    m_est_modifie = false;
+    emit signal_p_projet_etat_modification_change(this, false);
 }
 
 QString projet::get_nom() const
@@ -129,10 +135,21 @@ void projet::charger_fonction(QXmlStreamReader & xml)
         QString id = xml.readElementText();
         base_fonction * f = bibliotheque_fonctions::get_fonction( (type_id_fonction)id.toInt() );
 
-        f->charger(xml);
-
         ajouter_fonction(f);
+        f->charger(xml);
     }
+}
+
+void projet::set_est_modifie(bool est_modifie)
+{
+    m_est_modifie = est_modifie;
+
+    emit signal_p_projet_etat_modification_change((projet*)this, est_modifie);
+}
+
+bool projet::est_modifie() const
+{
+    return m_est_modifie;
 }
 
 QString projet::get_description() const
@@ -167,7 +184,7 @@ bool projet::est_valide(logs_compilation_widget * vue_logs)
     type_fonctions actifs;
     for ( fonctions_iterateur it = m_fonctions.begin(); it != m_fonctions.end(); ++it )
         if ( (*it)->est_active() )
-           actifs.push_back( *it );
+            actifs.push_back( *it );
 
     if ( actifs.size() == 0 )
     {

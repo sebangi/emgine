@@ -1,6 +1,7 @@
 #include "entete/projet/objet_selectionnable.h"
 #include "entete/projet/fonctions_conteneur.h"
 #include "entete/projet/base_fonction.h"
+#include "entete/projet/projet.h"
 
 #include <iostream>
 
@@ -141,6 +142,17 @@ projet * objet_selectionnable::get_projet_courant(objet_selectionnable * obj)
 void objet_selectionnable::set_est_etendu(bool est_entendu)
 {
     m_est_etendu = est_entendu;
+}
+
+void objet_selectionnable::modifier()
+{
+    if( est_projet() )
+    {
+        if ( ! ((projet*)this)->est_modifie() )
+            ((projet*)this)->set_est_modifie(true);
+    }
+    else
+        m_objet_parent->modifier();
 }
 
 bool objet_selectionnable::est_entendu() const

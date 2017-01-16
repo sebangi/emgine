@@ -34,6 +34,7 @@ class objet_selectionnable : public QObject
 
         bool est_entendu() const;
         void set_est_etendu(bool est_entendu);
+        void modifier();
 
     protected:
         void deselectionner();

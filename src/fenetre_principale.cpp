@@ -98,9 +98,10 @@ void fenetre_principale::creer_toolbar()
     m_toolbar_bouton_compiler->setObjectName("ButtonToolBar");
 
     m_ui->mainToolBar->addWidget(m_toolbar_bouton_nouveau_projet);
+    m_ui->mainToolBar->addWidget(m_toolbar_bouton_ouvrir_projet);
+    m_ui->mainToolBar->addSeparator();
     m_ui->mainToolBar->addWidget(m_toolbar_bouton_sauvegarder_projet);
     m_ui->mainToolBar->addWidget(m_toolbar_bouton_sauvegarder_projet_sous);
-    m_ui->mainToolBar->addWidget(m_toolbar_bouton_ouvrir_projet);
     m_ui->mainToolBar->addSeparator();
     m_ui->mainToolBar->addWidget(m_toolbar_bouton_ajout_fonction_source);
     m_ui->mainToolBar->addWidget(m_toolbar_bouton_ajout_fonction_conversion);
@@ -274,6 +275,9 @@ void fenetre_principale::ajouter_projet( projet * p )
     s_vue_fonctions->ajouter_projet(p);
 
     p->selectionner();
+
+    connect( p, SIGNAL(signal_p_projet_etat_modification_change(projet *, bool)),
+             this, SLOT(on_externe_projet_etat_modification_change(projet *, bool)));
 }
 
 /** --------------------------------------------------------------------------------------
@@ -391,6 +395,11 @@ void fenetre_principale::compiler(projet* p)
     }
 }
 
+void fenetre_principale::update_boutons_projet( projet * p )
+{
+    m_toolbar_bouton_sauvegarder_projet->setEnabled( ! p->est_nouveau() && p->est_modifie() );
+}
+
 /** --------------------------------------------------------------------------------------
  \brief Le bouton ajouter_fonction_source est activé.
 */
@@ -438,13 +447,8 @@ void fenetre_principale::on_sauvegarder_projet_click()
 */
 void fenetre_principale::on_sauvegarder_projet_sous_click()
 {
-    // TODO : a retirer
-    /*
-    noeud_projet * n = s_explorateur->get_projet_courant();
-
-    if ( n != NULL )
-        sauvegarder_projet_sous( n->get_projet() );
-    */
+    if ( objet_selectionnable::existe_selection() )
+        sauvegarder_projet_sous( objet_selectionnable::get_projet_courant() );
 }
 
 /** --------------------------------------------------------------------------------------
@@ -467,5 +471,12 @@ void fenetre_principale::on_compiler_click()
 void fenetre_principale::on_externe_e_ajout_source(fonctions_conteneur *conteneur, base_fonction::type_fonction type)
 {
     ajouter_fonction(conteneur, type);
+}
+
+void fenetre_principale::on_externe_projet_etat_modification_change(projet *p, bool etat)
+{
+    if ( objet_selectionnable::existe_selection() )
+        if ( objet_selectionnable::get_projet_courant() == p )
+            update_boutons_projet( p );
 }
 
