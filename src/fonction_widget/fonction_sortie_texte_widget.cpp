@@ -25,6 +25,7 @@ void fonction_sortie_texte_widget::init()
     QHBoxLayout * lay = new QHBoxLayout();
 
     m_text_edit = new QPlainTextEdit();
+    m_text_edit->setLineWrapMode(QPlainTextEdit::NoWrap);
     m_text_edit->setReadOnly(true);
     m_text_edit->setPlainText( ((fonction_sortie_texte*)m_fonction)->get_texte().to_string_lisible() );
     m_text_edit->setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Expanding);

@@ -52,6 +52,7 @@ class explorateur : public QTreeWidget
         void on_itemExpanded(QTreeWidgetItem *item);
         void on_itemCollapsed(QTreeWidgetItem *item);
         void on_itemClicked(QTreeWidgetItem *item, int column);
+        void on_itemDoubleClicked(QTreeWidgetItem *item, int column);
         void on_customContextMenuRequested(const QPoint &pos);
         void on_currentItemChanged(QTreeWidgetItem *item);
 

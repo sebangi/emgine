@@ -22,6 +22,7 @@ explorateur::explorateur(QWidget *parent)
     setContextMenuPolicy(Qt::CustomContextMenu);
     setHeaderLabel("Explorateur de projets");
     setExpandsOnDoubleClick(false);
+    setMaximumWidth(400);
 
     QTreeWidgetItem* rooItem = invisibleRootItem();
     rooItem->setFlags( rooItem->flags() ^ Qt::ItemIsDropEnabled );
@@ -30,6 +31,8 @@ explorateur::explorateur(QWidget *parent)
             this, SLOT(on_customContextMenuRequested(const QPoint &)));
     connect(this, SIGNAL(itemClicked(QTreeWidgetItem*, int)),
             this, SLOT(on_itemClicked(QTreeWidgetItem*, int)));
+    connect(this, SIGNAL(itemDoubleClicked(QTreeWidgetItem*, int)),
+            this, SLOT(on_itemDoubleClicked(QTreeWidgetItem*, int)));
     connect(this, SIGNAL(itemExpanded(QTreeWidgetItem*)),
             this, SLOT(on_itemExpanded(QTreeWidgetItem*)));
     connect(this, SIGNAL(itemCollapsed(QTreeWidgetItem*)),
@@ -246,6 +249,16 @@ void explorateur::on_itemCollapsed(QTreeWidgetItem *item)
 */
 void explorateur::on_itemClicked(QTreeWidgetItem *item, int column)
 {
+    ((base_noeud*)item)->get_objet()->selectionner();
+}
+
+/** --------------------------------------------------------------------------------------
+ \brief Evénément double click sur un item de l'explorateur de projets.
+*/
+void explorateur::on_itemDoubleClicked(QTreeWidgetItem *item, int column)
+{
+    item->setExpanded( ! item->isExpanded() );
+    ((base_noeud*)item)->get_objet()->set_est_etendu( item->isExpanded() );
     ((base_noeud*)item)->get_objet()->selectionner();
 }
 

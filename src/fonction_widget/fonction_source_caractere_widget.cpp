@@ -14,6 +14,7 @@ void fonction_source_caractere_widget::init()
     QHBoxLayout * lay = new QHBoxLayout();
 
     m_text_edit = new QTextEdit();
+    m_text_edit->setLineWrapMode(QTextEdit::NoWrap);
     m_text_edit->setText( ((fonction_source_caractere*)m_fonction)->get_valeur() );
     m_text_edit->setMinimumHeight(40);
 

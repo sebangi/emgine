@@ -1,26 +1,22 @@
 QPlainTextEdit
 {
     font: 10pt "DejaVu Sans Mono";
-    border-radius:10px;
     background-color: palette(base);
-    padding: 2px;
+    padding: 0px;
     margin: 2px;
     border-style: solid;
     border-width: 1px;
-    border-radius: 10px;
     border-color: black;
 }
 
 QTextEdit
 {
     font: 10pt "DejaVu Sans Mono";
-    border-radius:10px;
     background-color: palette(base);
-    padding: 2px;
+    padding: 0px;
     margin: 2px;
     border-style: solid;
     border-width: 1px;
-    border-radius: 10px;
     border-color: black;
 }
 
@@ -155,7 +151,8 @@ QPushButton#BoutonParametreWidget:hover
 base_fonction_widget {
     border-style: solid;
     border-width: 2px;
-    border-radius: 10px;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
     font: bold 14px;
     min-width: 10em;
     padding: 0px;
@@ -253,3 +250,4 @@ QListWidget {
     margin-top : -1px;
     padding: 0px;
 }
+
