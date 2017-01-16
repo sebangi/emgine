@@ -310,11 +310,10 @@ void fenetre_principale::sauvegarder_projet(projet* p)
 */
 void fenetre_principale::sauvegarder_projet_sous(projet * p)
 {
-    std::cout << "sauvegarder_projet_sous" << std::endl;
     QFileDialog d(this);
     d.setDefaultSuffix("dec");
     QString nom_fichier = d.getSaveFileName( this,
-                                             tr("Sauvegarder le projet"), "projets",
+                                             tr("Sauvegarder le projet"), "mes_projets",
                                              tr("projet Decode (*.dec);;"));
 
     if (nom_fichier.isEmpty())
@@ -333,7 +332,6 @@ void fenetre_principale::sauvegarder_projet_sous(projet * p)
 */
 void fenetre_principale::sauvegarder_projet(const QString & nom_fichier, projet * p)
 {
-    std::cout << "sauvegarder_projet" << nom_fichier.toStdString() << std::endl;
     QFile file(nom_fichier);
     if (!file.open(QIODevice::WriteOnly)) {
         QMessageBox::information(this, tr("Impossible d'ouvrir le fichier."),
@@ -357,7 +355,7 @@ void fenetre_principale::ouvrir_projet()
 {
     QString nom_fichier =
             QFileDialog::getOpenFileName( this, tr("Ouvrir un projet Decode"),
-                                          "projets", tr("projet Decode (*.dec);;"));
+                                          "mes_projets", tr("projet Decode (*.dec);;"));
 
     if (nom_fichier.isEmpty())
         return;

@@ -10,6 +10,7 @@
 #include "entete/fenetre_principale.h"
 
 #include <iostream>
+#include <QDir>
 
 unsigned int projet::s_nb_projets = 0;
 
@@ -88,6 +89,8 @@ QString projet::get_titre() const
 void projet::set_nom(const QString &nom)
 {
     m_nom = nom;
+
+    emit signal_p_nom_projet_change(this);
 }
 
 void projet::charger_nom(QXmlStreamReader & xml)
@@ -95,7 +98,7 @@ void projet::charger_nom(QXmlStreamReader & xml)
     Q_ASSERT(xml.isStartElement() &&
              xml.name() == "nom");
 
-    m_nom = xml.readElementText();
+    // Le nom est ignoré
 }
 
 void projet::charger_description(QXmlStreamReader & xml)
@@ -175,6 +178,9 @@ QString projet::get_nom_fichier() const
 void projet::set_nom_fichier(const QString &nom_fichier)
 {
     m_nom_fichier = nom_fichier;
+
+    QString nom = m_nom_fichier.split("/").last();
+    set_nom( nom.split(".").first() );
 }
 
 bool projet::est_valide(logs_compilation_widget * vue_logs)

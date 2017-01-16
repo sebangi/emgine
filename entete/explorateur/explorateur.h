@@ -50,6 +50,7 @@ class explorateur : public QTreeWidget
         void on_externe_objet_selectionne(objet_selectionnable* obj);
         void on_externe_objet_deselectionne(objet_selectionnable* obj);
         void on_externe_creation_fonction(base_fonction* f);
+        void on_externe_nom_projet_change(projet * p);
 
         void on_itemExpanded(QTreeWidgetItem *item);
         void on_itemCollapsed(QTreeWidgetItem *item);

@@ -44,6 +44,7 @@ class projet : public fonctions_conteneur
 
     signals:
         void signal_p_projet_etat_modification_change( projet *, bool);
+        void signal_p_nom_projet_change( projet * );
 
     private:
         void charger_nom(QXmlStreamReader & xml);

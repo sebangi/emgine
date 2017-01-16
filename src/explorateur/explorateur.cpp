@@ -143,6 +143,16 @@ void explorateur::on_externe_creation_fonction(base_fonction* f)
     ajouter_fonction(f);
 }
 
+void explorateur::on_externe_nom_projet_change(projet *p)
+{
+    map_selectionnable::iterator it = m_selectionnables.find(p);
+
+    if ( it != m_selectionnables.end() )
+    {
+        it->second->setText(0, p->get_nom() );
+    }
+}
+
 void explorateur::on_externe_supprimer_fonction(base_fonction *f)
 {
     map_selectionnable::iterator it = m_selectionnables.find(f);
@@ -160,6 +170,8 @@ void explorateur::ajouter_projet(projet *p)
 
         connect( (fonctions_conteneur*)p, SIGNAL(signal_fc_creation_fonction(base_fonction*)),
                  this, SLOT(on_externe_creation_fonction(base_fonction*)));
+        connect( p, SIGNAL(signal_p_nom_projet_change(projet *)),
+                 this, SLOT(on_externe_nom_projet_change(projet *)));
 
         insertTopLevelItem( 0, noeud );
 

@@ -12,7 +12,7 @@
 noeud_projet::noeud_projet( projet * p )
     : noeud_fonctions_conteneur( (fonctions_conteneur*)p, base_noeud::type_projet )
 {
-    setFlags(Qt::ItemIsEnabled | Qt::ItemIsEditable | Qt::ItemIsSelectable | Qt::ItemIsDropEnabled );
+    setFlags(Qt::ItemIsEnabled | Qt::ItemIsSelectable | Qt::ItemIsDropEnabled );
     setText(0, p->get_nom());
 
     QStyle* style = QApplication::style();
