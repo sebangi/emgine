@@ -13,7 +13,7 @@
 #include <iostream>
 
 base_fonction_widget::base_fonction_widget(base_fonction* fonction, QWidget* parent)
-    : QWidget(parent), m_fonction(fonction), m_separation(NULL)
+    : QWidget(parent), m_fonction(fonction)
 {
     init();
     init_connect();
@@ -87,21 +87,23 @@ void base_fonction_widget::init()
 
     central_layout->addWidget(toolbar);
 
-    m_separation = new QFrame;
-    m_separation->setFrameStyle(QFrame::HLine | QFrame::Raised);
-    central_layout->addWidget(m_separation);
-
     m_parametre_widget = new QWidget();
     m_parametre_layout = new QVBoxLayout();
     m_parametre_layout->setMargin(0);
     m_parametre_layout->setSpacing(0);
     m_parametre_widget->setLayout(m_parametre_layout);
+    m_separation1 = new QFrame;
+    m_separation1->setFrameStyle(QFrame::HLine | QFrame::Raised);
+    m_parametre_layout->addWidget(m_separation1);
 
     m_specialisation_widget = new QWidget();
     m_specialisation_layout = new QVBoxLayout();
     m_specialisation_layout->setMargin(0);
     m_specialisation_layout->setSpacing(0);
     m_specialisation_widget->setLayout(m_specialisation_layout);
+    m_separation2 = new QFrame;
+    m_separation2->setFrameStyle(QFrame::HLine | QFrame::Raised);
+    m_specialisation_layout->addWidget(m_separation2);
 
     if ( m_fonction != NULL )
     {
@@ -195,15 +197,13 @@ void base_fonction_widget::update_visibilite()
 
     if ( m_fonction->a_parametre() )
     {
-        m_specialisation_widget->setVisible( niveau >= 2 );
+        m_specialisation_widget->setVisible( niveau >= 2 && m_fonction->get_max_niveau_visibilite() >= 3 );
         m_parametre_widget->setVisible( niveau >= m_fonction->get_max_niveau_visibilite() );
-        m_separation->setVisible( niveau >= 2 );
     }
     else
     {
         m_specialisation_widget->setVisible( niveau >= 2 );
         m_parametre_widget->setVisible( false );
-        m_separation->setVisible( niveau >= 2 );
     }
 
     adjustSize();
@@ -230,20 +230,32 @@ void base_fonction_widget::update_object_name()
         style()->unpolish(this);
         style()->polish(this);
 
-        if ( m_separation != NULL )
+        if ( ! m_fonction->est_active_avec_parent() )
         {
-            if ( ! m_fonction->est_active_avec_parent() )
-                m_separation->setObjectName("separation_inactive");
-            else if (  m_fonction->get_type() == base_fonction::fonction_source  )
-                m_separation->setObjectName("separation_source");
-            else if (  m_fonction->get_type() == base_fonction::fonction_conversion  )
-                m_separation->setObjectName("separation_conversion");
-            else if (  m_fonction->get_type() == base_fonction::fonction_sortie  )
-                m_separation->setObjectName("separation_sortie");
-
-            style()->unpolish(m_separation);
-            style()->polish(m_separation);
+            m_separation1->setObjectName("separation_inactive");
+            m_separation2->setObjectName("separation_inactive");
         }
+        else if (  m_fonction->get_type() == base_fonction::fonction_source  )
+        {
+            m_separation1->setObjectName("separation_source");
+            m_separation2->setObjectName("separation_source");
+        }
+        else if (  m_fonction->get_type() == base_fonction::fonction_conversion  )
+        {
+            m_separation1->setObjectName("separation_conversion");
+            m_separation2->setObjectName("separation_conversion");
+        }
+        else if (  m_fonction->get_type() == base_fonction::fonction_sortie  )
+        {
+            m_separation1->setObjectName("separation_sortie");
+            m_separation2->setObjectName("separation_sortie");
+        }
+
+        style()->unpolish(m_separation1);
+        style()->polish(m_separation1);
+
+        style()->unpolish(m_separation2);
+        style()->polish(m_separation2);
     }
 }
 
