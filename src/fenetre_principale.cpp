@@ -290,11 +290,11 @@ void fenetre_principale::ajouter_projet( projet * p )
     connect( p, SIGNAL(signal_p_projet_etat_modification_change(projet *, bool)),
              this, SLOT(on_externe_projet_etat_modification_change(projet *, bool)));
 
-    connect( p, SIGNAL(signal_p_enregistrer_projet(projet *)),
+    connect( s_explorateur, SIGNAL(signal_e_enregistrer_projet(projet *)),
              this, SLOT(enregistrer_projet(projet *)));
 
-    connect( p, SIGNAL(signal_p_enregistrer_projet_sous(projet *, bool)),
-             this, SLOT(enregistrer_projet_sous(projet *, bool)));
+    connect( s_explorateur, SIGNAL(signal_e_enregistrer_projet_sous(projet *)),
+             this, SLOT(enregistrer_projet_sous(projet *)));
 }
 
 /** --------------------------------------------------------------------------------------
