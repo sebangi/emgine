@@ -12,8 +12,9 @@
 
 #include <iostream>
 
-base_parametre::base_parametre(objet_selectionnable * parent, QString nom, QString aide, bool requis, type_element type)
-    : fonctions_conteneur(parent), m_fonction_parent((base_fonction*)parent), m_nom(nom), m_aide(aide), m_requis(requis), m_type(type) , m_texte_out()
+base_parametre::base_parametre(objet_selectionnable * parent, QString nom, QString aide, bool requis)
+    : fonctions_conteneur(parent), m_fonction_parent((base_fonction*)parent), m_nom(nom), m_aide(aide),
+      m_requis(requis), m_texte_out()
 {
 
 }
@@ -30,10 +31,12 @@ void base_parametre::sauvegarder( QXmlStreamWriter & stream ) const
     stream.writeStartElement("parametre");
     stream.writeTextElement("id", QString::number(m_id));
     stream.writeTextElement("nom", m_nom);
+    objet_selectionnable::sauvegarder(stream);
+
     stream.writeStartElement("fonctions");
 
     for ( base_parametre::fonctions_const_iterateur it = fonctions_const_begin(); it != fonctions_const_end(); ++it )
-        ;//it->second->sauvegarder(stream);
+        (*it)->sauvegarder(stream);
 
     stream.writeEndElement(); // Fonctions
     stream.writeEndElement(); // Paramètre
@@ -114,7 +117,7 @@ void base_parametre::set_id(const type_id_parametre &value)
     m_id = value;
 }
 
-bool base_parametre::est_valide()
+bool base_parametre::est_valide(logs_compilation_widget * vue_logs)
 {
     bool result = true;
 
@@ -125,7 +128,7 @@ bool base_parametre::est_valide()
 
     if ( actifs.size() == 0 )
     {
-        fenetre_principale::s_vue_logs->ajouter_log
+        vue_logs->ajouter_log
                 ( log_compilation( log_compilation::LOG_ERREUR, this,
                                    "Le parametre \"" + m_nom +
                                    "\" de la fonction \"" + m_fonction_parent->get_nom() +
@@ -134,7 +137,7 @@ bool base_parametre::est_valide()
     }
     else if ( ! actifs.front()->get_type() == base_fonction::fonction_source )
     {
-        fenetre_principale::s_vue_logs->ajouter_log
+        vue_logs->ajouter_log
                 ( log_compilation( log_compilation::LOG_ERREUR, this,
                                    "Le parametre \"" + m_nom +
                                    "\" de la fonction \"" + m_fonction_parent->get_nom() +
@@ -143,7 +146,7 @@ bool base_parametre::est_valide()
     }
 
     for ( fonctions_iterateur it = actifs.begin(); it != actifs.end(); ++it )
-        result = result && (*it)->est_fonction_valide();
+        result = result && (*it)->est_fonction_valide(vue_logs);
 
     return result;
 }
@@ -157,6 +160,8 @@ void base_parametre::charger(QXmlStreamReader & xml)
             QString nom = xml.readElementText();
             // on n'en fait rien; c'est seulement pour la lisibilité du fichier
         }
+        else if (xml.name() == "objet_selectionnable")
+            objet_selectionnable::charger(xml);
         else if(xml.name() == "fonctions")
         {
             charger_fonctions(xml);
@@ -198,29 +203,8 @@ void base_parametre::charger_fonction( QXmlStreamReader & xml )
         QString id = xml.readElementText();
         base_fonction * f = bibliotheque_fonctions::get_fonction( (type_id_fonction)id.toInt() );
 
-        while(xml.readNextStartElement())
-        {
-            if(xml.name() == "nom")
-            {
-                QString nom = xml.readElementText();
-            }
-            else if(xml.name() == "valeur")
-            {
-                QString valeur = xml.readElementText();
-                if ( f->get_type() == base_fonction::fonction_source )
-                    ((fonction_base_source*)f)->set_string_valeur(valeur);
-            }
-            else if(xml.name() == "parametres")
-            {
-                f->charger(xml);
-            }
-            else
-            {
-                std::cout << "\t\t ignore : " << xml.name().toString().toStdString() << std::endl;
-                xml.skipCurrentElement();
-            }
-        }
+        f->charger(xml);
 
-        m_fonctions.push_back(f);
+        ajouter_fonction(f);
     }
 }

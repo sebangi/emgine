@@ -8,6 +8,7 @@ fonction_source_booleen::fonction_source_booleen(fonctions_conteneur * conteneur
     : fonction_base_source(conteneur, "Oui ou Non ?"), m_valeur(valeur)
 {
     set_id(f_source_booleen);
+    augmenter_max_niveau_visibilite(1);
 }
 
 fonction_source_booleen::~fonction_source_booleen()
@@ -23,7 +24,7 @@ base_fonction_widget *fonction_source_booleen::generer_fonction_widget()
 /*! --------------------------------------------------------------------------------------
  \brief Indique si la fonction est valide.
 */
-bool fonction_source_booleen::est_valide() const
+bool fonction_source_booleen::est_valide(logs_compilation_widget * vue_logs) const
 {
     return true;
 }

@@ -43,8 +43,6 @@ class fenetre_principale : public QMainWindow
         explicit fenetre_principale(QWidget *parent = 0);
         ~fenetre_principale();
 
-        static void adjust_size_vue_fonction();
-
         void ajouter_source();
         void ajouter_conversion();
         void ajouter_sortie();
@@ -57,13 +55,12 @@ class fenetre_principale : public QMainWindow
         void creer_toolbar();
         void creer_widgets();
 
-        projet * creer_projet();
+        void ajouter_projet( projet * p );
         void selectionner_projet();
         void sauvegarder_projet_sous(projet * p);
         void sauvegarder_projet( projet* p );
         void sauvegarder_projet( const QString & nom_fichier, projet * p);
         void ouvrir_projet();
-        void ouvrir_projet(projet * p);
         void compiler( projet* p );
 
     private slots:
@@ -75,6 +72,8 @@ class fenetre_principale : public QMainWindow
         void on_sauvegarder_projet_click();
         void on_ouvrir_projet_click();
         void on_compiler_click();
+
+        void on_externe_e_ajout_source(fonctions_conteneur * conteneur, base_fonction::type_fonction type);
 
     private:
         /** \brief La table des fonctions. */
@@ -89,7 +88,6 @@ class fenetre_principale : public QMainWindow
         /** \brief La liste des projets ouverts. */
         static type_projets s_projets;
 
-    public:
         /** \brief Le composant de compilation. */
         static logs_compilation_widget * s_vue_logs;
 

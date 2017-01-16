@@ -30,7 +30,7 @@ void fonction_sortie_texte_widget::init()
     m_text_edit->setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Expanding);
     lay->addWidget(m_text_edit);
 
-    m_parametre_layout->addLayout(lay);
+    m_specialisation_layout->addLayout(lay);
 
     connect((fonction_sortie_texte*)m_fonction, SIGNAL(signal_fst_texte_modifie()), this, SLOT(on_externe_fst_texte_modifie()));
 }

@@ -10,6 +10,7 @@ class noeud_projet;
 class base_noeud;
 class base_fonction;
 class base_parametre;
+class logs_compilation_widget;
 
 /**
  \brief Classe décrivant un projet.
@@ -37,7 +38,7 @@ class projet : public fonctions_conteneur
         void set_nom(const QString &nom);
         void set_nom_fichier(const QString &nom_fichier);
 
-        bool est_valide();
+        bool est_valide(logs_compilation_widget * vue_logs);
 
     private:
         void charger_nom(QXmlStreamReader & xml);

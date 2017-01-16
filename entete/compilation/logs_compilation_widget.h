@@ -15,7 +15,7 @@ class logs_compilation_widget : public QWidget
     public:
         logs_compilation_widget( QWidget *parent = 0 );
 
-        void ajouter_log(log_compilation& log);
+        void ajouter_log(const log_compilation& log);
         void clear();
 
     private:

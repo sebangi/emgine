@@ -30,8 +30,35 @@ explorateur::explorateur(QWidget *parent)
             this, SLOT(on_customContextMenuRequested(const QPoint &)));
     connect(this, SIGNAL(itemClicked(QTreeWidgetItem*, int)),
             this, SLOT(on_itemClicked(QTreeWidgetItem*, int)));
+    connect(this, SIGNAL(itemExpanded(QTreeWidgetItem*)),
+            this, SLOT(on_itemExpanded(QTreeWidgetItem*)));
+    connect(this, SIGNAL(itemCollapsed(QTreeWidgetItem*)),
+            this, SLOT(on_itemCollapsed(QTreeWidgetItem*)));
     connect(this,SIGNAL(currentItemChanged(QTreeWidgetItem*,QTreeWidgetItem*)),
             this,SLOT(on_currentItemChanged(QTreeWidgetItem*)));
+}
+
+explorateur::~explorateur()
+{
+}
+
+projet * explorateur::get_projet_selon_nom_fichier(const QString &nom_fichier)
+{
+    projet * p = NULL;
+
+    QTreeWidgetItemIterator it(this);
+    while (*it)
+    {
+        if ( (*it)->type() == base_noeud::type_projet )
+        {
+            if ( ((noeud_projet*)(*it))->get_projet()->get_nom_fichier() == nom_fichier )
+                p = ((noeud_projet*)(*it))->get_projet();
+        }
+
+        ++it;
+    }
+
+    return p;
 }
 
 void explorateur::on_externe_activation_fonction_change(base_fonction * f)
@@ -39,9 +66,39 @@ void explorateur::on_externe_activation_fonction_change(base_fonction * f)
     map_selectionnable::iterator it = m_selectionnables.find(f);
 
     if ( it != m_selectionnables.end() )
+        mettre_a_jour_activation(it->second, ((noeud_fonction*)(it->second))->get_fonction()->est_active(), true );
+}
+
+void explorateur::mettre_a_jour_activation( base_noeud* n, bool actif, bool change_expansion )
+{
+    if ( change_expansion )
     {
-        ((noeud_fonction*)(it->second))->update_style();
+        if ( actif )
+        {
+            if ( ! n->isExpanded() )
+                n->setExpanded( n->get_save_expanded() );
+        }
+        else
+        {
+            n->save_expanded();
+            n->setExpanded(false);
+        }
     }
+
+    for ( int i = 0; i != n->childCount(); ++i )
+        {
+            bool change = true;
+
+            if ( actif )
+                if ( n->child(i)->type() == base_noeud::type_fonction )
+                    if ( ! ((noeud_fonction*)(n->child(i)))->get_fonction()->est_active() )
+                        change = false;
+
+            if ( change )
+                mettre_a_jour_activation( (base_noeud*)n->child(i), actif, false );
+        }
+
+    n->update_style( actif );
 }
 
 void explorateur::on_externe_objet_selectionne(objet_selectionnable *obj)
@@ -89,25 +146,6 @@ void explorateur::on_externe_supprimer_fonction(base_fonction *f)
         it->second->parent()->removeChild(it->second);
 }
 
-base_noeud *explorateur::get_projet_selon_nom_fichier(const QString &nom_fichier)
-{
-    base_noeud * n = NULL;
-
-    QTreeWidgetItemIterator it(this);
-    while (*it)
-    {
-        if ( (*it)->type() == base_noeud::type_projet )
-        {
-            if ( ((noeud_projet*)(*it))->get_projet()->get_nom_fichier() == nom_fichier )
-                n = (base_noeud*)(*it);
-        }
-
-        ++it;
-    }
-
-    return n;
-}
-
 void explorateur::ajouter_projet(projet *p)
 {
     if ( p != NULL )
@@ -123,7 +161,7 @@ void explorateur::ajouter_projet(projet *p)
         for ( projet::fonctions_iterateur it = p->fonctions_begin(); it != p->fonctions_end(); ++it )
             ajouter_fonction( *it );
 
-        expandItem(noeud);
+        noeud->setExpanded( p->est_entendu() );
     }
 }
 
@@ -141,7 +179,8 @@ void explorateur::ajouter_fonction(base_fonction* f)
         for ( base_fonction::parametres_iterateur it_p = f->parametres_begin(); it_p != f->parametres_end(); ++it_p )
             ajouter_parametre( it_p->second );
 
-        expandItem(noeud);
+        mettre_a_jour_activation(noeud, f->est_active(), false);
+        noeud->setExpanded( f->est_entendu() );
 
         connect( f, SIGNAL(signal_destruction_fonction(base_fonction*)),
                  this, SLOT(on_externe_supprimer_fonction(base_fonction*)));
@@ -168,7 +207,7 @@ void explorateur::ajouter_parametre(base_parametre* p)
         for ( base_parametre::fonctions_iterateur it_f = p->fonctions_begin(); it_f != p->fonctions_end(); ++it_f )
             ajouter_fonction( *it_f );
 
-        expandItem(noeud);
+        noeud->setExpanded( p->est_entendu() );
     }
 }
 
@@ -190,6 +229,16 @@ base_noeud *explorateur::get_noeud_context() const
 void explorateur::set_noeud_context(base_noeud *noeud_context)
 {
     m_noeud_context = noeud_context;
+}
+
+void explorateur::on_itemExpanded(QTreeWidgetItem *item)
+{
+    ((base_noeud*)item)->get_objet()->set_est_etendu( true );
+}
+
+void explorateur::on_itemCollapsed(QTreeWidgetItem *item)
+{
+    ((base_noeud*)item)->get_objet()->set_est_etendu( false );
 }
 
 /** --------------------------------------------------------------------------------------
@@ -220,42 +269,29 @@ void explorateur::on_customContextMenuRequested(const QPoint &pos)
     if ( noeud_context == NULL )
         return;
 
-    // TODO
-    /*
-    if ( noeud_context->type() == base_noeud::type_projet && get_noeud_courant() != noeud_context )
-    {
-        QIcon icon1;
-        icon1.addFile(QString::fromUtf8("/usr/share/icons/oxygen/32x32/actions/arrow-right.png"), QSize(), QIcon::Normal, QIcon::Off);
-        QAction *newAct1 = new QAction(icon1, tr("&Définir comme projet actif"), this);
-        newAct1->setStatusTip(tr("Définir comme projet actif"));
-        connect(newAct1, SIGNAL(triggered()), this, SLOT(on_set_noeud_courant()));
-        menu.addAction(newAct1);
-    }
-
-    if ( noeud_context->type() == base_noeud::type_projet || noeud_context->type() == base_noeud::type_parametre )
+    if ( noeud_context->get_objet()->est_conteneur() )
     {
         QIcon icon2;
-        icon2.addFile(QString::fromUtf8("/usr/share/icons/oxygen/32x32/actions/arrow-right.png"), QSize(), QIcon::Normal, QIcon::Off);
+        icon2.addFile(QString::fromUtf8("icons/ajout_source.png"), QSize(), QIcon::Normal, QIcon::Off);
         QAction *newAct2 = new QAction(icon2, tr("&Ajouter une source"), this);
         newAct2->setStatusTip(tr("Ajouter une source"));
         connect(newAct2, SIGNAL(triggered()), this, SLOT(on_ajout_source()));
         menu.addAction(newAct2);
 
         QIcon icon3;
-        icon3.addFile(QString::fromUtf8("/usr/share/icons/oxygen/32x32/actions/arrow-right.png"), QSize(), QIcon::Normal, QIcon::Off);
-        QAction *newAct3 = new QAction(icon3, tr("&Ajouter une fonction"), this);
-        newAct3->setStatusTip(tr("Ajouter une fonction"));
-        connect(newAct3, SIGNAL(triggered()), this, SLOT(on_ajout_fonction()));
+        icon3.addFile(QString::fromUtf8("icons/ajout_conversion.png"), QSize(), QIcon::Normal, QIcon::Off);
+        QAction *newAct3 = new QAction(icon3, tr("&Ajouter une conversion"), this);
+        newAct3->setStatusTip(tr("Ajouter une conversion"));
+        connect(newAct3, SIGNAL(triggered()), this, SLOT(on_ajout_fonction_conversion()));
         menu.addAction(newAct3);
 
         QIcon icon4;
-        icon4.addFile(QString::fromUtf8("/usr/share/icons/oxygen/32x32/actions/arrow-right.png"), QSize(), QIcon::Normal, QIcon::Off);
+        icon4.addFile(QString::fromUtf8("icons/ajout_sortie.png"), QSize(), QIcon::Normal, QIcon::Off);
         QAction *newAct4 = new QAction(icon4, tr("&Ajouter une sortie"), this);
-        newAct4->setStatusTip(tr("Ajouter une source"));
+        newAct4->setStatusTip(tr("Ajouter une sortie"));
         connect(newAct4, SIGNAL(triggered()), this, SLOT(on_ajout_sortie()));
         menu.addAction(newAct4);
     }
-    */
 
     QPoint pt(pos);
     menu.exec( mapToGlobal(pos) );
@@ -318,26 +354,18 @@ void explorateur::dropEvent(QDropEvent * event)
     }
 }
 
-void explorateur::on_set_noeud_courant()
-{
-    m_noeud_context->get_objet()->selectionner();
-}
-
 void explorateur::on_ajout_source()
 {
-    // TODO ?
-    // m_fenetre_principale->ajouter_source( m_noeud_context );
+    emit signal_e_ajout_source(m_noeud_context->get_fonctions_conteneur(), base_fonction::fonction_source);
 }
 
 void explorateur::on_ajout_sortie()
 {
-    // TODO ?
-    // m_fenetre_principale->ajouter_sortie( m_noeud_context );
+    emit signal_e_ajout_source(m_noeud_context->get_fonctions_conteneur(), base_fonction::fonction_sortie);
 }
 
-void explorateur::on_ajout_fonction()
+void explorateur::on_ajout_fonction_conversion()
 {
-    // TODO ?
-    // m_fenetre_principale->ajouter_conversion( m_noeud_context );
+    emit signal_e_ajout_source(m_noeud_context->get_fonctions_conteneur(), base_fonction::fonction_conversion);
 }
 

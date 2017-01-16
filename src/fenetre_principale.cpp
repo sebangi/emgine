@@ -56,8 +56,6 @@ fenetre_principale::fenetre_principale(QWidget *parent) :
     resize(QSize(1000,900));
 
     init_test();
-
-    s_compilateur = new compilateur();
 }
 
 /** --------------------------------------------------------------------------------------
@@ -125,6 +123,11 @@ void fenetre_principale::creer_widgets()
     s_explorateur = new explorateur(this);
     s_vue_fonctions = new vue_fonctions(this);
     s_vue_logs = new logs_compilation_widget(this);
+    s_compilateur = new compilateur(s_vue_logs);
+
+    connect( s_explorateur, SIGNAL(signal_e_ajout_source(fonctions_conteneur *, base_fonction::type_fonction)),
+             this, SLOT(on_externe_e_ajout_source(fonctions_conteneur *, base_fonction::type_fonction)));
+
 }
 
 /** --------------------------------------------------------------------------------------
@@ -179,7 +182,7 @@ void fenetre_principale::init_widgets()
     m_ui->centralLayout->addWidget(s_vue_logs, 1);
 
     QIcon icon2;
-    icon2.addFile(QString::fromUtf8("icons/compile.png"), QSize(), QIcon::Normal, QIcon::Off);
+    icon2.addFile(QString::fromUtf8("icons/grand_compile.png"), QSize(), QIcon::Normal, QIcon::Off);
     m_toolbar_bouton_compiler->setIcon(icon2);
     m_toolbar_bouton_compiler->setText("Exécuter");
 }
@@ -224,9 +227,6 @@ void fenetre_principale::ajouter_fonction( fonctions_conteneur * conteneur, base
 
         if ( r == QDialog::Accepted )
         {
-            // TODO : gérer la ligne suivante
-            // set_noeud_courant(p);
-
             base_fonction * f = dlg->get_fonction();
 
             if ( f != NULL )
@@ -252,7 +252,9 @@ void fenetre_principale::ajouter_fonction( fonctions_conteneur * conteneur, base
 */
 void fenetre_principale::init_test()
 {
-    projet * p  = creer_projet();
+    projet * p  = new projet();
+    p->set_nom("Exemple");
+    ajouter_projet(p);
 
     ajouter_fonction( p, new fonction_source_texte(p, "UNHBH TM SDRS !"), true, true );
     ajouter_fonction( p, new fonction_cesar(p), true, true );
@@ -265,17 +267,13 @@ void fenetre_principale::init_test()
 /** --------------------------------------------------------------------------------------
  \brief Ajoute un nouveau projet.
 */
-projet * fenetre_principale::creer_projet()
+void fenetre_principale::ajouter_projet( projet * p )
 {
-    projet * p = new projet();
-
     s_projets.push_back( p );
     s_explorateur->ajouter_projet(p);
     s_vue_fonctions->ajouter_projet(p);
 
     p->selectionner();
-
-    return p;
 }
 
 /** --------------------------------------------------------------------------------------
@@ -285,7 +283,6 @@ void fenetre_principale::sauvegarder_projet(projet* p)
 {
     if ( p != NULL )
     {
-        std::cout << "sauvegarder_projet 1" << std::endl;
         if ( p->est_nouveau() )
             sauvegarder_projet_sous( p );
         else
@@ -341,69 +338,44 @@ void fenetre_principale::sauvegarder_projet(const QString & nom_fichier, projet 
 /** --------------------------------------------------------------------------------------
  \brief Ouvrir un projet.
 */
-void fenetre_principale::ouvrir_projet(projet * p)
+void fenetre_principale::ouvrir_projet()
 {
-    QString nom_fichier = QFileDialog::getOpenFileName( this,
-                                                        tr("Ouvrir un projet Decode"),
-                                                        "projets",
-                                                        tr("projet Decode (*.dec);;"));
+    QString nom_fichier =
+            QFileDialog::getOpenFileName( this, tr("Ouvrir un projet Decode"),
+                                          "projets", tr("projet Decode (*.dec);;"));
 
     if (nom_fichier.isEmpty())
         return;
 
-    base_noeud* n = NULL;
-    n = s_explorateur->get_projet_selon_nom_fichier(nom_fichier);
+    projet* existant = NULL;
+    existant = s_explorateur->get_projet_selon_nom_fichier(nom_fichier);
 
-    if ( n != NULL )
-    {
-        p->selectionner();
-    }
+    if ( existant != NULL )
+        existant->selectionner();
     else
     {
         QFile file(nom_fichier);
 
-        if (!file.open(QIODevice::ReadOnly))
+        if (! file.open(QIODevice::ReadOnly))
         {
-            QMessageBox::information(this, tr("Impossible d'ouvrir le fichier."),
-                                     file.errorString());
+            QMessageBox::information(this, tr("Impossible d'ouvrir le fichier."), file.errorString());
             return;
         }
 
+        projet * p = new projet();
         QXmlStreamReader xml(&file);
-
         xml.readNextStartElement();
 
         if( xml.name() == "projet" )
         {
-            std::cout << "projet " << xml.name().toString().toStdString() << std::endl;
             p->set_nom_fichier(nom_fichier);
             p->charger(xml);
-            // TODO : a retirer
-            // s_vue_fonctions->update_vue_fonction( s_explorateur->get_noeud_courant() );
         }
         else
             xml.skipCurrentElement();
+
+        ajouter_projet(p);
     }
-}
-
-
-/** --------------------------------------------------------------------------------------
- \brief Ouvrir un projet.
-*/
-void fenetre_principale::ouvrir_projet()
-{
-    // TODO : A REVOIR
-    creer_projet();
-
-    // TODO : a retirer
-    /*
-     * noeud_projet * n = s_explorateur->get_projet_courant();
-
-    if ( n != NULL )
-    {
-        ouvrir_projet( n->get_projet() );
-    }
-    */
 }
 
 /** --------------------------------------------------------------------------------------
@@ -419,21 +391,12 @@ void fenetre_principale::compiler(projet* p)
     }
 }
 
-void fenetre_principale::adjust_size_vue_fonction()
-{
-    for ( int i = 0; i < s_vue_fonctions->rowCount(); ++i )
-        s_vue_fonctions->setRowHeight(i, s_vue_fonctions->cellWidget(i,1)->size().height());
-}
-
 /** --------------------------------------------------------------------------------------
  \brief Le bouton ajouter_fonction_source est activé.
 */
 void fenetre_principale::on_ajouter_fonction_source_click()
 {
     ajouter_source();
-
-    // TODO ?
-    //    fenetre_principale::s_vue_fonctions->scrollToBottom();
 }
 
 /** --------------------------------------------------------------------------------------
@@ -442,9 +405,6 @@ void fenetre_principale::on_ajouter_fonction_source_click()
 void fenetre_principale::on_ajouter_fonction_conversion_click()
 {
     ajouter_conversion();
-
-    // TODO ?
-    //    fenetre_principale::s_vue_fonctions->scrollToBottom();
 }
 
 /** --------------------------------------------------------------------------------------
@@ -453,9 +413,6 @@ void fenetre_principale::on_ajouter_fonction_conversion_click()
 void fenetre_principale::on_ajouter_fonction_sortie_click()
 {
     ajouter_sortie();
-
-    // TODO ?
-    //    fenetre_principale::s_vue_fonctions->scrollToBottom();
 }
 
 /** --------------------------------------------------------------------------------------
@@ -463,7 +420,8 @@ void fenetre_principale::on_ajouter_fonction_sortie_click()
 */
 void fenetre_principale::on_nouveau_projet_click()
 {
-    creer_projet();
+    projet * p = new projet();
+    ajouter_projet(p);
 }
 
 /** --------------------------------------------------------------------------------------
@@ -471,14 +429,8 @@ void fenetre_principale::on_nouveau_projet_click()
 */
 void fenetre_principale::on_sauvegarder_projet_click()
 {
-    // TODO : a retirer
-    /*
-
-    noeud_projet * n = s_explorateur->get_projet_courant();
-
-    if ( n != NULL )
-        sauvegarder_projet( n->get_projet() );
-    */
+    if ( objet_selectionnable::existe_selection() )
+        sauvegarder_projet( objet_selectionnable::get_projet_courant() );
 }
 
 /** --------------------------------------------------------------------------------------
@@ -510,5 +462,10 @@ void fenetre_principale::on_compiler_click()
 {
     if ( objet_selectionnable::existe_selection() )
         compiler( objet_selectionnable::get_projet_courant() );
+}
+
+void fenetre_principale::on_externe_e_ajout_source(fonctions_conteneur *conteneur, base_fonction::type_fonction type)
+{
+    ajouter_fonction(conteneur, type);
 }
 

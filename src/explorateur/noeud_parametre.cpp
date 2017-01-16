@@ -8,6 +8,7 @@
 
 #include <iostream>
 #include <QApplication>
+#include <QFont>
 
 noeud_parametre::noeud_parametre( base_parametre * p )
     : base_noeud( (objet_selectionnable *)p, base_noeud::type_parametre )
@@ -15,9 +16,12 @@ noeud_parametre::noeud_parametre( base_parametre * p )
     setFlags(Qt::ItemIsEnabled | Qt::ItemIsSelectable | Qt::ItemIsDropEnabled );
 
     setText(0, p->get_nom());
+    QFont font = this->font(0);
+    font.setItalic(true);
+    setFont(0, font);
 
     QIcon icon1;
-    icon1.addFile(QString::fromUtf8("icons/icone_parametre.png"), QSize(), QIcon::Normal, QIcon::Off);
+    icon1.addFile(QString::fromUtf8("icons/parameters.png"), QSize(), QIcon::Normal, QIcon::Off);
     setIcon( 0, icon1 );
 }
 

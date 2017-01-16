@@ -18,14 +18,15 @@ logs_compilation_widget::logs_compilation_widget(QWidget *parent)
     init_widgets();
 }
 
-void logs_compilation_widget::ajouter_log(log_compilation& log)
+void logs_compilation_widget::ajouter_log(const log_compilation& log)
 {
     log_widget_item* item = new log_widget_item(log);
+
     m_liste->addItem( item );
     m_liste->scrollToBottom();
 
-    if ( log.get_selectionnable() != NULL )
-        connect( log.get_selectionnable(), SIGNAL(signal_os_destruction_selectionnable(objet_selectionnable*)),
+    if ( item->get_log().get_selectionnable() != NULL )
+        connect( item->get_log().get_selectionnable(), SIGNAL(signal_os_destruction_selectionnable(objet_selectionnable*)),
                 this, SLOT(on_externe_destruction_selectionnable(objet_selectionnable*)));
 }
 
@@ -39,7 +40,7 @@ void logs_compilation_widget::init_widgets()
     setObjectName("logs_compilation_widget");
 
     QStyle* style = QApplication::style();
-    QVBoxLayout * lay = new QVBoxLayout();
+    QHBoxLayout * lay = new QHBoxLayout();
     lay->setMargin(0);
     lay->setSpacing(0);
 
@@ -48,11 +49,8 @@ void logs_compilation_widget::init_widgets()
     groupbox->setLayout(lay);
 
     QToolBar * toolbar = new QToolBar();
+    toolbar->setOrientation(Qt::Vertical);
     toolbar->setMovable(false);
-
-    QWidget* spacer = new QWidget();
-    spacer->setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Expanding);
-    toolbar->addWidget(spacer);
 
     m_cacher_bouton = new QPushButton();
     m_cacher_bouton->setObjectName("BoutonFonctionWidget");    
@@ -107,7 +105,7 @@ void logs_compilation_widget::onLogClicked(QListWidgetItem* item)
 
 void logs_compilation_widget::on_externe_destruction_selectionnable(objet_selectionnable *obj)
 {
-    disconnect( obj, SIGNAL(signal_destruction_fonction(objet_selectionnable*)),
+    disconnect( obj, SIGNAL(signal_os_destruction_selectionnable(objet_selectionnable*)),
                 this, SLOT(on_externe_destruction_selectionnable(objet_selectionnable*)));
 
     for ( int i = 0; i != m_liste->count(); ++i )

@@ -35,6 +35,7 @@ void projet::sauvegarder( QXmlStreamWriter & stream )
     stream.writeStartElement("projet");
     stream.writeTextElement("nom", m_nom);
     stream.writeTextElement("description", m_description);
+    objet_selectionnable::sauvegarder(stream);
     stream.writeStartElement("fonctions");
 
     for ( projet::fonctions_iterateur it = fonctions_begin(); it != fonctions_end(); ++it )
@@ -46,8 +47,6 @@ void projet::sauvegarder( QXmlStreamWriter & stream )
 
 void projet::charger(QXmlStreamReader & xml)
 {    
-    std::cout << "->" << "charger_projet" << std::endl;
-
     Q_ASSERT( xml.isStartElement() &&
               xml.name() == "projet" );
 
@@ -61,12 +60,13 @@ void projet::charger(QXmlStreamReader & xml)
             charger_nom(xml);
         else if (xml.name() == "description")
             charger_description(xml);
+        else if (xml.name() == "objet_selectionnable")
+            objet_selectionnable::charger(xml);
         else if (xml.name() == "fonctions")
             charger_fonctions(xml);
         else
             xml.skipCurrentElement();
     }
-    std::cout << "<-" << "charger_projet" << std::endl;
 }
 
 QString projet::get_nom() const
@@ -129,28 +129,7 @@ void projet::charger_fonction(QXmlStreamReader & xml)
         QString id = xml.readElementText();
         base_fonction * f = bibliotheque_fonctions::get_fonction( (type_id_fonction)id.toInt() );
 
-        while(xml.readNextStartElement())
-        {
-            if(xml.name() == "nom")
-            {
-                QString nom = xml.readElementText();
-            }
-            else if(xml.name() == "valeur")
-            {
-                QString valeur = xml.readElementText();
-                if ( f->get_type() == base_fonction::fonction_source )
-                    ((fonction_base_source*)f)->set_string_valeur(valeur);
-            }
-            else if(xml.name() == "parametres")
-            {
-                f->charger(xml);
-            }
-            else
-            {
-                std::cout << "\t\t ignore : " << xml.name().toString().toStdString() << std::endl;
-                xml.skipCurrentElement();
-            }
-        }
+        f->charger(xml);
 
         ajouter_fonction(f);
     }
@@ -181,7 +160,7 @@ void projet::set_nom_fichier(const QString &nom_fichier)
     m_nom_fichier = nom_fichier;
 }
 
-bool projet::est_valide()
+bool projet::est_valide(logs_compilation_widget * vue_logs)
 {
     bool result = true;
 
@@ -192,14 +171,14 @@ bool projet::est_valide()
 
     if ( actifs.size() == 0 )
     {
-        fenetre_principale::s_vue_logs->ajouter_log
+        vue_logs->ajouter_log
                 ( log_compilation( log_compilation::LOG_ERREUR, this,
                                    "Le projet \"" + m_nom + "\" n'a aucune fonction active") );
         result = false;
     }
     else if ( ! actifs.front()->get_type() == base_fonction::fonction_source )
     {
-        fenetre_principale::s_vue_logs->ajouter_log
+        vue_logs->ajouter_log
                 ( log_compilation( log_compilation::LOG_ERREUR, this,
                                    "Le projet \"" + m_nom + "\" doit commencer par une fonction source active") );
         result = false;
@@ -207,7 +186,7 @@ bool projet::est_valide()
 
     for ( fonctions_iterateur it = actifs.begin(); it != actifs.end(); ++it )
     {
-        bool result_fonction = (*it)->est_fonction_valide();
+        bool result_fonction = (*it)->est_fonction_valide(vue_logs);
         result = result && result_fonction;
     }
 

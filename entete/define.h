@@ -25,12 +25,12 @@ enum type_id_fonction{
 
 /** \brief Enumération décrivant les différents paramètres. */
 enum type_id_parametre{
-    PARAM_LIGNE_SEPARATEUR = 0,
+    PARAM_CARACTERE_SEPARATEUR = 0,
     PARAM_MOT_SEPARATEUR,
-    PARAM_CARACTERE_SEPARATEUR,
+    PARAM_LIGNE_SEPARATEUR,
+    PARAM_ALPHABET,
     PARAM_DECALAGE,
-    PARAM_SOUSTRACTIF,
-    PARAM_ALPHABET
+    PARAM_SOUSTRACTIF
 };
 
 

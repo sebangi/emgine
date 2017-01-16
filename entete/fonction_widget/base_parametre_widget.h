@@ -28,6 +28,7 @@ class base_parametre_widget : public QWidget
     private slots:
         void on_aide();
         void mouseDoubleClickEvent( QMouseEvent * e );
+        void mouseReleaseEvent( QMouseEvent * e );
 
     private:
         base_parametre* m_parametre;

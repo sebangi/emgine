@@ -17,6 +17,7 @@
 class noeud_fonction;
 class base_fonction_widget;
 class compilateur;
+class logs_compilation_widget;
 
 /**
  \brief Classe décrivant une fonction de conversion d'un texte.
@@ -55,7 +56,7 @@ class base_fonction : public objet_selectionnable
         QString get_info_bulle() const;
 
         void sauvegarder( QXmlStreamWriter & stream ) const;
-        bool est_fonction_valide() const;
+        bool est_fonction_valide(logs_compilation_widget * vue_logs) const;
         virtual QString get_aide() const = 0;
         virtual QString get_valeur_courte() const = 0;
 
@@ -65,8 +66,6 @@ class base_fonction : public objet_selectionnable
         type_fonction get_type() const;
         void set_noeud( noeud_fonction * n );
         noeud_fonction * get_noeud();
-        bool est_active() const;
-        void set_est_active(bool est_active);
         void inverser_activation();
 
         parametres_iterateur parametres_begin();
@@ -76,8 +75,13 @@ class base_fonction : public objet_selectionnable
 
         base_parametre* get_parametre(type_id_parametre id);
 
-        bool get_parametre_visible() const;
-        void set_parametre_visible(bool parametre_visible);
+        int get_niveau_visibilite() const;
+        int get_max_niveau_visibilite() const;
+        void set_niveau_visibilite( int niveau_visibilite );
+        void change_niveau_visibilite();
+        void set_est_active(bool est_active);
+
+        bool a_parametre() const;
 
         void set_id(const type_id_fonction &id);
         void charger(QXmlStreamReader & xm);
@@ -88,14 +92,17 @@ class base_fonction : public objet_selectionnable
     signals:
         void signal_destruction_fonction(base_fonction* f);
         void signal_activation_fonction_change(base_fonction * f);
+        void signal_niveau_visibilite_change(base_fonction * f);
 
     private:
+        void charger_parametres(QXmlStreamReader & xm);
         void charger_parametre(QXmlStreamReader & xm);
-        virtual bool est_valide() const = 0;
+        virtual bool est_valide(logs_compilation_widget * vue_logs) const = 0;
 
     protected:
         void ajouter_parametre(type_id_parametre nom, base_parametre* p);
         const texte & get_texte_parametre( type_id_parametre type ) const;
+        void augmenter_max_niveau_visibilite( int val );
 
     protected:
         /** \brief Le nom de la fonction. */
@@ -107,9 +114,10 @@ class base_fonction : public objet_selectionnable
     private:
         type_fonction m_type;
         type_id_fonction m_id;
-        bool m_est_active;
-        bool m_parametre_visible;
         fonctions_conteneur * m_conteneur;
+        int m_niveau_visibilite;
+        int m_max_niveau_visibilite;
+        int m_niveau_visibilite_avant_desactivation;
 };
 
 

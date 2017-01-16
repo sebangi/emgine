@@ -9,18 +9,17 @@ fonction_source_texte::fonction_source_texte(fonctions_conteneur * conteneur, QS
     : fonction_base_source(conteneur, "Texte"), m_texte(texte)
 {
     set_id(f_source_texte);
+    augmenter_max_niveau_visibilite(2);
+    set_niveau_visibilite(2);
 
     ajouter_parametre( PARAM_CARACTERE_SEPARATEUR,
-                       new base_parametre( this, "Séparateur d'élément", "Les séparateurs d'éléments.", false,
-                                            type_element_caractere) );
+                       new base_parametre( this, "Séparateur d'élément", "Les séparateurs d'éléments.", false) );
 
     ajouter_parametre( PARAM_MOT_SEPARATEUR,
-                       new base_parametre( this, "Séparateur de mot", "Les séparateurs de mot.", false,
-                                            type_element_caractere) );
+                       new base_parametre( this, "Séparateur de mot", "Les séparateurs de mot.", false) );
 
     ajouter_parametre( PARAM_LIGNE_SEPARATEUR,
-                       new base_parametre( this, "Séparateur de ligne", "Les séparateurs de ligne.", false,
-                                            type_element_caractere) );
+                       new base_parametre( this, "Séparateur de ligne", "Les séparateurs de ligne.", false) );
 }
 
 fonction_source_texte::~fonction_source_texte()
@@ -82,7 +81,7 @@ void fonction_source_texte::executer( compilateur &compil, const texte & texte_i
 /*! --------------------------------------------------------------------------------------
  \brief Indique si la fonction est valide.
 */
-bool fonction_source_texte::est_valide() const
+bool fonction_source_texte::est_valide(logs_compilation_widget * vue_logs) const
 {
     return true;
 }

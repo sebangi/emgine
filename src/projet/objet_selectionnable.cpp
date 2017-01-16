@@ -1,12 +1,13 @@
 #include "entete/projet/objet_selectionnable.h"
 #include "entete/projet/fonctions_conteneur.h"
+#include "entete/projet/base_fonction.h"
 
 #include <iostream>
 
 objet_selectionnable* objet_selectionnable::s_objet_courant = NULL;
 
 objet_selectionnable::objet_selectionnable(objet_selectionnable* parent)
-    : m_objet_parent(parent)
+    : m_objet_parent(parent), m_est_active(true), m_est_etendu(true)
 {
 
 }
@@ -33,12 +34,20 @@ void objet_selectionnable::selectionner()
     }
 }
 
-objet_selectionnable *objet_selectionnable::get_conteneur()
+fonctions_conteneur * objet_selectionnable::get_conteneur()
 {
     if ( est_conteneur() )
-        return this;
+        return (fonctions_conteneur *)this;
     else
         return m_objet_parent->get_conteneur();
+}
+
+projet * objet_selectionnable::get_projet()
+{
+    if ( est_projet() )
+        return (projet *)this;
+    else
+        return m_objet_parent->get_projet();
 }
 
 bool objet_selectionnable::est_conteneur() const
@@ -49,6 +58,32 @@ bool objet_selectionnable::est_conteneur() const
 bool objet_selectionnable::est_projet() const
 {
     return false;
+}
+
+void objet_selectionnable::set_est_active(bool est_active)
+{    
+    m_est_active = est_active;
+}
+
+bool objet_selectionnable::est_active() const
+{
+    return m_est_active;
+}
+
+bool objet_selectionnable::est_active_avec_parent() const
+{
+    if ( m_objet_parent == NULL )
+        return m_est_active;
+    else
+        return m_est_active && m_objet_parent->est_active_avec_parent();
+}
+
+bool objet_selectionnable::parents_actifs() const
+{
+    if ( m_objet_parent == NULL )
+        return true;
+    else
+        return m_objet_parent->est_active_avec_parent();
 }
 
 objet_selectionnable *objet_selectionnable::get_selection()
@@ -101,4 +136,38 @@ projet * objet_selectionnable::get_projet_courant(objet_selectionnable * obj)
         return (projet *)obj;
     else
         return get_projet_courant( obj->m_objet_parent );
+}
+
+void objet_selectionnable::set_est_etendu(bool est_entendu)
+{
+    m_est_etendu = est_entendu;
+}
+
+bool objet_selectionnable::est_entendu() const
+{
+    return m_est_etendu;
+}
+
+void objet_selectionnable::sauvegarder( QXmlStreamWriter & stream ) const
+{
+    stream.writeStartElement("objet_selectionnable");
+    stream.writeTextElement("est_etendu", QString::number(m_est_etendu));
+    stream.writeEndElement();
+}
+
+void objet_selectionnable::charger(QXmlStreamReader & xml)
+{
+    Q_ASSERT( xml.isStartElement() &&
+              xml.name() == "objet_selectionnable" );
+
+    while (xml.readNextStartElement())
+    {
+        if (xml.name() == "est_etendu")
+        {
+            QString est_etendu = xml.readElementText();
+            set_est_etendu( est_etendu.toInt() );
+        }
+        else
+            xml.skipCurrentElement();
+    }
 }

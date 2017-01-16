@@ -4,11 +4,11 @@
 #include <QTreeWidget>
 #include "entete/explorateur/base_noeud.h"
 #include <map>
+#include "entete/projet/base_fonction.h"
 
 class fenetre_principale;
 class noeud_projet;
 class projet;
-class base_fonction;
 class base_parametre;
 class base_noeud;
 class objet_selectionnable;
@@ -22,20 +22,25 @@ class explorateur : public QTreeWidget
 
     public:
         explorateur(QWidget *parent = 0);
+        ~explorateur();
 
-        base_noeud * get_projet_selon_nom_fichier(const QString& nom_fichier);
+        projet * get_projet_selon_nom_fichier(const QString& nom_fichier);
         void ajouter_projet(projet* p);
+
+    private:
         void ajouter_fonction(base_fonction* f);
         void set_noeud_context(base_noeud *noeud_context);
         base_noeud *get_noeud_context() const;
-
-    private:
         void ajouter_parametre(base_parametre* f);
         void ajouter_selectionnable(objet_selectionnable * obj, base_noeud* noeud);
+        void mettre_a_jour_activation( base_noeud* n, bool actif, bool change_expansion );
 
     private:
         void dragMoveEvent(QDragMoveEvent *e);
         void dropEvent(QDropEvent * event);
+
+    signals:
+        void signal_e_ajout_source(fonctions_conteneur *, base_fonction::type_fonction);
 
     private slots:
         void on_externe_supprimer_fonction(base_fonction * f);
@@ -44,14 +49,15 @@ class explorateur : public QTreeWidget
         void on_externe_objet_deselectionne(objet_selectionnable* obj);
         void on_externe_creation_fonction(base_fonction* f);
 
+        void on_itemExpanded(QTreeWidgetItem *item);
+        void on_itemCollapsed(QTreeWidgetItem *item);
         void on_itemClicked(QTreeWidgetItem *item, int column);
         void on_customContextMenuRequested(const QPoint &pos);
         void on_currentItemChanged(QTreeWidgetItem *item);
 
-        void on_set_noeud_courant();
         void on_ajout_source();
         void on_ajout_sortie();
-        void on_ajout_fonction();
+        void on_ajout_fonction_conversion();
 
     private:
         /** \brief Le noeud du context actuel. */

@@ -68,7 +68,6 @@ HEADERS  += \
         entete/element/ligne.h \
         entete/element/mot.h \
         entete/element/texte.h \
-        entete/element/type_element.h \
         entete/explorateur/base_noeud.h \
         entete/explorateur/explorateur.h \
         entete/explorateur/noeud_fonction.h \
@@ -96,11 +95,13 @@ HEADERS  += \
         entete/fonction_widget/selecteur_fonction_dialog.h \
         entete/fonction_widget/vue_fonctions.h \
     entete/projet/objet_selectionnable.h \
-    entete/explorateur/noeud_fonctions_conteneur.h
+    entete/explorateur/noeud_fonctions_conteneur.h \
+    entete/element/type_element.h
 
 FORMS    += \
     fenetre_principale.ui
 
 DISTFILES += \
-    stylesheet.qss
+    stylesheet.qss \
+    TODO.txt
 

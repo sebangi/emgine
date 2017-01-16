@@ -33,6 +33,7 @@ void vue_fonctions::ajouter_projet(projet *p)
 
 void vue_fonctions::init()
 {
+    setObjectName("vue_fonctions");
     verticalHeader()->hide();
     setVerticalScrollBarPolicy(Qt::ScrollBarAlwaysOn);
     setSelectionMode(QAbstractItemView::SingleSelection);
@@ -41,6 +42,7 @@ void vue_fonctions::init()
     setColumnHidden(2,true);
     setColumnWidth(0,50);
     horizontalHeader()->setStretchLastSection(true);
+    horizontalHeader()->setHighlightSections(false);
     setShowGrid(false);
 
     setRowCount(0);
@@ -48,6 +50,10 @@ void vue_fonctions::init()
     horizontalHeaderItem(0)->setText("");
     setHorizontalHeaderItem(1, new QTableWidgetItem());
     horizontalHeaderItem(1)->setText("");
+    QFont font = horizontalHeaderItem(1)->font();
+    font.setBold(true);
+    font.setPointSize(10);
+    horizontalHeaderItem(1)->setFont(font);
 
     connect( selectionModel(),
              SIGNAL(selectionChanged(const QItemSelection &, const QItemSelection &)),
@@ -112,6 +118,9 @@ void vue_fonctions::ajouter_vue_fonction(base_fonction* fonction)
 {
     base_fonction_widget * widget = fonction->generer_fonction_widget();
 
+    connect( widget, SIGNAL(signal_bfw_size_change()),
+             this, SLOT(on_externe_fonction_widget_size_change()));
+
     setRowCount(rowCount() + 1);
     setCellWidget(rowCount() -1, 1, (QWidget*)widget);
     setItem(rowCount() -1, 2, new QTableWidgetItem("essai"));
@@ -119,11 +128,19 @@ void vue_fonctions::ajouter_vue_fonction(base_fonction* fonction)
     horizontalHeader()->setStretchLastSection(true);
     verticalHeader()->setSectionResizeMode(QHeaderView::ResizeToContents);
 
-    QStyle* style = QApplication::style();
     QPushButton * image = new QPushButton();
     image->setObjectName("NomParametre");
-    image->setIcon(style->standardIcon( QStyle::SP_MediaPlay ));
+    QIcon icon1;
+    if ( fonction->get_type() == base_fonction::fonction_source )
+        icon1.addFile(QString::fromUtf8("icons/selection_source.png"), QSize(), QIcon::Normal, QIcon::Off);
+    else if ( fonction->get_type() == base_fonction::fonction_conversion )
+        icon1.addFile(QString::fromUtf8("icons/selection_conversion.png"), QSize(), QIcon::Normal, QIcon::Off);
+    else
+        icon1.addFile(QString::fromUtf8("icons/selection_sortie.png"), QSize(), QIcon::Normal, QIcon::Off);
+
+    image->setIcon(icon1);
     image->setIconSize(QSize(32,32));
+
     setCellWidget(rowCount() -1, 0, image);
     image->setEnabled(false);
 }
@@ -166,18 +183,31 @@ void vue_fonctions::deconnecter(objet_selectionnable* obj)
         m_selectionnables.erase(it);
 }
 
+void vue_fonctions::adjust_size_vue_fonction()
+{
+    for ( int i = 0; i < rowCount(); ++i )
+        setRowHeight(i, cellWidget(i,1)->size().height());
+}
+
 void vue_fonctions::on_externe_supprimer_fonction(base_fonction *f)
 {
     bool trouve = false;
 
     for ( int i = 0; ! trouve && i != rowCount(); ++i )
-        if ( ((base_fonction_widget *)(this->cellWidget(i,1)))->get_fonction() == f )
+    {
+        base_fonction_widget * widget = ((base_fonction_widget *)(this->cellWidget(i,1)));
+
+        if ( widget->get_fonction() == f )
         {
+            disconnect( widget, SIGNAL(signal_bfw_size_change()),
+                        this, SLOT(on_externe_fonction_widget_size_change()));
+
             trouve = true;
             m_bloquer_selection = true;
             this->removeRow(i);
             m_bloquer_selection = false;
         }
+    }
 
     deconnecter((objet_selectionnable*)f);
 }
@@ -189,25 +219,23 @@ void vue_fonctions::on_externe_objet_selectionne(objet_selectionnable *obj)
         m_conteneur_courant = (fonctions_conteneur*)obj->get_conteneur();
         creer_vue_conteneur();
     }
-    else
-    {
-        for ( int i = 0; i != rowCount(); ++i )
-        {
-            if ( (objet_selectionnable *)((base_fonction_widget*)(cellWidget(i,1)))->get_fonction() == obj )
-            {
-                ((QPushButton*)(cellWidget(i,0)))->setEnabled( true );
 
-                if ( i == rowCount() - 1 )
-                {
-                    scrollToBottom();
-                }
-                else
-                {
-                    QTableWidgetItem * tableItem = item(i,2);
-                    setColumnHidden(2,false);
-                    scrollToItem( tableItem, EnsureVisible);
-                    setColumnHidden(2,true);
-                }
+    for ( int i = 0; i != rowCount(); ++i )
+    {
+        if ( (objet_selectionnable *)((base_fonction_widget*)(cellWidget(i,1)))->get_fonction() == obj )
+        {
+            ((QPushButton*)(cellWidget(i,0)))->setEnabled( true );
+
+            if ( i == rowCount() - 1 )
+            {
+                scrollToBottom();
+            }
+            else
+            {
+                QTableWidgetItem * tableItem = item(i,2);
+                setColumnHidden(2,false);
+                scrollToItem( tableItem, EnsureVisible);
+                setColumnHidden(2,true);
             }
         }
     }
@@ -243,8 +271,13 @@ void vue_fonctions::on_vue_fonction_selectionChanged(const QItemSelection &last_
         int row = currentRow();
 
         if ( row >= 0 )
-            ( (objet_selectionnable *)( ( (base_fonction_widget*)( cellWidget(row,1) ) )->get_fonction() ) ) ->selectionner();
+            ( (objet_selectionnable *)( ( (base_fonction_widget*)( cellWidget(row,1) ) )->get_fonction() ) )->selectionner();
     }
+}
+
+void vue_fonctions::on_externe_fonction_widget_size_change()
+{
+    adjust_size_vue_fonction();
 }
 
 

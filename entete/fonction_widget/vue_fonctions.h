@@ -29,6 +29,7 @@ class vue_fonctions : public QTableWidget
         void ajouter_vue_fonction(base_fonction* fonction);
         void ajouter_selectionnable(objet_selectionnable *obj);
         void deconnecter(objet_selectionnable *obj);
+        void adjust_size_vue_fonction();
 
     private slots:
         void on_externe_supprimer_fonction(base_fonction *f);
@@ -36,10 +37,10 @@ class vue_fonctions : public QTableWidget
         void on_externe_objet_deselectionne(objet_selectionnable*);
         void on_externe_creation_fonction(base_fonction*);
         void on_vue_fonction_selectionChanged(const QItemSelection &last_index, const QItemSelection & new_index);
+        void on_externe_fonction_widget_size_change();
 
     private:
         liste_selectionnable m_selectionnables;
-
         fonctions_conteneur * m_conteneur_courant;
         bool m_bloquer_selection;
 };

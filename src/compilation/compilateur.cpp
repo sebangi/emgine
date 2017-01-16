@@ -10,23 +10,24 @@
 
 #include <iostream>
 
-compilateur::compilateur()
+compilateur::compilateur( logs_compilation_widget * vue_logs )
+    : m_vue_logs(vue_logs)
 {
 
 }
 
 void compilateur::compiler(projet *p)
 {
-    fenetre_principale::s_vue_logs->setVisible(true);
-    fenetre_principale::s_vue_logs->clear();
+    m_vue_logs->setVisible(true);
+    m_vue_logs->clear();
 
-    fenetre_principale::s_vue_logs->ajouter_log
+    m_vue_logs->ajouter_log
             ( log_compilation( log_compilation::LOG_IMPORTANT, p,
                                "Compilation du projet \"" + p->get_nom() + "\"...") );
 
     if ( est_valide( p ) )
     {
-        fenetre_principale::s_vue_logs->ajouter_log
+        m_vue_logs->ajouter_log
                 ( log_compilation( log_compilation::LOG_SUCCES, p, "Le projet \"" + p->get_nom() + "\" est valide.") );
         reset();
         executer_projet(p);
@@ -35,14 +36,14 @@ void compilateur::compiler(projet *p)
     {
         QString message("compilation");
 
-        fenetre_principale::s_vue_logs->ajouter_log
+        m_vue_logs->ajouter_log
                 ( log_compilation( log_compilation::LOG_ERREUR, p, "Le projet \"" + p->get_nom() + "\" n'est pas valide.") );
     }
 }
 
 bool compilateur::est_valide(projet *p)
 {
-    return p->est_valide();
+    return p->est_valide(m_vue_logs);
 }
 
 void compilateur::reset()
@@ -53,7 +54,7 @@ void compilateur::reset()
 
 void compilateur::executer_projet(projet *p)
 {
-    fenetre_principale::s_vue_logs->ajouter_log
+    m_vue_logs->ajouter_log
             ( log_compilation( log_compilation::LOG_IMPORTANT, "Exécution...") );
     m_pile_textes.push(texte());
 
@@ -96,15 +97,20 @@ void compilateur::afficher_resultat()
     m_pile_textes.pop();
 
     if ( ! m_pile_textes.empty() )
-        fenetre_principale::s_vue_logs->ajouter_log
+        m_vue_logs->ajouter_log
                 ( log_compilation( log_compilation::LOG_ERREUR, "La pile d'exécution n'est pas vide.") );
     else
     {        
         // TODO : EVENT exécution terminée
-        // fenetre_principale::s_vue_fonctions->scrollToBottom();
+        // m_vue_fonctions->scrollToBottom();
 
 
-        fenetre_principale::s_vue_logs->ajouter_log
+        m_vue_logs->ajouter_log
                 ( log_compilation( log_compilation::LOG_IMPORTANT, "Exécution terminée.") );
     }
+}
+
+logs_compilation_widget *compilateur::get_vue_logs() const
+{
+    return m_vue_logs;
 }

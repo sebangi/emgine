@@ -20,7 +20,7 @@ void fonction_source_texte_widget::init()
 
     connect(m_text_edit, SIGNAL(textChanged()), this, SLOT(on_textChanged()));
 
-    m_parametre_layout->addLayout(lay);
+    m_specialisation_layout->addLayout(lay);
 }
 
 void fonction_source_texte_widget::on_textChanged()

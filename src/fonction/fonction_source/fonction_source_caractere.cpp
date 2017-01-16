@@ -7,6 +7,7 @@ fonction_source_caractere::fonction_source_caractere( fonctions_conteneur * cont
     : fonction_base_source(conteneur, "Source caractère"), m_valeur(valeur)
 {    
     set_id(f_source_caractere);
+    augmenter_max_niveau_visibilite(1);
 }
 
 fonction_source_caractere::~fonction_source_caractere()
@@ -40,7 +41,7 @@ void fonction_source_caractere::executer( compilateur &compil, const texte & tex
 /*! --------------------------------------------------------------------------------------
  \brief Indique si la fonction est valide.
 */
-bool fonction_source_caractere::est_valide() const
+bool fonction_source_caractere::est_valide(logs_compilation_widget * vue_logs) const
 {
     return true;
 }

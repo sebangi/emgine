@@ -26,9 +26,13 @@ class base_fonction_widget : public QWidget, public QTableWidgetItem
         void init();
         void update_actif_bouton();
         void update_parametre_bouton();
+        void update_visibilite();
         void update_object_name();
         void aide();
         void init_connect();
+
+    signals:
+        void signal_bfw_size_change();
 
    private slots:
         void on_inverser_activation();
@@ -37,13 +41,16 @@ class base_fonction_widget : public QWidget, public QTableWidgetItem
         void on_aide();
 
         void on_externe_activation_fonction_change(base_fonction * f);
+        void on_externe_niveau_visibilite_change(base_fonction * f);
 
     protected:
         base_fonction* m_fonction;
+        QWidget * m_specialisation_widget;
+        QVBoxLayout * m_specialisation_layout;
+
+    private:        
         QVBoxLayout * m_parametre_layout;
         QWidget * m_parametre_widget;
-
-    private:
         QFrame * m_separation;        
         QPushButton *m_parametre_bouton;
         QPushButton *m_fermer_bouton;

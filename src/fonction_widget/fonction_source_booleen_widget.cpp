@@ -36,7 +36,7 @@ void fonction_source_booleen_widget::init()
     lay->addWidget(m_check_non, 1, Qt::AlignLeft);
     connect(m_check_non, SIGNAL(stateChanged(int)), this, SLOT(on_non_stateChanged(int)));
 
-    m_parametre_layout->addLayout(lay);
+    m_specialisation_layout->addLayout(lay);
 }
 
 void fonction_source_booleen_widget::on_oui_stateChanged(int checkState)
