@@ -1,6 +1,6 @@
 #include "entete/fonction/fonction_source/fonction_source_caractere.h"
 
-#include "entete/fonction_widget/fonction_source_caractere_widget.h"
+#include "entete/fonction_widget/fonction_source_widget/fonction_source_caractere_widget.h"
 #include "entete/compilation/compilateur.h"
 
 fonction_source_caractere::fonction_source_caractere( fonctions_conteneur * conteneur, QString valeur )

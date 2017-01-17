@@ -1,6 +1,6 @@
 #include "entete/fonction/fonction_source/fonction_source_booleen.h"
 
-#include "entete/fonction_widget/fonction_source_booleen_widget.h"
+#include "entete/fonction_widget/fonction_source_widget/fonction_source_booleen_widget.h"
 #include "entete/compilation/compilateur.h"
 #include "entete/element/mot.h"
 
