@@ -75,7 +75,7 @@ class fenetre_principale : public QMainWindow
         void on_enregistrer_projet_sous_click();
         void on_enregistrer_projet_click();
         void on_ouvrir_projet_click();
-        void on_compiler_click();
+        void on_executer_click();
 
         void on_externe_e_ajout_source(fonctions_conteneur * conteneur, base_fonction::type_fonction type);
         void on_externe_projet_etat_modification_change(projet * p, bool etat);

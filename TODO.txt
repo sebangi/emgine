@@ -12,6 +12,7 @@ ETAPE 1 : PRIORITAIRE
     -> pour cela : probablement complexifier la classe texte, voire travailler avec des QList<texte>
 * verifier la gestion des disconnect
 * verifier les delete
+* ajouter les raccourcis clavier
 * reflexion sur les parametre de fonction_texte : faut-il itérer sur les lignes ?
 * factoriser fonction_cesar.executer
 * vérifier les TODO restants et les retirer

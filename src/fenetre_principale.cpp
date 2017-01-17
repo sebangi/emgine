@@ -148,16 +148,19 @@ void fenetre_principale::init_widgets()
     icone_source.addFile(QString::fromUtf8("icons/ajout_source.png"), QSize(), QIcon::Normal, QIcon::Off);
     m_toolbar_bouton_ajout_fonction_source->setIcon(icone_source);
     m_toolbar_bouton_ajout_fonction_source->setText("Source");
+    m_toolbar_bouton_ajout_fonction_source->setShortcut( QKeySequence("Alt+A") );
 
     QIcon icone_conversion;
     icone_conversion.addFile(QString::fromUtf8("icons/ajout_conversion.png"), QSize(), QIcon::Normal, QIcon::Off);
     m_toolbar_bouton_ajout_fonction_conversion->setIcon(icone_conversion);
     m_toolbar_bouton_ajout_fonction_conversion->setText("Conversion");
+    m_toolbar_bouton_ajout_fonction_conversion->setShortcut( QKeySequence("Alt+Z") );
 
     QIcon icone_sortie;
     icone_sortie.addFile(QString::fromUtf8("icons/ajout_sortie.png"), QSize(), QIcon::Normal, QIcon::Off);
     m_toolbar_bouton_ajout_fonction_sortie->setIcon(icone_sortie);
-    m_toolbar_bouton_ajout_fonction_sortie->setText("Sortie");
+    m_toolbar_bouton_ajout_fonction_sortie->setText("Sortie");    
+    m_toolbar_bouton_ajout_fonction_sortie->setShortcut( QKeySequence("Alt+E") );
 
     m_toolbar_bouton_nouveau_projet->setIcon(style->standardIcon( QStyle::SP_FileDialogNewFolder ));
     m_toolbar_bouton_nouveau_projet->setText("Nouveau projet");
@@ -167,6 +170,7 @@ void fenetre_principale::init_widgets()
 
     m_toolbar_bouton_sauvegarder_projet->setIcon(style->standardIcon( QStyle::SP_DialogSaveButton ));
     m_toolbar_bouton_sauvegarder_projet->setText("Enregistrer");
+    m_toolbar_bouton_sauvegarder_projet->setShortcut( QKeySequence("Ctrl+S") );
     m_toolbar_bouton_sauvegarder_projet_sous->setIcon(style->standardIcon( QStyle::SP_DialogSaveButton ));
     m_toolbar_bouton_sauvegarder_projet_sous->setText("Enregistrer sous");
 
@@ -177,7 +181,7 @@ void fenetre_principale::init_widgets()
     connect( m_toolbar_bouton_sauvegarder_projet, SIGNAL(released()), this, SLOT(on_enregistrer_projet_click()));
     connect( m_toolbar_bouton_sauvegarder_projet_sous, SIGNAL(released()), this, SLOT(on_enregistrer_projet_sous_click()));
     connect( m_toolbar_bouton_ouvrir_projet, SIGNAL(released()), this, SLOT(on_ouvrir_projet_click()));
-    connect( m_toolbar_bouton_executer, SIGNAL(released()), this, SLOT(on_compiler_click()));
+    connect( m_toolbar_bouton_executer, SIGNAL(released()), this, SLOT(on_executer_click()));
 
     QWidget * top_widget = new QWidget(this);
     QHBoxLayout * hor_lay = new QHBoxLayout();
@@ -197,6 +201,7 @@ void fenetre_principale::init_widgets()
     icon_compile.addFile(QString::fromUtf8("icons/grand_compile.png"), QSize(), QIcon::Normal, QIcon::Off);
     m_toolbar_bouton_executer->setIcon(icon_compile);
     m_toolbar_bouton_executer->setText("Exécuter");
+    m_toolbar_bouton_executer->setShortcut( QKeySequence("Ctrl+R") );
 }
 
 /** --------------------------------------------------------------------------------------
@@ -515,7 +520,7 @@ void fenetre_principale::on_ouvrir_projet_click()
 /** --------------------------------------------------------------------------------------
  \brief Le bouton compiler est activé.
 */
-void fenetre_principale::on_compiler_click()
+void fenetre_principale::on_executer_click()
 {
     if ( objet_selectionnable::existe_selection() )
         compiler( objet_selectionnable::get_projet_courant() );
