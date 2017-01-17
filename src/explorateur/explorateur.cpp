@@ -302,7 +302,7 @@ void explorateur::on_customContextMenuRequested(const QPoint &pos)
     {
         QAction *newAct_enregistrer = new QAction(style->standardIcon( QStyle::SP_DialogSaveButton ), tr("&Enregistrer"), this);
         newAct_enregistrer->setStatusTip(tr("Enregistrer"));
-        newAct_enregistrer->setEnabled( noeud_context->get_objet()->get_projet()->enregistrable() );
+        newAct_enregistrer->setEnabled( noeud_context->get_objet()->get_projet()->est_enregistrable() );
         connect(newAct_enregistrer, SIGNAL(triggered()), this, SLOT(on_enregistrer()));
         menu.addAction(newAct_enregistrer);
 

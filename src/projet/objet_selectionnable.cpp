@@ -150,6 +150,8 @@ void objet_selectionnable::modifier()
     {
         if ( ! ((projet*)this)->est_modifie() )
             ((projet*)this)->set_est_modifie(true);
+
+        ((projet*)this)->set_executable(true);
     }
     else
         m_objet_parent->modifier();

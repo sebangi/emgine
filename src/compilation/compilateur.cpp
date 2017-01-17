@@ -54,6 +54,7 @@ void compilateur::reset()
 
 void compilateur::executer_projet(projet *p)
 {
+    p->executer();
     m_vue_logs->ajouter_log
             ( log_compilation( log_compilation::LOG_IMPORTANT, "Exécution...") );
     m_pile_textes.push(texte());

@@ -40,12 +40,16 @@ class projet : public fonctions_conteneur
 
         bool est_valide(logs_compilation_widget * vue_logs);
         bool est_modifie() const;
-        void set_est_modifie(bool est_modifie);
-        bool enregistrable() const;
+        void set_est_modifie(bool est_modifie);        
+        bool est_enregistrable() const;
+        void set_executable( bool executable );
+        void executer();
+        bool est_executable() const;
 
     signals:
         void signal_p_projet_etat_modification_change( projet *, bool);
         void signal_p_nom_projet_change( projet * );
+        void signal_p_projet_executable_change( projet * );
 
     private:
         void charger_nom(QXmlStreamReader & xml);
@@ -60,6 +64,7 @@ class projet : public fonctions_conteneur
         QString m_nom_fichier;
         bool m_nouveau;
         bool m_est_modifie;
+        bool m_est_executable;
         QString m_description;
 
         static unsigned int s_nb_projets;

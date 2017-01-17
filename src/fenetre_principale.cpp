@@ -86,7 +86,7 @@ void fenetre_principale::creer_toolbar()
     m_toolbar_bouton_ajout_fonction_source = new QPushButton();
     m_toolbar_bouton_ajout_fonction_conversion = new QPushButton();
     m_toolbar_bouton_ajout_fonction_sortie = new QPushButton();
-    m_toolbar_bouton_compiler = new QPushButton();
+    m_toolbar_bouton_executer = new QPushButton();
 
     m_toolbar_bouton_nouveau_projet->setObjectName("ButtonToolBar");
     m_toolbar_bouton_sauvegarder_projet->setObjectName("ButtonToolBar");
@@ -97,7 +97,7 @@ void fenetre_principale::creer_toolbar()
     m_toolbar_bouton_ajout_fonction_conversion->setObjectName("ButtonToolBar");
     m_toolbar_bouton_ajout_fonction_sortie->setObjectName("ButtonToolBar");
 
-    m_toolbar_bouton_compiler->setObjectName("ButtonToolBar");
+    m_toolbar_bouton_executer->setObjectName("ButtonToolBar");
 
     m_ui->mainToolBar->addWidget(m_toolbar_bouton_nouveau_projet);
     m_ui->mainToolBar->addWidget(m_toolbar_bouton_ouvrir_projet);
@@ -115,7 +115,7 @@ void fenetre_principale::creer_toolbar()
     m_ui->mainToolBar->addWidget(spacer);
 
     m_ui->mainToolBar->addSeparator();
-    m_ui->mainToolBar->addWidget(m_toolbar_bouton_compiler);
+    m_ui->mainToolBar->addWidget(m_toolbar_bouton_executer);
 }
 
 /** --------------------------------------------------------------------------------------
@@ -177,7 +177,7 @@ void fenetre_principale::init_widgets()
     connect( m_toolbar_bouton_sauvegarder_projet, SIGNAL(released()), this, SLOT(on_enregistrer_projet_click()));
     connect( m_toolbar_bouton_sauvegarder_projet_sous, SIGNAL(released()), this, SLOT(on_enregistrer_projet_sous_click()));
     connect( m_toolbar_bouton_ouvrir_projet, SIGNAL(released()), this, SLOT(on_ouvrir_projet_click()));
-    connect( m_toolbar_bouton_compiler, SIGNAL(released()), this, SLOT(on_compiler_click()));
+    connect( m_toolbar_bouton_executer, SIGNAL(released()), this, SLOT(on_compiler_click()));
 
     QWidget * top_widget = new QWidget(this);
     QHBoxLayout * hor_lay = new QHBoxLayout();
@@ -195,8 +195,8 @@ void fenetre_principale::init_widgets()
 
     QIcon icon_compile;
     icon_compile.addFile(QString::fromUtf8("icons/grand_compile.png"), QSize(), QIcon::Normal, QIcon::Off);
-    m_toolbar_bouton_compiler->setIcon(icon_compile);
-    m_toolbar_bouton_compiler->setText("Exécuter");
+    m_toolbar_bouton_executer->setIcon(icon_compile);
+    m_toolbar_bouton_executer->setText("Exécuter");
 }
 
 /** --------------------------------------------------------------------------------------
@@ -290,6 +290,9 @@ void fenetre_principale::ajouter_projet( projet * p )
 
     connect( p, SIGNAL(signal_p_projet_etat_modification_change(projet *, bool)),
              this, SLOT(on_externe_projet_etat_modification_change(projet *, bool)));
+
+    connect( p, SIGNAL(signal_p_projet_executable_change(projet *)),
+             this, SLOT(on_externe_projet_executable_change(projet *)));
 
     connect( s_explorateur, SIGNAL(signal_e_enregistrer_projet(projet *)),
              this, SLOT(enregistrer_projet(projet *)));
@@ -405,6 +408,7 @@ void fenetre_principale::compiler(projet* p)
 {
     if ( p != NULL )
     {
+        m_toolbar_bouton_executer->setEnabled( false );
         s_compilateur->compiler( p );
         p->selectionner();
         s_vue_fonctions->scrollToBottom();
@@ -415,7 +419,7 @@ void fenetre_principale::update_boutons_projet( projet * p )
 {
     if ( p != NULL )
     {
-        m_toolbar_bouton_sauvegarder_projet->setEnabled( p->enregistrable() );
+        m_toolbar_bouton_sauvegarder_projet->setEnabled( p->est_enregistrable());
         m_toolbar_bouton_sauvegarder_projet_sous->setEnabled( true );
     }
     else
@@ -424,6 +428,20 @@ void fenetre_principale::update_boutons_projet( projet * p )
         m_toolbar_bouton_sauvegarder_projet_sous->setEnabled( false );
     }
 }
+
+void fenetre_principale::update_bouton_execution( projet * p )
+{
+    if ( p != NULL )
+    {
+        m_toolbar_bouton_executer->setEnabled( p->est_executable() );
+    }
+    else
+    {
+        m_toolbar_bouton_executer->setEnabled( false );
+    }
+}
+
+
 
 void fenetre_principale::update_boutons_fonctions( objet_selectionnable * obj, bool etat )
 {
@@ -512,7 +530,16 @@ void fenetre_principale::on_externe_projet_etat_modification_change(projet *p, b
 {
     if ( objet_selectionnable::existe_selection() )
         if ( objet_selectionnable::get_projet_courant() == p )
+        {
             update_boutons_projet( p );
+        }
+}
+
+void fenetre_principale::on_externe_projet_executable_change(projet *p)
+{
+    if ( objet_selectionnable::existe_selection() )
+        if ( objet_selectionnable::get_projet_courant() == p )
+            update_bouton_execution( p );
 }
 
 
@@ -520,9 +547,9 @@ void fenetre_principale::on_externe_objet_selectionne(objet_selectionnable *obj)
 {
     update_boutons_fonctions(obj, true);
     update_boutons_projet(obj->get_projet());
+    update_bouton_execution(obj->get_projet());
 }
 
 void fenetre_principale::on_externe_objet_deselectionne(objet_selectionnable *obj)
 {
-    update_boutons_fonctions(obj, false);
 }

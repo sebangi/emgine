@@ -25,7 +25,10 @@ ETAPE 2 : VERSION 0.1
 * documentation
 * faire sous git la version 0.1
 
-ETAPE 3 : NON PRIORITAIRE
+ETAPE 3
+* Améliorer le sélection des fonctions : catégories, mots clés
+
+ETAPE 4 : NON PRIORITAIRE
 * gestion les dictionnaires
 * ajouter la fonction de source texte fichier (éditable et réenregistrable)
 * ajouter des fonctions de conversion
