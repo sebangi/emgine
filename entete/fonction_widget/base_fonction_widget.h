@@ -51,7 +51,8 @@ class base_fonction_widget : public QWidget, public QTableWidgetItem
     private:        
         QVBoxLayout * m_parametre_layout;
         QWidget * m_parametre_widget;
-        QFrame * m_separation;        
+        QFrame * m_separation1;
+        QFrame * m_separation2;
         QPushButton *m_parametre_bouton;
         QPushButton *m_fermer_bouton;
         QPushButton *m_actif_bouton;

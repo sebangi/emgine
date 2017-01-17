@@ -23,6 +23,8 @@ void vue_fonctions::ajouter_projet(projet *p)
 
         connect( (fonctions_conteneur*)p, SIGNAL(signal_fc_creation_fonction(base_fonction*)),
                  this, SLOT(on_externe_creation_fonction(base_fonction*)));
+        connect( p, SIGNAL(signal_p_nom_projet_change(projet *)),
+                 this, SLOT(on_externe_nom_projet_change(projet *)));
 
         for ( projet::fonctions_iterateur it = p->fonctions_begin(); it != p->fonctions_end(); ++it )
             ajouter_fonction( *it );
@@ -210,6 +212,12 @@ void vue_fonctions::on_externe_supprimer_fonction(base_fonction *f)
     }
 
     deconnecter((objet_selectionnable*)f);
+}
+
+void vue_fonctions::on_externe_nom_projet_change(projet *p)
+{
+    if( m_conteneur_courant == p )
+        horizontalHeaderItem(1)->setText( m_conteneur_courant->get_titre() );
 }
 
 void vue_fonctions::on_externe_objet_selectionne(objet_selectionnable *obj)

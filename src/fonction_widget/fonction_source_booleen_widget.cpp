@@ -43,11 +43,13 @@ void fonction_source_booleen_widget::on_oui_stateChanged(int checkState)
 {
     ((fonction_source_booleen*)m_fonction)->set_valeur( checkState );
     m_check_non->setChecked( ! m_check_oui->isChecked() );
+    m_fonction->modifier();
 }
 
 void fonction_source_booleen_widget::on_non_stateChanged(int checkState)
 {
     ((fonction_source_booleen*)m_fonction)->set_valeur( ! checkState );
     m_check_oui->setChecked( ! m_check_non->isChecked() );
+    m_fonction->modifier();
 }
 

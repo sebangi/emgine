@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <projet>
-    <nom>Exemple</nom>
+    <nom>essai</nom>
     <description></description>
     <objet_selectionnable>
         <est_etendu>1</est_etendu>

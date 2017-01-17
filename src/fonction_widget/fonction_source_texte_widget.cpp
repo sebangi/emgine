@@ -14,6 +14,7 @@ void fonction_source_texte_widget::init()
     QHBoxLayout * lay = new QHBoxLayout();
 
     m_text_edit = new QPlainTextEdit();
+    m_text_edit->setLineWrapMode(QPlainTextEdit::NoWrap);
     m_text_edit->setPlainText( ((fonction_source_texte*)m_fonction)->get_valeur() );
     m_text_edit->setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Expanding);
     lay->addWidget(m_text_edit);
@@ -26,5 +27,6 @@ void fonction_source_texte_widget::init()
 void fonction_source_texte_widget::on_textChanged()
 {
     ((fonction_source_texte*)m_fonction)->set_valeur( m_text_edit->toPlainText() );
+    m_fonction->modifier();
 }
 

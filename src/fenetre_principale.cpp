@@ -92,15 +92,18 @@ void fenetre_principale::creer_toolbar()
     m_toolbar_bouton_sauvegarder_projet->setObjectName("ButtonToolBar");
     m_toolbar_bouton_sauvegarder_projet_sous->setObjectName("ButtonToolBar");
     m_toolbar_bouton_ouvrir_projet->setObjectName("ButtonToolBar");
-    m_toolbar_bouton_ajout_fonction_source->setObjectName("ButtonToolBarSource");
-    m_toolbar_bouton_ajout_fonction_conversion->setObjectName("ButtonToolBarConversion");
-    m_toolbar_bouton_ajout_fonction_sortie->setObjectName("ButtonToolBarSortie");
+
+    m_toolbar_bouton_ajout_fonction_source->setObjectName("ButtonToolBar");
+    m_toolbar_bouton_ajout_fonction_conversion->setObjectName("ButtonToolBar");
+    m_toolbar_bouton_ajout_fonction_sortie->setObjectName("ButtonToolBar");
+
     m_toolbar_bouton_compiler->setObjectName("ButtonToolBar");
 
     m_ui->mainToolBar->addWidget(m_toolbar_bouton_nouveau_projet);
+    m_ui->mainToolBar->addWidget(m_toolbar_bouton_ouvrir_projet);
+    m_ui->mainToolBar->addSeparator();
     m_ui->mainToolBar->addWidget(m_toolbar_bouton_sauvegarder_projet);
     m_ui->mainToolBar->addWidget(m_toolbar_bouton_sauvegarder_projet_sous);
-    m_ui->mainToolBar->addWidget(m_toolbar_bouton_ouvrir_projet);
     m_ui->mainToolBar->addSeparator();
     m_ui->mainToolBar->addWidget(m_toolbar_bouton_ajout_fonction_source);
     m_ui->mainToolBar->addWidget(m_toolbar_bouton_ajout_fonction_conversion);
@@ -127,7 +130,10 @@ void fenetre_principale::creer_widgets()
 
     connect( s_explorateur, SIGNAL(signal_e_ajout_source(fonctions_conteneur *, base_fonction::type_fonction)),
              this, SLOT(on_externe_e_ajout_source(fonctions_conteneur *, base_fonction::type_fonction)));
-
+    connect( s_explorateur, SIGNAL(signal_e_objet_selectionne(objet_selectionnable*)),
+             this, SLOT(on_externe_objet_selectionne(objet_selectionnable *)));
+    connect( s_explorateur, SIGNAL(signal_e_objet_deselectionne(objet_selectionnable*)),
+             this, SLOT(on_externe_objet_deselectionne(objet_selectionnable *)));
 }
 
 /** --------------------------------------------------------------------------------------
@@ -138,17 +144,23 @@ void fenetre_principale::init_widgets()
     QStyle* style = QApplication::style();
     setWindowTitle("Emgine");
 
-    QIcon icon1;
-    icon1.addFile(QString::fromUtf8("icons/add.png"), QSize(), QIcon::Normal, QIcon::Off);
-    m_toolbar_bouton_ajout_fonction_source->setIcon(icon1);
+    QIcon icone_source;
+    icone_source.addFile(QString::fromUtf8("icons/ajout_source.png"), QSize(), QIcon::Normal, QIcon::Off);
+    m_toolbar_bouton_ajout_fonction_source->setIcon(icone_source);
     m_toolbar_bouton_ajout_fonction_source->setText("Source");
-    m_toolbar_bouton_ajout_fonction_conversion->setIcon(icon1);
+
+    QIcon icone_conversion;
+    icone_conversion.addFile(QString::fromUtf8("icons/ajout_conversion.png"), QSize(), QIcon::Normal, QIcon::Off);
+    m_toolbar_bouton_ajout_fonction_conversion->setIcon(icone_conversion);
     m_toolbar_bouton_ajout_fonction_conversion->setText("Conversion");
-    m_toolbar_bouton_ajout_fonction_sortie->setIcon(icon1);
+
+    QIcon icone_sortie;
+    icone_sortie.addFile(QString::fromUtf8("icons/ajout_sortie.png"), QSize(), QIcon::Normal, QIcon::Off);
+    m_toolbar_bouton_ajout_fonction_sortie->setIcon(icone_sortie);
     m_toolbar_bouton_ajout_fonction_sortie->setText("Sortie");
 
     m_toolbar_bouton_nouveau_projet->setIcon(style->standardIcon( QStyle::SP_FileDialogNewFolder ));
-    m_toolbar_bouton_nouveau_projet->setText("Projet");
+    m_toolbar_bouton_nouveau_projet->setText("Nouveau projet");
 
     m_toolbar_bouton_ouvrir_projet->setIcon(style->standardIcon( QStyle::SP_DialogOpenButton ));
     m_toolbar_bouton_ouvrir_projet->setText("Ouvrir");
@@ -162,8 +174,8 @@ void fenetre_principale::init_widgets()
     connect( m_toolbar_bouton_ajout_fonction_conversion, SIGNAL(released()), this, SLOT(on_ajouter_fonction_conversion_click()));
     connect( m_toolbar_bouton_ajout_fonction_sortie, SIGNAL(released()), this, SLOT(on_ajouter_fonction_sortie_click()));
     connect( m_toolbar_bouton_nouveau_projet, SIGNAL(released()), this, SLOT(on_nouveau_projet_click()));
-    connect( m_toolbar_bouton_sauvegarder_projet, SIGNAL(released()), this, SLOT(on_sauvegarder_projet_click()));
-    connect( m_toolbar_bouton_sauvegarder_projet_sous, SIGNAL(released()), this, SLOT(on_sauvegarder_projet_sous_click()));
+    connect( m_toolbar_bouton_sauvegarder_projet, SIGNAL(released()), this, SLOT(on_enregistrer_projet_click()));
+    connect( m_toolbar_bouton_sauvegarder_projet_sous, SIGNAL(released()), this, SLOT(on_enregistrer_projet_sous_click()));
     connect( m_toolbar_bouton_ouvrir_projet, SIGNAL(released()), this, SLOT(on_ouvrir_projet_click()));
     connect( m_toolbar_bouton_compiler, SIGNAL(released()), this, SLOT(on_compiler_click()));
 
@@ -181,9 +193,9 @@ void fenetre_principale::init_widgets()
     m_ui->centralLayout->addWidget(top_widget,5);
     m_ui->centralLayout->addWidget(s_vue_logs, 1);
 
-    QIcon icon2;
-    icon2.addFile(QString::fromUtf8("icons/grand_compile.png"), QSize(), QIcon::Normal, QIcon::Off);
-    m_toolbar_bouton_compiler->setIcon(icon2);
+    QIcon icon_compile;
+    icon_compile.addFile(QString::fromUtf8("icons/grand_compile.png"), QSize(), QIcon::Normal, QIcon::Off);
+    m_toolbar_bouton_compiler->setIcon(icon_compile);
     m_toolbar_bouton_compiler->setText("Exécuter");
 }
 
@@ -228,6 +240,7 @@ void fenetre_principale::ajouter_fonction( fonctions_conteneur * conteneur, base
         if ( r == QDialog::Accepted )
         {
             base_fonction * f = dlg->get_fonction();
+            f->set_conteneur(conteneur);
 
             if ( f != NULL )
                 ajouter_fonction(conteneur, f, true, true);
@@ -274,32 +287,40 @@ void fenetre_principale::ajouter_projet( projet * p )
     s_vue_fonctions->ajouter_projet(p);
 
     p->selectionner();
+
+    connect( p, SIGNAL(signal_p_projet_etat_modification_change(projet *, bool)),
+             this, SLOT(on_externe_projet_etat_modification_change(projet *, bool)));
+
+    connect( s_explorateur, SIGNAL(signal_e_enregistrer_projet(projet *)),
+             this, SLOT(enregistrer_projet(projet *)));
+
+    connect( s_explorateur, SIGNAL(signal_e_enregistrer_projet_sous(projet *)),
+             this, SLOT(enregistrer_projet_sous(projet *)));
 }
 
 /** --------------------------------------------------------------------------------------
  \brief Sauvegarder le projet.
 */
-void fenetre_principale::sauvegarder_projet(projet* p)
+void fenetre_principale::enregistrer_projet(projet* p)
 {
     if ( p != NULL )
     {
         if ( p->est_nouveau() )
-            sauvegarder_projet_sous( p );
+            enregistrer_projet_sous( p );
         else
-            sauvegarder_projet( p->get_nom_fichier(), p );
+            enregistrer_projet( p->get_nom_fichier(), p );
     }
 }
 
 /** --------------------------------------------------------------------------------------
  \brief Sauvegarder le projet sous.
 */
-void fenetre_principale::sauvegarder_projet_sous(projet * p)
+void fenetre_principale::enregistrer_projet_sous(projet * p)
 {
-    std::cout << "sauvegarder_projet_sous" << std::endl;
     QFileDialog d(this);
     d.setDefaultSuffix("dec");
     QString nom_fichier = d.getSaveFileName( this,
-                                             tr("Sauvegarder le projet"), "projets",
+                                             tr("Sauvegarder le projet"), "mes_projets",
                                              tr("projet Decode (*.dec);;"));
 
     if (nom_fichier.isEmpty())
@@ -309,16 +330,15 @@ void fenetre_principale::sauvegarder_projet_sous(projet * p)
         if (!nom_fichier.endsWith(".dec"))
             nom_fichier += ".dec";
 
-        sauvegarder_projet(nom_fichier, p);
+        enregistrer_projet(nom_fichier, p);
     }
 }
 
 /** --------------------------------------------------------------------------------------
  \brief Sauvegarder le projet.
 */
-void fenetre_principale::sauvegarder_projet(const QString & nom_fichier, projet * p)
+void fenetre_principale::enregistrer_projet(const QString & nom_fichier, projet * p)
 {
-    std::cout << "sauvegarder_projet" << nom_fichier.toStdString() << std::endl;
     QFile file(nom_fichier);
     if (!file.open(QIODevice::WriteOnly)) {
         QMessageBox::information(this, tr("Impossible d'ouvrir le fichier."),
@@ -342,7 +362,7 @@ void fenetre_principale::ouvrir_projet()
 {
     QString nom_fichier =
             QFileDialog::getOpenFileName( this, tr("Ouvrir un projet Decode"),
-                                          "projets", tr("projet Decode (*.dec);;"));
+                                          "mes_projets", tr("projet Decode (*.dec);;"));
 
     if (nom_fichier.isEmpty())
         return;
@@ -391,6 +411,30 @@ void fenetre_principale::compiler(projet* p)
     }
 }
 
+void fenetre_principale::update_boutons_projet( projet * p )
+{
+    if ( p != NULL )
+    {
+        m_toolbar_bouton_sauvegarder_projet->setEnabled( p->enregistrable() );
+        m_toolbar_bouton_sauvegarder_projet_sous->setEnabled( true );
+    }
+    else
+    {
+        m_toolbar_bouton_sauvegarder_projet->setEnabled( false );
+        m_toolbar_bouton_sauvegarder_projet_sous->setEnabled( false );
+    }
+}
+
+void fenetre_principale::update_boutons_fonctions( objet_selectionnable * obj, bool etat )
+{
+    if ( obj != NULL )
+        etat = etat && obj->est_conteneur();
+
+    m_toolbar_bouton_ajout_fonction_source->setEnabled( etat );
+    m_toolbar_bouton_ajout_fonction_conversion->setEnabled( etat );
+    m_toolbar_bouton_ajout_fonction_sortie->setEnabled( etat );
+}
+
 /** --------------------------------------------------------------------------------------
  \brief Le bouton ajouter_fonction_source est activé.
 */
@@ -427,24 +471,19 @@ void fenetre_principale::on_nouveau_projet_click()
 /** --------------------------------------------------------------------------------------
  \brief Le bouton sauvegarder_projet est activé.
 */
-void fenetre_principale::on_sauvegarder_projet_click()
+void fenetre_principale::on_enregistrer_projet_click()
 {
     if ( objet_selectionnable::existe_selection() )
-        sauvegarder_projet( objet_selectionnable::get_projet_courant() );
+        enregistrer_projet( objet_selectionnable::get_projet_courant() );
 }
 
 /** --------------------------------------------------------------------------------------
  \brief Le bouton sauvegarder_projet_sous est activé.
 */
-void fenetre_principale::on_sauvegarder_projet_sous_click()
+void fenetre_principale::on_enregistrer_projet_sous_click()
 {
-    // TODO : a retirer
-    /*
-    noeud_projet * n = s_explorateur->get_projet_courant();
-
-    if ( n != NULL )
-        sauvegarder_projet_sous( n->get_projet() );
-    */
+    if ( objet_selectionnable::existe_selection() )
+        enregistrer_projet_sous( objet_selectionnable::get_projet_courant() );
 }
 
 /** --------------------------------------------------------------------------------------
@@ -469,3 +508,21 @@ void fenetre_principale::on_externe_e_ajout_source(fonctions_conteneur *conteneu
     ajouter_fonction(conteneur, type);
 }
 
+void fenetre_principale::on_externe_projet_etat_modification_change(projet *p, bool etat)
+{
+    if ( objet_selectionnable::existe_selection() )
+        if ( objet_selectionnable::get_projet_courant() == p )
+            update_boutons_projet( p );
+}
+
+
+void fenetre_principale::on_externe_objet_selectionne(objet_selectionnable *obj)
+{
+    update_boutons_fonctions(obj, true);
+    update_boutons_projet(obj->get_projet());
+}
+
+void fenetre_principale::on_externe_objet_deselectionne(objet_selectionnable *obj)
+{
+    update_boutons_fonctions(obj, false);
+}

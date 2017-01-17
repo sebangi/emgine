@@ -10,11 +10,12 @@
 #include "entete/fenetre_principale.h"
 
 #include <iostream>
+#include <QDir>
 
 unsigned int projet::s_nb_projets = 0;
 
 projet::projet()
-    : fonctions_conteneur(NULL), m_nouveau(true)
+    : fonctions_conteneur(NULL), m_nouveau(true), m_est_modifie(false)
 {
     s_nb_projets++;
 
@@ -43,6 +44,9 @@ void projet::sauvegarder( QXmlStreamWriter & stream )
 
     stream.writeEndElement(); // Fonctions
     stream.writeEndElement(); // Projet
+
+    m_est_modifie = false;
+    emit signal_p_projet_etat_modification_change(this, false);
 }
 
 void projet::charger(QXmlStreamReader & xml)
@@ -67,6 +71,9 @@ void projet::charger(QXmlStreamReader & xml)
         else
             xml.skipCurrentElement();
     }
+
+    m_est_modifie = false;
+    emit signal_p_projet_etat_modification_change(this, false);
 }
 
 QString projet::get_nom() const
@@ -76,12 +83,14 @@ QString projet::get_nom() const
 
 QString projet::get_titre() const
 {
-    return  "projet " + get_nom();
+    return get_nom();
 }
 
 void projet::set_nom(const QString &nom)
 {
     m_nom = nom;
+
+    emit signal_p_nom_projet_change(this);
 }
 
 void projet::charger_nom(QXmlStreamReader & xml)
@@ -89,7 +98,7 @@ void projet::charger_nom(QXmlStreamReader & xml)
     Q_ASSERT(xml.isStartElement() &&
              xml.name() == "nom");
 
-    m_nom = xml.readElementText();
+    // Le nom est ignoré
 }
 
 void projet::charger_description(QXmlStreamReader & xml)
@@ -129,10 +138,26 @@ void projet::charger_fonction(QXmlStreamReader & xml)
         QString id = xml.readElementText();
         base_fonction * f = bibliotheque_fonctions::get_fonction( (type_id_fonction)id.toInt() );
 
-        f->charger(xml);
-
         ajouter_fonction(f);
+        f->charger(xml);
     }
+}
+
+void projet::set_est_modifie(bool est_modifie)
+{
+    m_est_modifie = est_modifie;
+
+    emit signal_p_projet_etat_modification_change((projet*)this, est_modifie);
+}
+
+bool projet::enregistrable() const
+{
+    return ! est_nouveau() && est_modifie();
+}
+
+bool projet::est_modifie() const
+{
+    return m_est_modifie;
 }
 
 QString projet::get_description() const
@@ -158,6 +183,9 @@ QString projet::get_nom_fichier() const
 void projet::set_nom_fichier(const QString &nom_fichier)
 {
     m_nom_fichier = nom_fichier;
+
+    QString nom = m_nom_fichier.split("/").last();
+    set_nom( nom.split(".").first() );
 }
 
 bool projet::est_valide(logs_compilation_widget * vue_logs)
@@ -167,7 +195,7 @@ bool projet::est_valide(logs_compilation_widget * vue_logs)
     type_fonctions actifs;
     for ( fonctions_iterateur it = m_fonctions.begin(); it != m_fonctions.end(); ++it )
         if ( (*it)->est_active() )
-           actifs.push_back( *it );
+            actifs.push_back( *it );
 
     if ( actifs.size() == 0 )
     {

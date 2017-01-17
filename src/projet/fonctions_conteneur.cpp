@@ -1,6 +1,7 @@
 #include "entete/projet/fonctions_conteneur.h"
 
 #include "entete/projet/base_fonction.h"
+#include "entete/projet/projet.h"
 #include <iostream>
 
 fonctions_conteneur::fonctions_conteneur( objet_selectionnable * parent )
@@ -18,6 +19,7 @@ void fonctions_conteneur::ajouter_fonction(base_fonction *f)
              this, SLOT(on_supprimer_fonction(base_fonction*)));
 
     emit signal_fc_creation_fonction(f);
+    get_projet()->modifier();
 }
 
 void fonctions_conteneur::supprimer_fonction(base_fonction *f)
@@ -26,6 +28,7 @@ void fonctions_conteneur::supprimer_fonction(base_fonction *f)
              this, SLOT(on_supprimer_fonction(base_fonction*)));
 
     m_fonctions.removeOne(f);
+    get_projet()->modifier();
 }
 
 

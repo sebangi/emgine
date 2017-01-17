@@ -203,8 +203,7 @@ void base_parametre::charger_fonction( QXmlStreamReader & xml )
         QString id = xml.readElementText();
         base_fonction * f = bibliotheque_fonctions::get_fonction( (type_id_fonction)id.toInt() );
 
-        f->charger(xml);
-
         ajouter_fonction(f);
+        f->charger(xml);
     }
 }

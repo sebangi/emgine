@@ -39,6 +39,13 @@ class projet : public fonctions_conteneur
         void set_nom_fichier(const QString &nom_fichier);
 
         bool est_valide(logs_compilation_widget * vue_logs);
+        bool est_modifie() const;
+        void set_est_modifie(bool est_modifie);
+        bool enregistrable() const;
+
+    signals:
+        void signal_p_projet_etat_modification_change( projet *, bool);
+        void signal_p_nom_projet_change( projet * );
 
     private:
         void charger_nom(QXmlStreamReader & xml);
@@ -52,6 +59,7 @@ class projet : public fonctions_conteneur
         QString m_nom;
         QString m_nom_fichier;
         bool m_nouveau;
+        bool m_est_modifie;
         QString m_description;
 
         static unsigned int s_nb_projets;

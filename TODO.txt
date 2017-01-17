@@ -1,11 +1,13 @@
 La liste des choses à faire :
 
+
 ETAPE 1 : PRIORITAIRE
 * compléter les menus des noeuds
 * réflexion sur le stockage des projets, textes sources...
 * sauvegarde d'un projet (et enregistrer sous)
 * reflexion et codage de la copie
 * sauvegarde d'une sortie
+* fonction_widget a séparer en 3 dossiers
 * dans les sorties, ajouter la possibilité de voir le paramétrage induisant le résultat
     -> pour cela : probablement complexifier la classe texte, voire travailler avec des QList<texte>
 * verifier la gestion des disconnect
