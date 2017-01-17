@@ -1,34 +1,34 @@
 La liste des choses à faire :
 
-
 ETAPE 1 : PRIORITAIRE
 * compléter les menus des noeuds
 * réflexion sur le stockage des projets, textes sources...
-* sauvegarde d'un projet (et enregistrer sous)
 * reflexion et codage de la copie
 * sauvegarde d'une sortie
 * dans les sorties, ajouter la possibilité de voir le paramétrage induisant le résultat
     -> pour cela : probablement complexifier la classe texte, voire travailler avec des QList<texte>
-* verifier la gestion des disconnect
-* verifier les delete
-* ajouter les raccourcis clavier
-* reflexion sur les parametre de fonction_texte : faut-il itérer sur les lignes ?
+* vérifier la gestion des disconnect
+* vérifier les delete
+* réflexion sur les paramètres de fonction_texte : faut-il itérer sur les lignes ?
+* améliorer la mise en page de l'aide des paramètres (avoir une méthode claire pour présenter les itérations )
+* gérer le copier coller de noeud
+* gérer le déplacement de noeud
 * factoriser fonction_cesar.executer
-* vérifier les TODO restants et les retirer
+* vérifier les TODO restants dans le code et les retirer
 * Compléter le menu de l'application
 
 ETAPE 2 : VERSION 0.1
 * réflexion poussée sur les fonctionnalités de base à ajouter avant d'ajouter des fonctions
     -> les coder
-* verifier ordre methodes
-* sort alphabetique (include + .pro)
-* documentation
-* faire sous git la version 0.1
+* vérifier ordre methodes
+* sort alphabétique (include + .pro)
+* documentation Doxygen
+* Tagger sous git la version 0.1
 
 ETAPE 3
 * Améliorer le sélection des fonctions : catégories, mots clés
 
 ETAPE 4 : NON PRIORITAIRE
-* gestion les dictionnaires
+* gestion des dictionnaires
 * ajouter la fonction de source texte fichier (éditable et réenregistrable)
 * ajouter des fonctions de conversion

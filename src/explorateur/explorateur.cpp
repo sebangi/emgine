@@ -385,8 +385,6 @@ void explorateur::dropEvent(QDropEvent * event)
             ((base_noeud*)save_current)->get_objet()->selectionner();
             save_current->parent()->setExpanded(save_expanded);
             save_current->setExpanded(save_expanded);
-            // TODO : event change selection
-            // m_fenetre_principale->update_vue_fonction();
         }
         else
         {

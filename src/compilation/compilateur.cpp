@@ -102,10 +102,6 @@ void compilateur::afficher_resultat()
                 ( log_compilation( log_compilation::LOG_ERREUR, "La pile d'exécution n'est pas vide.") );
     else
     {        
-        // TODO : EVENT exécution terminée
-        // m_vue_fonctions->scrollToBottom();
-
-
         m_vue_logs->ajouter_log
                 ( log_compilation( log_compilation::LOG_IMPORTANT, "Exécution terminée.") );
     }
