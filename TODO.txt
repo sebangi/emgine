@@ -1,5 +1,6 @@
 La liste des choses à faire :
 
+
 ETAPE 1 : PRIORITAIRE
 * compléter les menus des noeuds
 * réflexion sur le stockage des projets, textes sources...
