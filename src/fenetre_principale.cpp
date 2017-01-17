@@ -240,6 +240,7 @@ void fenetre_principale::ajouter_fonction( fonctions_conteneur * conteneur, base
         if ( r == QDialog::Accepted )
         {
             base_fonction * f = dlg->get_fonction();
+            f->set_conteneur(conteneur);
 
             if ( f != NULL )
                 ajouter_fonction(conteneur, f, true, true);
