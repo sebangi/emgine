@@ -29,4 +29,3 @@ ETAPE 3 : NON PRIORITAIRE
 * gestion les dictionnaires
 * ajouter la fonction de source texte fichier (éditable et réenregistrable)
 * ajouter des fonctions de conversion
-
