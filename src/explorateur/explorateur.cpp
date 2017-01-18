@@ -13,7 +13,7 @@
 #include <QApplication>
 
 explorateur::explorateur(QWidget *parent)
-    : QTreeWidget(parent), m_noeud_context(NULL)
+    : QTreeWidget(parent), m_noeud_context(NULL), m_objet_a_copie(NULL), m_noeud_a_couper(NULL)
 {
     setSelectionMode(QAbstractItemView::SingleSelection);
     setAcceptDrops(true);
@@ -90,19 +90,38 @@ void explorateur::mettre_a_jour_activation( base_noeud* n, bool actif, bool chan
     }
 
     for ( int i = 0; i != n->childCount(); ++i )
-        {
-            bool change = true;
+    {
+        bool change = true;
 
-            if ( actif )
-                if ( n->child(i)->type() == base_noeud::type_fonction )
-                    if ( ! ((noeud_fonction*)(n->child(i)))->get_fonction()->est_active() )
-                        change = false;
+        if ( actif )
+            if ( n->child(i)->type() == base_noeud::type_fonction )
+                if ( ! ((noeud_fonction*)(n->child(i)))->get_fonction()->est_active() )
+                    change = false;
 
-            if ( change )
-                mettre_a_jour_activation( (base_noeud*)n->child(i), actif, false );
-        }
+        if ( change )
+            mettre_a_jour_activation( (base_noeud*)n->child(i), actif, false );
+    }
 
     n->update_style( actif );
+}
+
+void explorateur::creer_copie( objet_selectionnable* obj )
+{
+    std::cout << "faire_coller" << std::endl;
+    // TODO A FAIRE mais sans doute compliqué
+    //m_objet_a_copie = new objet_selectionnable(obj);
+}
+
+void explorateur::faire_coller( objet_selectionnable* obj)
+{
+    std::cout << "faire_coller" << std::endl;
+    // TODO
+}
+
+void explorateur::faire_couper()
+{
+    std::cout << "faire_couper" << std::endl;
+    // TODO
 }
 
 void explorateur::on_externe_objet_selectionne(objet_selectionnable *obj)
@@ -300,13 +319,13 @@ void explorateur::on_customContextMenuRequested(const QPoint &pos)
 
     if ( noeud_context->get_objet()->est_projet() )
     {
-        QAction *newAct_enregistrer = new QAction(style->standardIcon( QStyle::SP_DialogSaveButton ), tr("&Enregistrer"), this);
+        QAction *newAct_enregistrer = new QAction(style->standardIcon( QStyle::SP_DialogSaveButton ), tr("Enregistrer"), this);
         newAct_enregistrer->setStatusTip(tr("Enregistrer"));
         newAct_enregistrer->setEnabled( noeud_context->get_objet()->get_projet()->est_enregistrable() );
         connect(newAct_enregistrer, SIGNAL(triggered()), this, SLOT(on_enregistrer()));
         menu.addAction(newAct_enregistrer);
 
-        QAction *newAct_enregistrer_sous = new QAction(style->standardIcon( QStyle::SP_DialogSaveButton ), tr("&Enregistrer sous"), this);
+        QAction *newAct_enregistrer_sous = new QAction(style->standardIcon( QStyle::SP_DialogSaveButton ), tr("Enregistrer sous"), this);
         newAct_enregistrer_sous->setStatusTip(tr("Enregistrer sous"));
         connect(newAct_enregistrer_sous, SIGNAL(triggered()), this, SLOT(on_enregistrer_sous()));
         menu.addAction(newAct_enregistrer_sous);
@@ -318,25 +337,46 @@ void explorateur::on_customContextMenuRequested(const QPoint &pos)
     {
         QIcon icon_source;
         icon_source.addFile(QString::fromUtf8("icons/ajout_source.png"), QSize(), QIcon::Normal, QIcon::Off);
-        QAction *newAct2 = new QAction(icon_source, tr("&Ajouter une source"), this);
+        QAction *newAct2 = new QAction(icon_source, tr("Ajouter une source"), this);
         newAct2->setStatusTip(tr("Ajouter une source"));
         connect(newAct2, SIGNAL(triggered()), this, SLOT(on_ajout_source()));
         menu.addAction(newAct2);
 
         QIcon icon_conversion;
         icon_conversion.addFile(QString::fromUtf8("icons/ajout_conversion.png"), QSize(), QIcon::Normal, QIcon::Off);
-        QAction *newAct3 = new QAction(icon_conversion, tr("&Ajouter une conversion"), this);
+        QAction *newAct3 = new QAction(icon_conversion, tr("Ajouter une conversion"), this);
         newAct3->setStatusTip(tr("Ajouter une conversion"));
         connect(newAct3, SIGNAL(triggered()), this, SLOT(on_ajout_fonction_conversion()));
         menu.addAction(newAct3);
 
         QIcon icon_sortie;
         icon_sortie.addFile(QString::fromUtf8("icons/ajout_sortie.png"), QSize(), QIcon::Normal, QIcon::Off);
-        QAction *newAct4 = new QAction(icon_sortie, tr("&Ajouter une sortie"), this);
+        QAction *newAct4 = new QAction(icon_sortie, tr("Ajouter une sortie"), this);
         newAct4->setStatusTip(tr("Ajouter une sortie"));
         connect(newAct4, SIGNAL(triggered()), this, SLOT(on_ajout_sortie()));
         menu.addAction(newAct4);
+
+        menu.addSeparator();
     }
+
+    if ( ! noeud_context->get_objet()->est_projet() )
+    {
+        QAction *newAct_copier = new QAction(style->standardIcon( QStyle::SP_ArrowDown ), tr("Copier"), this);
+        newAct_copier->setStatusTip(tr("Copier"));
+        connect(newAct_copier, SIGNAL(triggered()), this, SLOT(on_copier()));
+        menu.addAction(newAct_copier);
+
+        QAction *newAct_couper = new QAction(style->standardIcon( QStyle::SP_ArrowDown ), tr("Couper"), this);
+        newAct_couper->setStatusTip(tr("Couper"));
+        connect(newAct_couper, SIGNAL(triggered()), this, SLOT(on_couper()));
+        menu.addAction(newAct_couper);
+    }
+
+    QAction *newAct_coller = new QAction(style->standardIcon( QStyle::SP_ArrowDown ), tr("Coller"), this);
+    newAct_coller->setStatusTip(tr("Coller"));
+    newAct_coller->setEnabled(m_objet_a_copie != NULL);
+    connect(newAct_coller, SIGNAL(triggered()), this, SLOT(on_coller()));
+    menu.addAction(newAct_coller);
 
     QPoint pt(pos);
     menu.exec( mapToGlobal(pos) );
@@ -420,4 +460,33 @@ void explorateur::on_enregistrer()
 void explorateur::on_enregistrer_sous()
 {
     emit signal_e_enregistrer_projet_sous(m_noeud_context->get_objet()->get_projet());
+}
+
+void explorateur::on_copier()
+{
+    std::cout << "copier" << std::endl;
+
+    creer_copie(m_noeud_context->get_objet());
+    m_noeud_a_couper = NULL;
+}
+
+void explorateur::on_couper()
+{
+    std::cout << "couper" << std::endl;
+
+    creer_copie(m_noeud_context->get_objet());
+    m_noeud_a_couper = m_noeud_context;
+}
+
+void explorateur::on_coller()
+{
+    std::cout << "coller" << std::endl;
+
+    if ( m_noeud_a_couper != NULL )
+    {
+        faire_couper();
+        m_noeud_a_couper = NULL;
+    }
+
+    faire_coller(m_noeud_context->get_objet());
 }

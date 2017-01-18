@@ -14,7 +14,6 @@ ETAPE 1 : PRIORITAIRE
 * gérer le copier coller de noeud
 * gérer le déplacement de noeud
 * factoriser fonction_cesar.executer
-* vérifier les TODO restants dans le code et les retirer
 * Compléter le menu de l'application
 
 ETAPE 2 : VERSION 0.1
