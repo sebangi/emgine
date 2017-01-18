@@ -13,7 +13,7 @@
 #include <QApplication>
 
 logs_compilation_widget::logs_compilation_widget(QWidget *parent)
-    : QWidget(parent)
+    : QWidget(parent), m_pos_marque_ancien(0)
 {
     init_widgets();
 }
@@ -22,6 +22,7 @@ void logs_compilation_widget::ajouter_log(const log_compilation& log)
 {
     log_widget_item* item = new log_widget_item(log);
 
+    m_effacer_bouton->setEnabled(true);
     m_liste->addItem( item );
     m_liste->scrollToBottom();
 
@@ -30,9 +31,14 @@ void logs_compilation_widget::ajouter_log(const log_compilation& log)
                 this, SLOT(on_externe_destruction_selectionnable(objet_selectionnable*)));
 }
 
-void logs_compilation_widget::clear()
+void logs_compilation_widget::marquer_comme_ancien()
 {
-    m_liste->clear();
+    for ( int i = m_pos_marque_ancien; i < m_liste->count(); ++i )
+    {
+         ((log_widget_item*)m_liste->item(i))->marquer_comme_ancien();
+    }
+
+    m_pos_marque_ancien = m_liste->count();
 }
 
 void logs_compilation_widget::init_widgets()
@@ -60,6 +66,17 @@ void logs_compilation_widget::init_widgets()
     connect(m_cacher_bouton, SIGNAL(released()), this, SLOT(on_cacher_switch()));
     toolbar->addWidget(m_cacher_bouton);
 
+    QIcon icone_effacer;
+    icone_effacer.addFile(QString::fromUtf8("icons/balai.png"), QSize(), QIcon::Normal, QIcon::Off);
+    m_effacer_bouton = new QPushButton();
+    m_effacer_bouton->setObjectName("BoutonFonctionWidget");
+    m_effacer_bouton->setIcon( icone_effacer );
+    m_effacer_bouton->setIconSize(QSize(24,24));
+    m_effacer_bouton->setFixedHeight(32);
+    m_effacer_bouton->setEnabled(false);
+    connect(m_effacer_bouton, SIGNAL(released()), this, SLOT(on_effacer()));
+    toolbar->addWidget(m_effacer_bouton);
+
     lay->addWidget(toolbar);
 
     m_vue_widget = new QWidget();
@@ -83,6 +100,18 @@ void logs_compilation_widget::init_widgets()
     centralLayout->addWidget(groupbox);
     setLayout(centralLayout);
     setVisible( false );
+}
+
+void logs_compilation_widget::clear()
+{
+    m_liste->clear();
+    m_pos_marque_ancien = 0;
+    m_effacer_bouton->setEnabled(false);
+}
+
+void logs_compilation_widget::on_effacer()
+{
+    clear();
 }
 
 void logs_compilation_widget::on_cacher_switch()

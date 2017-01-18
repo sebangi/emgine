@@ -19,8 +19,11 @@ compilateur::compilateur( logs_compilation_widget * vue_logs )
 void compilateur::compiler(projet *p)
 {
     m_vue_logs->setVisible(true);
-    m_vue_logs->clear();
 
+    m_vue_logs->marquer_comme_ancien();
+    m_vue_logs->ajouter_log
+            ( log_compilation( log_compilation::LOG_INFORMATION, p,
+                               "----------------------------------------------------------") );
     m_vue_logs->ajouter_log
             ( log_compilation( log_compilation::LOG_IMPORTANT, p,
                                "Compilation du projet \"" + p->get_nom() + "\"...") );

@@ -13,6 +13,7 @@ class log_widget_item : public  QListWidgetItem
             log_compilation& get_log();
 
             void informe_supression_selectionnable(objet_selectionnable * obj);
+            void marquer_comme_ancien();
 
     private:
             void init();
