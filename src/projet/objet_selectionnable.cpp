@@ -88,6 +88,16 @@ bool objet_selectionnable::parents_actifs() const
         return m_objet_parent->est_active_avec_parent();
 }
 
+bool objet_selectionnable::a_ancetre(objet_selectionnable *obj) const
+{
+    if ( m_objet_parent == NULL )
+        return false;
+    else if ( m_objet_parent == obj )
+        return true;
+    else
+        return m_objet_parent->a_ancetre(obj);
+}
+
 objet_selectionnable *objet_selectionnable::get_selection()
 {
     return s_objet_courant;

@@ -164,7 +164,7 @@ void fenetre_principale::init_widgets()
     QIcon icone_sortie;
     icone_sortie.addFile(QString::fromUtf8("icons/ajout_sortie.png"), QSize(), QIcon::Normal, QIcon::Off);
     m_toolbar_bouton_ajout_fonction_sortie->setIcon(icone_sortie);
-    m_toolbar_bouton_ajout_fonction_sortie->setText("Sortie");    
+    m_toolbar_bouton_ajout_fonction_sortie->setText("Résultat");
     m_toolbar_bouton_ajout_fonction_sortie->setShortcut( QKeySequence("Alt+E") );
 
     m_toolbar_bouton_nouveau_projet->setIcon(style->standardIcon( QStyle::SP_FileDialogNewFolder ));

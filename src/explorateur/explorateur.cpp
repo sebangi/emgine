@@ -134,7 +134,6 @@ void explorateur::creer_copie( const base_fonction* f )
 
 void explorateur::faire_coller()
 {
-    std::cout << m_fonction_a_copier.toStdString() << std::endl;
     QXmlStreamReader xmlReader(m_fonction_a_copier);
     xmlReader.readNextStartElement();
     m_noeud_context->get_objet()->get_conteneur()->charger_fonction( xmlReader );
@@ -239,7 +238,6 @@ void explorateur::ajouter_fonction(base_fonction* f)
             ajouter_parametre( it_p->second );
 
         mettre_a_jour_activation(noeud, f->est_active(), false);
-        std::cout << f->get_nom().toStdString() << " etendu :" <<  f->est_etendu() << std::endl;
         noeud->setExpanded( f->est_etendu() );
 
         connect( f, SIGNAL(signal_destruction_fonction(base_fonction*)),
@@ -387,21 +385,30 @@ void explorateur::on_customContextMenuRequested(const QPoint &pos)
 
     if ( ! noeud_context->get_objet()->est_conteneur() )
     {
-        QAction *newAct_copier = new QAction(style->standardIcon( QStyle::SP_ArrowDown ), tr("Copier la fonction"), this);
+        QIcon icon_copier;
+        icon_copier.addFile(QString::fromUtf8("icons/copier.png"), QSize(), QIcon::Normal, QIcon::Off);
+        QAction *newAct_copier = new QAction(icon_copier, tr("Copier"), this);
         newAct_copier->setStatusTip(tr("Copier la fonction"));
         connect(newAct_copier, SIGNAL(triggered()), this, SLOT(on_copier()));
         menu.addAction(newAct_copier);
 
-        QAction *newAct_couper = new QAction(style->standardIcon( QStyle::SP_ArrowDown ), tr("Couper la fonction"), this);
+        QIcon icon_couper;
+        icon_couper.addFile(QString::fromUtf8("icons/couper.png"), QSize(), QIcon::Normal, QIcon::Off);
+        QAction *newAct_couper = new QAction(icon_couper, tr("Couper"), this);
         newAct_couper->setStatusTip(tr("Couper la fonction"));
         connect(newAct_couper, SIGNAL(triggered()), this, SLOT(on_couper()));
         menu.addAction(newAct_couper);
     }
     else
     {
-        QAction *newAct_coller = new QAction(style->standardIcon( QStyle::SP_ArrowDown ), tr("Coller la fonction"), this);
-        newAct_coller->setStatusTip(tr("Coller la fonction"));
-        newAct_coller->setEnabled(m_fonction_a_copier != NULL);
+        QIcon icon_coller;
+        icon_coller.addFile(QString::fromUtf8("icons/coller.png"), QSize(), QIcon::Normal, QIcon::Off);
+        QAction *newAct_coller = new QAction(icon_coller, tr("Coller la fonction"), this);
+        newAct_coller->setStatusTip(tr("Coller la fonction à la fin"));
+        if ( m_fonction_a_copier == NULL )
+            newAct_coller->setEnabled(false);
+        else if ( m_fonction_a_couper != NULL )
+            newAct_coller->setEnabled( ! noeud_context->get_objet()->a_ancetre((objet_selectionnable*)m_fonction_a_couper) );
         connect(newAct_coller, SIGNAL(triggered()), this, SLOT(on_coller()));
         menu.addAction(newAct_coller);
     }

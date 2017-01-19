@@ -26,6 +26,7 @@ class objet_selectionnable : public QObject
         virtual void set_est_active(bool est_active);
         bool est_active_avec_parent() const;
         bool parents_actifs() const;
+        bool a_ancetre( objet_selectionnable * obj ) const;
 
         static objet_selectionnable * get_selection();
         static fonctions_conteneur * get_conteneur_courant();
