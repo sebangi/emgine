@@ -1,10 +1,8 @@
 La liste des choses à faire :
 
 ETAPE 1 : PRIORITAIRE
-* BUG : la vue lors d'un copié est trop remplie.
 * compléter les menus des noeuds
 * réflexion sur le stockage des projets, textes sources...
-* reflexion et codage de la copie
 * sauvegarde d'une sortie
 * dans les sorties, ajouter la possibilité de voir le paramétrage induisant le résultat
     -> pour cela : probablement complexifier la classe texte, voire travailler avec des QList<texte>
@@ -12,7 +10,7 @@ ETAPE 1 : PRIORITAIRE
 * vérifier les delete
 * réflexion sur les paramètres de fonction_texte : faut-il itérer sur les lignes ?
 * améliorer la mise en page de l'aide des paramètres (avoir une méthode claire pour présenter les itérations )
-* gérer le copier coller de noeud
+* gérer le coller de noeud à l'endroit voulu
 * gérer le déplacement de noeud
 * factoriser fonction_cesar.executer
 * Compléter le menu de l'application
