@@ -108,7 +108,6 @@ void base_fonction::ajouter_parametre(type_id_parametre id, base_parametre *p)
 
 const texte &base_fonction::get_texte_parametre(type_id_parametre type) const
 {
-    // TODO : fonction bizarre : retour si pb ? la fonction est-elle appelée ?
     parametres_const_iterateur it = m_parametres.find(type);
 
     if ( it != m_parametres.end() )

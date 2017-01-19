@@ -10,14 +10,6 @@
 */
 int main(int argc, char *argv[])
 {
-    // Accents en français
-
-    // TODO ?
-    //QTextCodec::setCodecForCStrings(QTextCodec::codecForName("UTF-8"));
-    //QTextCodec::setCodecForTr(QTextCodec::codecForName("UTF-8"));
-    //QTextCodec::setCodecForLocale(QTextCodec::codecForName("UTF-8"));
-    // fin TODO
-
     QFile File("stylesheet.qss");
     File.open(QFile::ReadOnly);
     QString StyleSheet = QLatin1String(File.readAll());

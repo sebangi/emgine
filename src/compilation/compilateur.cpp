@@ -19,8 +19,11 @@ compilateur::compilateur( logs_compilation_widget * vue_logs )
 void compilateur::compiler(projet *p)
 {
     m_vue_logs->setVisible(true);
-    m_vue_logs->clear();
 
+    m_vue_logs->marquer_comme_ancien();
+    m_vue_logs->ajouter_log
+            ( log_compilation( log_compilation::LOG_INFORMATION, p,
+                               "----------------------------------------------------------") );
     m_vue_logs->ajouter_log
             ( log_compilation( log_compilation::LOG_IMPORTANT, p,
                                "Compilation du projet \"" + p->get_nom() + "\"...") );
@@ -54,6 +57,7 @@ void compilateur::reset()
 
 void compilateur::executer_projet(projet *p)
 {
+    p->executer();
     m_vue_logs->ajouter_log
             ( log_compilation( log_compilation::LOG_IMPORTANT, "Exécution...") );
     m_pile_textes.push(texte());
@@ -101,10 +105,6 @@ void compilateur::afficher_resultat()
                 ( log_compilation( log_compilation::LOG_ERREUR, "La pile d'exécution n'est pas vide.") );
     else
     {        
-        // TODO : EVENT exécution terminée
-        // m_vue_fonctions->scrollToBottom();
-
-
         m_vue_logs->ajouter_log
                 ( log_compilation( log_compilation::LOG_IMPORTANT, "Exécution terminée.") );
     }

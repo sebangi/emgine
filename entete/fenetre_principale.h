@@ -62,6 +62,7 @@ class fenetre_principale : public QMainWindow
         void ouvrir_projet();
         void compiler( projet* p );
         void update_boutons_projet( projet * p );
+        void update_bouton_execution( projet * p );
         void update_boutons_fonctions( objet_selectionnable * obj, bool etat );
 
     private slots:
@@ -74,10 +75,11 @@ class fenetre_principale : public QMainWindow
         void on_enregistrer_projet_sous_click();
         void on_enregistrer_projet_click();
         void on_ouvrir_projet_click();
-        void on_compiler_click();
+        void on_executer_click();
 
         void on_externe_e_ajout_source(fonctions_conteneur * conteneur, base_fonction::type_fonction type);
         void on_externe_projet_etat_modification_change(projet * p, bool etat);
+        void on_externe_projet_executable_change(projet * p);
         void on_externe_objet_selectionne(objet_selectionnable* obj);
         void on_externe_objet_deselectionne(objet_selectionnable* obj);
 
@@ -111,7 +113,7 @@ class fenetre_principale : public QMainWindow
         QPushButton *m_toolbar_bouton_ajout_fonction_conversion;
         QPushButton *m_toolbar_bouton_ajout_fonction_sortie;
 
-        QPushButton *m_toolbar_bouton_compiler;
+        QPushButton *m_toolbar_bouton_executer;
 
         /** \brief Le style de l'application.*/
         QStyle* m_style;

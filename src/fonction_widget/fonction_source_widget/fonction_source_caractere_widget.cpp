@@ -1,4 +1,4 @@
-#include "entete/fonction_widget/fonction_source_caractere_widget.h"
+#include "entete/fonction_widget/fonction_source_widget/fonction_source_caractere_widget.h"
 #include "entete/fonction/fonction_source/fonction_source_caractere.h"
 #include <iostream>
 #include <QHBoxLayout>

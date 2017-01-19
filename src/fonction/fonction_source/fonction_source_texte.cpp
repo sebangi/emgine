@@ -1,6 +1,6 @@
 #include "entete/fonction/fonction_source/fonction_source_texte.h"
 
-#include "entete/fonction_widget/fonction_source_texte_widget.h"
+#include "entete/fonction_widget/fonction_source_widget/fonction_source_texte_widget.h"
 #include "entete/compilation/compilateur.h"
 #include "entete/element/type_element.h"
 #include <iostream>

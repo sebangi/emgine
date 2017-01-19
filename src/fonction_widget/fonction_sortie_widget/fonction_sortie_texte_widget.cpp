@@ -1,4 +1,4 @@
-#include "entete/fonction_widget/fonction_sortie_texte_widget.h"
+#include "entete/fonction_widget/fonction_sortie_widget/fonction_sortie_texte_widget.h"
 #include "entete/fonction/fonction_sortie/fonction_sortie_texte.h"
 
 #include <iostream>

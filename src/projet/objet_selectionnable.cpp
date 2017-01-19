@@ -64,6 +64,7 @@ bool objet_selectionnable::est_projet() const
 void objet_selectionnable::set_est_active(bool est_active)
 {    
     m_est_active = est_active;
+    modifier();
 }
 
 bool objet_selectionnable::est_active() const
@@ -150,6 +151,8 @@ void objet_selectionnable::modifier()
     {
         if ( ! ((projet*)this)->est_modifie() )
             ((projet*)this)->set_est_modifie(true);
+
+        ((projet*)this)->set_executable(true);
     }
     else
         m_objet_parent->modifier();

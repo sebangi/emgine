@@ -15,11 +15,11 @@
 unsigned int projet::s_nb_projets = 0;
 
 projet::projet()
-    : fonctions_conteneur(NULL), m_nouveau(true), m_est_modifie(false)
+    : fonctions_conteneur(NULL), m_nouveau(true), m_est_modifie(false), m_est_executable(true)
 {
     s_nb_projets++;
 
-    m_nom = QString::number( s_nb_projets );
+    m_nom = "Nouveau projet " + QString::number( s_nb_projets );
 }
 
 projet::~projet()
@@ -150,9 +150,26 @@ void projet::set_est_modifie(bool est_modifie)
     emit signal_p_projet_etat_modification_change((projet*)this, est_modifie);
 }
 
-bool projet::enregistrable() const
+bool projet::est_enregistrable() const
 {
     return ! est_nouveau() && est_modifie();
+}
+
+void projet::set_executable( bool executable )
+{
+    m_est_executable = executable;
+
+    emit signal_p_projet_executable_change((projet*)this);
+}
+
+bool projet::est_executable() const
+{
+    return m_est_executable;
+}
+
+void projet::executer()
+{
+    set_executable( false );
 }
 
 bool projet::est_modifie() const

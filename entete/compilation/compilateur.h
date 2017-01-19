@@ -17,7 +17,6 @@ class compilateur
 {
     public:
         compilateur(logs_compilation_widget * get_vue_logs);
-
         void compiler(projet* p);
 
         logs_compilation_widget * get_vue_logs() const;

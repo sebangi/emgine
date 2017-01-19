@@ -13,8 +13,8 @@ log_widget_item::log_widget_item(const log_compilation &log)
 
 void log_widget_item::init()
 {
-    this->setTextColor( m_log.get_couleur() );
-    this->setText( m_log.get_message() );
+    setTextColor( m_log.get_couleur() );
+    setText( m_log.get_message() );
 }
 
 log_compilation& log_widget_item::get_log()
@@ -27,3 +27,7 @@ void log_widget_item::informe_supression_selectionnable(objet_selectionnable *ob
     m_log.informe_supression_selectionnable(obj);
 }
 
+void log_widget_item::marquer_comme_ancien()
+{
+    setTextColor( QColor("grey") );
+}
