@@ -10,6 +10,7 @@ class fenetre_principale;
 class noeud_projet;
 class projet;
 class base_parametre;
+class base_fonction;
 class base_noeud;
 class objet_selectionnable;
 
@@ -31,10 +32,10 @@ class explorateur : public QTreeWidget
         void ajouter_fonction(base_fonction* f);
         void set_noeud_context(base_noeud *noeud_context);
         base_noeud *get_noeud_context() const;
-        void ajouter_parametre(base_parametre* f);
+        void ajouter_parametre(base_parametre* p);
         void ajouter_selectionnable(objet_selectionnable * obj, base_noeud* noeud);
         void mettre_a_jour_activation( base_noeud* n, bool actif, bool change_expansion );
-        void creer_copie( objet_selectionnable* obj );
+        void creer_copie( base_fonction* f );
         void faire_coller( objet_selectionnable* obj );
         void faire_couper();
         void dragMoveEvent(QDragMoveEvent *e);
@@ -76,7 +77,7 @@ class explorateur : public QTreeWidget
         base_noeud* m_noeud_context;
 
         /** \brief L'objet à copier. */
-        objet_selectionnable * m_objet_a_copie;
+        base_fonction* m_fonction_a_copie;
 
         /** \brief Le noeud à couper. */
         base_noeud* m_noeud_a_couper;

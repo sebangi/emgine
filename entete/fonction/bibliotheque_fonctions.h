@@ -8,6 +8,7 @@ class bibliotheque_fonctions
     public:
         static QString nom_to_string(type_id_fonction id);
         static base_fonction *get_fonction(type_id_fonction id);
+        static base_fonction *get_fonction(const base_fonction * f);
 };
 
 #endif // BIBLIOTHEQUE_FONCTION_H

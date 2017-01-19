@@ -6,6 +6,7 @@
 #include "entete/projet/projet.h"
 #include "entete/projet/objet_selectionnable.h"
 #include "entete/fenetre_principale.h"
+#include "entete/fonction/bibliotheque_fonctions.h"
 #include <QAction>
 #include <QMenu>
 #include <QKeyEvent>
@@ -13,7 +14,7 @@
 #include <QApplication>
 
 explorateur::explorateur(QWidget *parent)
-    : QTreeWidget(parent), m_noeud_context(NULL), m_objet_a_copie(NULL), m_noeud_a_couper(NULL)
+    : QTreeWidget(parent), m_noeud_context(NULL), m_fonction_a_copie(NULL), m_noeud_a_couper(NULL)
 {
     setSelectionMode(QAbstractItemView::SingleSelection);
     setAcceptDrops(true);
@@ -105,10 +106,11 @@ void explorateur::mettre_a_jour_activation( base_noeud* n, bool actif, bool chan
     n->update_style( actif );
 }
 
-void explorateur::creer_copie( objet_selectionnable* obj )
+void explorateur::creer_copie( base_fonction* f )
 {
     std::cout << "faire_coller" << std::endl;
     // TODO A FAIRE mais sans doute compliqué
+    m_fonction_a_copie = bibliotheque_fonctions::get_fonction(f);
     //m_objet_a_copie = new objet_selectionnable(obj);
 }
 
@@ -359,24 +361,26 @@ void explorateur::on_customContextMenuRequested(const QPoint &pos)
         menu.addSeparator();
     }
 
-    if ( ! noeud_context->get_objet()->est_projet() )
+    if ( ! noeud_context->get_objet()->est_conteneur() )
     {
-        QAction *newAct_copier = new QAction(style->standardIcon( QStyle::SP_ArrowDown ), tr("Copier"), this);
-        newAct_copier->setStatusTip(tr("Copier"));
+        QAction *newAct_copier = new QAction(style->standardIcon( QStyle::SP_ArrowDown ), tr("Copier la fonction"), this);
+        newAct_copier->setStatusTip(tr("Copier la fonction"));
         connect(newAct_copier, SIGNAL(triggered()), this, SLOT(on_copier()));
         menu.addAction(newAct_copier);
 
-        QAction *newAct_couper = new QAction(style->standardIcon( QStyle::SP_ArrowDown ), tr("Couper"), this);
-        newAct_couper->setStatusTip(tr("Couper"));
+        QAction *newAct_couper = new QAction(style->standardIcon( QStyle::SP_ArrowDown ), tr("Couper la fonction"), this);
+        newAct_couper->setStatusTip(tr("Couper la fonction"));
         connect(newAct_couper, SIGNAL(triggered()), this, SLOT(on_couper()));
         menu.addAction(newAct_couper);
     }
-
-    QAction *newAct_coller = new QAction(style->standardIcon( QStyle::SP_ArrowDown ), tr("Coller"), this);
-    newAct_coller->setStatusTip(tr("Coller"));
-    newAct_coller->setEnabled(m_objet_a_copie != NULL);
-    connect(newAct_coller, SIGNAL(triggered()), this, SLOT(on_coller()));
-    menu.addAction(newAct_coller);
+    else
+    {
+        QAction *newAct_coller = new QAction(style->standardIcon( QStyle::SP_ArrowDown ), tr("Coller la fonction"), this);
+        newAct_coller->setStatusTip(tr("Coller la fonction"));
+        newAct_coller->setEnabled(m_fonction_a_copie != NULL);
+        connect(newAct_coller, SIGNAL(triggered()), this, SLOT(on_coller()));
+        menu.addAction(newAct_coller);
+    }
 
     QPoint pt(pos);
     menu.exec( mapToGlobal(pos) );
@@ -464,23 +468,23 @@ void explorateur::on_enregistrer_sous()
 
 void explorateur::on_copier()
 {
-    std::cout << "copier" << std::endl;
+    std::cout << "on_copier" << std::endl;
 
-    creer_copie(m_noeud_context->get_objet());
+    creer_copie( (base_fonction *)(m_noeud_context->get_objet()) );
     m_noeud_a_couper = NULL;
 }
 
 void explorateur::on_couper()
 {
-    std::cout << "couper" << std::endl;
+    std::cout << "on_couper" << std::endl;
 
-    creer_copie(m_noeud_context->get_objet());
+    creer_copie((base_fonction *)(m_noeud_context->get_objet()));
     m_noeud_a_couper = m_noeud_context;
 }
 
 void explorateur::on_coller()
 {
-    std::cout << "coller" << std::endl;
+    std::cout << "on_coller" << std::endl;
 
     if ( m_noeud_a_couper != NULL )
     {

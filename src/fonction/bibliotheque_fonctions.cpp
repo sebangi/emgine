@@ -47,3 +47,22 @@ base_fonction *bibliotheque_fonctions::get_fonction(type_id_fonction id)
             return NULL;
     }
 }
+
+base_fonction *bibliotheque_fonctions::get_fonction(const base_fonction *f)
+{
+    switch ( f->get_id() ) {
+        // SOURCES
+        case f_source_booleen : return new fonction_source_booleen( (fonction_source_booleen*)f );
+        case f_source_entier : return new fonction_source_entier( (fonction_source_entier*)f );
+        case f_source_texte : return new fonction_source_texte( (fonction_source_texte*)f );
+        case f_source_caractere : return new fonction_source_caractere( (fonction_source_caractere*)f );
+
+        // CONVERSIONS
+        case f_conversion_cesar : return new fonction_cesar( (f_conversion_cesar*)f );
+        // SORTIES
+        case f_sortie_texte : return new fonction_sortie_texte( (f_sortie_texte*)f );
+
+        default:
+            return NULL;
+    }
+}

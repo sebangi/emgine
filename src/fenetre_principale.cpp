@@ -63,13 +63,14 @@ fenetre_principale::fenetre_principale(QWidget *parent) :
 */
 fenetre_principale::~fenetre_principale()
 {
+    deconnecter();
     for ( projets_iterateur it = s_projets.begin(); it != s_projets.end(); ++it )
         delete *it;
     s_projets.clear();
 
-    delete m_ui;
     delete s_compilateur;
     s_compilateur = NULL;
+    delete m_ui;
 }
 
 /** --------------------------------------------------------------------------------------
@@ -292,18 +293,7 @@ void fenetre_principale::ajouter_projet( projet * p )
     s_vue_fonctions->ajouter_projet(p);
 
     p->selectionner();
-
-    connect( p, SIGNAL(signal_p_projet_etat_modification_change(projet *, bool)),
-             this, SLOT(on_externe_projet_etat_modification_change(projet *, bool)));
-
-    connect( p, SIGNAL(signal_p_projet_executable_change(projet *)),
-             this, SLOT(on_externe_projet_executable_change(projet *)));
-
-    connect( s_explorateur, SIGNAL(signal_e_enregistrer_projet(projet *)),
-             this, SLOT(enregistrer_projet(projet *)));
-
-    connect( s_explorateur, SIGNAL(signal_e_enregistrer_projet_sous(projet *)),
-             this, SLOT(enregistrer_projet_sous(projet *)));
+    connecter_projet(p);
 }
 
 /** --------------------------------------------------------------------------------------
@@ -407,9 +397,9 @@ void fenetre_principale::ouvrir_projet()
 }
 
 /** --------------------------------------------------------------------------------------
- \brief Compiler le projet.
+ \brief Executer le projet.
 */
-void fenetre_principale::compiler(projet* p)
+void fenetre_principale::executer(projet* p)
 {
     if ( p != NULL )
     {
@@ -456,6 +446,48 @@ void fenetre_principale::update_boutons_fonctions( objet_selectionnable * obj, b
     m_toolbar_bouton_ajout_fonction_source->setEnabled( etat );
     m_toolbar_bouton_ajout_fonction_conversion->setEnabled( etat );
     m_toolbar_bouton_ajout_fonction_sortie->setEnabled( etat );
+}
+
+void fenetre_principale::connecter_projet(projet *p)
+{
+    connect( p, SIGNAL(signal_p_projet_etat_modification_change(projet *, bool)),
+             this, SLOT(on_externe_projet_etat_modification_change(projet *, bool)));
+
+    connect( p, SIGNAL(signal_p_projet_executable_change(projet *)),
+             this, SLOT(on_externe_projet_executable_change(projet *)));
+
+    connect( s_explorateur, SIGNAL(signal_e_enregistrer_projet(projet *)),
+             this, SLOT(enregistrer_projet(projet *)));
+
+    connect( s_explorateur, SIGNAL(signal_e_enregistrer_projet_sous(projet *)),
+             this, SLOT(enregistrer_projet_sous(projet *)));
+}
+
+
+void fenetre_principale::deconnecter_projet(projet *p)
+{
+    disconnect( p, SIGNAL(signal_p_projet_etat_modification_change(projet *, bool)),
+             this, SLOT(on_externe_projet_etat_modification_change(projet *, bool)));
+
+    disconnect( p, SIGNAL(signal_p_projet_executable_change(projet *)),
+             this, SLOT(on_externe_projet_executable_change(projet *)));
+
+    disconnect( s_explorateur, SIGNAL(signal_e_enregistrer_projet(projet *)),
+             this, SLOT(enregistrer_projet(projet *)));
+
+    disconnect( s_explorateur, SIGNAL(signal_e_enregistrer_projet_sous(projet *)),
+             this, SLOT(enregistrer_projet_sous(projet *)));
+}
+
+void fenetre_principale::deconnecter_projets()
+{
+    for ( projets_iterateur it = s_projets.begin(); it != s_projets.end(); ++it )
+        deconnecter_projet( *it );
+}
+
+void fenetre_principale::deconnecter()
+{
+   deconnecter_projets();
 }
 
 /** --------------------------------------------------------------------------------------
@@ -518,12 +550,12 @@ void fenetre_principale::on_ouvrir_projet_click()
 }
 
 /** --------------------------------------------------------------------------------------
- \brief Le bouton compiler est activé.
+ \brief Le bouton executer est activé.
 */
 void fenetre_principale::on_executer_click()
 {
     if ( objet_selectionnable::existe_selection() )
-        compiler( objet_selectionnable::get_projet_courant() );
+        executer( objet_selectionnable::get_projet_courant() );
 }
 
 void fenetre_principale::on_externe_e_ajout_source(fonctions_conteneur *conteneur, base_fonction::type_fonction type)

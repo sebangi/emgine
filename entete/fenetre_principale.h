@@ -60,10 +60,14 @@ class fenetre_principale : public QMainWindow
         void selectionner_projet();
         void enregistrer_projet( const QString & nom_fichier, projet * p);
         void ouvrir_projet();
-        void compiler( projet* p );
+        void executer( projet* p );
         void update_boutons_projet( projet * p );
         void update_bouton_execution( projet * p );
         void update_boutons_fonctions( objet_selectionnable * obj, bool etat );
+        void connecter_projet(projet * p);
+        void deconnecter_projet(projet * p);
+        void deconnecter_projets();
+        void deconnecter();
 
     private slots:
         void enregistrer_projet_sous(projet * p);
