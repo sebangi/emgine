@@ -50,7 +50,6 @@ base_fonction *bibliotheque_fonctions::get_fonction(type_id_fonction id)
 
 base_fonction *bibliotheque_fonctions::get_fonction(const base_fonction *f)
 {
-    // A retirer
     switch ( f->get_id() ) {
         // SOURCES
         case f_source_booleen : return new fonction_source_booleen( (fonction_source_booleen*)f );
