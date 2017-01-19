@@ -129,6 +129,11 @@ void base_fonction::augmenter_max_niveau_visibilite(int val)
     m_niveau_visibilite_avant_desactivation += val;
 }
 
+type_id_fonction base_fonction::get_id() const
+{
+    return m_id;
+}
+
 void base_fonction::set_conteneur(fonctions_conteneur *conteneur)
 {
     m_objet_parent = conteneur;

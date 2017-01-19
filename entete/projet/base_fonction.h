@@ -83,11 +83,13 @@ class base_fonction : public objet_selectionnable
 
         bool a_parametre() const;
 
-        void set_id(const type_id_fonction &id);
+        void set_id(const type_id_fonction &id);        
+        type_id_fonction get_id() const;
         void charger(QXmlStreamReader & xm);
 
         fonctions_conteneur *get_conteneur() const;
         void set_conteneur(fonctions_conteneur *conteneur);
+
 
     signals:
         void signal_destruction_fonction(base_fonction* f);
