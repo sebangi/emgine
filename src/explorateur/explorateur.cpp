@@ -12,9 +12,10 @@
 #include <QKeyEvent>
 #include <iostream>
 #include <QApplication>
+#include <QXmlStreamReader>
 
 explorateur::explorateur(QWidget *parent)
-    : QTreeWidget(parent), m_noeud_context(NULL), m_fonction_a_copie(NULL), m_noeud_a_couper(NULL)
+    : QTreeWidget(parent), m_noeud_context(NULL), m_fonction_a_couper(NULL)
 {
     setSelectionMode(QAbstractItemView::SingleSelection);
     setAcceptDrops(true);
@@ -74,6 +75,14 @@ void explorateur::on_externe_activation_fonction_change(base_fonction * f)
         mettre_a_jour_activation(it->second, ((noeud_fonction*)(it->second))->get_fonction()->est_active(), true );
 }
 
+void explorateur::on_externe_etendu_change(base_fonction *f)
+{
+    map_selectionnable::iterator it = m_selectionnables.find(f);
+
+    if ( it != m_selectionnables.end() )
+        mettre_a_jour_etendu(it->second, ((noeud_fonction*)(it->second))->get_fonction()->est_etendu() );
+}
+
 void explorateur::mettre_a_jour_activation( base_noeud* n, bool actif, bool change_expansion )
 {
     if ( change_expansion )
@@ -106,24 +115,35 @@ void explorateur::mettre_a_jour_activation( base_noeud* n, bool actif, bool chan
     n->update_style( actif );
 }
 
-void explorateur::creer_copie( base_fonction* f )
+void explorateur::mettre_a_jour_etendu( base_noeud* n, bool etendu )
 {
-    std::cout << "faire_coller" << std::endl;
-    // TODO A FAIRE mais sans doute compliqué
-    m_fonction_a_copie = bibliotheque_fonctions::get_fonction(f);
-    //m_objet_a_copie = new objet_selectionnable(obj);
+    if ( n->isExpanded() != etendu )
+        n->setExpanded(etendu);
 }
 
-void explorateur::faire_coller( objet_selectionnable* obj)
+void explorateur::creer_copie( const base_fonction* f )
 {
-    std::cout << "faire_coller" << std::endl;
-    // TODO
+    m_fonction_a_copier.clear();
+
+    QXmlStreamWriter XmlWriter(&m_fonction_a_copier);
+    XmlWriter.setAutoFormatting(true);
+    XmlWriter.writeStartDocument();
+    f->sauvegarder(XmlWriter);
+    XmlWriter.writeEndDocument();
+}
+
+void explorateur::faire_coller()
+{
+    std::cout << m_fonction_a_copier.toStdString() << std::endl;
+    QXmlStreamReader xmlReader(m_fonction_a_copier);
+    xmlReader.readNextStartElement();
+    m_noeud_context->get_objet()->get_conteneur()->charger_fonction( xmlReader );
 }
 
 void explorateur::faire_couper()
 {
-    std::cout << "faire_couper" << std::endl;
-    // TODO
+    delete m_fonction_a_couper;
+    m_fonction_a_couper = NULL;
 }
 
 void explorateur::on_externe_objet_selectionne(objet_selectionnable *obj)
@@ -200,7 +220,7 @@ void explorateur::ajouter_projet(projet *p)
         for ( projet::fonctions_iterateur it = p->fonctions_begin(); it != p->fonctions_end(); ++it )
             ajouter_fonction( *it );
 
-        noeud->setExpanded( p->est_entendu() );
+        noeud->setExpanded( p->est_etendu() );
     }
 }
 
@@ -219,13 +239,17 @@ void explorateur::ajouter_fonction(base_fonction* f)
             ajouter_parametre( it_p->second );
 
         mettre_a_jour_activation(noeud, f->est_active(), false);
-        noeud->setExpanded( f->est_entendu() );
+        std::cout << f->get_nom().toStdString() << " etendu :" <<  f->est_etendu() << std::endl;
+        noeud->setExpanded( f->est_etendu() );
 
         connect( f, SIGNAL(signal_destruction_fonction(base_fonction*)),
                  this, SLOT(on_externe_supprimer_fonction(base_fonction*)));
 
         connect( f, SIGNAL(signal_activation_fonction_change(base_fonction *)),
-                 this, SLOT(on_externe_activation_fonction_change(base_fonction *)));
+                 this, SLOT(on_externe_activation_fonction_change(base_fonction *)));        
+
+        connect( f, SIGNAL(signal_etendu_change(base_fonction *)),
+                 this, SLOT(on_externe_etendu_change(base_fonction *)));
     }
 }
 
@@ -246,7 +270,7 @@ void explorateur::ajouter_parametre(base_parametre* p)
         for ( base_parametre::fonctions_iterateur it_f = p->fonctions_begin(); it_f != p->fonctions_end(); ++it_f )
             ajouter_fonction( *it_f );
 
-        noeud->setExpanded( p->est_entendu() );
+        noeud->setExpanded( p->est_etendu() );
     }
 }
 
@@ -377,7 +401,7 @@ void explorateur::on_customContextMenuRequested(const QPoint &pos)
     {
         QAction *newAct_coller = new QAction(style->standardIcon( QStyle::SP_ArrowDown ), tr("Coller la fonction"), this);
         newAct_coller->setStatusTip(tr("Coller la fonction"));
-        newAct_coller->setEnabled(m_fonction_a_copie != NULL);
+        newAct_coller->setEnabled(m_fonction_a_copier != NULL);
         connect(newAct_coller, SIGNAL(triggered()), this, SLOT(on_coller()));
         menu.addAction(newAct_coller);
     }
@@ -468,29 +492,22 @@ void explorateur::on_enregistrer_sous()
 
 void explorateur::on_copier()
 {
-    std::cout << "on_copier" << std::endl;
-
     creer_copie( (base_fonction *)(m_noeud_context->get_objet()) );
-    m_noeud_a_couper = NULL;
+    m_fonction_a_couper = NULL;
 }
 
 void explorateur::on_couper()
 {
-    std::cout << "on_couper" << std::endl;
-
     creer_copie((base_fonction *)(m_noeud_context->get_objet()));
-    m_noeud_a_couper = m_noeud_context;
+    m_fonction_a_couper = (base_fonction *)(m_noeud_context->get_objet());
 }
 
 void explorateur::on_coller()
 {
-    std::cout << "on_coller" << std::endl;
-
-    if ( m_noeud_a_couper != NULL )
-    {
+    if ( m_fonction_a_couper != NULL )
         faire_couper();
-        m_noeud_a_couper = NULL;
-    }
 
-    faire_coller(m_noeud_context->get_objet());
+    faire_coller();
 }
+
+

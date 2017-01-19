@@ -1,6 +1,7 @@
 La liste des choses à faire :
 
 ETAPE 1 : PRIORITAIRE
+* BUG : interdire de couper/coller dans la descendance.
 * compléter les menus des noeuds
 * réflexion sur le stockage des projets, textes sources...
 * reflexion et codage de la copie

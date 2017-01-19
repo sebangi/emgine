@@ -2,6 +2,8 @@
 
 #include "entete/projet/base_fonction.h"
 #include "entete/projet/projet.h"
+#include "entete/fonction/bibliotheque_fonctions.h"
+
 #include <iostream>
 
 fonctions_conteneur::fonctions_conteneur( objet_selectionnable * parent )
@@ -61,4 +63,38 @@ fonctions_conteneur::fonctions_const_iterateur fonctions_conteneur::fonctions_co
 bool fonctions_conteneur::est_conteneur() const
 {
     return true;
+}
+
+void fonctions_conteneur::charger_fonction( QXmlStreamReader & xml )
+{
+    Q_ASSERT(xml.isStartElement() &&
+             xml.name() == "fonction");
+
+    xml.readNextStartElement();
+
+    if(xml.name() == "id")
+    {
+        QString id = xml.readElementText();
+        base_fonction * f = bibliotheque_fonctions::get_fonction( (type_id_fonction)id.toInt() );
+
+        ajouter_fonction(f);
+        f->charger(xml);
+    }
+}
+
+void fonctions_conteneur::charger_fonctions(QXmlStreamReader & xml )
+{
+   Q_ASSERT(xml.isStartElement() &&
+             xml.name() == "fonctions");
+
+    while(xml.readNextStartElement())
+    {
+        if(xml.name() == "fonction")
+            charger_fonction(xml);
+        else
+        {
+            std::cout << "\t\t ignore : " << xml.name().toString().toStdString() << std::endl;
+            xml.skipCurrentElement();
+        }
+    }
 }

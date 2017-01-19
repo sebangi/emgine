@@ -54,8 +54,6 @@ class projet : public fonctions_conteneur
     private:
         void charger_nom(QXmlStreamReader & xml);
         void charger_description(QXmlStreamReader & xml);
-        void charger_fonctions(QXmlStreamReader & xml);
-        void charger_fonction(QXmlStreamReader & xml);
         void charger_parametres(QXmlStreamReader & xml, base_fonction* f);
         void charger_parametre(QXmlStreamReader & xml, base_fonction* f);
 

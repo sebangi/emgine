@@ -32,8 +32,8 @@ class objet_selectionnable : public QObject
         static projet * get_projet_courant();
         static bool existe_selection();
 
-        bool est_entendu() const;
-        void set_est_etendu(bool est_entendu);
+        bool est_etendu() const;
+        virtual void set_est_etendu(bool est_etendu);
         void modifier();
 
     protected:

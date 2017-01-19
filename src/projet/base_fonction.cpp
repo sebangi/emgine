@@ -178,6 +178,13 @@ void base_fonction::set_est_active(bool est_active)
     emit signal_activation_fonction_change(this);
 }
 
+void base_fonction::set_est_etendu(bool est_etendu)
+{
+    objet_selectionnable::set_est_etendu( est_etendu );
+
+    emit signal_etendu_change(this);
+}
+
 bool base_fonction::a_parametre() const
 {
     return ! m_parametres.empty();

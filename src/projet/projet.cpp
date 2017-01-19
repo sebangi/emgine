@@ -98,6 +98,8 @@ void projet::charger_nom(QXmlStreamReader & xml)
     Q_ASSERT(xml.isStartElement() &&
              xml.name() == "nom");
 
+    // ne pas retirer cette ligne : il fait lire l'élément pour charger la suite
+    QString nom = xml.readElementText();
     // Le nom est ignoré
 }
 
@@ -107,40 +109,6 @@ void projet::charger_description(QXmlStreamReader & xml)
              xml.name() == "description");
 
     m_description = xml.readElementText();
-}
-
-void projet::charger_fonctions(QXmlStreamReader & xml )
-{
-    Q_ASSERT(xml.isStartElement() &&
-             xml.name() == "fonctions");
-
-    while(xml.readNextStartElement())
-    {
-        if(xml.name() == "fonction")
-            charger_fonction(xml);
-        else
-        {
-            std::cout << "\t\t ignore : " << xml.name().toString().toStdString() << std::endl;
-            xml.skipCurrentElement();
-        }
-    }
-}
-
-void projet::charger_fonction(QXmlStreamReader & xml)
-{
-    Q_ASSERT(xml.isStartElement() &&
-             xml.name() == "fonction");
-
-    xml.readNextStartElement();
-
-    if(xml.name() == "id")
-    {
-        QString id = xml.readElementText();
-        base_fonction * f = bibliotheque_fonctions::get_fonction( (type_id_fonction)id.toInt() );
-
-        ajouter_fonction(f);
-        f->charger(xml);
-    }
 }
 
 void projet::set_est_modifie(bool est_modifie)

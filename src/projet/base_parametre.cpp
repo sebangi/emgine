@@ -173,37 +173,3 @@ void base_parametre::charger(QXmlStreamReader & xml)
         }
     }
 }
-
-void base_parametre::charger_fonctions(QXmlStreamReader & xml )
-{
-    Q_ASSERT(xml.isStartElement() &&
-             xml.name() == "fonctions");
-
-    while(xml.readNextStartElement())
-    {
-        if(xml.name() == "fonction")
-            charger_fonction(xml);
-        else
-        {
-            std::cout << "\t\t ignore : " << xml.name().toString().toStdString() << std::endl;
-            xml.skipCurrentElement();
-        }
-    }
-}
-
-void base_parametre::charger_fonction( QXmlStreamReader & xml )
-{
-    Q_ASSERT(xml.isStartElement() &&
-             xml.name() == "fonction");
-
-    xml.readNextStartElement();
-
-    if(xml.name() == "id")
-    {
-        QString id = xml.readElementText();
-        base_fonction * f = bibliotheque_fonctions::get_fonction( (type_id_fonction)id.toInt() );
-
-        ajouter_fonction(f);
-        f->charger(xml);
-    }
-}

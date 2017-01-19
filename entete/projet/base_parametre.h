@@ -48,10 +48,6 @@ class base_parametre : public fonctions_conteneur
 
         void charger( QXmlStreamReader & xml );
 
-    private:
-        void charger_fonctions(QXmlStreamReader & xml );
-        void charger_fonction(QXmlStreamReader & xml );
-
     protected:
         /** \brief Le nom de la fonction. */
         QString m_nom;

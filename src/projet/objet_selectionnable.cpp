@@ -143,6 +143,8 @@ projet * objet_selectionnable::get_projet_courant(objet_selectionnable * obj)
 void objet_selectionnable::set_est_etendu(bool est_entendu)
 {
     m_est_etendu = est_entendu;
+
+
 }
 
 void objet_selectionnable::modifier()
@@ -158,7 +160,7 @@ void objet_selectionnable::modifier()
         m_objet_parent->modifier();
 }
 
-bool objet_selectionnable::est_entendu() const
+bool objet_selectionnable::est_etendu() const
 {
     return m_est_etendu;
 }

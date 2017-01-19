@@ -80,6 +80,7 @@ class base_fonction : public objet_selectionnable
         void set_niveau_visibilite( int niveau_visibilite );
         void change_niveau_visibilite();
         void set_est_active(bool est_active);
+        void set_est_etendu(bool est_etendu);
 
         bool a_parametre() const;
 
@@ -95,6 +96,7 @@ class base_fonction : public objet_selectionnable
         void signal_destruction_fonction(base_fonction* f);
         void signal_activation_fonction_change(base_fonction * f);
         void signal_niveau_visibilite_change(base_fonction * f);
+        void signal_etendu_change(base_fonction * f);
 
     private:
         void charger_parametres(QXmlStreamReader & xm);
