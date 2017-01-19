@@ -53,6 +53,10 @@ fenetre_principale::fenetre_principale(QWidget *parent) :
     creer_toolbar();
     creer_widgets();
     init_widgets();
+
+    QIcon icon1;
+    icon1.addFile(QString::fromUtf8("icons/emgine.png"), QSize(), QIcon::Normal, QIcon::Off);
+    setWindowIcon(icon1);
     resize(QSize(1000,900));
 
     init_test();
