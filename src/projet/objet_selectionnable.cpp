@@ -39,16 +39,31 @@ fonctions_conteneur * objet_selectionnable::get_conteneur()
 {
     if ( est_conteneur() )
         return (fonctions_conteneur *)this;
-    else
+    else if ( m_objet_parent != NULL )
         return m_objet_parent->get_conteneur();
+    else
+        return NULL;
 }
 
 projet * objet_selectionnable::get_projet()
 {
     if ( est_projet() )
         return (projet *)this;
-    else
+    else if ( m_objet_parent != NULL )
         return m_objet_parent->get_projet();
+    else
+        return NULL;
+}
+
+bool objet_selectionnable::est_dans_projet() const
+{
+    // ne pas utiliser get_projet() == NULL Sinon bugs
+    if ( est_projet() )
+        return true;
+    else if ( m_objet_parent != NULL )
+        return m_objet_parent->est_dans_projet();
+    else
+        return false;
 }
 
 bool objet_selectionnable::est_conteneur() const
@@ -166,7 +181,7 @@ void objet_selectionnable::modifier()
 
         ((projet*)this)->set_executable(true);
     }
-    else
+    else if ( m_objet_parent != NULL )
         m_objet_parent->modifier();
 }
 

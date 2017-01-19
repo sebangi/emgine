@@ -24,9 +24,7 @@ projet::projet()
 
 projet::~projet()
 {
-    for ( fonctions_iterateur it = m_fonctions.begin(); it != m_fonctions.end(); ++it )
-        delete *it;
-    m_fonctions.clear();
+
 }
 
 void projet::sauvegarder( QXmlStreamWriter & stream )

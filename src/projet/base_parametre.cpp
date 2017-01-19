@@ -12,6 +12,12 @@
 
 #include <iostream>
 
+base_parametre::base_parametre()
+    : fonctions_conteneur(NULL), m_fonction_parent(NULL)
+{
+
+}
+
 base_parametre::base_parametre(objet_selectionnable * parent, QString nom, QString aide, bool requis)
     : fonctions_conteneur(parent), m_fonction_parent((base_fonction*)parent), m_nom(nom), m_aide(aide),
       m_requis(requis), m_texte_out()
@@ -21,9 +27,7 @@ base_parametre::base_parametre(objet_selectionnable * parent, QString nom, QStri
 
 base_parametre::~base_parametre()
 {
-    for ( fonctions_iterateur it = m_fonctions.begin(); it != m_fonctions.end(); ++it )
-        delete *it;
-    m_fonctions.clear();
+
 }
 
 void base_parametre::sauvegarder( QXmlStreamWriter & stream ) const

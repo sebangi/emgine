@@ -12,6 +12,13 @@ fonctions_conteneur::fonctions_conteneur( objet_selectionnable * parent )
 
 }
 
+fonctions_conteneur::~fonctions_conteneur( )
+{
+    for ( fonctions_iterateur it = m_fonctions.begin(); it != m_fonctions.end(); ++it )
+        delete *it;
+    m_fonctions.clear();
+}
+
 void fonctions_conteneur::ajouter_fonction(base_fonction *f)
 {
     f->set_conteneur(this);
@@ -21,7 +28,9 @@ void fonctions_conteneur::ajouter_fonction(base_fonction *f)
              this, SLOT(on_supprimer_fonction(base_fonction*)));
 
     emit signal_fc_creation_fonction(f);
-    get_projet()->modifier();
+
+    if ( est_dans_projet() )
+        get_projet()->modifier();
 }
 
 void fonctions_conteneur::supprimer_fonction(base_fonction *f)
@@ -77,8 +86,8 @@ void fonctions_conteneur::charger_fonction( QXmlStreamReader & xml )
         QString id = xml.readElementText();
         base_fonction * f = bibliotheque_fonctions::get_fonction( (type_id_fonction)id.toInt() );
 
-        ajouter_fonction(f);
         f->charger(xml);
+        ajouter_fonction(f);
     }
 }
 

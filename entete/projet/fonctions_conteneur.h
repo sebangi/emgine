@@ -18,6 +18,7 @@ class fonctions_conteneur : public objet_selectionnable
 
     public:
         fonctions_conteneur(objet_selectionnable * parent);
+        ~fonctions_conteneur();
         void ajouter_fonction(base_fonction * f);
         void supprimer_fonction(base_fonction * f);
 

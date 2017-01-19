@@ -266,7 +266,9 @@ void vue_fonctions::on_externe_objet_deselectionne(objet_selectionnable *obj)
 void vue_fonctions::on_externe_creation_fonction(base_fonction* f)
 {
     ajouter_fonction(f);
-    ajouter_vue_fonction(f);
+
+    if ( f->get_conteneur() == m_conteneur_courant )
+        ajouter_vue_fonction(f);
 }
 
 /** --------------------------------------------------------------------------------------

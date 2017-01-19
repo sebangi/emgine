@@ -4,6 +4,7 @@
 #include "entete/explorateur/noeud_fonction.h"
 #include "entete/explorateur/noeud_parametre.h"
 #include "entete/projet/projet.h"
+#include "entete/projet/fonctions_conteneur.h"
 #include "entete/projet/objet_selectionnable.h"
 #include "entete/fenetre_principale.h"
 #include "entete/fonction/bibliotheque_fonctions.h"
@@ -136,6 +137,12 @@ void explorateur::faire_coller()
 {
     QXmlStreamReader xmlReader(m_fonction_a_copier);
     xmlReader.readNextStartElement();
+
+    /*
+    base_parametre conteneur;
+    conteneur.charger_fonction( xmlReader );
+    m_noeud_context->get_objet()->get_conteneur()->ajouter_fonction( *(conteneur.fonctions_begin()) );
+*/
     m_noeud_context->get_objet()->get_conteneur()->charger_fonction( xmlReader );
 }
 
@@ -403,7 +410,7 @@ void explorateur::on_customContextMenuRequested(const QPoint &pos)
     {
         QIcon icon_coller;
         icon_coller.addFile(QString::fromUtf8("icons/coller.png"), QSize(), QIcon::Normal, QIcon::Off);
-        QAction *newAct_coller = new QAction(icon_coller, tr("Coller la fonction"), this);
+        QAction *newAct_coller = new QAction(icon_coller, tr("Coller la fonction à la fin"), this);
         newAct_coller->setStatusTip(tr("Coller la fonction à la fin"));
         if ( m_fonction_a_copier == NULL )
             newAct_coller->setEnabled(false);
