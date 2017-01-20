@@ -212,6 +212,14 @@ void base_fonction::inverser_activation()
     set_est_active( ! m_est_active );
 }
 
+int base_fonction::get_position()
+{
+    if ( m_conteneur == NULL )
+        return 0;
+    else
+        return m_conteneur->get_position(this);
+}
+
 base_fonction::parametres_iterateur base_fonction::parametres_begin()
 {
     return m_parametres.begin();

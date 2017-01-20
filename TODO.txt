@@ -11,7 +11,7 @@ ETAPE 1 : PRIORITAIRE
 * réflexion sur les paramètres de fonction_texte : faut-il itérer sur les lignes ?
 * améliorer la mise en page de l'aide des paramètres (avoir une méthode claire pour présenter les itérations )
 * gérer le coller de noeud à l'endroit voulu
-* gérer le déplacement de noeud
+* possibilité de déplacer en coller avec le shift appuyé
 * factoriser fonction_cesar.executer
 * Compléter le menu de l'application
 

@@ -36,9 +36,10 @@ class explorateur : public QTreeWidget
         void ajouter_selectionnable(objet_selectionnable * obj, base_noeud* noeud);
         void mettre_a_jour_activation( base_noeud* n, bool actif, bool change_expansion );
         void mettre_a_jour_etendu( base_noeud* n, bool etendu );
-        void creer_copie( const objet_selectionnable* obj );
-        void faire_coller();
-        void faire_couper();
+        void creer_copie( const objet_selectionnable* obj, QString & copie );
+        void faire_coller( objet_selectionnable* conteneur, QString & copie, objet_selectionnable * obj_ref );
+        void faire_couper( objet_selectionnable* obj );
+        void faire_drop(base_noeud * n_a_couper, base_noeud * n_conteneur);
         void dragMoveEvent(QDragMoveEvent *e);
         void dropEvent(QDropEvent * event);
         void connecter_selectionnable(objet_selectionnable * f);

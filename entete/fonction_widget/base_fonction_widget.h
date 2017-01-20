@@ -57,8 +57,6 @@ class base_fonction_widget : public QWidget, public QTableWidgetItem
         QPushButton *m_fermer_bouton;
         QPushButton *m_actif_bouton;
         QPushButton *m_aide_bouton;
-
-        int m_ligne;
 };
 
 #endif // BASE_FONCTION_WIDGET_H

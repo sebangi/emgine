@@ -271,7 +271,7 @@ void fenetre_principale::ajouter_fonction( fonctions_conteneur * conteneur, base
     if ( init_defaut )
         f->initialisation_par_defaut();
 
-    conteneur->ajouter_fonction(f);
+    conteneur->ajouter_fonction(f,NULL);
     f->selectionner();
 }
 

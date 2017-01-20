@@ -62,7 +62,7 @@ void projet::charger(QXmlStreamReader & xml)
         else if (xml.name() == "objet_selectionnable")
             objet_selectionnable::charger(xml);
         else if (xml.name() == "fonctions")
-            charger_fonctions(xml);
+            charger_fonctions(xml, NULL);
         else
             xml.skipCurrentElement();
     }

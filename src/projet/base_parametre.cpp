@@ -77,7 +77,7 @@ bool base_parametre::is_requis() const
 void base_parametre::set_booleen_par_defaut(bool valeur)
 {
     base_fonction * f = new fonction_source_booleen(this,valeur);
-    ajouter_fonction(f);
+    ajouter_fonction(f, NULL);
 }
 
 void base_parametre::set_texte_par_defaut
@@ -85,13 +85,13 @@ void base_parametre::set_texte_par_defaut
 {
     base_fonction * f = new fonction_source_texte(this,texte);
     ((fonction_source_texte *)f)->initialisation_par_defaut( separ_caractere, separ_mot, separ_ligne );
-    ajouter_fonction(f);
+    ajouter_fonction(f, NULL);
 }
 
 void base_parametre::set_caractere_par_defaut(QString s)
 {
     base_fonction * f = new fonction_source_caractere(this,s);
-    ajouter_fonction(f);
+    ajouter_fonction(f, NULL);
 }
 
 const texte & base_parametre::get_texte_out() const
@@ -156,7 +156,7 @@ void base_parametre::charger(QXmlStreamReader & xml)
             objet_selectionnable::charger(xml);
         else if(xml.name() == "fonctions")
         {
-            charger_fonctions(xml);
+            charger_fonctions(xml, NULL);
         }
         else
         {

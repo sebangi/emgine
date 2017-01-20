@@ -17,10 +17,24 @@ fonctions_conteneur::~fonctions_conteneur( )
 
 }
 
-void fonctions_conteneur::ajouter_fonction(base_fonction *f)
+// obj_ref :
+//   - NULL : ajouter en fin
+//   - this : ajouter en fin
+//   - fonction du conteneur : ajouter avant
+void fonctions_conteneur::ajouter_fonction(base_fonction *f, objet_selectionnable * obj_ref)
 {
     f->set_conteneur(this);
-    m_fonctions.push_back(f);
+
+    if ( obj_ref == NULL )
+        m_fonctions.push_back(f);
+    else if ( obj_ref == this )
+        m_fonctions.push_back(f);
+    else if ( obj_ref->est_conteneur() )
+        m_fonctions.push_back(f);
+    else if ( m_fonctions.contains((base_fonction*)obj_ref) )
+        m_fonctions.insert( m_fonctions.indexOf((base_fonction*)obj_ref), f);
+    else
+        m_fonctions.push_back(f);
 
     connect( f, SIGNAL(signal_destruction_fonction(base_fonction*)),
              this, SLOT(on_supprimer_fonction(base_fonction*)));
@@ -34,7 +48,7 @@ void fonctions_conteneur::ajouter_fonction(base_fonction *f)
 void fonctions_conteneur::supprimer_fonction(base_fonction *f)
 {
     disconnect( f, SIGNAL(signal_destruction_fonction(base_fonction*)),
-             this, SLOT(on_supprimer_fonction(base_fonction*)));
+                this, SLOT(on_supprimer_fonction(base_fonction*)));
 
     m_fonctions.removeOne(f);
     get_projet()->modifier();
@@ -67,12 +81,20 @@ fonctions_conteneur::fonctions_const_iterateur fonctions_conteneur::fonctions_co
     return m_fonctions.constEnd();
 }
 
+int fonctions_conteneur::get_position(base_fonction *f)
+{
+    if ( m_fonctions.contains(f) )
+        return m_fonctions.indexOf(f);
+    else
+        return 0;
+}
+
 bool fonctions_conteneur::est_conteneur() const
 {
     return true;
 }
 
-void fonctions_conteneur::charger_fonction( QXmlStreamReader & xml )
+void fonctions_conteneur::charger_fonction( QXmlStreamReader & xml, objet_selectionnable * obj_ref )
 {
     Q_ASSERT(xml.isStartElement() &&
              xml.name() == "fonction");
@@ -85,19 +107,19 @@ void fonctions_conteneur::charger_fonction( QXmlStreamReader & xml )
         base_fonction * f = bibliotheque_fonctions::get_fonction( (type_id_fonction)id.toInt() );
 
         f->charger(xml);
-        ajouter_fonction(f);
+        ajouter_fonction(f, obj_ref);
     }
 }
 
-void fonctions_conteneur::charger_fonctions(QXmlStreamReader & xml )
+void fonctions_conteneur::charger_fonctions(QXmlStreamReader & xml, objet_selectionnable * obj_ref )
 {
-   Q_ASSERT(xml.isStartElement() &&
+    Q_ASSERT(xml.isStartElement() &&
              xml.name() == "fonctions");
 
     while(xml.readNextStartElement())
     {
         if(xml.name() == "fonction")
-            charger_fonction(xml);
+            charger_fonction(xml, obj_ref);
         else
         {
             std::cout << "\t\t ignore : " << xml.name().toString().toStdString() << std::endl;

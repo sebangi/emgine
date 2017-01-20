@@ -20,7 +20,7 @@ class fonctions_conteneur : public objet_selectionnable
     public:
         fonctions_conteneur(objet_selectionnable * parent);
         ~fonctions_conteneur();
-        void ajouter_fonction(base_fonction * f);
+        void ajouter_fonction(base_fonction * f, objet_selectionnable * obj_ref);
         void supprimer_fonction(base_fonction * f);
 
         fonctions_iterateur fonctions_begin();
@@ -29,10 +29,11 @@ class fonctions_conteneur : public objet_selectionnable
         fonctions_const_iterateur fonctions_const_end() const;
 
         virtual QString get_titre() const = 0;
+        int get_position(base_fonction* f);
 
         bool est_conteneur() const;
-        void charger_fonction( QXmlStreamReader & xml );
-        void charger_fonctions( QXmlStreamReader & xml );
+        void charger_fonction( QXmlStreamReader & xml, objet_selectionnable * obj_ref );
+        void charger_fonctions( QXmlStreamReader & xml, objet_selectionnable * obj_ref );
         void sauvegarder( QXmlStreamWriter & stream ) const;
 
     protected:

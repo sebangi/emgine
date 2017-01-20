@@ -67,6 +67,7 @@ class base_fonction : public objet_selectionnable
         void set_noeud( noeud_fonction * n );
         noeud_fonction * get_noeud();
         void inverser_activation();
+        int get_position();
 
         parametres_iterateur parametres_begin();
         parametres_iterateur parametres_end();

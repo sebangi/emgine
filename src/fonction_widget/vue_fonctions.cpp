@@ -119,9 +119,14 @@ void vue_fonctions::ajouter_vue_fonction(base_fonction* fonction)
     connect( widget, SIGNAL(signal_bfw_size_change()),
              this, SLOT(on_externe_fonction_widget_size_change()));
 
-    setRowCount(rowCount() + 1);
-    setCellWidget(rowCount() -1, 1, (QWidget*)widget);
-    setItem(rowCount() -1, 2, new QTableWidgetItem("essai"));
+    int position = fonction->get_position();
+    insertRow(position);
+
+    //setRowCount(rowCount() + 1);
+    //position = rowCount() - 1;
+
+    setCellWidget(position, 1, (QWidget*)widget);
+    setItem(position, 2, new QTableWidgetItem("essai"));
 
     horizontalHeader()->setStretchLastSection(true);
     verticalHeader()->setSectionResizeMode(QHeaderView::ResizeToContents);
@@ -139,7 +144,7 @@ void vue_fonctions::ajouter_vue_fonction(base_fonction* fonction)
     image->setIcon(icon1);
     image->setIconSize(QSize(32,32));
 
-    setCellWidget(rowCount() -1, 0, image);
+    setCellWidget(position, 0, image);
     image->setEnabled(false);
 }
 
@@ -253,7 +258,6 @@ void vue_fonctions::on_externe_destruction_projet(projet *p)
         m_conteneur_courant = NULL;
     }
 }
-
 
 void vue_fonctions::on_externe_objet_selectionne(objet_selectionnable *obj)
 {

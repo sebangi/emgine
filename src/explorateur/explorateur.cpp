@@ -122,11 +122,11 @@ void explorateur::mettre_a_jour_etendu( base_noeud* n, bool etendu )
         n->setExpanded(etendu);
 }
 
-void explorateur::creer_copie( const objet_selectionnable* obj )
+void explorateur::creer_copie( const objet_selectionnable* obj, QString & copie )
 {
-    m_a_copier.clear();
+    copie.clear();
 
-    QXmlStreamWriter XmlWriter(&m_a_copier);
+    QXmlStreamWriter XmlWriter(&copie);
     XmlWriter.setAutoFormatting(true);
     XmlWriter.writeStartDocument();
 
@@ -138,29 +138,36 @@ void explorateur::creer_copie( const objet_selectionnable* obj )
     XmlWriter.writeEndDocument();
 }
 
-void explorateur::faire_coller()
+void explorateur::faire_coller(objet_selectionnable * conteneur, QString & copie, objet_selectionnable * obj_ref)
 {
-    QXmlStreamReader xmlReader(m_a_copier);
+    QXmlStreamReader xmlReader(copie);
     xmlReader.readNextStartElement();
 
     if ( xmlReader.name() == "fonctions" )
-        m_noeud_context->get_objet()->get_conteneur()->charger_fonctions( xmlReader );
+        conteneur->get_conteneur()->charger_fonctions( xmlReader, obj_ref );
     else if ( xmlReader.name() == "fonction" )
-        m_noeud_context->get_objet()->get_conteneur()->charger_fonction( xmlReader );
+        conteneur->get_conteneur()->charger_fonction( xmlReader, obj_ref );
 }
 
-void explorateur::faire_couper()
+void explorateur::faire_couper(objet_selectionnable * obj)
 {
-    if ( m_objet_a_couper->est_conteneur() )
+    if ( obj->est_conteneur() )
     {
-        for ( fonctions_conteneur::fonctions_const_iterateur it = m_objet_a_couper->get_conteneur()->fonctions_const_begin();
-              it != m_objet_a_couper->get_conteneur()->fonctions_const_end(); ++it )
+        for ( fonctions_conteneur::fonctions_const_iterateur it = obj->get_conteneur()->fonctions_const_begin();
+              it != obj->get_conteneur()->fonctions_const_end(); ++it )
             delete *it;
     }
     else
-        delete m_objet_a_couper;
+        delete obj;
+}
 
-    m_objet_a_couper = NULL;
+void explorateur::faire_drop(base_noeud * n_a_couper, base_noeud * n_conteneur)
+{
+    QString copie;
+    creer_copie(n_a_couper->get_objet(), copie);
+    faire_couper(n_a_couper->get_objet());
+    n_conteneur->get_objet()->selectionner();
+    faire_coller(n_conteneur->get_objet(), copie, n_conteneur->get_objet());
 }
 
 void explorateur::on_externe_objet_selectionne(objet_selectionnable *obj)
@@ -219,8 +226,6 @@ void explorateur::on_externe_destruction_projet(projet *p)
     if ( it != m_selectionnables.end() )
     {
         deconnecter_projet(p);
-        //this->removeItemWidget(it->second,0);
-        //it->second->parent()->removeChild(it->second);
         delete it->second;
         m_selectionnables.erase(it);
     }
@@ -262,7 +267,8 @@ void explorateur::ajouter_fonction(base_fonction* f)
         base_noeud* noeud = new noeud_fonction( f );
         ajouter_selectionnable((objet_selectionnable*)f, noeud);
 
-        noeud_parent->addChild(noeud);
+        //noeud_parent->addChild(noeud);
+        noeud_parent->insertChild(f->get_position(), noeud);
 
         for ( base_fonction::parametres_iterateur it_p = f->parametres_begin(); it_p != f->parametres_end(); ++it_p )
             ajouter_parametre( it_p->second );
@@ -407,7 +413,7 @@ void explorateur::on_customContextMenuRequested(const QPoint &pos)
     icon_copier.addFile(QString::fromUtf8("icons/copier.png"), QSize(), QIcon::Normal, QIcon::Off);
     QString texte_copier;
     if ( noeud_context->get_objet()->est_conteneur() )
-        texte_copier = tr("Copier le conteneur");
+        texte_copier = tr("Copier le contenu");
     else
         texte_copier = tr("Copier la fonction");
     QAction *newAct_copier = new QAction(icon_copier, texte_copier, this);
@@ -419,7 +425,7 @@ void explorateur::on_customContextMenuRequested(const QPoint &pos)
     icon_couper.addFile(QString::fromUtf8("icons/couper.png"), QSize(), QIcon::Normal, QIcon::Off);
     QString texte_couper;
     if ( noeud_context->get_objet()->est_conteneur() )
-        texte_couper = tr("Couper le conteneur");
+        texte_couper = tr("Couper le contenu");
     else
         texte_couper = tr("Couper la fonction");
     QAction *newAct_couper = new QAction(icon_couper, texte_couper, this);
@@ -489,41 +495,28 @@ void explorateur::dropEvent(QDropEvent * event)
     if( item )
     {
         if ( item != currentItem()->parent() )
-        {
-            QTreeWidgetItem * save_current = currentItem();
-            bool save_expanded = save_current->isExpanded();
-
-            QTreeWidget::dropEvent(event);
-
-            ((base_noeud*)save_current)->get_objet()->selectionner();
-            save_current->parent()->setExpanded(save_expanded);
-            save_current->setExpanded(save_expanded);
-        }
+            faire_drop((base_noeud *)currentItem(), (base_noeud *)item);
         else
-        {
             event->ignore();
-        }
     }
     else
-    {
         event->ignore();
-    }
 }
 
 void explorateur::connecter_selectionnable(objet_selectionnable *obj)
 {
     connect( obj, SIGNAL(signal_os_selectionne(objet_selectionnable*)),
-         this, SLOT(on_externe_objet_selectionne(objet_selectionnable*)) );
+             this, SLOT(on_externe_objet_selectionne(objet_selectionnable*)) );
     connect( obj, SIGNAL(signal_os_deselectionne(objet_selectionnable*)),
-         this, SLOT(on_externe_objet_deselectionne(objet_selectionnable*)));
+             this, SLOT(on_externe_objet_deselectionne(objet_selectionnable*)));
 }
 
 void explorateur::deconnecter_selectionnable(objet_selectionnable *obj)
 {
     disconnect( obj, SIGNAL(signal_os_selectionne(objet_selectionnable*)),
-         this, SLOT(on_externe_objet_selectionne(objet_selectionnable*)) );
+                this, SLOT(on_externe_objet_selectionne(objet_selectionnable*)) );
     disconnect( obj, SIGNAL(signal_os_deselectionne(objet_selectionnable*)),
-         this, SLOT(on_externe_objet_deselectionne(objet_selectionnable*)));
+                this, SLOT(on_externe_objet_deselectionne(objet_selectionnable*)));
 }
 
 void explorateur::connecter_fonction(base_fonction *f)
@@ -541,13 +534,13 @@ void explorateur::connecter_fonction(base_fonction *f)
 void explorateur::deconnecter_fonction(base_fonction *f)
 {
     disconnect( f, SIGNAL(signal_destruction_fonction(base_fonction*)),
-             this, SLOT(on_externe_supprimer_fonction(base_fonction*)));
+                this, SLOT(on_externe_supprimer_fonction(base_fonction*)));
 
     disconnect( f, SIGNAL(signal_activation_fonction_change(base_fonction *)),
-             this, SLOT(on_externe_activation_fonction_change(base_fonction *)));
+                this, SLOT(on_externe_activation_fonction_change(base_fonction *)));
 
     disconnect( f, SIGNAL(signal_etendu_change(base_fonction *)),
-             this, SLOT(on_externe_etendu_change(base_fonction *)));
+                this, SLOT(on_externe_etendu_change(base_fonction *)));
 
     deconnecter_selectionnable(f);
 }
@@ -555,11 +548,11 @@ void explorateur::deconnecter_fonction(base_fonction *f)
 void explorateur::connecter_projet(projet *p)
 {
     connect( (fonctions_conteneur*)p, SIGNAL(signal_fc_creation_fonction(base_fonction*)),
-                this, SLOT(on_externe_creation_fonction(base_fonction*)));
+             this, SLOT(on_externe_creation_fonction(base_fonction*)));
     connect( p, SIGNAL(signal_p_nom_projet_change(projet *)),
-                this, SLOT(on_externe_nom_projet_change(projet *)));
+             this, SLOT(on_externe_nom_projet_change(projet *)));
     connect( p, SIGNAL(signal_p_destruction_projet(projet *)),
-                this, SLOT(on_externe_destruction_projet(projet *)));
+             this, SLOT(on_externe_destruction_projet(projet *)));
 }
 
 void explorateur::deconnecter_projet(projet *p)
@@ -601,22 +594,25 @@ void explorateur::on_enregistrer_sous()
 
 void explorateur::on_copier()
 {
-    creer_copie( m_noeud_context->get_objet() );
+    creer_copie( m_noeud_context->get_objet(), m_a_copier );
     m_objet_a_couper = NULL;
 }
 
 void explorateur::on_couper()
 {
-    creer_copie(m_noeud_context->get_objet());
+    creer_copie(m_noeud_context->get_objet(), m_a_copier);
     m_objet_a_couper = m_noeud_context->get_objet();
 }
 
 void explorateur::on_coller()
 {
     if ( m_objet_a_couper != NULL )
-        faire_couper();
+    {
+        faire_couper(m_objet_a_couper);
+        m_objet_a_couper = NULL;
+    }
 
-    faire_coller();
+    faire_coller(m_noeud_context->get_objet(), m_a_copier, NULL);
 }
 
 void explorateur::on_fermer_projet()
