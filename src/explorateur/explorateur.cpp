@@ -469,10 +469,7 @@ void explorateur::dragMoveEvent(QDragMoveEvent *e)
 
     if ( item )
     {
-        if ( item != currentItem()->parent()  )
-        {
-            accept = true;
-        }
+        accept = true;
     }
 
     if ( accept )
@@ -494,10 +491,7 @@ void explorateur::dropEvent(QDropEvent * event)
 
     if( item )
     {
-        if ( item != currentItem()->parent() )
-            faire_drop((base_noeud *)currentItem(), (base_noeud *)item);
-        else
-            event->ignore();
+        faire_drop((base_noeud *)currentItem(), (base_noeud *)item);
     }
     else
         event->ignore();

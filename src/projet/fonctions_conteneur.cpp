@@ -19,8 +19,9 @@ fonctions_conteneur::~fonctions_conteneur( )
 
 // obj_ref :
 //   - NULL : ajouter en fin
-//   - this : ajouter en fin
-//   - fonction du conteneur : ajouter avant
+//   - this : ajouter en début
+//   - est conteneur : ajouter en début
+//   - fonction du conteneur : ajouter après la fonction
 void fonctions_conteneur::ajouter_fonction(base_fonction *f, objet_selectionnable * obj_ref)
 {
     f->set_conteneur(this);
@@ -28,11 +29,11 @@ void fonctions_conteneur::ajouter_fonction(base_fonction *f, objet_selectionnabl
     if ( obj_ref == NULL )
         m_fonctions.push_back(f);
     else if ( obj_ref == this )
-        m_fonctions.push_back(f);
+        m_fonctions.push_front(f);
     else if ( obj_ref->est_conteneur() )
-        m_fonctions.push_back(f);
+        m_fonctions.push_front(f);
     else if ( m_fonctions.contains((base_fonction*)obj_ref) )
-        m_fonctions.insert( m_fonctions.indexOf((base_fonction*)obj_ref), f);
+        m_fonctions.insert( m_fonctions.indexOf((base_fonction*)obj_ref) + 1, f);
     else
         m_fonctions.push_back(f);
 

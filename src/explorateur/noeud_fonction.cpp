@@ -11,7 +11,7 @@
 noeud_fonction::noeud_fonction( base_fonction * f )
     : base_noeud( (objet_selectionnable *)f, base_noeud::type_fonction )
 {
-    setFlags(Qt::ItemIsEnabled | Qt::ItemIsSelectable | Qt::ItemIsDragEnabled );
+    setFlags(Qt::ItemIsEnabled | Qt::ItemIsSelectable | Qt::ItemIsDragEnabled | Qt::ItemIsDropEnabled );
     setText(0, f->get_nom());
 
     QIcon icon1;
