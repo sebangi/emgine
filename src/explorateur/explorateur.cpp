@@ -161,11 +161,12 @@ void explorateur::faire_couper(objet_selectionnable * obj)
         delete obj;
 }
 
-void explorateur::faire_drop(base_noeud * n_a_couper, base_noeud * n_conteneur)
+void explorateur::faire_drop(base_noeud * n_a_couper, base_noeud * n_conteneur, bool shift)
 {
     QString copie;
     creer_copie(n_a_couper->get_objet(), copie);
-    faire_couper(n_a_couper->get_objet());
+    if ( ! shift )
+        faire_couper(n_a_couper->get_objet());
     n_conteneur->get_objet()->selectionner();
     faire_coller(n_conteneur->get_objet(), copie, n_conteneur->get_objet());
 }
@@ -491,7 +492,7 @@ void explorateur::dropEvent(QDropEvent * event)
 
     if( item )
     {
-        faire_drop((base_noeud *)currentItem(), (base_noeud *)item);
+        faire_drop((base_noeud *)currentItem(), (base_noeud *)item, event->keyboardModifiers() && Qt::ShiftModifier);
     }
     else
         event->ignore();
