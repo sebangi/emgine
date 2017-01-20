@@ -21,7 +21,7 @@ base_parametre::base_parametre(objet_selectionnable * parent, QString nom, QStri
 
 base_parametre::~base_parametre()
 {
-
+    clear_fonctions();
 }
 
 void base_parametre::sauvegarder( QXmlStreamWriter & stream ) const

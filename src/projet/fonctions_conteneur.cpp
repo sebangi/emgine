@@ -14,9 +14,7 @@ fonctions_conteneur::fonctions_conteneur( objet_selectionnable * parent )
 
 fonctions_conteneur::~fonctions_conteneur( )
 {
-    for ( fonctions_iterateur it = m_fonctions.begin(); it != m_fonctions.end(); ++it )
-        delete *it;
-    m_fonctions.clear();
+
 }
 
 void fonctions_conteneur::ajouter_fonction(base_fonction *f)
@@ -116,4 +114,11 @@ void fonctions_conteneur::sauvegarder(QXmlStreamWriter &stream) const
         (*it)->sauvegarder(stream);
 
     stream.writeEndElement(); // Fonctions
+}
+
+void fonctions_conteneur::clear_fonctions()
+{
+    for ( fonctions_iterateur it = m_fonctions.begin(); it != m_fonctions.end(); ++it )
+        delete *it;
+    m_fonctions.clear();
 }

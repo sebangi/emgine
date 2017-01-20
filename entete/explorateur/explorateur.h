@@ -41,6 +41,12 @@ class explorateur : public QTreeWidget
         void faire_couper();
         void dragMoveEvent(QDragMoveEvent *e);
         void dropEvent(QDropEvent * event);
+        void connecter_selectionnable(objet_selectionnable * f);
+        void deconnecter_selectionnable(objet_selectionnable * f);
+        void connecter_fonction(base_fonction * f);
+        void deconnecter_fonction(base_fonction * f);
+        void connecter_projet(projet * p);
+        void deconnecter_projet(projet * p);
 
     signals:
         void signal_e_ajout_source(fonctions_conteneur *, base_fonction::type_fonction);
@@ -57,6 +63,7 @@ class explorateur : public QTreeWidget
         void on_externe_objet_deselectionne(objet_selectionnable* obj);
         void on_externe_creation_fonction(base_fonction* f);
         void on_externe_nom_projet_change(projet * p);
+        void on_externe_destruction_projet(projet * p);
 
         void on_itemExpanded(QTreeWidgetItem *item);
         void on_itemCollapsed(QTreeWidgetItem *item);
@@ -73,6 +80,7 @@ class explorateur : public QTreeWidget
         void on_copier();
         void on_couper();
         void on_coller();
+        void on_fermer_projet();
 
     private:
         /** \brief Le noeud du context actuel. */

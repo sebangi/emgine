@@ -156,6 +156,12 @@ bool objet_selectionnable::existe_selection()
     return s_objet_courant != NULL;
 }
 
+void objet_selectionnable::forcer_deselection()
+{
+    if ( s_objet_courant != NULL )
+        s_objet_courant->deselectionner();
+}
+
 void objet_selectionnable::deselectionner()
 {
     if ( s_objet_courant == this )

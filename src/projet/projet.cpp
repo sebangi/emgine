@@ -24,7 +24,9 @@ projet::projet()
 
 projet::~projet()
 {
+    clear_fonctions();
 
+    emit signal_p_destruction_projet(this);
 }
 
 void projet::sauvegarder( QXmlStreamWriter & stream )
@@ -120,12 +122,17 @@ void projet::set_executable( bool executable )
 {
     m_est_executable = executable;
 
-    emit signal_p_projet_executable_change((projet*)this);
+    emit signal_p_projet_executable_change(this);
 }
 
 bool projet::est_executable() const
 {
     return m_est_executable;
+}
+
+void projet::fermer()
+{
+    emit signal_p_fermeture_projet(this);
 }
 
 void projet::executer()

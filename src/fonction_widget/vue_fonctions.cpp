@@ -20,11 +20,7 @@ void vue_fonctions::ajouter_projet(projet *p)
     if ( p != NULL )
     {
         ajouter_selectionnable((objet_selectionnable*)p);
-
-        connect( (fonctions_conteneur*)p, SIGNAL(signal_fc_creation_fonction(base_fonction*)),
-                 this, SLOT(on_externe_creation_fonction(base_fonction*)));
-        connect( p, SIGNAL(signal_p_nom_projet_change(projet *)),
-                 this, SLOT(on_externe_nom_projet_change(projet *)));
+        connecter_projet(p);
 
         for ( projet::fonctions_iterateur it = p->fonctions_begin(); it != p->fonctions_end(); ++it )
             ajouter_fonction( *it );
@@ -150,20 +146,49 @@ void vue_fonctions::ajouter_vue_fonction(base_fonction* fonction)
 void vue_fonctions::ajouter_selectionnable(objet_selectionnable *obj)
 {
     m_selectionnables.insert(obj);
+    connecter_selectionnable(obj);
+}
 
+void vue_fonctions::connecter_selectionnable( objet_selectionnable *obj )
+{
     connect( obj, SIGNAL(signal_os_selectionne(objet_selectionnable*)),
              this, SLOT(on_externe_objet_selectionne(objet_selectionnable*)) );
     connect( obj, SIGNAL(signal_os_deselectionne(objet_selectionnable*)),
              this, SLOT(on_externe_objet_deselectionne(objet_selectionnable*)));
 }
 
-void vue_fonctions::deconnecter(objet_selectionnable* obj)
+void vue_fonctions::deconnecter_selectionnable( objet_selectionnable *obj )
 {
-    // déconnection de base de l'objet
     disconnect( obj, SIGNAL(signal_os_selectionne(objet_selectionnable*)),
                 this, SLOT(on_externe_objet_selectionne(objet_selectionnable*)) );
     disconnect( obj, SIGNAL(signal_os_deselectionne(objet_selectionnable*)),
                 this, SLOT(on_externe_objet_deselectionne(objet_selectionnable*)));
+}
+
+void vue_fonctions::connecter_projet( projet *p )
+{
+    connect( (fonctions_conteneur*)p, SIGNAL(signal_fc_creation_fonction(base_fonction*)),
+             this, SLOT(on_externe_creation_fonction(base_fonction*)));
+    connect( p, SIGNAL(signal_p_nom_projet_change(projet *)),
+             this, SLOT(on_externe_nom_projet_change(projet *)));
+    connect( p, SIGNAL(signal_p_destruction_projet(projet *)),
+             this, SLOT(on_externe_destruction_projet(projet *)));
+}
+
+void vue_fonctions::deconnecter_projet( projet *p )
+{
+    disconnect( (fonctions_conteneur*)p, SIGNAL(signal_fc_creation_fonction(base_fonction*)),
+                this, SLOT(on_externe_creation_fonction(base_fonction*)));
+    disconnect( p, SIGNAL(signal_p_nom_projet_change(projet *)),
+                this, SLOT(on_externe_nom_projet_change(projet *)));
+    disconnect( p, SIGNAL(signal_p_destruction_projet(projet *)),
+                this, SLOT(on_externe_destruction_projet(projet *)));
+}
+
+void vue_fonctions::deconnecter(objet_selectionnable* obj)
+{
+    // déconnection de base de l'objet
+    deconnecter_selectionnable(obj);
 
     if ( obj->est_conteneur() )
     {
@@ -219,6 +244,16 @@ void vue_fonctions::on_externe_nom_projet_change(projet *p)
     if( m_conteneur_courant == p )
         horizontalHeaderItem(1)->setText( m_conteneur_courant->get_titre() );
 }
+
+void vue_fonctions::on_externe_destruction_projet(projet *p)
+{
+    if( m_conteneur_courant == p )
+    {
+        horizontalHeaderItem(1)->setText("");
+        m_conteneur_courant = NULL;
+    }
+}
+
 
 void vue_fonctions::on_externe_objet_selectionne(objet_selectionnable *obj)
 {

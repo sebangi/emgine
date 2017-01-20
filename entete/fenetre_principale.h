@@ -85,7 +85,8 @@ class fenetre_principale : public QMainWindow
         void on_externe_projet_etat_modification_change(projet * p, bool etat);
         void on_externe_projet_executable_change(projet * p);
         void on_externe_objet_selectionne(objet_selectionnable* obj);
-        void on_externe_objet_deselectionne(objet_selectionnable* obj);
+        void on_externe_objet_deselectionne(objet_selectionnable* obj);        
+        void on_externe_fermeture_projet(projet * p);
 
     private:
         /** \brief La table des fonctions. */

@@ -34,6 +34,7 @@ class objet_selectionnable : public QObject
         static fonctions_conteneur * get_conteneur_courant();
         static projet * get_projet_courant();
         static bool existe_selection();
+        static void forcer_deselection();
 
         bool est_etendu() const;
         virtual void set_est_etendu(bool est_etendu);

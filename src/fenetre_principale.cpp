@@ -139,6 +139,11 @@ void fenetre_principale::creer_widgets()
              this, SLOT(on_externe_objet_selectionne(objet_selectionnable *)));
     connect( s_explorateur, SIGNAL(signal_e_objet_deselectionne(objet_selectionnable*)),
              this, SLOT(on_externe_objet_deselectionne(objet_selectionnable *)));
+    connect( s_explorateur, SIGNAL(signal_e_enregistrer_projet(projet *)),
+            this, SLOT(enregistrer_projet(projet *)));
+    connect( s_explorateur, SIGNAL(signal_e_enregistrer_projet_sous(projet *)),
+             this, SLOT(enregistrer_projet_sous(projet *)));
+
 }
 
 /** --------------------------------------------------------------------------------------
@@ -293,10 +298,10 @@ void fenetre_principale::init_test()
 void fenetre_principale::ajouter_projet( projet * p )
 {
     s_projets.push_back( p );
+    p->selectionner();
     s_explorateur->ajouter_projet(p);
     s_vue_fonctions->ajouter_projet(p);
 
-    p->selectionner();
     connecter_projet(p);
 }
 
@@ -440,8 +445,6 @@ void fenetre_principale::update_bouton_execution( projet * p )
     }
 }
 
-
-
 void fenetre_principale::update_boutons_fonctions( objet_selectionnable * obj, bool etat )
 {
     if ( obj != NULL )
@@ -460,13 +463,9 @@ void fenetre_principale::connecter_projet(projet *p)
     connect( p, SIGNAL(signal_p_projet_executable_change(projet *)),
              this, SLOT(on_externe_projet_executable_change(projet *)));
 
-    connect( s_explorateur, SIGNAL(signal_e_enregistrer_projet(projet *)),
-             this, SLOT(enregistrer_projet(projet *)));
-
-    connect( s_explorateur, SIGNAL(signal_e_enregistrer_projet_sous(projet *)),
-             this, SLOT(enregistrer_projet_sous(projet *)));
+    connect( p, SIGNAL(signal_p_fermeture_projet(projet *)),
+             this, SLOT(on_externe_fermeture_projet(projet *)));
 }
-
 
 void fenetre_principale::deconnecter_projet(projet *p)
 {
@@ -593,4 +592,16 @@ void fenetre_principale::on_externe_objet_selectionne(objet_selectionnable *obj)
 
 void fenetre_principale::on_externe_objet_deselectionne(objet_selectionnable *obj)
 {
+}
+
+void fenetre_principale::on_externe_fermeture_projet(projet *p)
+{
+    if ( s_projets.contains(p) )
+    {
+        objet_selectionnable::forcer_deselection();
+
+        int i = s_projets.indexOf(p);
+        delete s_projets.at(i),
+        s_projets.removeOne(p);
+    }
 }

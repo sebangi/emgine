@@ -212,12 +212,29 @@ void explorateur::on_externe_nom_projet_change(projet *p)
     }
 }
 
+void explorateur::on_externe_destruction_projet(projet *p)
+{
+    map_selectionnable::iterator it = m_selectionnables.find(p);
+
+    if ( it != m_selectionnables.end() )
+    {
+        deconnecter_projet(p);
+        //this->removeItemWidget(it->second,0);
+        //it->second->parent()->removeChild(it->second);
+        delete it->second;
+        m_selectionnables.erase(it);
+    }
+}
+
 void explorateur::on_externe_supprimer_fonction(base_fonction *f)
 {
     map_selectionnable::iterator it = m_selectionnables.find(f);
 
     if ( it != m_selectionnables.end() )
+    {
         it->second->parent()->removeChild(it->second);
+        m_selectionnables.erase(it);
+    }
 }
 
 void explorateur::ajouter_projet(projet *p)
@@ -226,12 +243,7 @@ void explorateur::ajouter_projet(projet *p)
     {
         base_noeud* noeud = new noeud_projet( p );
         ajouter_selectionnable((objet_selectionnable*)p, noeud);
-
-        connect( (fonctions_conteneur*)p, SIGNAL(signal_fc_creation_fonction(base_fonction*)),
-                 this, SLOT(on_externe_creation_fonction(base_fonction*)));
-        connect( p, SIGNAL(signal_p_nom_projet_change(projet *)),
-                 this, SLOT(on_externe_nom_projet_change(projet *)));
-
+        connecter_projet(p);
         insertTopLevelItem( 0, noeud );
 
         for ( projet::fonctions_iterateur it = p->fonctions_begin(); it != p->fonctions_end(); ++it )
@@ -258,14 +270,7 @@ void explorateur::ajouter_fonction(base_fonction* f)
         mettre_a_jour_activation(noeud, f->est_active(), false);
         noeud->setExpanded( f->est_etendu() );
 
-        connect( f, SIGNAL(signal_destruction_fonction(base_fonction*)),
-                 this, SLOT(on_externe_supprimer_fonction(base_fonction*)));
-
-        connect( f, SIGNAL(signal_activation_fonction_change(base_fonction *)),
-                 this, SLOT(on_externe_activation_fonction_change(base_fonction *)));
-
-        connect( f, SIGNAL(signal_etendu_change(base_fonction *)),
-                 this, SLOT(on_externe_etendu_change(base_fonction *)));
+        connecter_fonction(f);
     }
 }
 
@@ -293,11 +298,7 @@ void explorateur::ajouter_parametre(base_parametre* p)
 void explorateur::ajouter_selectionnable(objet_selectionnable *obj, base_noeud *noeud)
 {
     m_selectionnables[obj] = noeud;
-
-    connect( obj, SIGNAL(signal_os_selectionne(objet_selectionnable*)),
-             this, SLOT(on_externe_objet_selectionne(objet_selectionnable*)) );
-    connect( obj, SIGNAL(signal_os_deselectionne(objet_selectionnable*)),
-             this, SLOT(on_externe_objet_deselectionne(objet_selectionnable*)));
+    connecter_selectionnable(obj);
 }
 
 base_noeud *explorateur::get_noeud_context() const
@@ -343,7 +344,8 @@ void explorateur::on_itemDoubleClicked(QTreeWidgetItem *item, int column)
 */
 void explorateur::on_currentItemChanged(QTreeWidgetItem *item)
 {
-    ((base_noeud*)item)->get_objet()->selectionner();
+    if ( item != NULL )
+        ((base_noeud*)item)->get_objet()->selectionner();
 }
 
 void explorateur::on_customContextMenuRequested(const QPoint &pos)
@@ -439,6 +441,16 @@ void explorateur::on_customContextMenuRequested(const QPoint &pos)
         menu.addAction(newAct_coller);
     }
 
+    if ( noeud_context->get_objet()->est_projet() )
+    {
+        menu.addSeparator();
+
+        QAction *newAct_fermer = new QAction(style->standardIcon( QStyle::SP_DialogCloseButton ), tr("Fermer le projet"), this);
+        newAct_fermer->setStatusTip(tr("Fermer le projet"));
+        connect(newAct_fermer, SIGNAL(triggered()), this, SLOT(on_fermer_projet()));
+        menu.addAction(newAct_fermer);
+    }
+
     QPoint pt(pos);
     menu.exec( mapToGlobal(pos) );
 }
@@ -498,6 +510,70 @@ void explorateur::dropEvent(QDropEvent * event)
     }
 }
 
+void explorateur::connecter_selectionnable(objet_selectionnable *obj)
+{
+    connect( obj, SIGNAL(signal_os_selectionne(objet_selectionnable*)),
+         this, SLOT(on_externe_objet_selectionne(objet_selectionnable*)) );
+    connect( obj, SIGNAL(signal_os_deselectionne(objet_selectionnable*)),
+         this, SLOT(on_externe_objet_deselectionne(objet_selectionnable*)));
+}
+
+void explorateur::deconnecter_selectionnable(objet_selectionnable *obj)
+{
+    disconnect( obj, SIGNAL(signal_os_selectionne(objet_selectionnable*)),
+         this, SLOT(on_externe_objet_selectionne(objet_selectionnable*)) );
+    disconnect( obj, SIGNAL(signal_os_deselectionne(objet_selectionnable*)),
+         this, SLOT(on_externe_objet_deselectionne(objet_selectionnable*)));
+}
+
+void explorateur::connecter_fonction(base_fonction *f)
+{
+    connect( f, SIGNAL(signal_destruction_fonction(base_fonction*)),
+             this, SLOT(on_externe_supprimer_fonction(base_fonction*)));
+
+    connect( f, SIGNAL(signal_activation_fonction_change(base_fonction *)),
+             this, SLOT(on_externe_activation_fonction_change(base_fonction *)));
+
+    connect( f, SIGNAL(signal_etendu_change(base_fonction *)),
+             this, SLOT(on_externe_etendu_change(base_fonction *)));
+}
+
+void explorateur::deconnecter_fonction(base_fonction *f)
+{
+    disconnect( f, SIGNAL(signal_destruction_fonction(base_fonction*)),
+             this, SLOT(on_externe_supprimer_fonction(base_fonction*)));
+
+    disconnect( f, SIGNAL(signal_activation_fonction_change(base_fonction *)),
+             this, SLOT(on_externe_activation_fonction_change(base_fonction *)));
+
+    disconnect( f, SIGNAL(signal_etendu_change(base_fonction *)),
+             this, SLOT(on_externe_etendu_change(base_fonction *)));
+
+    deconnecter_selectionnable(f);
+}
+
+void explorateur::connecter_projet(projet *p)
+{
+    connect( (fonctions_conteneur*)p, SIGNAL(signal_fc_creation_fonction(base_fonction*)),
+                this, SLOT(on_externe_creation_fonction(base_fonction*)));
+    connect( p, SIGNAL(signal_p_nom_projet_change(projet *)),
+                this, SLOT(on_externe_nom_projet_change(projet *)));
+    connect( p, SIGNAL(signal_p_destruction_projet(projet *)),
+                this, SLOT(on_externe_destruction_projet(projet *)));
+}
+
+void explorateur::deconnecter_projet(projet *p)
+{
+    disconnect( (fonctions_conteneur*)p, SIGNAL(signal_fc_creation_fonction(base_fonction*)),
+                this, SLOT(on_externe_creation_fonction(base_fonction*)));
+    disconnect( p, SIGNAL(signal_p_nom_projet_change(projet *)),
+                this, SLOT(on_externe_nom_projet_change(projet *)));
+    disconnect( p, SIGNAL(signal_p_destruction_projet(projet *)),
+                this, SLOT(on_externe_destruction_projet(projet *)));
+
+    deconnecter_selectionnable(p);
+}
+
 void explorateur::on_ajout_source()
 {
     emit signal_e_ajout_source(m_noeud_context->get_fonctions_conteneur(), base_fonction::fonction_source);
@@ -541,6 +617,12 @@ void explorateur::on_coller()
         faire_couper();
 
     faire_coller();
+}
+
+void explorateur::on_fermer_projet()
+{
+    if ( m_noeud_context->type() == base_noeud::type_projet )
+        m_noeud_context->get_objet()->get_projet()->fermer();
 }
 
 

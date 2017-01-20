@@ -28,12 +28,17 @@ class vue_fonctions : public QTableWidget
         void creer_vue_conteneur();
         void ajouter_vue_fonction(base_fonction* fonction);
         void ajouter_selectionnable(objet_selectionnable *obj);
+        void connecter_selectionnable(objet_selectionnable *obj);
+        void deconnecter_selectionnable(objet_selectionnable *obj);
+        void connecter_projet(projet *p);
+        void deconnecter_projet(projet *p);
         void deconnecter(objet_selectionnable *obj);
         void adjust_size_vue_fonction();
 
     private slots:
         void on_externe_supprimer_fonction(base_fonction *f);
         void on_externe_nom_projet_change(projet * p);
+        void on_externe_destruction_projet(projet * p);
         void on_externe_objet_selectionne(objet_selectionnable*);
         void on_externe_objet_deselectionne(objet_selectionnable*);
         void on_externe_creation_fonction(base_fonction*);

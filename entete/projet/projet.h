@@ -45,11 +45,14 @@ class projet : public fonctions_conteneur
         void set_executable( bool executable );
         void executer();
         bool est_executable() const;
+        void fermer();
 
     signals:
         void signal_p_projet_etat_modification_change( projet *, bool);
         void signal_p_nom_projet_change( projet * );
         void signal_p_projet_executable_change( projet * );
+        void signal_p_fermeture_projet( projet * );
+        void signal_p_destruction_projet( projet * );
 
     private:
         void charger_nom(QXmlStreamReader & xml);

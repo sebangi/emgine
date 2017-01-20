@@ -35,6 +35,9 @@ class fonctions_conteneur : public objet_selectionnable
         void charger_fonctions( QXmlStreamReader & xml );
         void sauvegarder( QXmlStreamWriter & stream ) const;
 
+    protected:
+        void clear_fonctions();
+
     signals:
          void signal_fc_creation_fonction(base_fonction*);
 
