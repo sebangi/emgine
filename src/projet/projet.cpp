@@ -35,12 +35,7 @@ void projet::sauvegarder( QXmlStreamWriter & stream )
     stream.writeTextElement("nom", m_nom);
     stream.writeTextElement("description", m_description);
     objet_selectionnable::sauvegarder(stream);
-    stream.writeStartElement("fonctions");
-
-    for ( projet::fonctions_iterateur it = fonctions_begin(); it != fonctions_end(); ++it )
-        (*it)->sauvegarder(stream);
-
-    stream.writeEndElement(); // Fonctions
+    fonctions_conteneur::sauvegarder(stream);
     stream.writeEndElement(); // Projet
 
     m_est_modifie = false;

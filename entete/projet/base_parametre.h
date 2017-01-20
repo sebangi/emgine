@@ -22,7 +22,6 @@ class base_parametre : public fonctions_conteneur
         Q_OBJECT
 
     public:
-        base_parametre();
         base_parametre(objet_selectionnable * parent, QString nom, QString aide, bool requis);
         ~base_parametre();
 

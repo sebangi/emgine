@@ -36,7 +36,7 @@ class explorateur : public QTreeWidget
         void ajouter_selectionnable(objet_selectionnable * obj, base_noeud* noeud);
         void mettre_a_jour_activation( base_noeud* n, bool actif, bool change_expansion );
         void mettre_a_jour_etendu( base_noeud* n, bool etendu );
-        void creer_copie( const base_fonction* f );
+        void creer_copie( const objet_selectionnable* obj );
         void faire_coller();
         void faire_couper();
         void dragMoveEvent(QDragMoveEvent *e);
@@ -79,10 +79,10 @@ class explorateur : public QTreeWidget
         base_noeud* m_noeud_context;
 
         /** \brief Le fonction à copier sous forme de chaine (en XML ). */
-        QString m_fonction_a_copier;
+        QString m_a_copier;
 
         /** \brief Le noeud à couper. */
-        base_fonction* m_fonction_a_couper;
+        objet_selectionnable* m_objet_a_couper;
 
         fenetre_principale* m_fenetre_principale;
 

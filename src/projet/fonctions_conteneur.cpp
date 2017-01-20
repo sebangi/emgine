@@ -107,3 +107,13 @@ void fonctions_conteneur::charger_fonctions(QXmlStreamReader & xml )
         }
     }
 }
+
+void fonctions_conteneur::sauvegarder(QXmlStreamWriter &stream) const
+{
+    stream.writeStartElement("fonctions");
+
+    for ( fonctions_const_iterateur it = m_fonctions.constBegin(); it != m_fonctions.constEnd(); ++it )
+        (*it)->sauvegarder(stream);
+
+    stream.writeEndElement(); // Fonctions
+}

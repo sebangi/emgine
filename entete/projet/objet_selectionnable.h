@@ -18,6 +18,7 @@ class objet_selectionnable : public QObject
 
         void selectionner();
         fonctions_conteneur *get_conteneur();
+        const fonctions_conteneur *get_conteneur() const;
         projet * get_projet();
         bool est_dans_projet() const;
         virtual bool est_conteneur() const;
@@ -37,10 +38,10 @@ class objet_selectionnable : public QObject
         bool est_etendu() const;
         virtual void set_est_etendu(bool est_etendu);
         void modifier();
+        void sauvegarder( QXmlStreamWriter & stream ) const;
 
     protected:
         void deselectionner();
-        void sauvegarder( QXmlStreamWriter & stream ) const;
         void charger(QXmlStreamReader & xml);
 
     private:

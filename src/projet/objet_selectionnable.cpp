@@ -45,6 +45,16 @@ fonctions_conteneur * objet_selectionnable::get_conteneur()
         return NULL;
 }
 
+const fonctions_conteneur * objet_selectionnable::get_conteneur() const
+{
+    if ( est_conteneur() )
+        return (fonctions_conteneur *)this;
+    else if ( m_objet_parent != NULL )
+        return m_objet_parent->get_conteneur();
+    else
+        return NULL;
+}
+
 projet * objet_selectionnable::get_projet()
 {
     if ( est_projet() )
@@ -105,10 +115,10 @@ bool objet_selectionnable::parents_actifs() const
 
 bool objet_selectionnable::a_ancetre(objet_selectionnable *obj) const
 {
-    if ( m_objet_parent == NULL )
-        return false;
-    else if ( m_objet_parent == obj )
+    if ( this == obj )
         return true;
+    else if ( m_objet_parent == NULL )
+        return false;
     else
         return m_objet_parent->a_ancetre(obj);
 }

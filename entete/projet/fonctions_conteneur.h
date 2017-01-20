@@ -4,6 +4,7 @@
 #include <QList>
 #include "entete/projet/objet_selectionnable.h"
 #include <QXmlStreamWriter>
+#include <QXmlStreamReader>
 
 class base_fonction;
 
@@ -31,9 +32,8 @@ class fonctions_conteneur : public objet_selectionnable
 
         bool est_conteneur() const;
         void charger_fonction( QXmlStreamReader & xml );
-
-    protected:
         void charger_fonctions( QXmlStreamReader & xml );
+        void sauvegarder( QXmlStreamWriter & stream ) const;
 
     signals:
          void signal_fc_creation_fonction(base_fonction*);
