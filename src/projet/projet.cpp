@@ -29,9 +29,12 @@ projet::~projet()
     emit signal_p_destruction_projet(this);
 }
 
-void projet::sauvegarder( QXmlStreamWriter & stream )
+
+// sauvegarde_reelle : false s'il s'agit uniquement de réaliser une copie via un QXmlStreamWriter
+void projet::sauvegarder( QXmlStreamWriter & stream, bool sauvegarde_reelle )
 {
-    m_nouveau = false;
+    if ( sauvegarde_reelle )
+        m_nouveau = false;
 
     stream.writeStartElement("projet");
     stream.writeTextElement("nom", m_nom);
@@ -40,8 +43,11 @@ void projet::sauvegarder( QXmlStreamWriter & stream )
     fonctions_conteneur::sauvegarder(stream);
     stream.writeEndElement(); // Projet
 
-    m_est_modifie = false;
-    emit signal_p_projet_etat_modification_change(this, false);
+    if ( sauvegarde_reelle )
+    {
+        m_est_modifie = false;
+        emit signal_p_projet_etat_modification_change(this, false);
+    }
 }
 
 void projet::charger(QXmlStreamReader & xml)

@@ -140,10 +140,11 @@ void fenetre_principale::creer_widgets()
     connect( s_explorateur, SIGNAL(signal_e_objet_deselectionne(objet_selectionnable*)),
              this, SLOT(on_externe_objet_deselectionne(objet_selectionnable *)));
     connect( s_explorateur, SIGNAL(signal_e_enregistrer_projet(projet *)),
-            this, SLOT(enregistrer_projet(projet *)));
+             this, SLOT(enregistrer_projet(projet *)));
     connect( s_explorateur, SIGNAL(signal_e_enregistrer_projet_sous(projet *)),
              this, SLOT(enregistrer_projet_sous(projet *)));
-
+    connect( s_explorateur, SIGNAL(signal_e_dupliquer_projet(projet *)),
+             this, SLOT(on_externe_dupliquer_projet(projet *)));
 }
 
 /** --------------------------------------------------------------------------------------
@@ -389,20 +390,28 @@ void fenetre_principale::ouvrir_projet()
             return;
         }
 
-        projet * p = new projet();
         QXmlStreamReader xml(&file);
-        xml.readNextStartElement();
-
-        if( xml.name() == "projet" )
-        {
-            p->set_nom_fichier(nom_fichier);
-            p->charger(xml);
-        }
-        else
-            xml.skipCurrentElement();
-
-        ajouter_projet(p);
+        creer_projet(xml, nom_fichier);
     }
+}
+
+/** --------------------------------------------------------------------------------------
+ \brief Crée un projet à partir d'un xml.
+*/
+void fenetre_principale::creer_projet(QXmlStreamReader & xml, const QString & nom)
+{
+    projet * p = new projet();
+    xml.readNextStartElement();
+
+    if( xml.name() == "projet" )
+    {
+        p->charger(xml);
+        p->set_nom_fichier(nom);
+    }
+    else
+        xml.skipCurrentElement();
+
+    ajouter_projet(p);
 }
 
 /** --------------------------------------------------------------------------------------
@@ -470,16 +479,16 @@ void fenetre_principale::connecter_projet(projet *p)
 void fenetre_principale::deconnecter_projet(projet *p)
 {
     disconnect( p, SIGNAL(signal_p_projet_etat_modification_change(projet *, bool)),
-             this, SLOT(on_externe_projet_etat_modification_change(projet *, bool)));
+                this, SLOT(on_externe_projet_etat_modification_change(projet *, bool)));
 
     disconnect( p, SIGNAL(signal_p_projet_executable_change(projet *)),
-             this, SLOT(on_externe_projet_executable_change(projet *)));
+                this, SLOT(on_externe_projet_executable_change(projet *)));
 
     disconnect( s_explorateur, SIGNAL(signal_e_enregistrer_projet(projet *)),
-             this, SLOT(enregistrer_projet(projet *)));
+                this, SLOT(enregistrer_projet(projet *)));
 
     disconnect( s_explorateur, SIGNAL(signal_e_enregistrer_projet_sous(projet *)),
-             this, SLOT(enregistrer_projet_sous(projet *)));
+                this, SLOT(enregistrer_projet_sous(projet *)));
 }
 
 void fenetre_principale::deconnecter_projets()
@@ -490,7 +499,7 @@ void fenetre_principale::deconnecter_projets()
 
 void fenetre_principale::deconnecter()
 {
-   deconnecter_projets();
+    deconnecter_projets();
 }
 
 /** --------------------------------------------------------------------------------------
@@ -602,6 +611,21 @@ void fenetre_principale::on_externe_fermeture_projet(projet *p)
 
         int i = s_projets.indexOf(p);
         delete s_projets.at(i),
-        s_projets.removeOne(p);
+                s_projets.removeOne(p);
     }
+}
+
+void fenetre_principale::on_externe_dupliquer_projet(projet *p)
+{
+    // ON fait la copie
+    QString copie;
+    QXmlStreamWriter XmlWriter(&copie);
+    XmlWriter.setAutoFormatting(true);
+    XmlWriter.writeStartDocument();
+    p->sauvegarder(XmlWriter, false);
+    XmlWriter.writeEndDocument();
+
+    QXmlStreamReader xmlReader(copie);
+    QString nom = p->get_nom() + "[copie]";
+    creer_projet(xmlReader, nom );
 }

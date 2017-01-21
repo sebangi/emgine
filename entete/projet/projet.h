@@ -24,7 +24,7 @@ class projet : public fonctions_conteneur
         projet();
         ~projet();
 
-        void sauvegarder( QXmlStreamWriter & stream );
+        void sauvegarder( QXmlStreamWriter & stream, bool sauvegarde_reelle = true );
         void charger(QXmlStreamReader & xml);
 
         QString get_nom() const;

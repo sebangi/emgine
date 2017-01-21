@@ -8,6 +8,7 @@
 #include <QPushButton>
 #include <QVBoxLayout>
 #include <QStyle>
+#include <QXmlStreamReader>
 
 #include "entete/fonction_widget/selecteur_fonction_dialog.h"
 
@@ -60,6 +61,7 @@ class fenetre_principale : public QMainWindow
         void selectionner_projet();
         void enregistrer_projet( const QString & nom_fichier, projet * p);
         void ouvrir_projet();
+        void creer_projet(QXmlStreamReader & xml, const QString & nom);
         void executer( projet* p );
         void update_boutons_projet( projet * p );
         void update_bouton_execution( projet * p );
@@ -87,6 +89,7 @@ class fenetre_principale : public QMainWindow
         void on_externe_objet_selectionne(objet_selectionnable* obj);
         void on_externe_objet_deselectionne(objet_selectionnable* obj);        
         void on_externe_fermeture_projet(projet * p);
+        void on_externe_dupliquer_projet(projet * p);
 
     private:
         /** \brief La table des fonctions. */

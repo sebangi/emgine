@@ -1,7 +1,7 @@
 La liste des choses à faire :
 
 ETAPE 1 : PRIORITAIRE
-* compléter les menus des noeuds
+* ajuster la hauteur des headers de l'explorateur et vue_fonctions
 * réflexion sur le stockage des projets, textes sources...
 * sauvegarde d'une sortie
 * dans les sorties, ajouter la possibilité de voir le paramétrage induisant le résultat

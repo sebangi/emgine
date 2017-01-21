@@ -14,6 +14,7 @@
 #include <iostream>
 #include <QApplication>
 #include <QXmlStreamReader>
+#include <QMessageBox>
 
 explorateur::explorateur(QWidget *parent)
     : QTreeWidget(parent), m_noeud_context(NULL), m_objet_a_couper(NULL)
@@ -370,16 +371,23 @@ void explorateur::on_customContextMenuRequested(const QPoint &pos)
 
     if ( noeud_context->get_objet()->est_projet() )
     {
-        QAction *newAct_enregistrer = new QAction(style->standardIcon( QStyle::SP_DialogSaveButton ), tr("Enregistrer"), this);
-        newAct_enregistrer->setStatusTip(tr("Enregistrer"));
+        QAction *newAct_enregistrer = new QAction(style->standardIcon( QStyle::SP_DialogSaveButton ), tr("Enregistrer le projet"), this);
+        newAct_enregistrer->setStatusTip(tr("Enregistrer le projet"));
         newAct_enregistrer->setEnabled( noeud_context->get_objet()->get_projet()->est_enregistrable() );
         connect(newAct_enregistrer, SIGNAL(triggered()), this, SLOT(on_enregistrer()));
         menu.addAction(newAct_enregistrer);
 
-        QAction *newAct_enregistrer_sous = new QAction(style->standardIcon( QStyle::SP_DialogSaveButton ), tr("Enregistrer sous"), this);
-        newAct_enregistrer_sous->setStatusTip(tr("Enregistrer sous"));
+        QAction *newAct_enregistrer_sous = new QAction(style->standardIcon( QStyle::SP_DialogSaveButton ), tr("Enregistrer le projet sous"), this);
+        newAct_enregistrer_sous->setStatusTip(tr("Enregistrer le projet sous"));
         connect(newAct_enregistrer_sous, SIGNAL(triggered()), this, SLOT(on_enregistrer_sous()));
         menu.addAction(newAct_enregistrer_sous);
+
+        QIcon icon_dupliquer;
+        icon_dupliquer.addFile(QString::fromUtf8("icons/coller.png"), QSize(), QIcon::Normal, QIcon::Off);
+        QAction *newAct_dupliquer = new QAction(icon_dupliquer, tr("Dupliquer le projet"), this);
+        newAct_dupliquer->setStatusTip(tr("Dupliquer le projet"));
+        connect(newAct_dupliquer, SIGNAL(triggered()), this, SLOT(on_dupliquer_projet()));
+        menu.addAction(newAct_dupliquer);
 
         menu.addSeparator();
     }
@@ -406,9 +414,30 @@ void explorateur::on_customContextMenuRequested(const QPoint &pos)
         newAct4->setStatusTip(tr("Ajouter une sortie"));
         connect(newAct4, SIGNAL(triggered()), this, SLOT(on_ajout_sortie()));
         menu.addAction(newAct4);
-
-        menu.addSeparator();
     }
+    else
+    {
+        QIcon icon_activer;
+        QString texte_activer;
+        base_fonction* f = (base_fonction*)noeud_context->get_objet();
+        if ( f->est_active() )
+        {
+            icon_activer.addFile(QString::fromUtf8("icons/non_compile.png"), QSize(), QIcon::Normal, QIcon::Off);
+            texte_activer = "Désactiver la fonction";
+        }
+        else
+        {
+            icon_activer.addFile(QString::fromUtf8("icons/compile.png"), QSize(), QIcon::Normal, QIcon::Off);
+            texte_activer = "Activer la fonction";
+        }
+        QAction *newAct_activer = new QAction(icon_activer, texte_activer, this);
+        newAct_activer->setStatusTip(texte_activer);
+        connect(newAct_activer, SIGNAL(triggered()), this, SLOT(on_activer_fonction()));
+        newAct_activer->setEnabled( f->parents_actifs()  );
+        menu.addAction(newAct_activer);
+    }
+
+    menu.addSeparator();
 
     QIcon icon_copier;
     icon_copier.addFile(QString::fromUtf8("icons/copier.png"), QSize(), QIcon::Normal, QIcon::Off);
@@ -459,6 +488,15 @@ void explorateur::on_customContextMenuRequested(const QPoint &pos)
         newAct_fermer->setStatusTip(tr("Fermer le projet"));
         connect(newAct_fermer, SIGNAL(triggered()), this, SLOT(on_fermer_projet()));
         menu.addAction(newAct_fermer);
+    }
+
+    if ( ! noeud_context->get_objet()->est_conteneur() )
+    {
+        menu.addSeparator();
+        QAction *newAct_supprimer_fonction = new QAction(style->standardIcon( QStyle::SP_DialogCloseButton ), "Supprimer la fonction", this);
+        newAct_supprimer_fonction->setStatusTip("Supprimer la fonction");
+        connect(newAct_supprimer_fonction, SIGNAL(triggered()), this, SLOT(on_supprimer_fonction()));
+        menu.addAction(newAct_supprimer_fonction);
     }
 
     QPoint pt(pos);
@@ -580,6 +618,11 @@ void explorateur::on_ajout_fonction_conversion()
     emit signal_e_ajout_source(m_noeud_context->get_fonctions_conteneur(), base_fonction::fonction_conversion);
 }
 
+void explorateur::on_activer_fonction()
+{
+    ((base_fonction*)(m_noeud_context->get_objet()))->inverser_activation();
+}
+
 void explorateur::on_enregistrer()
 {
     emit signal_e_enregistrer_projet(m_noeud_context->get_objet()->get_projet());
@@ -588,6 +631,11 @@ void explorateur::on_enregistrer()
 void explorateur::on_enregistrer_sous()
 {
     emit signal_e_enregistrer_projet_sous(m_noeud_context->get_objet()->get_projet());
+}
+
+void explorateur::on_dupliquer_projet()
+{
+    emit signal_e_dupliquer_projet(m_noeud_context->get_objet()->get_projet());
 }
 
 void explorateur::on_copier()
@@ -620,3 +668,29 @@ void explorateur::on_fermer_projet()
 }
 
 
+/** --------------------------------------------------------------------------------------
+ \brief Le bouton fermer est activé.
+*/
+void explorateur::on_supprimer_fonction()
+{
+    if ( ! m_noeud_context->get_objet()->est_conteneur() )
+    {
+        base_fonction * fonction = (base_fonction*)m_noeud_context->get_objet();
+
+        QMessageBox msgBox;
+        msgBox.setWindowTitle("Fonction " + fonction->get_nom());
+        msgBox.setText("Voulez-vous vraiment supprimer la fonction " + fonction->get_nom() + " ?");
+        msgBox.setStandardButtons(QMessageBox::Yes | QMessageBox::Cancel);
+        msgBox.setDefaultButton(QMessageBox::Yes);
+        msgBox.setButtonText(QMessageBox::Yes,tr("Oui"));
+        msgBox.setButtonText(QMessageBox::Cancel,tr("Non"));
+        int ret = msgBox.exec();
+
+        switch (ret)
+        {
+            case QMessageBox::Yes:
+                delete fonction;
+                break;
+        }
+    }
+}

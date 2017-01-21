@@ -55,6 +55,7 @@ class explorateur : public QTreeWidget
         void signal_e_objet_deselectionne(objet_selectionnable*);
         void signal_e_enregistrer_projet(projet *);
         void signal_e_enregistrer_projet_sous(projet *);
+        void signal_e_dupliquer_projet(projet *);
 
     private slots:
         void on_externe_supprimer_fonction(base_fonction * f);
@@ -76,12 +77,15 @@ class explorateur : public QTreeWidget
         void on_ajout_source();
         void on_ajout_sortie();
         void on_ajout_fonction_conversion();
+        void on_activer_fonction();
         void on_enregistrer();
         void on_enregistrer_sous();
         void on_copier();
         void on_couper();
         void on_coller();
         void on_fermer_projet();
+        void on_dupliquer_projet();
+        void on_supprimer_fonction();
 
     private:
         /** \brief Le noeud du context actuel. */
