@@ -38,7 +38,7 @@ void fonction_cesar::initialisation_par_defaut()
 {
     m_parametres[PARAM_DECALAGE]->set_texte_par_defaut("0\n1\n2\n3\n4\n5\n6\n7\n8\n9\n10\n11\n12\n13\n14\n15\n16\n17\n18\n19\n20\n21\n22\n23\n24\n25", ",", " ", "\n" );
     m_parametres[PARAM_SOUSTRACTIF]->set_booleen_par_defaut(false);
-    m_parametres[PARAM_ALPHABET]->set_texte_par_defaut("ABCDEFGHIJKLMNOPQRSTUVWXYZ");
+    m_parametres[PARAM_ALPHABET]->set_texte_par_defaut("ABCDEFGHIJKLMNOPQRSTUVWXYZ\nabcdefghijklmnopqrstuvwxyz");
 }
 
 /*! --------------------------------------------------------------------------------------
@@ -108,14 +108,6 @@ void fonction_cesar::callback_param_2( compilateur &compil, const texte & texte_
  \brief Exécution de la fonction selon le parametre PARAM_DECALAGE.
 */
 void fonction_cesar::callback_param_3( compilateur &compil, const texte & texte_in, texte & texte_out )
-{
-    executer_cesar(compil, texte_in, texte_out);
-}
-
-/*! --------------------------------------------------------------------------------------
- \brief Exécution de la fonction.
-*/
-void fonction_cesar::executer_cesar( compilateur &compil, const texte & texte_in, texte & texte_out )
 {
     for ( texte::const_iterator it_l = texte_in.begin(); it_l != texte_in.end(); ++it_l )
     {

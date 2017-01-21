@@ -120,7 +120,7 @@ const texte &base_fonction::get_texte_parametre(type_id_parametre type) const
     }
     else
     {
-        std::cout << "base_fonction::get_texte_parametre : impossible de trouver le parametre " << type << std::endl;
+        std::cout << "ERREUR : base_fonction::get_texte_parametre : impossible de trouver le parametre " << type << std::endl;
         return texte();
     }
 }

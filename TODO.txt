@@ -9,7 +9,6 @@ ETAPE 1 : PRIORITAIRE
 * vérifier les delete
 * réflexion sur les paramètres de fonction_texte : faut-il itérer sur les lignes ?
 * améliorer la mise en page de l'aide des paramètres (avoir une méthode claire pour présenter les itérations )
-* factoriser fonction_cesar.executer
 * Retirer le menu de l'application
 
 ETAPE 2 : VERSION 0.1

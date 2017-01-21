@@ -28,7 +28,6 @@ class fonction_cesar : public base_fonction
         void callback_param_1( compilateur &compil, const texte & texte_in, texte & texte_out );
         void callback_param_2( compilateur &compil, const texte & texte_in, texte & texte_out );
         void callback_param_3( compilateur &compil, const texte & texte_in, texte & texte_out );
-        void executer_cesar( compilateur & compil, const texte & texte_in, texte & texte_out );
 
     private:
         std::map<base_element, int> m_position_alphabet;
