@@ -14,6 +14,7 @@
 #include <iostream>
 #include <QApplication>
 #include <QXmlStreamReader>
+#include <QHeaderView>
 #include <QMessageBox>
 
 explorateur::explorateur(QWidget *parent)
@@ -28,6 +29,7 @@ explorateur::explorateur(QWidget *parent)
     setHeaderLabel("Explorateur de projets");
     setExpandsOnDoubleClick(false);
     setMaximumWidth(400);
+    header()->setFixedHeight(25);
 
     QTreeWidgetItem* rooItem = invisibleRootItem();
     rooItem->setFlags( rooItem->flags() ^ Qt::ItemIsDropEnabled );

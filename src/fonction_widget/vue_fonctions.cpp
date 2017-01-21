@@ -43,6 +43,7 @@ void vue_fonctions::init()
     horizontalHeader()->setHighlightSections(false);
     setShowGrid(false);
 
+    horizontalHeader()->setFixedHeight(25);
     setRowCount(0);
     setHorizontalHeaderItem(0, new QTableWidgetItem());
     horizontalHeaderItem(0)->setText("");
