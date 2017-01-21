@@ -15,8 +15,6 @@
 #include <QtWidgets/QButtonGroup>
 #include <QtWidgets/QHeaderView>
 #include <QtWidgets/QMainWindow>
-#include <QtWidgets/QMenu>
-#include <QtWidgets/QMenuBar>
 #include <QtWidgets/QStatusBar>
 #include <QtWidgets/QToolBar>
 #include <QtWidgets/QVBoxLayout>
@@ -30,9 +28,6 @@ public:
     QWidget *centralWidget;
     QVBoxLayout *verticalLayout_2;
     QVBoxLayout *centralLayout;
-    QMenuBar *menuBar;
-    QMenu *menuFichier;
-    QMenu *menuAide;
     QToolBar *mainToolBar;
     QStatusBar *statusBar;
 
@@ -56,14 +51,6 @@ public:
         verticalLayout_2->addLayout(centralLayout);
 
         fenetre_principale->setCentralWidget(centralWidget);
-        menuBar = new QMenuBar(fenetre_principale);
-        menuBar->setObjectName(QStringLiteral("menuBar"));
-        menuBar->setGeometry(QRect(0, 0, 650, 25));
-        menuFichier = new QMenu(menuBar);
-        menuFichier->setObjectName(QStringLiteral("menuFichier"));
-        menuAide = new QMenu(menuBar);
-        menuAide->setObjectName(QStringLiteral("menuAide"));
-        fenetre_principale->setMenuBar(menuBar);
         mainToolBar = new QToolBar(fenetre_principale);
         mainToolBar->setObjectName(QStringLiteral("mainToolBar"));
         QSizePolicy sizePolicy(QSizePolicy::Preferred, QSizePolicy::Fixed);
@@ -73,16 +60,13 @@ public:
         mainToolBar->setSizePolicy(sizePolicy);
         mainToolBar->setLayoutDirection(Qt::LeftToRight);
         mainToolBar->setMovable(false);
-        mainToolBar->setOrientation(Qt::Vertical);
+        mainToolBar->setOrientation(Qt::Horizontal);
         mainToolBar->setIconSize(QSize(32, 32));
         mainToolBar->setFloatable(true);
         fenetre_principale->addToolBar(Qt::TopToolBarArea, mainToolBar);
         statusBar = new QStatusBar(fenetre_principale);
         statusBar->setObjectName(QStringLiteral("statusBar"));
         fenetre_principale->setStatusBar(statusBar);
-
-        menuBar->addAction(menuFichier->menuAction());
-        menuBar->addAction(menuAide->menuAction());
 
         retranslateUi(fenetre_principale);
 
@@ -92,8 +76,6 @@ public:
     void retranslateUi(QMainWindow *fenetre_principale)
     {
         fenetre_principale->setWindowTitle(QApplication::translate("fenetre_principale", "Mon d\303\251codeur", 0));
-        menuFichier->setTitle(QApplication::translate("fenetre_principale", "Fichier", 0));
-        menuAide->setTitle(QApplication::translate("fenetre_principale", "Aide", 0));
     } // retranslateUi
 
 };

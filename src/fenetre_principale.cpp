@@ -48,6 +48,7 @@ fenetre_principale::fenetre_principale(QWidget *parent) :
     QMainWindow(parent), m_ui(new Ui::fenetre_principale)
 {
     m_ui->setupUi(this);
+    m_ui->menuBar->hide();
     m_style = QApplication::style();
 
     creer_toolbar();
@@ -326,17 +327,21 @@ void fenetre_principale::enregistrer_projet(projet* p)
 void fenetre_principale::enregistrer_projet_sous(projet * p)
 {
     QFileDialog d(this);
-    d.setDefaultSuffix("dec");
-    QString nom_fichier = d.getSaveFileName( this,
-                                             tr("Sauvegarder le projet"), "mes_projets",
-                                             tr("projet Decode (*.dec);;"));
+    d.setDefaultSuffix("emg");
+    QString dir;
+    if( p->get_nom_fichier().isEmpty() )
+        dir = "mes_projets";
+    else
+        dir = p->get_dossier();
+    QString nom_fichier = d.getSaveFileName( this, tr("Sauvegarder le projet"), dir,
+                                             tr("projet Decode (*.emg);;"));
 
     if (nom_fichier.isEmpty())
         return;
     else
     {
-        if (!nom_fichier.endsWith(".dec"))
-            nom_fichier += ".dec";
+        if (!nom_fichier.endsWith(".emg"))
+            nom_fichier += ".emg";
 
         enregistrer_projet(nom_fichier, p);
     }
@@ -370,7 +375,7 @@ void fenetre_principale::ouvrir_projet()
 {
     QString nom_fichier =
             QFileDialog::getOpenFileName( this, tr("Ouvrir un projet Decode"),
-                                          "mes_projets", tr("projet Decode (*.dec);;"));
+                                          "mes_projets", tr("projet Decode (*.emg);;"));
 
     if (nom_fichier.isEmpty())
         return;

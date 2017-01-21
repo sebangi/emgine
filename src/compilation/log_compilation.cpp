@@ -61,9 +61,10 @@ QString log_compilation::get_message() const
         case LOG_WARNING:
             return "Danger : " + m_message;
             break;
-    }
 
-    return m_message;
+        default :
+            return m_message;
+    }
 }
 
 projet *log_compilation::get_projet()

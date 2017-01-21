@@ -27,6 +27,11 @@ explorateur::explorateur(QWidget *parent)
     setDropIndicatorShown(true);
     setContextMenuPolicy(Qt::CustomContextMenu);
     setHeaderLabel("Explorateur de projets");
+    QFont font = headerItem()->font(0);
+    font.setBold(true);
+    font.setPointSize(10);
+    headerItem()->setFont(0,font);
+
     setExpandsOnDoubleClick(false);
     setMaximumWidth(400);
     header()->setFixedHeight(25);

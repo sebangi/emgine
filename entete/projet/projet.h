@@ -30,6 +30,7 @@ class projet : public fonctions_conteneur
         QString get_nom() const;
         QString get_titre() const;
         QString get_nom_fichier() const;
+        QString get_dossier() const;
         QString get_description() const;
         bool est_nouveau() const;
 
