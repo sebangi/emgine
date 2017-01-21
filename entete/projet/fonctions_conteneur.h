@@ -32,7 +32,7 @@ class fonctions_conteneur : public objet_selectionnable
         int get_position(base_fonction* f);
 
         bool est_conteneur() const;
-        void charger_fonction( QXmlStreamReader & xml, objet_selectionnable * obj_ref );
+        objet_selectionnable * charger_fonction( QXmlStreamReader & xml, objet_selectionnable * obj_ref );
         void charger_fonctions( QXmlStreamReader & xml, objet_selectionnable * obj_ref );
         void sauvegarder( QXmlStreamWriter & stream ) const;
 

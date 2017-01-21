@@ -19,17 +19,15 @@ fonctions_conteneur::~fonctions_conteneur( )
 
 // obj_ref :
 //   - NULL : ajouter en fin
-//   - this : ajouter en début
 //   - est conteneur : ajouter en début
 //   - fonction du conteneur : ajouter après la fonction
+//   - sinon ajouter en fin
 void fonctions_conteneur::ajouter_fonction(base_fonction *f, objet_selectionnable * obj_ref)
 {
     f->set_conteneur(this);
 
     if ( obj_ref == NULL )
         m_fonctions.push_back(f);
-    else if ( obj_ref == this )
-        m_fonctions.push_front(f);
     else if ( obj_ref->est_conteneur() )
         m_fonctions.push_front(f);
     else if ( m_fonctions.contains((base_fonction*)obj_ref) )
@@ -95,7 +93,7 @@ bool fonctions_conteneur::est_conteneur() const
     return true;
 }
 
-void fonctions_conteneur::charger_fonction( QXmlStreamReader & xml, objet_selectionnable * obj_ref )
+objet_selectionnable * fonctions_conteneur::charger_fonction( QXmlStreamReader & xml, objet_selectionnable * obj_ref )
 {
     Q_ASSERT(xml.isStartElement() &&
              xml.name() == "fonction");
@@ -109,7 +107,10 @@ void fonctions_conteneur::charger_fonction( QXmlStreamReader & xml, objet_select
 
         f->charger(xml);
         ajouter_fonction(f, obj_ref);
+        return f;
     }
+    else
+        return NULL;
 }
 
 void fonctions_conteneur::charger_fonctions(QXmlStreamReader & xml, objet_selectionnable * obj_ref )
@@ -120,7 +121,9 @@ void fonctions_conteneur::charger_fonctions(QXmlStreamReader & xml, objet_select
     while(xml.readNextStartElement())
     {
         if(xml.name() == "fonction")
-            charger_fonction(xml, obj_ref);
+        {
+            obj_ref = charger_fonction(xml, obj_ref);
+        }
         else
         {
             std::cout << "\t\t ignore : " << xml.name().toString().toStdString() << std::endl;

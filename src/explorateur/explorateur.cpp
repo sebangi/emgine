@@ -434,19 +434,22 @@ void explorateur::on_customContextMenuRequested(const QPoint &pos)
     connect(newAct_couper, SIGNAL(triggered()), this, SLOT(on_couper()));
     menu.addAction(newAct_couper);
 
+    QIcon icon_coller;
+    icon_coller.addFile(QString::fromUtf8("icons/coller.png"), QSize(), QIcon::Normal, QIcon::Off);
+    QString texte_coller;
     if ( noeud_context->get_objet()->est_conteneur() )
-    {
-        QIcon icon_coller;
-        icon_coller.addFile(QString::fromUtf8("icons/coller.png"), QSize(), QIcon::Normal, QIcon::Off);
-        QAction *newAct_coller = new QAction(icon_coller, tr("Coller à la fin"), this);
-        newAct_coller->setStatusTip(tr("Coller à la fin"));
-        if ( m_a_copier == NULL )
-            newAct_coller->setEnabled(false);
-        else if ( m_objet_a_couper != NULL )
-            newAct_coller->setEnabled( ! noeud_context->get_objet()->a_ancetre((objet_selectionnable*)m_objet_a_couper) );
-        connect(newAct_coller, SIGNAL(triggered()), this, SLOT(on_coller()));
-        menu.addAction(newAct_coller);
-    }
+        texte_coller = tr("Coller au début");
+    else
+        texte_coller = tr("Coller après");
+    QAction *newAct_coller = new QAction(icon_coller, texte_coller, this);
+    newAct_coller->setStatusTip(texte_coller);
+    if ( m_a_copier == NULL )
+        newAct_coller->setEnabled(false);
+    else if ( m_objet_a_couper != NULL )
+        newAct_coller->setEnabled( ! noeud_context->get_objet()->a_ancetre((objet_selectionnable*)m_objet_a_couper) );
+    connect(newAct_coller, SIGNAL(triggered()), this, SLOT(on_coller()));
+    menu.addAction(newAct_coller);
+
 
     if ( noeud_context->get_objet()->est_projet() )
     {
@@ -607,7 +610,7 @@ void explorateur::on_coller()
         m_objet_a_couper = NULL;
     }
 
-    faire_coller(m_noeud_context->get_objet(), m_a_copier, NULL);
+    faire_coller(m_noeud_context->get_objet(), m_a_copier, m_noeud_context->get_objet());
 }
 
 void explorateur::on_fermer_projet()
