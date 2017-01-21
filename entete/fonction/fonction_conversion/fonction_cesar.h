@@ -24,10 +24,10 @@ class fonction_cesar : public base_fonction
 
     private:
         bool est_valide(logs_compilation_widget * vue_logs) const;
-        void construire_alphabet(compilateur &compil);
-
+        void construire_alphabet();
         void callback_param_1( compilateur &compil, const texte & texte_in, texte & texte_out );
         void callback_param_2( compilateur &compil, const texte & texte_in, texte & texte_out );
+        void callback_param_3( compilateur &compil, const texte & texte_in, texte & texte_out );
         void executer_cesar( compilateur & compil, const texte & texte_in, texte & texte_out );
 
     private:

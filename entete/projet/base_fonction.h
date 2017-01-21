@@ -89,7 +89,7 @@ class base_fonction : public objet_selectionnable
 
         bool a_parametre() const;
 
-        void set_id(const type_id_fonction &id);        
+        void set_id(const type_id_fonction &id);
         type_id_fonction get_id() const;
         void charger(QXmlStreamReader & xm);
 
@@ -115,8 +115,8 @@ class base_fonction : public objet_selectionnable
 
         // Algorithme d'exécution
         void algo_IPMPL_iteration_premier_mot_par_ligne
-            ( type_id_parametre id_param, compilateur &compil, const texte & texte_in, texte & texte_out,
-                pf_exec_callback callback );
+        ( type_id_parametre id_param, compilateur &compil, const texte & texte_in, texte & texte_out,
+          pf_exec_callback callback );
         void IPMPL_suivant( type_id_parametre id_param );
 
     public:
@@ -132,10 +132,8 @@ class base_fonction : public objet_selectionnable
         /** \brief La liste des parametres. */
         type_parametres m_parametres;
 
-        type_map_IPMPL m_map_IPMPL_courant;
-
-    private:
         type_map_IPMPL m_map_IPMPL_debut;
+        type_map_IPMPL m_map_IPMPL_courant;
         type_map_IPMPL m_map_IPMPL_fin;
 
     private:

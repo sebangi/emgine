@@ -11,36 +11,6 @@
 #include "entete/element/texte.h"
 #include <iostream>
 
-
-/* RÉSULTAT ATTENDU
-UNHBH TM SDRS !
-VOICI UN TEST !
-WPJDJ VO UFTU !
-XQKEK WP VGUV !
-YRLFL XQ WHVW !
-ZSMGM YR XIWX !
-ATNHN ZS YJXY !
-BUOIO AT ZKYZ !
-CVPJP BU ALZA !
-DWQKQ CV BMAB !
-EXRLR DW CNBC !
-FYSMS EX DOCD !
-GZTNT FY EPDE !
-HAUOU GZ FQEF !
-IBVPV HA GRFG !
-JCWQW IB HSGH !
-KDXRX JC ITHI !
-LEYSY KD JUIJ !
-MFZTZ LE KVJK !
-NGAUA MF LWKL !
-OHBVB NG MXLM !
-PICWC OH NYMN !
-QJDXD PI OZNO !
-RKEYE QJ PAOP !
-SLFZF RK QBPQ !
-TMGAG SL RCQR !
- * */
-
 /*! --------------------------------------------------------------------------------------
  \file Implémentation de la classe fonction_cesar.
  \author Sébastien Angibaud
@@ -53,15 +23,15 @@ TMGAG SL RCQR !
 fonction_cesar::fonction_cesar( fonctions_conteneur * conteneur )
     : base_fonction(conteneur, "Chiffrement par Code César")
 {    
-    set_id(f_conversion_cesar);    
+    set_id(f_conversion_cesar);
     augmenter_max_niveau_visibilite(1);
 
     ajouter_parametre( PARAM_DECALAGE,
-                       new base_parametre( this, "Décalage", "Le décalage à réaliser sur une ligne. Un seul mot par ligne", true) );
+                       new base_parametre( this, "Décalage", "Le décalage à réaliser (sur un mot). Itération sur les lignes", true) );
     ajouter_parametre( PARAM_SOUSTRACTIF,
-                       new base_parametre( this, "Soustractif", "Indique si le décalage est soustractif. Un seul mot par ligne", false) );
+                       new base_parametre( this, "Soustractif", "Indique si le décalage est soustractif (sur un mot).  Itération sur les lignes", false) );
     ajouter_parametre( PARAM_ALPHABET,
-                       new base_parametre( this, "Alphabet", "Alphabet utilisé sur une ligne. Un seul mot par ligne", false) );
+                       new base_parametre( this, "Alphabet", "Alphabet utilisé (sur un mot). Itération sur les lignes", false) );
 }
 
 void fonction_cesar::initialisation_par_defaut()
@@ -92,28 +62,16 @@ QString fonction_cesar::get_valeur_courte() const
     return "[césar]";
 }
 
-void fonction_cesar::construire_alphabet(compilateur &compil)
+void fonction_cesar::construire_alphabet()
 {
     m_position_alphabet.clear();
     m_alphabet.clear();
 
-    const texte& t_alphabet = get_texte_parametre(PARAM_ALPHABET);
-
-    if ( t_alphabet.empty() )
+    for ( mot::const_iterator it_c = m_map_IPMPL_debut[PARAM_ALPHABET];
+          it_c != m_map_IPMPL_fin[PARAM_ALPHABET]; ++it_c )
     {
-        compil.get_vue_logs()->ajouter_log
-                ( log_compilation( log_compilation::LOG_WARNING, (base_fonction*)this,
-                                   "Le paramètre alphabet est vide.") );
-    }
-    else
-    {
-        texte::const_iterator it_l = t_alphabet.begin();
-        for ( ligne::const_iterator it_m = it_l->begin(); it_m != it_l->end(); ++it_m )
-            for ( mot::const_iterator it_c = it_m->begin(); it_c != it_m->end(); ++it_c )
-            {
-                m_alphabet.push_back(*it_c);
-                m_position_alphabet[*it_c] = m_alphabet.size()-1;
-            }
+        m_alphabet.push_back(*it_c);
+        m_position_alphabet[*it_c] = m_alphabet.size()-1;
     }
 }
 
@@ -122,25 +80,34 @@ void fonction_cesar::construire_alphabet(compilateur &compil)
 */
 void fonction_cesar::executer( compilateur &compil, const texte & texte_in, texte & texte_out )
 {
-    construire_alphabet(compil);
-
     algo_IPMPL_iteration_premier_mot_par_ligne
-            ( PARAM_SOUSTRACTIF, compil, texte_in, texte_out, & base_fonction::callback_param_1 );
+            ( PARAM_ALPHABET, compil, texte_in, texte_out, & base_fonction::callback_param_1 );
 }
 
 /*! --------------------------------------------------------------------------------------
- \brief Exécution de la fonction selon le parametre soustractif.
+ \brief Exécution de la fonction selon le parametre PARAM_ALPHABET.
 */
 void fonction_cesar::callback_param_1( compilateur &compil, const texte & texte_in, texte & texte_out )
 {
+    construire_alphabet();
+
     algo_IPMPL_iteration_premier_mot_par_ligne
-            ( PARAM_DECALAGE, compil, texte_in, texte_out, & base_fonction::callback_param_2 );
+            ( PARAM_SOUSTRACTIF, compil, texte_in, texte_out, & base_fonction::callback_param_2 );
 }
 
 /*! --------------------------------------------------------------------------------------
- \brief Exécution de la fonction selon le parametre soustractif.
+ \brief Exécution de la fonction selon le parametre PARAM_SOUSTRACTIF.
 */
 void fonction_cesar::callback_param_2( compilateur &compil, const texte & texte_in, texte & texte_out )
+{
+    algo_IPMPL_iteration_premier_mot_par_ligne
+            ( PARAM_DECALAGE, compil, texte_in, texte_out, & base_fonction::callback_param_3 );
+}
+
+/*! --------------------------------------------------------------------------------------
+ \brief Exécution de la fonction selon le parametre PARAM_DECALAGE.
+*/
+void fonction_cesar::callback_param_3( compilateur &compil, const texte & texte_in, texte & texte_out )
 {
     executer_cesar(compil, texte_in, texte_out);
 }
