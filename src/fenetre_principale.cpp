@@ -177,7 +177,7 @@ void fenetre_principale::init_widgets()
     m_toolbar_bouton_nouveau_projet->setText("Nouveau projet");
 
     m_toolbar_bouton_ouvrir_projet->setIcon(style->standardIcon( QStyle::SP_DialogOpenButton ));
-    m_toolbar_bouton_ouvrir_projet->setText("Ouvrir");
+    m_toolbar_bouton_ouvrir_projet->setText("Ouvrir un projet");
 
     m_toolbar_bouton_sauvegarder_projet->setIcon(style->standardIcon( QStyle::SP_DialogSaveButton ));
     m_toolbar_bouton_sauvegarder_projet->setText("Enregistrer");
