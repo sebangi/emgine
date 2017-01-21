@@ -40,6 +40,10 @@ class base_fonction : public objet_selectionnable
         typedef type_parametres::iterator parametres_iterateur;
         typedef type_parametres::const_iterator parametres_const_iterateur;
 
+    protected:
+        typedef std::map< type_id_parametre, mot::const_iterator > type_map_IPMPL;
+        typedef void ( base_fonction::*pf_exec_callback)( compilateur &, const texte &, texte & );
+
     public:
         base_fonction( fonctions_conteneur * parent, const QString & nom, type_fonction type = fonction_conversion);
         virtual ~base_fonction();
@@ -109,12 +113,30 @@ class base_fonction : public objet_selectionnable
         const texte & get_texte_parametre( type_id_parametre type ) const;
         void augmenter_max_niveau_visibilite( int val );
 
+        // Algorithme d'exécution
+        void algo_IPMPL_iteration_premier_mot_par_ligne
+            ( type_id_parametre id_param, compilateur &compil, const texte & texte_in, texte & texte_out,
+                pf_exec_callback callback );
+        void IPMPL_suivant( type_id_parametre id_param );
+
+    public:
+        virtual void callback_param_1( compilateur &compil, const texte & texte_in, texte & texte_out );
+        virtual void callback_param_2( compilateur &compil, const texte & texte_in, texte & texte_out );
+        virtual void callback_param_3( compilateur &compil, const texte & texte_in, texte & texte_out );
+        virtual void callback_param_4( compilateur &compil, const texte & texte_in, texte & texte_out );
+
     protected:
         /** \brief Le nom de la fonction. */
         QString m_nom;
 
         /** \brief La liste des parametres. */
         type_parametres m_parametres;
+
+        type_map_IPMPL m_map_IPMPL_courant;
+
+    private:
+        type_map_IPMPL m_map_IPMPL_debut;
+        type_map_IPMPL m_map_IPMPL_fin;
 
     private:
         type_fonction m_type;
@@ -124,7 +146,6 @@ class base_fonction : public objet_selectionnable
         int m_max_niveau_visibilite;
         int m_niveau_visibilite_avant_desactivation;
 };
-
 
 
 #endif // BASE_FONCTION_H

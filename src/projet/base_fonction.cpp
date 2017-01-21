@@ -3,6 +3,9 @@
 #include "entete/explorateur/noeud_fonction.h"
 #include "entete/explorateur/noeud_parametre.h"
 #include "entete/fonction_widget/base_fonction_widget.h"
+#include "entete/compilation/log_compilation.h"
+#include "entete/compilation/logs_compilation_widget.h"
+#include "entete/compilation/log_widget_item.h"
 #include "entete/projet/base_parametre.h"
 #include <iostream>
 
@@ -328,4 +331,83 @@ void base_fonction::charger_parametre(QXmlStreamReader & xml)
         int id = xml.readElementText().toInt();
         m_parametres[(type_id_parametre)id]->charger(xml);
     }
+}
+
+/*! --------------------------------------------------------------------------------------
+ \brief Algorithme d'exécution selon un parametre donné dans le cas : itération sur le premier mot de chaque ligne.
+*/
+void base_fonction::algo_IPMPL_iteration_premier_mot_par_ligne
+    ( type_id_parametre id_param, compilateur &compil, const texte & texte_in, texte & texte_out,
+      pf_exec_callback callback )
+{
+    const texte& t_param = get_texte_parametre(id_param);
+
+    if ( t_param.empty() )
+    {
+        compil.get_vue_logs()->ajouter_log
+                ( log_compilation( log_compilation::LOG_WARNING, (base_fonction*)this,
+                                   "Le paramètre " + m_parametres[id_param]->get_nom() + " est vide.") );
+    }
+    else
+    {
+        for ( texte::const_iterator it_l = t_param.begin(); it_l != t_param.end(); ++it_l)
+        {
+            if ( it_l->empty() )
+            {
+                compil.get_vue_logs()->ajouter_log
+                        ( log_compilation( log_compilation::LOG_WARNING, (base_fonction*)this,
+                                           "Le paramètre " + m_parametres[id_param]->get_nom() + " est vide sur une ligne.") );
+            }
+            else
+            {
+                ligne::const_iterator it_m = it_l->begin();
+
+                if ( it_m->empty() )
+                {
+                    compil.get_vue_logs()->ajouter_log
+                            ( log_compilation( log_compilation::LOG_WARNING, (base_fonction*)this,
+                                               "Le paramètre " + m_parametres[id_param]->get_nom() + " est vide sur le premier mot de la ligne.") );
+                }
+                else
+                {
+                    m_map_IPMPL_debut[id_param] = it_m->begin();
+                    m_map_IPMPL_courant[id_param] = it_m->begin();
+                    m_map_IPMPL_fin[id_param] = it_m->end();
+
+                    (this->*callback)(compil, texte_in, texte_out);
+                }
+            }
+        }
+    }
+}
+
+void base_fonction::IPMPL_suivant(type_id_parametre id_param)
+{
+    m_map_IPMPL_courant[id_param]++;
+    if ( m_map_IPMPL_courant[id_param] == m_map_IPMPL_fin[id_param] )
+        m_map_IPMPL_courant[id_param] = m_map_IPMPL_debut[id_param];
+}
+
+void base_fonction::callback_param_1(compilateur &compil, const texte &texte_in, texte &texte_out)
+{
+    std::cout << "base_fonction::callback_param_1" << std::endl;
+    std::cout << "Erreur : on ne doit pas passer dans cette méthode virtuelle." << std::endl;
+}
+
+void base_fonction::callback_param_2(compilateur &compil, const texte &texte_in, texte &texte_out)
+{
+    std::cout << "base_fonction::callback_param_2" << std::endl;
+    std::cout << "Erreur : on ne doit pas passer dans cette méthode virtuelle." << std::endl;
+}
+
+void base_fonction::callback_param_3(compilateur &compil, const texte &texte_in, texte &texte_out)
+{
+    std::cout << "base_fonction::callback_param_3" << std::endl;
+    std::cout << "Erreur : on ne doit pas passer dans cette méthode virtuelle." << std::endl;
+}
+
+void base_fonction::callback_param_4(compilateur &compil, const texte &texte_in, texte &texte_out)
+{
+    std::cout << "base_fonction::callback_param_4" << std::endl;
+    std::cout << "Erreur : on ne doit pas passer dans cette méthode virtuelle." << std::endl;
 }

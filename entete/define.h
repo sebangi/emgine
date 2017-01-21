@@ -34,6 +34,4 @@ enum type_id_parametre{
 };
 
 
-
-
 #endif // DEFINE_H

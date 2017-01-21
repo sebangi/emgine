@@ -11,6 +11,36 @@
 #include "entete/element/texte.h"
 #include <iostream>
 
+
+/* RÉSULTAT ATTENDU
+UNHBH TM SDRS !
+VOICI UN TEST !
+WPJDJ VO UFTU !
+XQKEK WP VGUV !
+YRLFL XQ WHVW !
+ZSMGM YR XIWX !
+ATNHN ZS YJXY !
+BUOIO AT ZKYZ !
+CVPJP BU ALZA !
+DWQKQ CV BMAB !
+EXRLR DW CNBC !
+FYSMS EX DOCD !
+GZTNT FY EPDE !
+HAUOU GZ FQEF !
+IBVPV HA GRFG !
+JCWQW IB HSGH !
+KDXRX JC ITHI !
+LEYSY KD JUIJ !
+MFZTZ LE KVJK !
+NGAUA MF LWKL !
+OHBVB NG MXLM !
+PICWC OH NYMN !
+QJDXD PI OZNO !
+RKEYE QJ PAOP !
+SLFZF RK QBPQ !
+TMGAG SL RCQR !
+ * */
+
 /*! --------------------------------------------------------------------------------------
  \file Implémentation de la classe fonction_cesar.
  \author Sébastien Angibaud
@@ -32,16 +62,6 @@ fonction_cesar::fonction_cesar( fonctions_conteneur * conteneur )
                        new base_parametre( this, "Soustractif", "Indique si le décalage est soustractif. Un seul mot par ligne", false) );
     ajouter_parametre( PARAM_ALPHABET,
                        new base_parametre( this, "Alphabet", "Alphabet utilisé sur une ligne. Un seul mot par ligne", false) );
-}
-
-/*! --------------------------------------------------------------------------------------
- \brief Exécution de la fonction.
-*/
-void fonction_cesar::executer( compilateur &compil, const texte & texte_in, texte & texte_out )
-{    
-    construire_alphabet(compil);
-
-    executer_selon_soustractif(compil, texte_in, texte_out);
 }
 
 void fonction_cesar::initialisation_par_defaut()
@@ -97,110 +117,32 @@ void fonction_cesar::construire_alphabet(compilateur &compil)
     }
 }
 
-void fonction_cesar::decalage_suivant()
+/*! --------------------------------------------------------------------------------------
+ \brief Exécution de la fonction.
+*/
+void fonction_cesar::executer( compilateur &compil, const texte & texte_in, texte & texte_out )
 {
-    m_it_decalage++;
-    if ( m_it_decalage == m_it_decalage_fin )
-        m_it_decalage = m_it_decalage_debut;
-}
+    construire_alphabet(compil);
 
-void fonction_cesar::soustractif_suivant()
-{
-    m_it_soustractif++;
-    if ( m_it_soustractif == m_it_soustractif_fin )
-        m_it_soustractif = m_it_soustractif_debut;
+    algo_IPMPL_iteration_premier_mot_par_ligne
+            ( PARAM_SOUSTRACTIF, compil, texte_in, texte_out, & base_fonction::callback_param_1 );
 }
 
 /*! --------------------------------------------------------------------------------------
  \brief Exécution de la fonction selon le parametre soustractif.
 */
-void fonction_cesar::executer_selon_soustractif( compilateur &compil, const texte & texte_in, texte & texte_out )
+void fonction_cesar::callback_param_1( compilateur &compil, const texte & texte_in, texte & texte_out )
 {
-    const texte& t_soustractif = get_texte_parametre(PARAM_SOUSTRACTIF);
-
-    if ( t_soustractif.empty() )
-    {
-        compil.get_vue_logs()->ajouter_log
-                ( log_compilation( log_compilation::LOG_WARNING, (base_fonction*)this,
-                                   "Le paramètre soustractif est vide.") );
-    }
-    else
-    {
-        for ( texte::const_iterator it_l = t_soustractif.begin(); it_l != t_soustractif.end(); ++it_l)
-        {
-            if ( it_l->empty() )
-            {
-                compil.get_vue_logs()->ajouter_log
-                        ( log_compilation( log_compilation::LOG_WARNING, (base_fonction*)this,
-                                           "Le paramètre soustractif est vide sur une ligne.") );
-            }
-            else
-            {
-                ligne::const_iterator it_m = it_l->begin();
-
-                if ( it_m->empty() )
-                {
-                    compil.get_vue_logs()->ajouter_log
-                            ( log_compilation( log_compilation::LOG_WARNING, (base_fonction*)this,
-                                               "Le paramètre soustractif est vide sur une ligne.") );
-                }
-                else
-                {
-                    m_it_soustractif_debut = it_m->begin();
-                    m_it_soustractif = it_m->begin();
-                    m_it_soustractif_fin = it_m->end();
-
-                    executer_selon_decalage(compil, texte_in, texte_out);
-                }
-            }
-        }
-    }
+    algo_IPMPL_iteration_premier_mot_par_ligne
+            ( PARAM_DECALAGE, compil, texte_in, texte_out, & base_fonction::callback_param_2 );
 }
 
 /*! --------------------------------------------------------------------------------------
- \brief Exécution de la fonction selon le parametre decalage.
+ \brief Exécution de la fonction selon le parametre soustractif.
 */
-void fonction_cesar::executer_selon_decalage( compilateur &compil, const texte & texte_in, texte & texte_out )
+void fonction_cesar::callback_param_2( compilateur &compil, const texte & texte_in, texte & texte_out )
 {
-    const texte& t_decalage = get_texte_parametre(PARAM_DECALAGE);
-
-    if ( t_decalage.empty() )
-    {
-        compil.get_vue_logs()->ajouter_log
-                ( log_compilation( log_compilation::LOG_WARNING, (base_fonction*)this,
-                                   "Le paramètre decalage est vide.") );
-    }
-    else
-    {
-        for ( texte::const_iterator it_l = t_decalage.begin(); it_l != t_decalage.end(); ++it_l )
-        {
-            if ( it_l->empty() )
-            {
-                compil.get_vue_logs()->ajouter_log
-                        ( log_compilation( log_compilation::LOG_WARNING, (base_fonction*)this,
-                                           "Le paramètre decalage est vide sur une ligne.") );
-            }
-            else
-            {
-                ligne::const_iterator it_m = it_l->begin();
-
-                if ( it_m->empty() )
-                {
-                    compil.get_vue_logs()->ajouter_log
-                            ( log_compilation( log_compilation::LOG_WARNING, (base_fonction*)this,
-                                               "Le paramètre decalage est vide sur une ligne.") );
-                }
-                else
-                {
-                    m_it_decalage_debut = it_m->begin();
-                    m_it_decalage = it_m->begin();
-                    m_it_decalage_fin = it_m->end();
-
-                    executer_cesar(compil, texte_in, texte_out);
-                }
-            }
-        }
-    }
+    executer_cesar(compil, texte_in, texte_out);
 }
 
 /*! --------------------------------------------------------------------------------------
@@ -223,16 +165,17 @@ void fonction_cesar::executer_cesar( compilateur &compil, const texte & texte_in
                 {
                     int pos;
 
-                    if ( m_it_soustractif->get_booleen() )
+                    if (  m_map_IPMPL_courant[PARAM_SOUSTRACTIF]->get_booleen() )
                     {
-                        pos = it_pos->second - m_it_decalage->get_entier();
+                        pos = it_pos->second - m_map_IPMPL_courant[PARAM_DECALAGE]->get_entier();
                         if ( pos < 0 )
                             pos += m_alphabet.size();
                     }
                     else
-                        pos = (it_pos->second + m_it_decalage->get_entier()) % m_alphabet.size();
-                    soustractif_suivant();
-                    decalage_suivant();
+                        pos = (it_pos->second + m_map_IPMPL_courant[PARAM_DECALAGE]->get_entier()) % m_alphabet.size();
+
+                    IPMPL_suivant(PARAM_SOUSTRACTIF);
+                    IPMPL_suivant(PARAM_DECALAGE);
 
                     m.push_back( m_alphabet[pos] );
                 }
