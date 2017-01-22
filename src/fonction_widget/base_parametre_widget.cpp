@@ -89,9 +89,9 @@ QString base_parametre_widget::calcul_valeur_courte() const
     QString s = m_parametre->get_valeur_courte();
 
     s.replace ( "\n", "|" );
-    if ( s.size() > 50 )
+    if ( s.size() > 40 )
     {
-        s = s.mid(0,50);
+        s = s.mid(0,40);
         s += "...";
     }
 

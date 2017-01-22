@@ -235,7 +235,7 @@ QTableWidget#s_vue_fonction
 
 QWidget#logs_compilation_widget
 {
-background-color: transparent;
+    background-color: transparent;
     margin : 0px;
     padding: 0px;
     border-style: solid;
@@ -249,5 +249,21 @@ QListWidget {
     margin-bottom : -1px;
     margin-top : -1px;
     padding: 0px;
+}
+
+
+QListWidget#ListeTexte {
+    font: 10pt "DejaVu Sans Mono";
+    background-color: palette(base);
+    padding: 0px;
+    margin: 2px;
+}
+
+QListWidget#ListeTexte::item {
+    border-bottom: 1px solid black;
+}
+
+QListWidget#ListeTexte::item::selected {
+    background-color: red;
 }
 

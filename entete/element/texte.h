@@ -10,12 +10,15 @@ class texte : public std::vector< ligne >
 {
     public:
         texte();
+        texte(const configuration& config);
         texte(const QString& valeur);
 
         QString to_string() const;
-        QString to_string_lisible() const;        
+        QString to_string_lisible() const;
+        QString get_string_configuration() const;
 
-        void set_configuration(const configuration &config);
+        void ajouter_configuration(const configuration &config);
+        const configuration& get_configuration() const;
 
     private:
         configuration m_configuration;

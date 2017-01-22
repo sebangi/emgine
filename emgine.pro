@@ -56,7 +56,8 @@ SOURCES += \
         src/projet/objet_selectionnable.cpp \
         src/projet/projet.cpp \
     src/element/textes.cpp \
-    src/compilation/configuration.cpp
+    src/compilation/configuration.cpp \
+    src/fonction_widget/fonction_sortie_widget/texte_widget_item.cpp
 
 
 HEADERS  += \
@@ -101,7 +102,8 @@ HEADERS  += \
         entete/projet/objet_selectionnable.h \
         entete/projet/projet.h \
     entete/element/textes.h \
-    entete/compilation/configuration.h
+    entete/compilation/configuration.h \
+    entete/fonction_widget/fonction_sortie_widget/texte_widget_item.h
 
 
 FORMS    += \

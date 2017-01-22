@@ -40,5 +40,5 @@ QString textes::to_string_lisible() const
 void textes::ajouter_texte(const configuration& config, const texte &t)
 {
     push_back(t);
-    this->back().set_configuration( config );
+    this->back().ajouter_configuration( config );
 }

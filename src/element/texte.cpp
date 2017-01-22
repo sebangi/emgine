@@ -8,6 +8,12 @@ texte::texte()
 
 }
 
+texte::texte( const configuration& config )
+    : vector<ligne>(), m_configuration(config)
+{
+
+}
+
 texte::texte(const QString &valeur)
 {
     ligne l(valeur);
@@ -29,9 +35,6 @@ QString texte::to_string_lisible() const
 {
     QString result;
 
-    for ( configuration::const_iterator it = m_configuration.begin(); it != m_configuration.end(); ++it )
-        std::cout << it->first.first->get_nom().toStdString() << " => " << it->second.toStdString() << std::endl;
-
     if ( ! empty() )
         result += this->at(0).to_string_lisible();
 
@@ -41,7 +44,24 @@ QString texte::to_string_lisible() const
     return result;
 }
 
-void texte::set_configuration(const configuration &config)
+QString texte::get_string_configuration() const
 {
-    m_configuration = config;
+    QString result = "Configuration :";
+
+    for ( configuration::const_iterator it = m_configuration.begin(); it != m_configuration.end(); ++it )
+        result += "\n" + it->first.first->get_nom() +
+                "[" + it->first.first->get_parametre(it->first.second)->get_nom() + "] => " + it->second;
+
+    return result;
+}
+
+void texte::ajouter_configuration(const configuration &config)
+{
+    for ( configuration::const_iterator it = config.begin(); it != config.end(); ++it )
+        m_configuration[ it->first ] = it->second;
+}
+
+const configuration& texte::get_configuration() const
+{
+    return m_configuration;
 }

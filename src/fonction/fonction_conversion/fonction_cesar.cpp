@@ -111,7 +111,7 @@ void fonction_cesar::callback_param_3( compilateur &compil, const textes & texte
 {
     for ( textes::const_iterator it_t = textes_in.begin(); it_t != textes_in.end(); ++it_t )
     {
-        texte t;
+        texte t( it_t->get_configuration() );
         for ( texte::const_iterator it_l = it_t->begin(); it_l !=  it_t->end(); ++it_l )
         {
             ligne l;
