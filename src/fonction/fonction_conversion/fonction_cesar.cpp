@@ -146,6 +146,6 @@ void fonction_cesar::callback_param_3( compilateur &compil, const textes & texte
             }
             t.push_back(l);
         }
-        textes_out.push_back(t);
+        textes_out.ajouter_texte(compil.get_configuration(), t);
     }
 }

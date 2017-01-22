@@ -6,6 +6,7 @@
 #include "entete/projet/base_fonction.h"
 #include "entete/fenetre_principale.h"
 #include "entete/compilation/logs_compilation_widget.h"
+#include "entete/compilation/configuration.h"
 #include "entete/projet/projet.h"
 
 #include <iostream>
@@ -110,7 +111,24 @@ void compilateur::afficher_resultat()
     }
 }
 
+configuration compilateur::get_configuration() const
+{
+    return m_configuration;
+}
+
 logs_compilation_widget *compilateur::get_vue_logs() const
 {
     return m_vue_logs;
+}
+
+void compilateur::ajouter_configuration(base_fonction * f, type_id_parametre param, const QString &config)
+{
+    m_configuration[ type_cle_configuration(f,param) ] = config;
+}
+
+void compilateur::retirer_configuration(base_fonction * f, type_id_parametre param)
+{
+    configuration::iterator it = m_configuration.find( type_cle_configuration(f,param) );
+    if ( it != m_configuration.end() )
+        m_configuration.erase(it);
 }

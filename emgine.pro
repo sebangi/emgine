@@ -55,7 +55,8 @@ SOURCES += \
         src/projet/fonctions_conteneur.cpp \
         src/projet/objet_selectionnable.cpp \
         src/projet/projet.cpp \
-    src/element/textes.cpp
+    src/element/textes.cpp \
+    src/compilation/configuration.cpp
 
 
 HEADERS  += \
@@ -99,7 +100,8 @@ HEADERS  += \
         entete/projet/fonctions_conteneur.h \
         entete/projet/objet_selectionnable.h \
         entete/projet/projet.h \
-    entete/element/textes.h
+    entete/element/textes.h \
+    entete/compilation/configuration.h
 
 
 FORMS    += \

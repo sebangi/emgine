@@ -114,11 +114,7 @@ const textes &base_fonction::get_textes_parametre(type_id_parametre type) const
     parametres_const_iterateur it = m_parametres.find(type);
 
     if ( it != m_parametres.end() )
-    {
         return it->second->get_textes_out();
-        //const textes& t = it->second->get_textes_out();
-        //return t;
-    }
     else
     {
         std::cout << "ERREUR : base_fonction::get_textes_parametre : impossible de trouver le parametre " << type << std::endl;
@@ -385,7 +381,9 @@ void base_fonction::algo_IPMPL_iteration_premier_mot_par_ligne
                             m_map_IPMPL_courant[id_param] = it_m->begin();
                             m_map_IPMPL_fin[id_param] = it_m->end();
 
+                            compil.ajouter_configuration(this, id_param, m_map_IPMPL_debut[id_param]->to_string());
                             (this->*callback)(compil, textes_in, textes_out);
+                            compil.retirer_configuration(this, id_param);
                         }
                     }
                 }

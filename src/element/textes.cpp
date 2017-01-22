@@ -36,3 +36,9 @@ QString textes::to_string_lisible() const
 
     return result;
 }
+
+void textes::ajouter_texte(const configuration& config, const texte &t)
+{
+    push_back(t);
+    this->back().set_configuration( config );
+}

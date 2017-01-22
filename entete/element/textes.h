@@ -13,6 +13,8 @@ class textes : public std::vector< texte >
 
         QString to_string() const;
         QString to_string_lisible() const;
+
+        void ajouter_texte(const configuration & config, const texte& t);
 };
 
 #endif // TEXTES_Hs
