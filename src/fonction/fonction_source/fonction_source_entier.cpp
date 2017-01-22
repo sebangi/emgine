@@ -16,14 +16,16 @@ fonction_source_entier::~fonction_source_entier()
 /*! --------------------------------------------------------------------------------------
  \brief Exécution de la fonction.
 */
-void fonction_source_entier::executer( compilateur &compil, const texte & texte_in, texte & texte_out )
+void fonction_source_entier::executer( compilateur &compil, const textes & textes_in, textes & textes_out )
 {
     base_element e(m_valeur);
     mot m;
     m.push_back(e);
     ligne l;
     l.push_back(m);
-    texte_out.push_back(l);
+    texte t;
+    t.push_back(l);
+    textes_out.push_back(t);
 }
 
 /*! --------------------------------------------------------------------------------------

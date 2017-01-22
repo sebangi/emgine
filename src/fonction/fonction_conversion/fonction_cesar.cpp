@@ -78,69 +78,74 @@ void fonction_cesar::construire_alphabet()
 /*! --------------------------------------------------------------------------------------
  \brief Exécution de la fonction.
 */
-void fonction_cesar::executer( compilateur &compil, const texte & texte_in, texte & texte_out )
+void fonction_cesar::executer( compilateur &compil, const textes & textes_in, textes & textes_out )
 {
     algo_IPMPL_iteration_premier_mot_par_ligne
-            ( PARAM_ALPHABET, compil, texte_in, texte_out, & base_fonction::callback_param_1 );
+            ( PARAM_ALPHABET, compil, textes_in, textes_out, & base_fonction::callback_param_1 );
 }
 
 /*! --------------------------------------------------------------------------------------
  \brief Exécution de la fonction selon le parametre PARAM_ALPHABET.
 */
-void fonction_cesar::callback_param_1( compilateur &compil, const texte & texte_in, texte & texte_out )
+void fonction_cesar::callback_param_1( compilateur &compil, const textes & textes_in, textes & textes_out )
 {
     construire_alphabet();
 
     algo_IPMPL_iteration_premier_mot_par_ligne
-            ( PARAM_SOUSTRACTIF, compil, texte_in, texte_out, & base_fonction::callback_param_2 );
+            ( PARAM_SOUSTRACTIF, compil, textes_in, textes_out, & base_fonction::callback_param_2 );
 }
 
 /*! --------------------------------------------------------------------------------------
  \brief Exécution de la fonction selon le parametre PARAM_SOUSTRACTIF.
 */
-void fonction_cesar::callback_param_2( compilateur &compil, const texte & texte_in, texte & texte_out )
+void fonction_cesar::callback_param_2( compilateur &compil, const textes & textes_in, textes & textes_out )
 {
     algo_IPMPL_iteration_premier_mot_par_ligne
-            ( PARAM_DECALAGE, compil, texte_in, texte_out, & base_fonction::callback_param_3 );
+            ( PARAM_DECALAGE, compil, textes_in, textes_out, & base_fonction::callback_param_3 );
 }
 
 /*! --------------------------------------------------------------------------------------
  \brief Exécution de la fonction selon le parametre PARAM_DECALAGE.
 */
-void fonction_cesar::callback_param_3( compilateur &compil, const texte & texte_in, texte & texte_out )
+void fonction_cesar::callback_param_3( compilateur &compil, const textes & textes_in, textes & textes_out )
 {
-    for ( texte::const_iterator it_l = texte_in.begin(); it_l != texte_in.end(); ++it_l )
+    for ( textes::const_iterator it_t = textes_in.begin(); it_t != textes_in.end(); ++it_t )
     {
-        ligne l;
-        for ( ligne::const_iterator it_m = it_l->begin(); it_m != it_l->end(); ++it_m )
+        texte t;
+        for ( texte::const_iterator it_l = it_t->begin(); it_l !=  it_t->end(); ++it_l )
         {
-            mot m;
-            for ( mot::const_iterator it_c = it_m->begin(); it_c != it_m->end(); ++it_c )
+            ligne l;
+            for ( ligne::const_iterator it_m = it_l->begin(); it_m != it_l->end(); ++it_m )
             {
-                std::map<base_element, int>::const_iterator it_pos = m_position_alphabet.find(*it_c);
-                if ( it_pos == m_position_alphabet.end() )
-                    m.push_back(*it_c);
-                else
+                mot m;
+                for ( mot::const_iterator it_c = it_m->begin(); it_c != it_m->end(); ++it_c )
                 {
-                    int pos;
-
-                    if (  m_map_IPMPL_courant[PARAM_SOUSTRACTIF]->get_booleen() )
-                    {
-                        pos = it_pos->second - m_map_IPMPL_courant[PARAM_DECALAGE]->get_entier();
-                        if ( pos < 0 )
-                            pos += m_alphabet.size();
-                    }
+                    std::map<base_element, int>::const_iterator it_pos = m_position_alphabet.find(*it_c);
+                    if ( it_pos == m_position_alphabet.end() )
+                        m.push_back(*it_c);
                     else
-                        pos = (it_pos->second + m_map_IPMPL_courant[PARAM_DECALAGE]->get_entier()) % m_alphabet.size();
+                    {
+                        int pos;
 
-                    IPMPL_suivant(PARAM_SOUSTRACTIF);
-                    IPMPL_suivant(PARAM_DECALAGE);
+                        if (  m_map_IPMPL_courant[PARAM_SOUSTRACTIF]->get_booleen() )
+                        {
+                            pos = it_pos->second - m_map_IPMPL_courant[PARAM_DECALAGE]->get_entier();
+                            if ( pos < 0 )
+                                pos += m_alphabet.size();
+                        }
+                        else
+                            pos = (it_pos->second + m_map_IPMPL_courant[PARAM_DECALAGE]->get_entier()) % m_alphabet.size();
 
-                    m.push_back( m_alphabet[pos] );
+                        IPMPL_suivant(PARAM_SOUSTRACTIF);
+                        IPMPL_suivant(PARAM_DECALAGE);
+
+                        m.push_back( m_alphabet[pos] );
+                    }
                 }
+                l.push_back(m);
             }
-            l.push_back(m);
+            t.push_back(l);
         }
-        texte_out.push_back(l);
+        textes_out.push_back(t);
     }
 }

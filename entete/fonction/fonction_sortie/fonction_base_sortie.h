@@ -3,7 +3,7 @@
 
 #include "entete/projet/base_fonction.h"
 
-class texte;
+class textes;
 
 class fonction_base_sortie : public base_fonction
 {
@@ -11,10 +11,10 @@ class fonction_base_sortie : public base_fonction
         fonction_base_sortie(fonctions_conteneur * conteneur, const QString & nom);
         ~fonction_base_sortie();
 
-        void set_texte(const texte &texte);
+        void set_textes(const textes &textes);
 
     private:
-        texte m_texte;
+        textes m_textes;
 };
 
 #endif // FONCTION_BASE_SORTIE_H

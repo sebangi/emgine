@@ -47,12 +47,13 @@ base_fonction_widget *fonction_source_texte::generer_fonction_widget()
 /*! --------------------------------------------------------------------------------------
  \brief Exécution de la fonction.
 */
-void fonction_source_texte::executer( compilateur &compil, const texte & texte_in, texte & texte_out )
+void fonction_source_texte::executer( compilateur &compil, const textes & textes_in, textes & textes_out )
 {
-    const texte& t_caractere = get_texte_parametre(PARAM_CARACTERE_SEPARATEUR);
-    const texte& t_mot = get_texte_parametre(PARAM_MOT_SEPARATEUR);
-    const texte& t_ligne = get_texte_parametre(PARAM_LIGNE_SEPARATEUR);
+    const textes& t_caractere = get_textes_parametre(PARAM_CARACTERE_SEPARATEUR);
+    const textes& t_mot = get_textes_parametre(PARAM_MOT_SEPARATEUR);
+    const textes& t_ligne = get_textes_parametre(PARAM_LIGNE_SEPARATEUR);
 
+    texte t;
     QStringList lignes = m_texte.split( t_ligne.to_string() );
     for ( QStringList::const_iterator it_l = lignes.constBegin(); it_l != lignes.constEnd(); ++it_l )
     {
@@ -74,8 +75,9 @@ void fonction_source_texte::executer( compilateur &compil, const texte & texte_i
                 l.push_back(m);
         }
         if ( ! l.empty() )
-            texte_out.push_back(l);
+            t.push_back(l);
     }
+    textes_out.push_back(t);
 }
 
 /*! --------------------------------------------------------------------------------------

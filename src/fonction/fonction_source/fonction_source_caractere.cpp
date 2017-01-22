@@ -23,7 +23,7 @@ base_fonction_widget *fonction_source_caractere::generer_fonction_widget()
 /*! --------------------------------------------------------------------------------------
  \brief Exécution de la fonction.
 */
-void fonction_source_caractere::executer( compilateur &compil, const texte & texte_in, texte & texte_out )
+void fonction_source_caractere::executer( compilateur &compil, const textes & textes_in, textes & textes_out )
 {
     mot m;
 
@@ -35,7 +35,9 @@ void fonction_source_caractere::executer( compilateur &compil, const texte & tex
 
     ligne l;
     l.push_back(m);
-    texte_out.push_back(l);
+    texte t;
+    t.push_back(l);
+    textes_out.push_back(t);
 }
 
 /*! --------------------------------------------------------------------------------------

@@ -8,7 +8,7 @@
 #include <map>
 #include <QXmlStreamWriter>
 
-#include "entete/element/texte.h"
+#include "entete/element/textes.h"
 #include "entete/define.h"
 #include "entete/projet/base_parametre.h"
 #include "entete/projet/objet_selectionnable.h"
@@ -42,7 +42,7 @@ class base_fonction : public objet_selectionnable
 
     protected:
         typedef std::map< type_id_parametre, mot::const_iterator > type_map_IPMPL;
-        typedef void ( base_fonction::*pf_exec_callback)( compilateur &, const texte &, texte & );
+        typedef void ( base_fonction::*pf_exec_callback)( compilateur &, const textes &, textes & );
 
     public:
         base_fonction( fonctions_conteneur * parent, const QString & nom, type_fonction type = fonction_conversion);
@@ -52,7 +52,7 @@ class base_fonction : public objet_selectionnable
         /**
         \brief Méthode virtuelle pure d'application de la fonction.
         */
-        virtual void executer( compilateur & compil, const texte & texte_in, texte & texte_out ) = 0;
+        virtual void executer( compilateur & compil, const textes & textes_in, textes & textes_out ) = 0;
 
         /**
         \brief Méthode virtuelle pure d'accès à l'info bulle.
@@ -110,20 +110,20 @@ class base_fonction : public objet_selectionnable
 
     protected:
         void ajouter_parametre(type_id_parametre nom, base_parametre* p);
-        const texte & get_texte_parametre( type_id_parametre type ) const;
+        const textes & get_textes_parametre( type_id_parametre type ) const;
         void augmenter_max_niveau_visibilite( int val );
 
         // Algorithme d'exécution
         void algo_IPMPL_iteration_premier_mot_par_ligne
-        ( type_id_parametre id_param, compilateur &compil, const texte & texte_in, texte & texte_out,
+        ( type_id_parametre id_param, compilateur &compil, const textes & textes_in, textes & textes_out,
           pf_exec_callback callback );
         void IPMPL_suivant( type_id_parametre id_param );
 
     public:
-        virtual void callback_param_1( compilateur &compil, const texte & texte_in, texte & texte_out );
-        virtual void callback_param_2( compilateur &compil, const texte & texte_in, texte & texte_out );
-        virtual void callback_param_3( compilateur &compil, const texte & texte_in, texte & texte_out );
-        virtual void callback_param_4( compilateur &compil, const texte & texte_in, texte & texte_out );
+        virtual void callback_param_1( compilateur &compil, const textes & textes_in, textes & textes_out );
+        virtual void callback_param_2( compilateur &compil, const textes & textes_in, textes & textes_out );
+        virtual void callback_param_3( compilateur &compil, const textes & textes_in, textes & textes_out );
+        virtual void callback_param_4( compilateur &compil, const textes & textes_in, textes & textes_out );
 
     protected:
         /** \brief Le nom de la fonction. */

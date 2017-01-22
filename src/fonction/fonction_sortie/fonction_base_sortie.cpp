@@ -13,9 +13,9 @@ fonction_base_sortie::~fonction_base_sortie()
 
 }
 
-void fonction_base_sortie::set_texte(const texte &texte)
+void fonction_base_sortie::set_textes(const textes &textes)
 {
-    m_texte = texte;
+    m_textes = textes;
 }
 
 

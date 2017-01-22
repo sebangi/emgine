@@ -11,7 +11,7 @@ class fonction_source_entier : public fonction_base_source
 
         QString get_aide() const;
         QString get_valeur_courte() const;
-        void executer( compilateur & compil, const texte & texte_in, texte & texte_out );
+        void executer( compilateur & compil, const textes & textes_in, textes & textes_out );
 
         int get_valeur() const;
         void set_valeur(int valeur);

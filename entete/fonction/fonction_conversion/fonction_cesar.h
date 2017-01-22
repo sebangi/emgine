@@ -17,7 +17,7 @@ class fonction_cesar : public base_fonction
         fonction_cesar(fonctions_conteneur * conteneur);
         void initialisation_par_defaut();
 
-        void executer( compilateur & compil, const texte & texte_in, texte & texte_out );
+        void executer( compilateur & compil, const textes & textes_in, textes & textes_out );
 
         QString get_aide() const;
         QString get_valeur_courte() const;
@@ -25,9 +25,9 @@ class fonction_cesar : public base_fonction
     private:
         bool est_valide(logs_compilation_widget * vue_logs) const;
         void construire_alphabet();
-        void callback_param_1( compilateur &compil, const texte & texte_in, texte & texte_out );
-        void callback_param_2( compilateur &compil, const texte & texte_in, texte & texte_out );
-        void callback_param_3( compilateur &compil, const texte & texte_in, texte & texte_out );
+        void callback_param_1( compilateur &compil, const textes & textes_in, textes & textes_out );
+        void callback_param_2( compilateur &compil, const textes & textes_in, textes & textes_out );
+        void callback_param_3( compilateur &compil, const textes & textes_in, textes & textes_out );
 
     private:
         std::map<base_element, int> m_position_alphabet;

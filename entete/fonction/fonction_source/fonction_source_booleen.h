@@ -10,7 +10,7 @@ class fonction_source_booleen : public fonction_base_source
         ~fonction_source_booleen();
 
         base_fonction_widget *generer_fonction_widget();
-        void executer( compilateur & compil, const texte & texte_in, texte & texte_out );
+        void executer( compilateur & compil, const textes & textes_in, textes & textes_out );
          QString get_aide() const;
         QString get_valeur_courte() const;
 

@@ -14,7 +14,7 @@
 
 base_parametre::base_parametre(objet_selectionnable * parent, QString nom, QString aide, bool requis)
     : fonctions_conteneur(parent), m_fonction_parent((base_fonction*)parent), m_nom(nom), m_aide(aide),
-      m_requis(requis), m_texte_out()
+      m_requis(requis), m_textes_out()
 {
 
 }
@@ -94,14 +94,14 @@ void base_parametre::set_caractere_par_defaut(QString s)
     ajouter_fonction(f, NULL);
 }
 
-const texte & base_parametre::get_texte_out() const
+const textes & base_parametre::get_textes_out() const
 {
-    return m_texte_out;
+    return m_textes_out;
 }
 
-void base_parametre::set_texte_out(const texte &texte_out)
+void base_parametre::set_textes_out(const textes &textes_out)
 {
-    m_texte_out = texte_out;
+    m_textes_out = textes_out;
 }
 
 void base_parametre::set_id(const type_id_parametre &value)

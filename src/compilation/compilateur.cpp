@@ -60,7 +60,7 @@ void compilateur::executer_projet(projet *p)
     p->executer();
     m_vue_logs->ajouter_log
             ( log_compilation( log_compilation::LOG_IMPORTANT, "Exécution...") );
-    m_pile_textes.push(texte());
+    m_pile_textes.push(textes());
 
     projet::type_fonctions actifs;
     for ( projet::fonctions_iterateur it = p->fonctions_begin(); it != p->fonctions_end(); ++it )
@@ -76,28 +76,28 @@ void compilateur::executer_fonction(base_fonction* f)
          executer_parametre( it->second );
 
     // exécution de la fonction
-    texte texte_out;
-    f->executer(*this, m_pile_textes.top(), texte_out);
+    textes textes_out;
+    f->executer(*this, m_pile_textes.top(), textes_out);
     m_pile_textes.pop();
-    m_pile_textes.push(texte_out);
+    m_pile_textes.push(textes_out);
 }
 
 void compilateur::executer_parametre(base_parametre *p)
 {
-    m_pile_textes.push(texte());
+    m_pile_textes.push(textes());
 
     base_parametre::type_fonctions actifs;
     for ( base_parametre::fonctions_iterateur it = p->fonctions_begin(); it != p->fonctions_end(); ++it )
         if ( (*it)->est_active() )
            executer_fonction( *it );
 
-    p->set_texte_out( m_pile_textes.top() );
+    p->set_textes_out( m_pile_textes.top() );
     m_pile_textes.pop();
 }
 
 void compilateur::afficher_resultat()
 {
-    texte res = m_pile_textes.top();
+    textes res = m_pile_textes.top();
     m_pile_textes.pop();
 
     if ( ! m_pile_textes.empty() )

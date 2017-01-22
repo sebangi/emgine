@@ -27,12 +27,12 @@ base_fonction_widget *fonction_sortie_texte::generer_fonction_widget()
 /*! --------------------------------------------------------------------------------------
  \brief Exécution de la fonction.
 */
-void fonction_sortie_texte::executer( compilateur &compil, const texte & texte_in, texte & texte_out )
+void fonction_sortie_texte::executer( compilateur &compil, const textes & textes_in, textes & textes_out )
 {
-    m_texte = texte_in;
-    texte_out = texte_in;
+    m_textes = textes_in;
+    textes_out = textes_in;
 
-    emit signal_fst_texte_modifie();
+    emit signal_fst_textes_modifie();
 }
 
 /*! --------------------------------------------------------------------------------------
@@ -53,10 +53,10 @@ QString fonction_sortie_texte::get_aide() const
 
 QString fonction_sortie_texte::get_valeur_courte() const
 {
-    return m_texte.to_string_lisible();
+    return m_textes.to_string_lisible();
 }
 
-texte fonction_sortie_texte::get_texte() const
+textes fonction_sortie_texte::get_textes() const
 {
-    return m_texte;
+    return m_textes;
 }

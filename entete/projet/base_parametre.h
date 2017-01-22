@@ -5,7 +5,7 @@
 #include <QXmlStreamWriter>
 #include "entete/element/base_element.h"
 #include "entete/element/type_element.h"
-#include "entete/element/texte.h"
+#include "entete/element/textes.h"
 #include "entete/projet/fonctions_conteneur.h"
 #include "entete/define.h"
 
@@ -39,9 +39,9 @@ class base_parametre : public fonctions_conteneur
         void set_texte_par_defaut( QString texte, QString separ_caractere = "", QString separ_mot = " ", QString separ_ligne = "\n" );
         void set_caractere_par_defaut(QString s);
 
-        const texte& get_texte_out() const;
+        const textes& get_textes_out() const;
 
-        void set_texte_out(const texte &texte_out);
+        void set_textes_out(const textes &textes_out);
         void set_id(const type_id_parametre &value);
 
         bool est_valide(logs_compilation_widget * vue_logs);
@@ -65,7 +65,7 @@ class base_parametre : public fonctions_conteneur
         base_fonction * m_fonction_parent;
 
         /** \brief La valeur réelle du parametre. */
-        texte m_texte_out;
+        textes m_textes_out;
 
         /** \brief L'identifiant du paramètre. */
         type_id_parametre m_id;

@@ -5,7 +5,7 @@
 
 #include <QPlainTextEdit>
 
-class texte;
+class textes;
 
 class fonction_sortie_texte_widget : public base_fonction_widget
 {
@@ -13,10 +13,10 @@ class fonction_sortie_texte_widget : public base_fonction_widget
 
     public:
         fonction_sortie_texte_widget( base_fonction* fonction, QWidget *parent = 0 );
-        void set_texte( const texte & texte_in );
+        void set_textes( const textes & textes_in );
 
     private slots:
-        void on_externe_fst_texte_modifie();
+        void on_externe_fst_textes_modifie();
 
     private:
         void init();

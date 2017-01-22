@@ -2,7 +2,7 @@
 #define COMPILATEUR_H
 
 #include "entete/compilation/log_compilation.h"
-#include "entete/element/texte.h"
+#include "entete/element/textes.h"
 
 #include <list>
 #include <QStack>
@@ -31,7 +31,7 @@ class compilateur
 
     private:
         bool m_en_cours;
-        QStack< texte > m_pile_textes;
+        QStack< textes > m_pile_textes;
         logs_compilation_widget * m_vue_logs;
 };
 

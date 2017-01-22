@@ -13,7 +13,7 @@ class fonction_source_texte : public fonction_base_source
         void initialisation_par_defaut(QString separ_caractere = "", QString separ_mot = " ", QString separ_ligne = "\n");
         base_fonction_widget *generer_fonction_widget();
 
-        void executer( compilateur & compil, const texte & texte_in, texte & texte_out );
+        void executer( compilateur & compil, const textes & textes_in, textes & textes_out );
         QString get_aide() const;
         QString get_valeur_courte() const;
 
