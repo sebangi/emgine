@@ -25,7 +25,7 @@ class fonction_sortie_texte_widget : public base_fonction_widget
         void update_label();
 
     private:
-        textes m_textes;
+        textes & m_textes;
         QListWidget* m_liste_texte;
 };
 

@@ -56,7 +56,7 @@ QString fonction_sortie_texte::get_valeur_courte() const
     return m_textes.to_string_lisible();
 }
 
-textes fonction_sortie_texte::get_textes() const
+textes & fonction_sortie_texte::get_textes()
 {
     return m_textes;
 }

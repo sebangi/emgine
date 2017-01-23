@@ -3,8 +3,6 @@ La liste des choses à faire :
 ETAPE 1 : PRIORITAIRE
 * réflexion sur le stockage des projets, textes sources...
 * sauvegarde d'une sortie
-* dans les sorties, ajouter la possibilité de voir le paramétrage induisant le résultat
-    -> pour cela : probablement complexifier la classe texte, voire travailler avec des QList<texte>
 * vérifier la gestion des disconnect
 * vérifier les delete
 * réflexion sur les paramètres de fonction_texte : faut-il itérer sur les lignes ?
@@ -12,6 +10,7 @@ ETAPE 1 : PRIORITAIRE
 * Retirer le menu de l'application
 * avoir la possibilité de vérouiller un projet : verrou manuel + un verrou système lors de l'exécution
 * lancer l'exécution dans un thread
+* ajuster la hauteur des QList de la sortie texte et des PlainText des sources
 
 ETAPE 2 : VERSION 0.1
 * réflexion poussée sur les fonctionnalités de base à ajouter avant d'ajouter des fonctions

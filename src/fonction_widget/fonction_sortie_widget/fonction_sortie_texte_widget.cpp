@@ -6,7 +6,7 @@
 #include <QHBoxLayout>
 
 fonction_sortie_texte_widget::fonction_sortie_texte_widget(base_fonction *fonction, QWidget *parent)
-    : base_fonction_widget(fonction, parent)
+    : base_fonction_widget(fonction, parent), m_textes( ((fonction_sortie_texte*)fonction)->get_textes())
 {
     init();
 }
@@ -47,7 +47,7 @@ void fonction_sortie_texte_widget::init()
     m_liste_texte->setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Expanding);
     m_liste_texte->setObjectName("ListeTexte");
     m_liste_texte->setWrapping(false);
-    m_liste_texte->setMaximumHeight(400);
+    m_liste_texte->setFixedHeight(400);
 
     layout->addWidget(m_liste_texte);
     connect( m_liste_texte, SIGNAL(itemDoubleClicked(QListWidgetItem*)),
@@ -64,6 +64,9 @@ void fonction_sortie_texte_widget::init()
 
 void fonction_sortie_texte_widget::onTexteDoubleClicked(QListWidgetItem* item)
 {
-    // Attention si on utilise la fonction get_string_configuration() si celle-ci a été détruite
+    ((texte_widget_item*)item)->get_texte().inverser_configuration_visibilite();
+    ((texte_widget_item*)item)->update();
+
+    // Attention si on utilise la fonction get_configuration() si celle-ci a été détruite
     // std::cout << ((texte_widget_item*)item)->get_texte().get_string_configuration().toStdString() << std::endl;
 }

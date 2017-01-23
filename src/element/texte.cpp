@@ -68,7 +68,7 @@ void texte::ajouter_string_configuration(const configuration& config)
 {
     for ( configuration::const_iterator it = config.begin(); it != config.end(); ++it )
         m_string_configuration +=
-                "\n\t" + it->first.first->get_nom() +
+                "\n\t* " + it->first.first->get_nom() +
                 "[" + it->first.first->get_parametre(it->first.second)->get_nom() + "] => " + it->second;
 }
 

@@ -17,7 +17,7 @@ class fonction_sortie_texte : public fonction_base_sortie
         QString get_aide() const;
         QString get_valeur_courte() const;
 
-        textes get_textes() const;
+        textes & get_textes();
 
     signals:
         void signal_fst_textes_modifie();

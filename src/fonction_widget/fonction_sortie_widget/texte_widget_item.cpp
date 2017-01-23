@@ -2,19 +2,23 @@
 
 #include "entete/element/texte.h"
 
-texte_widget_item::texte_widget_item(const texte & t)
+texte_widget_item::texte_widget_item(texte & t)
     : m_texte(t)
 {
-    init();
+    update();
 }
 
-void texte_widget_item::init()
+void texte_widget_item::update()
 {
-    setText( m_texte.to_string_lisible() );
-    this->setToolTip( m_texte.get_string_configuration() );
+    if ( m_texte.get_configuration_visible() )
+        setText( m_texte.get_string_configuration() + "\n\n" + m_texte.to_string_lisible() );
+    else
+        setText( m_texte.to_string_lisible() );
+
+    this->setToolTip( text() );
 }
 
-const texte& texte_widget_item::get_texte() const
+texte &texte_widget_item::get_texte() const
 {
     return m_texte;
 }

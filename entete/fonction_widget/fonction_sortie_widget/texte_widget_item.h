@@ -8,15 +8,13 @@ class texte;
 class texte_widget_item : public  QListWidgetItem
 {
     public:
-            texte_widget_item(const texte& t);
+            texte_widget_item(texte& t);
+            void update();
 
-            const texte& get_texte() const;
-
-    private:
-            void init();
+            texte & get_texte() const;
 
     private:
-            const texte & m_texte;
+            texte & m_texte;
 };
 
 #endif // TEXTE_WIDGET_ITEM_H
