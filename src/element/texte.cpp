@@ -33,7 +33,7 @@ QString texte::to_string() const
 {
     QString result;
 
-    for ( int i = 0; i != size(); ++i )
+    for ( int i = 0; i < size(); ++i )
         result += this->at(i).to_string();
 
     return result;
@@ -70,16 +70,14 @@ void texte::ajouter_string_configuration(const configuration& config)
         m_string_configuration +=
                 "\n\t" + it->first.first->get_nom() +
                 "[" + it->first.first->get_parametre(it->first.second)->get_nom() + "] => " + it->second;
-
 }
 
 void texte::ajouter_configuration(const configuration &config)
 {
     for ( configuration::const_iterator it = config.begin(); it != config.end(); ++it )
-    {
         m_configuration[ it->first ] = it->second;
-        ajouter_string_configuration(config);
-    }
+
+    ajouter_string_configuration(config);
 }
 
 const configuration& texte::get_configuration() const
