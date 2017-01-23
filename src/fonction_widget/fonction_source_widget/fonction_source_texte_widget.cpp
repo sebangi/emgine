@@ -11,16 +11,14 @@ fonction_source_texte_widget::fonction_source_texte_widget(base_fonction *foncti
 
 void fonction_source_texte_widget::init()
 {
-    QHBoxLayout * lay = new QHBoxLayout();
-
+    QVBoxLayout * lay = new QVBoxLayout();
+    lay->setSizeConstraint(QLayout::SetFixedSize);
     m_text_edit = new QPlainTextEdit();
     m_text_edit->setLineWrapMode(QPlainTextEdit::NoWrap);
     m_text_edit->setPlainText( ((fonction_source_texte*)m_fonction)->get_valeur() );
-    m_text_edit->setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Expanding);
     lay->addWidget(m_text_edit);
 
     connect(m_text_edit, SIGNAL(textChanged()), this, SLOT(on_textChanged()));
-
     m_specialisation_layout->addLayout(lay);
 }
 
@@ -28,4 +26,5 @@ void fonction_source_texte_widget::on_textChanged()
 {
     ((fonction_source_texte*)m_fonction)->set_valeur( m_text_edit->toPlainText() );
     m_fonction->modifier();
+    //signal_bfw_size_change();
 }

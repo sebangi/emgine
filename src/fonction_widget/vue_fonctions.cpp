@@ -32,6 +32,7 @@ void vue_fonctions::ajouter_projet(projet *p)
 void vue_fonctions::init()
 {
     setObjectName("vue_fonctions");
+    setSizePolicy(QSizePolicy::Preferred, QSizePolicy::MinimumExpanding);
     verticalHeader()->hide();
     setVerticalScrollBarPolicy(Qt::ScrollBarAlwaysOn);
     setSelectionMode(QAbstractItemView::SingleSelection);
