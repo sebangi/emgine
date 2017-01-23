@@ -1,16 +1,18 @@
 #include "entete/element/ligne.h"
 
 ligne::ligne()
-    : vector<mot>()
+    : vector<mot>(), m_separateur_mot(" ")
 {
 
 }
 
-ligne::ligne(const QString &valeur)
+    : vector<mot>(), m_separateur_mot(separateur_mot)
 {
-    mot m(valeur);
-
-    push_back(m);
+    if ( ! valeur.isEmpty() )
+    {
+        mot m(valeur);
+        push_back(m);
+    }
 }
 
 QString ligne::to_string() const
@@ -28,10 +30,10 @@ QString ligne::to_string_lisible() const
     QString result;
 
     if ( ! empty() )
-        result += this->at(0).to_string();
+        result += this->at(0).to_string_lisible();
 
     for ( int i = 1; i < size(); ++i )
-        result += " " + this->at(i).to_string();
+        result += m_separateur_mot + this->at(i).to_string_lisible();
 
     return result;
 }

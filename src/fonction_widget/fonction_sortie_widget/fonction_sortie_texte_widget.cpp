@@ -34,7 +34,6 @@ void fonction_sortie_texte_widget::creer_liste_texte()
         texte_widget_item* item = new texte_widget_item(*it);
         m_liste_texte->addItem( item );
     }
-
 }
 
 void fonction_sortie_texte_widget::init()
@@ -55,6 +54,9 @@ void fonction_sortie_texte_widget::init()
              this, SLOT(onTexteDoubleClicked(QListWidgetItem*)));
 
     m_specialisation_layout->addLayout(layout);
+
+    m_textes = ((fonction_sortie_texte*)m_fonction)->get_textes();
+    creer_liste_texte();
 
     connect((fonction_sortie_texte*)m_fonction, SIGNAL(signal_fst_textes_modifie()), this, SLOT(on_externe_fst_textes_modifie()));
 }

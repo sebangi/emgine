@@ -53,15 +53,15 @@ void fonction_source_texte::executer( compilateur &compil, const textes & textes
     const textes& t_mot = get_textes_parametre(PARAM_MOT_SEPARATEUR);
     const textes& t_ligne = get_textes_parametre(PARAM_LIGNE_SEPARATEUR);
 
-    texte t;
+    texte t("", t_ligne.to_string() );
     QStringList lignes = m_texte.split( t_ligne.to_string() );
     for ( QStringList::const_iterator it_l = lignes.constBegin(); it_l != lignes.constEnd(); ++it_l )
     {
-        ligne l;
+        ligne l("", t_mot.to_string() );
         QStringList mots = it_l->split( t_mot.to_string() );
         for ( QStringList::const_iterator it_m = mots.constBegin(); it_m != mots.constEnd(); ++it_m )
         {
-            mot m;
+            mot m("", t_caractere.to_string() );
             QStringList caracteres = it_m->split( t_caractere.to_string() );
             for ( QStringList::const_iterator it_c = caracteres.constBegin(); it_c != caracteres.constEnd(); ++it_c )
             {

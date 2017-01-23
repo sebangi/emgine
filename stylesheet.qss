@@ -40,6 +40,10 @@ QLabel#NomParametre {
      font: italic 12px;
  }
 
+QLabel#ValeurCourte {
+      font: 8pt "DejaVu Sans Mono";
+ }
+
 QPushButton:focus {
         outline: none;
 }
@@ -245,7 +249,7 @@ QWidget#logs_compilation_widget
 
 QListWidget {
     margin-left : 0px;
-    margin-right : 0px;
+    margin-right : -1px;
     margin-bottom : -1px;
     margin-top : -1px;
     padding: 0px;
