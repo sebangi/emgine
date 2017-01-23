@@ -3,22 +3,30 @@
 #include <iostream>
 
 texte::texte()
-    : vector<ligne>()
+    : vector<ligne>(), m_separateur_ligne("\n"), m_configuration_visible(false)
 {
 
 }
 
-texte::texte( const configuration& config )
-    : vector<ligne>(), m_configuration(config)
+texte::texte( const configuration& config, const QString & separateur_ligne )
+    : vector<ligne>(), m_configuration(config), m_separateur_ligne(separateur_ligne), m_configuration_visible(false)
 {
-
+    ajouter_string_configuration( config );
 }
 
-texte::texte(const QString &valeur)
+texte::texte(const QString &valeur, const QString & separateur_ligne)
+    : vector<ligne>(), m_separateur_ligne(separateur_ligne), m_configuration_visible(false)
 {
-    ligne l(valeur);
+    if ( ! valeur.isEmpty() )
+    {
+        ligne l(valeur);
+        push_back(l);
+    }
+}
 
-    push_back(l);
+texte::~texte()
+{
+
 }
 
 QString texte::to_string() const
@@ -39,7 +47,7 @@ QString texte::to_string_lisible() const
         result += this->at(0).to_string_lisible();
 
     for ( int i = 1; i < size(); ++i )
-        result += "\n" + this->at(i).to_string_lisible();
+        result += m_separateur_ligne + this->at(i).to_string_lisible();
 
     return result;
 }
@@ -48,20 +56,43 @@ QString texte::get_string_configuration() const
 {
     QString result = "Configuration :";
 
-    for ( configuration::const_iterator it = m_configuration.begin(); it != m_configuration.end(); ++it )
-        result += "\n" + it->first.first->get_nom() +
-                "[" + it->first.first->get_parametre(it->first.second)->get_nom() + "] => " + it->second;
+    if( m_string_configuration.isEmpty() )
+        result += "\n\taucune" ;
+    else
+        result += m_string_configuration;
 
     return result;
+}
+
+void texte::ajouter_string_configuration(const configuration& config)
+{
+    for ( configuration::const_iterator it = config.begin(); it != config.end(); ++it )
+        m_string_configuration +=
+                "\n\t" + it->first.first->get_nom() +
+                "[" + it->first.first->get_parametre(it->first.second)->get_nom() + "] => " + it->second;
+
 }
 
 void texte::ajouter_configuration(const configuration &config)
 {
     for ( configuration::const_iterator it = config.begin(); it != config.end(); ++it )
+    {
         m_configuration[ it->first ] = it->second;
+        ajouter_string_configuration(config);
+    }
 }
 
 const configuration& texte::get_configuration() const
 {
     return m_configuration;
+}
+
+bool texte::get_configuration_visible() const
+{
+    return m_configuration_visible;
+}
+
+void texte::inverser_configuration_visibilite()
+{
+    m_configuration_visible = ! m_configuration_visible;
 }

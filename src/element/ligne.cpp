@@ -6,6 +6,7 @@ ligne::ligne()
 
 }
 
+ligne::ligne(const QString &valeur, const QString & separateur_mot)
     : vector<mot>(), m_separateur_mot(separateur_mot)
 {
     if ( ! valeur.isEmpty() )
