@@ -18,16 +18,6 @@ void fonction_sortie_texte_widget::on_externe_fst_textes_modifie()
 
     creer_liste_texte();
 
-    /*
-    int save_width = width();
-    m_liste_texte->updateGeometry();
-    adjustSize();
-    adjustSize();
-    setFixedWidth(save_width);
-
-    signal_bfw_size_change();
-    */
-
     int old_h = m_liste_texte->height();
     m_liste_texte->resize( m_liste_texte->sizeHint() );
     setFixedHeight( height() - old_h + m_liste_texte->height() );
@@ -41,7 +31,7 @@ void fonction_sortie_texte_widget::creer_liste_texte()
     for ( textes::iterator it = m_textes.begin(); it != m_textes.end(); ++it )
     {
         texte_widget_item* item = new texte_widget_item(*it);
-        m_liste_texte->addItem( item );
+        m_liste_texte->addItem( item );        
     }
 }
 
@@ -71,9 +61,15 @@ void fonction_sortie_texte_widget::onTexteDoubleClicked(QListWidgetItem* item)
     ((texte_widget_item*)item)->get_texte().inverser_configuration_visibilite();
     ((texte_widget_item*)item)->update();
 
+    int old_w = m_liste_texte->width();
+    int old_maximum_w = m_liste_texte->maximumWidth();
     int old_h = m_liste_texte->height();
     m_liste_texte->resize( m_liste_texte->sizeHint() );
+    m_liste_texte->setFixedWidth( old_w );
+    m_liste_texte->setMaximumWidth(old_maximum_w);
+    m_liste_texte->setMinimumWidth(0);
     setFixedHeight( height() - old_h + m_liste_texte->height());
+
     signal_bfw_size_change();
 
     // Attention si on utilise la fonction get_configuration() si celle-ci a été détruite

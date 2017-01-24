@@ -9,7 +9,7 @@ liste_texte_widget::liste_texte_widget()
 {
     setObjectName("ListeTexte");
     setWrapping(false);
-    setMinimumHeight(40);
+    setMinimumHeight(25);
     setMaximumHeight(400);
     setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Fixed);
 }
@@ -21,7 +21,7 @@ QSize liste_texte_widget::sizeHint() const
 
 QSize liste_texte_widget::minimumSizeHint() const
 {
-    int height = 20;
+    int height = 10;
     for ( int i = 0; i != count(); ++i )
         height += ((texte_widget_item*)item(i))->get_height();
 
