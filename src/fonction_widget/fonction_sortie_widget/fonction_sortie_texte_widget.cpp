@@ -43,7 +43,6 @@ void fonction_sortie_texte_widget::init()
     layout->setSpacing(0);
 
     m_liste_texte = new QListWidget();
-    m_liste_texte->setToolTipDuration(500);
     m_liste_texte->setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Expanding);
     m_liste_texte->setObjectName("ListeTexte");
     m_liste_texte->setWrapping(false);

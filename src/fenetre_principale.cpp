@@ -58,7 +58,7 @@ fenetre_principale::fenetre_principale(QWidget *parent) :
     QIcon icon1;
     icon1.addFile(QString::fromUtf8("icons/emgine.png"), QSize(), QIcon::Normal, QIcon::Off);
     setWindowIcon(icon1);
-    resize(QSize(1000,900));
+    resize(QSize(1200,900));
 
     init_test();
 }
@@ -200,7 +200,7 @@ void fenetre_principale::init_widgets()
     hor_lay->setMargin(0);
     hor_lay->setSpacing(0);
     hor_lay->addWidget(s_explorateur,1);
-    hor_lay->addWidget(s_vue_fonctions,2);
+    hor_lay->addWidget(s_vue_fonctions,3);
     top_widget->setLayout(hor_lay);
 
     m_ui->centralLayout->setMargin(0);

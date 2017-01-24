@@ -14,8 +14,6 @@ void texte_widget_item::update()
         setText( m_texte.get_string_configuration() + "\n\n" + m_texte.to_string_lisible() );
     else
         setText( m_texte.to_string_lisible() );
-
-    this->setToolTip( text() );
 }
 
 texte &texte_widget_item::get_texte() const
