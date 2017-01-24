@@ -1,30 +1,22 @@
 #include "entete/fonction_widget/fonction_source_widget/fonction_source_texte_widget.h"
+
+#include "entete/fonction_widget/text_edit.h"
 #include "entete/fonction/fonction_source/fonction_source_texte.h"
 #include <iostream>
 #include <QHBoxLayout>
 
 fonction_source_texte_widget::fonction_source_texte_widget(base_fonction *fonction, QWidget *parent)
-    : base_fonction_widget(fonction, parent)
+    : base_fonction_widget_avec_text_edit(fonction, parent)
 {
     init();
 }
 
-void fonction_source_texte_widget::init()
+void fonction_source_texte_widget::on_nouveau_texte()
 {
-    QVBoxLayout * lay = new QVBoxLayout();
-    lay->setSizeConstraint(QLayout::SetFixedSize);
-    m_text_edit = new QPlainTextEdit();
-    m_text_edit->setLineWrapMode(QPlainTextEdit::NoWrap);
-    m_text_edit->setPlainText( ((fonction_source_texte*)m_fonction)->get_valeur() );
-    lay->addWidget(m_text_edit);
-
-    connect(m_text_edit, SIGNAL(textChanged()), this, SLOT(on_textChanged()));
-    m_specialisation_layout->addLayout(lay);
+    ((fonction_source_texte*)m_fonction)->set_valeur( get_valeur() );
 }
 
-void fonction_source_texte_widget::on_textChanged()
+QString fonction_source_texte_widget::chercher_valeur() const
 {
-    ((fonction_source_texte*)m_fonction)->set_valeur( m_text_edit->toPlainText() );
-    m_fonction->modifier();
-    //signal_bfw_size_change();
+    return ((fonction_source_texte*)m_fonction)->get_valeur();
 }

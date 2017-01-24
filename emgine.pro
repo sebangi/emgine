@@ -57,7 +57,9 @@ SOURCES += \
         src/projet/projet.cpp \
     src/element/textes.cpp \
     src/compilation/configuration.cpp \
-    src/fonction_widget/fonction_sortie_widget/texte_widget_item.cpp
+    src/fonction_widget/fonction_sortie_widget/texte_widget_item.cpp \
+    src/fonction_widget/text_edit.cpp \
+    src/fonction_widget/base_fonction_widget_avec_text_edit.cpp
 
 
 HEADERS  += \
@@ -103,7 +105,9 @@ HEADERS  += \
         entete/projet/projet.h \
     entete/element/textes.h \
     entete/compilation/configuration.h \
-    entete/fonction_widget/fonction_sortie_widget/texte_widget_item.h
+    entete/fonction_widget/fonction_sortie_widget/texte_widget_item.h \
+    entete/fonction_widget/text_edit.h \
+    entete/fonction_widget/base_fonction_widget_avec_text_edit.h
 
 
 FORMS    += \
