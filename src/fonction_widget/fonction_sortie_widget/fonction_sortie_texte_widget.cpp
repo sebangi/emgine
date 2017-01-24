@@ -1,5 +1,6 @@
 #include "entete/fonction_widget/fonction_sortie_widget/fonction_sortie_texte_widget.h"
 #include "entete/fonction_widget/fonction_sortie_widget/texte_widget_item.h"
+#include "entete/fonction_widget/fonction_sortie_widget/liste_texte_widget.h"
 #include "entete/fonction/fonction_sortie/fonction_sortie_texte.h"
 
 #include <iostream>
@@ -42,11 +43,7 @@ void fonction_sortie_texte_widget::init()
     layout->setMargin(0);
     layout->setSpacing(0);
 
-    m_liste_texte = new QListWidget();
-    m_liste_texte->setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Expanding);
-    m_liste_texte->setObjectName("ListeTexte");
-    m_liste_texte->setWrapping(false);
-    m_liste_texte->setFixedHeight(400);
+    m_liste_texte = new liste_texte_widget();
 
     layout->addWidget(m_liste_texte);
     connect( m_liste_texte, SIGNAL(itemDoubleClicked(QListWidgetItem*)),

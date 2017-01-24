@@ -4,7 +4,7 @@
 text_edit::text_edit()
 {
     setLineWrapMode(QPlainTextEdit::NoWrap);
-    setMinimumHeight(10);
+    setMinimumHeight(20);
     setMaximumHeight(400);
     setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Fixed);
 }

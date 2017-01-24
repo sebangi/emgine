@@ -7,10 +7,9 @@ ETAPE 1 : PRIORITAIRE
 * vérifier les delete
 * réflexion sur les paramètres de fonction_texte : faut-il itérer sur les lignes ?
 * améliorer la mise en page de l'aide des paramètres (avoir une méthode claire pour présenter les itérations )
-* Retirer le menu de l'application
 * avoir la possibilité de vérouiller un projet : verrou manuel + un verrou système lors de l'exécution
 * lancer l'exécution dans un thread
-* ajuster la hauteur des QList de la sortie texte et des PlainText des sources
+* ajuster la hauteur des QList de la sortie texte
 
 ETAPE 2 : VERSION 0.1
 * réflexion poussée sur les fonctionnalités de base à ajouter avant d'ajouter des fonctions

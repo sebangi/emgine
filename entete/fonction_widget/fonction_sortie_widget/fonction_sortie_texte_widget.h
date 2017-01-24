@@ -3,9 +3,9 @@
 
 #include "entete/fonction_widget/base_fonction_widget.h"
 #include "entete/element/textes.h"
+#include <QListWidgetItem>
 
-#include <QPlainTextEdit>
-#include <QListWidget>
+class liste_texte_widget;
 
 class fonction_sortie_texte_widget : public base_fonction_widget
 {
@@ -26,7 +26,7 @@ class fonction_sortie_texte_widget : public base_fonction_widget
 
     private:
         textes & m_textes;
-        QListWidget* m_liste_texte;
+        liste_texte_widget* m_liste_texte;
 };
 
 #endif // FONCTION_SORTIE_TEXTE_WIDGET_H
