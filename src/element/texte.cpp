@@ -9,7 +9,8 @@ texte::texte()
 }
 
 texte::texte( const configuration& config, const QString & separateur_ligne )
-    : vector<ligne>(), m_configuration(config), m_separateur_ligne(separateur_ligne), m_configuration_visible(false)
+    : vector<ligne>(), m_configuration(config), m_separateur_ligne(separateur_ligne),
+      m_configuration_visible(false)
 {
     ajouter_string_configuration( config );
 }
@@ -93,4 +94,19 @@ bool texte::get_configuration_visible() const
 void texte::inverser_configuration_visibilite()
 {
     m_configuration_visible = ! m_configuration_visible;
+}
+
+int texte::get_nb_lignes_avec_configuration() const
+{
+    int result = size();
+
+    if ( m_configuration_visible )
+    {
+        if ( m_configuration.empty() )
+            result += 3; // configuration + aucune + ligne cide
+        else
+            result += 2 + m_configuration.size() ; // configuration + nb param + ligne vide
+    }
+
+    return result;
 }

@@ -25,6 +25,8 @@ class texte : public std::vector< ligne >
         bool get_configuration_visible() const;
         void inverser_configuration_visibilite();
 
+        int get_nb_lignes_avec_configuration() const;
+
     private:
         configuration m_configuration;
         QString m_string_configuration;

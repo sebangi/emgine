@@ -12,30 +12,25 @@ fonction_sortie_texte_widget::fonction_sortie_texte_widget(base_fonction *foncti
     init();
 }
 
-void fonction_sortie_texte_widget::set_textes(const textes &textes_in)
-{
-    m_textes = textes_in;
-
-    creer_liste_texte();
-
-    std::cout << "on_externe_fst_textes_modifie" << std::endl;
-    m_liste_texte->updateGeometry();
-    int save_width = width();
-    adjustSize();
-    setFixedWidth(save_width);
-
-    signal_bfw_size_change();
-}
-
 void fonction_sortie_texte_widget::on_externe_fst_textes_modifie()
 {
     m_textes = ((fonction_sortie_texte*)m_fonction)->get_textes();
 
     creer_liste_texte();
 
-    std::cout << "on_externe_fst_textes_modifie" << std::endl;
-    m_liste_texte->setFixedSize(m_liste_texte->width(), m_liste_texte->get_height() );
+    /*
+    int save_width = width();
+    m_liste_texte->updateGeometry();
+    adjustSize();
+    adjustSize();
+    setFixedWidth(save_width);
 
+    signal_bfw_size_change();
+    */
+
+    int old_h = m_liste_texte->height();
+    m_liste_texte->resize( m_liste_texte->sizeHint() );
+    setFixedHeight( height() - old_h + m_liste_texte->height() );
     signal_bfw_size_change();
 }
 
@@ -76,12 +71,9 @@ void fonction_sortie_texte_widget::onTexteDoubleClicked(QListWidgetItem* item)
     ((texte_widget_item*)item)->get_texte().inverser_configuration_visibilite();
     ((texte_widget_item*)item)->update();
 
-    std::cout << "onTexteDoubleClicked" << std::endl;
-    m_liste_texte->updateGeometry();
-    int save_width = width();
-    adjustSize();
-    setFixedWidth(save_width);
-
+    int old_h = m_liste_texte->height();
+    m_liste_texte->resize( m_liste_texte->sizeHint() );
+    setFixedHeight( height() - old_h + m_liste_texte->height());
     signal_bfw_size_change();
 
     // Attention si on utilise la fonction get_configuration() si celle-ci a été détruite

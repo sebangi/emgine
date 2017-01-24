@@ -1,6 +1,5 @@
 #include "entete/fonction_widget/fonction_sortie_widget/texte_widget_item.h"
 
-#include "entete/element/texte.h"
 #include <iostream>
 
 texte_widget_item::texte_widget_item(texte & t)
@@ -20,10 +19,4 @@ void texte_widget_item::update()
 texte &texte_widget_item::get_texte() const
 {
     return m_texte;
-}
-
-int texte_widget_item::get_height() const
-{
-    QFontMetrics fm(this->font());
-    return m_texte.size() * fm.lineSpacing();
 }
