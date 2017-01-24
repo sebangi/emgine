@@ -17,6 +17,14 @@ void fonction_sortie_texte_widget::set_textes(const textes &textes_in)
     m_textes = textes_in;
 
     creer_liste_texte();
+
+    std::cout << "on_externe_fst_textes_modifie" << std::endl;
+    m_liste_texte->updateGeometry();
+    int save_width = width();
+    adjustSize();
+    setFixedWidth(save_width);
+
+    signal_bfw_size_change();
 }
 
 void fonction_sortie_texte_widget::on_externe_fst_textes_modifie()
@@ -24,6 +32,11 @@ void fonction_sortie_texte_widget::on_externe_fst_textes_modifie()
     m_textes = ((fonction_sortie_texte*)m_fonction)->get_textes();
 
     creer_liste_texte();
+
+    std::cout << "on_externe_fst_textes_modifie" << std::endl;
+    m_liste_texte->setFixedSize(m_liste_texte->width(), m_liste_texte->get_height() );
+
+    signal_bfw_size_change();
 }
 
 void fonction_sortie_texte_widget::creer_liste_texte()
@@ -39,7 +52,8 @@ void fonction_sortie_texte_widget::creer_liste_texte()
 
 void fonction_sortie_texte_widget::init()
 {
-    QHBoxLayout* layout = new QHBoxLayout();
+    QVBoxLayout* layout = new QVBoxLayout();
+    layout->setSizeConstraint(QLayout::SetFixedSize);
     layout->setMargin(0);
     layout->setSpacing(0);
 
@@ -49,19 +63,26 @@ void fonction_sortie_texte_widget::init()
     connect( m_liste_texte, SIGNAL(itemDoubleClicked(QListWidgetItem*)),
              this, SLOT(onTexteDoubleClicked(QListWidgetItem*)));
 
-    m_specialisation_layout->addLayout(layout);
-
     m_textes = ((fonction_sortie_texte*)m_fonction)->get_textes();
     creer_liste_texte();
 
+    m_specialisation_layout->addLayout(layout);
+
     connect((fonction_sortie_texte*)m_fonction, SIGNAL(signal_fst_textes_modifie()), this, SLOT(on_externe_fst_textes_modifie()));
 }
-
 
 void fonction_sortie_texte_widget::onTexteDoubleClicked(QListWidgetItem* item)
 {
     ((texte_widget_item*)item)->get_texte().inverser_configuration_visibilite();
     ((texte_widget_item*)item)->update();
+
+    std::cout << "onTexteDoubleClicked" << std::endl;
+    m_liste_texte->updateGeometry();
+    int save_width = width();
+    adjustSize();
+    setFixedWidth(save_width);
+
+    signal_bfw_size_change();
 
     // Attention si on utilise la fonction get_configuration() si celle-ci a été détruite
     // std::cout << ((texte_widget_item*)item)->get_texte().get_string_configuration().toStdString() << std::endl;

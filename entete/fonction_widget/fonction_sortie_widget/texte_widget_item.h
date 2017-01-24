@@ -12,6 +12,7 @@ class texte_widget_item : public  QListWidgetItem
             void update();
 
             texte & get_texte() const;
+            int get_height() const;
 
     private:
             texte & m_texte;
