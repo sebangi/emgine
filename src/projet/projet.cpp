@@ -15,7 +15,8 @@
 unsigned int projet::s_nb_projets = 0;
 
 projet::projet()
-    : fonctions_conteneur(NULL), m_nouveau(true), m_est_modifie(false), m_est_executable(true)
+    : fonctions_conteneur(NULL), m_nouveau(true), m_est_modifie(false), m_est_executable(true),
+      m_verrouille_par_systeme(false)
 {
     s_nb_projets++;
 
@@ -134,6 +135,11 @@ void projet::set_executable( bool executable )
 bool projet::est_executable() const
 {
     return m_est_executable;
+}
+
+bool projet::est_verrouille() const
+{
+    return fonctions_conteneur::est_verrouille() || m_verrouille_par_systeme;
 }
 
 void projet::fermer()

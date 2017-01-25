@@ -148,3 +148,23 @@ void fonctions_conteneur::clear_fonctions()
         delete *it;
     m_fonctions.clear();
 }
+
+int fonctions_conteneur::get_nb_fonctions_actives() const
+{
+    int resultat = 0;
+
+    for ( fonctions_const_iterateur it = m_fonctions.constBegin(); it != m_fonctions.constEnd(); ++it )
+        if ( (*it)->est_active_avec_parent() )
+            resultat++;
+
+    return resultat;
+}
+
+const base_fonction *fonctions_conteneur::premiere_fonction_active() const
+{
+    for ( fonctions_const_iterateur it = m_fonctions.constBegin(); it != m_fonctions.constEnd(); ++it )
+        if ( (*it)->est_active_avec_parent() )
+            return *it;
+
+    return NULL;
+}

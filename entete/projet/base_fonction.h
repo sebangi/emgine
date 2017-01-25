@@ -84,7 +84,8 @@ class base_fonction : public objet_selectionnable
         int get_max_niveau_visibilite() const;
         void set_niveau_visibilite( int niveau_visibilite );
         void change_niveau_visibilite();
-        void set_est_active(bool est_active);
+        void set_est_active(bool active);
+        void set_verrouille(bool verrouille);
         void set_est_etendu(bool est_etendu);
 
         bool a_parametre() const;
@@ -100,6 +101,7 @@ class base_fonction : public objet_selectionnable
     signals:
         void signal_destruction_fonction(base_fonction* f);
         void signal_activation_fonction_change(base_fonction * f);
+        void signal_verrouillage_fonction_change(base_fonction * f);
         void signal_niveau_visibilite_change(base_fonction * f);
         void signal_etendu_change(base_fonction * f);
 

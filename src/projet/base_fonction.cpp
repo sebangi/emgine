@@ -160,9 +160,9 @@ void base_fonction::change_niveau_visibilite()
     set_niveau_visibilite(niveau);
 }
 
-void base_fonction::set_est_active(bool est_active)
+void base_fonction::set_est_active(bool active)
 {
-    if ( est_active )
+    if ( active )
     {
         if ( get_niveau_visibilite() == 1 )
             set_niveau_visibilite( m_niveau_visibilite_avant_desactivation );
@@ -173,9 +173,16 @@ void base_fonction::set_est_active(bool est_active)
         set_niveau_visibilite(1);
     }
 
-    objet_selectionnable::set_est_active( est_active );
+    objet_selectionnable::set_est_active( active );
 
     emit signal_activation_fonction_change(this);
+}
+
+void base_fonction::set_verrouille(bool verrouille)
+{
+    objet_selectionnable::set_verrouille( verrouille );
+
+    emit signal_verrouillage_fonction_change(this);
 }
 
 void base_fonction::set_est_etendu(bool est_etendu)

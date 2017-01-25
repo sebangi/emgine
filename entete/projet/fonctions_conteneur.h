@@ -38,6 +38,8 @@ class fonctions_conteneur : public objet_selectionnable
 
     protected:
         void clear_fonctions();
+        int get_nb_fonctions_actives() const;
+        const base_fonction * premiere_fonction_active() const;
 
     signals:
          void signal_fc_creation_fonction(base_fonction*);

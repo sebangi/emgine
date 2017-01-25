@@ -25,10 +25,16 @@ class objet_selectionnable : public QObject
         virtual bool est_projet() const;
 
         bool est_active() const;
-        virtual void set_est_active(bool est_active);
+        virtual void set_est_active(bool active);
         bool est_active_avec_parent() const;
         bool parents_actifs() const;
+
         bool a_ancetre( objet_selectionnable * obj ) const;
+
+        virtual bool est_verrouille() const;
+        virtual void set_verrouille(bool verrouille);
+        bool est_verrouille_avec_parent() const;
+        bool parents_verrouilles() const;
 
         static objet_selectionnable * get_selection();
         static fonctions_conteneur * get_conteneur_courant();
@@ -61,6 +67,7 @@ class objet_selectionnable : public QObject
 
         bool m_est_active;
         bool m_est_etendu;
+        bool m_verrouille;
 };
 
 #endif // OBJET_SELECTIONNABLE_H

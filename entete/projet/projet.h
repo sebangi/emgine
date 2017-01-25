@@ -45,7 +45,8 @@ class projet : public fonctions_conteneur
         bool est_enregistrable() const;
         void set_executable( bool executable );
         void executer();
-        bool est_executable() const;
+        bool est_executable() const;        
+        bool est_verrouille() const;
         void fermer();
 
     signals:
@@ -68,6 +69,8 @@ class projet : public fonctions_conteneur
         bool m_est_modifie;
         bool m_est_executable;
         QString m_description;
+
+        bool m_verrouille_par_systeme;
 
         static unsigned int s_nb_projets;
 }; // end projet

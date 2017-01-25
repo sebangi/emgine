@@ -15,8 +15,9 @@ noeud_projet::noeud_projet( projet * p )
     setFlags(Qt::ItemIsEnabled | Qt::ItemIsSelectable | Qt::ItemIsDropEnabled );
     setText(0, p->get_nom());
 
-    QStyle* style = QApplication::style();
-    setIcon( 0, style->standardIcon( QStyle::SP_DialogOpenButton ) );
+    QIcon icon1;
+    icon1.addFile(QString::fromUtf8("icons/projet.png"), QSize(), QIcon::Normal, QIcon::Off);
+    setIcon( 0, icon1 );
 }
 
 noeud_projet::~noeud_projet()

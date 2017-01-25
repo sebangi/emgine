@@ -46,10 +46,12 @@ QString base_parametre::get_titre() const
 
 QString base_parametre::get_valeur_courte() const
 {
-    if ( m_fonctions.empty() )
+    int nb_fonctions_actives = get_nb_fonctions_actives();
+
+    if ( nb_fonctions_actives == 0 )
         return "aucun";
-    else if ( m_fonctions.size() == 1 )
-        return m_fonctions.front()->get_valeur_courte();
+    else if ( nb_fonctions_actives == 1 )
+        return premiere_fonction_active()->get_valeur_courte();
     else
         return "complexe";
 }
