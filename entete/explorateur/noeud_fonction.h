@@ -13,6 +13,9 @@ class noeud_fonction : public base_noeud
 
         base_fonction* get_fonction() const;
         void update_style(bool actif);
+
+    private:
+        void mise_a_jour_icone();
 };
 
 

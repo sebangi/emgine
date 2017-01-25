@@ -15,9 +15,7 @@ noeud_projet::noeud_projet( projet * p )
     setFlags(Qt::ItemIsEnabled | Qt::ItemIsSelectable | Qt::ItemIsDropEnabled );
     setText(0, p->get_nom());
 
-    QIcon icon1;
-    icon1.addFile(QString::fromUtf8("icons/projet.png"), QSize(), QIcon::Normal, QIcon::Off);
-    setIcon( 0, icon1 );
+    mise_a_jour_icone();
 }
 
 noeud_projet::~noeud_projet()
@@ -32,4 +30,14 @@ projet* noeud_projet::get_projet() const
 fonctions_conteneur *noeud_projet::get_fonctions_conteneur()
 {
     return (fonctions_conteneur*)m_objet;
+}
+
+void noeud_projet::mise_a_jour_icone()
+{
+    QIcon icon1;
+    if ( m_objet->est_verrouille() )
+        icon1.addFile(QString::fromUtf8("icons/projet_verrouille.png"), QSize(), QIcon::Normal, QIcon::Off);
+    else
+        icon1.addFile(QString::fromUtf8("icons/projet.png"), QSize(), QIcon::Normal, QIcon::Off);
+    setIcon( 0, icon1 );
 }
