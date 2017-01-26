@@ -22,7 +22,7 @@ class base_parametre : public fonctions_conteneur
         Q_OBJECT
 
     public:
-        base_parametre(objet_selectionnable * parent, QString nom, QString aide, bool requis);
+        base_parametre(objet_selectionnable * parent, QString nom, QString aide, bool requis, bool dans_configuration);
         ~base_parametre();
 
         void sauvegarder( QXmlStreamWriter & stream ) const;
@@ -48,6 +48,9 @@ class base_parametre : public fonctions_conteneur
 
         void charger( QXmlStreamReader & xml );
 
+        bool est_dans_configuration() const;
+        void inverser_dans_configuration();
+
     protected:
         /** \brief Le nom de la fonction. */
         QString m_nom;
@@ -69,6 +72,9 @@ class base_parametre : public fonctions_conteneur
 
         /** \brief L'identifiant du paramètre. */
         type_id_parametre m_id;
+
+        /** \brief Indique si le paramètre doit figurer dans la configuration. */
+        bool m_dans_configuration;
 };
 
 #endif // BASE_PARAMETRE_H

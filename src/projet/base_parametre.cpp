@@ -12,9 +12,9 @@
 
 #include <iostream>
 
-base_parametre::base_parametre(objet_selectionnable * parent, QString nom, QString aide, bool requis)
+base_parametre::base_parametre(objet_selectionnable * parent, QString nom, QString aide, bool requis, bool dans_configuration)
     : fonctions_conteneur(parent), m_fonction_parent((base_fonction*)parent), m_nom(nom), m_aide(aide),
-      m_requis(requis), m_textes_out()
+      m_requis(requis), m_textes_out(), m_dans_configuration(dans_configuration)
 {
 
 }
@@ -166,4 +166,15 @@ void base_parametre::charger(QXmlStreamReader & xml)
             xml.skipCurrentElement();
         }
     }
+}
+
+bool base_parametre::est_dans_configuration() const
+{
+    return m_dans_configuration;
+}
+
+void base_parametre::inverser_dans_configuration()
+{
+    m_dans_configuration = ! m_dans_configuration;
+    modifier();
 }

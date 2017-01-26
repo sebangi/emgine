@@ -18,6 +18,7 @@ class base_parametre_widget : public QWidget
 
     private:
         void init();
+        void mettre_a_jour_configuration();
         void update_object_name();
         void aide();
         QString calcul_valeur_courte() const;
@@ -27,11 +28,13 @@ class base_parametre_widget : public QWidget
 
     private slots:
         void on_aide();
+        void on_inverser_configuration();
         void mouseDoubleClickEvent( QMouseEvent * e );
         void mouseReleaseEvent( QMouseEvent * e );
 
     private:
         base_parametre* m_parametre;
+        QPushButton *m_configuration_bouton;
         QPushButton *m_aide_bouton;
 };
 

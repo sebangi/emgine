@@ -386,9 +386,11 @@ void base_fonction::algo_IPMPL_iteration_premier_mot_par_ligne
                             m_map_IPMPL_courant[id_param] = it_m->begin();
                             m_map_IPMPL_fin[id_param] = it_m->end();
 
-                            compil.ajouter_configuration(this, id_param, it_m->to_string_lisible());
+                            if ( m_parametres[id_param]->est_dans_configuration() )
+                               compil.ajouter_configuration(this, id_param, it_m->to_string_lisible());
                             (this->*callback)(compil, textes_in, textes_out);
-                            compil.retirer_configuration(this, id_param);
+                            if ( m_parametres[id_param]->est_dans_configuration() )
+                                compil.retirer_configuration(this, id_param);
                         }
                     }
                 }

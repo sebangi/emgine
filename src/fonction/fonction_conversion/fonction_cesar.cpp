@@ -27,11 +27,11 @@ fonction_cesar::fonction_cesar( fonctions_conteneur * conteneur )
     augmenter_max_niveau_visibilite(1);
 
     ajouter_parametre( PARAM_DECALAGE,
-                       new base_parametre( this, "Décalage", "Le décalage à réaliser (sur un mot). Itération sur les lignes", true) );
+                       new base_parametre( this, "Décalage", "Le décalage à réaliser (sur un mot). Itération sur les lignes", true, true) );
     ajouter_parametre( PARAM_SOUSTRACTIF,
-                       new base_parametre( this, "Soustractif", "Indique si le décalage est soustractif (sur un mot).  Itération sur les lignes", false) );
+                       new base_parametre( this, "Soustractif", "Indique si le décalage est soustractif (sur un mot).  Itération sur les lignes", true, true) );
     ajouter_parametre( PARAM_ALPHABET,
-                       new base_parametre( this, "Alphabet", "Alphabet utilisé (sur un mot). Itération sur les lignes", false) );
+                       new base_parametre( this, "Alphabet", "Alphabet utilisé (sur un mot). Itération sur les lignes", true, true) );
 }
 
 void fonction_cesar::initialisation_par_defaut()

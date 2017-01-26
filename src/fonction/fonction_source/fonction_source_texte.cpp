@@ -13,13 +13,13 @@ fonction_source_texte::fonction_source_texte(fonctions_conteneur * conteneur, QS
     set_niveau_visibilite(2);
 
     ajouter_parametre( PARAM_CARACTERE_SEPARATEUR,
-                       new base_parametre( this, "Séparateur d'élément", "Les séparateurs d'éléments.", false) );
+                       new base_parametre( this, "Séparateur d'élément", "Les séparateurs d'éléments.", true, false) );
 
     ajouter_parametre( PARAM_MOT_SEPARATEUR,
-                       new base_parametre( this, "Séparateur de mot", "Les séparateurs de mot.", false) );
+                       new base_parametre( this, "Séparateur de mot", "Les séparateurs de mot.", true, false) );
 
     ajouter_parametre( PARAM_LIGNE_SEPARATEUR,
-                       new base_parametre( this, "Séparateur de ligne", "Les séparateurs de ligne.", false) );
+                       new base_parametre( this, "Séparateur de ligne", "Les séparateurs de ligne.", true, false) );
 }
 
 fonction_source_texte::~fonction_source_texte()

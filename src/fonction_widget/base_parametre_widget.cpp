@@ -25,11 +25,11 @@ base_parametre_widget::~base_parametre_widget()
 }
 
 void base_parametre_widget::paintEvent(QPaintEvent *)
- {
-     QStyleOption opt;
-     opt.init(this);
-     QPainter p(this);
-     style()->drawPrimitive(QStyle::PE_Widget, &opt, &p, this);
+{
+    QStyleOption opt;
+    opt.init(this);
+    QPainter p(this);
+    style()->drawPrimitive(QStyle::PE_Widget, &opt, &p, this);
 }
 
 void base_parametre_widget::init()
@@ -52,6 +52,13 @@ void base_parametre_widget::init()
     valeur->setAlignment(Qt::AlignLeft | Qt::AlignVCenter);
     main_layout->addWidget(valeur,7);
 
+    m_configuration_bouton = new QPushButton();
+    m_configuration_bouton->setObjectName("BoutonParametreWidget");
+    m_configuration_bouton->setFixedSize(30,30);
+    connect(m_configuration_bouton, SIGNAL(released()), this, SLOT(on_inverser_configuration()));
+    main_layout->addWidget(m_configuration_bouton,1);
+    mettre_a_jour_configuration();
+
     m_aide_bouton = new QPushButton();
     m_aide_bouton->setObjectName("BoutonParametreWidget");
     QIcon icon1;
@@ -63,6 +70,20 @@ void base_parametre_widget::init()
 
     setLayout(main_layout);
     update_object_name();
+}
+
+/** --------------------------------------------------------------------------------------
+ \brief Mettre à jour la visualisation de la configuration.
+*/
+void base_parametre_widget::mettre_a_jour_configuration()
+{
+    QIcon icon1;
+    if ( m_parametre->est_dans_configuration() )
+        icon1.addFile(QString::fromUtf8("icons/compile.png"), QSize(), QIcon::Normal, QIcon::Off);
+    else
+        icon1.addFile(QString::fromUtf8("icons/non_compile.png"), QSize(), QIcon::Normal, QIcon::Off);
+
+    m_configuration_bouton->setIcon( icon1 );
 }
 
 /** --------------------------------------------------------------------------------------
@@ -121,6 +142,12 @@ bool base_parametre_widget::event(QEvent* e)
 void base_parametre_widget::on_aide()
 {
     aide();
+}
+
+void base_parametre_widget::on_inverser_configuration()
+{
+    m_parametre->inverser_dans_configuration();
+    mettre_a_jour_configuration();
 }
 
 void base_parametre_widget::mouseDoubleClickEvent( QMouseEvent * e )
