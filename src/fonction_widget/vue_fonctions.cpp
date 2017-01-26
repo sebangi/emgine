@@ -47,7 +47,9 @@ void vue_fonctions::init()
     horizontalHeader()->setFixedHeight(25);
     setRowCount(0);
     setHorizontalHeaderItem(0, new QTableWidgetItem());
-    horizontalHeaderItem(0)->setText("");
+    QIcon icon1;
+    icon1.addFile(QString::fromUtf8("icons/fleche_haut.png"), QSize(), QIcon::Normal, QIcon::Off);
+    horizontalHeaderItem(0)->setIcon(icon1);
     setHorizontalHeaderItem(1, new QTableWidgetItem());
     horizontalHeaderItem(1)->setText("");
     QFont font = horizontalHeaderItem(1)->font();
@@ -59,6 +61,9 @@ void vue_fonctions::init()
              SIGNAL(selectionChanged(const QItemSelection &, const QItemSelection &)),
              SLOT(on_vue_fonction_selectionChanged(const QItemSelection &, const QItemSelection &))
              );
+
+    connect(horizontalHeader(),SIGNAL(sectionDoubleClicked(int)), this,SLOT(on_hheaderclicked(int)));
+    connect(horizontalHeader(),SIGNAL(sectionClicked(int)), this,SLOT(on_hheaderclicked(int)));
 }
 
 void vue_fonctions::ajouter_fonction(base_fonction *f)
@@ -329,6 +334,18 @@ void vue_fonctions::on_vue_fonction_selectionChanged(const QItemSelection &last_
 void vue_fonctions::on_externe_fonction_widget_size_change()
 {
     adjust_size_vue_fonction();
+}
+
+void vue_fonctions::on_hheaderclicked(int colonne)
+{
+    if ( colonne == 0 )
+    {
+        if ( m_conteneur_courant != NULL )
+        {
+            if ( ! m_conteneur_courant->est_projet() )
+                m_conteneur_courant->get_conteneur_precedant()->selectionner();
+        }
+    }
 }
 
 

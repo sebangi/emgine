@@ -45,6 +45,14 @@ fonctions_conteneur * objet_selectionnable::get_conteneur()
         return NULL;
 }
 
+fonctions_conteneur * objet_selectionnable::get_conteneur_precedant()
+{
+    if ( m_objet_parent == NULL )
+        return NULL;
+    else
+        m_objet_parent->get_conteneur();
+}
+
 const fonctions_conteneur * objet_selectionnable::get_conteneur() const
 {
     if ( est_conteneur() )

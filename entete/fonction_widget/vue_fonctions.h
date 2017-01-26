@@ -44,6 +44,7 @@ class vue_fonctions : public QTableWidget
         void on_externe_creation_fonction(base_fonction*);
         void on_vue_fonction_selectionChanged(const QItemSelection &last_index, const QItemSelection & new_index);
         void on_externe_fonction_widget_size_change();
+        void on_hheaderclicked( int colonne );
 
     private:
         liste_selectionnable m_selectionnables;
