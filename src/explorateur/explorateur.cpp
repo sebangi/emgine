@@ -84,6 +84,14 @@ void explorateur::on_externe_activation_fonction_change(base_fonction * f)
         mettre_a_jour_activation(it->second, ((noeud_fonction*)(it->second))->get_fonction()->est_active(), true );
 }
 
+void explorateur::on_externe_verrouillage_change(objet_selectionnable *obj)
+{
+    map_selectionnable::iterator it = m_selectionnables.find(obj);
+
+    if ( it != m_selectionnables.end() )
+        mettre_a_jour_verrouillage(it->second, it->second->get_objet()->est_verrouille() );
+}
+
 void explorateur::on_externe_etendu_change(base_fonction *f)
 {
     map_selectionnable::iterator it = m_selectionnables.find(f);
@@ -122,6 +130,25 @@ void explorateur::mettre_a_jour_activation( base_noeud* n, bool actif, bool chan
     }
 
     n->update_style( actif );
+}
+
+
+void explorateur::mettre_a_jour_verrouillage( base_noeud* n, bool verrouillage )
+{
+    for ( int i = 0; i != n->childCount(); ++i )
+    {
+        bool change = true;
+
+        if ( verrouillage )
+            if ( n->child(i)->type() == base_noeud::type_fonction )
+                if ( ((noeud_fonction*)(n->child(i)))->get_fonction()->est_verrouille() )
+                    change = false;
+
+        if ( change )
+            mettre_a_jour_verrouillage( (base_noeud*)n->child(i), verrouillage );
+    }
+
+    n->mise_a_jour_icone();
 }
 
 void explorateur::mettre_a_jour_etendu( base_noeud* n, bool etendu )
@@ -396,6 +423,7 @@ void explorateur::on_customContextMenuRequested(const QPoint &pos)
         connect(newAct_dupliquer, SIGNAL(triggered()), this, SLOT(on_dupliquer_projet()));
         menu.addAction(newAct_dupliquer);
 
+        ajouter_menu_verrouillage(menu, noeud_context->get_objet());
         menu.addSeparator();
     }
 
@@ -424,24 +452,8 @@ void explorateur::on_customContextMenuRequested(const QPoint &pos)
     }
     else
     {
-        QIcon icon_activer;
-        QString texte_activer;
-        base_fonction* f = (base_fonction*)noeud_context->get_objet();
-        if ( f->est_active() )
-        {
-            icon_activer.addFile(QString::fromUtf8("icons/non_compile.png"), QSize(), QIcon::Normal, QIcon::Off);
-            texte_activer = "Désactiver la fonction";
-        }
-        else
-        {
-            icon_activer.addFile(QString::fromUtf8("icons/compile.png"), QSize(), QIcon::Normal, QIcon::Off);
-            texte_activer = "Activer la fonction";
-        }
-        QAction *newAct_activer = new QAction(icon_activer, texte_activer, this);
-        newAct_activer->setStatusTip(texte_activer);
-        connect(newAct_activer, SIGNAL(triggered()), this, SLOT(on_activer_fonction()));
-        newAct_activer->setEnabled( f->parents_actifs()  );
-        menu.addAction(newAct_activer);
+        ajouter_menu_activation(menu, noeud_context->get_objet());
+        ajouter_menu_verrouillage(menu, noeud_context->get_objet());
     }
 
     menu.addSeparator();
@@ -486,7 +498,6 @@ void explorateur::on_customContextMenuRequested(const QPoint &pos)
     connect(newAct_coller, SIGNAL(triggered()), this, SLOT(on_coller()));
     menu.addAction(newAct_coller);
 
-
     if ( noeud_context->get_objet()->est_projet() )
     {
         menu.addSeparator();
@@ -508,6 +519,56 @@ void explorateur::on_customContextMenuRequested(const QPoint &pos)
 
     QPoint pt(pos);
     menu.exec( mapToGlobal(pos) );
+}
+
+void explorateur::ajouter_menu_activation(QMenu & menu, objet_selectionnable * obj )
+{
+    QIcon icon_activer;
+    QString texte_activer;
+    base_fonction* f = (base_fonction*)obj;
+    if ( f->est_active() )
+    {
+        icon_activer.addFile(QString::fromUtf8("icons/non_compile.png"), QSize(), QIcon::Normal, QIcon::Off);
+        texte_activer = "Désactiver la fonction";
+    }
+    else
+    {
+        icon_activer.addFile(QString::fromUtf8("icons/compile.png"), QSize(), QIcon::Normal, QIcon::Off);
+        texte_activer = "Activer la fonction";
+    }
+    QAction *newAct_activer = new QAction(icon_activer, texte_activer, this);
+    newAct_activer->setStatusTip(texte_activer);
+    connect(newAct_activer, SIGNAL(triggered()), this, SLOT(on_activer_fonction()));
+    newAct_activer->setEnabled( f->parents_actifs()  );
+    menu.addAction(newAct_activer);
+}
+
+void explorateur::ajouter_menu_verrouillage(QMenu & menu, objet_selectionnable * obj )
+{
+    QIcon icon;
+    QString texte;
+
+    if ( obj->est_verrouille_avec_parent() )
+    {
+        icon.addFile(QString::fromUtf8("icons/deverrouille.png"), QSize(), QIcon::Normal, QIcon::Off);
+        texte = "Déverrouiller";
+    }
+    else
+    {
+        icon.addFile(QString::fromUtf8("icons/verrouille.png"), QSize(), QIcon::Normal, QIcon::Off);
+        texte = "Verrouiller";
+    }
+
+    if ( obj->est_fonction() )
+        texte += " la fonction";
+    else
+        texte += " le projet";
+
+    QAction *newAct = new QAction(icon, texte, this);
+    newAct->setStatusTip(texte);
+    connect(newAct, SIGNAL(triggered()), this, SLOT(on_verrouiller_selectionnable()));
+    newAct->setEnabled( ! obj->parents_verrouilles() );
+    menu.addAction(newAct);
 }
 
 void explorateur::dragMoveEvent(QDragMoveEvent *e)
@@ -570,6 +631,9 @@ void explorateur::connecter_fonction(base_fonction *f)
     connect( f, SIGNAL(signal_activation_fonction_change(base_fonction *)),
              this, SLOT(on_externe_activation_fonction_change(base_fonction *)));
 
+    connect( f, SIGNAL(signal_verrouillage_change(objet_selectionnable *)),
+             this, SLOT(on_externe_verrouillage_change(objet_selectionnable *)));
+
     connect( f, SIGNAL(signal_etendu_change(base_fonction *)),
              this, SLOT(on_externe_etendu_change(base_fonction *)));
 }
@@ -582,6 +646,9 @@ void explorateur::deconnecter_fonction(base_fonction *f)
     disconnect( f, SIGNAL(signal_activation_fonction_change(base_fonction *)),
                 this, SLOT(on_externe_activation_fonction_change(base_fonction *)));
 
+    disconnect( f, SIGNAL(signal_verrouillage_change(objet_selectionnable *)),
+             this, SLOT(on_externe_verrouillage_change(objet_selectionnable *)));
+
     disconnect( f, SIGNAL(signal_etendu_change(base_fonction *)),
                 this, SLOT(on_externe_etendu_change(base_fonction *)));
 
@@ -592,6 +659,8 @@ void explorateur::connecter_projet(projet *p)
 {
     connect( (fonctions_conteneur*)p, SIGNAL(signal_fc_creation_fonction(base_fonction*)),
              this, SLOT(on_externe_creation_fonction(base_fonction*)));
+    connect( p, SIGNAL(signal_verrouillage_change(objet_selectionnable *)),
+             this, SLOT(on_externe_verrouillage_change(objet_selectionnable *)));
     connect( p, SIGNAL(signal_p_nom_projet_change(projet *)),
              this, SLOT(on_externe_nom_projet_change(projet *)));
     connect( p, SIGNAL(signal_p_destruction_projet(projet *)),
@@ -602,6 +671,8 @@ void explorateur::deconnecter_projet(projet *p)
 {
     disconnect( (fonctions_conteneur*)p, SIGNAL(signal_fc_creation_fonction(base_fonction*)),
                 this, SLOT(on_externe_creation_fonction(base_fonction*)));
+    disconnect( p, SIGNAL(signal_verrouillage_change(objet_selectionnable *)),
+                this, SLOT(on_externe_verrouillage_change(objet_selectionnable *)));
     disconnect( p, SIGNAL(signal_p_nom_projet_change(projet *)),
                 this, SLOT(on_externe_nom_projet_change(projet *)));
     disconnect( p, SIGNAL(signal_p_destruction_projet(projet *)),
@@ -628,6 +699,11 @@ void explorateur::on_ajout_fonction_conversion()
 void explorateur::on_activer_fonction()
 {
     ((base_fonction*)(m_noeud_context->get_objet()))->inverser_activation();
+}
+
+void explorateur::on_verrouiller_selectionnable()
+{
+    m_noeud_context->get_objet()->inverser_verrouillage();
 }
 
 void explorateur::on_enregistrer()

@@ -45,3 +45,8 @@ void base_noeud::save_expanded()
     m_save_expanded = isExpanded();
 }
 
+void base_noeud::mise_a_jour_icone()
+{
+    // ne rien faire
+}
+

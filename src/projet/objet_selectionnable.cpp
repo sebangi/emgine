@@ -86,6 +86,11 @@ bool objet_selectionnable::est_projet() const
     return false;
 }
 
+bool objet_selectionnable::est_fonction() const
+{
+    return false;
+}
+
 void objet_selectionnable::set_est_active(bool active)
 {    
     m_est_active = active;
@@ -132,6 +137,13 @@ void objet_selectionnable::set_verrouille(bool verrouille)
 {
     m_verrouille = verrouille;
     modifier();
+
+    emit signal_verrouillage_change(this);
+}
+
+void objet_selectionnable::inverser_verrouillage()
+{
+    set_verrouille( ! m_verrouille );
 }
 
 bool objet_selectionnable::est_verrouille_avec_parent() const

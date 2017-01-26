@@ -13,6 +13,7 @@ class noeud_parametre : public base_noeud
 
         base_parametre* get_parametre() const;
         fonctions_conteneur *get_fonctions_conteneur();
+        void mise_a_jour_icone();
 };
 
 #endif // NOEUD_PARAMETRE_H

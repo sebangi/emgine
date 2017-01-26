@@ -17,11 +17,12 @@ class base_fonction_widget_avec_text_edit : public base_fonction_widget
 
     protected:
         void init();
-        QString get_valeur() const { return m_text_edit->toPlainText(); };
+        QString get_valeur() const { return m_text_edit->toPlainText(); }
 
     private:
         virtual void on_nouveau_texte() = 0;
         virtual QString chercher_valeur() const = 0;
+        void informer_verrouillage_change();
 
     private slots :
         void on_textChanged();

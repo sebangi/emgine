@@ -11,6 +11,7 @@
 
 class base_fonction;
 class base_parametre;
+class objet_selectionnable;
 
 class base_fonction_widget : public QWidget, public QTableWidgetItem
 {
@@ -25,22 +26,27 @@ class base_fonction_widget : public QWidget, public QTableWidgetItem
     private:
         void init();
         void update_actif_bouton();
+        void update_verrouillage_bouton();
         void update_parametre_bouton();
         void update_visibilite();
         void update_object_name();
         void aide();
-        void init_connect();
+        void connecter_fonction();
+        void deconnecter_fonction();
+        virtual void informer_verrouillage_change();
 
     signals:
         void signal_bfw_size_change();
 
    private slots:
-        void on_inverser_activation();
+        void on_inverser_activation();        
+        void on_inverser_verrouillage();
         void on_fermer();
         void on_parametre_switch();
         void on_aide();
 
         void on_externe_activation_fonction_change(base_fonction * f);
+        void on_externe_verrouillage_change(objet_selectionnable * obj);
         void on_externe_niveau_visibilite_change(base_fonction * f);
 
     protected:
@@ -56,6 +62,7 @@ class base_fonction_widget : public QWidget, public QTableWidgetItem
         QPushButton *m_parametre_bouton;
         QPushButton *m_fermer_bouton;
         QPushButton *m_actif_bouton;
+        QPushButton *m_verrouillage_bouton;
         QPushButton *m_aide_bouton;
 };
 

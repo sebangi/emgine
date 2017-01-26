@@ -23,6 +23,7 @@ class objet_selectionnable : public QObject
         bool est_dans_projet() const;
         virtual bool est_conteneur() const;
         virtual bool est_projet() const;
+        virtual bool est_fonction() const;
 
         bool est_active() const;
         virtual void set_est_active(bool active);
@@ -33,6 +34,7 @@ class objet_selectionnable : public QObject
 
         virtual bool est_verrouille() const;
         virtual void set_verrouille(bool verrouille);
+        void inverser_verrouillage();
         bool est_verrouille_avec_parent() const;
         bool parents_verrouilles() const;
 
@@ -58,6 +60,7 @@ class objet_selectionnable : public QObject
         void signal_os_selectionne(objet_selectionnable*);
         void signal_os_deselectionne(objet_selectionnable*);
         void signal_os_destruction_selectionnable(objet_selectionnable*);
+        void signal_verrouillage_change(objet_selectionnable * f);
 
     protected:
         // L'objet actuellement sélectionné

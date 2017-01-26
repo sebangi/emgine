@@ -59,6 +59,8 @@ class base_fonction : public objet_selectionnable
         */
         QString get_info_bulle() const;
 
+        bool est_fonction() const;
+
         void sauvegarder( QXmlStreamWriter & stream ) const;
         bool est_fonction_valide(logs_compilation_widget * vue_logs) const;
         virtual QString get_aide() const = 0;
@@ -85,7 +87,6 @@ class base_fonction : public objet_selectionnable
         void set_niveau_visibilite( int niveau_visibilite );
         void change_niveau_visibilite();
         void set_est_active(bool active);
-        void set_verrouille(bool verrouille);
         void set_est_etendu(bool est_etendu);
 
         bool a_parametre() const;
@@ -101,7 +102,6 @@ class base_fonction : public objet_selectionnable
     signals:
         void signal_destruction_fonction(base_fonction* f);
         void signal_activation_fonction_change(base_fonction * f);
-        void signal_verrouillage_fonction_change(base_fonction * f);
         void signal_niveau_visibilite_change(base_fonction * f);
         void signal_etendu_change(base_fonction * f);
 

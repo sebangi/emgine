@@ -61,6 +61,11 @@ QString base_fonction::get_info_bulle() const
     return resultat;
 }
 
+bool base_fonction::est_fonction() const
+{
+    return true;
+}
+
 void base_fonction::sauvegarder( QXmlStreamWriter & stream ) const
 {
     stream.writeStartElement("fonction");
@@ -176,13 +181,6 @@ void base_fonction::set_est_active(bool active)
     objet_selectionnable::set_est_active( active );
 
     emit signal_activation_fonction_change(this);
-}
-
-void base_fonction::set_verrouille(bool verrouille)
-{
-    objet_selectionnable::set_verrouille( verrouille );
-
-    emit signal_verrouillage_fonction_change(this);
 }
 
 void base_fonction::set_est_etendu(bool est_etendu)

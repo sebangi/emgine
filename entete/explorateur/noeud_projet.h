@@ -16,8 +16,6 @@ class noeud_projet : public noeud_fonctions_conteneur
         void executer( compilateur & compil );
         void charger();
         fonctions_conteneur *get_fonctions_conteneur();
-
-    private:
         void mise_a_jour_icone();
 };
 

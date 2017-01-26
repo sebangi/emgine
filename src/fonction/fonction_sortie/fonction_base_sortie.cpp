@@ -6,6 +6,7 @@
 fonction_base_sortie::fonction_base_sortie(fonctions_conteneur * conteneur, const QString & nom)
     : base_fonction(conteneur, nom, fonction_sortie)
 {
+    set_verrouille(true);
 }
 
 fonction_base_sortie::~fonction_base_sortie()

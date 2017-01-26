@@ -53,3 +53,17 @@ void fonction_source_booleen_widget::on_non_stateChanged(int checkState)
     m_fonction->modifier();
 }
 
+void fonction_source_booleen_widget::informer_verrouillage_change()
+{
+    if ( m_fonction != NULL )
+    {
+        m_check_non->setEnabled( m_fonction->est_verrouille_avec_parent() );
+        m_check_oui->setEnabled( m_fonction->est_verrouille_avec_parent() );
+    }
+    else
+    {
+        m_check_non->setEnabled( false );
+        m_check_oui->setEnabled( false );
+    }
+}
+

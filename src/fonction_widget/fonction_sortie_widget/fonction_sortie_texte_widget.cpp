@@ -75,3 +75,4 @@ void fonction_sortie_texte_widget::onTexteDoubleClicked(QListWidgetItem* item)
     // Attention si on utilise la fonction get_configuration() si celle-ci a été détruite
     // std::cout << ((texte_widget_item*)item)->get_texte().get_string_configuration().toStdString() << std::endl;
 }
+

@@ -14,6 +14,7 @@ class fonction_source_booleen_widget : public base_fonction_widget
 
     private:
         void init();
+        void informer_verrouillage_change();
 
     private slots :
         void on_oui_stateChanged(int checkState);

@@ -38,7 +38,7 @@ void noeud_fonction::mise_a_jour_icone()
     else if ( ((base_fonction *)m_objet)->get_type() == base_fonction::fonction_sortie )
         fichier += "sortie";
 
-    if ( m_objet->est_verrouille() )
+    if ( m_objet->est_verrouille_avec_parent() )
         fichier += "_verrouille";
 
     fichier += ".png";

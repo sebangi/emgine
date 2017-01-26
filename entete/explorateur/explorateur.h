@@ -35,6 +35,7 @@ class explorateur : public QTreeWidget
         void ajouter_parametre(base_parametre* p);
         void ajouter_selectionnable(objet_selectionnable * obj, base_noeud* noeud);
         void mettre_a_jour_activation( base_noeud* n, bool actif, bool change_expansion );
+        void mettre_a_jour_verrouillage( base_noeud* n, bool verrouillage );
         void mettre_a_jour_etendu( base_noeud* n, bool etendu );
         void creer_copie( const objet_selectionnable* obj, QString & copie );
         void faire_coller( objet_selectionnable* conteneur, QString & copie, objet_selectionnable * obj_ref );
@@ -49,6 +50,9 @@ class explorateur : public QTreeWidget
         void connecter_projet(projet * p);
         void deconnecter_projet(projet * p);
 
+        void ajouter_menu_activation(QMenu & menu, objet_selectionnable * obj );
+        void ajouter_menu_verrouillage(QMenu & menu, objet_selectionnable * obj );
+
     signals:
         void signal_e_ajout_source(fonctions_conteneur *, base_fonction::type_fonction);
         void signal_e_objet_selectionne(objet_selectionnable*);
@@ -60,6 +64,7 @@ class explorateur : public QTreeWidget
     private slots:
         void on_externe_supprimer_fonction(base_fonction * f);
         void on_externe_activation_fonction_change(base_fonction * f);
+        void on_externe_verrouillage_change(objet_selectionnable * obj);
         void on_externe_etendu_change(base_fonction * f);
         void on_externe_objet_selectionne(objet_selectionnable* obj);
         void on_externe_objet_deselectionne(objet_selectionnable* obj);
@@ -78,6 +83,7 @@ class explorateur : public QTreeWidget
         void on_ajout_sortie();
         void on_ajout_fonction_conversion();
         void on_activer_fonction();
+        void on_verrouiller_selectionnable();
         void on_enregistrer();
         void on_enregistrer_sous();
         void on_copier();

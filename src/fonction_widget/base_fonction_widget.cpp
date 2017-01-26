@@ -16,7 +16,7 @@ base_fonction_widget::base_fonction_widget(base_fonction* fonction, QWidget* par
     : QWidget(parent), m_fonction(fonction)
 {
     init();
-    init_connect();
+    connecter_fonction();
 }
 
 base_fonction_widget::~base_fonction_widget()
@@ -60,6 +60,13 @@ void base_fonction_widget::init()
     m_actif_bouton->setFixedHeight(32);
     connect(m_actif_bouton, SIGNAL(released()), this, SLOT(on_inverser_activation()));
     toolbar->addWidget(m_actif_bouton);
+
+    m_verrouillage_bouton = new QPushButton();
+    m_verrouillage_bouton->setObjectName("BoutonFonctionWidget");
+    m_verrouillage_bouton->setIconSize(QSize(24,24));
+    m_verrouillage_bouton->setFixedHeight(32);
+    connect(m_verrouillage_bouton, SIGNAL(released()), this, SLOT(on_inverser_verrouillage()));
+    toolbar->addWidget(m_verrouillage_bouton);
 
     m_aide_bouton = new QPushButton();
     m_aide_bouton->setObjectName("BoutonFonctionWidget");
@@ -119,6 +126,7 @@ void base_fonction_widget::init()
     central_layout->addWidget( m_specialisation_widget );
     setLayout(central_layout);
     update_actif_bouton();
+    update_verrouillage_bouton();
     update_parametre_bouton();
     update_object_name();
     update_visibilite();
@@ -129,7 +137,6 @@ void base_fonction_widget::init()
 */
 void base_fonction_widget::update_actif_bouton()
 {
-    QStyle* style = QApplication::style();
     QIcon icon1;
 
     m_actif_bouton->setEnabled(true);
@@ -157,6 +164,34 @@ void base_fonction_widget::update_actif_bouton()
     }
 
     m_actif_bouton->setIcon( icon1 );
+}
+
+
+/** --------------------------------------------------------------------------------------
+ \brief Mise à jour du bouton de verrouillage.
+*/
+void base_fonction_widget::update_verrouillage_bouton()
+{
+    QIcon icon1;
+
+    m_verrouillage_bouton->setEnabled( ! m_fonction->parents_verrouilles() );
+
+    if ( m_fonction != NULL )
+    {
+        if ( m_fonction->est_verrouille_avec_parent() )
+            icon1.addFile(QString::fromUtf8("icons/verrouille.png"), QSize(), QIcon::Normal, QIcon::Off);
+        else
+        {
+            icon1.addFile(QString::fromUtf8("icons/deverrouille.png"), QSize(), QIcon::Normal, QIcon::Off);
+        }
+    }
+    else
+    {
+        icon1.addFile( QString::fromUtf8("icons/verrouille.png"), QSize(), QIcon::Normal, QIcon::Off );
+        m_verrouillage_bouton->setEnabled(false);
+    }
+
+    m_verrouillage_bouton->setIcon( icon1 );
 }
 
 
@@ -283,6 +318,12 @@ void base_fonction_widget::on_inverser_activation()
         m_fonction->inverser_activation();
 }
 
+void base_fonction_widget::on_inverser_verrouillage()
+{
+    if ( m_fonction != NULL )
+        m_fonction->inverser_verrouillage();
+}
+
 /** --------------------------------------------------------------------------------------
  \brief L'activation de la fonction est modifié.
 */
@@ -290,6 +331,16 @@ void base_fonction_widget::on_externe_activation_fonction_change(base_fonction *
 {
     update_actif_bouton();
     update_object_name();
+}
+
+/** --------------------------------------------------------------------------------------
+ \brief Le verrouillage de la fonction est modifié.
+*/
+void base_fonction_widget::on_externe_verrouillage_change(objet_selectionnable * obj)
+{
+    update_verrouillage_bouton();
+
+    informer_verrouillage_change();
 }
 
 void base_fonction_widget::on_externe_niveau_visibilite_change(base_fonction* f)
@@ -320,10 +371,7 @@ void base_fonction_widget::on_fermer()
             case QMessageBox::Yes:
                 if ( m_fonction != NULL )
                 {
-                    disconnect( m_fonction, SIGNAL(signal_activation_fonction_change(base_fonction *)),
-                                this, SLOT(on_externe_activation_fonction_change(base_fonction *)));
-                    disconnect( m_fonction, SIGNAL(signal_niveau_visibilite_change(base_fonction *)),
-                                this, SLOT(on_externe_niveau_visibilite_change(base_fonction *)));
+                    deconnecter_fonction();
 
                     delete m_fonction;
                 }
@@ -343,16 +391,45 @@ void base_fonction_widget::on_aide()
     aide();
 }
 
-void base_fonction_widget::init_connect()
+void base_fonction_widget::connecter_fonction()
 {
     if ( m_fonction != NULL )
     {
         connect( m_fonction, SIGNAL(signal_activation_fonction_change(base_fonction *)),
                  this, SLOT(on_externe_activation_fonction_change(base_fonction *)));
 
+        connect( m_fonction, SIGNAL(signal_verrouillage_change(objet_selectionnable *)),
+                 this, SLOT(on_externe_verrouillage_change(objet_selectionnable *)));
+
         connect( m_fonction, SIGNAL(signal_niveau_visibilite_change(base_fonction *)),
                  this, SLOT(on_externe_niveau_visibilite_change(base_fonction *)));
     }
 }
+
+/** --------------------------------------------------------------------------------------
+ \brief Déconnecter la fonction.
+*/
+void base_fonction_widget::deconnecter_fonction()
+{
+    if ( m_fonction != NULL )
+    {
+        disconnect( m_fonction, SIGNAL(signal_activation_fonction_change(base_fonction *)),
+                    this, SLOT(on_externe_activation_fonction_change(base_fonction *)));
+
+        disconnect( m_fonction, SIGNAL(signal_verrouillage_change(objet_selectionnable *)),
+                    this, SLOT(on_externe_verrouillage_change(objet_selectionnable *)));
+
+        disconnect( m_fonction, SIGNAL(signal_niveau_visibilite_change(base_fonction *)),
+                    this, SLOT(on_externe_niveau_visibilite_change(base_fonction *)));
+    }
+}
+
+
+void base_fonction_widget::informer_verrouillage_change()
+{
+     // Rien à faire car aucun composant n'est éditable
+}
+
+
 
 

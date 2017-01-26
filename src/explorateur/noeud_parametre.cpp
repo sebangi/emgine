@@ -20,9 +20,7 @@ noeud_parametre::noeud_parametre( base_parametre * p )
     font.setItalic(true);
     setFont(0, font);
 
-    QIcon icon1;
-    icon1.addFile(QString::fromUtf8("icons/parameters.png"), QSize(), QIcon::Normal, QIcon::Off);
-    setIcon( 0, icon1 );
+    mise_a_jour_icone();
 }
 
 noeud_parametre::~noeud_parametre()
@@ -37,6 +35,13 @@ base_parametre* noeud_parametre::get_parametre() const
 fonctions_conteneur *noeud_parametre::get_fonctions_conteneur()
 {
     return (fonctions_conteneur*)m_objet;
+}
+
+void noeud_parametre::mise_a_jour_icone()
+{
+    QIcon icon1;
+    icon1.addFile(QString::fromUtf8("icons/parameters.png"), QSize(), QIcon::Normal, QIcon::Off);
+    setIcon( 0, icon1 );
 }
 
 

@@ -21,6 +21,7 @@ void base_fonction_widget_avec_text_edit::init()
 
     connect(m_text_edit, SIGNAL(textChanged()), this, SLOT(on_textChanged()));
     m_specialisation_layout->addLayout(lay);
+    informer_verrouillage_change();
 }
 
 void base_fonction_widget_avec_text_edit::on_textChanged()
@@ -36,3 +37,12 @@ void base_fonction_widget_avec_text_edit::on_textChanged()
 
     signal_bfw_size_change();
 }
+
+void base_fonction_widget_avec_text_edit::informer_verrouillage_change()
+{
+    if ( m_fonction != NULL )
+        m_text_edit->setEnabled( ! m_fonction->est_verrouille_avec_parent() );
+    else
+        m_text_edit->setEnabled( false );
+}
+

@@ -31,6 +31,7 @@ class base_noeud : public QTreeWidgetItem
 
         bool get_save_expanded() const;
         void save_expanded();
+        virtual void mise_a_jour_icone();
 
     protected:
         objet_selectionnable * m_objet;
