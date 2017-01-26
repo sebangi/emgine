@@ -300,11 +300,11 @@ void fenetre_principale::init_test()
 void fenetre_principale::ajouter_projet( projet * p )
 {
     s_projets.push_back( p );
-    p->selectionner();
     s_explorateur->ajouter_projet(p);
     s_vue_fonctions->ajouter_projet(p);
 
     connecter_projet(p);
+    p->selectionner();
 }
 
 /** --------------------------------------------------------------------------------------
