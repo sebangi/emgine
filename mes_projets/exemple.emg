@@ -21,6 +21,7 @@
                 <parametre>
                     <id>0</id>
                     <nom>Séparateur d'élément</nom>
+                    <dans_configuration>0</dans_configuration>
                     <objet_selectionnable>
                         <est_etendu>1</est_etendu>
                         <verrouille>0</verrouille>
@@ -43,6 +44,7 @@
                 <parametre>
                     <id>1</id>
                     <nom>Séparateur de mot</nom>
+                    <dans_configuration>0</dans_configuration>
                     <objet_selectionnable>
                         <est_etendu>1</est_etendu>
                         <verrouille>0</verrouille>
@@ -65,6 +67,7 @@
                 <parametre>
                     <id>2</id>
                     <nom>Séparateur de ligne</nom>
+                    <dans_configuration>0</dans_configuration>
                     <objet_selectionnable>
                         <est_etendu>1</est_etendu>
                         <verrouille>0</verrouille>
@@ -100,6 +103,7 @@
                 <parametre>
                     <id>3</id>
                     <nom>Alphabet</nom>
+                    <dans_configuration>1</dans_configuration>
                     <objet_selectionnable>
                         <est_etendu>1</est_etendu>
                         <verrouille>0</verrouille>
@@ -120,6 +124,7 @@ abcdefghijklmnopqrstuvwxyz</valeur>
                                 <parametre>
                                     <id>0</id>
                                     <nom>Séparateur d'élément</nom>
+                                    <dans_configuration>0</dans_configuration>
                                     <objet_selectionnable>
                                         <est_etendu>1</est_etendu>
                                         <verrouille>0</verrouille>
@@ -142,6 +147,7 @@ abcdefghijklmnopqrstuvwxyz</valeur>
                                 <parametre>
                                     <id>1</id>
                                     <nom>Séparateur de mot</nom>
+                                    <dans_configuration>0</dans_configuration>
                                     <objet_selectionnable>
                                         <est_etendu>1</est_etendu>
                                         <verrouille>0</verrouille>
@@ -164,6 +170,7 @@ abcdefghijklmnopqrstuvwxyz</valeur>
                                 <parametre>
                                     <id>2</id>
                                     <nom>Séparateur de ligne</nom>
+                                    <dans_configuration>0</dans_configuration>
                                     <objet_selectionnable>
                                         <est_etendu>1</est_etendu>
                                         <verrouille>0</verrouille>
@@ -191,6 +198,7 @@ abcdefghijklmnopqrstuvwxyz</valeur>
                 <parametre>
                     <id>4</id>
                     <nom>Décalage</nom>
+                    <dans_configuration>1</dans_configuration>
                     <objet_selectionnable>
                         <est_etendu>1</est_etendu>
                         <verrouille>0</verrouille>
@@ -235,6 +243,7 @@ abcdefghijklmnopqrstuvwxyz</valeur>
                                 <parametre>
                                     <id>0</id>
                                     <nom>Séparateur d'élément</nom>
+                                    <dans_configuration>0</dans_configuration>
                                     <objet_selectionnable>
                                         <est_etendu>1</est_etendu>
                                         <verrouille>0</verrouille>
@@ -257,6 +266,7 @@ abcdefghijklmnopqrstuvwxyz</valeur>
                                 <parametre>
                                     <id>1</id>
                                     <nom>Séparateur de mot</nom>
+                                    <dans_configuration>0</dans_configuration>
                                     <objet_selectionnable>
                                         <est_etendu>1</est_etendu>
                                         <verrouille>0</verrouille>
@@ -279,6 +289,7 @@ abcdefghijklmnopqrstuvwxyz</valeur>
                                 <parametre>
                                     <id>2</id>
                                     <nom>Séparateur de ligne</nom>
+                                    <dans_configuration>0</dans_configuration>
                                     <objet_selectionnable>
                                         <est_etendu>1</est_etendu>
                                         <verrouille>0</verrouille>
@@ -306,6 +317,7 @@ abcdefghijklmnopqrstuvwxyz</valeur>
                 <parametre>
                     <id>5</id>
                     <nom>Soustractif</nom>
+                    <dans_configuration>1</dans_configuration>
                     <objet_selectionnable>
                         <est_etendu>1</est_etendu>
                         <verrouille>0</verrouille>

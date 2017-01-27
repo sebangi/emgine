@@ -49,7 +49,10 @@ class base_parametre : public fonctions_conteneur
         void charger( QXmlStreamReader & xml );
 
         bool est_dans_configuration() const;
+
         void inverser_dans_configuration();
+
+        void set_dans_configuration(bool dans_configuration);
 
     protected:
         /** \brief Le nom de la fonction. */

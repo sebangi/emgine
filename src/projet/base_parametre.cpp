@@ -29,6 +29,7 @@ void base_parametre::sauvegarder( QXmlStreamWriter & stream ) const
     stream.writeStartElement("parametre");
     stream.writeTextElement("id", QString::number(m_id));
     stream.writeTextElement("nom", m_nom);
+    stream.writeTextElement("dans_configuration", QString::number(m_dans_configuration) );
     objet_selectionnable::sauvegarder(stream);    
     fonctions_conteneur::sauvegarder(stream);
     stream.writeEndElement(); // Paramètre
@@ -154,6 +155,12 @@ void base_parametre::charger(QXmlStreamReader & xml)
             QString nom = xml.readElementText();
             // on n'en fait rien; c'est seulement pour la lisibilité du fichier
         }
+        else if(xml.name() == "dans_configuration")
+        {
+            QString dans_configuration = xml.readElementText();
+            set_dans_configuration( dans_configuration.toInt() );
+
+        }
         else if (xml.name() == "objet_selectionnable")
             objet_selectionnable::charger(xml);
         else if(xml.name() == "fonctions")
@@ -177,4 +184,9 @@ void base_parametre::inverser_dans_configuration()
 {
     m_dans_configuration = ! m_dans_configuration;
     modifier();
+}
+
+void base_parametre::set_dans_configuration(bool dans_configuration)
+{
+    m_dans_configuration = dans_configuration;
 }

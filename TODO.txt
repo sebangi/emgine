@@ -3,6 +3,10 @@ La liste des choses à faire :
 ETAPE 1 : PRIORITAIRE
 * réflexion sur le stockage des projets, textes sources...
 * sauvegarde d'une sortie
+* Pour une fonction avec verrou, on ne doit pas pour pouvoir la détruire, ni modifier son état
+* dans l'explorateur, les verrous doivent empécher toute modification
+* créer des icones pour l'état de la configuration des paramètres
+* refaire les icones avec le verrou pour mieu le voir
 * vérifier la gestion des disconnect
 * vérifier les delete
 * réflexion sur les paramètres de fonction_texte : faut-il itérer sur les lignes ?
