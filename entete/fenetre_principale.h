@@ -48,8 +48,8 @@ class fenetre_principale : public QMainWindow
         void ajouter_source();
         void ajouter_conversion();
         void ajouter_sortie();
-        void ajouter_fonction( fonctions_conteneur * conteneur, base_fonction::type_fonction type );
-        void ajouter_fonction( fonctions_conteneur * conteneur, base_fonction* f, bool init_defaut, bool afficher_vue );
+        void ajouter_fonction( objet_selectionnable * obj_ref, base_fonction::type_fonction type );
+        void ajouter_fonction( objet_selectionnable * obj_ref, base_fonction* f, bool init_defaut, bool afficher_vue );
 
     private:
         void init_test();

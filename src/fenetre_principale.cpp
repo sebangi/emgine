@@ -181,7 +181,7 @@ void fenetre_principale::init_widgets()
 
     QIcon icone_projet;
     icone_projet.addFile(QString::fromUtf8("icons/projet.png"), QSize(), QIcon::Normal, QIcon::Off);
-    m_toolbar_bouton_ouvrir_projet->setIcon(icone_projet);
+    m_toolbar_bouton_ouvrir_projet->setIcon(style->standardIcon( QStyle::SP_DialogOpenButton ));
     m_toolbar_bouton_ouvrir_projet->setText("Ouvrir un projet");
 
     m_toolbar_bouton_sauvegarder_projet->setIcon(style->standardIcon( QStyle::SP_DialogSaveButton ));
@@ -226,7 +226,7 @@ void fenetre_principale::init_widgets()
 void fenetre_principale::ajouter_source()
 {
     if ( objet_selectionnable::existe_selection() )
-        ajouter_fonction( objet_selectionnable::get_conteneur_courant(), base_fonction::fonction_source);
+        ajouter_fonction( objet_selectionnable::get_selection(), base_fonction::fonction_source);
 }
 
 /** --------------------------------------------------------------------------------------
@@ -235,7 +235,7 @@ void fenetre_principale::ajouter_source()
 void fenetre_principale::ajouter_conversion( )
 {
     if ( objet_selectionnable::existe_selection() )
-        ajouter_fonction( objet_selectionnable::get_conteneur_courant(), base_fonction::fonction_conversion);
+        ajouter_fonction( objet_selectionnable::get_selection(), base_fonction::fonction_conversion);
 }
 
 /** --------------------------------------------------------------------------------------
@@ -244,15 +244,15 @@ void fenetre_principale::ajouter_conversion( )
 void fenetre_principale::ajouter_sortie( )
 {
     if ( objet_selectionnable::existe_selection() )
-        ajouter_fonction( objet_selectionnable::get_conteneur_courant(), base_fonction::fonction_sortie);
+        ajouter_fonction( objet_selectionnable::get_selection(), base_fonction::fonction_sortie);
 }
 
 /** --------------------------------------------------------------------------------------
  \brief Ajoute une fonction à un noeud.
 */
-void fenetre_principale::ajouter_fonction( fonctions_conteneur * conteneur, base_fonction::type_fonction type )
+void fenetre_principale::ajouter_fonction( objet_selectionnable * obj_ref, base_fonction::type_fonction type )
 {
-    if ( conteneur != NULL )
+    if ( obj_ref != NULL )
     {
         selecteur_fonction_dialog * dlg = new selecteur_fonction_dialog(type, m_ui->centralWidget);
 
@@ -261,10 +261,10 @@ void fenetre_principale::ajouter_fonction( fonctions_conteneur * conteneur, base
         if ( r == QDialog::Accepted )
         {
             base_fonction * f = dlg->get_fonction();
-            f->set_conteneur(conteneur);
+            f->set_conteneur(obj_ref->get_conteneur());
 
             if ( f != NULL )
-                ajouter_fonction(conteneur, f, true, true);
+                ajouter_fonction(obj_ref, f, true, true);
         }
     }
 }
@@ -272,12 +272,12 @@ void fenetre_principale::ajouter_fonction( fonctions_conteneur * conteneur, base
 /** --------------------------------------------------------------------------------------
  \brief Ajoute une fonction à un noeud.
 */
-void fenetre_principale::ajouter_fonction( fonctions_conteneur * conteneur, base_fonction* f, bool init_defaut, bool afficher_vue )
+void fenetre_principale::ajouter_fonction( objet_selectionnable * obj_ref, base_fonction* f, bool init_defaut, bool afficher_vue )
 {
     if ( init_defaut )
         f->initialisation_par_defaut();
 
-    conteneur->ajouter_fonction(f,NULL);
+    obj_ref->get_conteneur()->ajouter_fonction(f,obj_ref);
     f->selectionner();
 }
 
@@ -466,7 +466,13 @@ void fenetre_principale::update_bouton_execution( projet * p )
 void fenetre_principale::update_boutons_fonctions( objet_selectionnable * obj, bool etat )
 {
     if ( obj != NULL )
-        etat = etat && obj->est_conteneur() && ! obj->est_verrouille_avec_parent();
+    {
+        if ( obj->est_conteneur() && obj->est_verrouille_avec_parent() )
+            etat = false;
+
+        if ( obj->est_fonction() && obj->parents_verrouilles() )
+            etat = false;
+    }
 
     m_toolbar_bouton_ajout_fonction_source->setEnabled( etat );
     m_toolbar_bouton_ajout_fonction_conversion->setEnabled( etat );
@@ -623,6 +629,7 @@ void fenetre_principale::on_externe_objet_selectionne(objet_selectionnable *obj)
 void fenetre_principale::on_externe_objet_deselectionne(objet_selectionnable *obj)
 {
     update_boutons_fonctions(obj, false);
+    update_boutons_projet(NULL);
 }
 
 void fenetre_principale::on_externe_fermeture_projet(projet *p)
@@ -632,8 +639,8 @@ void fenetre_principale::on_externe_fermeture_projet(projet *p)
         objet_selectionnable::forcer_deselection();
 
         int i = s_projets.indexOf(p);
-        delete s_projets.at(i),
-                s_projets.removeOne(p);
+        delete s_projets.at(i);
+        s_projets.removeOne(p);
     }
 }
 
