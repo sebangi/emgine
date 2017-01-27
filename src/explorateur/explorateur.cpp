@@ -198,12 +198,28 @@ void explorateur::faire_couper(objet_selectionnable * obj)
 
 void explorateur::faire_drop(base_noeud * n_a_couper, base_noeud * n_conteneur, bool shift)
 {
-    QString copie;
-    creer_copie(n_a_couper->get_objet(), copie);
-    if ( ! shift )
-        faire_couper(n_a_couper->get_objet());
-    n_conteneur->get_objet()->selectionner();
-    faire_coller(n_conteneur->get_objet(), copie, n_conteneur->get_objet());
+    // controle des verrous
+    bool autorise = true;
+
+    if ( ! shift && n_a_couper->get_objet()->est_verrouille_avec_parent() )
+        autorise = false;
+
+    if ( n_conteneur->get_objet()->est_conteneur() && n_conteneur->get_objet()->est_verrouille_avec_parent() )
+        autorise = false;
+
+    if ( n_conteneur->get_objet()->est_fonction() && n_conteneur->get_objet()->parents_verrouilles() )
+        autorise = false;
+
+    // faire le drop
+    if ( autorise )
+    {
+        QString copie;
+        creer_copie(n_a_couper->get_objet(), copie);
+        if ( ! shift )
+            faire_couper(n_a_couper->get_objet());
+        n_conteneur->get_objet()->selectionner();
+        faire_coller(n_conteneur->get_objet(), copie, n_conteneur->get_objet());
+    }
 }
 
 void explorateur::on_externe_objet_selectionne(objet_selectionnable *obj)
@@ -392,7 +408,6 @@ void explorateur::on_currentItemChanged(QTreeWidgetItem *item)
 
 void explorateur::on_customContextMenuRequested(const QPoint &pos)
 {
-    QStyle* style = QApplication::style();
     QTreeWidgetItem *node = itemAt( pos );
 
     set_noeud_context( (base_noeud*)node );
@@ -404,64 +419,112 @@ void explorateur::on_customContextMenuRequested(const QPoint &pos)
         return;
 
     if ( noeud_context->get_objet()->est_projet() )
-    {
-        QAction *newAct_enregistrer = new QAction(style->standardIcon( QStyle::SP_DialogSaveButton ), tr("Enregistrer le projet"), this);
-        newAct_enregistrer->setStatusTip(tr("Enregistrer le projet"));
-        newAct_enregistrer->setEnabled( noeud_context->get_objet()->get_projet()->est_enregistrable() );
-        connect(newAct_enregistrer, SIGNAL(triggered()), this, SLOT(on_enregistrer()));
-        menu.addAction(newAct_enregistrer);
-
-        QAction *newAct_enregistrer_sous = new QAction(style->standardIcon( QStyle::SP_DialogSaveButton ), tr("Enregistrer le projet sous"), this);
-        newAct_enregistrer_sous->setStatusTip(tr("Enregistrer le projet sous"));
-        connect(newAct_enregistrer_sous, SIGNAL(triggered()), this, SLOT(on_enregistrer_sous()));
-        menu.addAction(newAct_enregistrer_sous);
-
-        QIcon icon_dupliquer;
-        icon_dupliquer.addFile(QString::fromUtf8("icons/coller.png"), QSize(), QIcon::Normal, QIcon::Off);
-        QAction *newAct_dupliquer = new QAction(icon_dupliquer, tr("Dupliquer le projet"), this);
-        newAct_dupliquer->setStatusTip(tr("Dupliquer le projet"));
-        connect(newAct_dupliquer, SIGNAL(triggered()), this, SLOT(on_dupliquer_projet()));
-        menu.addAction(newAct_dupliquer);
-
-        ajouter_menu_verrouillage(menu, noeud_context->get_objet());
-        menu.addSeparator();
-    }
-
-    if ( noeud_context->get_objet()->est_conteneur() )
-    {
-        QIcon icon_source;
-        icon_source.addFile(QString::fromUtf8("icons/ajout_source.png"), QSize(), QIcon::Normal, QIcon::Off);
-        QAction *newAct2 = new QAction(icon_source, tr("Ajouter une source"), this);
-        newAct2->setStatusTip(tr("Ajouter une source"));
-        connect(newAct2, SIGNAL(triggered()), this, SLOT(on_ajout_source()));
-        menu.addAction(newAct2);
-
-        QIcon icon_conversion;
-        icon_conversion.addFile(QString::fromUtf8("icons/ajout_conversion.png"), QSize(), QIcon::Normal, QIcon::Off);
-        QAction *newAct3 = new QAction(icon_conversion, tr("Ajouter une conversion"), this);
-        newAct3->setStatusTip(tr("Ajouter une conversion"));
-        connect(newAct3, SIGNAL(triggered()), this, SLOT(on_ajout_fonction_conversion()));
-        menu.addAction(newAct3);
-
-        QIcon icon_sortie;
-        icon_sortie.addFile(QString::fromUtf8("icons/ajout_sortie.png"), QSize(), QIcon::Normal, QIcon::Off);
-        QAction *newAct4 = new QAction(icon_sortie, tr("Ajouter une sortie"), this);
-        newAct4->setStatusTip(tr("Ajouter une sortie"));
-        connect(newAct4, SIGNAL(triggered()), this, SLOT(on_ajout_sortie()));
-        menu.addAction(newAct4);
-    }
+        ajouter_menu_projet(menu, noeud_context->get_objet());
+    else if ( noeud_context->get_objet()->est_conteneur() )
+        ajouter_menu_conteneur(menu, noeud_context->get_objet());
     else
-    {
-        ajouter_menu_activation(menu, noeud_context->get_objet());
-        ajouter_menu_verrouillage(menu, noeud_context->get_objet());
-    }
+        ajouter_menu_fonction(menu, noeud_context->get_objet());
+
+    QPoint pt(pos);
+    menu.exec( mapToGlobal(pos) );
+}
+
+void explorateur::ajouter_menu_projet(QMenu & menu, objet_selectionnable * obj )
+{
+    ajouter_menu_enregistrement(menu, obj);
 
     menu.addSeparator();
 
+    ajouter_menu_verrouillage(menu, obj);
+
+    menu.addSeparator();
+
+    ajouter_menu_ajout_fonction(menu, obj);
+
+    menu.addSeparator();
+
+    ajouter_menu_copier_coller(menu, obj);
+
+    menu.addSeparator();
+
+    ajouter_menu_supprimer_projet(menu, obj);
+}
+
+void explorateur::ajouter_menu_conteneur(QMenu & menu, objet_selectionnable * obj )
+{
+    ajouter_menu_ajout_fonction(menu, obj);
+
+    menu.addSeparator();
+
+    ajouter_menu_copier_coller(menu, obj);
+}
+
+void explorateur::ajouter_menu_fonction(QMenu & menu, objet_selectionnable * obj )
+{
+    ajouter_menu_activation(menu, obj);
+    ajouter_menu_verrouillage(menu, obj);
+
+    menu.addSeparator();
+
+    ajouter_menu_copier_coller(menu, obj);
+
+    menu.addSeparator();
+
+    ajouter_menu_supprimer_fonction(menu, obj);
+}
+
+void explorateur::ajouter_menu_supprimer_projet(QMenu & menu, objet_selectionnable * obj )
+{
+    QStyle * style = QApplication::style();
+
+    QAction *newAct_fermer = new QAction(style->standardIcon( QStyle::SP_DialogCloseButton ), tr("Fermer le projet"), this);
+    newAct_fermer->setStatusTip(tr("Fermer le projet"));
+    connect(newAct_fermer, SIGNAL(triggered()), this, SLOT(on_fermer_projet()));
+    menu.addAction(newAct_fermer);
+}
+
+void explorateur::ajouter_menu_supprimer_fonction(QMenu & menu, objet_selectionnable * obj )
+{
+    QStyle * style = QApplication::style();
+
+    menu.addSeparator();
+    QAction *newAct_supprimer_fonction = new QAction(style->standardIcon( QStyle::SP_DialogCloseButton ), "Supprimer la fonction", this);
+    newAct_supprimer_fonction->setStatusTip("Supprimer la fonction");
+    connect(newAct_supprimer_fonction, SIGNAL(triggered()), this, SLOT(on_supprimer_fonction()));
+    menu.addAction(newAct_supprimer_fonction);
+
+    newAct_supprimer_fonction->setEnabled( ! obj->est_verrouille_avec_parent() );
+}
+
+void explorateur::ajouter_menu_enregistrement(QMenu & menu, objet_selectionnable * obj )
+{
+    QStyle * style = QApplication::style();
+
+    QAction *newAct_enregistrer = new QAction(style->standardIcon( QStyle::SP_DialogSaveButton ), tr("Enregistrer le projet"), this);
+    newAct_enregistrer->setStatusTip(tr("Enregistrer le projet"));
+    newAct_enregistrer->setEnabled( obj->get_projet()->est_enregistrable() );
+    connect(newAct_enregistrer, SIGNAL(triggered()), this, SLOT(on_enregistrer()));
+    menu.addAction(newAct_enregistrer);
+
+    QAction *newAct_enregistrer_sous = new QAction(style->standardIcon( QStyle::SP_DialogSaveButton ), tr("Enregistrer le projet sous"), this);
+    newAct_enregistrer_sous->setStatusTip(tr("Enregistrer le projet sous"));
+    connect(newAct_enregistrer_sous, SIGNAL(triggered()), this, SLOT(on_enregistrer_sous()));
+    menu.addAction(newAct_enregistrer_sous);
+
+    QIcon icon_dupliquer;
+    icon_dupliquer.addFile(QString::fromUtf8("icons/coller.png"), QSize(), QIcon::Normal, QIcon::Off);
+    QAction *newAct_dupliquer = new QAction(icon_dupliquer, tr("Dupliquer le projet"), this);
+    newAct_dupliquer->setStatusTip(tr("Dupliquer le projet"));
+    connect(newAct_dupliquer, SIGNAL(triggered()), this, SLOT(on_dupliquer_projet()));
+    menu.addAction(newAct_dupliquer);
+}
+
+void explorateur::ajouter_menu_copier_coller(QMenu & menu, objet_selectionnable * obj )
+{
     QIcon icon_copier;
     icon_copier.addFile(QString::fromUtf8("icons/copier.png"), QSize(), QIcon::Normal, QIcon::Off);
     QString texte_copier;
-    if ( noeud_context->get_objet()->est_conteneur() )
+    if ( obj->est_conteneur() )
         texte_copier = tr("Copier le contenu");
     else
         texte_copier = tr("Copier la fonction");
@@ -473,7 +536,7 @@ void explorateur::on_customContextMenuRequested(const QPoint &pos)
     QIcon icon_couper;
     icon_couper.addFile(QString::fromUtf8("icons/couper.png"), QSize(), QIcon::Normal, QIcon::Off);
     QString texte_couper;
-    if ( noeud_context->get_objet()->est_conteneur() )
+    if ( obj->est_conteneur() )
         texte_couper = tr("Couper le contenu");
     else
         texte_couper = tr("Couper la fonction");
@@ -481,11 +544,12 @@ void explorateur::on_customContextMenuRequested(const QPoint &pos)
     newAct_couper->setStatusTip(texte_couper);
     connect(newAct_couper, SIGNAL(triggered()), this, SLOT(on_couper()));
     menu.addAction(newAct_couper);
+    newAct_couper->setEnabled( ! obj->est_verrouille_avec_parent() );
 
     QIcon icon_coller;
     icon_coller.addFile(QString::fromUtf8("icons/coller.png"), QSize(), QIcon::Normal, QIcon::Off);
     QString texte_coller;
-    if ( noeud_context->get_objet()->est_conteneur() )
+    if ( obj->est_conteneur() )
         texte_coller = tr("Coller au début");
     else
         texte_coller = tr("Coller après");
@@ -494,31 +558,37 @@ void explorateur::on_customContextMenuRequested(const QPoint &pos)
     if ( m_a_copier == NULL )
         newAct_coller->setEnabled(false);
     else if ( m_objet_a_couper != NULL )
-        newAct_coller->setEnabled( ! noeud_context->get_objet()->a_ancetre((objet_selectionnable*)m_objet_a_couper) );
+        newAct_coller->setEnabled( ! obj->a_ancetre((objet_selectionnable*)m_objet_a_couper) );
     connect(newAct_coller, SIGNAL(triggered()), this, SLOT(on_coller()));
     menu.addAction(newAct_coller);
+    newAct_coller->setEnabled( ! obj->est_verrouille_avec_parent() );
+}
 
-    if ( noeud_context->get_objet()->est_projet() )
-    {
-        menu.addSeparator();
+void explorateur::ajouter_menu_ajout_fonction(QMenu & menu, objet_selectionnable * obj )
+{
+    QIcon icon_source;
+    icon_source.addFile(QString::fromUtf8("icons/ajout_source.png"), QSize(), QIcon::Normal, QIcon::Off);
+    QAction *newAct2 = new QAction(icon_source, tr("Ajouter une source"), this);
+    newAct2->setStatusTip(tr("Ajouter une source"));
+    connect(newAct2, SIGNAL(triggered()), this, SLOT(on_ajout_source()));
+    menu.addAction(newAct2);
+    newAct2->setEnabled( ! obj->est_verrouille_avec_parent() );
 
-        QAction *newAct_fermer = new QAction(style->standardIcon( QStyle::SP_DialogCloseButton ), tr("Fermer le projet"), this);
-        newAct_fermer->setStatusTip(tr("Fermer le projet"));
-        connect(newAct_fermer, SIGNAL(triggered()), this, SLOT(on_fermer_projet()));
-        menu.addAction(newAct_fermer);
-    }
+    QIcon icon_conversion;
+    icon_conversion.addFile(QString::fromUtf8("icons/ajout_conversion.png"), QSize(), QIcon::Normal, QIcon::Off);
+    QAction *newAct3 = new QAction(icon_conversion, tr("Ajouter une conversion"), this);
+    newAct3->setStatusTip(tr("Ajouter une conversion"));
+    connect(newAct3, SIGNAL(triggered()), this, SLOT(on_ajout_fonction_conversion()));
+    menu.addAction(newAct3);
+    newAct3->setEnabled( ! obj->est_verrouille_avec_parent() );
 
-    if ( ! noeud_context->get_objet()->est_conteneur() )
-    {
-        menu.addSeparator();
-        QAction *newAct_supprimer_fonction = new QAction(style->standardIcon( QStyle::SP_DialogCloseButton ), "Supprimer la fonction", this);
-        newAct_supprimer_fonction->setStatusTip("Supprimer la fonction");
-        connect(newAct_supprimer_fonction, SIGNAL(triggered()), this, SLOT(on_supprimer_fonction()));
-        menu.addAction(newAct_supprimer_fonction);
-    }
-
-    QPoint pt(pos);
-    menu.exec( mapToGlobal(pos) );
+    QIcon icon_sortie;
+    icon_sortie.addFile(QString::fromUtf8("icons/ajout_sortie.png"), QSize(), QIcon::Normal, QIcon::Off);
+    QAction *newAct4 = new QAction(icon_sortie, tr("Ajouter une sortie"), this);
+    newAct4->setStatusTip(tr("Ajouter une sortie"));
+    connect(newAct4, SIGNAL(triggered()), this, SLOT(on_ajout_sortie()));
+    menu.addAction(newAct4);
+    newAct4->setEnabled( ! obj->est_verrouille_avec_parent() );
 }
 
 void explorateur::ajouter_menu_activation(QMenu & menu, objet_selectionnable * obj )
@@ -541,6 +611,7 @@ void explorateur::ajouter_menu_activation(QMenu & menu, objet_selectionnable * o
     connect(newAct_activer, SIGNAL(triggered()), this, SLOT(on_activer_fonction()));
     newAct_activer->setEnabled( f->parents_actifs()  );
     menu.addAction(newAct_activer);
+    newAct_activer->setEnabled( ! obj->est_verrouille_avec_parent() );
 }
 
 void explorateur::ajouter_menu_verrouillage(QMenu & menu, objet_selectionnable * obj )
@@ -647,7 +718,7 @@ void explorateur::deconnecter_fonction(base_fonction *f)
                 this, SLOT(on_externe_activation_fonction_change(base_fonction *)));
 
     disconnect( f, SIGNAL(signal_verrouillage_change(objet_selectionnable *)),
-             this, SLOT(on_externe_verrouillage_change(objet_selectionnable *)));
+                this, SLOT(on_externe_verrouillage_change(objet_selectionnable *)));
 
     disconnect( f, SIGNAL(signal_etendu_change(base_fonction *)),
                 this, SLOT(on_externe_etendu_change(base_fonction *)));

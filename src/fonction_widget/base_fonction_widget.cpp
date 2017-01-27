@@ -119,6 +119,7 @@ void base_fonction_widget::init()
         {
             base_parametre_widget* w = new base_parametre_widget(it->second);
             m_parametre_layout->addWidget(w);
+            m_parametre_widgets.push_back(w);
         }
     }
 
@@ -127,6 +128,7 @@ void base_fonction_widget::init()
     setLayout(central_layout);
     update_actif_bouton();
     update_verrouillage_bouton();
+    update_close_bouton();
     update_parametre_bouton();
     update_object_name();
     update_visibilite();
@@ -139,7 +141,7 @@ void base_fonction_widget::update_actif_bouton()
 {
     QIcon icon1;
 
-    m_actif_bouton->setEnabled(true);
+    m_actif_bouton->setEnabled( ! m_fonction->est_verrouille_avec_parent() );
 
     if ( m_fonction != NULL )
     {
@@ -164,6 +166,11 @@ void base_fonction_widget::update_actif_bouton()
     }
 
     m_actif_bouton->setIcon( icon1 );
+}
+
+void base_fonction_widget::update_close_bouton()
+{
+    m_fermer_bouton->setEnabled( ! m_fonction->est_verrouille_avec_parent() );
 }
 
 
@@ -318,6 +325,9 @@ void base_fonction_widget::on_inverser_activation()
         m_fonction->inverser_activation();
 }
 
+/** --------------------------------------------------------------------------------------
+ \brief Le bouton de verrouillage d'activation est activé.
+*/
 void base_fonction_widget::on_inverser_verrouillage()
 {
     if ( m_fonction != NULL )
@@ -338,7 +348,13 @@ void base_fonction_widget::on_externe_activation_fonction_change(base_fonction *
 */
 void base_fonction_widget::on_externe_verrouillage_change(objet_selectionnable * obj)
 {
-    update_verrouillage_bouton();
+    update_verrouillage_bouton();    
+    update_actif_bouton();
+    update_close_bouton();
+
+    for ( type_liste_parametre_widgets::iterator it = m_parametre_widgets.begin();
+          it != m_parametre_widgets.end(); ++it )
+        (*it)->informer_verrouillage_change();
 
     informer_verrouillage_change();
 }
@@ -427,7 +443,6 @@ void base_fonction_widget::deconnecter_fonction()
 
 void base_fonction_widget::informer_verrouillage_change()
 {
-     // Rien à faire car aucun composant n'est éditable
 }
 
 

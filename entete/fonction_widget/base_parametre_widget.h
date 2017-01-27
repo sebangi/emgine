@@ -15,6 +15,7 @@ class base_parametre_widget : public QWidget
         base_parametre_widget( base_parametre* param, QWidget *parent = 0 );
         ~base_parametre_widget();
         void paintEvent(QPaintEvent *);
+        void informer_verrouillage_change();
 
     private:
         void init();

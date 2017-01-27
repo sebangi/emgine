@@ -32,6 +32,11 @@ void base_parametre_widget::paintEvent(QPaintEvent *)
     style()->drawPrimitive(QStyle::PE_Widget, &opt, &p, this);
 }
 
+void base_parametre_widget::informer_verrouillage_change()
+{
+    mettre_a_jour_configuration();
+}
+
 void base_parametre_widget::init()
 {
     QStyle* style = QApplication::style();
@@ -84,6 +89,7 @@ void base_parametre_widget::mettre_a_jour_configuration()
         icon1.addFile(QString::fromUtf8("icons/non_compile.png"), QSize(), QIcon::Normal, QIcon::Off);
 
     m_configuration_bouton->setIcon( icon1 );
+    m_configuration_bouton->setEnabled( ! m_parametre->est_verrouille_avec_parent() );
 }
 
 /** --------------------------------------------------------------------------------------

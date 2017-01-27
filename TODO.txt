@@ -3,17 +3,15 @@ La liste des choses à faire :
 ETAPE 1 : PRIORITAIRE
 * réflexion sur le stockage des projets, textes sources...
 * sauvegarde d'une sortie
-* Pour une fonction avec verrou, on ne doit pas pour pouvoir la détruire, ni modifier son état
-* dans l'explorateur, les verrous doivent empécher toute modification
+* dans l'explorateur, ajouter un dragMove qui vérifie les verrous
 * créer des icones pour l'état de la configuration des paramètres
 * refaire les icones avec le verrou pour mieu le voir
 * vérifier la gestion des disconnect
 * vérifier les delete
 * réflexion sur les paramètres de fonction_texte : faut-il itérer sur les lignes ?
 * améliorer la mise en page de l'aide des paramètres (avoir une méthode claire pour présenter les itérations )
-* avoir la possibilité de vérouiller un projet : verrou manuel + un verrou système lors de l'exécution
-* un projet ne doit pas être modifiable si un verrou est posé
-* lancer l'exécution dans un thread
+* Mettre à jour les activation des boutons dans la fenetre principale
+* lancer l'exécution dans un thread et verrouiller le projet automatiquement durant l'exécution
 * afficher les exécution différemment. S'inspirer des exécution de Qt
 
 ETAPE 2 : VERSION 0.1

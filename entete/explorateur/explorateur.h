@@ -50,6 +50,15 @@ class explorateur : public QTreeWidget
         void connecter_projet(projet * p);
         void deconnecter_projet(projet * p);
 
+        void ajouter_menu_projet(QMenu & menu, objet_selectionnable * obj );
+        void ajouter_menu_conteneur(QMenu & menu, objet_selectionnable * obj );
+        void ajouter_menu_fonction(QMenu & menu, objet_selectionnable * obj );
+
+        void ajouter_menu_supprimer_projet(QMenu & menu, objet_selectionnable * obj );
+        void ajouter_menu_supprimer_fonction(QMenu & menu, objet_selectionnable * obj );
+        void ajouter_menu_ajout_fonction(QMenu & menu, objet_selectionnable * obj );
+        void ajouter_menu_enregistrement(QMenu & menu, objet_selectionnable * obj );
+        void ajouter_menu_copier_coller(QMenu & menu, objet_selectionnable * obj );
         void ajouter_menu_activation(QMenu & menu, objet_selectionnable * obj );
         void ajouter_menu_verrouillage(QMenu & menu, objet_selectionnable * obj );
 
