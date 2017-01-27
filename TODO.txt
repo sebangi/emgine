@@ -3,7 +3,6 @@ La liste des choses à faire :
 ETAPE 1 : PRIORITAIRE
 * réflexion sur le stockage des projets, textes sources...
 * sauvegarde d'une sortie
-* refaire l'icone de projet
 * vérifier la gestion des disconnect
 * vérifier les delete
 * réflexion sur les paramètres de fonction_texte : faut-il itérer sur les lignes ?

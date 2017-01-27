@@ -174,10 +174,14 @@ void fenetre_principale::init_widgets()
     m_toolbar_bouton_ajout_fonction_sortie->setText("Résultat");
     m_toolbar_bouton_ajout_fonction_sortie->setShortcut( QKeySequence("Alt+E") );
 
-    m_toolbar_bouton_nouveau_projet->setIcon(style->standardIcon( QStyle::SP_FileDialogNewFolder ));
+    QIcon icone_nouveau_projet;
+    icone_nouveau_projet.addFile(QString::fromUtf8("icons/nouveau_projet.png"), QSize(), QIcon::Normal, QIcon::Off);
+    m_toolbar_bouton_nouveau_projet->setIcon(icone_nouveau_projet);
     m_toolbar_bouton_nouveau_projet->setText("Nouveau projet");
 
-    m_toolbar_bouton_ouvrir_projet->setIcon(style->standardIcon( QStyle::SP_DialogOpenButton ));
+    QIcon icone_projet;
+    icone_projet.addFile(QString::fromUtf8("icons/projet.png"), QSize(), QIcon::Normal, QIcon::Off);
+    m_toolbar_bouton_ouvrir_projet->setIcon(icone_projet);
     m_toolbar_bouton_ouvrir_projet->setText("Ouvrir un projet");
 
     m_toolbar_bouton_sauvegarder_projet->setIcon(style->standardIcon( QStyle::SP_DialogSaveButton ));
