@@ -84,6 +84,7 @@ class fenetre_principale : public QMainWindow
         void on_executer_click();
 
         void on_externe_e_ajout_source(fonctions_conteneur * conteneur, base_fonction::type_fonction type);
+        void on_externe_verrouillage_change(objet_selectionnable *obj);
         void on_externe_projet_etat_modification_change(projet * p, bool etat);
         void on_externe_projet_executable_change(projet * p);
         void on_externe_objet_selectionne(objet_selectionnable* obj);

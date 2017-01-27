@@ -165,6 +165,7 @@ void vue_fonctions::connecter_selectionnable( objet_selectionnable *obj )
 {
     connect( obj, SIGNAL(signal_os_selectionne(objet_selectionnable*)),
              this, SLOT(on_externe_objet_selectionne(objet_selectionnable*)) );
+
     connect( obj, SIGNAL(signal_os_deselectionne(objet_selectionnable*)),
              this, SLOT(on_externe_objet_deselectionne(objet_selectionnable*)));
 }
@@ -173,6 +174,7 @@ void vue_fonctions::deconnecter_selectionnable( objet_selectionnable *obj )
 {
     disconnect( obj, SIGNAL(signal_os_selectionne(objet_selectionnable*)),
                 this, SLOT(on_externe_objet_selectionne(objet_selectionnable*)) );
+
     disconnect( obj, SIGNAL(signal_os_deselectionne(objet_selectionnable*)),
                 this, SLOT(on_externe_objet_deselectionne(objet_selectionnable*)));
 }
@@ -181,8 +183,13 @@ void vue_fonctions::connecter_projet( projet *p )
 {
     connect( (fonctions_conteneur*)p, SIGNAL(signal_fc_creation_fonction(base_fonction*)),
              this, SLOT(on_externe_creation_fonction(base_fonction*)));
+
     connect( p, SIGNAL(signal_p_nom_projet_change(projet *)),
-             this, SLOT(on_externe_nom_projet_change(projet *)));
+             this, SLOT(on_externe_nom_projet_change(projet *)));    
+
+    connect( p, SIGNAL(signal_verrouillage_change(objet_selectionnable *)),
+             this, SLOT(on_externe_verrouillage_change(objet_selectionnable *)));
+
     connect( p, SIGNAL(signal_p_destruction_projet(projet *)),
              this, SLOT(on_externe_destruction_projet(projet *)));
 }
@@ -191,8 +198,13 @@ void vue_fonctions::deconnecter_projet( projet *p )
 {
     disconnect( (fonctions_conteneur*)p, SIGNAL(signal_fc_creation_fonction(base_fonction*)),
                 this, SLOT(on_externe_creation_fonction(base_fonction*)));
+
     disconnect( p, SIGNAL(signal_p_nom_projet_change(projet *)),
                 this, SLOT(on_externe_nom_projet_change(projet *)));
+
+    disconnect( p, SIGNAL(signal_verrouillage_change(objet_selectionnable *)),
+             this, SLOT(on_externe_verrouillage_change(objet_selectionnable *)));
+
     disconnect( p, SIGNAL(signal_p_destruction_projet(projet *)),
                 this, SLOT(on_externe_destruction_projet(projet *)));
 }
@@ -249,6 +261,13 @@ void vue_fonctions::on_externe_supprimer_fonction(base_fonction *f)
     }
 
     deconnecter((objet_selectionnable*)f);
+}
+
+void vue_fonctions::on_externe_verrouillage_change(objet_selectionnable *obj)
+{
+    if( m_conteneur_courant == obj )
+        for ( int i = 0; i != rowCount(); ++i )
+            ((base_fonction_widget*)cellWidget(i,1))->mettre_a_jour_verrouillage();
 }
 
 void vue_fonctions::on_externe_nom_projet_change(projet *p)

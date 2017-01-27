@@ -36,6 +36,19 @@ base_fonction *base_fonction_widget::get_fonction()
     return m_fonction;
 }
 
+void base_fonction_widget::mettre_a_jour_verrouillage()
+{
+    update_verrouillage_bouton();
+    update_actif_bouton();
+    update_close_bouton();
+
+    for ( type_liste_parametre_widgets::iterator it = m_parametre_widgets.begin();
+          it != m_parametre_widgets.end(); ++it )
+        (*it)->informer_verrouillage_change();
+
+    informer_verrouillage_change();
+}
+
 void base_fonction_widget::init()
 {
     QStyle* style = QApplication::style();
@@ -348,15 +361,7 @@ void base_fonction_widget::on_externe_activation_fonction_change(base_fonction *
 */
 void base_fonction_widget::on_externe_verrouillage_change(objet_selectionnable * obj)
 {
-    update_verrouillage_bouton();    
-    update_actif_bouton();
-    update_close_bouton();
-
-    for ( type_liste_parametre_widgets::iterator it = m_parametre_widgets.begin();
-          it != m_parametre_widgets.end(); ++it )
-        (*it)->informer_verrouillage_change();
-
-    informer_verrouillage_change();
+    mettre_a_jour_verrouillage();
 }
 
 void base_fonction_widget::on_externe_niveau_visibilite_change(base_fonction* f)

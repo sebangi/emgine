@@ -47,7 +47,7 @@ class objet_selectionnable : public QObject
 
         bool est_etendu() const;
         virtual void set_est_etendu(bool est_etendu);
-        void modifier();
+        void modifier(bool change_executable = true);
         void sauvegarder( QXmlStreamWriter & stream ) const;
 
     protected:

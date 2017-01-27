@@ -462,7 +462,7 @@ void fenetre_principale::update_bouton_execution( projet * p )
 void fenetre_principale::update_boutons_fonctions( objet_selectionnable * obj, bool etat )
 {
     if ( obj != NULL )
-        etat = etat && obj->est_conteneur();
+        etat = etat && obj->est_conteneur() && ! obj->est_verrouille_avec_parent();
 
     m_toolbar_bouton_ajout_fonction_source->setEnabled( etat );
     m_toolbar_bouton_ajout_fonction_conversion->setEnabled( etat );
@@ -476,6 +476,9 @@ void fenetre_principale::connecter_projet(projet *p)
 
     connect( p, SIGNAL(signal_p_projet_executable_change(projet *)),
              this, SLOT(on_externe_projet_executable_change(projet *)));
+
+    connect( p, SIGNAL(signal_verrouillage_change(objet_selectionnable *)),
+             this, SLOT(on_externe_verrouillage_change(objet_selectionnable *)));
 
     connect( p, SIGNAL(signal_p_fermeture_projet(projet *)),
              this, SLOT(on_externe_fermeture_projet(projet *)));
@@ -580,12 +583,22 @@ void fenetre_principale::on_externe_e_ajout_source(fonctions_conteneur *conteneu
     ajouter_fonction(conteneur, type);
 }
 
+
+void fenetre_principale::on_externe_verrouillage_change(objet_selectionnable *obj)
+{
+    if ( objet_selectionnable::existe_selection() )
+        if ( objet_selectionnable::get_selection() == obj )
+            update_boutons_fonctions( objet_selectionnable::get_selection(), true);
+}
+
+
 void fenetre_principale::on_externe_projet_etat_modification_change(projet *p, bool etat)
 {
     if ( objet_selectionnable::existe_selection() )
         if ( objet_selectionnable::get_projet_courant() == p )
         {
             update_boutons_projet( p );
+            update_boutons_fonctions( objet_selectionnable::get_selection(), true);
         }
 }
 
@@ -596,7 +609,6 @@ void fenetre_principale::on_externe_projet_executable_change(projet *p)
             update_bouton_execution( p );
 }
 
-
 void fenetre_principale::on_externe_objet_selectionne(objet_selectionnable *obj)
 {
     update_boutons_fonctions(obj, true);
@@ -606,6 +618,7 @@ void fenetre_principale::on_externe_objet_selectionne(objet_selectionnable *obj)
 
 void fenetre_principale::on_externe_objet_deselectionne(objet_selectionnable *obj)
 {
+    update_boutons_fonctions(obj, false);
 }
 
 void fenetre_principale::on_externe_fermeture_projet(projet *p)

@@ -144,7 +144,7 @@ bool objet_selectionnable::est_verrouille() const
 void objet_selectionnable::set_verrouille(bool verrouille)
 {
     m_verrouille = verrouille;
-    modifier();
+    modifier(false);
 
     emit signal_verrouillage_change(this);
 }
@@ -233,17 +233,18 @@ void objet_selectionnable::set_est_etendu(bool est_entendu)
     m_est_etendu = est_entendu;
 }
 
-void objet_selectionnable::modifier()
+void objet_selectionnable::modifier( bool change_executable )
 {
     if( est_projet() )
     {
         if ( ! ((projet*)this)->est_modifie() )
             ((projet*)this)->set_est_modifie(true);
 
-        ((projet*)this)->set_executable(true);
+        if ( change_executable )
+            ((projet*)this)->set_executable(true);
     }
     else if ( m_objet_parent != NULL )
-        m_objet_parent->modifier();
+        m_objet_parent->modifier(change_executable);
 }
 
 bool objet_selectionnable::est_etendu() const

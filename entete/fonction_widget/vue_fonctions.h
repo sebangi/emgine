@@ -37,6 +37,7 @@ class vue_fonctions : public QTableWidget
 
     private slots:
         void on_externe_supprimer_fonction(base_fonction *f);
+        void on_externe_verrouillage_change(objet_selectionnable *obj);
         void on_externe_nom_projet_change(projet * p);
         void on_externe_destruction_projet(projet * p);
         void on_externe_objet_selectionne(objet_selectionnable*);

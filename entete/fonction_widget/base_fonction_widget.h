@@ -28,6 +28,7 @@ class base_fonction_widget : public QWidget, public QTableWidgetItem
         ~base_fonction_widget();
         void paintEvent(QPaintEvent *);
         base_fonction *get_fonction();
+        void mettre_a_jour_verrouillage();
 
     private:
         void init();
