@@ -84,9 +84,9 @@ void base_parametre_widget::mettre_a_jour_configuration()
 {
     QIcon icon1;
     if ( m_parametre->est_dans_configuration() )
-        icon1.addFile(QString::fromUtf8("icons/compile.png"), QSize(), QIcon::Normal, QIcon::Off);
+        icon1.addFile(QString::fromUtf8("icons/log.png"), QSize(), QIcon::Normal, QIcon::Off);
     else
-        icon1.addFile(QString::fromUtf8("icons/non_compile.png"), QSize(), QIcon::Normal, QIcon::Off);
+        icon1.addFile(QString::fromUtf8("icons/no_log.png"), QSize(), QIcon::Normal, QIcon::Off);
 
     m_configuration_bouton->setIcon( icon1 );
     m_configuration_bouton->setEnabled( ! m_parametre->est_verrouille_avec_parent() );
