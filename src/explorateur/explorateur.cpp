@@ -196,9 +196,8 @@ void explorateur::faire_couper(objet_selectionnable * obj)
         delete obj;
 }
 
-void explorateur::faire_drop(base_noeud * n_a_couper, base_noeud * n_conteneur, bool shift)
+bool explorateur::controler_drag_drop(base_noeud * n_a_couper, base_noeud * n_conteneur, bool shift)
 {
-    // controle des verrous
     bool autorise = true;
 
     if ( ! shift && n_a_couper->get_objet()->est_verrouille_avec_parent() )
@@ -210,8 +209,12 @@ void explorateur::faire_drop(base_noeud * n_a_couper, base_noeud * n_conteneur, 
     if ( n_conteneur->get_objet()->est_fonction() && n_conteneur->get_objet()->parents_verrouilles() )
         autorise = false;
 
-    // faire le drop
-    if ( autorise )
+    return autorise;
+}
+
+void explorateur::faire_drop(base_noeud * n_a_couper, base_noeud * n_conteneur, bool shift)
+{
+    if ( controler_drag_drop(n_a_couper, n_conteneur, shift) )
     {
         QString copie;
         creer_copie(n_a_couper->get_objet(), copie);
@@ -649,9 +652,8 @@ void explorateur::dragMoveEvent(QDragMoveEvent *e)
     bool accept = false;
 
     if ( item )
-    {
-        accept = true;
-    }
+        accept = controler_drag_drop
+                ((base_noeud *)currentItem(), (base_noeud *)item, e->keyboardModifiers() && Qt::ShiftModifier);
 
     if ( accept )
     {

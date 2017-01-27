@@ -3,14 +3,13 @@ La liste des choses à faire :
 ETAPE 1 : PRIORITAIRE
 * réflexion sur le stockage des projets, textes sources...
 * sauvegarde d'une sortie
-* dans l'explorateur, ajouter un dragMove qui vérifie les verrous
 * refaire l'icone de projet
 * vérifier la gestion des disconnect
 * vérifier les delete
 * réflexion sur les paramètres de fonction_texte : faut-il itérer sur les lignes ?
 * améliorer la mise en page de l'aide des paramètres (avoir une méthode claire pour présenter les itérations )
 * lancer l'exécution dans un thread et verrouiller le projet automatiquement durant l'exécution
-* afficher les exécution différemment. S'inspirer des exécutions de Qt
+* afficher les exécutions différemment. S'inspirer des exécutions de Qt
 
 ETAPE 2 : VERSION 0.1
 * réflexion poussée sur les fonctionnalités de base à ajouter avant d'ajouter des fonctions
