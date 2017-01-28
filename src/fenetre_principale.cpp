@@ -181,7 +181,7 @@ void fenetre_principale::init_widgets()
 
     QIcon icone_projet;
     icone_projet.addFile(QString::fromUtf8("icons/projet.png"), QSize(), QIcon::Normal, QIcon::Off);
-    m_toolbar_bouton_ouvrir_projet->setIcon(style->standardIcon( QStyle::SP_DialogOpenButton ));
+    m_toolbar_bouton_ouvrir_projet->setIcon(icone_projet);
     m_toolbar_bouton_ouvrir_projet->setText("Ouvrir un projet");
 
     m_toolbar_bouton_sauvegarder_projet->setIcon(style->standardIcon( QStyle::SP_DialogSaveButton ));

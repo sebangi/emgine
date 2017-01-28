@@ -97,7 +97,7 @@
             <active>1</active>
             <objet_selectionnable>
                 <est_etendu>1</est_etendu>
-                <verrouille>1</verrouille>
+                <verrouille>0</verrouille>
             </objet_selectionnable>
             <parametres>
                 <parametre>
@@ -346,7 +346,7 @@ abcdefghijklmnopqrstuvwxyz</valeur>
             <active>1</active>
             <objet_selectionnable>
                 <est_etendu>1</est_etendu>
-                <verrouille>1</verrouille>
+                <verrouille>0</verrouille>
             </objet_selectionnable>
             <parametres/>
         </fonction>
