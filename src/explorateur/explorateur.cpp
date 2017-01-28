@@ -469,6 +469,10 @@ void explorateur::ajouter_menu_fonction(QMenu & menu, objet_selectionnable * obj
 
     menu.addSeparator();
 
+    ajouter_menu_ajout_fonction(menu, obj);
+
+    menu.addSeparator();
+
     ajouter_menu_copier_coller(menu, obj);
 
     menu.addSeparator();
@@ -558,40 +562,65 @@ void explorateur::ajouter_menu_copier_coller(QMenu & menu, objet_selectionnable 
         texte_coller = tr("Coller après");
     QAction *newAct_coller = new QAction(icon_coller, texte_coller, this);
     newAct_coller->setStatusTip(texte_coller);
+    bool enabled = true;
     if ( m_a_copier == NULL )
-        newAct_coller->setEnabled(false);
+        enabled = false;
     else if ( m_objet_a_couper != NULL )
-        newAct_coller->setEnabled( ! obj->a_ancetre((objet_selectionnable*)m_objet_a_couper) );
+        enabled = ! obj->a_ancetre((objet_selectionnable*)m_objet_a_couper);
+
     connect(newAct_coller, SIGNAL(triggered()), this, SLOT(on_coller()));
     menu.addAction(newAct_coller);
-    newAct_coller->setEnabled( ! obj->est_verrouille_avec_parent() );
+
+    if ( obj->est_conteneur() && obj->est_verrouille_avec_parent() )
+        enabled = false;
+
+    if ( obj->est_fonction() && obj->parents_verrouilles() )
+        enabled = false;
+    newAct_coller->setEnabled(enabled);
 }
 
 void explorateur::ajouter_menu_ajout_fonction(QMenu & menu, objet_selectionnable * obj )
 {
+    bool enabled = true;
+
+    if ( obj->est_conteneur() && obj->est_verrouille_avec_parent() )
+        enabled = false;
+
+    if ( obj->est_fonction() && obj->parents_verrouilles() )
+        enabled = false;
+
+    QString fin_texte;
+    if ( obj->est_fonction() )
+        fin_texte = tr(" à la suite");
+    else
+        fin_texte = tr(" en début de liste");
+
+    QString texte_source = tr("Ajouter une source") + fin_texte;
     QIcon icon_source;
     icon_source.addFile(QString::fromUtf8("icons/ajout_source.png"), QSize(), QIcon::Normal, QIcon::Off);
-    QAction *newAct2 = new QAction(icon_source, tr("Ajouter une source"), this);
-    newAct2->setStatusTip(tr("Ajouter une source"));
+    QAction *newAct2 = new QAction(icon_source, texte_source, this);
+    newAct2->setStatusTip(texte_source);
     connect(newAct2, SIGNAL(triggered()), this, SLOT(on_ajout_source()));
     menu.addAction(newAct2);
-    newAct2->setEnabled( ! obj->est_verrouille_avec_parent() );
+    newAct2->setEnabled( enabled );
 
+    QString texte_conversion = tr("Ajouter une conversion") + fin_texte;
     QIcon icon_conversion;
     icon_conversion.addFile(QString::fromUtf8("icons/ajout_conversion.png"), QSize(), QIcon::Normal, QIcon::Off);
-    QAction *newAct3 = new QAction(icon_conversion, tr("Ajouter une conversion"), this);
-    newAct3->setStatusTip(tr("Ajouter une conversion"));
+    QAction *newAct3 = new QAction(icon_conversion, texte_conversion, this);
+    newAct3->setStatusTip(texte_conversion);
     connect(newAct3, SIGNAL(triggered()), this, SLOT(on_ajout_fonction_conversion()));
     menu.addAction(newAct3);
-    newAct3->setEnabled( ! obj->est_verrouille_avec_parent() );
+    newAct3->setEnabled( enabled );
 
+    QString texte_sortie = tr("Ajouter une sortie") + fin_texte;
     QIcon icon_sortie;
     icon_sortie.addFile(QString::fromUtf8("icons/ajout_sortie.png"), QSize(), QIcon::Normal, QIcon::Off);
-    QAction *newAct4 = new QAction(icon_sortie, tr("Ajouter une sortie"), this);
-    newAct4->setStatusTip(tr("Ajouter une sortie"));
+    QAction *newAct4 = new QAction(icon_sortie, texte_sortie, this);
+    newAct4->setStatusTip(texte_sortie);
     connect(newAct4, SIGNAL(triggered()), this, SLOT(on_ajout_sortie()));
     menu.addAction(newAct4);
-    newAct4->setEnabled( ! obj->est_verrouille_avec_parent() );
+    newAct4->setEnabled( enabled );
 }
 
 void explorateur::ajouter_menu_activation(QMenu & menu, objet_selectionnable * obj )
@@ -756,17 +785,17 @@ void explorateur::deconnecter_projet(projet *p)
 
 void explorateur::on_ajout_source()
 {
-    emit signal_e_ajout_source(m_noeud_context->get_fonctions_conteneur(), base_fonction::fonction_source);
+    emit signal_e_demande_ajout_fonction(m_noeud_context->get_objet()->get_conteneur(), m_noeud_context->get_objet(), base_fonction::fonction_source);
 }
 
 void explorateur::on_ajout_sortie()
 {
-    emit signal_e_ajout_source(m_noeud_context->get_fonctions_conteneur(), base_fonction::fonction_sortie);
+    emit signal_e_demande_ajout_fonction(m_noeud_context->get_objet()->get_conteneur(), m_noeud_context->get_objet(), base_fonction::fonction_sortie);
 }
 
 void explorateur::on_ajout_fonction_conversion()
 {
-    emit signal_e_ajout_source(m_noeud_context->get_fonctions_conteneur(), base_fonction::fonction_conversion);
+    emit signal_e_demande_ajout_fonction(m_noeud_context->get_objet()->get_conteneur(), m_noeud_context->get_objet(), base_fonction::fonction_conversion);
 }
 
 void explorateur::on_activer_fonction()

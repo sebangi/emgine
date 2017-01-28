@@ -24,8 +24,6 @@ class base_noeud : public QTreeWidgetItem
         base_noeud( objet_selectionnable * obj, type_noeud type );
         ~base_noeud();
 
-        virtual fonctions_conteneur *get_fonctions_conteneur();
-
         objet_selectionnable *get_objet() const;
         void update_style(bool actif);
 

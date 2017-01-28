@@ -27,11 +27,6 @@ projet* noeud_projet::get_projet() const
     return (projet*)m_objet;
 }
 
-fonctions_conteneur *noeud_projet::get_fonctions_conteneur()
-{
-    return (fonctions_conteneur*)m_objet;
-}
-
 void noeud_projet::mise_a_jour_icone()
 {
     QIcon icon1;

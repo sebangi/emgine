@@ -18,11 +18,6 @@ base_noeud::~base_noeud()
 {
 }
 
-fonctions_conteneur * base_noeud::get_fonctions_conteneur()
-{
-    return NULL;
-}
-
 objet_selectionnable *base_noeud::get_objet() const
 {
     return m_objet;

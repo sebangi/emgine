@@ -64,7 +64,7 @@ class explorateur : public QTreeWidget
         void ajouter_menu_verrouillage(QMenu & menu, objet_selectionnable * obj );
 
     signals:
-        void signal_e_ajout_source(fonctions_conteneur *, base_fonction::type_fonction);
+        void signal_e_demande_ajout_fonction(fonctions_conteneur *, objet_selectionnable*, base_fonction::type_fonction);
         void signal_e_objet_selectionne(objet_selectionnable*);
         void signal_e_objet_deselectionne(objet_selectionnable*);
         void signal_e_enregistrer_projet(projet *);

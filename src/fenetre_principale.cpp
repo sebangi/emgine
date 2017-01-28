@@ -134,8 +134,8 @@ void fenetre_principale::creer_widgets()
     s_vue_logs = new logs_compilation_widget(this);
     s_compilateur = new compilateur(s_vue_logs);
 
-    connect( s_explorateur, SIGNAL(signal_e_ajout_source(fonctions_conteneur *, base_fonction::type_fonction)),
-             this, SLOT(on_externe_e_ajout_source(fonctions_conteneur *, base_fonction::type_fonction)));
+    connect( s_explorateur, SIGNAL(signal_e_demande_ajout_fonction(fonctions_conteneur *, objet_selectionnable*, base_fonction::type_fonction)),
+             this, SLOT(on_externe_e_demande_ajout_fonction(fonctions_conteneur *, objet_selectionnable*, base_fonction::type_fonction)));
     connect( s_explorateur, SIGNAL(signal_e_objet_selectionne(objet_selectionnable*)),
              this, SLOT(on_externe_objet_selectionne(objet_selectionnable *)));
     connect( s_explorateur, SIGNAL(signal_e_objet_deselectionne(objet_selectionnable*)),
@@ -226,7 +226,7 @@ void fenetre_principale::init_widgets()
 void fenetre_principale::ajouter_source()
 {
     if ( objet_selectionnable::existe_selection() )
-        ajouter_fonction( objet_selectionnable::get_selection(), base_fonction::fonction_source);
+        ajouter_fonction( objet_selectionnable::get_selection()->get_conteneur(), objet_selectionnable::get_selection(), base_fonction::fonction_source);
 }
 
 /** --------------------------------------------------------------------------------------
@@ -235,7 +235,7 @@ void fenetre_principale::ajouter_source()
 void fenetre_principale::ajouter_conversion( )
 {
     if ( objet_selectionnable::existe_selection() )
-        ajouter_fonction( objet_selectionnable::get_selection(), base_fonction::fonction_conversion);
+        ajouter_fonction( objet_selectionnable::get_selection()->get_conteneur(), objet_selectionnable::get_selection(), base_fonction::fonction_conversion);
 }
 
 /** --------------------------------------------------------------------------------------
@@ -244,15 +244,15 @@ void fenetre_principale::ajouter_conversion( )
 void fenetre_principale::ajouter_sortie( )
 {
     if ( objet_selectionnable::existe_selection() )
-        ajouter_fonction( objet_selectionnable::get_selection(), base_fonction::fonction_sortie);
+        ajouter_fonction( objet_selectionnable::get_selection()->get_conteneur(), objet_selectionnable::get_selection(), base_fonction::fonction_sortie);
 }
 
 /** --------------------------------------------------------------------------------------
  \brief Ajoute une fonction à un noeud.
 */
-void fenetre_principale::ajouter_fonction( objet_selectionnable * obj_ref, base_fonction::type_fonction type )
+void fenetre_principale::ajouter_fonction( fonctions_conteneur * conteneur, objet_selectionnable * obj_ref, base_fonction::type_fonction type )
 {
-    if ( obj_ref != NULL )
+    if ( conteneur != NULL )
     {
         selecteur_fonction_dialog * dlg = new selecteur_fonction_dialog(type, m_ui->centralWidget);
 
@@ -261,10 +261,10 @@ void fenetre_principale::ajouter_fonction( objet_selectionnable * obj_ref, base_
         if ( r == QDialog::Accepted )
         {
             base_fonction * f = dlg->get_fonction();
-            f->set_conteneur(obj_ref->get_conteneur());
+            f->set_conteneur(conteneur);
 
             if ( f != NULL )
-                ajouter_fonction(obj_ref, f, true, true);
+                ajouter_fonction(conteneur, obj_ref, f, true, true);
         }
     }
 }
@@ -272,12 +272,12 @@ void fenetre_principale::ajouter_fonction( objet_selectionnable * obj_ref, base_
 /** --------------------------------------------------------------------------------------
  \brief Ajoute une fonction à un noeud.
 */
-void fenetre_principale::ajouter_fonction( objet_selectionnable * obj_ref, base_fonction* f, bool init_defaut, bool afficher_vue )
+void fenetre_principale::ajouter_fonction( fonctions_conteneur * conteneur, objet_selectionnable * obj_ref, base_fonction* f, bool init_defaut, bool afficher_vue )
 {
     if ( init_defaut )
         f->initialisation_par_defaut();
 
-    obj_ref->get_conteneur()->ajouter_fonction(f,obj_ref);
+    conteneur->ajouter_fonction(f,obj_ref);
     f->selectionner();
 }
 
@@ -290,9 +290,9 @@ void fenetre_principale::init_test()
     p->set_nom("Exemple");
     ajouter_projet(p);
 
-    ajouter_fonction( p, new fonction_source_texte(p, "UNHBH TM SDRS !"), true, true );
-    ajouter_fonction( p, new fonction_cesar(p), true, true );
-    ajouter_fonction( p, new fonction_sortie_texte(p), true, true );
+    ajouter_fonction( p, NULL, new fonction_source_texte(p, "UNHBH TM SDRS !"), true, true );
+    ajouter_fonction( p, NULL, new fonction_cesar(p), true, true );
+    ajouter_fonction( p, NULL, new fonction_sortie_texte(p), true, true );
 
     p->selectionner();
 }
@@ -588,9 +588,10 @@ void fenetre_principale::on_executer_click()
         executer( objet_selectionnable::get_projet_courant() );
 }
 
-void fenetre_principale::on_externe_e_ajout_source(fonctions_conteneur *conteneur, base_fonction::type_fonction type)
+void fenetre_principale::on_externe_e_demande_ajout_fonction
+(fonctions_conteneur *conteneur, objet_selectionnable* obj_ref, base_fonction::type_fonction type)
 {
-    ajouter_fonction(conteneur, type);
+    ajouter_fonction(conteneur, obj_ref, type);
 }
 
 

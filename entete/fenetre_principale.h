@@ -48,8 +48,8 @@ class fenetre_principale : public QMainWindow
         void ajouter_source();
         void ajouter_conversion();
         void ajouter_sortie();
-        void ajouter_fonction( objet_selectionnable * obj_ref, base_fonction::type_fonction type );
-        void ajouter_fonction( objet_selectionnable * obj_ref, base_fonction* f, bool init_defaut, bool afficher_vue );
+        void ajouter_fonction( fonctions_conteneur * conteneur, objet_selectionnable * obj_ref, base_fonction::type_fonction type );
+        void ajouter_fonction( fonctions_conteneur * conteneur, objet_selectionnable * obj_ref, base_fonction* f, bool init_defaut, bool afficher_vue );
 
     private:
         void init_test();
@@ -83,7 +83,7 @@ class fenetre_principale : public QMainWindow
         void on_ouvrir_projet_click();
         void on_executer_click();
 
-        void on_externe_e_ajout_source(fonctions_conteneur * conteneur, base_fonction::type_fonction type);
+        void on_externe_e_demande_ajout_fonction(fonctions_conteneur * conteneur, objet_selectionnable* obj_ref, base_fonction::type_fonction type);
         void on_externe_verrouillage_change(objet_selectionnable *obj);
         void on_externe_projet_etat_modification_change(projet * p, bool etat);
         void on_externe_projet_executable_change(projet * p);

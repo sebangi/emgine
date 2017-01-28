@@ -32,11 +32,6 @@ base_parametre* noeud_parametre::get_parametre() const
     return (base_parametre*)m_objet;
 }
 
-fonctions_conteneur *noeud_parametre::get_fonctions_conteneur()
-{
-    return (fonctions_conteneur*)m_objet;
-}
-
 void noeud_parametre::mise_a_jour_icone()
 {
     QIcon icon1;
