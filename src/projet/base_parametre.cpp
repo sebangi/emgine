@@ -12,9 +12,10 @@
 
 #include <iostream>
 
-base_parametre::base_parametre(objet_selectionnable * parent, QString nom, QString aide, bool requis, bool dans_configuration)
+base_parametre::base_parametre( objet_selectionnable * parent, QString nom, QString aide,
+                                bool peut_etre_vide, bool dans_configuration)
     : fonctions_conteneur(parent), m_fonction_parent((base_fonction*)parent), m_nom(nom), m_aide(aide),
-      m_requis(requis), m_textes_out(), m_dans_configuration(dans_configuration)
+      m_peut_etre_vide(peut_etre_vide), m_textes_out(), m_dans_configuration(dans_configuration)
 {
 
 }
@@ -74,7 +75,7 @@ base_fonction *base_parametre::get_fonction_parent() const
 
 bool base_parametre::is_requis() const
 {
-    return m_requis;
+    return m_peut_etre_vide;
 }
 
 void base_parametre::set_booleen_par_defaut(bool valeur)
@@ -189,4 +190,9 @@ void base_parametre::inverser_dans_configuration()
 void base_parametre::set_dans_configuration(bool dans_configuration)
 {
     m_dans_configuration = dans_configuration;
+}
+
+bool base_parametre::peut_etre_vide() const
+{
+    return m_peut_etre_vide;
 }

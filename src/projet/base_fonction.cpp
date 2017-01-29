@@ -343,8 +343,9 @@ void base_fonction::algo_IPMPL_iteration_premier_mot_par_ligne
   pf_exec_callback callback )
 {
     const textes& t_param = get_textes_parametre(id_param);
+    bool test_vide = ! m_parametres[id_param]->peut_etre_vide();
 
-    if ( t_param.empty() )
+    if ( test_vide && t_param.empty() )
     {
         compil.get_vue_logs()->ajouter_log
                 ( log_compilation( log_compilation::LOG_WARNING, (base_fonction*)this,
@@ -354,7 +355,7 @@ void base_fonction::algo_IPMPL_iteration_premier_mot_par_ligne
     {
         for ( textes::const_iterator it_t = t_param.begin(); it_t != t_param.end(); ++it_t)
         {
-            if ( it_t->empty() )
+            if ( test_vide && it_t->empty() )
             {
                 compil.get_vue_logs()->ajouter_log
                         ( log_compilation( log_compilation::LOG_WARNING, (base_fonction*)this,
@@ -364,7 +365,7 @@ void base_fonction::algo_IPMPL_iteration_premier_mot_par_ligne
             {
                 for ( texte::const_iterator it_l = it_t->begin(); it_l != it_t->end(); ++it_l)
                 {
-                    if ( it_l->empty() )
+                    if ( test_vide && it_l->empty() )
                     {
                         compil.get_vue_logs()->ajouter_log
                                 ( log_compilation( log_compilation::LOG_WARNING, (base_fonction*)this,
@@ -374,21 +375,24 @@ void base_fonction::algo_IPMPL_iteration_premier_mot_par_ligne
                     {
                         ligne::const_iterator it_m = it_l->begin();
 
-                        if ( it_m->empty() )
+                        if ( test_vide && it_m->empty() )
                         {
                             compil.get_vue_logs()->ajouter_log
                                     ( log_compilation( log_compilation::LOG_WARNING, (base_fonction*)this,
-                                                       "Le paramètre " + m_parametres[id_param]->get_nom() + " est vide sur le premier mot de la ligne.") );
+                                                       "Le paramètre " + m_parametres[id_param]->get_nom() + " est vide sur le premier mot d'une ligne.") );
                         }
                         else
                         {
-                            m_map_IPMPL_debut[id_param] = it_m->begin();
-                            m_map_IPMPL_courant[id_param] = it_m->begin();
-                            m_map_IPMPL_fin[id_param] = it_m->end();
+                            m_map_IPMPL[id_param].it_debut = it_m->begin();
+                            m_map_IPMPL[id_param].it_courant = it_m->begin();
+                            m_map_IPMPL[id_param].it_fin = it_m->end();
+                            m_map_IPMPL[id_param].mot_courant = &(*it_m);
 
                             if ( m_parametres[id_param]->est_dans_configuration() )
                                compil.ajouter_configuration(this, id_param, it_m->to_string_lisible());
+
                             (this->*callback)(compil, textes_in, textes_out);
+
                             if ( m_parametres[id_param]->est_dans_configuration() )
                                 compil.retirer_configuration(this, id_param);
                         }
@@ -401,9 +405,9 @@ void base_fonction::algo_IPMPL_iteration_premier_mot_par_ligne
 
 void base_fonction::IPMPL_suivant(type_id_parametre id_param)
 {
-    m_map_IPMPL_courant[id_param]++;
-    if ( m_map_IPMPL_courant[id_param] == m_map_IPMPL_fin[id_param] )
-        m_map_IPMPL_courant[id_param] = m_map_IPMPL_debut[id_param];
+    m_map_IPMPL[id_param].it_courant++;
+    if ( m_map_IPMPL[id_param].it_courant == m_map_IPMPL[id_param].it_fin )
+        m_map_IPMPL[id_param].it_courant = m_map_IPMPL[id_param].it_debut;
 }
 
 void base_fonction::callback_param_1(compilateur &compil, const textes &textes_in, textes &textes_out)
@@ -428,4 +432,20 @@ void base_fonction::callback_param_4(compilateur &compil, const textes &textes_i
 {
     std::cout << "base_fonction::callback_param_4" << std::endl;
     std::cout << "Erreur : on ne doit pas passer dans cette méthode virtuelle." << std::endl;
+}
+
+void base_fonction::execution_specifique(compilateur &compil, const textes &textes_in, textes &textes_out)
+{
+    std::cout << "base_fonction::callback_param_4" << std::endl;
+    std::cout << "Erreur : on ne doit pas passer dans cette méthode virtuelle." << std::endl;
+}
+
+base_fonction::IPMPL::IPMPL()
+{
+
+}
+
+base_fonction::IPMPL::~IPMPL()
+{
+
 }

@@ -16,10 +16,10 @@ fonction_source_texte::fonction_source_texte(fonctions_conteneur * conteneur, QS
                        new base_parametre( this, "Séparateur d'élément", "Les séparateurs d'éléments.", true, false) );
 
     ajouter_parametre( PARAM_MOT_SEPARATEUR,
-                       new base_parametre( this, "Séparateur de mot", "Les séparateurs de mot.", true, false) );
+                       new base_parametre( this, "Séparateur de mot", "Les séparateurs de mot.", false, false) );
 
     ajouter_parametre( PARAM_LIGNE_SEPARATEUR,
-                       new base_parametre( this, "Séparateur de ligne", "Les séparateurs de ligne.", true, false) );
+                       new base_parametre( this, "Séparateur de ligne", "Les séparateurs de ligne.", false, false) );
 }
 
 fonction_source_texte::~fonction_source_texte()
@@ -49,20 +49,47 @@ base_fonction_widget *fonction_source_texte::generer_fonction_widget()
 */
 void fonction_source_texte::executer( compilateur &compil, const textes & textes_in, textes & textes_out )
 {
-    const textes& t_caractere = get_textes_parametre(PARAM_CARACTERE_SEPARATEUR);
-    const textes& t_mot = get_textes_parametre(PARAM_MOT_SEPARATEUR);
-    const textes& t_ligne = get_textes_parametre(PARAM_LIGNE_SEPARATEUR);
+    algo_IPMPL_iteration_premier_mot_par_ligne
+        ( PARAM_LIGNE_SEPARATEUR, compil, textes_in, textes_out, & base_fonction::callback_param_1 );
+}
 
-    texte t("", t_ligne.to_string() );
-    QStringList lignes = m_texte.split( t_ligne.to_string() );
+/*! --------------------------------------------------------------------------------------
+\brief Exécution de la fonction selon le parametre PARAM_LIGNE_SEPARATEUR.
+*/
+void fonction_source_texte::callback_param_1( compilateur &compil, const textes & textes_in, textes & textes_out )
+{
+    algo_IPMPL_iteration_premier_mot_par_ligne
+        ( PARAM_MOT_SEPARATEUR, compil, textes_in, textes_out, & base_fonction::callback_param_2 );
+}
+
+/*! --------------------------------------------------------------------------------------
+\brief Exécution de la fonction selon le parametre PARAM_MOT_SEPARATEUR.
+*/
+void fonction_source_texte::callback_param_2( compilateur &compil, const textes & textes_in, textes & textes_out )
+{
+    algo_IPMPL_iteration_premier_mot_par_ligne
+        ( PARAM_CARACTERE_SEPARATEUR, compil, textes_in, textes_out, & base_fonction::execution_specifique );
+}
+
+/*! --------------------------------------------------------------------------------------
+ \brief Exécution de la fonction spécifique : fonction_source_texte.
+*/
+void fonction_source_texte::execution_specifique( compilateur &compil, const textes & textes_in, textes & textes_out )
+{
+    QString t_caractere = m_map_IPMPL[PARAM_CARACTERE_SEPARATEUR].mot_courant->to_string();
+    QString t_mot = m_map_IPMPL[PARAM_MOT_SEPARATEUR].mot_courant->to_string();
+    QString t_ligne = m_map_IPMPL[PARAM_LIGNE_SEPARATEUR].mot_courant->to_string();
+
+    texte t("", t_ligne );
+    QStringList lignes = m_texte.split( t_ligne );
     for ( QStringList::const_iterator it_l = lignes.constBegin(); it_l != lignes.constEnd(); ++it_l )
     {
-        ligne l("", t_mot.to_string() );
-        QStringList mots = it_l->split( t_mot.to_string() );
+        ligne l("", t_mot );
+        QStringList mots = it_l->split( t_mot );
         for ( QStringList::const_iterator it_m = mots.constBegin(); it_m != mots.constEnd(); ++it_m )
         {
-            mot m("", t_caractere.to_string() );
-            QStringList caracteres = it_m->split( t_caractere.to_string() );
+            mot m("", t_caractere );
+            QStringList caracteres = it_m->split( t_caractere );
             for ( QStringList::const_iterator it_c = caracteres.constBegin(); it_c != caracteres.constEnd(); ++it_c )
             {
                 if ( it_c->size() != 0 )
@@ -77,7 +104,7 @@ void fonction_source_texte::executer( compilateur &compil, const textes & textes
         if ( ! l.empty() )
             t.push_back(l);
     }
-    textes_out.push_back(t);
+    textes_out.ajouter_texte(compil.get_configuration(), t);
 }
 
 /*! --------------------------------------------------------------------------------------

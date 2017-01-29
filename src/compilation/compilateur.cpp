@@ -123,6 +123,7 @@ logs_compilation_widget *compilateur::get_vue_logs() const
 
 void compilateur::ajouter_configuration(base_fonction * f, type_id_parametre param, const QString &config)
 {
+    std::cout << f->get_nom().toStdString() << " => " << config.toStdString() << std::endl;
     m_configuration[ type_cle_configuration(f,param) ] = config;
 }
 

@@ -24,6 +24,9 @@ class fonction_source_texte : public fonction_base_source
 
     private:
         bool est_valide(logs_compilation_widget * vue_logs) const;
+        void callback_param_1( compilateur &compil, const textes & textes_in, textes & textes_out );
+        void callback_param_2( compilateur &compil, const textes & textes_in, textes & textes_out );
+        void execution_specifique( compilateur &compil, const textes & textes_in, textes & textes_out );
 
     private:
         QString m_texte;

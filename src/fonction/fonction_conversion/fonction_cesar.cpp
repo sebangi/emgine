@@ -27,11 +27,11 @@ fonction_cesar::fonction_cesar( fonctions_conteneur * conteneur )
     augmenter_max_niveau_visibilite(1);
 
     ajouter_parametre( PARAM_DECALAGE,
-                       new base_parametre( this, "Décalage", "Le décalage à réaliser (sur un mot). Itération sur les lignes", true, true) );
+                       new base_parametre( this, "Décalage", "Le décalage à réaliser (sur un mot). Itération sur les lignes", false, true) );
     ajouter_parametre( PARAM_SOUSTRACTIF,
-                       new base_parametre( this, "Soustractif", "Indique si le décalage est soustractif (sur un mot).  Itération sur les lignes", true, true) );
+                       new base_parametre( this, "Soustractif", "Indique si le décalage est soustractif (sur un mot).  Itération sur les lignes", false, true) );
     ajouter_parametre( PARAM_ALPHABET,
-                       new base_parametre( this, "Alphabet", "Alphabet utilisé (sur un mot). Itération sur les lignes", true, true) );
+                       new base_parametre( this, "Alphabet", "Alphabet utilisé (sur un mot). Itération sur les lignes", false, true) );
 }
 
 void fonction_cesar::initialisation_par_defaut()
@@ -67,8 +67,8 @@ void fonction_cesar::construire_alphabet()
     m_position_alphabet.clear();
     m_alphabet.clear();
 
-    for ( mot::const_iterator it_c = m_map_IPMPL_debut[PARAM_ALPHABET];
-          it_c != m_map_IPMPL_fin[PARAM_ALPHABET]; ++it_c )
+    for ( mot::const_iterator it_c = m_map_IPMPL[PARAM_ALPHABET].it_debut;
+          it_c != m_map_IPMPL[PARAM_ALPHABET].it_fin; ++it_c )
     {
         m_alphabet.push_back(*it_c);
         m_position_alphabet[*it_c] = m_alphabet.size()-1;
@@ -101,13 +101,13 @@ void fonction_cesar::callback_param_1( compilateur &compil, const textes & texte
 void fonction_cesar::callback_param_2( compilateur &compil, const textes & textes_in, textes & textes_out )
 {
     algo_IPMPL_iteration_premier_mot_par_ligne
-            ( PARAM_DECALAGE, compil, textes_in, textes_out, & base_fonction::callback_param_3 );
+            ( PARAM_DECALAGE, compil, textes_in, textes_out, & base_fonction::execution_specifique );
 }
 
 /*! --------------------------------------------------------------------------------------
- \brief Exécution de la fonction selon le parametre PARAM_DECALAGE.
+ \brief Exécution de la fonction spécifique : fonction_cesar.
 */
-void fonction_cesar::callback_param_3( compilateur &compil, const textes & textes_in, textes & textes_out )
+void fonction_cesar::execution_specifique( compilateur &compil, const textes & textes_in, textes & textes_out )
 {
     for ( textes::const_iterator it_t = textes_in.begin(); it_t != textes_in.end(); ++it_t )
     {
@@ -127,14 +127,14 @@ void fonction_cesar::callback_param_3( compilateur &compil, const textes & texte
                     {
                         int pos;
 
-                        if (  m_map_IPMPL_courant[PARAM_SOUSTRACTIF]->get_booleen() )
+                        if (  m_map_IPMPL[PARAM_SOUSTRACTIF].it_courant->get_booleen() )
                         {
-                            pos = it_pos->second - m_map_IPMPL_courant[PARAM_DECALAGE]->get_entier();
+                            pos = it_pos->second - m_map_IPMPL[PARAM_DECALAGE].it_courant->get_entier();
                             if ( pos < 0 )
                                 pos += m_alphabet.size();
                         }
                         else
-                            pos = (it_pos->second + m_map_IPMPL_courant[PARAM_DECALAGE]->get_entier()) % m_alphabet.size();
+                            pos = (it_pos->second + m_map_IPMPL[PARAM_DECALAGE].it_courant->get_entier()) % m_alphabet.size();
 
                         IPMPL_suivant(PARAM_SOUSTRACTIF);
                         IPMPL_suivant(PARAM_DECALAGE);

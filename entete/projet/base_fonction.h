@@ -41,8 +41,24 @@ class base_fonction : public objet_selectionnable
         typedef type_parametres::const_iterator parametres_const_iterateur;
 
     protected:
-        typedef std::map< type_id_parametre, mot::const_iterator > type_map_IPMPL;
         typedef void ( base_fonction::*pf_exec_callback)( compilateur &, const textes &, textes & );
+
+        // class de stockage pour l'utilisation de l'algorithme IPMPL
+        class IPMPL
+        {
+            public:
+                IPMPL();
+                ~IPMPL();
+
+            public:
+                const mot* mot_courant;
+                mot::const_iterator it_debut;
+                mot::const_iterator it_courant;
+                mot::const_iterator it_fin;
+        };
+
+        typedef std::map< type_id_parametre, IPMPL > type_map_IPMPL;
+
 
     public:
         base_fonction( fonctions_conteneur * parent, const QString & nom, type_fonction type = fonction_conversion);
@@ -98,7 +114,6 @@ class base_fonction : public objet_selectionnable
         fonctions_conteneur *get_conteneur() const;
         void set_conteneur(fonctions_conteneur *conteneur);
 
-
     signals:
         void signal_destruction_fonction(base_fonction* f);
         void signal_activation_fonction_change(base_fonction * f);
@@ -126,6 +141,7 @@ class base_fonction : public objet_selectionnable
         virtual void callback_param_2( compilateur &compil, const textes & textes_in, textes & textes_out );
         virtual void callback_param_3( compilateur &compil, const textes & textes_in, textes & textes_out );
         virtual void callback_param_4( compilateur &compil, const textes & textes_in, textes & textes_out );
+        virtual void execution_specifique( compilateur &compil, const textes & textes_in, textes & textes_out );
 
     protected:
         /** \brief Le nom de la fonction. */
@@ -134,9 +150,7 @@ class base_fonction : public objet_selectionnable
         /** \brief La liste des parametres. */
         type_parametres m_parametres;
 
-        type_map_IPMPL m_map_IPMPL_debut;
-        type_map_IPMPL m_map_IPMPL_courant;
-        type_map_IPMPL m_map_IPMPL_fin;
+        type_map_IPMPL m_map_IPMPL;
 
     private:
         type_fonction m_type;

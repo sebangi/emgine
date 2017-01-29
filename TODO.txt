@@ -6,10 +6,11 @@ ETAPE 1 : PRIORITAIRE
 * vérifier la gestion des disconnect
 * vérifier les delete
 * lorsque l'on ferme un projet, demander à le sauvegarder si est modifié ou non enregistré
-* réflexion sur les paramètres de fonction_texte : faut-il itérer sur les lignes ?
 * améliorer la mise en page de l'aide des paramètres (avoir une méthode claire pour présenter les itérations )
 * lancer l'exécution dans un thread et verrouiller le projet automatiquement durant l'exécution
 * afficher les exécutions différemment. S'inspirer des exécutions de Qt
+* revoir la taile du widget de texte_sortie lorsque la visbilité est au plus bas
+* le parametre alphabet devrait itérer sur la ligne. Chaque mot de la ligne est un dictionnaire. Ainsi on peut faire majuscule et minuscule en même temps
 
 ETAPE 2 : VERSION 0.1
 * réflexion poussée sur les fonctionnalités de base à ajouter avant d'ajouter de nouvelles fonctions
