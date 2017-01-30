@@ -62,7 +62,8 @@ SOURCES += \
         src/fonction_widget/fonction_sortie_widget/texte_widget_item.cpp \
         src/fonction_widget/text_edit.cpp \
         src/fonction_widget/base_fonction_widget_avec_text_edit.cpp \
-        src/fonction_widget/fonction_sortie_widget/liste_texte_widget.cpp
+        src/fonction_widget/fonction_sortie_widget/liste_texte_widget.cpp \
+        src/fonction_widget/parametre_aide_message_box.cpp
 
 HEADERS  += \
         entete/compilation/compilateur.h \
@@ -112,7 +113,8 @@ HEADERS  += \
         entete/fonction_widget/fonction_sortie_widget/texte_widget_item.h \
         entete/fonction_widget/text_edit.h \
         entete/fonction_widget/base_fonction_widget_avec_text_edit.h \
-        entete/fonction_widget/fonction_sortie_widget/liste_texte_widget.h
+        entete/fonction_widget/fonction_sortie_widget/liste_texte_widget.h \
+        entete/fonction_widget/parametre_aide_message_box.h
 
 FORMS    += \
     fenetre_principale.ui

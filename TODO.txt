@@ -1,13 +1,7 @@
 La liste des choses à faire :
 
 ETAPE 1 : PRIORITAIRE
-* réflexion sur le stockage des projets, textes sources...
-* sauvegarde d'une sortie
-* vérifier la gestion des disconnect
-* vérifier les delete
 * améliorer la mise en page de l'aide des paramètres (avoir une méthode claire pour présenter les itérations )
-* lancer l'exécution dans un thread et verrouiller le projet automatiquement durant l'exécution
-* afficher les exécutions différemment. S'inspirer des exécutions de Qt
 
 ETAPE 2 : VERSION 0.1
 * réflexion poussée sur les fonctionnalités de base à ajouter avant d'ajouter de nouvelles fonctions
@@ -19,8 +13,11 @@ ETAPE 2 : VERSION 0.1
 
 ETAPE 3
 * Améliorer la sélection des fonctions : catégories, mots clés
+* sauvegarde d'une sortie
 
 ETAPE 4 : NON PRIORITAIRE
 * gestion des dictionnaires
 * ajouter la fonction de source texte fichier (éditable et réenregistrable)
 * ajouter des fonctions de conversion
+* lancer l'exécution dans un thread et verrouiller le projet automatiquement durant l'exécution
+* afficher les exécutions différemment. S'inspirer des exécutions de Qt

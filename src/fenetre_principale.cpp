@@ -116,11 +116,13 @@ void fenetre_principale::creer_toolbar()
     m_ui->mainToolBar->addWidget(m_toolbar_bouton_ajout_fonction_sortie);
     m_ui->mainToolBar->addSeparator();
 
+    /*
     QWidget* spacer = new QWidget();
     spacer->setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Expanding);
     m_ui->mainToolBar->addWidget(spacer);
+    */
 
-    m_ui->mainToolBar->addSeparator();
+    //m_ui->mainToolBar->addSeparator();
     m_ui->mainToolBar->addWidget(m_toolbar_bouton_executer);
 }
 
@@ -665,9 +667,6 @@ void fenetre_principale::on_externe_fermeture_projet(projet *p)
                   break;
               case QMessageBox::Cancel:
                   fermer = false;
-                  break;
-              default:
-                  // should never be reached
                   break;
             }
         }

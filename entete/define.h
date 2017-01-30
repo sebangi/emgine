@@ -33,5 +33,11 @@ enum type_id_parametre{
     PARAM_SOUSTRACTIF
 };
 
+/** \brief Enumération décrivant les différents algorithmes. */
+enum type_algorithme{
+    ALGO_AUCUN = 0,
+    ALGO_PMIPL,
+    ALGO_LIPL
+};
 
 #endif // DEFINE_H

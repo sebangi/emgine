@@ -13,9 +13,9 @@
 #include <iostream>
 
 base_parametre::base_parametre( objet_selectionnable * parent, QString nom, QString aide,
-                                bool peut_etre_vide, bool dans_configuration)
+                                bool peut_etre_vide, bool dans_configuration, type_algorithme algorithme)
     : fonctions_conteneur(parent), m_fonction_parent((base_fonction*)parent), m_nom(nom), m_aide(aide),
-      m_peut_etre_vide(peut_etre_vide), m_textes_out(), m_dans_configuration(dans_configuration)
+      m_peut_etre_vide(peut_etre_vide), m_textes_out(), m_dans_configuration(dans_configuration), m_algorithme(algorithme)
 {
 
 }

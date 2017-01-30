@@ -23,7 +23,7 @@ class base_parametre : public fonctions_conteneur
 
     public:
         base_parametre( objet_selectionnable * parent, QString nom, QString aide, bool peut_etre_vide,
-                        bool dans_configuration);
+                        bool dans_configuration, type_algorithme algorithme);
         ~base_parametre();
 
         void sauvegarder( QXmlStreamWriter & stream ) const;
@@ -81,6 +81,9 @@ class base_parametre : public fonctions_conteneur
 
         /** \brief Indique si le paramètre doit figurer dans la configuration. */
         bool m_dans_configuration;
+
+        /** \brief Le type d'algorithme utilisé. */
+        type_algorithme m_algorithme;
 };
 
 #endif // BASE_PARAMETRE_H

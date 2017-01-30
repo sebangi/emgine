@@ -11,6 +11,7 @@
 #include "entete/fenetre_principale.h"
 #include "entete/explorateur/explorateur.h"
 #include "entete/explorateur/noeud_parametre.h"
+#include "entete/fonction_widget/parametre_aide_message_box.h"
 #include <iostream>
 #include <math.h>
 
@@ -105,9 +106,8 @@ void base_parametre_widget::update_object_name()
 
 void base_parametre_widget::aide()
 {
-    QMessageBox msgBox(this);
-    msgBox.setWindowTitle(m_parametre->get_fonction_parent()->get_nom());
-    msgBox.setText("Paramètre " + m_parametre->get_nom() + " : \n" + m_parametre->get_aide());
+    parametre_aide_message_box msgBox(this, m_parametre);
+
     msgBox.exec();
 }
 
