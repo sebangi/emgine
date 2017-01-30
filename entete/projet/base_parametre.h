@@ -31,6 +31,7 @@ class base_parametre : public fonctions_conteneur
         QString get_titre() const;
         QString get_valeur_courte() const;
         QString get_aide() const;
+        QString get_aide_algorithme() const;
         type_element get_type() const;
 
         base_fonction *get_fonction_parent() const;

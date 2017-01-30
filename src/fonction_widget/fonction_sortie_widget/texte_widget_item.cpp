@@ -1,11 +1,22 @@
 #include "entete/fonction_widget/fonction_sortie_widget/texte_widget_item.h"
 
 #include <iostream>
+#include <QStyle>
+#include <QStyleOption>
+#include <QPainter>
 
 texte_widget_item::texte_widget_item(texte & t)
     : m_texte(t)
 {
     update();
+}
+
+void texte_widget_item::paintEvent(QPaintEvent *)
+{
+    QStyleOption opt;
+    opt.init(this);
+    QPainter p(this);
+    style()->drawPrimitive(QStyle::PE_Widget, &opt, &p, this);
 }
 
 void texte_widget_item::update()

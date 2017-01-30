@@ -31,7 +31,7 @@ void base_parametre::sauvegarder( QXmlStreamWriter & stream ) const
     stream.writeTextElement("id", QString::number(m_id));
     stream.writeTextElement("nom", m_nom);
     stream.writeTextElement("dans_configuration", QString::number(m_dans_configuration) );
-    objet_selectionnable::sauvegarder(stream);    
+    objet_selectionnable::sauvegarder(stream);
     fonctions_conteneur::sauvegarder(stream);
     stream.writeEndElement(); // Paramètre
 }
@@ -61,6 +61,18 @@ QString base_parametre::get_valeur_courte() const
 QString base_parametre::get_aide() const
 {
     return m_aide;
+}
+
+QString base_parametre::get_aide_algorithme() const
+{
+    if ( m_algorithme == ALGO_AUCUN )
+        return "aucun algorithme. Tout le texte est considéré d'un coup. Aucune itération.";
+    else if ( m_algorithme == ALGO_PMIPL )
+        return "Seul le premier mot de chaque ligne est considéré. Itération sur les lignes.";
+    else if ( m_algorithme == ALGO_LIPL )
+        return "Chaque ligne est considérée d'un coup. Itération sur les lignes";
+    else
+        return "inconnu";
 }
 
 type_element base_parametre::get_type() const
@@ -119,7 +131,7 @@ bool base_parametre::est_valide(logs_compilation_widget * vue_logs)
 
     type_fonctions actifs;
     for ( fonctions_iterateur it = m_fonctions.begin(); it != m_fonctions.end(); ++it )
-       if ( (*it)->est_active() )
+        if ( (*it)->est_active() )
             actifs.push_back(*it);
 
     if ( actifs.size() == 0 )
