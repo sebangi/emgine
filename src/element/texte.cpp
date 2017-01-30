@@ -105,7 +105,7 @@ int texte::get_nb_lignes_avec_configuration() const
         if ( m_configuration.empty() )
             result += 3; // configuration + aucune + ligne cide
         else
-            result += 2 + m_configuration.size() ; // configuration + nb param + ligne vide
+            result += 3 + m_configuration.size() ; // configuration + nb param + ligne vide
     }
 
     return result;

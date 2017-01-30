@@ -35,12 +35,14 @@ class base_fonction_widget : public QWidget, public QTableWidgetItem
         void update_actif_bouton();
         void update_close_bouton();
         void update_verrouillage_bouton();
-        void update_parametre_bouton();
+        void update_visibilite_bouton();
         void update_visibilite();
         void update_object_name();
         void aide();
         void connecter_fonction();
         void deconnecter_fonction();
+
+    public:
         virtual void informer_verrouillage_change();
 
     signals:

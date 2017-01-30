@@ -18,9 +18,13 @@ void fonction_sortie_texte_widget::on_externe_fst_textes_modifie()
 
     creer_liste_texte();
 
-    int old_h = m_liste_texte->height();
-    m_liste_texte->resize( m_liste_texte->sizeHint() );
-    setFixedHeight( height() - old_h + m_liste_texte->height() );
+    m_liste_texte->updateGeometry();
+
+    int save_width = width();
+    adjustSize();
+    adjustSize();
+    setFixedWidth(save_width);
+
     signal_bfw_size_change();
 }
 
@@ -38,6 +42,7 @@ void fonction_sortie_texte_widget::creer_liste_texte()
 void fonction_sortie_texte_widget::init()
 {
     QVBoxLayout* layout = new QVBoxLayout();
+    setSizePolicy (QSizePolicy(QSizePolicy::Ignored, QSizePolicy::Ignored));
     layout->setSizeConstraint(QLayout::SetFixedSize);
     layout->setMargin(0);
     layout->setSpacing(0);
@@ -59,20 +64,17 @@ void fonction_sortie_texte_widget::init()
 void fonction_sortie_texte_widget::onTexteDoubleClicked(QListWidgetItem* item)
 {
     ((texte_widget_item*)item)->get_texte().inverser_configuration_visibilite();
+
     ((texte_widget_item*)item)->update();
 
-    int old_w = m_liste_texte->width();
-    int old_maximum_w = m_liste_texte->maximumWidth();
-    int old_h = m_liste_texte->height();
-    m_liste_texte->resize( m_liste_texte->sizeHint() );
-    m_liste_texte->setFixedWidth( old_w );
-    m_liste_texte->setMaximumWidth(old_maximum_w);
-    m_liste_texte->setMinimumWidth(0);
-    setFixedHeight( height() - old_h + m_liste_texte->height());
+    m_liste_texte->updateGeometry();
+    int save_width = width();
+    adjustSize();
+    setFixedWidth(save_width);
 
     signal_bfw_size_change();
 
-    // Attention si on utilise la fonction get_configuration() si celle-ci a été détruite
+    // Attention si on utilise la fonction get_configuration() si la fonction a été détruite depuis
     // std::cout << ((texte_widget_item*)item)->get_texte().get_string_configuration().toStdString() << std::endl;
 }
 

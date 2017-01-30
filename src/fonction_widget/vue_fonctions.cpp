@@ -234,7 +234,9 @@ void vue_fonctions::deconnecter(objet_selectionnable* obj)
 void vue_fonctions::adjust_size_vue_fonction()
 {
     for ( int i = 0; i < rowCount(); ++i )
+    {
         setRowHeight(i, cellWidget(i,1)->size().height());
+    }
 }
 
 void vue_fonctions::on_externe_supprimer_fonction(base_fonction *f)

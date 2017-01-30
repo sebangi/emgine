@@ -9,8 +9,7 @@ ETAPE 1 : PRIORITAIRE
 * améliorer la mise en page de l'aide des paramètres (avoir une méthode claire pour présenter les itérations )
 * lancer l'exécution dans un thread et verrouiller le projet automatiquement durant l'exécution
 * afficher les exécutions différemment. S'inspirer des exécutions de Qt
-* revoir la taile du widget de texte_sortie lorsque la visbilité est au plus bas
-* le parametre alphabet devrait itérer sur la ligne. Chaque mot de la ligne est un dictionnaire. Ainsi on peut faire majuscule et minuscule en même temps
+* revoir la taille du widget de texte_sortie lorsque la visbilité est au plus bas
 
 ETAPE 2 : VERSION 0.1
 * réflexion poussée sur les fonctionnalités de base à ajouter avant d'ajouter de nouvelles fonctions

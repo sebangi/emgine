@@ -142,7 +142,7 @@ void base_fonction_widget::init()
     update_actif_bouton();
     update_verrouillage_bouton();
     update_close_bouton();
-    update_parametre_bouton();
+    update_visibilite_bouton();
     update_object_name();
     update_visibilite();
 }
@@ -218,10 +218,8 @@ void base_fonction_widget::update_verrouillage_bouton()
 /** --------------------------------------------------------------------------------------
  \brief Mise à jour du bouton d'activation.
 */
-void base_fonction_widget::update_parametre_bouton()
+void base_fonction_widget::update_visibilite_bouton()
 {
-    QStyle* style = QApplication::style();
-
     QIcon icon1;
 
     if ( m_fonction != NULL )
@@ -366,7 +364,7 @@ void base_fonction_widget::on_externe_verrouillage_change(objet_selectionnable *
 
 void base_fonction_widget::on_externe_niveau_visibilite_change(base_fonction* f)
 {
-    update_parametre_bouton();
+    update_visibilite_bouton();
     update_visibilite();
     emit signal_bfw_size_change();
 }

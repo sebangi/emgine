@@ -29,7 +29,6 @@ void base_fonction_widget_avec_text_edit::on_textChanged()
     on_nouveau_texte();
 
     m_fonction->modifier();
-
     m_text_edit->updateGeometry();
     int save_width = width();
     adjustSize();

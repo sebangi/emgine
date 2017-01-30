@@ -21,9 +21,9 @@ QSize liste_texte_widget::sizeHint() const
 
 QSize liste_texte_widget::minimumSizeHint() const
 {
-    int height = 10;
+    int height = 150;
     for ( int i = 0; i != count(); ++i )
-        height += ((texte_widget_item*)item(i))->get_height();
+        height += ((texte_widget_item*)item(i))->get_height() + 1;
 
-    return QSize(maximumWidth(), std::min(height, maximumHeight()));
+    return QSize(maximumWidth(), height);
 }
