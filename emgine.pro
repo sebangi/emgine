@@ -34,6 +34,7 @@ SOURCES += \
         src/fenetre_principale.cpp \
         src/fonction/bibliotheque_fonctions.cpp \
         src/fonction/algorithme/algo_PMIPL.cpp \
+        src/fonction/algorithme/algo_LIPL.cpp \
         src/fonction/fonction_conversion/fonction_cesar.cpp \
         src/fonction/fonction_sortie/fonction_base_sortie.cpp \
         src/fonction/fonction_sortie/fonction_sortie_texte.cpp \
@@ -63,7 +64,6 @@ SOURCES += \
         src/fonction_widget/base_fonction_widget_avec_text_edit.cpp \
         src/fonction_widget/fonction_sortie_widget/liste_texte_widget.cpp
 
-
 HEADERS  += \
         entete/compilation/compilateur.h \
         entete/compilation/log_compilation.h \
@@ -83,6 +83,7 @@ HEADERS  += \
         entete/explorateur/noeud_projet.h \
         entete/fenetre_principale.h \
         entete/fonction/algorithme/algo_PMIPL.h \
+        entete/fonction/algorithme/algo_LIPL.h \
         entete/fonction/bibliotheque_fonctions.h \
         entete/fonction/fonction_conversion/fonction_cesar.h \
         entete/fonction/fonction_sortie/fonction_base_sortie.h \
@@ -106,13 +107,12 @@ HEADERS  += \
         entete/projet/fonctions_conteneur.h \
         entete/projet/objet_selectionnable.h \
         entete/projet/projet.h \
-    entete/element/textes.h \
-    entete/compilation/configuration.h \
-    entete/fonction_widget/fonction_sortie_widget/texte_widget_item.h \
-    entete/fonction_widget/text_edit.h \
-    entete/fonction_widget/base_fonction_widget_avec_text_edit.h \
-    entete/fonction_widget/fonction_sortie_widget/liste_texte_widget.h
-
+        entete/element/textes.h \
+        entete/compilation/configuration.h \
+        entete/fonction_widget/fonction_sortie_widget/texte_widget_item.h \
+        entete/fonction_widget/text_edit.h \
+        entete/fonction_widget/base_fonction_widget_avec_text_edit.h \
+        entete/fonction_widget/fonction_sortie_widget/liste_texte_widget.h
 
 FORMS    += \
     fenetre_principale.ui

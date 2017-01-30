@@ -30,8 +30,8 @@ class fonction_cesar : public base_fonction
         void execution_specifique( compilateur &compil, const textes & textes_in, textes & textes_out );
 
     private:
-        std::map<base_element, int> m_position_alphabet;
-        std::vector<base_element> m_alphabet;
+        std::map<base_element, std::pair<int, int>> m_position_alphabet;
+        std::vector< std::vector<base_element> > m_alphabets;
 
         mot::const_iterator m_it_decalage_debut;
         mot::const_iterator m_it_decalage;

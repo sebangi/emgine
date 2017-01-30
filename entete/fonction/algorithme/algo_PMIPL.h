@@ -7,10 +7,10 @@
 #include "entete/element/mot.h"
 
 /**
- \brief Classe décrivant une fonction de conversion d'un texte.
+ \brief Classe de stockage pour l'utilisation de l'algorithme PMIPL.
+        Premier Mot Itération par ligne
  \author Sébastien Angibaud
 */
-// classe de stockage pour l'utilisation de l'algorithme IPMPL
 class algo_PMIPL
 {
     public:

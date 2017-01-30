@@ -38,7 +38,7 @@ void fonction_cesar::initialisation_par_defaut()
 {
     m_parametres[PARAM_DECALAGE]->set_texte_par_defaut("0\n1\n2\n3\n4\n5\n6\n7\n8\n9\n10\n11\n12\n13\n14\n15\n16\n17\n18\n19\n20\n21\n22\n23\n24\n25", ",", " ", "\n" );
     m_parametres[PARAM_SOUSTRACTIF]->set_booleen_par_defaut(false);
-    m_parametres[PARAM_ALPHABET]->set_texte_par_defaut("ABCDEFGHIJKLMNOPQRSTUVWXYZ\nabcdefghijklmnopqrstuvwxyz");
+    m_parametres[PARAM_ALPHABET]->set_texte_par_defaut("ABCDEFGHIJKLMNOPQRSTUVWXYZ abcdefghijklmnopqrstuvwxyz");
 }
 
 /*! --------------------------------------------------------------------------------------
@@ -65,13 +65,23 @@ QString fonction_cesar::get_valeur_courte() const
 void fonction_cesar::construire_alphabet()
 {
     m_position_alphabet.clear();
-    m_alphabet.clear();
+    m_alphabets.clear();
 
-    for ( mot::const_iterator it_c = m_map_PMIPL[PARAM_ALPHABET].it_debut;
-          it_c != m_map_PMIPL[PARAM_ALPHABET].it_fin; ++it_c )
+    int nb_alphabets = 0;
+
+    for ( ligne::const_iterator it_m = m_map_LIPL[PARAM_ALPHABET].it_debut;
+        it_m != m_map_LIPL[PARAM_ALPHABET].it_fin; ++it_m )
     {
-        m_alphabet.push_back(*it_c);
-        m_position_alphabet[*it_c] = m_alphabet.size()-1;
+        std::vector<base_element> alphabet;
+
+        for ( mot::const_iterator it_c = it_m->begin(); it_c != it_m->end(); ++it_c )
+        {
+            alphabet.push_back(*it_c);
+            m_position_alphabet[*it_c] = std::pair<int,int>(nb_alphabets, alphabet.size()-1);
+        }
+
+        m_alphabets.push_back( alphabet );
+        ++nb_alphabets;
     }
 }
 
@@ -80,7 +90,7 @@ void fonction_cesar::construire_alphabet()
 */
 void fonction_cesar::executer( compilateur &compil, const textes & textes_in, textes & textes_out )
 {
-    algo_PMIPL_iteration_premier_mot_par_ligne
+    algo_LIPL_iteration_premier_mot_par_ligne
             ( PARAM_ALPHABET, compil, textes_in, textes_out, & base_fonction::callback_param_1 );
 }
 
@@ -120,26 +130,28 @@ void fonction_cesar::execution_specifique( compilateur &compil, const textes & t
                 mot m;
                 for ( mot::const_iterator it_c = it_m->begin(); it_c != it_m->end(); ++it_c )
                 {
-                    std::map<base_element, int>::const_iterator it_pos = m_position_alphabet.find(*it_c);
+                    std::map<base_element, std::pair<int,int>>::const_iterator it_pos = m_position_alphabet.find(*it_c);
                     if ( it_pos == m_position_alphabet.end() )
                         m.push_back(*it_c);
                     else
                     {
                         int pos;
+                        int num_alphabet = it_pos->second.first;
 
                         if (  m_map_PMIPL[PARAM_SOUSTRACTIF].it_courant->get_booleen() )
                         {
-                            pos = it_pos->second - m_map_PMIPL[PARAM_DECALAGE].it_courant->get_entier();
+                            pos = it_pos->second.second - m_map_PMIPL[PARAM_DECALAGE].it_courant->get_entier();
                             if ( pos < 0 )
-                                pos += m_alphabet.size();
+                                pos += m_alphabets[num_alphabet].size();
                         }
                         else
-                            pos = (it_pos->second + m_map_PMIPL[PARAM_DECALAGE].it_courant->get_entier()) % m_alphabet.size();
+                            pos = (it_pos->second.second + m_map_PMIPL[PARAM_DECALAGE].it_courant->get_entier()) %
+                                    m_alphabets[num_alphabet].size();
 
                         PMIPL_suivant(PARAM_SOUSTRACTIF);
                         PMIPL_suivant(PARAM_DECALAGE);
 
-                        m.push_back( m_alphabet[pos] );
+                        m.push_back( m_alphabets[num_alphabet][pos] );
                     }
                 }
                 l.push_back(m);

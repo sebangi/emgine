@@ -14,6 +14,7 @@
 #include "entete/projet/objet_selectionnable.h"
 #include "entete/projet/fonctions_conteneur.h"
 #include "entete/fonction/algorithme/algo_PMIPL.h"
+#include "entete/fonction/algorithme/algo_LIPL.h"
 
 class noeud_fonction;
 class base_fonction_widget;
@@ -120,6 +121,12 @@ class base_fonction : public objet_selectionnable
           pf_exec_callback callback );
         void PMIPL_suivant( type_id_parametre id_param );
 
+        // Algorithme d'exécution LIPL
+        void algo_LIPL_iteration_premier_mot_par_ligne
+        ( type_id_parametre id_param, compilateur &compil, const textes & textes_in, textes & textes_out,
+          pf_exec_callback callback );
+        void LIPL_suivant( type_id_parametre id_param );
+
     public:
         virtual void callback_param_1( compilateur &compil, const textes & textes_in, textes & textes_out );
         virtual void callback_param_2( compilateur &compil, const textes & textes_in, textes & textes_out );
@@ -135,6 +142,7 @@ class base_fonction : public objet_selectionnable
         type_parametres m_parametres;
 
         algo_PMIPL::type_map_PMIPL m_map_PMIPL;
+        algo_LIPL::type_map_LIPL m_map_LIPL;
 
     private:
         type_fonction m_type;
