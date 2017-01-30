@@ -314,21 +314,23 @@ void fenetre_principale::ajouter_projet( projet * p )
 /** --------------------------------------------------------------------------------------
  \brief Sauvegarder le projet.
 */
-void fenetre_principale::enregistrer_projet(projet* p)
+bool fenetre_principale::enregistrer_projet(projet* p)
 {
     if ( p != NULL )
     {
         if ( p->est_nouveau() )
-            enregistrer_projet_sous( p );
+            return enregistrer_projet_sous( p );
         else
-            enregistrer_projet( p->get_nom_fichier(), p );
+            return enregistrer_projet( p->get_nom_fichier(), p );
     }
+
+    return false;
 }
 
 /** --------------------------------------------------------------------------------------
  \brief Sauvegarder le projet sous.
 */
-void fenetre_principale::enregistrer_projet_sous(projet * p)
+bool fenetre_principale::enregistrer_projet_sous(projet * p)
 {
     QFileDialog d(this);
     d.setDefaultSuffix("emg");
@@ -337,30 +339,32 @@ void fenetre_principale::enregistrer_projet_sous(projet * p)
         dir = "mes_projets";
     else
         dir = p->get_dossier();
+
     QString nom_fichier = d.getSaveFileName( this, tr("Sauvegarder le projet"), dir,
                                              tr("projet Decode (*.emg);;"));
 
     if (nom_fichier.isEmpty())
-        return;
+        return false;
     else
     {
         if (!nom_fichier.endsWith(".emg"))
             nom_fichier += ".emg";
 
         enregistrer_projet(nom_fichier, p);
+        return true;
     }
 }
 
 /** --------------------------------------------------------------------------------------
  \brief Sauvegarder le projet.
 */
-void fenetre_principale::enregistrer_projet(const QString & nom_fichier, projet * p)
+bool fenetre_principale::enregistrer_projet(const QString & nom_fichier, projet * p)
 {
     QFile file(nom_fichier);
     if (!file.open(QIODevice::WriteOnly)) {
         QMessageBox::information(this, tr("Impossible d'ouvrir le fichier."),
                                  file.errorString());
-        return;
+        return false;
     }
 
     p->set_nom_fichier(nom_fichier);
@@ -370,6 +374,8 @@ void fenetre_principale::enregistrer_projet(const QString & nom_fichier, projet 
     stream.writeStartDocument();
     p->sauvegarder( stream );
     stream.writeEndDocument();
+
+    return true;
 }
 
 /** --------------------------------------------------------------------------------------
@@ -637,11 +643,43 @@ void fenetre_principale::on_externe_fermeture_projet(projet *p)
 {
     if ( s_projets.contains(p) )
     {
-        objet_selectionnable::forcer_deselection();
+        bool fermer = true;
 
-        int i = s_projets.indexOf(p);
-        delete s_projets.at(i);
-        s_projets.removeOne(p);
+        if ( p->est_enregistrable() || p->est_nouveau() )
+        {
+            fermer = false;
+
+            QMessageBox msgBox;
+            msgBox.setText("Le projet n'est pas enregistré.");
+            msgBox.setInformativeText("Souhaitez-vous enregistrer les changements ?");
+            msgBox.setStandardButtons(QMessageBox::Save | QMessageBox::Discard | QMessageBox::Cancel);
+            msgBox.setDefaultButton(QMessageBox::Save);
+            int ret = msgBox.exec();
+
+            switch (ret) {
+              case QMessageBox::Save:
+                    fermer = enregistrer_projet(p);
+                  break;
+              case QMessageBox::Discard:
+                    fermer = true;
+                  break;
+              case QMessageBox::Cancel:
+                  fermer = false;
+                  break;
+              default:
+                  // should never be reached
+                  break;
+            }
+        }
+
+        if ( fermer )
+        {
+            objet_selectionnable::forcer_deselection();
+
+            int i = s_projets.indexOf(p);
+            delete s_projets.at(i);
+            s_projets.removeOne(p);
+        }
     }
 }
 

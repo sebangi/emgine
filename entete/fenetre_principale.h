@@ -59,7 +59,7 @@ class fenetre_principale : public QMainWindow
 
         void ajouter_projet( projet * p );
         void selectionner_projet();
-        void enregistrer_projet( const QString & nom_fichier, projet * p);
+        bool enregistrer_projet( const QString & nom_fichier, projet * p);
         void ouvrir_projet();
         void creer_projet(QXmlStreamReader & xml, const QString & nom);
         void executer( projet* p );
@@ -72,8 +72,8 @@ class fenetre_principale : public QMainWindow
         void deconnecter();
 
     private slots:
-        void enregistrer_projet_sous(projet * p);
-        void enregistrer_projet( projet* p );
+        bool enregistrer_projet_sous(projet * p);
+        bool enregistrer_projet( projet* p );
         void on_ajouter_fonction_source_click();
         void on_ajouter_fonction_conversion_click();
         void on_ajouter_fonction_sortie_click();

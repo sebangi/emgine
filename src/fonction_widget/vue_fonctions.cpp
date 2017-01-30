@@ -47,9 +47,6 @@ void vue_fonctions::init()
     horizontalHeader()->setFixedHeight(25);
     setRowCount(0);
     setHorizontalHeaderItem(0, new QTableWidgetItem());
-    QIcon icon1;
-    icon1.addFile(QString::fromUtf8("icons/fleche_haut.png"), QSize(), QIcon::Normal, QIcon::Off);
-    horizontalHeaderItem(0)->setIcon(icon1);
     setHorizontalHeaderItem(1, new QTableWidgetItem());
     horizontalHeaderItem(1)->setText("");
     QFont font = horizontalHeaderItem(1)->font();
@@ -108,12 +105,20 @@ void vue_fonctions::creer_vue_conteneur()
 
     if ( m_conteneur_courant != NULL )
     {
+        QIcon icon1;
+        if ( ! m_conteneur_courant->est_projet() )
+            icon1.addFile(QString::fromUtf8("icons/fleche_haut.png"), QSize(), QIcon::Normal, QIcon::Off);
+
+        horizontalHeaderItem(1)->setIcon(icon1);
+
         horizontalHeaderItem(1)->setText( m_conteneur_courant->get_titre() );
 
         for ( fonctions_conteneur::fonctions_iterateur it = m_conteneur_courant->fonctions_begin();
               it != m_conteneur_courant->fonctions_end(); ++it )
             ajouter_vue_fonction( *it );
     }
+    else
+      horizontalHeaderItem(1)->setIcon(QIcon());
 }
 
 /** --------------------------------------------------------------------------------------
@@ -356,7 +361,7 @@ void vue_fonctions::on_externe_fonction_widget_size_change()
 
 void vue_fonctions::on_hheaderclicked(int colonne)
 {
-    if ( colonne == 0 )
+    if ( colonne == 1 )
     {
         if ( m_conteneur_courant != NULL )
         {

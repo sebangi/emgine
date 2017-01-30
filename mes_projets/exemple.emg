@@ -16,7 +16,8 @@
                 <est_etendu>0</est_etendu>
                 <verrouille>0</verrouille>
             </objet_selectionnable>
-            <valeur>UNHBH TM SDRS !</valeur>
+            <valeur>UNHBH TM SDRS !
+unhbh tm sdrs !</valeur>
             <parametres>
                 <parametre>
                     <id>0</id>
@@ -118,8 +119,7 @@
                                 <est_etendu>0</est_etendu>
                                 <verrouille>0</verrouille>
                             </objet_selectionnable>
-                            <valeur>ABCDEFGHIJKLMNOPQRSTUVWXYZ
-abcdefghijklmnopqrstuvwxyz</valeur>
+                            <valeur>ABCDEFGHIJKLMNOPQRSTUVWXYZ abcdefghijklmnopqrstuvwxyz</valeur>
                             <parametres>
                                 <parametre>
                                     <id>0</id>
