@@ -13,6 +13,7 @@
 #include "entete/projet/base_parametre.h"
 #include "entete/projet/objet_selectionnable.h"
 #include "entete/projet/fonctions_conteneur.h"
+#include "entete/fonction/algorithme/algo_PMIPL.h"
 
 class noeud_fonction;
 class base_fonction_widget;
@@ -42,23 +43,6 @@ class base_fonction : public objet_selectionnable
 
     protected:
         typedef void ( base_fonction::*pf_exec_callback)( compilateur &, const textes &, textes & );
-
-        // class de stockage pour l'utilisation de l'algorithme IPMPL
-        class IPMPL
-        {
-            public:
-                IPMPL();
-                ~IPMPL();
-
-            public:
-                const mot* mot_courant;
-                mot::const_iterator it_debut;
-                mot::const_iterator it_courant;
-                mot::const_iterator it_fin;
-        };
-
-        typedef std::map< type_id_parametre, IPMPL > type_map_IPMPL;
-
 
     public:
         base_fonction( fonctions_conteneur * parent, const QString & nom, type_fonction type = fonction_conversion);
@@ -130,11 +114,11 @@ class base_fonction : public objet_selectionnable
         const textes & get_textes_parametre( type_id_parametre type ) const;
         void augmenter_max_niveau_visibilite( int val );
 
-        // Algorithme d'exécution
-        void algo_IPMPL_iteration_premier_mot_par_ligne
+        // Algorithme d'exécution PMIPL
+        void algo_PMIPL_iteration_premier_mot_par_ligne
         ( type_id_parametre id_param, compilateur &compil, const textes & textes_in, textes & textes_out,
           pf_exec_callback callback );
-        void IPMPL_suivant( type_id_parametre id_param );
+        void PMIPL_suivant( type_id_parametre id_param );
 
     public:
         virtual void callback_param_1( compilateur &compil, const textes & textes_in, textes & textes_out );
@@ -150,7 +134,7 @@ class base_fonction : public objet_selectionnable
         /** \brief La liste des parametres. */
         type_parametres m_parametres;
 
-        type_map_IPMPL m_map_IPMPL;
+        algo_PMIPL::type_map_PMIPL m_map_PMIPL;
 
     private:
         type_fonction m_type;

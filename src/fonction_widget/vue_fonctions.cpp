@@ -129,9 +129,6 @@ void vue_fonctions::ajouter_vue_fonction(base_fonction* fonction)
     int position = fonction->get_position();
     insertRow(position);
 
-    //setRowCount(rowCount() + 1);
-    //position = rowCount() - 1;
-
     setCellWidget(position, 1, (QWidget*)widget);
     setItem(position, 2, new QTableWidgetItem("essai"));
 

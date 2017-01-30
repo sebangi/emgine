@@ -67,8 +67,8 @@ void fonction_cesar::construire_alphabet()
     m_position_alphabet.clear();
     m_alphabet.clear();
 
-    for ( mot::const_iterator it_c = m_map_IPMPL[PARAM_ALPHABET].it_debut;
-          it_c != m_map_IPMPL[PARAM_ALPHABET].it_fin; ++it_c )
+    for ( mot::const_iterator it_c = m_map_PMIPL[PARAM_ALPHABET].it_debut;
+          it_c != m_map_PMIPL[PARAM_ALPHABET].it_fin; ++it_c )
     {
         m_alphabet.push_back(*it_c);
         m_position_alphabet[*it_c] = m_alphabet.size()-1;
@@ -80,7 +80,7 @@ void fonction_cesar::construire_alphabet()
 */
 void fonction_cesar::executer( compilateur &compil, const textes & textes_in, textes & textes_out )
 {
-    algo_IPMPL_iteration_premier_mot_par_ligne
+    algo_PMIPL_iteration_premier_mot_par_ligne
             ( PARAM_ALPHABET, compil, textes_in, textes_out, & base_fonction::callback_param_1 );
 }
 
@@ -91,7 +91,7 @@ void fonction_cesar::callback_param_1( compilateur &compil, const textes & texte
 {
     construire_alphabet();
 
-    algo_IPMPL_iteration_premier_mot_par_ligne
+    algo_PMIPL_iteration_premier_mot_par_ligne
             ( PARAM_SOUSTRACTIF, compil, textes_in, textes_out, & base_fonction::callback_param_2 );
 }
 
@@ -100,7 +100,7 @@ void fonction_cesar::callback_param_1( compilateur &compil, const textes & texte
 */
 void fonction_cesar::callback_param_2( compilateur &compil, const textes & textes_in, textes & textes_out )
 {
-    algo_IPMPL_iteration_premier_mot_par_ligne
+    algo_PMIPL_iteration_premier_mot_par_ligne
             ( PARAM_DECALAGE, compil, textes_in, textes_out, & base_fonction::execution_specifique );
 }
 
@@ -127,17 +127,17 @@ void fonction_cesar::execution_specifique( compilateur &compil, const textes & t
                     {
                         int pos;
 
-                        if (  m_map_IPMPL[PARAM_SOUSTRACTIF].it_courant->get_booleen() )
+                        if (  m_map_PMIPL[PARAM_SOUSTRACTIF].it_courant->get_booleen() )
                         {
-                            pos = it_pos->second - m_map_IPMPL[PARAM_DECALAGE].it_courant->get_entier();
+                            pos = it_pos->second - m_map_PMIPL[PARAM_DECALAGE].it_courant->get_entier();
                             if ( pos < 0 )
                                 pos += m_alphabet.size();
                         }
                         else
-                            pos = (it_pos->second + m_map_IPMPL[PARAM_DECALAGE].it_courant->get_entier()) % m_alphabet.size();
+                            pos = (it_pos->second + m_map_PMIPL[PARAM_DECALAGE].it_courant->get_entier()) % m_alphabet.size();
 
-                        IPMPL_suivant(PARAM_SOUSTRACTIF);
-                        IPMPL_suivant(PARAM_DECALAGE);
+                        PMIPL_suivant(PARAM_SOUSTRACTIF);
+                        PMIPL_suivant(PARAM_DECALAGE);
 
                         m.push_back( m_alphabet[pos] );
                     }

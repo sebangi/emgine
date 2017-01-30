@@ -338,7 +338,7 @@ void base_fonction::charger_parametre(QXmlStreamReader & xml)
 /*! --------------------------------------------------------------------------------------
  \brief Algorithme d'exécution selon un parametre donné dans le cas : itération sur le premier mot de chaque ligne.
 */
-void base_fonction::algo_IPMPL_iteration_premier_mot_par_ligne
+void base_fonction::algo_PMIPL_iteration_premier_mot_par_ligne
 ( type_id_parametre id_param, compilateur &compil, const textes & textes_in, textes & textes_out,
   pf_exec_callback callback )
 {
@@ -383,10 +383,10 @@ void base_fonction::algo_IPMPL_iteration_premier_mot_par_ligne
                         }
                         else
                         {
-                            m_map_IPMPL[id_param].it_debut = it_m->begin();
-                            m_map_IPMPL[id_param].it_courant = it_m->begin();
-                            m_map_IPMPL[id_param].it_fin = it_m->end();
-                            m_map_IPMPL[id_param].mot_courant = &(*it_m);
+                            m_map_PMIPL[id_param].it_debut = it_m->begin();
+                            m_map_PMIPL[id_param].it_courant = it_m->begin();
+                            m_map_PMIPL[id_param].it_fin = it_m->end();
+                            m_map_PMIPL[id_param].mot_courant = &(*it_m);
 
                             if ( m_parametres[id_param]->est_dans_configuration() )
                                compil.ajouter_configuration(this, id_param, it_m->to_string_lisible());
@@ -403,11 +403,11 @@ void base_fonction::algo_IPMPL_iteration_premier_mot_par_ligne
     }
 }
 
-void base_fonction::IPMPL_suivant(type_id_parametre id_param)
+void base_fonction::PMIPL_suivant(type_id_parametre id_param)
 {
-    m_map_IPMPL[id_param].it_courant++;
-    if ( m_map_IPMPL[id_param].it_courant == m_map_IPMPL[id_param].it_fin )
-        m_map_IPMPL[id_param].it_courant = m_map_IPMPL[id_param].it_debut;
+    m_map_PMIPL[id_param].it_courant++;
+    if ( m_map_PMIPL[id_param].it_courant == m_map_PMIPL[id_param].it_fin )
+        m_map_PMIPL[id_param].it_courant = m_map_PMIPL[id_param].it_debut;
 }
 
 void base_fonction::callback_param_1(compilateur &compil, const textes &textes_in, textes &textes_out)
@@ -436,16 +436,6 @@ void base_fonction::callback_param_4(compilateur &compil, const textes &textes_i
 
 void base_fonction::execution_specifique(compilateur &compil, const textes &textes_in, textes &textes_out)
 {
-    std::cout << "base_fonction::callback_param_4" << std::endl;
+    std::cout << "base_fonction::execution_specifique" << std::endl;
     std::cout << "Erreur : on ne doit pas passer dans cette méthode virtuelle." << std::endl;
-}
-
-base_fonction::IPMPL::IPMPL()
-{
-
-}
-
-base_fonction::IPMPL::~IPMPL()
-{
-
 }

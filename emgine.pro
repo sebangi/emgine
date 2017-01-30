@@ -33,6 +33,7 @@ SOURCES += \
         src/explorateur/noeud_projet.cpp\
         src/fenetre_principale.cpp \
         src/fonction/bibliotheque_fonctions.cpp \
+        src/fonction/algorithme/algo_PMIPL.cpp \
         src/fonction/fonction_conversion/fonction_cesar.cpp \
         src/fonction/fonction_sortie/fonction_base_sortie.cpp \
         src/fonction/fonction_sortie/fonction_sortie_texte.cpp \
@@ -55,12 +56,12 @@ SOURCES += \
         src/projet/fonctions_conteneur.cpp \
         src/projet/objet_selectionnable.cpp \
         src/projet/projet.cpp \
-    src/element/textes.cpp \
-    src/compilation/configuration.cpp \
-    src/fonction_widget/fonction_sortie_widget/texte_widget_item.cpp \
-    src/fonction_widget/text_edit.cpp \
-    src/fonction_widget/base_fonction_widget_avec_text_edit.cpp \
-    src/fonction_widget/fonction_sortie_widget/liste_texte_widget.cpp
+        src/element/textes.cpp \
+        src/compilation/configuration.cpp \
+        src/fonction_widget/fonction_sortie_widget/texte_widget_item.cpp \
+        src/fonction_widget/text_edit.cpp \
+        src/fonction_widget/base_fonction_widget_avec_text_edit.cpp \
+        src/fonction_widget/fonction_sortie_widget/liste_texte_widget.cpp
 
 
 HEADERS  += \
@@ -81,6 +82,7 @@ HEADERS  += \
         entete/explorateur/noeud_parametre.h \
         entete/explorateur/noeud_projet.h \
         entete/fenetre_principale.h \
+        entete/fonction/algorithme/algo_PMIPL.h \
         entete/fonction/bibliotheque_fonctions.h \
         entete/fonction/fonction_conversion/fonction_cesar.h \
         entete/fonction/fonction_sortie/fonction_base_sortie.h \
