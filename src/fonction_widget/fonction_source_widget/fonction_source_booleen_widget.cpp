@@ -57,8 +57,8 @@ void fonction_source_booleen_widget::informer_verrouillage_change()
 {
     if ( m_fonction != NULL )
     {
-        m_check_non->setEnabled( m_fonction->est_verrouille_avec_parent() );
-        m_check_oui->setEnabled( m_fonction->est_verrouille_avec_parent() );
+        m_check_non->setEnabled( ! m_fonction->est_verrouille_avec_parent() );
+        m_check_oui->setEnabled( ! m_fonction->est_verrouille_avec_parent() );
     }
     else
     {

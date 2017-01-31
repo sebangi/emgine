@@ -14,10 +14,12 @@
 #include <iostream>
 
 base_parametre::base_parametre( objet_selectionnable * parent, QString nom, QString aide,
-                                bool peut_etre_vide, bool dans_configuration, type_algorithme algorithme)
+                                type_mode_contenu_parametre mode_contenu_parametre,
+                                type_mode_configuration_visibilite visible,
+                                type_algorithme algorithme)
     : fonctions_conteneur(parent), m_fonction_parent((base_fonction*)parent), m_nom(nom), m_aide(aide),
-      m_peut_etre_vide(peut_etre_vide), m_textes_out(), m_dans_configuration(dans_configuration), m_algorithme(algorithme),
-      m_type(TYPE_PARAM_BASE)
+      m_mode_contenu_parametre(mode_contenu_parametre), m_textes_out(), m_mode_configuration_visibilite(visible),
+      m_algorithme(algorithme), m_type(TYPE_PARAM_BASE)
 {
 
 }
@@ -32,7 +34,7 @@ void base_parametre::sauvegarder( QXmlStreamWriter & stream ) const
     stream.writeStartElement("parametre");
     stream.writeTextElement("id", QString::number(m_id));
     stream.writeTextElement("nom", m_nom);
-    stream.writeTextElement("dans_configuration", QString::number(m_dans_configuration) );
+    stream.writeTextElement("dans_configuration", QString::number(m_mode_configuration_visibilite) );
     objet_selectionnable::sauvegarder(stream);
     fonctions_conteneur::sauvegarder(stream);
     stream.writeEndElement(); // Paramètre
@@ -89,7 +91,7 @@ base_fonction *base_parametre::get_fonction_parent() const
 
 bool base_parametre::is_requis() const
 {
-    return m_peut_etre_vide;
+    return m_mode_contenu_parametre;
 }
 
 void base_parametre::set_booleen_par_defaut(bool valeur)
@@ -179,8 +181,10 @@ void base_parametre::charger(QXmlStreamReader & xml)
         else if(xml.name() == "dans_configuration")
         {
             QString dans_configuration = xml.readElementText();
-            set_dans_configuration( dans_configuration.toInt() );
-
+            if ( dans_configuration.toInt() == 1 )
+                set_mode_configuration_visibilite( CONFIGURATION_VISIBLE );
+            else
+                set_mode_configuration_visibilite( CONFIGURATION_INVISIBLE );
         }
         else if (xml.name() == "objet_selectionnable")
             objet_selectionnable::charger(xml);
@@ -196,25 +200,29 @@ void base_parametre::charger(QXmlStreamReader & xml)
     }
 }
 
-bool base_parametre::est_dans_configuration() const
+bool base_parametre::configuration_visible() const
 {
-    return m_dans_configuration;
+    return m_mode_configuration_visibilite == CONFIGURATION_VISIBLE;
 }
 
-void base_parametre::inverser_dans_configuration()
+void base_parametre::inverser_configuration_visibilite()
 {
-    m_dans_configuration = ! m_dans_configuration;
+    if ( m_mode_configuration_visibilite == CONFIGURATION_INVISIBLE )
+        m_mode_configuration_visibilite = CONFIGURATION_VISIBLE;
+    else
+        m_mode_configuration_visibilite = CONFIGURATION_INVISIBLE;
+
     modifier();
 }
 
-void base_parametre::set_dans_configuration(bool dans_configuration)
+void base_parametre::set_mode_configuration_visibilite(type_mode_configuration_visibilite visible)
 {
-    m_dans_configuration = dans_configuration;
+    m_mode_configuration_visibilite = visible;
 }
 
 bool base_parametre::peut_etre_vide() const
 {
-    return m_peut_etre_vide;
+    return m_mode_contenu_parametre == CONTENU_PARAM_VIDE_POSSIBLE;
 }
 
 type_type_parametre base_parametre::get_type() const

@@ -5,9 +5,11 @@
 class base_parametre;
 
 parametre_choix::parametre_choix( objet_selectionnable * parent, QString nom, QString aide,
-                                  bool peut_etre_vide, bool dans_configuration, type_algorithme algorithme,
+                                  type_mode_contenu_parametre mode_contenu_parametre,
+                                  type_mode_configuration_visibilite mode_configuration_visibilite,
+                                  type_algorithme algorithme,
                                   const QStringList & choix, bool multiple_selection )
-    : base_parametre(parent, nom, aide, peut_etre_vide, dans_configuration, algorithme),
+    : base_parametre(parent, nom, aide, mode_contenu_parametre, mode_configuration_visibilite, algorithme),
       m_choix(choix), m_multiple_selection(multiple_selection)
 {
     m_type = TYPE_PARAM_CHOIX;

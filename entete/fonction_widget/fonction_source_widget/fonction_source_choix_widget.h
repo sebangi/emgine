@@ -14,16 +14,15 @@ class fonction_source_choix_widget : public base_fonction_widget
 
     private:
         void init();
+        void construire_liste();
         void informer_verrouillage_change();
 
     private slots :
-        //void on_oui_stateChanged(int checkState);
-        //void on_non_stateChanged(int checkState);
+        void on_itemChanged(QListWidgetItem * item);
 
     private:
-        //QCheckBox * m_check_oui;
-        //QCheckBox * m_check_non;
         QListWidget * m_liste;
+        bool m_verrou_boucle_signaux;
 };
 
 #endif // FONCTION_SOURCE_CHOIX_WIDGET_H

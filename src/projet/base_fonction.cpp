@@ -377,12 +377,12 @@ void base_fonction::algo_PMIPL_iteration_premier_mot_par_ligne
                             m_map_PMIPL[id_param].it_fin = it_m->end();
                             m_map_PMIPL[id_param].mot_courant = &(*it_m);
 
-                            if ( m_parametres[id_param]->est_dans_configuration() )
+                            if ( m_parametres[id_param]->configuration_visible() )
                                 compil.ajouter_configuration(this, id_param, it_m->to_string_lisible());
 
                             (this->*callback)(compil, textes_in, textes_out);
 
-                            if ( m_parametres[id_param]->est_dans_configuration() )
+                            if ( m_parametres[id_param]->configuration_visible() )
                                 compil.retirer_configuration(this, id_param);
                         }
                     }
@@ -431,12 +431,12 @@ void base_fonction::algo_LIPL_iteration_premier_mot_par_ligne
                         m_map_LIPL[id_param].it_fin = it_l->end();
                         m_map_LIPL[id_param].ligne_courante = &(*it_l);
 
-                        if ( m_parametres[id_param]->est_dans_configuration() )
+                        if ( m_parametres[id_param]->configuration_visible() )
                             compil.ajouter_configuration(this, id_param, it_l->to_string_lisible());
 
                         (this->*callback)(compil, textes_in, textes_out);
 
-                        if ( m_parametres[id_param]->est_dans_configuration() )
+                        if ( m_parametres[id_param]->configuration_visible() )
                             compil.retirer_configuration(this, id_param);
                     }
             }

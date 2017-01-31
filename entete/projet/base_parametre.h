@@ -22,8 +22,31 @@ class base_parametre : public fonctions_conteneur
         Q_OBJECT
 
     public:
-        base_parametre( objet_selectionnable * parent, QString nom, QString aide, bool peut_etre_vide,
-                        bool dans_configuration, type_algorithme algorithme);
+
+        enum type_mode_configuration_visibilite
+        {
+            CONFIGURATION_INVISIBLE = 0,
+            CONFIGURATION_VISIBLE
+        };
+
+
+        enum type_mode_contenu_parametre
+        {
+            CONTENU_PARAM_VIDE_IMPOSSIBLE = 0,
+            CONTENU_PARAM_VIDE_POSSIBLE
+        };
+
+        /** \brief Enumération décrivant les différents algorithmes pour l'excution des paramètres. */
+        enum type_algorithme{
+            ALGO_AUCUN = 0,
+            ALGO_PMIPL,
+            ALGO_LIPL
+        };
+
+    public:
+        base_parametre( objet_selectionnable * parent, QString nom, QString aide,
+                        type_mode_contenu_parametre mode_contenu_parametre,
+                        type_mode_configuration_visibilite dans_configuration, type_algorithme algorithme);
         ~base_parametre();
 
         void sauvegarder( QXmlStreamWriter & stream ) const;
@@ -52,11 +75,9 @@ class base_parametre : public fonctions_conteneur
 
         void charger( QXmlStreamReader & xml );
 
-        bool est_dans_configuration() const;
-
-        void inverser_dans_configuration();
-
-        void set_dans_configuration(bool dans_configuration);
+        bool configuration_visible() const;
+        void inverser_configuration_visibilite();
+        void set_mode_configuration_visibilite(type_mode_configuration_visibilite visible);
 
         bool peut_etre_vide() const;
 
@@ -70,7 +91,7 @@ class base_parametre : public fonctions_conteneur
         QString m_aide;
 
         /** \brief Indique si le parametre est requis. */
-        bool m_peut_etre_vide;
+        type_mode_contenu_parametre m_mode_contenu_parametre;
 
         /** \brief La fonction parent. */
         base_fonction * m_fonction_parent;
@@ -82,7 +103,7 @@ class base_parametre : public fonctions_conteneur
         type_id_parametre m_id;
 
         /** \brief Indique si le paramètre doit figurer dans la configuration. */
-        bool m_dans_configuration;
+        type_mode_configuration_visibilite m_mode_configuration_visibilite;
 
         /** \brief Le type d'algorithme utilisé. */
         type_algorithme m_algorithme;

@@ -13,8 +13,10 @@ class parametre_choix : public base_parametre
         Q_OBJECT
 
     public:
-        parametre_choix( objet_selectionnable * parent, QString nom, QString aide, bool peut_etre_vide,
-                         bool dans_configuration, type_algorithme algorithme,
+        parametre_choix( objet_selectionnable * parent, QString nom, QString aide,
+                         type_mode_contenu_parametre mode_contenu_parametre,
+                         type_mode_configuration_visibilite mode_configuration_visibilite,
+                         type_algorithme algorithme,
                          const QStringList & get_choix, bool multiple_selection);
         ~parametre_choix();
 

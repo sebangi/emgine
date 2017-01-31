@@ -33,6 +33,8 @@ class fonction_cesar : public base_fonction
         std::map<base_element, std::pair<int, int>> m_position_alphabet;
         std::vector< std::vector<base_element> > m_alphabets;
 
+        bool m_additif_courant;
+
         mot::const_iterator m_it_decalage_debut;
         mot::const_iterator m_it_decalage;
         mot::const_iterator m_it_decalage_fin;

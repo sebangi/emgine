@@ -82,7 +82,7 @@ void base_parametre_widget::init()
 void base_parametre_widget::mettre_a_jour_configuration()
 {
     QIcon icon1;
-    if ( m_parametre->est_dans_configuration() )
+    if ( m_parametre->configuration_visible() )
         icon1.addFile(QString::fromUtf8("icons/log.png"), QSize(), QIcon::Normal, QIcon::Off);
     else
         icon1.addFile(QString::fromUtf8("icons/no_log.png"), QSize(), QIcon::Normal, QIcon::Off);
@@ -150,7 +150,7 @@ void base_parametre_widget::on_aide()
 
 void base_parametre_widget::on_inverser_configuration()
 {
-    m_parametre->inverser_dans_configuration();
+    m_parametre->inverser_configuration_visibilite();
     mettre_a_jour_configuration();
 }
 

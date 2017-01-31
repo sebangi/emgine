@@ -30,7 +30,6 @@ enum type_type_parametre{
     TYPE_PARAM_CHOIX
 };
 
-
 /** \brief Enumération décrivant les différents paramètres. */
 enum type_id_parametre{
     PARAM_CARACTERE_SEPARATEUR = 0,
@@ -38,15 +37,8 @@ enum type_id_parametre{
     PARAM_LIGNE_SEPARATEUR,
     PARAM_ALPHABET,
     PARAM_DECALAGE,
-    PARAM_TYPE_DECALAGE,
-    PARAM_SOUSTRACTIF
+    PARAM_ADDITIF
 };
 
-/** \brief Enumération décrivant les différents algorithmes. */
-enum type_algorithme{
-    ALGO_AUCUN = 0,
-    ALGO_PMIPL,
-    ALGO_LIPL
-};
 
 #endif // DEFINE_H
