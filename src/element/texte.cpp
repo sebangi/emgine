@@ -133,7 +133,7 @@ void texte::inverser_configuration_visibilite()
 
 int texte::get_nb_lignes_avec_information() const
 {
-    int result = size() + 1; //+ une ligne pour la scrollbar éventuelle
+    int result = size();
 
     if ( m_configuration_visible )
     {

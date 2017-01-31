@@ -20,12 +20,6 @@ void fonction_sortie_texte_widget::on_externe_fst_textes_modifie()
     creer_liste_texte();
 
     m_liste_texte->updateGeometry();
-
-    int save_width = width();
-    adjustSize();
-    adjustSize();
-    setFixedWidth(save_width);
-
     signal_bfw_size_change();
 }
 
@@ -70,11 +64,6 @@ void fonction_sortie_texte_widget::onTexteDoubleClicked(QListWidgetItem* item)
     ((texte_widget_item*)item)->update();
 
     m_liste_texte->updateGeometry();
-    int save_width = width();
-    adjustSize();
-    adjustSize();
-    setFixedWidth(save_width);
-
     signal_bfw_size_change();
 
     // Attention si on utilise la fonction get_configuration() si la fonction a été détruite depuis

@@ -35,5 +35,8 @@ void liste_texte_widget::init()
     setMinimumHeight(25);
     setMaximumHeight(400);
     setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Fixed);
+
+    setVerticalScrollMode(QAbstractItemView::ScrollPerPixel);
+    verticalScrollBar()->setSingleStep(20);
 }
 

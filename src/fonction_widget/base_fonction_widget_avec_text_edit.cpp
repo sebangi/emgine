@@ -30,9 +30,6 @@ void base_fonction_widget_avec_text_edit::on_textChanged()
 
     m_fonction->modifier();
     m_text_edit->updateGeometry();
-    int save_width = width();
-    adjustSize();
-    setFixedWidth(save_width);
 
     signal_bfw_size_change();
 }
