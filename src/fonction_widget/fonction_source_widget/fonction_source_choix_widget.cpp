@@ -13,12 +13,12 @@ fonction_source_choix_widget::fonction_source_choix_widget(base_fonction *foncti
 void fonction_source_choix_widget::init()
 {
     QHBoxLayout * lay = new QHBoxLayout();
-    lay->setSizeConstraint(QLayout::SetFixedSize);
+    lay->setSizeConstraint(QLayout::SetMaximumSize);
 
     m_liste = new QListWidget();
     m_liste->setMinimumHeight(20);
     m_liste->setMaximumHeight(400);
-    m_liste->setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Fixed);
+    m_liste->setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Maximum);
 
     if ( m_fonction != NULL )
         if ( m_fonction->get_conteneur() != NULL )
