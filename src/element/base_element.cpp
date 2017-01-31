@@ -51,7 +51,7 @@ bool base_element::get_booleen() const
     if ( m_type == type_element_entier )
         return m_entier != 0;
     else if ( m_type == type_element_string )
-        return m_string != "0";
+        return m_string != "0" && m_string != "non";
     else if ( m_type == type_element_caractere )
         return m_caractere != '0';
     else
@@ -77,9 +77,9 @@ QString base_element::to_string() const
     {
         case type_element_booleen:
             if ( m_booleen )
-                return "1";
+                return "oui";
             else
-                return "0";
+                return "non";
 
         case type_element_entier:
             return QString::number(m_entier);

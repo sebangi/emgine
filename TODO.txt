@@ -1,6 +1,7 @@
 La liste des choses à faire :
 
-ETAPE 1 : PRIORITAIRE
+ETAPE 1 : FONCTIONNALITES DE BASES
+* FINI
 
 ETAPE 2 : VERSION 0.1
 * réflexion poussée sur les fonctionnalités de base à ajouter avant d'ajouter de nouvelles fonctions
