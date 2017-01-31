@@ -52,6 +52,7 @@ SOURCES += \
         src/fonction_widget/fonction_source_widget/fonction_source_texte_widget.cpp \
         src/fonction_widget/selecteur_fonction_dialog.cpp \
         src/fonction_widget/vue_fonctions.cpp \
+        src/parametre/parametre_choix.cpp \
         src/projet/base_fonction.cpp \
         src/projet/base_parametre.cpp \
         src/projet/fonctions_conteneur.cpp \
@@ -63,7 +64,9 @@ SOURCES += \
         src/fonction_widget/text_edit.cpp \
         src/fonction_widget/base_fonction_widget_avec_text_edit.cpp \
         src/fonction_widget/fonction_sortie_widget/liste_texte_widget.cpp \
-        src/fonction_widget/parametre_aide_message_box.cpp
+        src/fonction_widget/parametre_aide_message_box.cpp \
+    src/fonction/fonction_source/fonction_source_choix.cpp \
+    src/fonction_widget/fonction_source_widget/fonction_source_choix_widget.cpp
 
 HEADERS  += \
         entete/compilation/compilateur.h \
@@ -103,6 +106,7 @@ HEADERS  += \
         entete/fonction_widget/fonction_source_widget/fonction_source_texte_widget.h \
         entete/fonction_widget/selecteur_fonction_dialog.h \
         entete/fonction_widget/vue_fonctions.h \
+        entete/parametre/parametre_choix.h \
         entete/projet/base_fonction.h \
         entete/projet/base_parametre.h \
         entete/projet/fonctions_conteneur.h \
@@ -114,7 +118,9 @@ HEADERS  += \
         entete/fonction_widget/text_edit.h \
         entete/fonction_widget/base_fonction_widget_avec_text_edit.h \
         entete/fonction_widget/fonction_sortie_widget/liste_texte_widget.h \
-        entete/fonction_widget/parametre_aide_message_box.h
+        entete/fonction_widget/parametre_aide_message_box.h \
+    entete/fonction/fonction_source/fonction_source_choix.h \
+    entete/fonction_widget/fonction_source_widget/fonction_source_choix_widget.h
 
 FORMS    += \
     fenetre_principale.ui

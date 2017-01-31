@@ -50,7 +50,7 @@ fonctions_conteneur * objet_selectionnable::get_conteneur_precedant()
     if ( m_objet_parent == NULL )
         return NULL;
     else
-        m_objet_parent->get_conteneur();
+        return m_objet_parent->get_conteneur();
 }
 
 const fonctions_conteneur * objet_selectionnable::get_conteneur() const
@@ -95,6 +95,11 @@ bool objet_selectionnable::est_projet() const
 }
 
 bool objet_selectionnable::est_fonction() const
+{
+    return false;
+}
+
+bool objet_selectionnable::est_parametre() const
 {
     return false;
 }

@@ -40,8 +40,6 @@ void base_parametre_widget::informer_verrouillage_change()
 
 void base_parametre_widget::init()
 {
-    QStyle* style = QApplication::style();
-
     QHBoxLayout * main_layout = new QHBoxLayout();
     main_layout->setMargin(5);
     main_layout->setSpacing(5);

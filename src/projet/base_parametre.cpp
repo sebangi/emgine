@@ -6,6 +6,7 @@
 #include "entete/fonction/fonction_source/fonction_source_booleen.h"
 #include "entete/fonction/fonction_source/fonction_source_texte.h"
 #include "entete/fonction/fonction_source/fonction_source_caractere.h"
+#include "entete/fonction/fonction_source/fonction_source_choix.h"
 #include "entete/compilation/log_compilation.h"
 #include "entete/compilation/logs_compilation_widget.h"
 #include "entete/fenetre_principale.h"
@@ -75,9 +76,9 @@ QString base_parametre::get_aide_algorithme() const
         return "inconnu";
 }
 
-type_element base_parametre::get_type() const
+bool base_parametre::est_parametre() const
 {
-    return m_type;
+    return true;
 }
 
 base_fonction *base_parametre::get_fonction_parent() const
@@ -107,6 +108,12 @@ void base_parametre::set_texte_par_defaut
 void base_parametre::set_caractere_par_defaut(QString s)
 {
     base_fonction * f = new fonction_source_caractere(this,s);
+    ajouter_fonction(f, NULL);
+}
+
+void base_parametre::set_choix_par_defaut(const QStringList& selection)
+{
+    base_fonction * f = new fonction_source_choix(this,selection);
     ajouter_fonction(f, NULL);
 }
 

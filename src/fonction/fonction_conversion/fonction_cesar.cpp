@@ -9,6 +9,8 @@
 #include "entete/compilation/logs_compilation_widget.h"
 #include "entete/compilation/log_widget_item.h"
 #include "entete/element/texte.h"
+#include "entete/parametre/parametre_choix.h"
+
 #include <iostream>
 
 /*! --------------------------------------------------------------------------------------
@@ -35,6 +37,13 @@ fonction_cesar::fonction_cesar( fonctions_conteneur * conteneur )
     ajouter_parametre( PARAM_ALPHABET,
                        new base_parametre( this, "Alphabet", "Alphabets utilisé (chaque mot est un alphabet).",
                                            false, true, ALGO_LIPL) );
+
+    QStringList choix;
+    choix.push_back("Additif");
+    choix.push_back("Soustractif");
+    ajouter_parametre( PARAM_TYPE_DECALAGE,
+                       new parametre_choix( this, "Type de décalage", "Additif ou soustractif.",
+                                            false, true, ALGO_PMIPL , choix, false ) );
 }
 
 void fonction_cesar::initialisation_par_defaut()
@@ -42,6 +51,7 @@ void fonction_cesar::initialisation_par_defaut()
     m_parametres[PARAM_DECALAGE]->set_texte_par_defaut("0\n1\n2\n3\n4\n5\n6\n7\n8\n9\n10\n11\n12\n13\n14\n15\n16\n17\n18\n19\n20\n21\n22\n23\n24\n25", ",", " ", "\n" );
     m_parametres[PARAM_SOUSTRACTIF]->set_booleen_par_defaut(false);
     m_parametres[PARAM_ALPHABET]->set_texte_par_defaut("ABCDEFGHIJKLMNOPQRSTUVWXYZ abcdefghijklmnopqrstuvwxyz");
+    m_parametres[PARAM_TYPE_DECALAGE]->set_choix_par_defaut(QStringList("Additif"));
 }
 
 /*! --------------------------------------------------------------------------------------

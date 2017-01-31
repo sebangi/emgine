@@ -34,12 +34,15 @@ class base_parametre : public fonctions_conteneur
         QString get_aide_algorithme() const;
         type_element get_type() const;
 
+        bool est_parametre() const;
+
         base_fonction *get_fonction_parent() const;
         bool is_requis() const;
 
         void set_booleen_par_defaut( bool valeur );
         void set_texte_par_defaut( QString texte, QString separ_caractere = "", QString separ_mot = " ", QString separ_ligne = "\n" );
         void set_caractere_par_defaut(QString s);
+        void set_choix_par_defaut(const QStringList & selection);
 
         const textes& get_textes_out() const;
 
@@ -67,9 +70,6 @@ class base_parametre : public fonctions_conteneur
 
         /** \brief Indique si le parametre est requis. */
         bool m_peut_etre_vide;
-
-        /** \brief Le type du paramètre. */
-        type_element m_type;
 
         /** \brief La fonction parent. */
         base_fonction * m_fonction_parent;

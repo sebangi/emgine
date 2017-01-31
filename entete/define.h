@@ -12,6 +12,7 @@ enum type_id_fonction{
     f_source_entier,
     f_source_texte,
     f_source_caractere,
+    f_source_choix,
     fin_fonction_source,
 
     debut_fonction_conversion = 1000,
@@ -30,6 +31,7 @@ enum type_id_parametre{
     PARAM_LIGNE_SEPARATEUR,
     PARAM_ALPHABET,
     PARAM_DECALAGE,
+    PARAM_TYPE_DECALAGE,
     PARAM_SOUSTRACTIF
 };
 

@@ -25,6 +25,7 @@ class objet_selectionnable : public QObject
         virtual bool est_conteneur() const;
         virtual bool est_projet() const;
         virtual bool est_fonction() const;
+        virtual bool est_parametre() const;
 
         bool est_active() const;
         virtual void set_est_active(bool active);
