@@ -29,9 +29,11 @@ QSize liste_texte_widget::minimumSizeHint() const
 
 void liste_texte_widget::init()
 {
+    setContextMenuPolicy(Qt::CustomContextMenu);
     setObjectName("ListeTexte");
     setWrapping(false);
     setMinimumHeight(25);
     setMaximumHeight(400);
     setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Fixed);
 }
+

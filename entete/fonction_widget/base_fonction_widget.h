@@ -15,6 +15,7 @@ class base_fonction;
 class base_parametre;
 class objet_selectionnable;
 class base_parametre_widget;
+class texte;
 
 class base_fonction_widget : public QWidget, public QTableWidgetItem
 {
@@ -47,6 +48,7 @@ class base_fonction_widget : public QWidget, public QTableWidgetItem
 
     signals:
         void signal_bfw_size_change();
+        void signal_bfw_demande_creation_projet(const texte & t);
 
    private slots:
         void on_inverser_activation();        

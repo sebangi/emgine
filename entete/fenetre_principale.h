@@ -62,6 +62,7 @@ class fenetre_principale : public QMainWindow
         bool enregistrer_projet( const QString & nom_fichier, projet * p);
         void ouvrir_projet();
         void creer_projet(QXmlStreamReader & xml, const QString & nom);
+        void creer_projet(const texte & t);
         void executer( projet* p );
         void update_boutons_projet( projet * p );
         void update_bouton_execution( projet * p );
@@ -91,6 +92,7 @@ class fenetre_principale : public QMainWindow
         void on_externe_objet_deselectionne(objet_selectionnable* obj);        
         void on_externe_fermeture_projet(projet * p);
         void on_externe_dupliquer_projet(projet * p);
+        void on_externe_demande_creation_projet(const texte & t);
 
     private:
         /** \brief La table des fonctions. */

@@ -131,6 +131,8 @@ void vue_fonctions::ajouter_vue_fonction(base_fonction* fonction)
 
     connect( widget, SIGNAL(signal_bfw_size_change()),
              this, SLOT(on_externe_fonction_widget_size_change()));
+    connect( widget, SIGNAL(signal_bfw_demande_creation_projet(const texte &)),
+                            this, SLOT(on_externe_demande_creation_projet(const texte &)));
 
     int position = fonction->get_position();
     insertRow(position);
@@ -260,6 +262,8 @@ void vue_fonctions::on_externe_supprimer_fonction(base_fonction *f)
         {
             disconnect( widget, SIGNAL(signal_bfw_size_change()),
                         this, SLOT(on_externe_fonction_widget_size_change()));
+            disconnect( widget, SIGNAL(signal_bfw_demande_creation_projet(const texte &)),
+                        this, SLOT(on_externe_demande_creation_projet(const texte &)));
 
             trouve = true;
             m_bloquer_selection = true;
@@ -361,6 +365,11 @@ void vue_fonctions::on_vue_fonction_selectionChanged(const QItemSelection &last_
 void vue_fonctions::on_externe_fonction_widget_size_change()
 {
     adjust_size_vue_fonction();
+}
+
+void vue_fonctions::on_externe_demande_creation_projet(const texte & t)
+{
+    emit signal_vf_demande_creation_projet(t);
 }
 
 void vue_fonctions::on_hheaderclicked(int colonne)

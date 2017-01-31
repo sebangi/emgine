@@ -5,6 +5,7 @@
 
 #include <iostream>
 #include <QHBoxLayout>
+#include <QMenu>
 
 fonction_sortie_texte_widget::fonction_sortie_texte_widget(base_fonction *fonction, QWidget *parent)
     : base_fonction_widget(fonction, parent), m_textes( ((fonction_sortie_texte*)fonction)->get_textes())
@@ -53,6 +54,7 @@ void fonction_sortie_texte_widget::init()
     layout->addWidget(m_liste_texte);
     connect( m_liste_texte, SIGNAL(itemDoubleClicked(QListWidgetItem*)),
              this, SLOT(onTexteDoubleClicked(QListWidgetItem*)));
+    connect(m_liste_texte, SIGNAL(customContextMenuRequested(QPoint)), this, SLOT(showContextMenu(QPoint)));
 
     m_textes = ((fonction_sortie_texte*)m_fonction)->get_textes();
     creer_liste_texte();
@@ -79,3 +81,25 @@ void fonction_sortie_texte_widget::onTexteDoubleClicked(QListWidgetItem* item)
     // std::cout << ((texte_widget_item*)item)->get_texte().get_string_configuration().toStdString() << std::endl;
 }
 
+void fonction_sortie_texte_widget::showContextMenu(const QPoint& pos)
+{
+    QPoint globalPos = mapToGlobal(pos);
+    QMenu menu;
+
+    QIcon icon_nouveau_projet;
+    icon_nouveau_projet.addFile(QString::fromUtf8("icons/nouveau_projet.png"), QSize(), QIcon::Normal, QIcon::Off);
+    QAction *newAct_nouveau_projet = new QAction(icon_nouveau_projet, tr("Créer un projet avec ce texte en source"), this);
+    newAct_nouveau_projet->setStatusTip(tr("Créer un projet avec ce texte en source"));
+    connect(newAct_nouveau_projet, SIGNAL(triggered()), this, SLOT(creer_projet()));
+    menu.addAction(newAct_nouveau_projet);
+
+    // Show context menu at handling position
+    menu.exec(globalPos);
+}
+
+void fonction_sortie_texte_widget::creer_projet()
+{
+    texte_widget_item *item = (texte_widget_item *)m_liste_texte->takeItem(m_liste_texte->currentRow());
+
+    emit signal_bfw_demande_creation_projet( item->get_texte() );
+}

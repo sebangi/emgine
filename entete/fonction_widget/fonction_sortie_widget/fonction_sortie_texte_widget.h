@@ -20,6 +20,8 @@ class fonction_sortie_texte_widget : public base_fonction_widget
     private slots:
         void on_externe_fst_textes_modifie();
         void onTexteDoubleClicked(QListWidgetItem* item);
+        void showContextMenu(const QPoint& pos);
+        void creer_projet();
 
     private:
         void creer_liste_texte();

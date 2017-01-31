@@ -1,12 +1,9 @@
 La liste des choses à faire :
 
 ETAPE 1 : PRIORITAIRE
-* améliorer la mise en page de l'aide des paramètres (avoir une méthode claire pour présenter les itérations )
-* améliorer le widget texte_sortie
 
 ETAPE 2 : VERSION 0.1
 * réflexion poussée sur les fonctionnalités de base à ajouter avant d'ajouter de nouvelles fonctions
-    -> les coder
 * vérifier ordre methodes
 * sort alphabétique (include + .pro)
 * documentation Doxygen
@@ -14,10 +11,12 @@ ETAPE 2 : VERSION 0.1
 
 ETAPE 3
 * Améliorer la sélection des fonctions : catégories, mots clés
-* sauvegarde d'une sortie
+* sauvegarde d'un texte sortie
 
 ETAPE 4 : NON PRIORITAIRE
 * gestion des dictionnaires
+* améliorer la mise en page de l'aide des paramètres
+* améliorer la mise en page de l'aide des fonctions
 * ajouter la fonction de source texte fichier (éditable et réenregistrable)
 * ajouter des fonctions de conversion
 * lancer l'exécution dans un thread et verrouiller le projet automatiquement durant l'exécution

@@ -148,6 +148,9 @@ void fenetre_principale::creer_widgets()
              this, SLOT(enregistrer_projet_sous(projet *)));
     connect( s_explorateur, SIGNAL(signal_e_dupliquer_projet(projet *)),
              this, SLOT(on_externe_dupliquer_projet(projet *)));
+
+    connect( s_vue_fonctions, SIGNAL(signal_vf_demande_creation_projet(const texte&)),
+             this, SLOT(on_externe_demande_creation_projet(const texte &)));
 }
 
 /** --------------------------------------------------------------------------------------
@@ -431,6 +434,16 @@ void fenetre_principale::creer_projet(QXmlStreamReader & xml, const QString & no
     ajouter_projet(p);
 }
 
+void fenetre_principale::creer_projet(const texte &t)
+{
+    projet * p = new projet();
+
+    p->set_nom("Nouveau projet");
+    ajouter_projet(p);
+
+    ajouter_fonction( p, NULL, new fonction_source_texte(p, t.to_string_lisible()), true, true );
+}
+
 /** --------------------------------------------------------------------------------------
  \brief Executer le projet.
 */
@@ -695,4 +708,9 @@ void fenetre_principale::on_externe_dupliquer_projet(projet *p)
     QXmlStreamReader xmlReader(copie);
     QString nom = p->get_nom() + "[copie]";
     creer_projet(xmlReader, nom );
+}
+
+void fenetre_principale::on_externe_demande_creation_projet(const texte & t)
+{
+    creer_projet(t);
 }

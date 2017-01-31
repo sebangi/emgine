@@ -45,7 +45,7 @@ QLabel#ValeurCourte {
  }
 
 QLabel#AideNomParametre {
-    font: bold 12pt "DejaVu Sans Mono";
+    font: bold 12pt;
     color : red;
     text-align: center;
     padding: 0px;
@@ -58,12 +58,12 @@ QLabel#AideNomParametre {
 }
 
 QLabel#AideParametre {
-    font: 10pt "DejaVu Sans Mono";
+    font: 10pt;
     color : black;
 }
 
 QLabel#AideAlgoParametre {
-    font: 10pt "DejaVu Sans Mono";
+    font: 10pt;
     color : black;
 }
 

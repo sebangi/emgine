@@ -8,6 +8,7 @@ class base_parametre;
 class projet;
 class objet_selectionnable;
 class fonctions_conteneur;
+class texte;
 
 class vue_fonctions : public QTableWidget
 {
@@ -35,6 +36,9 @@ class vue_fonctions : public QTableWidget
         void deconnecter(objet_selectionnable *obj);
         void adjust_size_vue_fonction();
 
+    signals:
+        void signal_vf_demande_creation_projet(const texte & t);
+
     private slots:
         void on_externe_supprimer_fonction(base_fonction *f);
         void on_externe_verrouillage_change(objet_selectionnable *obj);
@@ -45,6 +49,7 @@ class vue_fonctions : public QTableWidget
         void on_externe_creation_fonction(base_fonction*);
         void on_vue_fonction_selectionChanged(const QItemSelection &last_index, const QItemSelection & new_index);
         void on_externe_fonction_widget_size_change();
+        void on_externe_demande_creation_projet(const texte & t);
         void on_hheaderclicked( int colonne );
 
     private:
