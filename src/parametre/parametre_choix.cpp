@@ -10,7 +10,7 @@ parametre_choix::parametre_choix( objet_selectionnable * parent, QString nom, QS
     : base_parametre(parent, nom, aide, peut_etre_vide, dans_configuration, algorithme),
       m_choix(choix), m_multiple_selection(multiple_selection)
 {
-
+    m_type = TYPE_PARAM_CHOIX;
 }
 
 parametre_choix::~parametre_choix()
@@ -18,7 +18,7 @@ parametre_choix::~parametre_choix()
 
 }
 
-QStringList parametre_choix::choix() const
+QStringList parametre_choix::get_choix() const
 {
     return m_choix;
 }

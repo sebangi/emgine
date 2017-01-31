@@ -1,5 +1,6 @@
 #include "entete/fonction_widget/fonction_source_widget/fonction_source_choix_widget.h"
 #include "entete/fonction/fonction_source/fonction_source_choix.h"
+#include "entete/parametre/parametre_choix.h"
 #include <iostream>
 #include <QHBoxLayout>
 
@@ -13,18 +14,34 @@ void fonction_source_choix_widget::init()
 {
     QHBoxLayout * lay = new QHBoxLayout();
 
-    m_liste = new QListView();
+    m_liste = new QListWidget();
 
     if ( m_fonction != NULL )
         if ( m_fonction->get_conteneur() != NULL )
-          if ( m_fonction->get_conteneur()->est_parametre() )
-            {
-                /*
-                 * QListWidgetItem* item = new QListWidgetItem("item", listWidget);
-                item->setFlags(item->flags() | Qt::ItemIsUserCheckable); // set checkable flag
-                item->setCheckState(Qt::Unchecked); // AND initialize check state
-                */
-            }
+            if ( m_fonction->get_conteneur()->est_parametre() )
+                if ( ((base_parametre *)m_fonction->get_conteneur())->get_type() == TYPE_PARAM_CHOIX )
+                {
+                    QStringList choix = ((parametre_choix *)m_fonction->get_conteneur())->get_choix();
+
+                    for ( QStringList::const_iterator it = choix.constBegin(); it != choix.constEnd(); ++it )
+                    {
+                        QListWidgetItem* item = new QListWidgetItem(*it, m_liste);
+                        item->setFlags(item->flags() | Qt::ItemIsUserCheckable);
+                        item->setCheckState(Qt::Unchecked);
+                    }
+
+                    QStringList selection = ((fonction_source_choix *)m_fonction)->get_selection();
+
+                    for ( QStringList::iterator it = selection.begin(); it != selection.end(); ++it )
+                    {
+                        QList<QListWidgetItem*> l = m_liste->findItems(*it, Qt::MatchExactly);
+                        for( QList<QListWidgetItem*>::iterator it_l = l.begin(); it_l != l.end(); it_l++ )
+                            (*it_l)->setCheckState(Qt::Checked);
+                    }
+                }
+
+    lay->addWidget(m_liste);
+
     /*
     QLabel* label1 = new QLabel( "oui" );
     label1->setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Expanding);
@@ -72,13 +89,13 @@ void fonction_source_choix_widget::informer_verrouillage_change()
 {
     if ( m_fonction != NULL )
     {
-     //   m_check_non->setEnabled( m_fonction->est_verrouille_avec_parent() );
-     //   m_check_oui->setEnabled( m_fonction->est_verrouille_avec_parent() );
+        //   m_check_non->setEnabled( m_fonction->est_verrouille_avec_parent() );
+        //   m_check_oui->setEnabled( m_fonction->est_verrouille_avec_parent() );
     }
     else
     {
-      //  m_check_non->setEnabled( false );
-      //  m_check_oui->setEnabled( false );
+        //  m_check_non->setEnabled( false );
+        //  m_check_oui->setEnabled( false );
     }
 }
 

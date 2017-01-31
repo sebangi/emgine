@@ -3,7 +3,7 @@
 
 #include "entete/fonction_widget/base_fonction_widget.h"
 
-#include <QListView>
+#include <QListWidget>
 
 class fonction_source_choix_widget : public base_fonction_widget
 {
@@ -23,7 +23,7 @@ class fonction_source_choix_widget : public base_fonction_widget
     private:
         //QCheckBox * m_check_oui;
         //QCheckBox * m_check_non;
-        QListView m_liste;
+        QListWidget * m_liste;
 };
 
 #endif // FONCTION_SOURCE_CHOIX_WIDGET_H

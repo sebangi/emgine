@@ -24,6 +24,13 @@ enum type_id_fonction{
     fin_fonction_sortie
 };
 
+/** \brief Enumération décrivant les différents type de paramètres. */
+enum type_type_parametre{
+    TYPE_PARAM_BASE = 0,
+    TYPE_PARAM_CHOIX
+};
+
+
 /** \brief Enumération décrivant les différents paramètres. */
 enum type_id_parametre{
     PARAM_CARACTERE_SEPARATEUR = 0,

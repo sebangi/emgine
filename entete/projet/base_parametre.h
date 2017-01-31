@@ -32,7 +32,6 @@ class base_parametre : public fonctions_conteneur
         QString get_valeur_courte() const;
         QString get_aide() const;
         QString get_aide_algorithme() const;
-        type_element get_type() const;
 
         bool est_parametre() const;
 
@@ -61,6 +60,8 @@ class base_parametre : public fonctions_conteneur
 
         bool peut_etre_vide() const;
 
+        type_type_parametre get_type() const;
+
     protected:
         /** \brief Le nom de la fonction. */
         QString m_nom;
@@ -85,6 +86,8 @@ class base_parametre : public fonctions_conteneur
 
         /** \brief Le type d'algorithme utilisé. */
         type_algorithme m_algorithme;
+
+        type_type_parametre m_type;
 };
 
 #endif // BASE_PARAMETRE_H

@@ -16,7 +16,8 @@
 base_parametre::base_parametre( objet_selectionnable * parent, QString nom, QString aide,
                                 bool peut_etre_vide, bool dans_configuration, type_algorithme algorithme)
     : fonctions_conteneur(parent), m_fonction_parent((base_fonction*)parent), m_nom(nom), m_aide(aide),
-      m_peut_etre_vide(peut_etre_vide), m_textes_out(), m_dans_configuration(dans_configuration), m_algorithme(algorithme)
+      m_peut_etre_vide(peut_etre_vide), m_textes_out(), m_dans_configuration(dans_configuration), m_algorithme(algorithme),
+      m_type(TYPE_PARAM_BASE)
 {
 
 }
@@ -214,4 +215,9 @@ void base_parametre::set_dans_configuration(bool dans_configuration)
 bool base_parametre::peut_etre_vide() const
 {
     return m_peut_etre_vide;
+}
+
+type_type_parametre base_parametre::get_type() const
+{
+    return m_type;
 }
