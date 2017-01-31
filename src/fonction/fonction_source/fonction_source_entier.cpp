@@ -22,9 +22,10 @@ void fonction_source_entier::executer( compilateur &compil, const textes & texte
     mot m;
     m.push_back(e);
     ligne l;
-    l.push_back(m);
+    l.ajouter_mot(m);
     texte t;
-    t.push_back(l);
+    t.ajouter_ligne(l);
+
     textes_out.push_back(t);
 }
 

@@ -40,3 +40,8 @@ QString mot::to_string_lisible() const
     return result;
 }
 
+std::vector<base_element>::size_type mot::nb_caracteres() const
+{
+    return size();
+}
+

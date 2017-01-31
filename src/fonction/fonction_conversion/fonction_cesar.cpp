@@ -157,9 +157,9 @@ void fonction_cesar::execution_specifique( compilateur &compil, const textes & t
                         m.push_back( m_alphabets[num_alphabet][pos] );
                     }
                 }
-                l.push_back(m);
+                l.ajouter_mot(m);
             }
-            t.push_back(l);
+            t.ajouter_ligne(l);
         }
         textes_out.ajouter_texte(compil.get_configuration(), t);
     }

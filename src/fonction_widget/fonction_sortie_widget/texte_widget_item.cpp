@@ -1,28 +1,20 @@
 #include "entete/fonction_widget/fonction_sortie_widget/texte_widget_item.h"
 
 #include <iostream>
-#include <QStyle>
-#include <QStyleOption>
-#include <QPainter>
 
-texte_widget_item::texte_widget_item(texte & t)
-    : m_texte(t)
+texte_widget_item::texte_widget_item(texte & t, int num)
+    : m_texte(t), m_num(num)
 {
     update();
-}
-
-void texte_widget_item::paintEvent(QPaintEvent *)
-{
-    QStyleOption opt;
-    opt.init(this);
-    QPainter p(this);
-    style()->drawPrimitive(QStyle::PE_Widget, &opt, &p, this);
 }
 
 void texte_widget_item::update()
 {
     if ( m_texte.get_configuration_visible() )
-        setText( m_texte.get_string_configuration() + "\n\n" + m_texte.to_string_lisible() );
+        setText( "Texte n°" + QString::number(m_num) + ":\n" +
+                 m_texte.get_string_separation() +
+                 m_texte.get_string_information_taille() + "\n" + m_texte.get_string_configuration() +
+                 m_texte.get_string_separation() + m_texte.to_string_lisible() );
     else
         setText( m_texte.to_string_lisible() );
 }

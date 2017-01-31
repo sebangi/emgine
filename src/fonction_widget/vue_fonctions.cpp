@@ -8,6 +8,7 @@
 #include <QApplication>
 #include <QHeaderView>
 #include <iostream>
+#include <QScrollBar>
 
 vue_fonctions::vue_fonctions(QWidget *parent)
     : QTableWidget(parent), m_conteneur_courant(NULL), m_bloquer_selection(false)
@@ -242,6 +243,9 @@ void vue_fonctions::adjust_size_vue_fonction()
     {
         setRowHeight(i, cellWidget(i,1)->size().height());
     }
+
+    setVerticalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
+    setVerticalScrollBarPolicy(Qt::ScrollBarAlwaysOn);
 }
 
 void vue_fonctions::on_externe_supprimer_fonction(base_fonction *f)

@@ -1,19 +1,25 @@
 #include "entete/element/ligne.h"
 
 ligne::ligne()
-    : vector<mot>(), m_separateur_mot(" ")
+    : vector<mot>(), m_separateur_mot(" "), m_nb_caracteres(0)
 {
 
 }
 
 ligne::ligne(const QString &valeur, const QString & separateur_mot)
-    : vector<mot>(), m_separateur_mot(separateur_mot)
+    : vector<mot>(), m_separateur_mot(separateur_mot), m_nb_caracteres(0)
 {
     if ( ! valeur.isEmpty() )
     {
         mot m(valeur);
-        push_back(m);
+        ajouter_mot(m);
     }
+}
+
+void ligne::ajouter_mot( const mot & m)
+{
+    push_back(m);
+    m_nb_caracteres += m.nb_caracteres();
 }
 
 QString ligne::to_string() const
@@ -37,5 +43,15 @@ QString ligne::to_string_lisible() const
         result += m_separateur_mot + this->at(i).to_string_lisible();
 
     return result;
+}
+
+std::vector<mot>::size_type ligne::nb_caracteres() const
+{
+    return m_nb_caracteres;
+}
+
+std::vector<mot>::size_type ligne::nb_mots() const
+{
+    return size();
 }
 

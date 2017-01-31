@@ -102,10 +102,10 @@ void fonction_source_texte::execution_specifique( compilateur &compil, const tex
                 }
             }
             if ( ! m.empty() )
-                l.push_back(m);
+                l.ajouter_mot(m);
         }
         if ( ! l.empty() )
-            t.push_back(l);
+            t.ajouter_ligne(l);
     }
     textes_out.ajouter_texte(compil.get_configuration(), t);
 }

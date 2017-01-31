@@ -34,9 +34,10 @@ void fonction_source_caractere::executer( compilateur &compil, const textes & te
     }
 
     ligne l;
-    l.push_back(m);
+    l.ajouter_mot(m);
     texte t;
-    t.push_back(l);
+    t.ajouter_ligne(l);
+
     textes_out.push_back(t);
 }
 
