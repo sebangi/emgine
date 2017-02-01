@@ -9,6 +9,7 @@
 #include "entete/fonction/fonction_conversion/fonction_cesar.h"
 #include "entete/fonction/fonction_source/fonction_source_texte.h"
 #include "entete/fonction/fonction_sortie/fonction_sortie_texte.h"
+#include "entete/fonction/fonction_source/fonction_source_permutation.h"
 #include "entete/fonction_widget/base_fonction_widget.h"
 #include "entete/fonction_widget/vue_fonctions.h"
 #include "entete/projet/projet.h"
@@ -295,8 +296,9 @@ void fenetre_principale::init_test()
     p->set_nom("Exemple");
     ajouter_projet(p);
 
-    ajouter_fonction( p, NULL, new fonction_source_texte(p, "UNHBH TM SDRS !\nunhbh tm sdrs !"), true, true );
-    ajouter_fonction( p, NULL, new fonction_cesar(p), true, true );
+    ajouter_fonction( p, NULL, new fonction_source_permutation(p), true, true );
+        //ajouter_fonction( p, NULL, new fonction_source_texte(p, "UNHBH TM SDRS !\nunhbh tm sdrs !"), true, true );
+    //ajouter_fonction( p, NULL, new fonction_cesar(p), true, true );
     ajouter_fonction( p, NULL, new fonction_sortie_texte(p), true, true );
 
     p->selectionner();

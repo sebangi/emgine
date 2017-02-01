@@ -55,3 +55,8 @@ std::vector<mot>::size_type ligne::nb_mots() const
     return size();
 }
 
+bool ligne::operator<(const ligne & l) const
+{
+    return to_string() < l.to_string();
+}
+

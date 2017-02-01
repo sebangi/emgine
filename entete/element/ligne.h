@@ -6,6 +6,9 @@
 
 class ligne : public std::vector< mot >
 {
+    private:
+        typedef std::vector< mot > super;
+
     public:
         ligne();
         ligne(const QString &valeur, const QString & separateur_mot = " ");
@@ -15,7 +18,9 @@ class ligne : public std::vector< mot >
         QString to_string_lisible() const;
 
         size_type nb_caracteres() const;
-        size_type nb_mots() const;
+        size_type nb_mots() const;        
+
+        bool operator<(const ligne & l) const;
 
     private:
         QString m_separateur_mot;

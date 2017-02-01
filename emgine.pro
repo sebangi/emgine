@@ -66,7 +66,8 @@ SOURCES += \
         src/fonction_widget/fonction_sortie_widget/liste_texte_widget.cpp \
         src/fonction_widget/parametre_aide_message_box.cpp \
     src/fonction/fonction_source/fonction_source_choix.cpp \
-    src/fonction_widget/fonction_source_widget/fonction_source_choix_widget.cpp
+    src/fonction_widget/fonction_source_widget/fonction_source_choix_widget.cpp \
+    src/fonction/fonction_source/fonction_source_permutation.cpp
 
 HEADERS  += \
         entete/compilation/compilateur.h \
@@ -120,7 +121,8 @@ HEADERS  += \
         entete/fonction_widget/fonction_sortie_widget/liste_texte_widget.h \
         entete/fonction_widget/parametre_aide_message_box.h \
     entete/fonction/fonction_source/fonction_source_choix.h \
-    entete/fonction_widget/fonction_source_widget/fonction_source_choix_widget.h
+    entete/fonction_widget/fonction_source_widget/fonction_source_choix_widget.h \
+    entete/fonction/fonction_source/fonction_source_permutation.h
 
 FORMS    += \
     fenetre_principale.ui

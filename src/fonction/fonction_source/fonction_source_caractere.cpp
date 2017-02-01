@@ -44,7 +44,7 @@ void fonction_source_caractere::executer( compilateur &compil, const textes & te
 /*! --------------------------------------------------------------------------------------
  \brief Indique si la fonction est valide.
 */
-bool fonction_source_caractere::est_valide(logs_compilation_widget * vue_logs) const
+bool fonction_source_caractere::est_valide(logs_compilation_widget * vue_logs)
 {
     return true;
 }

@@ -6,7 +6,7 @@
 class fonction_source_choix : public fonction_base_source
 {
     public:
-        fonction_source_choix(fonctions_conteneur * conteneur, const QStringList& selection);
+        fonction_source_choix(fonctions_conteneur * conteneur, const QStringList& selection = QStringList());
         ~fonction_source_choix();
 
         base_fonction_widget *generer_fonction_widget();
@@ -23,7 +23,7 @@ class fonction_source_choix : public fonction_base_source
         const QStringList& get_choix() const;
 
     private:
-        bool est_valide(logs_compilation_widget * vue_logs) const;
+        bool est_valide(logs_compilation_widget * vue_logs);
 
     private:
         QStringList m_selection;

@@ -23,7 +23,7 @@ class fonction_cesar : public base_fonction
         QString get_valeur_courte() const;
 
     private:
-        bool est_valide(logs_compilation_widget * vue_logs) const;
+        bool est_valide(logs_compilation_widget * vue_logs);
         void construire_alphabet();
         void callback_param_1( compilateur &compil, const textes & textes_in, textes & textes_out );
         void callback_param_2( compilateur &compil, const textes & textes_in, textes & textes_out );

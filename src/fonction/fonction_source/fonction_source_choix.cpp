@@ -3,6 +3,8 @@
 #include "entete/fonction_widget/fonction_source_widget/fonction_source_choix_widget.h"
 #include "entete/compilation/compilateur.h"
 #include "entete/parametre/parametre_choix.h"
+#include "entete/compilation/log_compilation.h"
+#include "entete/compilation/logs_compilation_widget.h"
 
 #include <iostream>
 
@@ -68,9 +70,19 @@ void fonction_source_choix::executer( compilateur &compil, const textes & textes
 /*! --------------------------------------------------------------------------------------
  \brief Indique si la fonction est valide.
 */
-bool fonction_source_choix::est_valide(logs_compilation_widget * vue_logs) const
+bool fonction_source_choix::est_valide(logs_compilation_widget * vue_logs)
 {
-    return true;
+    if ( get_conteneur() != NULL )
+        if ( get_conteneur()->est_parametre() )
+            if ( ((base_parametre *)get_conteneur())->get_type() == TYPE_PARAM_CHOIX )
+                return true;
+
+    vue_logs->ajouter_log
+            ( log_compilation( log_compilation::LOG_ERREUR, this,
+                               "La fonction \"" + get_nom() +
+                               "\" n'est pas situé dans un parametre de type choix") );
+
+    return false;
 }
 
 const QStringList & fonction_source_choix::get_choix() const

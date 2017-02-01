@@ -44,4 +44,3 @@ std::vector<base_element>::size_type mot::nb_caracteres() const
 {
     return size();
 }
-

@@ -20,7 +20,7 @@ class fonction_source_caractere : public fonction_base_source
         void set_string_valeur(const QString & valeur);
 
     private:
-        bool est_valide(logs_compilation_widget * vue_logs) const;
+        bool est_valide(logs_compilation_widget * vue_logs);
 
     private:
         QString m_valeur;

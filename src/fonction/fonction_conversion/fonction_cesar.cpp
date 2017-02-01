@@ -70,7 +70,7 @@ QString fonction_cesar::get_aide() const
 /*! --------------------------------------------------------------------------------------
  \brief Indique si la fonction est valide.
 */
-bool fonction_cesar::est_valide(logs_compilation_widget * vue_logs) const
+bool fonction_cesar::est_valide(logs_compilation_widget * vue_logs)
 {
     return true;
 }

@@ -24,7 +24,7 @@ base_fonction_widget *fonction_source_booleen::generer_fonction_widget()
 /*! --------------------------------------------------------------------------------------
  \brief Indique si la fonction est valide.
 */
-bool fonction_source_booleen::est_valide(logs_compilation_widget * vue_logs) const
+bool fonction_source_booleen::est_valide(logs_compilation_widget * vue_logs)
 {
     return true;
 }

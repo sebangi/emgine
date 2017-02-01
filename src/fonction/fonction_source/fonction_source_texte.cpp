@@ -125,7 +125,7 @@ void fonction_source_texte::execution_specifique( compilateur &compil, const tex
 /*! --------------------------------------------------------------------------------------
  \brief Indique si la fonction est valide.
 */
-bool fonction_source_texte::est_valide(logs_compilation_widget * vue_logs) const
+bool fonction_source_texte::est_valide(logs_compilation_widget * vue_logs)
 {
     return true;
 }

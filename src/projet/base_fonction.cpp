@@ -250,7 +250,7 @@ base_parametre *base_fonction::get_parametre(type_id_parametre id)
     return m_parametres.find(id)->second;
 }
 
-bool base_fonction::est_fonction_valide(logs_compilation_widget * vue_logs) const
+bool base_fonction::est_fonction_valide(logs_compilation_widget * vue_logs)
 {
     bool result = est_valide(vue_logs);
 

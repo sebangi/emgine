@@ -23,7 +23,7 @@ class fonction_sortie_texte : public fonction_base_sortie
         void signal_fst_textes_modifie();
 
     private:
-        bool est_valide(logs_compilation_widget * vue_logs) const;
+        bool est_valide(logs_compilation_widget * vue_logs);
 
     private:
         textes m_textes;

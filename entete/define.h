@@ -13,6 +13,7 @@ enum type_id_fonction{
     f_source_texte,
     f_source_caractere,
     f_source_choix,
+    f_source_generateur_permutation,
     fin_fonction_source,
 
     debut_fonction_conversion = 1000,
@@ -37,7 +38,8 @@ enum type_id_parametre{
     PARAM_LIGNE_SEPARATEUR,
     PARAM_ALPHABET,
     PARAM_DECALAGE,
-    PARAM_ADDITIF
+    PARAM_ADDITIF,
+    PARAM_ELEMENTS
 };
 
 
