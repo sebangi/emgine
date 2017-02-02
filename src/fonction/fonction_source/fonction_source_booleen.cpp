@@ -45,14 +45,6 @@ void fonction_source_booleen::executer( compilateur &compil, const textes & text
     textes_out.push_back(t);
 }
 
-/*! --------------------------------------------------------------------------------------
- \brief Renvoie un chaine décrivant la fonction.
-*/
-QString fonction_source_booleen::get_aide() const
-{
-    return QString("Source de type Oui ou Non");
-}
-
 QString fonction_source_booleen::get_valeur_courte() const
 {
     if ( m_valeur )

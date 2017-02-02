@@ -15,7 +15,6 @@ class bouton_choix_fonction : public QPushButton
         type_id_fonction get_id_fonction() const;
 
     private:
-
         type_id_fonction m_id_fonction;
 };
 

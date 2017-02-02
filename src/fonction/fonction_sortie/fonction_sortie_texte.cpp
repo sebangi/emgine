@@ -43,14 +43,6 @@ bool fonction_sortie_texte::est_valide(logs_compilation_widget * vue_logs)
     return true;
 }
 
-/*! --------------------------------------------------------------------------------------
- \brief Renvoie un chaine décrivant la fonction.
-*/
-QString fonction_sortie_texte::get_aide() const
-{
-    return QString("sortie textuelle");
-}
-
 QString fonction_sortie_texte::get_valeur_courte() const
 {
     return m_textes.to_string_lisible();

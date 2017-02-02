@@ -9,7 +9,6 @@ class fonction_source_entier : public fonction_base_source
         fonction_source_entier(fonctions_conteneur * conteneur, int valeur = 0);
         ~fonction_source_entier();
 
-        QString get_aide() const;
         QString get_valeur_courte() const;
         void executer( compilateur & compil, const textes & textes_in, textes & textes_out );
 

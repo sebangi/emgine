@@ -9,12 +9,12 @@
 #include <QXmlStreamWriter>
 
 #include "entete/element/textes.h"
-#include "entete/define.h"
 #include "entete/projet/base_parametre.h"
 #include "entete/projet/objet_selectionnable.h"
 #include "entete/projet/fonctions_conteneur.h"
 #include "entete/fonction/algorithme/algo_PMIPL.h"
 #include "entete/fonction/algorithme/algo_LIPL.h"
+#include "entete/fonction/define_fonction.h"
 
 class noeud_fonction;
 class base_fonction_widget;
@@ -56,7 +56,7 @@ class base_fonction : public objet_selectionnable
         virtual void executer( compilateur & compil, const textes & textes_in, textes & textes_out ) = 0;
 
         /**
-        \brief Méthode virtuelle pure d'accès à l'info bulle.
+        \brief Méthode d'accès à l'info bulle.
         */
         QString get_info_bulle() const;
 
@@ -64,7 +64,6 @@ class base_fonction : public objet_selectionnable
 
         void sauvegarder( QXmlStreamWriter & stream ) const;
         bool est_fonction_valide(logs_compilation_widget * vue_logs);
-        virtual QString get_aide() const = 0;
         virtual QString get_valeur_courte() const = 0;
 
         virtual base_fonction_widget *generer_fonction_widget();

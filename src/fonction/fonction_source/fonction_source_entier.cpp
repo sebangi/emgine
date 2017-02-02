@@ -29,14 +29,6 @@ void fonction_source_entier::executer( compilateur &compil, const textes & texte
     textes_out.push_back(t);
 }
 
-/*! --------------------------------------------------------------------------------------
- \brief Renvoie un chaine décrivant la fonction.
-*/
-QString fonction_source_entier::get_aide() const
-{
-    return QString("Source de type entier");
-}
-
 QString fonction_source_entier::get_valeur_courte() const
 {
     return QString::number(m_valeur);

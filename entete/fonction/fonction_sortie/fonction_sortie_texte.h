@@ -14,7 +14,6 @@ class fonction_sortie_texte : public fonction_base_sortie
         base_fonction_widget *generer_fonction_widget();
 
         void executer( compilateur & compil, const textes & textes_in, textes & textes_out );
-        QString get_aide() const;
         QString get_valeur_courte() const;
 
         textes & get_textes();

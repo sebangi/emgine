@@ -95,14 +95,6 @@ bool fonction_source_choix::get_multiple_selection() const
     return m_multiple_selection;
 }
 
-/*! --------------------------------------------------------------------------------------
- \brief Renvoie un chaine décrivant la fonction.
-*/
-QString fonction_source_choix::get_aide() const
-{
-    return QString("Source de type choix");
-}
-
 QString fonction_source_choix::get_valeur_courte() const
 {
     QString resultat;

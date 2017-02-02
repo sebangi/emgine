@@ -7,6 +7,8 @@
 #include "entete/compilation/logs_compilation_widget.h"
 #include "entete/compilation/log_widget_item.h"
 #include "entete/projet/base_parametre.h"
+#include "entete/fonction/bibliotheque_fonctions.h"
+
 #include <iostream>
 
 /** --------------------------------------------------------------------------------------
@@ -44,7 +46,7 @@ void base_fonction::initialisation_par_defaut()
 
 QString base_fonction::get_info_bulle() const
 {
-    QString resultat = get_aide();
+    QString resultat = bibliotheque_fonctions::get_aide( m_id );
 
     if ( ! m_parametres.empty() )
     {

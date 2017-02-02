@@ -9,7 +9,6 @@ ETAPE 2 : VERSION 0.1
 * sort alphabétique (include + .pro)
 * documentation Doxygen
 * Tagger sous git la version 0.1
-* tous les false et true de constructeur devrait etre des constantes pour plus de lisibilité
 
 ETAPE 3
 * Améliorer la sélection des fonctions : catégories, mots clés

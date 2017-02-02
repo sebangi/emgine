@@ -3,7 +3,7 @@
 
 #include <map>
 
-#include "entete/define.h"
+#include "entete/fonction/define_parametre.h"
 #include "entete/element/ligne.h"
 
 /**

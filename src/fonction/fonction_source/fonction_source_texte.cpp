@@ -130,14 +130,6 @@ bool fonction_source_texte::est_valide(logs_compilation_widget * vue_logs)
     return true;
 }
 
-/*! --------------------------------------------------------------------------------------
- \brief Renvoie un chaine décrivant la fonction.
-*/
-QString fonction_source_texte::get_aide() const
-{
-    return QString("Source textuelle");
-}
-
 QString fonction_source_texte::get_valeur_courte() const
 {
     return m_texte;

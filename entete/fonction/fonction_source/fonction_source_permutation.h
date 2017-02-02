@@ -13,7 +13,6 @@ class fonction_source_permutation : public fonction_base_source
         void initialisation_par_defaut(QString elements = "");
         base_fonction_widget *generer_fonction_widget();
         void executer( compilateur & compil, const textes & textes_in, textes & texte_sout );
-        QString get_aide() const;
         QString get_valeur_courte() const;
 
         QString get_string_valeur() const;

@@ -49,14 +49,6 @@ bool fonction_source_caractere::est_valide(logs_compilation_widget * vue_logs)
     return true;
 }
 
-/*! --------------------------------------------------------------------------------------
- \brief Renvoie un chaine décrivant la fonction.
-*/
-QString fonction_source_caractere::get_aide() const
-{
-    return QString("Source de type un caractère");
-}
-
 QString fonction_source_caractere::get_valeur_courte() const
 {
     QString resultat;

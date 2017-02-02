@@ -60,14 +60,6 @@ void fonction_cesar::initialisation_par_defaut()
 }
 
 /*! --------------------------------------------------------------------------------------
- \brief Renvoie un chaine décrivant la fonction.
-*/
-QString fonction_cesar::get_aide() const
-{
-    return QString("Outil pour décoder/encoder avec César.\nLe code César (ou chiffre de César) est un chiffrement par décalage parmi les plus simples et les plus connu, il utilise la substitution d'une lettre par une autre plus loin dans l'alphabet.");
-}
-
-/*! --------------------------------------------------------------------------------------
  \brief Indique si la fonction est valide.
 */
 bool fonction_cesar::est_valide(logs_compilation_widget * vue_logs)

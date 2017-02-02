@@ -1,7 +1,7 @@
 #ifndef CONFIGURATION_H
 #define CONFIGURATION_H
 
-#include "entete/define.h"
+#include "entete/fonction/define_parametre.h"
 #include <map>
 #include <QString>
 

@@ -7,7 +7,7 @@
 #include "entete/element/type_element.h"
 #include "entete/element/textes.h"
 #include "entete/projet/fonctions_conteneur.h"
-#include "entete/define.h"
+#include "entete/fonction/define_parametre.h"
 
 class base_fonction;
 class noeud_parametre;

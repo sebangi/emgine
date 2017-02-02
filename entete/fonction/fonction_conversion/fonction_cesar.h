@@ -19,7 +19,6 @@ class fonction_cesar : public base_fonction
 
         void executer( compilateur & compil, const textes & textes_in, textes & textes_out );
 
-        QString get_aide() const;
         QString get_valeur_courte() const;
 
     private:
