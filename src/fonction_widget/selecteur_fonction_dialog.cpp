@@ -14,17 +14,11 @@ selecteur_fonction_dialog::selecteur_fonction_dialog(base_fonction::type_fonctio
 {
     QStyle* style = QApplication::style();
 
-    m_buttonBox = new QDialogButtonBox(QDialogButtonBox::Cancel);
-
-    connect(m_buttonBox, SIGNAL(accepted()), this, SLOT(accept()));
-    connect(m_buttonBox, SIGNAL(rejected()), this, SLOT(reject()));
-
     QVBoxLayout *mainLayout = new QVBoxLayout;
 
     QHBoxLayout *recherche_layout = new QHBoxLayout;
-    m_recherche = new line_edit();
+    m_recherche = new QLineEdit();
     connect(m_recherche, SIGNAL (returnPressed()),this, SLOT (chercher()));
-    connect(m_recherche, SIGNAL (focussed(bool)),this, SLOT (rechercheFocussed(bool)));
     m_recherche->setFocusPolicy(Qt::StrongFocus);
 
     recherche_layout->addWidget(m_recherche);
@@ -37,6 +31,10 @@ selecteur_fonction_dialog::selecteur_fonction_dialog(base_fonction::type_fonctio
 
     mainLayout->addLayout(recherche_layout);
     mainLayout->addLayout(m_grid_layout);
+
+    m_buttonBox = new QDialogButtonBox(QDialogButtonBox::Cancel);
+    connect(m_buttonBox, SIGNAL(accepted()), this, SLOT(accept()));
+    connect(m_buttonBox, SIGNAL(rejected()), this, SLOT(reject()));
     mainLayout->addWidget(m_buttonBox);
     setLayout(mainLayout);
 
@@ -46,6 +44,12 @@ selecteur_fonction_dialog::selecteur_fonction_dialog(base_fonction::type_fonctio
         setWindowTitle("Quelle fonction souhaitez-vous ?");
     else
         setWindowTitle("Quelle sortie souhaitez-vous ?");
+
+    QList<QPushButton *> buttonList = findChildren<QPushButton *>();
+    foreach(QPushButton *pb, buttonList) {
+        pb->setDefault( false );
+        pb->setAutoDefault( false );
+    }
 
     m_bouton_recherche->setFocus();
 }
@@ -110,13 +114,6 @@ void selecteur_fonction_dialog::choisir()
 void selecteur_fonction_dialog::chercher()
 {
     std::cout << "Chercher" << std::endl;
-}
-
-void selecteur_fonction_dialog::rechercheFocussed(bool hasFocus)
-{
-    std::cout << "rechercheFocussed" << std::endl;
-    if ( hasFocus)
-        m_bouton_recherche->setFocus();
 }
 
 

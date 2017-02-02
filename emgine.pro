@@ -61,14 +61,13 @@ SOURCES += \
         src/element/textes.cpp \
         src/compilation/configuration.cpp \
         src/fonction_widget/fonction_sortie_widget/texte_widget_item.cpp \
-        src/fonction_widget/text_edit.cpp \
         src/fonction_widget/base_fonction_widget_avec_text_edit.cpp \
         src/fonction_widget/fonction_sortie_widget/liste_texte_widget.cpp \
         src/fonction_widget/parametre_aide_message_box.cpp \
     src/fonction/fonction_source/fonction_source_choix.cpp \
     src/fonction_widget/fonction_source_widget/fonction_source_choix_widget.cpp \
     src/fonction/fonction_source/fonction_source_permutation.cpp \
-    src/fonction_widget/line_edit.cpp
+    src/fonction_widget/text_edit.cpp
 
 HEADERS  += \
         entete/compilation/compilateur.h \

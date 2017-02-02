@@ -29,13 +29,12 @@ class selecteur_fonction_dialog : public QDialog
     private slots:
         void choisir();
         void chercher();
-        void rechercheFocussed(bool hasFocus);
 
     private:
         QDialogButtonBox *m_buttonBox;
         QGridLayout *m_grid_layout;
         base_fonction * m_fonction;
-        line_edit * m_recherche;
+        QLineEdit * m_recherche;
         QPushButton * m_bouton_recherche;
 
         QList< bouton_choix_fonction * > m_boutons;
