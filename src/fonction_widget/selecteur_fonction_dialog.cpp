@@ -25,6 +25,7 @@ selecteur_fonction_dialog::selecteur_fonction_dialog(base_fonction::type_fonctio
     m_recherche = new line_edit();
     connect(m_recherche, SIGNAL (returnPressed()),this, SLOT (chercher()));
     connect(m_recherche, SIGNAL (focussed(bool)),this, SLOT (rechercheFocussed(bool)));
+    m_recherche->setFocusPolicy(Qt::StrongFocus);
 
     recherche_layout->addWidget(m_recherche);
     m_bouton_recherche = new QPushButton();
@@ -113,6 +114,7 @@ void selecteur_fonction_dialog::chercher()
 
 void selecteur_fonction_dialog::rechercheFocussed(bool hasFocus)
 {
+    std::cout << "rechercheFocussed" << std::endl;
     if ( hasFocus)
         m_bouton_recherche->setFocus();
 }

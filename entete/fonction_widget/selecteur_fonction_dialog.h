@@ -25,11 +25,11 @@ class selecteur_fonction_dialog : public QDialog
     private:
         void init_choix(base_fonction::type_fonction type);
         void ajouter_choix(type_id_fonction nom);
-        void rechercheFocussed(bool hasFocus);
 
     private slots:
         void choisir();
         void chercher();
+        void rechercheFocussed(bool hasFocus);
 
     private:
         QDialogButtonBox *m_buttonBox;
