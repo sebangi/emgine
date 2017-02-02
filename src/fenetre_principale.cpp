@@ -296,9 +296,8 @@ void fenetre_principale::init_test()
     p->set_nom("Exemple");
     ajouter_projet(p);
 
-    ajouter_fonction( p, NULL, new fonction_source_permutation(p), true, true );
-        //ajouter_fonction( p, NULL, new fonction_source_texte(p, "UNHBH TM SDRS !\nunhbh tm sdrs !"), true, true );
-    //ajouter_fonction( p, NULL, new fonction_cesar(p), true, true );
+    ajouter_fonction( p, NULL, new fonction_source_texte(p, "UNHBH TM SDRS !\nunhbh tm sdrs !"), true, true );
+    ajouter_fonction( p, NULL, new fonction_cesar(p), true, true );
     ajouter_fonction( p, NULL, new fonction_sortie_texte(p), true, true );
 
     p->selectionner();

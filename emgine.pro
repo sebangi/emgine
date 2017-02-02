@@ -67,7 +67,8 @@ SOURCES += \
         src/fonction_widget/parametre_aide_message_box.cpp \
     src/fonction/fonction_source/fonction_source_choix.cpp \
     src/fonction_widget/fonction_source_widget/fonction_source_choix_widget.cpp \
-    src/fonction/fonction_source/fonction_source_permutation.cpp
+    src/fonction/fonction_source/fonction_source_permutation.cpp \
+    src/fonction_widget/line_edit.cpp
 
 HEADERS  += \
         entete/compilation/compilateur.h \
@@ -124,7 +125,8 @@ HEADERS  += \
     entete/fonction_widget/fonction_source_widget/fonction_source_choix_widget.h \
     entete/fonction/fonction_source/fonction_source_permutation.h \
     entete/fonction/define_fonction.h \
-    entete/fonction/define_parametre.h
+    entete/fonction/define_parametre.h \
+    entete/fonction_widget/line_edit.h
 
 FORMS    += \
     fenetre_principale.ui

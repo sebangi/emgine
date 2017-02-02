@@ -3,8 +3,11 @@
 
 #include "entete/projet/base_fonction.h"
 #include "entete/fonction_widget/bouton_choix_fonction.h"
+#include "entete/fonction_widget/line_edit.h"
 #include "entete/define.h"
 #include <QDialog>
+#include <QLineEdit>
+#include <QPushButton>
 
 class QDialogButtonBox;
 class QGridLayout;
@@ -22,14 +25,20 @@ class selecteur_fonction_dialog : public QDialog
     private:
         void init_choix(base_fonction::type_fonction type);
         void ajouter_choix(type_id_fonction nom);
+        void rechercheFocussed(bool hasFocus);
 
     private slots:
         void choisir();
+        void chercher();
 
     private:
         QDialogButtonBox *m_buttonBox;
         QGridLayout *m_grid_layout;
         base_fonction * m_fonction;
+        line_edit * m_recherche;
+        QPushButton * m_bouton_recherche;
+
+        QList< bouton_choix_fonction * > m_boutons;
 };
 
 #endif // SELECTEUR_FONCTION_DIALOG_H

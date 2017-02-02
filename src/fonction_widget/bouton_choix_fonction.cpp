@@ -8,6 +8,7 @@ bouton_choix_fonction::bouton_choix_fonction(type_id_fonction id, QWidget *paren
     : QPushButton(parent), m_id_fonction(id)
 {
     setText( bibliotheque_fonctions::nom_to_string(m_id_fonction) );
+    setFocusPolicy(Qt::NoFocus);
 }
 
 base_fonction * bouton_choix_fonction::get_fonction()
