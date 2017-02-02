@@ -1,0 +1,216 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.6"/>
+<title>Emgine:  Fichier source de entete/projet/base_parametre.h</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+  $(document).ready(function() { searchBox.OnSelectItem(0); });
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td style="padding-left: 0.5em;">
+   <div id="projectname">Emgine
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Généré par Doxygen 1.8.6 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'Recherche');
+</script>
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>Page&#160;principale</span></a></li>
+      <li><a href="pages.html"><span>Pages&#160;associées</span></a></li>
+      <li><a href="annotated.html"><span>Classes</span></a></li>
+      <li class="current"><a href="files.html"><span>Fichiers</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="Recherche" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
+          </span>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="files.html"><span>Liste&#160;des&#160;fichiers</span></a></li>
+    </ul>
+  </div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>Tout</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Fonctions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Définitions de type</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Énumérations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Pages</a></div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_2db5f1c5034b754c69755a32007f81b7.html">entete</a></li><li class="navelem"><a class="el" href="dir_4d70d51309c71454fccdb5ab7a56e2b3.html">projet</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle">
+<div class="title">base_parametre.h</div>  </div>
+</div><!--header-->
+<div class="contents">
+<div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#ifndef BASE_PARAMETRE_H</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#define BASE_PARAMETRE_H</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="preprocessor"></span></div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &lt;QString&gt;</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#include &lt;QXmlStreamWriter&gt;</span></div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="preprocessor">#include &quot;entete/element/base_element.h&quot;</span></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="preprocessor">#include &quot;entete/element/type_element.h&quot;</span></div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor">#include &quot;entete/element/textes.h&quot;</span></div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#include &quot;entete/projet/fonctions_conteneur.h&quot;</span></div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="preprocessor">#include &quot;entete/fonction/define_parametre.h&quot;</span></div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;</div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="keyword">class </span><a class="code" href="classbase__fonction.html">base_fonction</a>;</div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="keyword">class </span><a class="code" href="classnoeud__parametre.html">noeud_parametre</a>;</div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="keyword">class </span><a class="code" href="classlogs__compilation__widget.html">logs_compilation_widget</a>;</div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;</div>
+<div class="line"><a name="l00020"></a><span class="lineno"><a class="line" href="classbase__parametre.html">   20</a></span>&#160;<span class="keyword">class </span><a class="code" href="classbase__parametre.html">base_parametre</a> : <span class="keyword">public</span> <a class="code" href="classfonctions__conteneur.html">fonctions_conteneur</a></div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;{</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;        Q_OBJECT</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;    <span class="keyword">public</span>:</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;        <span class="keyword">enum</span> type_mode_configuration_visibilite</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;        {</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;            CONFIGURATION_INVISIBLE = 0,</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;            CONFIGURATION_VISIBLE</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;        };</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;        <span class="keyword">enum</span> type_mode_contenu_parametre</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;        {</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;            CONTENU_PARAM_VIDE_IMPOSSIBLE = 0,</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;            CONTENU_PARAM_VIDE_POSSIBLE</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;        };</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;</div>
+<div class="line"><a name="l00040"></a><span class="lineno"><a class="line" href="classbase__parametre.html#a9e5b987e53d5cc9d49a3e2637b6b61b9">   40</a></span>&#160;        <span class="keyword">enum</span> <a class="code" href="classbase__parametre.html#a9e5b987e53d5cc9d49a3e2637b6b61b9">type_algorithme</a>{</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;            ALGO_AUCUN = 0,</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;            ALGO_PMIPL,</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;            ALGO_LIPL</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;        };</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    <span class="keyword">public</span>:</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;        <a class="code" href="classbase__parametre.html">base_parametre</a>( <a class="code" href="classobjet__selectionnable.html">objet_selectionnable</a> * parent, QString nom, QString aide,</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;                        type_mode_contenu_parametre mode_contenu_parametre,</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;                        type_mode_configuration_visibilite dans_configuration, <a class="code" href="classbase__parametre.html#a9e5b987e53d5cc9d49a3e2637b6b61b9">type_algorithme</a> algorithme);</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;        ~<a class="code" href="classbase__parametre.html">base_parametre</a>();</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;        <span class="keywordtype">void</span> sauvegarder( QXmlStreamWriter &amp; stream ) <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;        QString get_nom() <span class="keyword">const</span>;        </div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;        QString get_titre() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;        QString get_valeur_courte() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;        QString get_aide() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;        QString get_aide_algorithme() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;        <span class="keywordtype">bool</span> est_parametre() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;        <a class="code" href="classbase__fonction.html">base_fonction</a> *get_fonction_parent() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;        <span class="keywordtype">bool</span> is_requis() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;        <span class="keywordtype">void</span> set_booleen_par_defaut( <span class="keywordtype">bool</span> valeur );</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;        <span class="keywordtype">void</span> set_texte_par_defaut( QString <a class="code" href="classtexte.html">texte</a>, QString separ_caractere = <span class="stringliteral">&quot;&quot;</span>, QString separ_mot = <span class="stringliteral">&quot; &quot;</span>, QString separ_ligne = <span class="stringliteral">&quot;\n&quot;</span> );</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;        <span class="keywordtype">void</span> set_caractere_par_defaut(QString s);</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;        <span class="keywordtype">void</span> set_choix_par_defaut(<span class="keyword">const</span> QStringList &amp; selection);</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;        <span class="keyword">const</span> <a class="code" href="classtextes.html">textes</a>&amp; get_textes_out() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;        <span class="keywordtype">void</span> set_textes_out(<span class="keyword">const</span> <a class="code" href="classtextes.html">textes</a> &amp;textes_out);</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;        <span class="keywordtype">void</span> set_id(<span class="keyword">const</span> type_id_parametre &amp;value);</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;        <span class="keywordtype">bool</span> est_valide(<a class="code" href="classlogs__compilation__widget.html">logs_compilation_widget</a> * vue_logs);</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;        <span class="keywordtype">void</span> charger( QXmlStreamReader &amp; xml );</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;        <span class="keywordtype">bool</span> configuration_visible() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;        <span class="keywordtype">void</span> inverser_configuration_visibilite();</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;        <span class="keywordtype">void</span> set_mode_configuration_visibilite(type_mode_configuration_visibilite visible);</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;        <span class="keywordtype">bool</span> peut_etre_vide() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;        type_type_parametre get_type() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;    <span class="keyword">protected</span>:</div>
+<div class="line"><a name="l00088"></a><span class="lineno"><a class="line" href="classbase__parametre.html#afa54d3e720cab0ee5de13c30c0597adb">   88</a></span>&#160;        QString <a class="code" href="classbase__parametre.html#afa54d3e720cab0ee5de13c30c0597adb">m_nom</a>;</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;</div>
+<div class="line"><a name="l00091"></a><span class="lineno"><a class="line" href="classbase__parametre.html#af62a651d367056e1079b09c485c5d557">   91</a></span>&#160;        QString <a class="code" href="classbase__parametre.html#af62a651d367056e1079b09c485c5d557">m_aide</a>;</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;</div>
+<div class="line"><a name="l00094"></a><span class="lineno"><a class="line" href="classbase__parametre.html#a375558920c778ff013e4bac75b092573">   94</a></span>&#160;        type_mode_contenu_parametre <a class="code" href="classbase__parametre.html#a375558920c778ff013e4bac75b092573">m_mode_contenu_parametre</a>;</div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;</div>
+<div class="line"><a name="l00097"></a><span class="lineno"><a class="line" href="classbase__parametre.html#a88d6d3a7fc836a2f134344ff5a3185ed">   97</a></span>&#160;        <a class="code" href="classbase__fonction.html">base_fonction</a> * <a class="code" href="classbase__parametre.html#a88d6d3a7fc836a2f134344ff5a3185ed">m_fonction_parent</a>;</div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;</div>
+<div class="line"><a name="l00100"></a><span class="lineno"><a class="line" href="classbase__parametre.html#a8018b4687fbb14a97ff34661e0481c20">  100</a></span>&#160;        <a class="code" href="classtextes.html">textes</a> <a class="code" href="classbase__parametre.html#a8018b4687fbb14a97ff34661e0481c20">m_textes_out</a>;</div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;</div>
+<div class="line"><a name="l00103"></a><span class="lineno"><a class="line" href="classbase__parametre.html#a00aff6ab5a2e2a4cdea8cfc62ebdf06a">  103</a></span>&#160;        type_id_parametre <a class="code" href="classbase__parametre.html#a00aff6ab5a2e2a4cdea8cfc62ebdf06a">m_id</a>;</div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;</div>
+<div class="line"><a name="l00106"></a><span class="lineno"><a class="line" href="classbase__parametre.html#a489eac8ac5b24f3295bb0122f1bacbb5">  106</a></span>&#160;        type_mode_configuration_visibilite <a class="code" href="classbase__parametre.html#a489eac8ac5b24f3295bb0122f1bacbb5">m_mode_configuration_visibilite</a>;</div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;</div>
+<div class="line"><a name="l00109"></a><span class="lineno"><a class="line" href="classbase__parametre.html#aa922c5061129a19c401693fca50fba69">  109</a></span>&#160;        <a class="code" href="classbase__parametre.html#a9e5b987e53d5cc9d49a3e2637b6b61b9">type_algorithme</a> <a class="code" href="classbase__parametre.html#aa922c5061129a19c401693fca50fba69">m_algorithme</a>;</div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;</div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;        type_type_parametre m_type;</div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;};</div>
+<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;</div>
+<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;<span class="preprocessor">#endif // BASE_PARAMETRE_H</span></div>
+<div class="ttc" id="classbase__parametre_html_a375558920c778ff013e4bac75b092573"><div class="ttname"><a href="classbase__parametre.html#a375558920c778ff013e4bac75b092573">base_parametre::m_mode_contenu_parametre</a></div><div class="ttdeci">type_mode_contenu_parametre m_mode_contenu_parametre</div><div class="ttdoc">Indique si le parametre est requis. </div><div class="ttdef"><b>Definition:</b> <a href="base__parametre_8h_source.html#l00094">base_parametre.h:94</a></div></div>
+<div class="ttc" id="classnoeud__parametre_html"><div class="ttname"><a href="classnoeud__parametre.html">noeud_parametre</a></div><div class="ttdef"><b>Definition:</b> <a href="noeud__parametre_8h_source.html#l00008">noeud_parametre.h:8</a></div></div>
+<div class="ttc" id="classlogs__compilation__widget_html"><div class="ttname"><a href="classlogs__compilation__widget.html">logs_compilation_widget</a></div><div class="ttdef"><b>Definition:</b> <a href="logs__compilation__widget_8h_source.html#l00011">logs_compilation_widget.h:11</a></div></div>
+<div class="ttc" id="classbase__parametre_html_a00aff6ab5a2e2a4cdea8cfc62ebdf06a"><div class="ttname"><a href="classbase__parametre.html#a00aff6ab5a2e2a4cdea8cfc62ebdf06a">base_parametre::m_id</a></div><div class="ttdeci">type_id_parametre m_id</div><div class="ttdoc">L&#39;identifiant du paramètre. </div><div class="ttdef"><b>Definition:</b> <a href="base__parametre_8h_source.html#l00103">base_parametre.h:103</a></div></div>
+<div class="ttc" id="classbase__parametre_html_afa54d3e720cab0ee5de13c30c0597adb"><div class="ttname"><a href="classbase__parametre.html#afa54d3e720cab0ee5de13c30c0597adb">base_parametre::m_nom</a></div><div class="ttdeci">QString m_nom</div><div class="ttdoc">Le nom de la fonction. </div><div class="ttdef"><b>Definition:</b> <a href="base__parametre_8h_source.html#l00088">base_parametre.h:88</a></div></div>
+<div class="ttc" id="classbase__parametre_html"><div class="ttname"><a href="classbase__parametre.html">base_parametre</a></div><div class="ttdoc">Classe décrivant un parametre d&#39;une fonction. </div><div class="ttdef"><b>Definition:</b> <a href="base__parametre_8h_source.html#l00020">base_parametre.h:20</a></div></div>
+<div class="ttc" id="classtextes_html"><div class="ttname"><a href="classtextes.html">textes</a></div><div class="ttdef"><b>Definition:</b> <a href="textes_8h_source.html#l00008">textes.h:8</a></div></div>
+<div class="ttc" id="classobjet__selectionnable_html"><div class="ttname"><a href="classobjet__selectionnable.html">objet_selectionnable</a></div><div class="ttdef"><b>Definition:</b> <a href="objet__selectionnable_8h_source.html#l00011">objet_selectionnable.h:11</a></div></div>
+<div class="ttc" id="classbase__fonction_html"><div class="ttname"><a href="classbase__fonction.html">base_fonction</a></div><div class="ttdoc">Classe décrivant une fonction de conversion d&#39;un texte. </div><div class="ttdef"><b>Definition:</b> <a href="base__fonction_8h_source.html#l00028">base_fonction.h:28</a></div></div>
+<div class="ttc" id="classbase__parametre_html_a8018b4687fbb14a97ff34661e0481c20"><div class="ttname"><a href="classbase__parametre.html#a8018b4687fbb14a97ff34661e0481c20">base_parametre::m_textes_out</a></div><div class="ttdeci">textes m_textes_out</div><div class="ttdoc">La valeur réelle du parametre. </div><div class="ttdef"><b>Definition:</b> <a href="base__parametre_8h_source.html#l00100">base_parametre.h:100</a></div></div>
+<div class="ttc" id="classtexte_html"><div class="ttname"><a href="classtexte.html">texte</a></div><div class="ttdef"><b>Definition:</b> <a href="texte_8h_source.html#l00009">texte.h:9</a></div></div>
+<div class="ttc" id="classbase__parametre_html_af62a651d367056e1079b09c485c5d557"><div class="ttname"><a href="classbase__parametre.html#af62a651d367056e1079b09c485c5d557">base_parametre::m_aide</a></div><div class="ttdeci">QString m_aide</div><div class="ttdoc">L&#39;aide utilisateur du parametre. </div><div class="ttdef"><b>Definition:</b> <a href="base__parametre_8h_source.html#l00091">base_parametre.h:91</a></div></div>
+<div class="ttc" id="classbase__parametre_html_a489eac8ac5b24f3295bb0122f1bacbb5"><div class="ttname"><a href="classbase__parametre.html#a489eac8ac5b24f3295bb0122f1bacbb5">base_parametre::m_mode_configuration_visibilite</a></div><div class="ttdeci">type_mode_configuration_visibilite m_mode_configuration_visibilite</div><div class="ttdoc">Indique si le paramètre doit figurer dans la configuration. </div><div class="ttdef"><b>Definition:</b> <a href="base__parametre_8h_source.html#l00106">base_parametre.h:106</a></div></div>
+<div class="ttc" id="classbase__parametre_html_a9e5b987e53d5cc9d49a3e2637b6b61b9"><div class="ttname"><a href="classbase__parametre.html#a9e5b987e53d5cc9d49a3e2637b6b61b9">base_parametre::type_algorithme</a></div><div class="ttdeci">type_algorithme</div><div class="ttdoc">Enumération décrivant les différents algorithmes pour l&#39;excution des paramètres. </div><div class="ttdef"><b>Definition:</b> <a href="base__parametre_8h_source.html#l00040">base_parametre.h:40</a></div></div>
+<div class="ttc" id="classbase__parametre_html_a88d6d3a7fc836a2f134344ff5a3185ed"><div class="ttname"><a href="classbase__parametre.html#a88d6d3a7fc836a2f134344ff5a3185ed">base_parametre::m_fonction_parent</a></div><div class="ttdeci">base_fonction * m_fonction_parent</div><div class="ttdoc">La fonction parent. </div><div class="ttdef"><b>Definition:</b> <a href="base__parametre_8h_source.html#l00097">base_parametre.h:97</a></div></div>
+<div class="ttc" id="classfonctions__conteneur_html"><div class="ttname"><a href="classfonctions__conteneur.html">fonctions_conteneur</a></div><div class="ttdef"><b>Definition:</b> <a href="fonctions__conteneur_8h_source.html#l00011">fonctions_conteneur.h:11</a></div></div>
+<div class="ttc" id="classbase__parametre_html_aa922c5061129a19c401693fca50fba69"><div class="ttname"><a href="classbase__parametre.html#aa922c5061129a19c401693fca50fba69">base_parametre::m_algorithme</a></div><div class="ttdeci">type_algorithme m_algorithme</div><div class="ttdoc">Le type d&#39;algorithme utilisé. </div><div class="ttdef"><b>Definition:</b> <a href="base__parametre_8h_source.html#l00109">base_parametre.h:109</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Généré le Jeudi 2 Février 2017 22:30:17 pour Emgine par &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.6
+</small></address>
+</body>
+</html>

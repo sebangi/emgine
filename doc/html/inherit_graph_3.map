@@ -1,0 +1,11 @@
+<map id="Graphe hiérarchique des classes" name="Graphe hiérarchique des classes">
+<area shape="rect" id="node2" href="$classbase__fonction__widget.html" title="base_fonction_widget" alt="" coords="193,141,341,168"/>
+<area shape="rect" id="node3" href="$classbase__fonction__widget__avec__text__edit.html" title="base_fonction_widget\l_avec_text_edit" alt="" coords="407,37,555,78"/>
+<area shape="rect" id="node6" href="$classfonction__sortie__texte__widget.html" title="fonction_sortie_texte\l_widget" alt="" coords="410,102,553,143"/>
+<area shape="rect" id="node7" href="$classfonction__source__booleen__widget.html" title="fonction_source_booleen\l_widget" alt="" coords="398,167,565,209"/>
+<area shape="rect" id="node8" href="$classfonction__source__choix__widget.html" title="fonction_source_choix\l_widget" alt="" coords="405,233,557,274"/>
+<area shape="rect" id="node4" href="$classfonction__source__caractere__widget.html" title="fonction_source_caractere\l_widget" alt="" coords="614,5,789,46"/>
+<area shape="rect" id="node5" href="$classfonction__source__texte__widget.html" title="fonction_source_texte\l_widget" alt="" coords="626,70,777,111"/>
+<area shape="rect" id="node10" href="$classbase__parametre__widget.html" title="base_parametre_widget" alt="" coords="187,192,347,219"/>
+<area shape="rect" id="node11" href="$classlogs__compilation__widget.html" title="logs_compilation_widget" alt="" coords="185,243,349,269"/>
+</map>

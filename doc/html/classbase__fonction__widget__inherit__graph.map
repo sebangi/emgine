@@ -1,0 +1,8 @@
+<map id="base_fonction_widget" name="base_fonction_widget">
+<area shape="rect" id="node4" href="$classbase__fonction__widget__avec__text__edit.html" title="base_fonction_widget\l_avec_text_edit" alt="" coords="391,37,539,78"/>
+<area shape="rect" id="node7" href="$classfonction__sortie__texte__widget.html" title="fonction_sortie_texte\l_widget" alt="" coords="394,102,537,143"/>
+<area shape="rect" id="node8" href="$classfonction__source__booleen__widget.html" title="fonction_source_booleen\l_widget" alt="" coords="382,167,549,209"/>
+<area shape="rect" id="node9" href="$classfonction__source__choix__widget.html" title="fonction_source_choix\l_widget" alt="" coords="389,233,541,274"/>
+<area shape="rect" id="node5" href="$classfonction__source__caractere__widget.html" title="fonction_source_caractere\l_widget" alt="" coords="598,5,773,46"/>
+<area shape="rect" id="node6" href="$classfonction__source__texte__widget.html" title="fonction_source_texte\l_widget" alt="" coords="610,70,761,111"/>
+</map>

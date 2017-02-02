@@ -1,0 +1,9 @@
+<map id="base_fonction_widget::on_fermer" name="base_fonction_widget::on_fermer">
+<area shape="rect" id="node2" href="$classbase__fonction.html#acee6c2c0170e7a1bf8c0df49424ef2ba" title="Retourne le nom de la fonction. " alt="" coords="203,25,365,52"/>
+<area shape="rect" id="node3" href="$classbase__fonction__widget.html#a38df68f6f1a38a5d2f653ccc75b3d54d" title="Déconnecter la fonction. " alt="" coords="207,77,361,118"/>
+<area shape="rect" id="node4" href="$classbase__fonction__widget.html#ad5f92c5b95f40e2962fced2467de68bf" title="L&#39;activation de la fonction est modifié. " alt="" coords="419,29,576,85"/>
+<area shape="rect" id="node8" href="$classbase__fonction__widget.html#a7aaa562bd9757a4a4365867b7fdaa024" title="Le verrouillage de la fonction est modifié. " alt="" coords="414,109,581,165"/>
+<area shape="rect" id="node5" href="$classbase__fonction__widget.html#a548a6571fb757666807a6b3e95485dea" title="Mise à jour du bouton d&#39;activation. " alt="" coords="631,5,779,46"/>
+<area shape="rect" id="node6" href="$classbase__fonction__widget.html#a9e330f5ec8c7eac285d1c78cc82e0ea0" title="Mise à jour du nom de l&#39;objet. " alt="" coords="630,70,781,111"/>
+<area shape="rect" id="node7" href="$classbase__fonction.html#adfc285cf65ced571b1e1ff6b59439695" title="Retourne le type de la fonction. " alt="" coords="830,77,991,104"/>
+</map>

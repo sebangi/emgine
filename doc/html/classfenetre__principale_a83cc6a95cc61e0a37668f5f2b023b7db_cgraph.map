@@ -1,0 +1,20 @@
+<map id="fenetre_principale::init_widgets" name="fenetre_principale::init_widgets">
+<area shape="rect" id="node2" href="$classfenetre__principale.html#ae47493f20c2c9fa06ca2c769a3e84385" title="Le bouton ajouter_fonction_source est activé. " alt="" coords="186,5,329,61"/>
+<area shape="rect" id="node5" href="$classfenetre__principale.html#a1b24b555b5667d30268c63863c0ab125" title="Le bouton ajouter_fonction_conversion est activé. " alt="" coords="186,85,329,141"/>
+<area shape="rect" id="node7" href="$classfenetre__principale.html#af3ab2cbc45aa7e1831b24a8e5c94d423" title="Le bouton ajouter_fonction_sortie est activé. " alt="" coords="186,165,329,221"/>
+<area shape="rect" id="node9" href="$classfenetre__principale.html#a996d82fe40208395b83e32035ff81369" title="Le bouton ajouter_nouveau_projet est activé. " alt="" coords="619,266,792,307"/>
+<area shape="rect" id="node11" href="$classfenetre__principale.html#a59ac4b187a775040c20edeaae0ee0c72" title="Le bouton sauvegarder_projet est activé. " alt="" coords="385,295,570,337"/>
+<area shape="rect" id="node13" href="$classfenetre__principale.html#abfa501fd3ad51ee1b9aa937d3693fcf3" title="Le bouton sauvegarder_projet_sous est activé. " alt="" coords="182,347,333,403"/>
+<area shape="rect" id="node15" href="$classfenetre__principale.html#a039da339c2af0c8d2e7f5ccdf01b1efd" title="Le bouton ouvrir_projet est activé. " alt="" coords="179,426,335,467"/>
+<area shape="rect" id="node18" href="$classfenetre__principale.html#aba0b906c46a478aab7e71abd51cf6a6a" title="Le bouton executer est activé. " alt="" coords="190,491,325,533"/>
+<area shape="rect" id="node3" href="$classfenetre__principale.html#a37fea3c3c147a79b3d6524b076f0eddb" title="Ajoute une source au projet courant. " alt="" coords="415,21,539,62"/>
+<area shape="rect" id="node4" href="$classfenetre__principale.html#a208bd27e3c7db9e3af1ae12ac3c5bc99" title="Ajoute une fonction à un noeud. " alt="" coords="643,93,767,134"/>
+<area shape="rect" id="node6" href="$classfenetre__principale.html#a293eba9375bed6685f70ca228705f272" title="Ajoute une fonction de conversion au projet courant. " alt="" coords="408,93,547,134"/>
+<area shape="rect" id="node8" href="$classfenetre__principale.html#a0b7b8e85f386cf7bd698cdd9606b3dcb" title="Ajoute une sortie au projet courant. " alt="" coords="415,165,539,206"/>
+<area shape="rect" id="node10" href="$classfenetre__principale.html#a36f89a276a3e7c84f23e953a1d1ed4c2" title="Ajoute un nouveau projet. " alt="" coords="841,339,965,381"/>
+<area shape="rect" id="node12" href="$classfenetre__principale.html#a40625cf527c1ecf94ef77b38fb55aa1e" title="Sauvegarder le projet. " alt="" coords="640,339,771,381"/>
+<area shape="rect" id="node14" href="$classfenetre__principale.html#af63f2ea80ce5082bf304d7774378fe57" title="Sauvegarder le projet sous. " alt="" coords="395,361,560,402"/>
+<area shape="rect" id="node16" href="$classfenetre__principale.html#a29c30ebdff8babde6262e546b23dbcc6" title="Ouvrir un projet. " alt="" coords="415,426,539,467"/>
+<area shape="rect" id="node17" href="$classfenetre__principale.html#aa4741615b2950b7279425c6dbc02df01" title="Crée un projet à partir d&#39;un xml. " alt="" coords="643,419,767,461"/>
+<area shape="rect" id="node19" href="$classfenetre__principale.html#aecfd9b9b6bd3ee7d5157485986c98b86" title="Executer le projet. " alt="" coords="415,491,539,533"/>
+</map>
