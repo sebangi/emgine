@@ -11,6 +11,18 @@
 
 #include "entete/fonction/fonction_conversion/fonction_cesar.h"
 
+std::map<type_id_fonction, QString> bibliotheque_fonctions::s_fonctions_nom =
+{
+    { f_source_booleen, "Oui ou Non" },
+    { f_source_entier, "Entier" },
+    { f_source_texte, "Texte" },
+    { f_source_caractere, "Caractères" },
+    { f_source_choix, "Choix" },
+    { f_source_generateur_permutation, "Générateur de permutations" },
+    { f_conversion_cesar, "Chiffrement par Code César" },
+    { f_sortie_texte, "Textes" }
+};
+
 std::map<type_id_fonction, QString> bibliotheque_fonctions::s_fonctions_aide =
 {
     { f_source_booleen, "Source de type Oui ou Non" },
@@ -20,30 +32,36 @@ std::map<type_id_fonction, QString> bibliotheque_fonctions::s_fonctions_aide =
     { f_source_choix, "Source de type choix" },
     { f_source_generateur_permutation, "Générateur de permutations" },
     { f_conversion_cesar, "Outil pour décoder/encoder avec César.\nLe code César (ou chiffre de César) est un chiffrement par décalage parmi les plus simples et les plus connu, il utilise la substitution d'une lettre par une autre plus loin dans l'alphabet." },
-    { f_sortie_texte, "Sortie textuelle" }
+    { f_sortie_texte, "Sortie textuelle : la liste de tous les textes obtenus." }
 };
 
-QString bibliotheque_fonctions::nom_to_string(type_id_fonction id)
+std::map<type_id_fonction, std::set<QString> > bibliotheque_fonctions::s_categories =
 {
-    switch ( id ) {
-        // SOURCES
-        case f_source_booleen : return "Source de type booléen";
-        case f_source_entier : return "Source de type entier";
-        case f_source_texte : return "Source textuelle";
-        case f_source_caractere : return "Source de type caractères";
-        case f_source_choix : return "Source de type choix";
-        case f_source_generateur_permutation : return "Source générateur de permutations";
-
-            // CONVERSIONS
-        case f_conversion_cesar : return "Chiffrement par Code César"; break;
-
-            // SORTIES
-        case f_sortie_texte : return "Sortie textuelle";
-
-        default:
-            return "Fonction inconnue";
+    { f_source_booleen,
+      { "booléen", "booleen" }
+    },
+    { f_source_entier,
+      {  }
+    },
+    { f_source_texte,
+      { }
+    },
+    { f_source_caractere,
+      { "caracteres" }
+    },
+    { f_source_choix,
+      { }
+    },
+    { f_source_generateur_permutation,
+      { }
+    },
+    { f_conversion_cesar,
+      { }
+    },
+    { f_sortie_texte,
+      { }
     }
-}
+};
 
 base_fonction *bibliotheque_fonctions::get_fonction(type_id_fonction id)
 {
@@ -71,8 +89,48 @@ QString bibliotheque_fonctions::get_aide(type_id_fonction id)
     std::map<type_id_fonction, QString>::iterator it = s_fonctions_aide.find(id);
 
     if( it == s_fonctions_aide.end() )
-        return QString();
+        return "Fonction non documentée";
     else
         return it->second;
+}
+
+QString bibliotheque_fonctions::get_nom(type_id_fonction id)
+{
+    std::map<type_id_fonction, QString>::iterator it = s_fonctions_nom.find(id);
+
+    if( it == s_fonctions_nom.end() )
+        return "fonction inconnue";
+    else
+        return it->second;
+}
+
+bool bibliotheque_fonctions::contient_mot_cle(type_id_fonction id, const QString &cle)
+{
+    if ( cle.isEmpty() )
+        return true;
+    else
+    {
+        // recherche dans les noms
+        std::map<type_id_fonction, QString>::iterator it_nom = s_fonctions_nom.find(id);
+        if( it_nom != s_fonctions_nom.end() )
+            if ( it_nom->second.contains( cle, Qt::CaseInsensitive ) )
+                return true;
+
+        // recherche dans l'aide
+        std::map<type_id_fonction, QString>::iterator it_aide = s_fonctions_aide.find(id);
+        if( it_aide != s_fonctions_aide.end() )
+            if ( it_aide->second.contains( cle, Qt::CaseInsensitive ) )
+                return true;
+
+        // recherche dans les catégories
+        std::map<type_id_fonction, std::set<QString> >::iterator it = s_categories.find(id);
+
+        if( it != s_categories.end() )
+            for ( std::set<QString>::iterator it_m = it->second.begin(); it_m != it->second.end(); ++it_m )
+                if ( it_m->contains( cle, Qt::CaseInsensitive ) )
+                    return true;
+    }
+
+    return false;
 }
 

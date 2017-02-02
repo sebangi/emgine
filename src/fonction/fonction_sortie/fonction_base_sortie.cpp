@@ -3,8 +3,8 @@
 #include "entete/explorateur/noeud_fonction.h"
 #include <iostream>
 
-fonction_base_sortie::fonction_base_sortie(fonctions_conteneur * conteneur, const QString & nom)
-    : base_fonction(conteneur, nom, fonction_sortie)
+fonction_base_sortie::fonction_base_sortie(fonctions_conteneur * conteneur)
+    : base_fonction(conteneur, fonction_sortie)
 {
 }
 

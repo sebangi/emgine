@@ -46,7 +46,7 @@ class base_fonction : public objet_selectionnable
         typedef void ( base_fonction::*pf_exec_callback)( compilateur &, const textes &, textes & );
 
     public:
-        base_fonction( fonctions_conteneur * parent, const QString & nom, type_fonction type = fonction_conversion);
+        base_fonction( fonctions_conteneur * parent, type_fonction type = fonction_conversion);
         virtual ~base_fonction();
         virtual void initialisation_par_defaut();
 

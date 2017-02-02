@@ -6,7 +6,7 @@
 #include <iostream>
 
 fonction_source_texte::fonction_source_texte(fonctions_conteneur * conteneur, QString texte)
-    : fonction_base_source(conteneur, "Texte"), m_texte(texte)
+    : fonction_base_source(conteneur), m_texte(texte)
 {
     set_id(f_source_texte);
     augmenter_max_niveau_visibilite(2);

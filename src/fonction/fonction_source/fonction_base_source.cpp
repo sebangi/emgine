@@ -4,8 +4,8 @@
 #include "entete/projet/fonctions_conteneur.h"
 #include <iostream>
 
-fonction_base_source::fonction_base_source(fonctions_conteneur * conteneur, const QString & nom)
-    : base_fonction(conteneur, nom, fonction_source)
+fonction_base_source::fonction_base_source(fonctions_conteneur * conteneur)
+    : base_fonction(conteneur, fonction_source)
 {
     set_est_etendu(false);
 }

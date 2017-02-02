@@ -23,7 +23,7 @@
  \param nom Le nom de la fonction.
 */
 fonction_cesar::fonction_cesar( fonctions_conteneur * conteneur )
-    : base_fonction(conteneur, "Chiffrement par Code César")
+    : base_fonction(conteneur)
 {    
     set_id(f_conversion_cesar);
     augmenter_max_niveau_visibilite(1);

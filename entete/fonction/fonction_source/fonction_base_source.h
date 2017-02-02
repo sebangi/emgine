@@ -8,7 +8,7 @@ class fonctions_conteneur;
 class fonction_base_source : public base_fonction
 {
     public:
-        fonction_base_source(fonctions_conteneur * conteneur, const QString & nom);
+        fonction_base_source(fonctions_conteneur * conteneur);
         ~fonction_base_source();        
 
         virtual QString get_string_valeur() const = 0;

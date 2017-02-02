@@ -8,13 +8,13 @@ enum type_id_fonction{
     fonction_indefini = 0,
 
     debut_fonction_source = 1,
-    f_source_booleen = 1,
-    f_source_entier,
-    f_source_texte,
+    f_source_texte = 1,
     f_source_caractere,
+    f_source_booleen,
+    f_source_entier,
     f_source_choix,
     fin_fonction_source,
-    f_source_generateur_permutation, // retiré temporairement
+    f_source_generateur_permutation, // retiré des propositions
 
     debut_fonction_conversion = 1000,
     f_conversion_cesar = 1000,

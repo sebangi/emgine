@@ -20,8 +20,8 @@
  \brief Constructeur.
  \param nom Le nom de la fonction.
 */
-base_fonction::base_fonction(fonctions_conteneur * parent, const QString & nom, type_fonction type)
-    : objet_selectionnable(parent), m_nom(nom), m_type(type), m_id(fonction_indefini),
+base_fonction::base_fonction(fonctions_conteneur * parent, type_fonction type)
+    : objet_selectionnable(parent), m_nom("fonction inconnue"), m_type(type), m_id(fonction_indefini),
       m_conteneur(parent), m_niveau_visibilite(1), m_max_niveau_visibilite(1),
       m_niveau_visibilite_avant_desactivation(1)
 {
@@ -155,6 +155,7 @@ fonctions_conteneur *base_fonction::get_conteneur() const
 void base_fonction::set_id(const type_id_fonction &id)
 {
     m_id = id;
+    m_nom = bibliotheque_fonctions::get_nom( m_id );
 }
 
 void base_fonction::change_niveau_visibilite()

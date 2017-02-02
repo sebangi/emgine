@@ -6,6 +6,7 @@
 #include <QGridLayout>
 #include <QPushButton>
 #include <QApplication>
+#include <QFontMetrics>
 #include <QStyle>
 #include <iostream>
 
@@ -19,12 +20,10 @@ selecteur_fonction_dialog::selecteur_fonction_dialog(base_fonction::type_fonctio
     QHBoxLayout *recherche_layout = new QHBoxLayout;
     m_recherche = new QLineEdit();
     connect(m_recherche, SIGNAL (returnPressed()),this, SLOT (chercher()));
+    connect(m_recherche, SIGNAL (textChanged(const QString &)),this, SLOT (chercher(const QString &)));
     m_recherche->setFocusPolicy(Qt::StrongFocus);
 
     recherche_layout->addWidget(m_recherche);
-    m_bouton_recherche = new QPushButton();
-    m_bouton_recherche->setIcon(style->standardIcon( QStyle::SP_FileDialogContentsView ));
-    recherche_layout->addWidget(m_bouton_recherche);
 
     m_grid_layout = new QGridLayout;
     init_choix(type);
@@ -45,13 +44,13 @@ selecteur_fonction_dialog::selecteur_fonction_dialog(base_fonction::type_fonctio
     else
         setWindowTitle("Quelle sortie souhaitez-vous ?");
 
+    setMinimumWidth(320);
+
     QList<QPushButton *> buttonList = findChildren<QPushButton *>();
     foreach(QPushButton *pb, buttonList) {
         pb->setDefault( false );
         pb->setAutoDefault( false );
     }
-
-    m_bouton_recherche->setFocus();
 }
 
 base_fonction *selecteur_fonction_dialog::get_fonction() const
@@ -113,7 +112,14 @@ void selecteur_fonction_dialog::choisir()
 
 void selecteur_fonction_dialog::chercher()
 {
-    std::cout << "Chercher" << std::endl;
+    for ( QList< bouton_choix_fonction * >::iterator it = m_boutons.begin(); it != m_boutons.end(); ++it )
+        (*it)->mettre_a_jour_visibilite( m_recherche->text() );
+
+    adjustSize();
+    adjustSize();
 }
 
-
+void selecteur_fonction_dialog::chercher(const QString &)
+{
+    chercher();
+}

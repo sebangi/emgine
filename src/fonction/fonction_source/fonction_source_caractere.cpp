@@ -4,7 +4,7 @@
 #include "entete/compilation/compilateur.h"
 
 fonction_source_caractere::fonction_source_caractere( fonctions_conteneur * conteneur, QString valeur )
-    : fonction_base_source(conteneur, "Caractères"), m_valeur(valeur)
+    : fonction_base_source(conteneur), m_valeur(valeur)
 {    
     set_id(f_source_caractere);
     augmenter_max_niveau_visibilite(1);

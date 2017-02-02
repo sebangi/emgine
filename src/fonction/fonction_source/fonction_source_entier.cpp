@@ -2,7 +2,7 @@
 #include "entete/compilation/compilateur.h"
 
 fonction_source_entier::fonction_source_entier(fonctions_conteneur * conteneur, int valeur)
-    : fonction_base_source(conteneur, "Entiers"), m_valeur(valeur)
+    : fonction_base_source(conteneur), m_valeur(valeur)
 {    
     set_id(f_source_entier);
     augmenter_max_niveau_visibilite(1);

@@ -124,8 +124,7 @@ HEADERS  += \
     entete/fonction_widget/fonction_source_widget/fonction_source_choix_widget.h \
     entete/fonction/fonction_source/fonction_source_permutation.h \
     entete/fonction/define_fonction.h \
-    entete/fonction/define_parametre.h \
-    entete/fonction_widget/line_edit.h
+    entete/fonction/define_parametre.h
 
 FORMS    += \
     fenetre_principale.ui

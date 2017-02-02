@@ -71,6 +71,57 @@ QPushButton:focus {
         outline: none;
 }
 
+QPushButton#BoutonChoixFonctionSource
+{
+    text-align: center;
+    padding: 2px;
+    margin: 1px;
+    border-color: Darkslateblue;
+    border-style: solid;
+    border-width: 1px;
+    border-radius: 4px;
+    background-color: Cornflowerblue;
+}
+
+QPushButton#BoutonChoixFonctionSource:hover
+{
+
+}
+
+QPushButton#BoutonChoixFonctionConversion
+{
+    text-align: center;
+    padding: 2px;
+    margin: 1px;
+    border-color: red;
+    border-style: solid;
+    border-width: 1px;
+    border-radius: 4px;
+    background-color: Coral;
+}
+
+QPushButton#BoutonChoixFonctionConversion:hover
+{
+
+}
+
+QPushButton#BoutonChoixFonctionSortie
+{
+    text-align: center;
+    padding: 2px;
+    margin: 1px;
+    border-color: gold;
+    border-style: solid;
+    border-width: 1px;
+    border-radius: 4px;
+    background-color: Yellow;
+}
+
+QPushButton#BoutonChoixFonctionSortie:hover
+{
+
+}
+
 QPushButton#ButtonToolBar
 {
     text-align: left;

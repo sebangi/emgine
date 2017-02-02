@@ -13,6 +13,7 @@ class bouton_choix_fonction : public QPushButton
         base_fonction* get_fonction();
 
         type_id_fonction get_id_fonction() const;
+        void mettre_a_jour_visibilite( const QString & cle );
 
     private:
         type_id_fonction m_id_fonction;

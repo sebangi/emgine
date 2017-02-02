@@ -5,7 +5,7 @@
 #include "entete/element/mot.h"
 
 fonction_source_booleen::fonction_source_booleen(fonctions_conteneur * conteneur,  bool valeur )
-    : fonction_base_source(conteneur, "Oui ou Non ?"), m_valeur(valeur)
+    : fonction_base_source(conteneur), m_valeur(valeur)
 {
     set_id(f_source_booleen);
     augmenter_max_niveau_visibilite(1);

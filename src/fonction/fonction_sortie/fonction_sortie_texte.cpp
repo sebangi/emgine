@@ -8,7 +8,7 @@
 #include <iostream>
 
 fonction_sortie_texte::fonction_sortie_texte(fonctions_conteneur * conteneur)
-    : fonction_base_sortie(conteneur,"Sortie texte")
+    : fonction_base_sortie(conteneur)
 {
     set_id(f_sortie_texte);
     augmenter_max_niveau_visibilite(1);

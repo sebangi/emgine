@@ -6,7 +6,7 @@
 #include <iostream>
 
 fonction_source_permutation::fonction_source_permutation(fonctions_conteneur * conteneur)
-    : fonction_base_source(conteneur, "Générateur de permutations")
+    : fonction_base_source(conteneur)
 {
     set_id(f_source_generateur_permutation);
     augmenter_max_niveau_visibilite(1);

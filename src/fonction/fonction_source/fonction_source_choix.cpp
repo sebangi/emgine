@@ -9,7 +9,7 @@
 #include <iostream>
 
 fonction_source_choix::fonction_source_choix( fonctions_conteneur * conteneur, const QStringList & selection )
-    : fonction_base_source(conteneur, "Choix"), m_selection(selection), m_sur_une_seule_ligne(false),
+    : fonction_base_source(conteneur), m_selection(selection), m_sur_une_seule_ligne(false),
       m_multiple_selection(false)
 {
     set_id(f_source_choix);

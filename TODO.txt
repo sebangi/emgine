@@ -9,9 +9,9 @@ ETAPE 2 : VERSION 0.1
 * sort alphabétique (include + .pro)
 * documentation Doxygen
 * Tagger sous git la version 0.1
+* Configurer les couleurs :hover des boutons de choix de fonctions
 
 ETAPE 3
-* Améliorer la sélection des fonctions : catégories, mots clés
 * sauvegarde d'un texte sortie
 
 ETAPE 4 : NON PRIORITAIRE

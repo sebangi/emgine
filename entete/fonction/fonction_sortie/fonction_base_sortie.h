@@ -8,7 +8,7 @@ class textes;
 class fonction_base_sortie : public base_fonction
 {
     public:
-        fonction_base_sortie(fonctions_conteneur * conteneur, const QString & nom);
+        fonction_base_sortie(fonctions_conteneur * conteneur);
         ~fonction_base_sortie();
 
         void set_textes(const textes &textes);
