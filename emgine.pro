@@ -131,5 +131,6 @@ FORMS    += \
 
 DISTFILES += \
     stylesheet.qss \
-    TODO.txt
+    TODO.txt \
+    Doxyfile
 
