@@ -29,12 +29,14 @@ class selecteur_fonction_dialog : public QDialog
         void choisir();
         void chercher();
         void chercher(const QString &);
+        void calcul_nb_colonnes(base_fonction::type_fonction type);
 
     private:
         QDialogButtonBox *m_buttonBox;
         QGridLayout *m_grid_layout;
         base_fonction * m_fonction;
         QLineEdit * m_recherche;
+        int m_nb_colonnes;
 
         QList< bouton_choix_fonction * > m_boutons;
 };
