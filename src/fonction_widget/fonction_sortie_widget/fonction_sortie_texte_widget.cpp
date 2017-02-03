@@ -6,6 +6,10 @@
 #include <iostream>
 #include <QHBoxLayout>
 #include <QMenu>
+#include <QApplication>
+#include <QStyle>
+#include <QFileDialog>
+#include <QMessageBox>
 
 fonction_sortie_texte_widget::fonction_sortie_texte_widget(base_fonction *fonction, QWidget *parent)
     : base_fonction_widget(fonction, parent), m_textes( ((fonction_sortie_texte*)fonction)->get_textes())
@@ -72,6 +76,7 @@ void fonction_sortie_texte_widget::onTexteDoubleClicked(QListWidgetItem* item)
 
 void fonction_sortie_texte_widget::showContextMenu(const QPoint& pos)
 {
+    QStyle* style = QApplication::style();
     QPoint globalPos = mapToGlobal(pos);
     QMenu menu;
 
@@ -82,6 +87,11 @@ void fonction_sortie_texte_widget::showContextMenu(const QPoint& pos)
     connect(newAct_nouveau_projet, SIGNAL(triggered()), this, SLOT(creer_projet()));
     menu.addAction(newAct_nouveau_projet);
 
+    QAction *newAct_sauvegarder_texte = new QAction(style->standardIcon( QStyle::SP_DialogSaveButton ), tr("Sauvegarder ce texte"), this);
+    newAct_sauvegarder_texte->setStatusTip(tr("Sauvegarder ce texte"));
+    connect(newAct_sauvegarder_texte, SIGNAL(triggered()), this, SLOT(sauvegarder_texte()));
+    menu.addAction(newAct_sauvegarder_texte);
+
     // Show context menu at handling position
     menu.exec(globalPos);
 }
@@ -91,4 +101,36 @@ void fonction_sortie_texte_widget::creer_projet()
     texte_widget_item *item = (texte_widget_item *)m_liste_texte->takeItem(m_liste_texte->currentRow());
 
     emit signal_bfw_demande_creation_projet( item->get_texte() );
+}
+
+void fonction_sortie_texte_widget::sauvegarder_texte()
+{
+    texte_widget_item *item = (texte_widget_item *)m_liste_texte->takeItem(m_liste_texte->currentRow());
+
+    std::cout << item->get_texte().to_string_lisible().toStdString() << std::endl;
+
+    QString nom_fichier = QFileDialog::getSaveFileName( this, "Sauvegarder le fichier", "mes_projets", "*.txt" );
+
+    if ( nom_fichier.isEmpty() )
+        return;
+    else
+    {
+        if (! nom_fichier.endsWith(".txt"))
+            nom_fichier += ".txt";
+
+        QFile file(nom_fichier);
+        if (! file.open(QIODevice::WriteOnly)) {
+            QMessageBox::information(this, tr("Impossible d'ouvrir le fichier"),
+                                     file.errorString());
+            return;
+        }
+
+        // store data in f
+        QDataStream out(&file);
+        //out.setVersion(QDataStream::Qt_5_7);
+        QString s("item->get_texte().to_string_lisible()");
+        out << s.toLatin1();
+
+        file.close();
+    }
 }
