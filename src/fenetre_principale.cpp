@@ -160,6 +160,7 @@ void fenetre_principale::creer_widgets()
 void fenetre_principale::init_widgets()
 {
     QStyle* style = QApplication::style();
+
     setWindowTitle("Emgine");
 
     QIcon icone_source;

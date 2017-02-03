@@ -9,6 +9,7 @@ enum type_id_fonction{
 
     debut_fonction_source = 1,
     f_source_texte = 1,
+    f_source_fichier_texte,
     f_source_caractere,
     f_source_booleen,
     f_source_entier,

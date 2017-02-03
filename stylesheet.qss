@@ -44,6 +44,39 @@ QLabel#ValeurCourte {
       font: 8pt "DejaVu Sans Mono";
  }
 
+QLabel#NomFichier {
+      font: 10pt;
+      border-color: black;
+      background-color: white;
+      border-style: solid;
+      border-width: 1px;
+      padding: 2px;
+      margin-top: 2px;
+      margin-bottom: 2px;
+      margin-left: -1px;
+      margin-right: 2px;
+}
+
+QPushButton#ChoixOuvertureFichier{
+    border-style: solid;
+    border-width: 1px;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+    margin-top: 2px;
+    margin-bottom: 2px;
+    margin-left: 2px;
+    margin-right: 0px;
+    padding: 2px;
+    border-color: rgba(0,0,0,255);
+    background-color: rgba(0,0,0,32);
+}
+
+QPushButton#ChoixOuvertureFichier:hover
+{
+    border-color: rgba(0,0,0,128);
+    background-color: rgba(0,0,0,64);
+}
+
 QLabel#AideNomParametre {
     font: bold 12pt;
     color : red;
