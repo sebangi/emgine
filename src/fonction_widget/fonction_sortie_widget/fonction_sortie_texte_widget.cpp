@@ -9,6 +9,7 @@
 #include <QApplication>
 #include <QStyle>
 #include <QFileDialog>
+#include <QTextStream>
 #include <QMessageBox>
 
 fonction_sortie_texte_widget::fonction_sortie_texte_widget(base_fonction *fonction, QWidget *parent)
@@ -105,10 +106,6 @@ void fonction_sortie_texte_widget::creer_projet()
 
 void fonction_sortie_texte_widget::sauvegarder_texte()
 {
-    texte_widget_item *item = (texte_widget_item *)m_liste_texte->takeItem(m_liste_texte->currentRow());
-
-    std::cout << item->get_texte().to_string_lisible().toStdString() << std::endl;
-
     QString nom_fichier = QFileDialog::getSaveFileName( this, "Sauvegarder le fichier", "mes_projets", "*.txt" );
 
     if ( nom_fichier.isEmpty() )
@@ -119,17 +116,17 @@ void fonction_sortie_texte_widget::sauvegarder_texte()
             nom_fichier += ".txt";
 
         QFile file(nom_fichier);
-        if (! file.open(QIODevice::WriteOnly)) {
+
+        if (! file.open(QIODevice::WriteOnly  | QIODevice::Text)) {
             QMessageBox::information(this, tr("Impossible d'ouvrir le fichier"),
                                      file.errorString());
             return;
         }
 
-        // store data in f
-        QDataStream out(&file);
-        //out.setVersion(QDataStream::Qt_5_7);
-        QString s("item->get_texte().to_string_lisible()");
-        out << s.toLatin1();
+        texte_widget_item *item = (texte_widget_item *)m_liste_texte->takeItem(m_liste_texte->currentRow());
+
+        QTextStream out(&file);
+        out << item->get_texte().to_string_lisible();
 
         file.close();
     }
