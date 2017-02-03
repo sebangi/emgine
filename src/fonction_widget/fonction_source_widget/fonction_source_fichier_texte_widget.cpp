@@ -62,17 +62,13 @@ void fonction_source_fichier_texte_widget::choisir_nom_fichier()
             QFileDialog::getOpenFileName( this, tr("Ouvrir un projet Decode"),
                                           dir, tr("Texte (*.txt);;Autres fichiers (*))"));
 
-    std::cout << "1" << std::endl;
-
     if ( nom_fichier.isEmpty() || nom_fichier.compare( m_nom_fichier_label->text() ) == 0 )
         return;
-    std::cout << "2" << std::endl;
 
     QFile file(nom_fichier);
 
     if (! file.open(QIODevice::ReadOnly))
         return;
-    std::cout << "3" << std::endl;
 
     m_nom_fichier_label->setText( nom_fichier );
     ((fonction_source_fichier_texte*)m_fonction)->set_nom_fichier( nom_fichier );

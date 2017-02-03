@@ -8,6 +8,8 @@ ETAPE 2 : VERSION 0.1
 * Tagger sous git la version 0.1
 
 ETAPE 3 : NON PRIORITAIRE
+* corriger les itérations sur source_texte et source_fichier_texte
+* connaitre le répertoir racine de l'application et travailler en relatif
 * gestion des dictionnaires
 * améliorer la mise en page de l'aide des paramètres
 * améliorer la mise en page de l'aide des fonctions

@@ -7,6 +7,7 @@
 #include "entete/compilation/logs_compilation_widget.h"
 #include <iostream>
 #include <QFile>
+#include <QTextStream>
 
 fonction_source_fichier_texte::fonction_source_fichier_texte(fonctions_conteneur * conteneur)
     : fonction_base_source(conteneur), m_nom_fichier("")
@@ -67,6 +68,17 @@ base_fonction_widget *fonction_source_fichier_texte::generer_fonction_widget()
 */
 void fonction_source_fichier_texte::executer( compilateur &compil, const textes & textes_in, textes & textes_out )
 {
+    if ( m_nom_fichier.isEmpty() )
+        return;
+
+    QFile file(m_nom_fichier);
+    if (! file.open(QIODevice::ReadOnly))
+        return;
+
+    QTextStream in(&file);
+    m_contenu_fichier = in.readAll();
+    file.close();
+
     algo_PMIPL_iteration_premier_mot_par_ligne
         ( PARAM_LIGNE_SEPARATEUR, compil, textes_in, textes_out, & base_fonction::callback_param_1 );
 }
@@ -98,11 +110,8 @@ void fonction_source_fichier_texte::execution_specifique( compilateur &compil, c
     QString t_mot = m_map_PMIPL[PARAM_MOT_SEPARATEUR].mot_courant->to_string();
     QString t_ligne = m_map_PMIPL[PARAM_LIGNE_SEPARATEUR].mot_courant->to_string();
 
-    QString contenu_fichier;
-    // ouvrir fichier
-
     texte t("", t_ligne );
-    QStringList lignes = contenu_fichier.split( t_ligne );
+    QStringList lignes = m_contenu_fichier.split( t_ligne );
     for ( QStringList::const_iterator it_l = lignes.constBegin(); it_l != lignes.constEnd(); ++it_l )
     {
         ligne l("", t_mot );

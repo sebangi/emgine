@@ -29,6 +29,7 @@ class fonction_source_fichier_texte : public fonction_base_source
 
     private:
         QString m_nom_fichier;
+        QString m_contenu_fichier;
 };
 
 #endif // FONCTION_SOURCE_FICHIER_TEXTE_H

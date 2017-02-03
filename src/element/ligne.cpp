@@ -40,7 +40,7 @@ QString ligne::to_string_lisible() const
         result += this->at(0).to_string_lisible();
 
     for ( int i = 1; i < size(); ++i )
-        result += m_separateur_mot + this->at(i).to_string_lisible();
+        result += " " + this->at(i).to_string_lisible();
 
     return result;
 }

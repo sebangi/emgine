@@ -35,7 +35,7 @@ QString mot::to_string_lisible() const
         result += this->at(0).to_string();
 
     for ( int i = 1; i < size(); ++i )
-        result += m_separateur_caractere + this->at(i).to_string();
+        result += this->at(i).to_string();
 
     return result;
 }
