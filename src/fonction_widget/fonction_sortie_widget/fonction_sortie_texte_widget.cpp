@@ -2,6 +2,7 @@
 #include "entete/fonction_widget/fonction_sortie_widget/texte_widget_item.h"
 #include "entete/fonction_widget/fonction_sortie_widget/liste_texte_widget.h"
 #include "entete/fonction/fonction_sortie/fonction_sortie_texte.h"
+#include "entete/projet/projet.h"
 
 #include <iostream>
 #include <QHBoxLayout>
@@ -106,7 +107,11 @@ void fonction_sortie_texte_widget::creer_projet()
 
 void fonction_sortie_texte_widget::sauvegarder_texte()
 {
-    QString nom_fichier = QFileDialog::getSaveFileName( this, "Sauvegarder le fichier", "mes_projets", "*.txt" );
+    QString dir = "mes_projets";
+    if ( ! m_fonction->get_projet()->est_nouveau() )
+        dir = m_fonction->get_projet()->get_dossier();
+
+    QString nom_fichier = QFileDialog::getSaveFileName( this, "Sauvegarder le fichier", dir, "*.txt" );
 
     if ( nom_fichier.isEmpty() )
         return;

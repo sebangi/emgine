@@ -179,7 +179,10 @@ QString projet::get_nom_fichier() const
 
 QString projet::get_dossier() const
 {
-    return QFileInfo(m_nom_fichier).absolutePath();
+    if ( m_nom_fichier.isEmpty() )
+        return "";
+    else
+        return QFileInfo(m_nom_fichier).absolutePath();
 }
 
 void projet::set_nom_fichier(const QString &nom_fichier)
