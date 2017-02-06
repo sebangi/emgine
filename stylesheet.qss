@@ -68,13 +68,12 @@ QPushButton#ChoixOuvertureFichier{
     margin-right: 0px;
     padding: 2px;
     border-color: rgba(0,0,0,255);
-    background-color: rgba(0,0,0,32);
+    background-color: white;
 }
 
 QPushButton#ChoixOuvertureFichier:hover
 {
-    border-color: rgba(0,0,0,128);
-    background-color: rgba(0,0,0,64);
+    background-color: silver;
 }
 
 QLabel#AideNomParametre {
@@ -188,6 +187,60 @@ QPushButton#BoutonFonctionWidget
 QPushButton#BoutonFonctionWidget:hover
 {
     background-color: rgba(0,0,0,64);
+}
+
+QPushButton#BoutonSourceFichier
+{
+    border-style: solid;
+    border-width: 1px;
+    border-radius: 10px;
+    margin: 2px;
+    padding: 2px;
+    border-color: black;
+    background-color: white;
+}
+
+QPushButton#BoutonSourceFichier:hover
+{
+    background-color: silver;
+}
+
+QPushButton#BoutonSourceFichierSauvegarder
+{
+    border-style: solid;
+    border-width: 1px;
+    border-radius: 10px;
+    margin: 2px;
+    padding: 2px;
+    border-color: black;
+    background-color: white;
+}
+
+QPushButton#BoutonSourceFichierSauvegarderModifie
+{
+    border-style: solid;
+    border-width: 1px;
+    border-radius: 10px;
+    margin: 2px;
+    padding: 2px;
+    border-color: black;
+    background-color: red;
+}
+
+QPushButton#BoutonSourceFichierSauvegarderOk
+{
+    border-style: solid;
+    border-width: 1px;
+    border-radius: 10px;
+    margin: 2px;
+    padding: 2px;
+    border-color: black;
+    background-color: greenyellow;
+}
+
+QPushButton#BoutonSourceFichierSauvegarder:hover
+{
+    background-color: silver;
 }
 
 QPushButton#BoutonParametreWidget
