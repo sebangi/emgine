@@ -3,16 +3,15 @@
 <head>
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
-<meta name="generator" content="Doxygen 1.8.6"/>
+<meta name="generator" content="Doxygen 1.8.13"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
 <title>Emgine: Référence de la classe compilateur</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
-<script type="text/javascript">
-  $(document).ready(function() { searchBox.OnSelectItem(0); });
-</script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
@@ -21,7 +20,7 @@
 <table cellspacing="0" cellpadding="0">
  <tbody>
  <tr style="height: 56px;">
-  <td style="padding-left: 0.5em;">
+  <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">Emgine
    </div>
   </td>
@@ -30,48 +29,25 @@
 </table>
 </div>
 <!-- end header part -->
-<!-- Généré par Doxygen 1.8.6 -->
+<!-- Généré par Doxygen 1.8.13 -->
 <script type="text/javascript">
 var searchBox = new SearchBox("searchBox", "search",false,'Recherche');
 </script>
-  <div id="navrow1" class="tabs">
-    <ul class="tablist">
-      <li><a href="index.html"><span>Page&#160;principale</span></a></li>
-      <li><a href="pages.html"><span>Pages&#160;associées</span></a></li>
-      <li class="current"><a href="annotated.html"><span>Classes</span></a></li>
-      <li><a href="files.html"><span>Fichiers</span></a></li>
-      <li>
-        <div id="MSearchBox" class="MSearchBoxInactive">
-        <span class="left">
-          <img id="MSearchSelect" src="search/mag_sel.png"
-               onmouseover="return searchBox.OnSearchSelectShow()"
-               onmouseout="return searchBox.OnSearchSelectHide()"
-               alt=""/>
-          <input type="text" id="MSearchField" value="Recherche" accesskey="S"
-               onfocus="searchBox.OnSearchFieldFocus(true)" 
-               onblur="searchBox.OnSearchFieldFocus(false)" 
-               onkeyup="searchBox.OnSearchFieldChange(event)"/>
-          </span><span class="right">
-            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
-          </span>
-        </div>
-      </li>
-    </ul>
-  </div>
-  <div id="navrow2" class="tabs2">
-    <ul class="tablist">
-      <li><a href="annotated.html"><span>Liste&#160;des&#160;classes</span></a></li>
-      <li><a href="classes.html"><span>Index&#160;des&#160;classes</span></a></li>
-      <li><a href="inherits.html"><span>Hiérarchie&#160;des&#160;classes</span></a></li>
-      <li><a href="functions.html"><span>Membres&#160;de&#160;classe</span></a></li>
-    </ul>
-  </div>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+$(function() {
+  initMenu('',true,false,'search.php','Recherche');
+  $(document).ready(function() { init_search(); });
+});
+</script>
+<div id="main-nav"></div>
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>Tout</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Fonctions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Définitions de type</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Énumérations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Pages</a></div>
+</div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -96,69 +72,71 @@ Graphe de collaboration de compilateur:</div>
 <div class="dyncontent">
 <div class="center"><img src="classcompilateur__coll__graph.png" border="0" usemap="#compilateur_coll__map" alt="Collaboration graph"/></div>
 <map name="compilateur_coll__map" id="compilateur_coll__map">
-<area shape="rect" id="node2" href="classconfiguration.html" title="configuration" alt="" coords="40,99,136,125"/><area shape="rect" id="node4" href="classlogs__compilation__widget.html" title="logs_compilation_widget" alt="" coords="161,99,324,125"/></map>
+<area shape="rect" id="node2" href="classconfiguration.html" title="configuration" alt="" coords="40,99,136,125"/>
+<area shape="rect" id="node4" href="classlogs__compilation__widget.html" title="logs_compilation_widget" alt="" coords="161,99,324,125"/>
+</map>
 <center><span class="legend">[<a href="graph_legend.html">légende</a>]</span></center></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Fonctions membres publiques</h2></td></tr>
-<tr class="memitem:ab5bb51e36c11cc13dc09c0db790ddeaa"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ab5bb51e36c11cc13dc09c0db790ddeaa"></a>
+<tr class="memitem:ab5bb51e36c11cc13dc09c0db790ddeaa"><td class="memItemLeft" align="right" valign="top"><a id="ab5bb51e36c11cc13dc09c0db790ddeaa"></a>
 &#160;</td><td class="memItemRight" valign="bottom"><b>compilateur</b> (<a class="el" href="classlogs__compilation__widget.html">logs_compilation_widget</a> *get_vue_logs)</td></tr>
 <tr class="separator:ab5bb51e36c11cc13dc09c0db790ddeaa"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a847c4296256de3cae0436b68bf9e6931"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a847c4296256de3cae0436b68bf9e6931"></a>
+<tr class="memitem:a847c4296256de3cae0436b68bf9e6931"><td class="memItemLeft" align="right" valign="top"><a id="a847c4296256de3cae0436b68bf9e6931"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><b>compiler</b> (<a class="el" href="classprojet.html">projet</a> *p)</td></tr>
 <tr class="separator:a847c4296256de3cae0436b68bf9e6931"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa900bb70cdaffb36d7c4fb34ddad2a05"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aa900bb70cdaffb36d7c4fb34ddad2a05"></a>
-<a class="el" href="classlogs__compilation__widget.html">logs_compilation_widget</a> *&#160;</td><td class="memItemRight" valign="bottom"><b>get_vue_logs</b> () const </td></tr>
-<tr class="separator:aa900bb70cdaffb36d7c4fb34ddad2a05"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:accedd70b3a5d0cec2ce83fee43a7f160"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="accedd70b3a5d0cec2ce83fee43a7f160"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>ajouter_configuration</b> (<a class="el" href="classbase__fonction.html">base_fonction</a> *f, type_id_parametre param, const QString &amp;config)</td></tr>
+<tr class="memitem:a082b5dae21b0b539a159e180164a5f7c"><td class="memItemLeft" align="right" valign="top"><a id="a082b5dae21b0b539a159e180164a5f7c"></a>
+<a class="el" href="classlogs__compilation__widget.html">logs_compilation_widget</a> *&#160;</td><td class="memItemRight" valign="bottom"><b>get_vue_logs</b> () const</td></tr>
+<tr class="separator:a082b5dae21b0b539a159e180164a5f7c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:accedd70b3a5d0cec2ce83fee43a7f160"><td class="memItemLeft" align="right" valign="top"><a id="accedd70b3a5d0cec2ce83fee43a7f160"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>ajouter_configuration</b> (<a class="el" href="classbase__fonction.html">base_fonction</a> *f, <a class="el" href="define__parametre_8h.html#a621f68a7400bb79e0ffd7db8c7eca85c">type_id_parametre</a> param, const QString &amp;config)</td></tr>
 <tr class="separator:accedd70b3a5d0cec2ce83fee43a7f160"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3a044cc8ed2205d842ed8adadf090179"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a3a044cc8ed2205d842ed8adadf090179"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>retirer_configuration</b> (<a class="el" href="classbase__fonction.html">base_fonction</a> *f, type_id_parametre param)</td></tr>
+<tr class="memitem:a3a044cc8ed2205d842ed8adadf090179"><td class="memItemLeft" align="right" valign="top"><a id="a3a044cc8ed2205d842ed8adadf090179"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>retirer_configuration</b> (<a class="el" href="classbase__fonction.html">base_fonction</a> *f, <a class="el" href="define__parametre_8h.html#a621f68a7400bb79e0ffd7db8c7eca85c">type_id_parametre</a> param)</td></tr>
 <tr class="separator:a3a044cc8ed2205d842ed8adadf090179"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6a402d03fe3beebcb19695dc718a6f10"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a6a402d03fe3beebcb19695dc718a6f10"></a>
-<a class="el" href="classconfiguration.html">configuration</a>&#160;</td><td class="memItemRight" valign="bottom"><b>get_configuration</b> () const </td></tr>
-<tr class="separator:a6a402d03fe3beebcb19695dc718a6f10"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1b90b920c98f81b88171bda33967ffac"><td class="memItemLeft" align="right" valign="top"><a id="a1b90b920c98f81b88171bda33967ffac"></a>
+<a class="el" href="classconfiguration.html">configuration</a>&#160;</td><td class="memItemRight" valign="bottom"><b>get_configuration</b> () const</td></tr>
+<tr class="separator:a1b90b920c98f81b88171bda33967ffac"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-methods"></a>
 Fonctions membres privées</h2></td></tr>
-<tr class="memitem:aa4a72cef1b007de987e490ff6cda53e9"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aa4a72cef1b007de987e490ff6cda53e9"></a>
+<tr class="memitem:aa4a72cef1b007de987e490ff6cda53e9"><td class="memItemLeft" align="right" valign="top"><a id="aa4a72cef1b007de987e490ff6cda53e9"></a>
 bool&#160;</td><td class="memItemRight" valign="bottom"><b>est_valide</b> (<a class="el" href="classprojet.html">projet</a> *p)</td></tr>
 <tr class="separator:aa4a72cef1b007de987e490ff6cda53e9"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aac14b2b0238183e11048e8ad659359ba"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aac14b2b0238183e11048e8ad659359ba"></a>
+<tr class="memitem:aac14b2b0238183e11048e8ad659359ba"><td class="memItemLeft" align="right" valign="top"><a id="aac14b2b0238183e11048e8ad659359ba"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><b>reset</b> ()</td></tr>
 <tr class="separator:aac14b2b0238183e11048e8ad659359ba"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ace8a2bf4b88d33bd17e8c850b0afe8f3"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ace8a2bf4b88d33bd17e8c850b0afe8f3"></a>
+<tr class="memitem:ace8a2bf4b88d33bd17e8c850b0afe8f3"><td class="memItemLeft" align="right" valign="top"><a id="ace8a2bf4b88d33bd17e8c850b0afe8f3"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><b>executer_projet</b> (<a class="el" href="classprojet.html">projet</a> *p)</td></tr>
 <tr class="separator:ace8a2bf4b88d33bd17e8c850b0afe8f3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aab9479c05c28d4b15dadb6926d426499"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aab9479c05c28d4b15dadb6926d426499"></a>
+<tr class="memitem:aab9479c05c28d4b15dadb6926d426499"><td class="memItemLeft" align="right" valign="top"><a id="aab9479c05c28d4b15dadb6926d426499"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><b>executer_fonction</b> (<a class="el" href="classbase__fonction.html">base_fonction</a> *f)</td></tr>
 <tr class="separator:aab9479c05c28d4b15dadb6926d426499"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a20fb0cd0d943e986ac0e44d8d1aa961b"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a20fb0cd0d943e986ac0e44d8d1aa961b"></a>
+<tr class="memitem:a20fb0cd0d943e986ac0e44d8d1aa961b"><td class="memItemLeft" align="right" valign="top"><a id="a20fb0cd0d943e986ac0e44d8d1aa961b"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><b>executer_parametre</b> (<a class="el" href="classbase__parametre.html">base_parametre</a> *p)</td></tr>
 <tr class="separator:a20fb0cd0d943e986ac0e44d8d1aa961b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:acf132e6710b940f3dbb06dbc1b91fb60"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="acf132e6710b940f3dbb06dbc1b91fb60"></a>
+<tr class="memitem:acf132e6710b940f3dbb06dbc1b91fb60"><td class="memItemLeft" align="right" valign="top"><a id="acf132e6710b940f3dbb06dbc1b91fb60"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><b>afficher_resultat</b> ()</td></tr>
 <tr class="separator:acf132e6710b940f3dbb06dbc1b91fb60"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
 Attributs privés</h2></td></tr>
-<tr class="memitem:a90bed5f56102e4498390d0db4030a652"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a90bed5f56102e4498390d0db4030a652"></a>
+<tr class="memitem:a90bed5f56102e4498390d0db4030a652"><td class="memItemLeft" align="right" valign="top"><a id="a90bed5f56102e4498390d0db4030a652"></a>
 bool&#160;</td><td class="memItemRight" valign="bottom"><b>m_en_cours</b></td></tr>
 <tr class="separator:a90bed5f56102e4498390d0db4030a652"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a35f8af133b9679a5c3a2acb2cee49949"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a35f8af133b9679a5c3a2acb2cee49949"></a>
+<tr class="memitem:a35f8af133b9679a5c3a2acb2cee49949"><td class="memItemLeft" align="right" valign="top"><a id="a35f8af133b9679a5c3a2acb2cee49949"></a>
 QStack&lt; <a class="el" href="classtextes.html">textes</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>m_pile_textes</b></td></tr>
 <tr class="separator:a35f8af133b9679a5c3a2acb2cee49949"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac4cab2d84ffa5b764773bc1675c72580"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ac4cab2d84ffa5b764773bc1675c72580"></a>
+<tr class="memitem:ac4cab2d84ffa5b764773bc1675c72580"><td class="memItemLeft" align="right" valign="top"><a id="ac4cab2d84ffa5b764773bc1675c72580"></a>
 <a class="el" href="classlogs__compilation__widget.html">logs_compilation_widget</a> *&#160;</td><td class="memItemRight" valign="bottom"><b>m_vue_logs</b></td></tr>
 <tr class="separator:ac4cab2d84ffa5b764773bc1675c72580"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aed817791f876d6cde3e4683b21d20d7d"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aed817791f876d6cde3e4683b21d20d7d"></a>
+<tr class="memitem:aed817791f876d6cde3e4683b21d20d7d"><td class="memItemLeft" align="right" valign="top"><a id="aed817791f876d6cde3e4683b21d20d7d"></a>
 <a class="el" href="classconfiguration.html">configuration</a>&#160;</td><td class="memItemRight" valign="bottom"><b>m_configuration</b></td></tr>
 <tr class="separator:aed817791f876d6cde3e4683b21d20d7d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Description détaillée</h2>
 <div class="textblock">
-<p>Définition à la ligne <a class="el" href="compilateur_8h_source.html#l00019">19</a> du fichier <a class="el" href="compilateur_8h_source.html">compilateur.h</a>.</p>
+<p class="definition">Définition à la ligne <a class="el" href="compilateur_8h_source.html#l00019">19</a> du fichier <a class="el" href="compilateur_8h_source.html">compilateur.h</a>.</p>
 </div><hr/>La documentation de cette classe a été générée à partir des fichiers suivants :<ul>
 <li>entete/compilation/<a class="el" href="compilateur_8h_source.html">compilateur.h</a></li>
 <li>src/compilation/<a class="el" href="compilateur_8cpp_source.html">compilateur.cpp</a></li>
@@ -166,9 +144,9 @@ QStack&lt; <a class="el" href="classtextes.html">textes</a> &gt;&#160;</td><td c
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Généré le Jeudi 2 Février 2017 22:30:17 pour Emgine par &#160;<a href="http://www.doxygen.org/index.html">
+Généré le Lundi 6 Février 2017 17:26:16 pour Emgine par &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
-</a> 1.8.6
+</a> 1.8.13
 </small></address>
 </body>
 </html>

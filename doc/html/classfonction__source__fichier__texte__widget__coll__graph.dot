@@ -1,0 +1,28 @@
+digraph "fonction_source_fichier_texte_widget"
+{
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  Node5 [label="fonction_source_fichier\l_texte_widget",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black"];
+  Node6 -> Node5 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node6 [label="base_fonction_widget\l_avec_text_edit",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classbase__fonction__widget__avec__text__edit.html"];
+  Node7 -> Node6 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node7 [label="base_fonction_widget",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classbase__fonction__widget.html"];
+  Node8 -> Node7 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node8 [label="QWidget",height=0.2,width=0.4,color="grey75", fillcolor="white", style="filled"];
+  Node9 -> Node7 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node9 [label="QTableWidgetItem",height=0.2,width=0.4,color="grey75", fillcolor="white", style="filled"];
+  Node10 -> Node7 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" m_fonction" ,fontname="Helvetica"];
+  Node10 [label="base_fonction",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classbase__fonction.html",tooltip="Classe décrivant une fonction de conversion d&#39;un texte. "];
+  Node11 -> Node10 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node11 [label="objet_selectionnable",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classobjet__selectionnable.html"];
+  Node12 -> Node11 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node12 [label="QObject",height=0.2,width=0.4,color="grey75", fillcolor="white", style="filled"];
+  Node11 -> Node11 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" s_objet_courant\nm_objet_parent" ,fontname="Helvetica"];
+  Node13 -> Node10 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" m_conteneur" ,fontname="Helvetica"];
+  Node13 [label="fonctions_conteneur",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classfonctions__conteneur.html"];
+  Node11 -> Node13 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node14 -> Node6 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" m_text_edit" ,fontname="Helvetica"];
+  Node14 [label="text_edit",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classtext__edit.html"];
+  Node15 -> Node14 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node15 [label="QPlainTextEdit",height=0.2,width=0.4,color="grey75", fillcolor="white", style="filled"];
+}

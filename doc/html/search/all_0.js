@@ -1,7 +1,7 @@
 var searchData=
 [
   ['ajouter_5fconversion',['ajouter_conversion',['../classfenetre__principale.html#a293eba9375bed6685f70ca228705f272',1,'fenetre_principale']]],
-  ['ajouter_5ffonction',['ajouter_fonction',['../classfenetre__principale.html#a208bd27e3c7db9e3af1ae12ac3c5bc99',1,'fenetre_principale::ajouter_fonction(fonctions_conteneur *conteneur, objet_selectionnable *obj_ref, base_fonction::type_fonction type)'],['../classfenetre__principale.html#a6b5e7844d604942d67cb244854908cb5',1,'fenetre_principale::ajouter_fonction(fonctions_conteneur *conteneur, objet_selectionnable *obj_ref, base_fonction *f, bool init_defaut, bool afficher_vue)']]],
+  ['ajouter_5ffonction',['ajouter_fonction',['../classfenetre__principale.html#a0257f102b5827b67ca870579e062232e',1,'fenetre_principale::ajouter_fonction(fonctions_conteneur *conteneur, objet_selectionnable *obj_ref, type_fonction type)'],['../classfenetre__principale.html#a52a005e2d4da37bb62b3343557b31068',1,'fenetre_principale::ajouter_fonction(fonctions_conteneur *conteneur, objet_selectionnable *obj_ref, base_fonction *f, bool init_defaut)']]],
   ['ajouter_5fprojet',['ajouter_projet',['../classfenetre__principale.html#a36f89a276a3e7c84f23e953a1d1ed4c2',1,'fenetre_principale']]],
   ['ajouter_5fsortie',['ajouter_sortie',['../classfenetre__principale.html#a0b7b8e85f386cf7bd698cdd9606b3dcb',1,'fenetre_principale']]],
   ['ajouter_5fsource',['ajouter_source',['../classfenetre__principale.html#a37fea3c3c147a79b3d6524b076f0eddb',1,'fenetre_principale']]],

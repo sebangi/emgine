@@ -12,8 +12,14 @@ var searchData=
   ['m_5fobjet_5fa_5fcouper',['m_objet_a_couper',['../classexplorateur.html#a9658908a53dbe751f95d0cd820903b5f',1,'explorateur']]],
   ['m_5fparametres',['m_parametres',['../classbase__fonction.html#acc95eaa4dcbd0d17ef9f8cbae586ab61',1,'base_fonction']]],
   ['m_5fselectionnables',['m_selectionnables',['../classexplorateur.html#a187ff3f2e19ff3fd3ff38337d3f9a665',1,'explorateur']]],
-  ['m_5fstyle',['m_style',['../classfenetre__principale.html#a7f3bb04e96c2a680a06e8cf26aaa7a6d',1,'fenetre_principale']]],
   ['m_5ftextes_5fout',['m_textes_out',['../classbase__parametre.html#a8018b4687fbb14a97ff34661e0481c20',1,'base_parametre']]],
+  ['m_5ftoolbar_5fbouton_5fajout_5ffonction_5fconversion',['m_toolbar_bouton_ajout_fonction_conversion',['../classfenetre__principale.html#a095c016e4919f43e4a9d1a8b3d93c0cc',1,'fenetre_principale']]],
+  ['m_5ftoolbar_5fbouton_5fajout_5ffonction_5fsortie',['m_toolbar_bouton_ajout_fonction_sortie',['../classfenetre__principale.html#a6962f819c86b2c89b8d2428180ef6245',1,'fenetre_principale']]],
+  ['m_5ftoolbar_5fbouton_5fajout_5ffonction_5fsource',['m_toolbar_bouton_ajout_fonction_source',['../classfenetre__principale.html#a688118a46efa2b7a590d610fccf73134',1,'fenetre_principale']]],
+  ['m_5ftoolbar_5fbouton_5fexecuter',['m_toolbar_bouton_executer',['../classfenetre__principale.html#a322616daaf829dba1b365359cd7da5a5',1,'fenetre_principale']]],
   ['m_5ftoolbar_5fbouton_5fnouveau_5fprojet',['m_toolbar_bouton_nouveau_projet',['../classfenetre__principale.html#a383f3c60a924699c2764fd663d8c3108',1,'fenetre_principale']]],
+  ['m_5ftoolbar_5fbouton_5fouvrir_5fprojet',['m_toolbar_bouton_ouvrir_projet',['../classfenetre__principale.html#a37f963882b2b5248e293b46976f5df69',1,'fenetre_principale']]],
+  ['m_5ftoolbar_5fbouton_5fsauvegarder_5fprojet',['m_toolbar_bouton_sauvegarder_projet',['../classfenetre__principale.html#a799a5307a92d058870e594dd647be442',1,'fenetre_principale']]],
+  ['m_5ftoolbar_5fbouton_5fsauvegarder_5fprojet_5fsous',['m_toolbar_bouton_sauvegarder_projet_sous',['../classfenetre__principale.html#aab4acd4f16082dd7cf11b21fbbc12bab',1,'fenetre_principale']]],
   ['m_5fui',['m_ui',['../classfenetre__principale.html#a0ad1e31db0600d827fe8e625fa4eb932',1,'fenetre_principale']]]
 ];

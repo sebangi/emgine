@@ -785,17 +785,17 @@ void explorateur::deconnecter_projet(projet *p)
 
 void explorateur::on_ajout_source()
 {
-    emit signal_e_demande_ajout_fonction(m_noeud_context->get_objet()->get_conteneur(), m_noeud_context->get_objet(), base_fonction::fonction_source);
+    emit signal_e_demande_ajout_fonction(m_noeud_context->get_objet()->get_conteneur(), m_noeud_context->get_objet(), type_fonction::fonction_source);
 }
 
 void explorateur::on_ajout_sortie()
 {
-    emit signal_e_demande_ajout_fonction(m_noeud_context->get_objet()->get_conteneur(), m_noeud_context->get_objet(), base_fonction::fonction_sortie);
+    emit signal_e_demande_ajout_fonction(m_noeud_context->get_objet()->get_conteneur(), m_noeud_context->get_objet(), type_fonction::fonction_sortie);
 }
 
 void explorateur::on_ajout_fonction_conversion()
 {
-    emit signal_e_demande_ajout_fonction(m_noeud_context->get_objet()->get_conteneur(), m_noeud_context->get_objet(), base_fonction::fonction_conversion);
+    emit signal_e_demande_ajout_fonction(m_noeud_context->get_objet()->get_conteneur(), m_noeud_context->get_objet(), type_fonction::fonction_conversion);
 }
 
 void explorateur::on_activer_fonction()

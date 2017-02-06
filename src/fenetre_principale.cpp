@@ -1,40 +1,45 @@
+/**
+ * \file fenetre_principale.cpp
+ * \brief Implémentation de la classe fenetre_principale.
+ * \author Sébastien Angibaud
+ */
+
+#include "entete/ui_fenetre_principale.h"
+
 #include "entete/compilation/compilateur.h"
 #include "entete/compilation/logs_compilation_widget.h"
+#include "entete/explorateur/base_noeud.h"
 #include "entete/explorateur/explorateur.h"
 #include "entete/explorateur/noeud_fonction.h"
 #include "entete/explorateur/noeud_parametre.h"
 #include "entete/explorateur/noeud_projet.h"
-#include "entete/explorateur/base_noeud.h"
 #include "entete/fenetre_principale.h"
 #include "entete/fonction/fonction_conversion/fonction_cesar.h"
-#include "entete/fonction/fonction_source/fonction_source_texte.h"
 #include "entete/fonction/fonction_sortie/fonction_sortie_texte.h"
 #include "entete/fonction/fonction_source/fonction_source_permutation.h"
+#include "entete/fonction/fonction_source/fonction_source_texte.h"
 #include "entete/fonction_widget/base_fonction_widget.h"
-#include "entete/fonction_widget/vue_fonctions.h"
-#include "entete/projet/projet.h"
-#include "entete/projet/fonctions_conteneur.h"
 #include "entete/fonction_widget/selecteur_fonction_dialog.h"
-#include "entete/ui_fenetre_principale.h"
+#include "entete/fonction_widget/selecteur_fonction_dialog.h"
+#include "entete/fonction_widget/vue_fonctions.h"
+#include "entete/projet/fonctions_conteneur.h"
+#include "entete/projet/projet.h"
 
-#include <iostream>
 #include <QCheckBox>
+#include <QFileDialog>
 #include <QHBoxLayout>
+#include <QHBoxLayout>
+#include <QMessageBox>
 #include <QString>
 #include <QtGui>
 #include <QVBoxLayout>
-#include <QHBoxLayout>
-#include <QXmlStreamWriter>
 #include <QXmlStreamReader>
-#include <QFileDialog>
-#include <QMessageBox>
+#include <QXmlStreamWriter>
+
+#include <iostream>
 #include <string>
 #include <vector>
 
-/** --------------------------------------------------------------------------------------
- \file Implémentation de la classe fenetre_principale.
- \author Sébastien Angibaud
-*/
 explorateur * fenetre_principale::s_explorateur = NULL;
 vue_fonctions * fenetre_principale::s_vue_fonctions = NULL;
 compilateur * fenetre_principale::s_compilateur = NULL;
@@ -42,15 +47,14 @@ logs_compilation_widget * fenetre_principale::s_vue_logs = NULL;
 fenetre_principale::type_projets fenetre_principale::s_projets = fenetre_principale::type_projets();
 
 /** --------------------------------------------------------------------------------------
- \brief Constructeur.
- \param parent Le widget parent.
-*/
+ * \brief Constructeur de la classe fenetre_principale.
+ * \param parent Un pointeur sur le widget parent.
+ */
 fenetre_principale::fenetre_principale(QWidget *parent) :
     QMainWindow(parent), m_ui(new Ui::fenetre_principale)
 {
     m_ui->setupUi(this);
     m_ui->menuBar->hide();
-    m_style = QApplication::style();
 
     creer_toolbar();
     creer_widgets();
@@ -65,8 +69,8 @@ fenetre_principale::fenetre_principale(QWidget *parent) :
 }
 
 /** --------------------------------------------------------------------------------------
- \brief Destructeur.
-*/
+ * \brief Destructeur de la classe fenetre_principale.
+ */
 fenetre_principale::~fenetre_principale()
 {
     deconnecter();
@@ -118,6 +122,7 @@ void fenetre_principale::creer_toolbar()
     m_ui->mainToolBar->addSeparator();
 
     /*
+     // Pour mettre le bouton tout en bas
     QWidget* spacer = new QWidget();
     spacer->setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Expanding);
     m_ui->mainToolBar->addWidget(spacer);
@@ -137,25 +142,27 @@ void fenetre_principale::creer_widgets()
     s_vue_logs = new logs_compilation_widget(this);
     s_compilateur = new compilateur(s_vue_logs);
 
-    connect( s_explorateur, SIGNAL(signal_e_demande_ajout_fonction(fonctions_conteneur *, objet_selectionnable*, base_fonction::type_fonction)),
-             this, SLOT(on_externe_e_demande_ajout_fonction(fonctions_conteneur *, objet_selectionnable*, base_fonction::type_fonction)));
+    // connect de l'explorateur
+    connect( s_explorateur, SIGNAL(signal_e_demande_ajout_fonction(fonctions_conteneur *, objet_selectionnable*, type_fonction)),
+             this, SLOT(on_externe_demande_ajout_fonction(fonctions_conteneur *, objet_selectionnable*, type_fonction)));
     connect( s_explorateur, SIGNAL(signal_e_objet_selectionne(objet_selectionnable*)),
              this, SLOT(on_externe_objet_selectionne(objet_selectionnable *)));
     connect( s_explorateur, SIGNAL(signal_e_objet_deselectionne(objet_selectionnable*)),
              this, SLOT(on_externe_objet_deselectionne(objet_selectionnable *)));
     connect( s_explorateur, SIGNAL(signal_e_enregistrer_projet(projet *)),
-             this, SLOT(enregistrer_projet(projet *)));
+             this, SLOT(on_enregistrer_projet(projet *)));
     connect( s_explorateur, SIGNAL(signal_e_enregistrer_projet_sous(projet *)),
-             this, SLOT(enregistrer_projet_sous(projet *)));
+             this, SLOT(on_enregistrer_projet_sous(projet *)));
     connect( s_explorateur, SIGNAL(signal_e_dupliquer_projet(projet *)),
              this, SLOT(on_externe_dupliquer_projet(projet *)));
 
+    // connect de la vue des fonctions
     connect( s_vue_fonctions, SIGNAL(signal_vf_demande_creation_projet(const texte&)),
              this, SLOT(on_externe_demande_creation_projet(const texte &)));
 }
 
 /** --------------------------------------------------------------------------------------
- \brief Initialise les différents widgets.
+ \brief Initialisation des différents widgets.
 */
 void fenetre_principale::init_widgets()
 {
@@ -233,31 +240,37 @@ void fenetre_principale::init_widgets()
 void fenetre_principale::ajouter_source()
 {
     if ( objet_selectionnable::existe_selection() )
-        ajouter_fonction( objet_selectionnable::get_selection()->get_conteneur(), objet_selectionnable::get_selection(), base_fonction::fonction_source);
+        ajouter_fonction( objet_selectionnable::get_selection()->get_conteneur(), objet_selectionnable::get_selection(),
+                          type_fonction::fonction_source);
 }
 
 /** --------------------------------------------------------------------------------------
  \brief Ajoute une fonction de conversion au projet courant.
 */
-void fenetre_principale::ajouter_conversion( )
+void fenetre_principale::ajouter_conversion()
 {
     if ( objet_selectionnable::existe_selection() )
-        ajouter_fonction( objet_selectionnable::get_selection()->get_conteneur(), objet_selectionnable::get_selection(), base_fonction::fonction_conversion);
+        ajouter_fonction( objet_selectionnable::get_selection()->get_conteneur(), objet_selectionnable::get_selection(),
+                          type_fonction::fonction_conversion);
 }
 
 /** --------------------------------------------------------------------------------------
  \brief Ajoute une sortie au projet courant.
 */
-void fenetre_principale::ajouter_sortie( )
+void fenetre_principale::ajouter_sortie()
 {
     if ( objet_selectionnable::existe_selection() )
-        ajouter_fonction( objet_selectionnable::get_selection()->get_conteneur(), objet_selectionnable::get_selection(), base_fonction::fonction_sortie);
+        ajouter_fonction( objet_selectionnable::get_selection()->get_conteneur(), objet_selectionnable::get_selection(),
+                          type_fonction::fonction_sortie);
 }
 
 /** --------------------------------------------------------------------------------------
- \brief Ajoute une fonction à un noeud.
-*/
-void fenetre_principale::ajouter_fonction( fonctions_conteneur * conteneur, objet_selectionnable * obj_ref, base_fonction::type_fonction type )
+ * \brief Ajoute une fonction dans un conteneur donné.
+ * \param conteneur Un pointeur sur le conteneur dans lequel il faut ajouter la fonction.
+ * \param obj_ref Un pointeur sur l'objet après lequel la fonction doit être ajoutée.
+ * \param type Le type de fonction à ajouter.
+ */
+void fenetre_principale::ajouter_fonction( fonctions_conteneur * conteneur, objet_selectionnable * obj_ref, type_fonction type )
 {
     if ( conteneur != NULL )
     {
@@ -271,15 +284,19 @@ void fenetre_principale::ajouter_fonction( fonctions_conteneur * conteneur, obje
             f->set_conteneur(conteneur);
 
             if ( f != NULL )
-                ajouter_fonction(conteneur, obj_ref, f, true, true);
+                ajouter_fonction(conteneur, obj_ref, f, true);
         }
     }
 }
 
 /** --------------------------------------------------------------------------------------
- \brief Ajoute une fonction à un noeud.
-*/
-void fenetre_principale::ajouter_fonction( fonctions_conteneur * conteneur, objet_selectionnable * obj_ref, base_fonction* f, bool init_defaut, bool afficher_vue )
+ * \brief Ajoute une fonction dans un conteneur donné.
+ * \param conteneur Un pointeur sur le conteneur dans lequel il faut ajouter la fonction.
+ * \param obj_ref Un pointeru sur l'objet après lequel la fonction doit être ajoutée.
+ * \param f Un pointeur sur la fonction à ajouter.
+ * \param init_defaut Indique s'il faut initialiser par défaut la fonction.
+ */
+void fenetre_principale::ajouter_fonction( fonctions_conteneur * conteneur, objet_selectionnable * obj_ref, base_fonction* f, bool init_defaut )
 {
     if ( init_defaut )
         f->initialisation_par_defaut();
@@ -289,7 +306,7 @@ void fenetre_principale::ajouter_fonction( fonctions_conteneur * conteneur, obje
 }
 
 /** --------------------------------------------------------------------------------------
- \brief Jeu de test.
+ \brief Initialise par défaut un projet exemple.
 */
 void fenetre_principale::init_test()
 {
@@ -297,16 +314,17 @@ void fenetre_principale::init_test()
     p->set_nom("Exemple");
     ajouter_projet(p);
 
-    ajouter_fonction( p, NULL, new fonction_source_texte(p, "UNHBH TM SDRS !\nunhbh tm sdrs !"), true, true );
-    ajouter_fonction( p, NULL, new fonction_cesar(p), true, true );
-    ajouter_fonction( p, NULL, new fonction_sortie_texte(p), true, true );
+    ajouter_fonction( p, NULL, new fonction_source_texte(p, "UNHBH TM SDRS !\nunhbh tm sdrs !"), true );
+    ajouter_fonction( p, NULL, new fonction_cesar(p), true );
+    ajouter_fonction( p, NULL, new fonction_sortie_texte(p), true );
 
     p->selectionner();
 }
 
 
 /** --------------------------------------------------------------------------------------
- \brief Ajoute un nouveau projet.
+ \brief Ajoute un nouveau projet donné.
+ \param p Un pointeur sur le projet à ajouter.
 */
 void fenetre_principale::ajouter_projet( projet * p )
 {
@@ -319,25 +337,29 @@ void fenetre_principale::ajouter_projet( projet * p )
 }
 
 /** --------------------------------------------------------------------------------------
- \brief Sauvegarder le projet.
+ \brief Enregistre un projet donné.
+ \param p Un pointeur sur le projet à enregistrer.
+ \return \b True si le projet a bien été enregistré, \b False sinon.
 */
-bool fenetre_principale::enregistrer_projet(projet* p)
+bool fenetre_principale::on_enregistrer_projet(projet* p)
 {
     if ( p != NULL )
     {
         if ( p->est_nouveau() )
-            return enregistrer_projet_sous( p );
+            return on_enregistrer_projet_sous( p );
         else
-            return enregistrer_projet( p->get_nom_fichier(), p );
+            return on_enregistrer_projet( p->get_nom_fichier(), p );
     }
 
     return false;
 }
 
 /** --------------------------------------------------------------------------------------
- \brief Sauvegarder le projet sous.
+ \brief Enregistre un projet donné sous.
+ \param p Un pointeur sur le projet à enregistrer sous.
+ \return \b True si le projet a bien été enregistré, \b False sinon.
 */
-bool fenetre_principale::enregistrer_projet_sous(projet * p)
+bool fenetre_principale::on_enregistrer_projet_sous(projet * p)
 {
     QFileDialog d(this);
     d.setDefaultSuffix("emg");
@@ -357,15 +379,18 @@ bool fenetre_principale::enregistrer_projet_sous(projet * p)
         if (!nom_fichier.endsWith(".emg"))
             nom_fichier += ".emg";
 
-        enregistrer_projet(nom_fichier, p);
+        on_enregistrer_projet(nom_fichier, p);
         return true;
     }
 }
 
 /** --------------------------------------------------------------------------------------
- \brief Sauvegarder le projet.
+ \brief Enregistre un projet donné avec un nom de fichier spécifié.
+ \param nom_fichier Le nom du fichier à utiliser.
+ \param p Un pointeur sur le projet à enregistrer.
+ \return \b True si le projet a bien été enregistré, \b False sinon.
 */
-bool fenetre_principale::enregistrer_projet(const QString & nom_fichier, projet * p)
+bool fenetre_principale::on_enregistrer_projet(const QString & nom_fichier, projet * p)
 {
     QFile file(nom_fichier);
     if (!file.open(QIODevice::WriteOnly)) {
@@ -386,7 +411,7 @@ bool fenetre_principale::enregistrer_projet(const QString & nom_fichier, projet 
 }
 
 /** --------------------------------------------------------------------------------------
- \brief Ouvrir un projet.
+ \brief Ouvre un projet.
 */
 void fenetre_principale::ouvrir_projet()
 {
@@ -418,9 +443,11 @@ void fenetre_principale::ouvrir_projet()
 }
 
 /** --------------------------------------------------------------------------------------
- \brief Crée un projet à partir d'un xml.
+ \brief Crée un projet à partir d'une source xml.
+ \param xml La source xml à partir duquel créer le projet.
+ \param nom_fichier Le nom du fichier du projet.
 */
-void fenetre_principale::creer_projet(QXmlStreamReader & xml, const QString & nom)
+void fenetre_principale::creer_projet(QXmlStreamReader & xml, const QString & nom_fichier)
 {
     projet * p = new projet();
     xml.readNextStartElement();
@@ -428,7 +455,7 @@ void fenetre_principale::creer_projet(QXmlStreamReader & xml, const QString & no
     if( xml.name() == "projet" )
     {
         p->charger(xml);
-        p->set_nom_fichier(nom);
+        p->set_nom_fichier(nom_fichier);
     }
     else
         xml.skipCurrentElement();
@@ -436,6 +463,10 @@ void fenetre_principale::creer_projet(QXmlStreamReader & xml, const QString & no
     ajouter_projet(p);
 }
 
+/** --------------------------------------------------------------------------------------
+ * \brief Crée un projet à partir d'un texte donné.
+ * \param t Le texte source du projet à créer.
+ */
 void fenetre_principale::creer_projet(const texte &t)
 {
     projet * p = new projet();
@@ -443,11 +474,12 @@ void fenetre_principale::creer_projet(const texte &t)
     p->set_nom("Nouveau projet");
     ajouter_projet(p);
 
-    ajouter_fonction( p, NULL, new fonction_source_texte(p, t.to_string_lisible()), true, true );
+    ajouter_fonction( p, NULL, new fonction_source_texte(p, t.to_string_lisible()), true );
 }
 
 /** --------------------------------------------------------------------------------------
- \brief Executer le projet.
+ \brief Execute un projet donné.
+ \param p Un pointeur sur le projet à exécuter.
 */
 void fenetre_principale::executer(projet* p)
 {
@@ -460,7 +492,11 @@ void fenetre_principale::executer(projet* p)
     }
 }
 
-void fenetre_principale::update_boutons_projet( projet * p )
+/** --------------------------------------------------------------------------------------
+ * \brief Met à jour les boutons de la fenêtre selon un projet donné.
+ * \param p Un pointeur sur le projet à considérer.
+ */
+void fenetre_principale::mettre_a_jour_boutons_projet( projet * p )
 {
     if ( p != NULL )
     {
@@ -474,7 +510,11 @@ void fenetre_principale::update_boutons_projet( projet * p )
     }
 }
 
-void fenetre_principale::update_bouton_execution( projet * p )
+/** --------------------------------------------------------------------------------------
+ * \brief Met à jour les boutons d'exécution selon un projet donné.
+ * \param p Un pointeur sur le projet à considérer.
+ */
+void fenetre_principale::mettre_a_jour_bouton_execution( projet * p )
 {
     if ( p != NULL )
     {
@@ -486,7 +526,12 @@ void fenetre_principale::update_bouton_execution( projet * p )
     }
 }
 
-void fenetre_principale::update_boutons_fonctions( objet_selectionnable * obj, bool etat )
+/** --------------------------------------------------------------------------------------
+ * \brief Met à jour les boutons d'ajout de fonctions selon un objet donné.
+ * \param obj Un pointeur sur l'objet à considérer.
+ * \param etat Booléen indiquant s'il faut activer les boutons.
+ */
+void fenetre_principale::mettre_a_jour_boutons_fonctions( objet_selectionnable * obj, bool etat )
 {
     if ( obj != NULL )
     {
@@ -502,6 +547,10 @@ void fenetre_principale::update_boutons_fonctions( objet_selectionnable * obj, b
     m_toolbar_bouton_ajout_fonction_sortie->setEnabled( etat );
 }
 
+/** --------------------------------------------------------------------------------------
+ * \brief Ajoute les connections pour un projet donné.
+ * \param p Un pointeur sur le projet à considérer.
+ */
 void fenetre_principale::connecter_projet(projet *p)
 {
     connect( p, SIGNAL(signal_p_projet_etat_modification_change(projet *, bool)),
@@ -517,6 +566,10 @@ void fenetre_principale::connecter_projet(projet *p)
              this, SLOT(on_externe_fermeture_projet(projet *)));
 }
 
+/** --------------------------------------------------------------------------------------
+ * \brief Retire les connections pour un projet donné.
+ * \param p Un pointeur sur le projet à considérer.
+ */
 void fenetre_principale::deconnecter_projet(projet *p)
 {
     disconnect( p, SIGNAL(signal_p_projet_etat_modification_change(projet *, bool)),
@@ -526,25 +579,31 @@ void fenetre_principale::deconnecter_projet(projet *p)
                 this, SLOT(on_externe_projet_executable_change(projet *)));
 
     disconnect( s_explorateur, SIGNAL(signal_e_enregistrer_projet(projet *)),
-                this, SLOT(enregistrer_projet(projet *)));
+                this, SLOT(on_enregistrer_projet(projet *)));
 
     disconnect( s_explorateur, SIGNAL(signal_e_enregistrer_projet_sous(projet *)),
-                this, SLOT(enregistrer_projet_sous(projet *)));
+                this, SLOT(on_enregistrer_projet_sous(projet *)));
 }
 
+/** --------------------------------------------------------------------------------------
+ * \brief Retire les connections de tous les projets.
+ */
 void fenetre_principale::deconnecter_projets()
 {
     for ( projets_iterateur it = s_projets.begin(); it != s_projets.end(); ++it )
         deconnecter_projet( *it );
 }
 
+/** --------------------------------------------------------------------------------------
+ * \brief Retire toutes les connections.
+ */
 void fenetre_principale::deconnecter()
 {
     deconnecter_projets();
 }
 
 /** --------------------------------------------------------------------------------------
- \brief Le bouton ajouter_fonction_source est activé.
+ \brief Fonction appelée lorsque le bouton ajouter_fonction_source est activé.
 */
 void fenetre_principale::on_ajouter_fonction_source_click()
 {
@@ -552,7 +611,7 @@ void fenetre_principale::on_ajouter_fonction_source_click()
 }
 
 /** --------------------------------------------------------------------------------------
- \brief Le bouton ajouter_fonction_conversion est activé.
+ \brief Fonction appelée lorsque le bouton ajouter_fonction_conversion est activé.
 */
 void fenetre_principale::on_ajouter_fonction_conversion_click()
 {
@@ -560,7 +619,7 @@ void fenetre_principale::on_ajouter_fonction_conversion_click()
 }
 
 /** --------------------------------------------------------------------------------------
- \brief Le bouton ajouter_fonction_sortie est activé.
+ \brief Fonction appelée lorsque le bouton ajouter_fonction_sortie est activé.
 */
 void fenetre_principale::on_ajouter_fonction_sortie_click()
 {
@@ -568,7 +627,7 @@ void fenetre_principale::on_ajouter_fonction_sortie_click()
 }
 
 /** --------------------------------------------------------------------------------------
- \brief Le bouton ajouter_nouveau_projet est activé.
+ \brief Fonction appelée lorsque le bouton ajouter_nouveau_projet est activé.
 */
 void fenetre_principale::on_nouveau_projet_click()
 {
@@ -577,25 +636,25 @@ void fenetre_principale::on_nouveau_projet_click()
 }
 
 /** --------------------------------------------------------------------------------------
- \brief Le bouton sauvegarder_projet est activé.
+ \brief Fonction appelée lorsque le bouton sauvegarder_projet est activé.
 */
 void fenetre_principale::on_enregistrer_projet_click()
 {
     if ( objet_selectionnable::existe_selection() )
-        enregistrer_projet( objet_selectionnable::get_projet_courant() );
+        on_enregistrer_projet( objet_selectionnable::get_projet_courant() );
 }
 
 /** --------------------------------------------------------------------------------------
- \brief Le bouton sauvegarder_projet_sous est activé.
+ \brief Fonction appelée lorsque le bouton sauvegarder_projet_sous est activé.
 */
 void fenetre_principale::on_enregistrer_projet_sous_click()
 {
     if ( objet_selectionnable::existe_selection() )
-        enregistrer_projet_sous( objet_selectionnable::get_projet_courant() );
+        on_enregistrer_projet_sous( objet_selectionnable::get_projet_courant() );
 }
 
 /** --------------------------------------------------------------------------------------
- \brief Le bouton ouvrir_projet est activé.
+ \brief Fonction appelée lorsque le bouton ouvrir_projet est activé.
 */
 void fenetre_principale::on_ouvrir_projet_click()
 {
@@ -603,7 +662,7 @@ void fenetre_principale::on_ouvrir_projet_click()
 }
 
 /** --------------------------------------------------------------------------------------
- \brief Le bouton executer est activé.
+ \brief Fonction appelée lorsque le bouton executer est activé.
 */
 void fenetre_principale::on_executer_click()
 {
@@ -611,51 +670,80 @@ void fenetre_principale::on_executer_click()
         executer( objet_selectionnable::get_projet_courant() );
 }
 
-void fenetre_principale::on_externe_e_demande_ajout_fonction
-(fonctions_conteneur *conteneur, objet_selectionnable* obj_ref, base_fonction::type_fonction type)
+/** --------------------------------------------------------------------------------------
+ * \brief Fonction appelée lorsqu'il y a une demande externe d'ajout de fonction.
+ * \param conteneur Un pointeur sur le conteneur dans lequel il faut ajouter la fonction.
+ * \param obj_ref Un pointeur sur l'objet après lequel il faut ajouter la fonction.
+ * \param type Le type de fonction à ajouter.
+ */
+void fenetre_principale::on_externe_demande_ajout_fonction
+( fonctions_conteneur *conteneur, objet_selectionnable* obj_ref, type_fonction type)
 {
     ajouter_fonction(conteneur, obj_ref, type);
 }
 
-
+/** --------------------------------------------------------------------------------------
+ * \brief Fonction appelée lorsqu'il y a un changement de verrouillage d'un objet.
+ * \param obj Un pointeur sur l'objet ayant son vérouillage de modifié.
+ */
 void fenetre_principale::on_externe_verrouillage_change(objet_selectionnable *obj)
 {
     if ( objet_selectionnable::existe_selection() )
         if ( objet_selectionnable::get_selection() == obj )
-            update_boutons_fonctions( objet_selectionnable::get_selection(), true);
+            mettre_a_jour_boutons_fonctions( objet_selectionnable::get_selection(), true);
 }
 
-
+/** --------------------------------------------------------------------------------------
+ * \brief Fonction appelée lorsque l'état de modification d'un projet change.
+ * \param p Un pointeur sur le projet à considérer.
+ * \param etat Booléen indiquant si le projet est modifié.
+ */
 void fenetre_principale::on_externe_projet_etat_modification_change(projet *p, bool etat)
 {
     if ( objet_selectionnable::existe_selection() )
         if ( objet_selectionnable::get_projet_courant() == p )
         {
-            update_boutons_projet( p );
-            update_boutons_fonctions( objet_selectionnable::get_selection(), true);
+            mettre_a_jour_boutons_projet( p );
+            mettre_a_jour_boutons_fonctions( objet_selectionnable::get_selection(), true);
         }
 }
 
+/** --------------------------------------------------------------------------------------
+ * \brief Fonction appelée lorsque l'état d'exécutabitlité d'un projet change.
+ * \param p Un pointeur sur le projet à considérer.
+ */
 void fenetre_principale::on_externe_projet_executable_change(projet *p)
 {
     if ( objet_selectionnable::existe_selection() )
         if ( objet_selectionnable::get_projet_courant() == p )
-            update_bouton_execution( p );
+            mettre_a_jour_bouton_execution( p );
 }
 
+/** --------------------------------------------------------------------------------------
+ * \brief Fonction appelée lorsqu'un objet est sélectionné.
+ * \param obj Un pointeur sur l'objet sélectionné.
+ */
 void fenetre_principale::on_externe_objet_selectionne(objet_selectionnable *obj)
 {
-    update_boutons_fonctions(obj, true);
-    update_boutons_projet(obj->get_projet());
-    update_bouton_execution(obj->get_projet());
+    mettre_a_jour_boutons_fonctions(obj, true);
+    mettre_a_jour_boutons_projet(obj->get_projet());
+    mettre_a_jour_bouton_execution(obj->get_projet());
 }
 
+/** --------------------------------------------------------------------------------------
+ * \brief Fonction appelée lorsqu'un objet est déselectionné.
+ * \param obj Un pointeur sur l'objet désélectionné.
+ */
 void fenetre_principale::on_externe_objet_deselectionne(objet_selectionnable *obj)
 {
-    update_boutons_fonctions(obj, false);
-    update_boutons_projet(NULL);
+    mettre_a_jour_boutons_fonctions(obj, false);
+    mettre_a_jour_boutons_projet(NULL);
 }
 
+/** --------------------------------------------------------------------------------------
+ * \brief Fonction appelée lorsqu'il y a une demande externe de fermeture d'un projet.
+ * \param p Un pointeur sur le projet à fermer.
+ */
 void fenetre_principale::on_externe_fermeture_projet(projet *p)
 {
     if ( s_projets.contains(p) )
@@ -675,7 +763,7 @@ void fenetre_principale::on_externe_fermeture_projet(projet *p)
 
             switch (ret) {
               case QMessageBox::Save:
-                    fermer = enregistrer_projet(p);
+                    fermer = on_enregistrer_projet(p);
                   break;
               case QMessageBox::Discard:
                     fermer = true;
@@ -697,9 +785,12 @@ void fenetre_principale::on_externe_fermeture_projet(projet *p)
     }
 }
 
+/** --------------------------------------------------------------------------------------
+ * \brief Fonction appelée lorsqu'il y a une demande externe de duplication de projet.
+ * \param p Un pointeur sur le projet à dupliquer.
+ */
 void fenetre_principale::on_externe_dupliquer_projet(projet *p)
 {
-    // ON fait la copie
     QString copie;
     QXmlStreamWriter XmlWriter(&copie);
     XmlWriter.setAutoFormatting(true);
@@ -712,6 +803,10 @@ void fenetre_principale::on_externe_dupliquer_projet(projet *p)
     creer_projet(xmlReader, nom );
 }
 
+/** --------------------------------------------------------------------------------------
+ * \brief Fonction appelée lorsqu'il y a une demande externe de création de projet avec un texte source.
+ * \param t Le texte source ç ajouter au projet à créer.
+ */
 void fenetre_principale::on_externe_demande_creation_projet(const texte & t)
 {
     creer_projet(t);

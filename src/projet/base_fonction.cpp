@@ -77,7 +77,7 @@ void base_fonction::sauvegarder( QXmlStreamWriter & stream ) const
     stream.writeTextElement("active", QString::number(m_est_active));
     objet_selectionnable::sauvegarder(stream);
 
-    if ( m_type == fonction_source )
+    if ( m_type == type_fonction::fonction_source )
         stream.writeTextElement( "valeur", ((fonction_base_source*)(this))->get_string_valeur() );
 
     stream.writeStartElement("parametres");
@@ -105,7 +105,7 @@ QString base_fonction::get_nom() const
 /** --------------------------------------------------------------------------------------
  \brief Retourne le type de la fonction.
 */
-base_fonction::type_fonction base_fonction::get_type() const
+type_fonction base_fonction::get_type() const
 {
     return m_type;
 }
@@ -288,7 +288,7 @@ void base_fonction::charger(QXmlStreamReader & xml)
         else if(xml.name() == "valeur")
         {
             QString valeur = xml.readElementText();
-            if ( get_type() == base_fonction::fonction_source )
+            if ( get_type() == type_fonction::fonction_source )
                 ((fonction_base_source*)this)->set_string_valeur(valeur);
         }
         else if (xml.name() == "objet_selectionnable")

@@ -1,7 +1,6 @@
 var searchData=
 [
-  ['fenetre_5fprincipale',['fenetre_principale',['../classfenetre__principale.html',1,'']]],
-  ['fenetre_5fprincipale',['fenetre_principale',['../class_ui_1_1fenetre__principale.html',1,'Ui']]],
+  ['fenetre_5fprincipale',['fenetre_principale',['../classfenetre__principale.html',1,'fenetre_principale'],['../class_ui_1_1fenetre__principale.html',1,'Ui::fenetre_principale']]],
   ['fonction_5fbase_5fsortie',['fonction_base_sortie',['../classfonction__base__sortie.html',1,'']]],
   ['fonction_5fbase_5fsource',['fonction_base_source',['../classfonction__base__source.html',1,'']]],
   ['fonction_5fcesar',['fonction_cesar',['../classfonction__cesar.html',1,'']]],
@@ -14,6 +13,8 @@ var searchData=
   ['fonction_5fsource_5fchoix',['fonction_source_choix',['../classfonction__source__choix.html',1,'']]],
   ['fonction_5fsource_5fchoix_5fwidget',['fonction_source_choix_widget',['../classfonction__source__choix__widget.html',1,'']]],
   ['fonction_5fsource_5fentier',['fonction_source_entier',['../classfonction__source__entier.html',1,'']]],
+  ['fonction_5fsource_5ffichier_5ftexte',['fonction_source_fichier_texte',['../classfonction__source__fichier__texte.html',1,'']]],
+  ['fonction_5fsource_5ffichier_5ftexte_5fwidget',['fonction_source_fichier_texte_widget',['../classfonction__source__fichier__texte__widget.html',1,'']]],
   ['fonction_5fsource_5fpermutation',['fonction_source_permutation',['../classfonction__source__permutation.html',1,'']]],
   ['fonction_5fsource_5ftexte',['fonction_source_texte',['../classfonction__source__texte.html',1,'']]],
   ['fonction_5fsource_5ftexte_5fwidget',['fonction_source_texte_widget',['../classfonction__source__texte__widget.html',1,'']]],

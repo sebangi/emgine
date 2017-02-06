@@ -17,19 +17,19 @@ class selecteur_fonction_dialog : public QDialog
         Q_OBJECT
 
     public:
-        explicit selecteur_fonction_dialog(base_fonction::type_fonction type, QWidget *parent = 0);
+        explicit selecteur_fonction_dialog(type_fonction type, QWidget *parent = 0);
 
         base_fonction * get_fonction() const;
 
     private:
-        void init_choix(base_fonction::type_fonction type);
+        void init_choix(type_fonction type);
         void ajouter_choix(type_id_fonction nom);
 
     private slots:
         void choisir();
         void chercher();
         void chercher(const QString &);
-        void calcul_nb_colonnes(base_fonction::type_fonction type);
+        void calcul_nb_colonnes(type_fonction type);
 
     private:
         QDialogButtonBox *m_buttonBox;

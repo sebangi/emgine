@@ -1,0 +1,28 @@
+digraph "fenetre_principale::creer_projet"
+{
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="LR";
+  Node74 [label="fenetre_principale\l::creer_projet",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black"];
+  Node74 -> Node75 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node75 [label="fenetre_principale\l::ajouter_projet",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classfenetre__principale.html#a36f89a276a3e7c84f23e953a1d1ed4c2",tooltip="Ajoute un nouveau projet donné. "];
+  Node75 -> Node76 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node76 [label="fenetre_principale\l::connecter_projet",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classfenetre__principale.html#a8a3a74f711670339243baf7c08d7ca05",tooltip="Ajoute les connections pour un projet donné. "];
+  Node76 -> Node77 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node77 [label="fenetre_principale\l::on_externe_projet\l_etat_modification_change",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classfenetre__principale.html#aa3031f71451237710b8e71ffc9df4f23",tooltip="Fonction appelée lorsque l&#39;état de modification d&#39;un projet change. "];
+  Node77 -> Node78 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node78 [label="fenetre_principale\l::mettre_a_jour_boutons\l_projet",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classfenetre__principale.html#a254e577618618631bd05597f6630fcc4",tooltip="Met à jour les boutons de la fenêtre selon un projet donné. "];
+  Node77 -> Node79 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node79 [label="fenetre_principale\l::mettre_a_jour_boutons\l_fonctions",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classfenetre__principale.html#a0e4687512b180aef1eb6f75359b13cee",tooltip="Met à jour les boutons d&#39;ajout de fonctions selon un objet donné. "];
+  Node76 -> Node80 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node80 [label="fenetre_principale\l::on_externe_projet\l_executable_change",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classfenetre__principale.html#aac51e3e43a291658385b410ad158f24d",tooltip="Fonction appelée lorsque l&#39;état d&#39;exécutabitlité d&#39;un projet change. "];
+  Node80 -> Node81 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node81 [label="fenetre_principale\l::mettre_a_jour_bouton\l_execution",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classfenetre__principale.html#a91384185c4d7425bb5c1d12072cabeae",tooltip="Met à jour les boutons d&#39;exécution selon un projet donné. "];
+  Node76 -> Node82 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node82 [label="fenetre_principale\l::on_externe_verrouillage\l_change",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classfenetre__principale.html#a6a720767a355118833f47fdf265f134b",tooltip="Fonction appelée lorsqu&#39;il y a un changement de verrouillage d&#39;un objet. "];
+  Node82 -> Node79 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node76 -> Node83 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node83 [label="fenetre_principale\l::on_externe_fermeture\l_projet",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classfenetre__principale.html#aed193870fa2381dc3add068169629d7b",tooltip="Fonction appelée lorsqu&#39;il y a une demande externe de fermeture d&#39;un projet. "];
+  Node83 -> Node84 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node84 [label="fenetre_principale\l::on_enregistrer_projet",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classfenetre__principale.html#a31a75b71153c61bb51cc1226eed99cfa",tooltip="Enregistre un projet donné avec un nom de fichier spécifié. "];
+}

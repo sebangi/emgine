@@ -10,7 +10,7 @@
 #include <QStyle>
 #include <iostream>
 
-selecteur_fonction_dialog::selecteur_fonction_dialog(base_fonction::type_fonction type, QWidget *parent)
+selecteur_fonction_dialog::selecteur_fonction_dialog(type_fonction type, QWidget *parent)
     : QDialog(parent), m_fonction(NULL), m_nb_colonnes(1)
 {
     QVBoxLayout *mainLayout = new QVBoxLayout;
@@ -37,9 +37,9 @@ selecteur_fonction_dialog::selecteur_fonction_dialog(base_fonction::type_fonctio
     mainLayout->addWidget(m_buttonBox);
     setLayout(mainLayout);
 
-    if ( type == base_fonction::fonction_source )
+    if ( type == type_fonction::fonction_source )
         setWindowTitle("Quelle source souhaitez-vous ?");
-    else if ( type == base_fonction::fonction_conversion )
+    else if ( type == type_fonction::fonction_conversion )
         setWindowTitle("Quelle fonction souhaitez-vous ?");
     else
         setWindowTitle("Quelle sortie souhaitez-vous ?");
@@ -57,17 +57,17 @@ base_fonction *selecteur_fonction_dialog::get_fonction() const
     return m_fonction;
 }
 
-void selecteur_fonction_dialog::init_choix(base_fonction::type_fonction type)
+void selecteur_fonction_dialog::init_choix(type_fonction type)
 {
     int debut = debut_fonction_conversion;
     int fin = fin_fonction_conversion;
 
-    if ( type == base_fonction::fonction_source )
+    if ( type == type_fonction::fonction_source )
     {
         debut = debut_fonction_source;
         fin = fin_fonction_source;
     }
-    else if ( type == base_fonction::fonction_sortie )
+    else if ( type == type_fonction::fonction_sortie )
     {
         debut = debut_fonction_sortie;
         fin = fin_fonction_sortie;
@@ -125,13 +125,13 @@ void selecteur_fonction_dialog::chercher(const QString &)
     chercher();
 }
 
-void selecteur_fonction_dialog::calcul_nb_colonnes(base_fonction::type_fonction type)
+void selecteur_fonction_dialog::calcul_nb_colonnes(type_fonction type)
 {
     int nb_fonctions = 0;
 
-    if ( type == base_fonction::fonction_source )
+    if ( type == type_fonction::fonction_source )
         nb_fonctions = fin_fonction_source - debut_fonction_source;
-    else if ( type == base_fonction::fonction_conversion )
+    else if ( type == type_fonction::fonction_conversion )
         nb_fonctions = fin_fonction_conversion - debut_fonction_conversion;
     else
         nb_fonctions = fin_fonction_sortie - debut_fonction_sortie;

@@ -31,11 +31,11 @@ void noeud_fonction::mise_a_jour_icone()
     QIcon icon1;
     QString fichier = "icons/icone_";
 
-    if ( ((base_fonction *)m_objet)->get_type() == base_fonction::fonction_source )
+    if ( ((base_fonction *)m_objet)->get_type() == type_fonction::fonction_source )
         fichier += "source";
-    else if ( ((base_fonction *)m_objet)->get_type() == base_fonction::fonction_conversion )
+    else if ( ((base_fonction *)m_objet)->get_type() == type_fonction::fonction_conversion )
         fichier += "conversion";
-    else if ( ((base_fonction *)m_objet)->get_type() == base_fonction::fonction_sortie )
+    else if ( ((base_fonction *)m_objet)->get_type() == type_fonction::fonction_sortie )
         fichier += "sortie";
 
     if ( m_objet->est_verrouille_avec_parent() )

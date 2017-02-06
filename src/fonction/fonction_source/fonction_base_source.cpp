@@ -5,7 +5,7 @@
 #include <iostream>
 
 fonction_base_source::fonction_base_source(fonctions_conteneur * conteneur)
-    : base_fonction(conteneur, fonction_source)
+    : base_fonction(conteneur, type_fonction::fonction_source)
 {
     set_est_etendu(false);
 }

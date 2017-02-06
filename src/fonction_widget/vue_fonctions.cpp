@@ -146,9 +146,9 @@ void vue_fonctions::ajouter_vue_fonction(base_fonction* fonction)
     QPushButton * image = new QPushButton();
     image->setObjectName("NomParametre");
     QIcon icon1;
-    if ( fonction->get_type() == base_fonction::fonction_source )
+    if ( fonction->get_type() == type_fonction::fonction_source )
         icon1.addFile(QString::fromUtf8("icons/selection_source.png"), QSize(), QIcon::Normal, QIcon::Off);
-    else if ( fonction->get_type() == base_fonction::fonction_conversion )
+    else if ( fonction->get_type() == type_fonction::fonction_conversion )
         icon1.addFile(QString::fromUtf8("icons/selection_conversion.png"), QSize(), QIcon::Normal, QIcon::Off);
     else
         icon1.addFile(QString::fromUtf8("icons/selection_sortie.png"), QSize(), QIcon::Normal, QIcon::Off);
