@@ -6,7 +6,7 @@ digraph "entete/projet/projet.h"
   Node8 -> Node9 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
   Node9 [label="src/compilation/compilateur.cpp",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$compilateur_8cpp.html",tooltip="Fichier d&#39;implémentation de la classe compilateur. "];
   Node8 -> Node10 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
-  Node10 [label="src/compilation/log\l_widget_item.cpp",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$log__widget__item_8cpp.html"];
+  Node10 [label="src/compilation/log\l_widget_item.cpp",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$log__widget__item_8cpp.html",tooltip="Fichier d&#39;implémentation de la classe log_widget_item. "];
   Node8 -> Node11 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
   Node11 [label="src/explorateur/base\l_noeud.cpp",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$base__noeud_8cpp.html"];
   Node8 -> Node12 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];

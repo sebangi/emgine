@@ -118,13 +118,13 @@ digraph "src/projet/projet.cpp"
   Node38 -> Node8 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
   Node0 -> Node17 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
   Node0 -> Node39 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
-  Node39 [label="entete/compilation\l/logs_compilation_widget.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$logs__compilation__widget_8h.html"];
+  Node39 [label="entete/compilation\l/logs_compilation_widget.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$logs__compilation__widget_8h.html",tooltip="Fichier de déclaration de la classe logs_compilation_widget. "];
   Node39 -> Node40 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
-  Node40 [label="QWidget",height=0.2,width=0.4,color="grey75", fillcolor="white", style="filled"];
+  Node40 [label="QListWidget",height=0.2,width=0.4,color="grey75", fillcolor="white", style="filled"];
   Node39 -> Node41 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
   Node41 [label="QPushButton",height=0.2,width=0.4,color="grey75", fillcolor="white", style="filled"];
   Node39 -> Node42 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
-  Node42 [label="QListWidget",height=0.2,width=0.4,color="grey75", fillcolor="white", style="filled"];
+  Node42 [label="QWidget",height=0.2,width=0.4,color="grey75", fillcolor="white", style="filled"];
   Node0 -> Node43 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
   Node43 [label="entete/fenetre_principale.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$fenetre__principale_8h.html",tooltip="Déclaration de la classe fenetre_principale. "];
   Node43 -> Node44 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];

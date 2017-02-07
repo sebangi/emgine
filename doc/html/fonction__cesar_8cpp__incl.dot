@@ -123,14 +123,14 @@ digraph "src/fonction/fonction_conversion/fonction_cesar.cpp"
   Node35 -> Node23 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
   Node0 -> Node31 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
   Node0 -> Node42 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
-  Node42 [label="entete/compilation\l/logs_compilation_widget.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$logs__compilation__widget_8h.html"];
+  Node42 [label="entete/compilation\l/logs_compilation_widget.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$logs__compilation__widget_8h.html",tooltip="Fichier de déclaration de la classe logs_compilation_widget. "];
   Node42 -> Node43 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
-  Node43 [label="QWidget",height=0.2,width=0.4,color="grey75", fillcolor="white", style="filled"];
+  Node43 [label="QListWidget",height=0.2,width=0.4,color="grey75", fillcolor="white", style="filled"];
   Node42 -> Node37 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
   Node42 -> Node44 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
-  Node44 [label="QListWidget",height=0.2,width=0.4,color="grey75", fillcolor="white", style="filled"];
+  Node44 [label="QWidget",height=0.2,width=0.4,color="grey75", fillcolor="white", style="filled"];
   Node0 -> Node45 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
-  Node45 [label="entete/compilation\l/log_widget_item.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$log__widget__item_8h.html"];
+  Node45 [label="entete/compilation\l/log_widget_item.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$log__widget__item_8h.html",tooltip="Fichier de déclaration de la classe log_widget_item. "];
   Node45 -> Node31 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
   Node45 -> Node32 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
   Node0 -> Node10 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];

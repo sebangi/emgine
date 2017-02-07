@@ -123,10 +123,10 @@ digraph "src/fonction/fonction_source/fonction_source_choix.cpp"
   Node44 [label="QStringList",height=0.2,width=0.4,color="grey75", fillcolor="white", style="filled"];
   Node0 -> Node40 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
   Node0 -> Node45 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
-  Node45 [label="entete/compilation\l/logs_compilation_widget.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$logs__compilation__widget_8h.html"];
-  Node45 -> Node34 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
-  Node45 -> Node31 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node45 [label="entete/compilation\l/logs_compilation_widget.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$logs__compilation__widget_8h.html",tooltip="Fichier de déclaration de la classe logs_compilation_widget. "];
   Node45 -> Node38 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node45 -> Node31 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node45 -> Node34 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
   Node0 -> Node46 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
   Node46 [label="iostream",height=0.2,width=0.4,color="grey75", fillcolor="white", style="filled"];
 }

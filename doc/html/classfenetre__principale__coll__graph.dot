@@ -1,0 +1,47 @@
+digraph "fenetre_principale"
+{
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="LR";
+  Node2 [label="fenetre_principale",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black"];
+  Node3 -> Node2 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node3 [label="QMainWindow",height=0.2,width=0.4,color="grey75", fillcolor="white", style="filled"];
+  Node4 -> Node2 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" s_compilateur" ,fontname="Helvetica"];
+  Node4 [label="compilateur",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classcompilateur.html",tooltip="Classe décrivant un compilateur. Le compilateur a pour rôle d&#39;exécuter un projet. ..."];
+  Node5 -> Node4 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" m_configuration" ,fontname="Helvetica"];
+  Node5 [label="configuration",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classconfiguration.html",tooltip="Classe décrivant un configuration lors d&#39;une exécution. Pour un texte donné, une configuration corres..."];
+  Node6 -> Node5 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node6 [label="std::map\< type_cle\l_configuration, QString \>",height=0.2,width=0.4,color="grey75", fillcolor="white", style="filled"];
+  Node7 -> Node4 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" m_vue_logs" ,fontname="Helvetica"];
+  Node7 [label="logs_compilation_widget",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classlogs__compilation__widget.html",tooltip="Classe décrivant le widget affichant l&#39;ensemble des logs. "];
+  Node8 -> Node7 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node8 [label="QWidget",height=0.2,width=0.4,color="grey75", fillcolor="white", style="filled"];
+  Node7 -> Node2 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" s_vue_logs" ,fontname="Helvetica"];
+  Node9 -> Node2 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" m_ui" ,fontname="Helvetica"];
+  Node9 [label="Ui::fenetre_principale",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_ui_1_1fenetre__principale.html"];
+  Node10 -> Node9 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node10 [label="Ui_fenetre_principale",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_ui__fenetre__principale.html"];
+  Node10 -> Node9 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node11 -> Node2 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" s_vue_fonctions" ,fontname="Helvetica"];
+  Node11 [label="vue_fonctions",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classvue__fonctions.html"];
+  Node12 -> Node11 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node12 [label="QTableWidget",height=0.2,width=0.4,color="grey75", fillcolor="white", style="filled"];
+  Node13 -> Node11 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" m_conteneur_courant" ,fontname="Helvetica"];
+  Node13 [label="fonctions_conteneur",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classfonctions__conteneur.html"];
+  Node14 -> Node13 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node14 [label="objet_selectionnable",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classobjet__selectionnable.html"];
+  Node15 -> Node14 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node15 [label="QObject",height=0.2,width=0.4,color="grey75", fillcolor="white", style="filled"];
+  Node14 -> Node14 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" s_objet_courant\nm_objet_parent" ,fontname="Helvetica"];
+  Node16 -> Node2 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" s_explorateur" ,fontname="Helvetica"];
+  Node16 [label="explorateur",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classexplorateur.html"];
+  Node17 -> Node16 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node17 [label="QTreeWidget",height=0.2,width=0.4,color="grey75", fillcolor="white", style="filled"];
+  Node18 -> Node16 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" m_noeud_context" ,fontname="Helvetica"];
+  Node18 [label="base_noeud",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classbase__noeud.html"];
+  Node19 -> Node18 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node19 [label="QTreeWidgetItem",height=0.2,width=0.4,color="grey75", fillcolor="white", style="filled"];
+  Node14 -> Node18 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" m_objet" ,fontname="Helvetica"];
+  Node2 -> Node16 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" m_fenetre_principale" ,fontname="Helvetica"];
+  Node14 -> Node16 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" m_objet_a_couper" ,fontname="Helvetica"];
+}

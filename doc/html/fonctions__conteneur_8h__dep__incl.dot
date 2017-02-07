@@ -91,7 +91,7 @@ digraph "entete/projet/fonctions_conteneur.h"
   Node8 -> Node52 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
   Node52 [label="src/compilation/configuration.cpp",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$configuration_8cpp.html",tooltip="Fichier d&#39;implémentation de la class configuration. "];
   Node8 -> Node53 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
-  Node53 [label="src/compilation/log\l_widget_item.cpp",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$log__widget__item_8cpp.html"];
+  Node53 [label="src/compilation/log\l_widget_item.cpp",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$log__widget__item_8cpp.html",tooltip="Fichier d&#39;implémentation de la classe log_widget_item. "];
   Node8 -> Node54 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
   Node54 [label="src/element/texte.cpp",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$texte_8cpp.html"];
   Node8 -> Node43 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];

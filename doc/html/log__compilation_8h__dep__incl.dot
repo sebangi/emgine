@@ -83,11 +83,11 @@ digraph "entete/compilation/log_compilation.h"
   Node4 -> Node33 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
   Node33 [label="src/fonction/fonction\l_source/fonction_source\l_texte.cpp",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$fonction__source__texte_8cpp.html"];
   Node3 -> Node34 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
-  Node34 [label="entete/compilation\l/log_widget_item.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$log__widget__item_8h.html"];
+  Node34 [label="entete/compilation\l/log_widget_item.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$log__widget__item_8h.html",tooltip="Fichier de déclaration de la classe log_widget_item. "];
   Node34 -> Node35 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
-  Node35 [label="src/compilation/log\l_widget_item.cpp",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$log__widget__item_8cpp.html"];
+  Node35 [label="src/compilation/log\l_widget_item.cpp",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$log__widget__item_8cpp.html",tooltip="Fichier d&#39;implémentation de la classe log_widget_item. "];
   Node34 -> Node36 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
-  Node36 [label="src/compilation/logs\l_compilation_widget.cpp",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$logs__compilation__widget_8cpp.html"];
+  Node36 [label="src/compilation/logs\l_compilation_widget.cpp",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$logs__compilation__widget_8cpp.html",tooltip="Fichier d&#39;implémentation de la class logs_compilation_widget. "];
   Node34 -> Node15 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
   Node34 -> Node18 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
   Node3 -> Node37 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];

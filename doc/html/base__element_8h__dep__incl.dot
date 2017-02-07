@@ -51,7 +51,7 @@ digraph "entete/element/base_element.h"
   Node38 -> Node62 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
   Node62 [label="src/compilation/configuration.cpp",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$configuration_8cpp.html",tooltip="Fichier d&#39;implémentation de la class configuration. "];
   Node38 -> Node63 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
-  Node63 [label="src/compilation/log\l_widget_item.cpp",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$log__widget__item_8cpp.html"];
+  Node63 [label="src/compilation/log\l_widget_item.cpp",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$log__widget__item_8cpp.html",tooltip="Fichier d&#39;implémentation de la classe log_widget_item. "];
   Node38 -> Node64 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
   Node64 [label="src/element/texte.cpp",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$texte_8cpp.html"];
   Node38 -> Node16 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];

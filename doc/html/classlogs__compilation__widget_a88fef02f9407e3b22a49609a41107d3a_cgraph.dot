@@ -5,13 +5,13 @@ digraph "logs_compilation_widget::init_widgets"
   rankdir="LR";
   Node13 [label="logs_compilation_widget\l::init_widgets",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black"];
   Node13 -> Node14 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
-  Node14 [label="logs_compilation_widget\l::on_cacher_switch",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classlogs__compilation__widget.html#a953a7b8f27b36fb645f00d7ca200ac5b"];
+  Node14 [label="logs_compilation_widget\l::on_cacher_switch",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classlogs__compilation__widget.html#a953a7b8f27b36fb645f00d7ca200ac5b",tooltip="Fonction appelée pour demander à cacher des logs. "];
   Node13 -> Node15 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
-  Node15 [label="logs_compilation_widget\l::on_effacer",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classlogs__compilation__widget.html#a762d235701b30ea56c58cfe728376b41"];
+  Node15 [label="logs_compilation_widget\l::on_effacer",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classlogs__compilation__widget.html#a762d235701b30ea56c58cfe728376b41",tooltip="Fonction appelée lors d&#39;une demande d&#39;effacement des logs. "];
   Node15 -> Node16 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
-  Node16 [label="logs_compilation_widget\l::clear",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classlogs__compilation__widget.html#ab85d6c314f810a0974383bfb40e71717"];
+  Node16 [label="logs_compilation_widget\l::clear",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classlogs__compilation__widget.html#ab85d6c314f810a0974383bfb40e71717",tooltip="Efface l&#39;ensemble des logs. "];
   Node13 -> Node17 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
-  Node17 [label="logs_compilation_widget\l::onLogClicked",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classlogs__compilation__widget.html#a7309ca28f4c69b1ee2971b65ebf29bc6"];
+  Node17 [label="logs_compilation_widget\l::onLogClicked",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classlogs__compilation__widget.html#a7309ca28f4c69b1ee2971b65ebf29bc6",tooltip="Fonction appelée lors d&#39;un click sur un item de la liste. "];
   Node17 -> Node18 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
   Node18 [label="objet_selectionnable\l::selectionner",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classobjet__selectionnable.html#a645da22be6e3f8747086da238e788fb9"];
   Node18 -> Node19 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];

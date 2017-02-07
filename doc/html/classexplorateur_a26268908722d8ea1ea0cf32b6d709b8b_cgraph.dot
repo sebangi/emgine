@@ -92,9 +92,9 @@ digraph "explorateur::dropEvent"
   Node640 -> Node642 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
   Node642 [label="compilateur::get_vue_logs",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classcompilateur.html#a082b5dae21b0b539a159e180164a5f7c",tooltip="Accesseur du widget de la vue des logs. "];
   Node640 -> Node643 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
-  Node643 [label="logs_compilation_widget\l::ajouter_log",height=0.2,width=0.4,color="red", fillcolor="white", style="filled",URL="$classlogs__compilation__widget.html#a51fcc25d77ca9beafc2721d9c84f07a7"];
+  Node643 [label="logs_compilation_widget\l::ajouter_log",height=0.2,width=0.4,color="red", fillcolor="white", style="filled",URL="$classlogs__compilation__widget.html#a51fcc25d77ca9beafc2721d9c84f07a7",tooltip="Ajoute un log à la liste des logs. "];
   Node643 -> Node644 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
-  Node644 [label="log_widget_item::get_log",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classlog__widget__item.html#a50885aa7f8b31392370fe1dafe982a62"];
+  Node644 [label="log_widget_item::get_log",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classlog__widget__item.html#a50885aa7f8b31392370fe1dafe982a62",tooltip="Accesseur du log associé. "];
   Node640 -> Node647 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
   Node647 [label="base_fonction::get_nom",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classbase__fonction.html#aa184addbc0e71b3fd255b2f0b9e7c99e",tooltip="Retourne le nom de la fonction. "];
   Node640 -> Node648 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
