@@ -3,7 +3,23 @@ digraph "fenetre_principale::on_externe_verrouillage_change"
   edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
   node [fontname="Helvetica",fontsize="10",shape=record];
   rankdir="LR";
-  Node252 [label="fenetre_principale\l::on_externe_verrouillage\l_change",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black"];
-  Node252 -> Node253 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
-  Node253 [label="fenetre_principale\l::mettre_a_jour_boutons\l_fonctions",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classfenetre__principale.html#a0e4687512b180aef1eb6f75359b13cee",tooltip="Met à jour les boutons d&#39;ajout de fonctions selon un objet donné. "];
+  Node1499 [label="fenetre_principale\l::on_externe_verrouillage\l_change",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black"];
+  Node1499 -> Node1500 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node1500 [label="objet_selectionnable\l::existe_selection",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classobjet__selectionnable.html#ad3c9ec08e1036a463b6b82176d52364d"];
+  Node1499 -> Node1501 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node1501 [label="objet_selectionnable\l::get_selection",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classobjet__selectionnable.html#ae6be76843c7b502410ec8d2c1fff88a3"];
+  Node1499 -> Node1502 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node1502 [label="fenetre_principale\l::mettre_a_jour_boutons\l_fonctions",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classfenetre__principale.html#a0e4687512b180aef1eb6f75359b13cee",tooltip="Met à jour les boutons d&#39;ajout de fonctions selon un objet donné. "];
+  Node1502 -> Node1503 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node1503 [label="objet_selectionnable\l::est_conteneur",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classobjet__selectionnable.html#a2c6b5b342b5f3a9f48893f793f935e0f"];
+  Node1502 -> Node1504 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node1504 [label="objet_selectionnable\l::est_verrouille_avec\l_parent",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classobjet__selectionnable.html#a001c4584a6430689f478544ec560fb7e"];
+  Node1504 -> Node1505 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node1505 [label="objet_selectionnable\l::est_verrouille",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classobjet__selectionnable.html#ae9c29950b9e5b582338ac659ecc3e3d6"];
+  Node1504 -> Node1504 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node1502 -> Node1506 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node1506 [label="objet_selectionnable\l::est_fonction",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classobjet__selectionnable.html#a8a235fc5211fbec0347ebe2342e99fa5"];
+  Node1502 -> Node1507 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node1507 [label="objet_selectionnable\l::parents_verrouilles",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classobjet__selectionnable.html#ad9357af8b3471529814165378c6ce13d"];
+  Node1507 -> Node1504 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
 }

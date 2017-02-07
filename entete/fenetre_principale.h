@@ -40,8 +40,9 @@ namespace Ui
 /*! @} End of Doxygen Groups*/
 
 /**
- * \brief Classe représentant la fenètre principale du projet Emgine.
- * \author Sébastien Angibaud
+  * \class fenetre_principale
+  * \brief Classe représentant la fenètre principale du projet Emgine.
+  * \author Sébastien Angibaud
  */
 class fenetre_principale : public QMainWindow
 {

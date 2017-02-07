@@ -67,6 +67,11 @@ $(function() {
 <div class="title">Référence de la classe compilateur</div>  </div>
 </div><!--header-->
 <div class="contents">
+
+<p>Classe décrivant un compilateur. Le compilateur a pour rôle d'exécuter un projet.  
+ <a href="classcompilateur.html#details">Plus de détails...</a></p>
+
+<p><code>#include &lt;<a class="el" href="compilateur_8h_source.html">compilateur.h</a>&gt;</code></p>
 <div class="dynheader">
 Graphe de collaboration de compilateur:</div>
 <div class="dyncontent">
@@ -79,72 +84,623 @@ Graphe de collaboration de compilateur:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Fonctions membres publiques</h2></td></tr>
-<tr class="memitem:ab5bb51e36c11cc13dc09c0db790ddeaa"><td class="memItemLeft" align="right" valign="top"><a id="ab5bb51e36c11cc13dc09c0db790ddeaa"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>compilateur</b> (<a class="el" href="classlogs__compilation__widget.html">logs_compilation_widget</a> *get_vue_logs)</td></tr>
+<tr class="memitem:ab5bb51e36c11cc13dc09c0db790ddeaa"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcompilateur.html#ab5bb51e36c11cc13dc09c0db790ddeaa">compilateur</a> (<a class="el" href="classlogs__compilation__widget.html">logs_compilation_widget</a> *<a class="el" href="classcompilateur.html#a082b5dae21b0b539a159e180164a5f7c">get_vue_logs</a>)</td></tr>
+<tr class="memdesc:ab5bb51e36c11cc13dc09c0db790ddeaa"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructeur de la classe compilateur.  <a href="#ab5bb51e36c11cc13dc09c0db790ddeaa">Plus de détails...</a><br /></td></tr>
 <tr class="separator:ab5bb51e36c11cc13dc09c0db790ddeaa"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a847c4296256de3cae0436b68bf9e6931"><td class="memItemLeft" align="right" valign="top"><a id="a847c4296256de3cae0436b68bf9e6931"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>compiler</b> (<a class="el" href="classprojet.html">projet</a> *p)</td></tr>
+<tr class="memitem:a847c4296256de3cae0436b68bf9e6931"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcompilateur.html#a847c4296256de3cae0436b68bf9e6931">compiler</a> (<a class="el" href="classprojet.html">projet</a> *p)</td></tr>
+<tr class="memdesc:a847c4296256de3cae0436b68bf9e6931"><td class="mdescLeft">&#160;</td><td class="mdescRight">Compile un projet donné.  <a href="#a847c4296256de3cae0436b68bf9e6931">Plus de détails...</a><br /></td></tr>
 <tr class="separator:a847c4296256de3cae0436b68bf9e6931"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a082b5dae21b0b539a159e180164a5f7c"><td class="memItemLeft" align="right" valign="top"><a id="a082b5dae21b0b539a159e180164a5f7c"></a>
-<a class="el" href="classlogs__compilation__widget.html">logs_compilation_widget</a> *&#160;</td><td class="memItemRight" valign="bottom"><b>get_vue_logs</b> () const</td></tr>
+<tr class="memitem:a082b5dae21b0b539a159e180164a5f7c"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classlogs__compilation__widget.html">logs_compilation_widget</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcompilateur.html#a082b5dae21b0b539a159e180164a5f7c">get_vue_logs</a> () const</td></tr>
+<tr class="memdesc:a082b5dae21b0b539a159e180164a5f7c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Accesseur du widget de la vue des logs.  <a href="#a082b5dae21b0b539a159e180164a5f7c">Plus de détails...</a><br /></td></tr>
 <tr class="separator:a082b5dae21b0b539a159e180164a5f7c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:accedd70b3a5d0cec2ce83fee43a7f160"><td class="memItemLeft" align="right" valign="top"><a id="accedd70b3a5d0cec2ce83fee43a7f160"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>ajouter_configuration</b> (<a class="el" href="classbase__fonction.html">base_fonction</a> *f, <a class="el" href="define__parametre_8h.html#a621f68a7400bb79e0ffd7db8c7eca85c">type_id_parametre</a> param, const QString &amp;config)</td></tr>
+<tr class="memitem:accedd70b3a5d0cec2ce83fee43a7f160"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcompilateur.html#accedd70b3a5d0cec2ce83fee43a7f160">ajouter_configuration</a> (<a class="el" href="classbase__fonction.html">base_fonction</a> *f, <a class="el" href="define__parametre_8h.html#a621f68a7400bb79e0ffd7db8c7eca85c">type_id_parametre</a> param, const QString &amp;config)</td></tr>
+<tr class="memdesc:accedd70b3a5d0cec2ce83fee43a7f160"><td class="mdescLeft">&#160;</td><td class="mdescRight">Ajoute une configuration à un couple (fonction, parametre).  <a href="#accedd70b3a5d0cec2ce83fee43a7f160">Plus de détails...</a><br /></td></tr>
 <tr class="separator:accedd70b3a5d0cec2ce83fee43a7f160"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3a044cc8ed2205d842ed8adadf090179"><td class="memItemLeft" align="right" valign="top"><a id="a3a044cc8ed2205d842ed8adadf090179"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>retirer_configuration</b> (<a class="el" href="classbase__fonction.html">base_fonction</a> *f, <a class="el" href="define__parametre_8h.html#a621f68a7400bb79e0ffd7db8c7eca85c">type_id_parametre</a> param)</td></tr>
+<tr class="memitem:a3a044cc8ed2205d842ed8adadf090179"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcompilateur.html#a3a044cc8ed2205d842ed8adadf090179">retirer_configuration</a> (<a class="el" href="classbase__fonction.html">base_fonction</a> *f, <a class="el" href="define__parametre_8h.html#a621f68a7400bb79e0ffd7db8c7eca85c">type_id_parametre</a> param)</td></tr>
+<tr class="memdesc:a3a044cc8ed2205d842ed8adadf090179"><td class="mdescLeft">&#160;</td><td class="mdescRight">Efface la configuration d'un couple (fonction/parametre).  <a href="#a3a044cc8ed2205d842ed8adadf090179">Plus de détails...</a><br /></td></tr>
 <tr class="separator:a3a044cc8ed2205d842ed8adadf090179"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1b90b920c98f81b88171bda33967ffac"><td class="memItemLeft" align="right" valign="top"><a id="a1b90b920c98f81b88171bda33967ffac"></a>
-<a class="el" href="classconfiguration.html">configuration</a>&#160;</td><td class="memItemRight" valign="bottom"><b>get_configuration</b> () const</td></tr>
+<tr class="memitem:a1b90b920c98f81b88171bda33967ffac"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classconfiguration.html">configuration</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcompilateur.html#a1b90b920c98f81b88171bda33967ffac">get_configuration</a> () const</td></tr>
+<tr class="memdesc:a1b90b920c98f81b88171bda33967ffac"><td class="mdescLeft">&#160;</td><td class="mdescRight">Accesseur de la configuration courante.  <a href="#a1b90b920c98f81b88171bda33967ffac">Plus de détails...</a><br /></td></tr>
 <tr class="separator:a1b90b920c98f81b88171bda33967ffac"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-methods"></a>
 Fonctions membres privées</h2></td></tr>
-<tr class="memitem:aa4a72cef1b007de987e490ff6cda53e9"><td class="memItemLeft" align="right" valign="top"><a id="aa4a72cef1b007de987e490ff6cda53e9"></a>
-bool&#160;</td><td class="memItemRight" valign="bottom"><b>est_valide</b> (<a class="el" href="classprojet.html">projet</a> *p)</td></tr>
+<tr class="memitem:aa4a72cef1b007de987e490ff6cda53e9"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcompilateur.html#aa4a72cef1b007de987e490ff6cda53e9">est_valide</a> (<a class="el" href="classprojet.html">projet</a> *p)</td></tr>
+<tr class="memdesc:aa4a72cef1b007de987e490ff6cda53e9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Teste si un projet donné est valide.  <a href="#aa4a72cef1b007de987e490ff6cda53e9">Plus de détails...</a><br /></td></tr>
 <tr class="separator:aa4a72cef1b007de987e490ff6cda53e9"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aac14b2b0238183e11048e8ad659359ba"><td class="memItemLeft" align="right" valign="top"><a id="aac14b2b0238183e11048e8ad659359ba"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>reset</b> ()</td></tr>
+<tr class="memitem:aac14b2b0238183e11048e8ad659359ba"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcompilateur.html#aac14b2b0238183e11048e8ad659359ba">reset</a> ()</td></tr>
+<tr class="memdesc:aac14b2b0238183e11048e8ad659359ba"><td class="mdescLeft">&#160;</td><td class="mdescRight">Efface la compilation en cours.  <a href="#aac14b2b0238183e11048e8ad659359ba">Plus de détails...</a><br /></td></tr>
 <tr class="separator:aac14b2b0238183e11048e8ad659359ba"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ace8a2bf4b88d33bd17e8c850b0afe8f3"><td class="memItemLeft" align="right" valign="top"><a id="ace8a2bf4b88d33bd17e8c850b0afe8f3"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>executer_projet</b> (<a class="el" href="classprojet.html">projet</a> *p)</td></tr>
+<tr class="memitem:ace8a2bf4b88d33bd17e8c850b0afe8f3"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcompilateur.html#ace8a2bf4b88d33bd17e8c850b0afe8f3">executer_projet</a> (<a class="el" href="classprojet.html">projet</a> *p)</td></tr>
+<tr class="memdesc:ace8a2bf4b88d33bd17e8c850b0afe8f3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Exécute un projet donné.  <a href="#ace8a2bf4b88d33bd17e8c850b0afe8f3">Plus de détails...</a><br /></td></tr>
 <tr class="separator:ace8a2bf4b88d33bd17e8c850b0afe8f3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aab9479c05c28d4b15dadb6926d426499"><td class="memItemLeft" align="right" valign="top"><a id="aab9479c05c28d4b15dadb6926d426499"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>executer_fonction</b> (<a class="el" href="classbase__fonction.html">base_fonction</a> *f)</td></tr>
+<tr class="memitem:aab9479c05c28d4b15dadb6926d426499"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcompilateur.html#aab9479c05c28d4b15dadb6926d426499">executer_fonction</a> (<a class="el" href="classbase__fonction.html">base_fonction</a> *f)</td></tr>
+<tr class="memdesc:aab9479c05c28d4b15dadb6926d426499"><td class="mdescLeft">&#160;</td><td class="mdescRight">Exécute une fonction donnée.  <a href="#aab9479c05c28d4b15dadb6926d426499">Plus de détails...</a><br /></td></tr>
 <tr class="separator:aab9479c05c28d4b15dadb6926d426499"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a20fb0cd0d943e986ac0e44d8d1aa961b"><td class="memItemLeft" align="right" valign="top"><a id="a20fb0cd0d943e986ac0e44d8d1aa961b"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>executer_parametre</b> (<a class="el" href="classbase__parametre.html">base_parametre</a> *p)</td></tr>
+<tr class="memitem:a20fb0cd0d943e986ac0e44d8d1aa961b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcompilateur.html#a20fb0cd0d943e986ac0e44d8d1aa961b">executer_parametre</a> (<a class="el" href="classbase__parametre.html">base_parametre</a> *p)</td></tr>
+<tr class="memdesc:a20fb0cd0d943e986ac0e44d8d1aa961b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Exécute un paramètre donné.  <a href="#a20fb0cd0d943e986ac0e44d8d1aa961b">Plus de détails...</a><br /></td></tr>
 <tr class="separator:a20fb0cd0d943e986ac0e44d8d1aa961b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:acf132e6710b940f3dbb06dbc1b91fb60"><td class="memItemLeft" align="right" valign="top"><a id="acf132e6710b940f3dbb06dbc1b91fb60"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>afficher_resultat</b> ()</td></tr>
+<tr class="memitem:acf132e6710b940f3dbb06dbc1b91fb60"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcompilateur.html#acf132e6710b940f3dbb06dbc1b91fb60">afficher_resultat</a> ()</td></tr>
+<tr class="memdesc:acf132e6710b940f3dbb06dbc1b91fb60"><td class="mdescLeft">&#160;</td><td class="mdescRight">Affiche le résultat.  <a href="#acf132e6710b940f3dbb06dbc1b91fb60">Plus de détails...</a><br /></td></tr>
 <tr class="separator:acf132e6710b940f3dbb06dbc1b91fb60"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
 Attributs privés</h2></td></tr>
-<tr class="memitem:a90bed5f56102e4498390d0db4030a652"><td class="memItemLeft" align="right" valign="top"><a id="a90bed5f56102e4498390d0db4030a652"></a>
-bool&#160;</td><td class="memItemRight" valign="bottom"><b>m_en_cours</b></td></tr>
+<tr class="memitem:a90bed5f56102e4498390d0db4030a652"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcompilateur.html#a90bed5f56102e4498390d0db4030a652">m_en_cours</a></td></tr>
+<tr class="memdesc:a90bed5f56102e4498390d0db4030a652"><td class="mdescLeft">&#160;</td><td class="mdescRight">Booléen indiquant si la compilation est en cours.  <a href="#a90bed5f56102e4498390d0db4030a652">Plus de détails...</a><br /></td></tr>
 <tr class="separator:a90bed5f56102e4498390d0db4030a652"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a35f8af133b9679a5c3a2acb2cee49949"><td class="memItemLeft" align="right" valign="top"><a id="a35f8af133b9679a5c3a2acb2cee49949"></a>
-QStack&lt; <a class="el" href="classtextes.html">textes</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>m_pile_textes</b></td></tr>
+<tr class="memitem:a35f8af133b9679a5c3a2acb2cee49949"><td class="memItemLeft" align="right" valign="top">QStack&lt; <a class="el" href="classtextes.html">textes</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcompilateur.html#a35f8af133b9679a5c3a2acb2cee49949">m_pile_textes</a></td></tr>
+<tr class="memdesc:a35f8af133b9679a5c3a2acb2cee49949"><td class="mdescLeft">&#160;</td><td class="mdescRight">La pile de textes des paramètres.  <a href="#a35f8af133b9679a5c3a2acb2cee49949">Plus de détails...</a><br /></td></tr>
 <tr class="separator:a35f8af133b9679a5c3a2acb2cee49949"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac4cab2d84ffa5b764773bc1675c72580"><td class="memItemLeft" align="right" valign="top"><a id="ac4cab2d84ffa5b764773bc1675c72580"></a>
-<a class="el" href="classlogs__compilation__widget.html">logs_compilation_widget</a> *&#160;</td><td class="memItemRight" valign="bottom"><b>m_vue_logs</b></td></tr>
+<tr class="memitem:ac4cab2d84ffa5b764773bc1675c72580"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classlogs__compilation__widget.html">logs_compilation_widget</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcompilateur.html#ac4cab2d84ffa5b764773bc1675c72580">m_vue_logs</a></td></tr>
+<tr class="memdesc:ac4cab2d84ffa5b764773bc1675c72580"><td class="mdescLeft">&#160;</td><td class="mdescRight">Un pointeur sur le widget de vue des logs de compilation.  <a href="#ac4cab2d84ffa5b764773bc1675c72580">Plus de détails...</a><br /></td></tr>
 <tr class="separator:ac4cab2d84ffa5b764773bc1675c72580"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aed817791f876d6cde3e4683b21d20d7d"><td class="memItemLeft" align="right" valign="top"><a id="aed817791f876d6cde3e4683b21d20d7d"></a>
-<a class="el" href="classconfiguration.html">configuration</a>&#160;</td><td class="memItemRight" valign="bottom"><b>m_configuration</b></td></tr>
+<tr class="memitem:aed817791f876d6cde3e4683b21d20d7d"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classconfiguration.html">configuration</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcompilateur.html#aed817791f876d6cde3e4683b21d20d7d">m_configuration</a></td></tr>
+<tr class="memdesc:aed817791f876d6cde3e4683b21d20d7d"><td class="mdescLeft">&#160;</td><td class="mdescRight">La configuration en cours.  <a href="#aed817791f876d6cde3e4683b21d20d7d">Plus de détails...</a><br /></td></tr>
 <tr class="separator:aed817791f876d6cde3e4683b21d20d7d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Description détaillée</h2>
-<div class="textblock">
-<p class="definition">Définition à la ligne <a class="el" href="compilateur_8h_source.html#l00019">19</a> du fichier <a class="el" href="compilateur_8h_source.html">compilateur.h</a>.</p>
-</div><hr/>La documentation de cette classe a été générée à partir des fichiers suivants :<ul>
+<div class="textblock"><p>Classe décrivant un compilateur. Le compilateur a pour rôle d'exécuter un projet. </p>
+<dl class="section author"><dt>Auteur</dt><dd>Sébastien Angibaud </dd></dl>
+
+<p class="definition">Définition à la ligne <a class="el" href="compilateur_8h_source.html#l00030">30</a> du fichier <a class="el" href="compilateur_8h_source.html">compilateur.h</a>.</p>
+</div><h2 class="groupheader">Documentation des constructeurs et destructeur</h2>
+<a id="ab5bb51e36c11cc13dc09c0db790ddeaa"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab5bb51e36c11cc13dc09c0db790ddeaa">&#9670;&nbsp;</a></span>compilateur()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">compilateur::compilateur </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classlogs__compilation__widget.html">logs_compilation_widget</a> *&#160;</td>
+          <td class="paramname"><em>vue_logs</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Constructeur de la classe compilateur. </p>
+<hr/>
+ <dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">vue_logs</td><td>Un pointeur sur le widget de vue des logs. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Définition à la ligne <a class="el" href="compilateur_8cpp_source.html#l00023">23</a> du fichier <a class="el" href="compilateur_8cpp_source.html">compilateur.cpp</a>.</p>
+
+</div>
+</div>
+<h2 class="groupheader">Documentation des fonctions membres</h2>
+<a id="acf132e6710b940f3dbb06dbc1b91fb60"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acf132e6710b940f3dbb06dbc1b91fb60">&#9670;&nbsp;</a></span>afficher_resultat()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void compilateur::afficher_resultat </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Affiche le résultat. </p>
+<hr/>
+ 
+<p class="definition">Définition à la ligne <a class="el" href="compilateur_8cpp_source.html#l00140">140</a> du fichier <a class="el" href="compilateur_8cpp_source.html">compilateur.cpp</a>.</p>
+<div class="dynheader">
+Voici le graphe d'appel pour cette fonction :</div>
+<div class="dyncontent">
+<div class="center"><img src="classcompilateur_acf132e6710b940f3dbb06dbc1b91fb60_cgraph.png" border="0" usemap="#classcompilateur_acf132e6710b940f3dbb06dbc1b91fb60_cgraph" alt=""/></div>
+<map name="classcompilateur_acf132e6710b940f3dbb06dbc1b91fb60_cgraph" id="classcompilateur_acf132e6710b940f3dbb06dbc1b91fb60_cgraph">
+</map>
+</div>
+
+</div>
+</div>
+<a id="accedd70b3a5d0cec2ce83fee43a7f160"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#accedd70b3a5d0cec2ce83fee43a7f160">&#9670;&nbsp;</a></span>ajouter_configuration()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void compilateur::ajouter_configuration </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classbase__fonction.html">base_fonction</a> *&#160;</td>
+          <td class="paramname"><em>f</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="define__parametre_8h.html#a621f68a7400bb79e0ffd7db8c7eca85c">type_id_parametre</a>&#160;</td>
+          <td class="paramname"><em>param</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const QString &amp;&#160;</td>
+          <td class="paramname"><em>config</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Ajoute une configuration à un couple (fonction, parametre). </p>
+<hr/>
+ <dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">f</td><td>Un pointeur sur la fonction à considérer. </td></tr>
+    <tr><td class="paramname">param</td><td>L'id du paramètre à considérer. </td></tr>
+    <tr><td class="paramname">config</td><td>La configuration à ajouter. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Définition à la ligne <a class="el" href="compilateur_8cpp_source.html#l00179">179</a> du fichier <a class="el" href="compilateur_8cpp_source.html">compilateur.cpp</a>.</p>
+
+</div>
+</div>
+<a id="a847c4296256de3cae0436b68bf9e6931"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a847c4296256de3cae0436b68bf9e6931">&#9670;&nbsp;</a></span>compiler()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void compilateur::compiler </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classprojet.html">projet</a> *&#160;</td>
+          <td class="paramname"><em>p</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Compile un projet donné. </p>
+<hr/>
+ <dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">p</td><td>Un pointeur sur le projet à compiler. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Définition à la ligne <a class="el" href="compilateur_8cpp_source.html#l00033">33</a> du fichier <a class="el" href="compilateur_8cpp_source.html">compilateur.cpp</a>.</p>
+<div class="dynheader">
+Voici le graphe d'appel pour cette fonction :</div>
+<div class="dyncontent">
+<div class="center"><img src="classcompilateur_a847c4296256de3cae0436b68bf9e6931_cgraph.png" border="0" usemap="#classcompilateur_a847c4296256de3cae0436b68bf9e6931_cgraph" alt=""/></div>
+<map name="classcompilateur_a847c4296256de3cae0436b68bf9e6931_cgraph" id="classcompilateur_a847c4296256de3cae0436b68bf9e6931_cgraph">
+</map>
+</div>
+
+</div>
+</div>
+<a id="aa4a72cef1b007de987e490ff6cda53e9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa4a72cef1b007de987e490ff6cda53e9">&#9670;&nbsp;</a></span>est_valide()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool compilateur::est_valide </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classprojet.html">projet</a> *&#160;</td>
+          <td class="paramname"><em>p</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Teste si un projet donné est valide. </p>
+<hr/>
+ <dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">p</td><td>Un pointeur sur le projet à tester. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Renvoie</dt><dd><b>True</b> si le projet est valide, <b>False</b> sinon. </dd></dl>
+
+<p class="definition">Définition à la ligne <a class="el" href="compilateur_8cpp_source.html#l00066">66</a> du fichier <a class="el" href="compilateur_8cpp_source.html">compilateur.cpp</a>.</p>
+<div class="dynheader">
+Voici le graphe d'appel pour cette fonction :</div>
+<div class="dyncontent">
+<div class="center"><img src="classcompilateur_aa4a72cef1b007de987e490ff6cda53e9_cgraph.png" border="0" usemap="#classcompilateur_aa4a72cef1b007de987e490ff6cda53e9_cgraph" alt=""/></div>
+<map name="classcompilateur_aa4a72cef1b007de987e490ff6cda53e9_cgraph" id="classcompilateur_aa4a72cef1b007de987e490ff6cda53e9_cgraph">
+</map>
+</div>
+
+</div>
+</div>
+<a id="aab9479c05c28d4b15dadb6926d426499"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aab9479c05c28d4b15dadb6926d426499">&#9670;&nbsp;</a></span>executer_fonction()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void compilateur::executer_fonction </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classbase__fonction.html">base_fonction</a> *&#160;</td>
+          <td class="paramname"><em>f</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Exécute une fonction donnée. </p>
+<hr/>
+ <dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">f</td><td>Un pointeur sur la fonction à exécuter. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Définition à la ligne <a class="el" href="compilateur_8cpp_source.html#l00103">103</a> du fichier <a class="el" href="compilateur_8cpp_source.html">compilateur.cpp</a>.</p>
+<div class="dynheader">
+Voici le graphe d'appel pour cette fonction :</div>
+<div class="dyncontent">
+<div class="center"><img src="classcompilateur_aab9479c05c28d4b15dadb6926d426499_cgraph.png" border="0" usemap="#classcompilateur_aab9479c05c28d4b15dadb6926d426499_cgraph" alt=""/></div>
+<map name="classcompilateur_aab9479c05c28d4b15dadb6926d426499_cgraph" id="classcompilateur_aab9479c05c28d4b15dadb6926d426499_cgraph">
+</map>
+</div>
+
+</div>
+</div>
+<a id="a20fb0cd0d943e986ac0e44d8d1aa961b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a20fb0cd0d943e986ac0e44d8d1aa961b">&#9670;&nbsp;</a></span>executer_parametre()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void compilateur::executer_parametre </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classbase__parametre.html">base_parametre</a> *&#160;</td>
+          <td class="paramname"><em>p</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Exécute un paramètre donné. </p>
+<hr/>
+ <dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">p</td><td>Un pointeur sur le paramètre à exécuter. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Définition à la ligne <a class="el" href="compilateur_8cpp_source.html#l00120">120</a> du fichier <a class="el" href="compilateur_8cpp_source.html">compilateur.cpp</a>.</p>
+<div class="dynheader">
+Voici le graphe d'appel pour cette fonction :</div>
+<div class="dyncontent">
+<div class="center"><img src="classcompilateur_a20fb0cd0d943e986ac0e44d8d1aa961b_cgraph.png" border="0" usemap="#classcompilateur_a20fb0cd0d943e986ac0e44d8d1aa961b_cgraph" alt=""/></div>
+<map name="classcompilateur_a20fb0cd0d943e986ac0e44d8d1aa961b_cgraph" id="classcompilateur_a20fb0cd0d943e986ac0e44d8d1aa961b_cgraph">
+</map>
+</div>
+
+</div>
+</div>
+<a id="ace8a2bf4b88d33bd17e8c850b0afe8f3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ace8a2bf4b88d33bd17e8c850b0afe8f3">&#9670;&nbsp;</a></span>executer_projet()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void compilateur::executer_projet </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classprojet.html">projet</a> *&#160;</td>
+          <td class="paramname"><em>p</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Exécute un projet donné. </p>
+<hr/>
+ <dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">p</td><td>Un pointeur sur le projet à exécuter. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Définition à la ligne <a class="el" href="compilateur_8cpp_source.html#l00084">84</a> du fichier <a class="el" href="compilateur_8cpp_source.html">compilateur.cpp</a>.</p>
+<div class="dynheader">
+Voici le graphe d'appel pour cette fonction :</div>
+<div class="dyncontent">
+<div class="center"><img src="classcompilateur_ace8a2bf4b88d33bd17e8c850b0afe8f3_cgraph.png" border="0" usemap="#classcompilateur_ace8a2bf4b88d33bd17e8c850b0afe8f3_cgraph" alt=""/></div>
+<map name="classcompilateur_ace8a2bf4b88d33bd17e8c850b0afe8f3_cgraph" id="classcompilateur_ace8a2bf4b88d33bd17e8c850b0afe8f3_cgraph">
+</map>
+</div>
+
+</div>
+</div>
+<a id="a1b90b920c98f81b88171bda33967ffac"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1b90b920c98f81b88171bda33967ffac">&#9670;&nbsp;</a></span>get_configuration()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classconfiguration.html">configuration</a> compilateur::get_configuration </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Accesseur de la configuration courante. </p>
+<hr/>
+ <dl class="section return"><dt>Renvoie</dt><dd>La configuration courante. </dd></dl>
+
+<p class="definition">Définition à la ligne <a class="el" href="compilateur_8cpp_source.html#l00159">159</a> du fichier <a class="el" href="compilateur_8cpp_source.html">compilateur.cpp</a>.</p>
+
+</div>
+</div>
+<a id="a082b5dae21b0b539a159e180164a5f7c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a082b5dae21b0b539a159e180164a5f7c">&#9670;&nbsp;</a></span>get_vue_logs()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classlogs__compilation__widget.html">logs_compilation_widget</a> * compilateur::get_vue_logs </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Accesseur du widget de la vue des logs. </p>
+<hr/>
+ <dl class="section return"><dt>Renvoie</dt><dd>Un pointeur sur le widget de la vue des logs. </dd></dl>
+
+<p class="definition">Définition à la ligne <a class="el" href="compilateur_8cpp_source.html#l00168">168</a> du fichier <a class="el" href="compilateur_8cpp_source.html">compilateur.cpp</a>.</p>
+
+</div>
+</div>
+<a id="aac14b2b0238183e11048e8ad659359ba"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aac14b2b0238183e11048e8ad659359ba">&#9670;&nbsp;</a></span>reset()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void compilateur::reset </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Efface la compilation en cours. </p>
+<hr/>
+ 
+<p class="definition">Définition à la ligne <a class="el" href="compilateur_8cpp_source.html#l00074">74</a> du fichier <a class="el" href="compilateur_8cpp_source.html">compilateur.cpp</a>.</p>
+
+</div>
+</div>
+<a id="a3a044cc8ed2205d842ed8adadf090179"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3a044cc8ed2205d842ed8adadf090179">&#9670;&nbsp;</a></span>retirer_configuration()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void compilateur::retirer_configuration </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classbase__fonction.html">base_fonction</a> *&#160;</td>
+          <td class="paramname"><em>f</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="define__parametre_8h.html#a621f68a7400bb79e0ffd7db8c7eca85c">type_id_parametre</a>&#160;</td>
+          <td class="paramname"><em>param</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Efface la configuration d'un couple (fonction/parametre). </p>
+<hr/>
+ <dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">f</td><td>Un pointeur sur la fonction à considérer. </td></tr>
+    <tr><td class="paramname">param</td><td>L'id du paramètre à considérer. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Définition à la ligne <a class="el" href="compilateur_8cpp_source.html#l00189">189</a> du fichier <a class="el" href="compilateur_8cpp_source.html">compilateur.cpp</a>.</p>
+
+</div>
+</div>
+<h2 class="groupheader">Documentation des données membres</h2>
+<a id="aed817791f876d6cde3e4683b21d20d7d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aed817791f876d6cde3e4683b21d20d7d">&#9670;&nbsp;</a></span>m_configuration</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classconfiguration.html">configuration</a> compilateur::m_configuration</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>La configuration en cours. </p>
+
+<p class="definition">Définition à la ligne <a class="el" href="compilateur_8h_source.html#l00060">60</a> du fichier <a class="el" href="compilateur_8h_source.html">compilateur.h</a>.</p>
+
+</div>
+</div>
+<a id="a90bed5f56102e4498390d0db4030a652"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a90bed5f56102e4498390d0db4030a652">&#9670;&nbsp;</a></span>m_en_cours</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool compilateur::m_en_cours</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Booléen indiquant si la compilation est en cours. </p>
+
+<p class="definition">Définition à la ligne <a class="el" href="compilateur_8h_source.html#l00051">51</a> du fichier <a class="el" href="compilateur_8h_source.html">compilateur.h</a>.</p>
+
+</div>
+</div>
+<a id="a35f8af133b9679a5c3a2acb2cee49949"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a35f8af133b9679a5c3a2acb2cee49949">&#9670;&nbsp;</a></span>m_pile_textes</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QStack&lt; <a class="el" href="classtextes.html">textes</a> &gt; compilateur::m_pile_textes</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>La pile de textes des paramètres. </p>
+
+<p class="definition">Définition à la ligne <a class="el" href="compilateur_8h_source.html#l00054">54</a> du fichier <a class="el" href="compilateur_8h_source.html">compilateur.h</a>.</p>
+
+</div>
+</div>
+<a id="ac4cab2d84ffa5b764773bc1675c72580"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac4cab2d84ffa5b764773bc1675c72580">&#9670;&nbsp;</a></span>m_vue_logs</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classlogs__compilation__widget.html">logs_compilation_widget</a>* compilateur::m_vue_logs</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Un pointeur sur le widget de vue des logs de compilation. </p>
+
+<p class="definition">Définition à la ligne <a class="el" href="compilateur_8h_source.html#l00057">57</a> du fichier <a class="el" href="compilateur_8h_source.html">compilateur.h</a>.</p>
+
+</div>
+</div>
+<hr/>La documentation de cette classe a été générée à partir des fichiers suivants :<ul>
 <li>entete/compilation/<a class="el" href="compilateur_8h_source.html">compilateur.h</a></li>
 <li>src/compilation/<a class="el" href="compilateur_8cpp_source.html">compilateur.cpp</a></li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Généré le Lundi 6 Février 2017 17:26:16 pour Emgine par &#160;<a href="http://www.doxygen.org/index.html">
+Généré le Mardi 7 Février 2017 11:23:12 pour Emgine par &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.13
 </small></address>

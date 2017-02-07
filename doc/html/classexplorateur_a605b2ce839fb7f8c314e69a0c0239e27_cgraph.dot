@@ -1,0 +1,31 @@
+digraph "explorateur::ajouter_menu_enregistrement"
+{
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="LR";
+  Node244 [label="explorateur::ajouter\l_menu_enregistrement",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black"];
+  Node244 -> Node245 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node245 [label="objet_selectionnable\l::get_projet",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classobjet__selectionnable.html#ab48a75e720955aebe27f720dfaa5e78e"];
+  Node245 -> Node246 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node246 [label="objet_selectionnable\l::est_projet",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classobjet__selectionnable.html#a49ea1a29523e46f099896477a2b43eaa"];
+  Node245 -> Node245 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node244 -> Node247 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node247 [label="projet::est_enregistrable",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classprojet.html#af3ec26f8d89ead3d91a5f6098b83e242"];
+  Node247 -> Node248 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node248 [label="projet::est_nouveau",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classprojet.html#a5ec26ee61a91af62a268bb85263d6a30"];
+  Node247 -> Node249 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node249 [label="projet::est_modifie",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classprojet.html#a3ce849f59d754f05de9cf9b4ec06c46f"];
+  Node244 -> Node250 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node250 [label="explorateur::on_enregistrer",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classexplorateur.html#a73040f7ee6da27e4396e15c7df7ace5c"];
+  Node250 -> Node251 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node251 [label="base_noeud::get_objet",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classbase__noeud.html#a762c999077b247ebf1d8c6dd83313ffd"];
+  Node250 -> Node245 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node244 -> Node252 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node252 [label="explorateur::on_enregistrer_sous",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classexplorateur.html#aa6321767a6f4a8afaf43f1ea952528df"];
+  Node252 -> Node251 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node252 -> Node245 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node244 -> Node253 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node253 [label="explorateur::on_dupliquer\l_projet",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classexplorateur.html#a897a29fae3bb3df4c5129ea820774334"];
+  Node253 -> Node251 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node253 -> Node245 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+}

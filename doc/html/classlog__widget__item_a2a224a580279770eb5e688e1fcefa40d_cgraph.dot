@@ -1,0 +1,11 @@
+digraph "log_widget_item::init"
+{
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="LR";
+  Node7 [label="log_widget_item::init",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black"];
+  Node7 -> Node8 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node8 [label="log_compilation::get\l_couleur",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classlog__compilation.html#aae9f9a38e15c3716024079cc47fd5921",tooltip="Retourne la couleur associée au message (dépendant du type). "];
+  Node7 -> Node9 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node9 [label="log_compilation::get\l_message",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classlog__compilation.html#a90a558fa498503a996556159c6bccefc",tooltip="Calcul et retourne le message du log. "];
+}
