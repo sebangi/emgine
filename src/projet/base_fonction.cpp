@@ -8,6 +8,8 @@
 #include "entete/compilation/log_widget_item.h"
 #include "entete/projet/base_parametre.h"
 #include "entete/fonction/bibliotheque_fonctions.h"
+#include "entete/compilation/compilateur.h"
+
 
 #include <iostream>
 

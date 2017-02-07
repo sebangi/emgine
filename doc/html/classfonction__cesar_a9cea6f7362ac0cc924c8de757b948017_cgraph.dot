@@ -29,11 +29,11 @@ digraph "fonction_cesar::execution_specifique"
   Node50 -> Node60 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
   Node60 [label="compilateur::retirer\l_configuration",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classcompilateur.html#a3a044cc8ed2205d842ed8adadf090179",tooltip="Efface la configuration d&#39;un couple (fonction/parametre). "];
   Node48 -> Node61 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
-  Node61 [label="ligne::ajouter_mot",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classligne.html#abb194a19c94d5d7ec48ef442f5043d1e"];
+  Node61 [label="ligne::ajouter_mot",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classligne.html#abb194a19c94d5d7ec48ef442f5043d1e",tooltip="Ajoute un mot à la ligne. "];
   Node61 -> Node62 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
-  Node62 [label="mot::nb_caracteres",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classmot.html#a9f5c9cd3673bd6d4ba3b7ea9e406ef49"];
+  Node62 [label="mot::nb_caracteres",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classmot.html#a9f5c9cd3673bd6d4ba3b7ea9e406ef49",tooltip="Retourne le nombre de caractère du mot. "];
   Node48 -> Node63 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
-  Node63 [label="textes::ajouter_texte",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classtextes.html#a43f525d434beb88abf038c54fe656d91"];
+  Node63 [label="textes::ajouter_texte",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classtextes.html#a43f525d434beb88abf038c54fe656d91",tooltip="Ajoute un texte donné. "];
   Node48 -> Node64 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
   Node64 [label="compilateur::get_configuration",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classcompilateur.html#a1b90b920c98f81b88171bda33967ffac",tooltip="Accesseur de la configuration courante. "];
 }

@@ -4,11 +4,11 @@ digraph "entete/element/mot.h"
   node [fontname="Helvetica",fontsize="10",shape=record];
   Node5 [label="entete/element/mot.h",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black"];
   Node5 -> Node6 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
-  Node6 [label="entete/element/ligne.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$ligne_8h.html"];
+  Node6 [label="entete/element/ligne.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$ligne_8h.html",tooltip="Fichier de déclaration de la classe ligne. "];
   Node6 -> Node7 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
-  Node7 [label="entete/element/texte.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$texte_8h.html"];
+  Node7 [label="entete/element/texte.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$texte_8h.html",tooltip="Fichier de déclaration de la classe texte. "];
   Node7 -> Node8 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
-  Node8 [label="entete/element/textes.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$textes_8h.html"];
+  Node8 [label="entete/element/textes.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$textes_8h.html",tooltip="Fichier de déclaration de la classe textes. "];
   Node8 -> Node9 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
   Node9 [label="entete/compilation\l/compilateur.h",height=0.2,width=0.4,color="red", fillcolor="white", style="filled",URL="$compilateur_8h.html",tooltip="Fichier de déclaration de la classe compilateur. "];
   Node9 -> Node16 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
@@ -67,7 +67,7 @@ digraph "entete/element/mot.h"
   Node39 -> Node64 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
   Node64 [label="src/compilation/log\l_widget_item.cpp",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$log__widget__item_8cpp.html",tooltip="Fichier d&#39;implémentation de la classe log_widget_item. "];
   Node39 -> Node65 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
-  Node65 [label="src/element/texte.cpp",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$texte_8cpp.html"];
+  Node65 [label="src/element/texte.cpp",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$texte_8cpp.html",tooltip="Fichier d&#39;implémentation de la classe texte. "];
   Node39 -> Node17 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
   Node39 -> Node28 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
   Node28 [label="src/explorateur/noeud\l_fonctions_conteneur.cpp",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$noeud__fonctions__conteneur_8cpp.html"];
@@ -104,7 +104,7 @@ digraph "entete/element/mot.h"
   Node74 -> Node31 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
   Node74 -> Node44 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
   Node8 -> Node75 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
-  Node75 [label="src/element/textes.cpp",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$textes_8cpp.html"];
+  Node75 [label="src/element/textes.cpp",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$textes_8cpp.html",tooltip="Fichier d&#39;implémentation de la classe textes. "];
   Node7 -> Node76 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
   Node76 [label="entete/fonction_widget\l/fonction_sortie_widget\l/texte_widget_item.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$texte__widget__item_8h.html"];
   Node76 -> Node44 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
@@ -122,13 +122,13 @@ digraph "entete/element/mot.h"
   Node79 -> Node80 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
   Node80 [label="src/fonction/algorithme\l/algo_LIPL.cpp",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$algo___l_i_p_l_8cpp.html"];
   Node6 -> Node81 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
-  Node81 [label="src/element/ligne.cpp",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$ligne_8cpp.html"];
+  Node81 [label="src/element/ligne.cpp",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$ligne_8cpp.html",tooltip="Fichier d&#39;implémentation de la classe ligne. "];
   Node5 -> Node82 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
   Node82 [label="entete/fonction/algorithme\l/algo_PMIPL.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$algo___p_m_i_p_l_8h.html"];
   Node82 -> Node39 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
   Node82 -> Node83 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
   Node83 [label="src/fonction/algorithme\l/algo_PMIPL.cpp",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$algo___p_m_i_p_l_8cpp.html"];
   Node5 -> Node84 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
-  Node84 [label="src/element/mot.cpp",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$mot_8cpp.html"];
+  Node84 [label="src/element/mot.cpp",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$mot_8cpp.html",tooltip="Fichier d&#39;implémentation de la classe mot. "];
   Node5 -> Node32 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
 }

@@ -5,5 +5,5 @@ digraph "fonction_sortie_texte::get_valeur_courte"
   rankdir="LR";
   Node9 [label="fonction_sortie_texte\l::get_valeur_courte",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black"];
   Node9 -> Node10 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
-  Node10 [label="textes::to_string_lisible",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classtextes.html#a7b9f02a341d284ea7a7454642ff5135c"];
+  Node10 [label="textes::to_string_lisible",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classtextes.html#a7b9f02a341d284ea7a7454642ff5135c",tooltip="Retourne l&#39;ensemble de textes au format QString avec séparation des textes. "];
 }

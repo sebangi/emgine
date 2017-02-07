@@ -4,7 +4,7 @@ digraph "src/element/base_element.cpp"
   node [fontname="Helvetica",fontsize="10",shape=record];
   Node0 [label="src/element/base_element.cpp",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black"];
   Node0 -> Node1 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
-  Node1 [label="entete/element/base\l_element.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$base__element_8h.html"];
+  Node1 [label="entete/element/base\l_element.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$base__element_8h.html",tooltip="Fichier de déclaration de la classe bae_element. "];
   Node1 -> Node2 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
   Node2 [label="type_element.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$type__element_8h.html"];
   Node1 -> Node3 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];

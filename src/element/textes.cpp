@@ -1,12 +1,23 @@
-#include "entete/element/textes.h"
-#include <iostream>
+/** \file textes.cpp
+ * \brief Fichier d'implémentation de la classe textes.
+ * \author Sébastien Angibaud
+ */
 
+#include "entete/element/textes.h"
+
+/** --------------------------------------------------------------------------------------
+ * \brief Construteur par défaut de la classe textes.
+ */
 textes::textes()
     : vector<texte>()
 {
 
 }
 
+/** --------------------------------------------------------------------------------------
+ * \brief Constructeur de la class textes.
+ * \param valeur La chaîne de caractères induisant l'ensemble de textes.
+ */
 textes::textes(const QString &valeur)
 {
     texte t(valeur);
@@ -14,6 +25,10 @@ textes::textes(const QString &valeur)
     push_back(t);
 }
 
+/** --------------------------------------------------------------------------------------
+ * \brief Retourne l'ensemble de textes au format QString.
+ * \return L'ensemble de textes au format QString.
+ */
 QString textes::to_string() const
 {
     QString result;
@@ -24,6 +39,10 @@ QString textes::to_string() const
     return result;
 }
 
+/** --------------------------------------------------------------------------------------
+ * \brief Retourne l'ensemble de textes au format QString avec séparation des textes.
+ * \return L'ensemble de textes au format QString.
+ */
 QString textes::to_string_lisible() const
 {
     QString result;
@@ -37,6 +56,11 @@ QString textes::to_string_lisible() const
     return result;
 }
 
+/** --------------------------------------------------------------------------------------
+ * \brief Ajoute un texte donné.
+ * \param config La configuration à associer au texte ajouté.
+ * \param t Le texte à ajouter.
+ */
 void textes::ajouter_texte(const configuration& config, const texte &t)
 {
     push_back(t);

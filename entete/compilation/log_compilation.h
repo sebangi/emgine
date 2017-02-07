@@ -1,7 +1,7 @@
 #ifndef LOG_COMPILATION_H
 #define LOG_COMPILATION_H
 
-/** \file log_compilation
+/** \file log_compilation.h
  * \brief Fichier de déclaration de la class log_compilation.
  * \author Sébastien Angibaud
  */

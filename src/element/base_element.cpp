@@ -1,12 +1,23 @@
+/** \file base_element.cpp
+ * \brief Fichier d'implémentation de la classe base_element.
+ * \author Sébastien Angibaud
+ */
+
 #include "entete/element/base_element.h"
 
-
+/** --------------------------------------------------------------------------------------
+ * \brief Constructeur de la classe base_element.
+ */
 base_element::base_element()
     : m_type(type_element_indefini)
 {
 
 }
 
+/** --------------------------------------------------------------------------------------
+ * \brief Constructeur de la classe base_element.
+ * \param valeur La valeur booléenne de l'élément créé.
+ */
 base_element::base_element(bool valeur)
     : m_type(type_element_booleen),
       m_booleen(valeur)
@@ -14,6 +25,10 @@ base_element::base_element(bool valeur)
 
 }
 
+/** --------------------------------------------------------------------------------------
+ * \brief Constructeur de la classe base_element.
+ * \param valeur La valeur entière de l'élément créé.
+ */
 base_element::base_element(int valeur)
     : m_type(type_element_entier),
       m_entier(valeur)
@@ -21,6 +36,10 @@ base_element::base_element(int valeur)
 
 }
 
+/** --------------------------------------------------------------------------------------
+ * \brief Constructeur de la classe base_element.
+ * \param valeur La valeur de type QChar de l'élément créé.
+ */
 base_element::base_element(QChar valeur)
     : m_type(type_element_caractere),
       m_caractere(valeur)
@@ -28,6 +47,10 @@ base_element::base_element(QChar valeur)
 
 }
 
+/** --------------------------------------------------------------------------------------
+ * \brief Constructeur de la classe base_element.
+ * \param valeur La valeur de type QCharRef de l'élément créé.
+ */
 base_element::base_element(QCharRef valeur)
     : m_type(type_element_caractere),
       m_caractere(valeur)
@@ -35,17 +58,29 @@ base_element::base_element(QCharRef valeur)
 
 }
 
+/** --------------------------------------------------------------------------------------
+ * \brief Constructeur de la class base_element.
+ * \param valeur La valeur de type QString de l'élément créé..
+ */
 base_element::base_element(QString valeur)
     : m_type(type_element_string), m_string(valeur)
 {
 
 }
 
+/** --------------------------------------------------------------------------------------
+ * \brief Accesseur de l'attribut type.
+ * \return Le type de l'élément.
+ */
 type_element base_element::get_type() const
 {
     return m_type;
 }
 
+/** --------------------------------------------------------------------------------------
+ * \brief Accesseur de la valeur booléenne de l'élément.
+ * \return La valeur booléenne de l'élément.
+ */
 bool base_element::get_booleen() const
 {
     if ( m_type == type_element_entier )
@@ -58,6 +93,10 @@ bool base_element::get_booleen() const
         return m_booleen;
 }
 
+/** --------------------------------------------------------------------------------------
+ * \brief Accesseur de la valeur entière de l'élément.
+ * \return La valeur entière de l'élément.
+ */
 int base_element::get_entier() const
 {
     if ( m_type == type_element_entier )
@@ -66,11 +105,19 @@ int base_element::get_entier() const
         return m_string.toInt();
 }
 
+/** --------------------------------------------------------------------------------------
+ * \brief Accesseur de la valeur de type QChar de l'élément.
+ * \return La valeur de type QChar de l'élément.
+ */
 QChar base_element::get_caractere() const
 {
     return m_caractere;
 }
 
+/** --------------------------------------------------------------------------------------
+ * \brief Accesseur de la valeur de type QString de l'élément.
+ * \return La valeur de type QString de l'élément.
+ */
 QString base_element::to_string() const
 {
     switch ( m_type )
@@ -95,6 +142,11 @@ QString base_element::to_string() const
     }
 }
 
+/** --------------------------------------------------------------------------------------
+ * \brief Surcharge de l'opérateur d'infériorité.
+ * \param e Le base_element avec qui se comparer.
+ * \return \b True si le base_element courant est inférieur strictement au base_element donné, \b False sinon.
+ */
 bool base_element::operator <(const base_element& e) const
 {
     return m_string < e.m_string;

@@ -23,7 +23,7 @@ log_compilation::log_compilation(type_log type, QString message)
 /** --------------------------------------------------------------------------------------
  * \brief Constructeur de la classe log_compilation.
  * \param type Le type du message.
- * \param p Un pointeur sur l'objet associé au message.
+ * \param obj Un pointeur sur l'objet associé au message.
  * \param message Le message.
  */
 log_compilation::log_compilation(type_log type, objet_selectionnable *obj, QString message)

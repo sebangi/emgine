@@ -66,6 +66,9 @@ $(function() {
 </div><!--header-->
 <div class="contents">
 
+<p>Classe décrivant un ensemble de textes.  
+ <a href="classtextes.html#details">Plus de détails...</a></p>
+
 <p><code>#include &lt;<a class="el" href="textes_8h_source.html">textes.h</a>&gt;</code></p>
 <div class="dynheader">
 Graphe d'héritage de textes:</div>
@@ -81,19 +84,26 @@ Graphe de collaboration de textes:</div>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Fonctions membres publiques</h2></td></tr>
 <tr class="memitem:a55e1bcf7d622e225bf23041f765b0e18"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtextes.html#a55e1bcf7d622e225bf23041f765b0e18">textes</a> ()</td></tr>
+<tr class="memdesc:a55e1bcf7d622e225bf23041f765b0e18"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construteur par défaut de la classe textes.  <a href="#a55e1bcf7d622e225bf23041f765b0e18">Plus de détails...</a><br /></td></tr>
 <tr class="separator:a55e1bcf7d622e225bf23041f765b0e18"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7d696819731bd2b3192488addfbb7009"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtextes.html#a7d696819731bd2b3192488addfbb7009">textes</a> (const QString &amp;valeur)</td></tr>
+<tr class="memdesc:a7d696819731bd2b3192488addfbb7009"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructeur de la class textes.  <a href="#a7d696819731bd2b3192488addfbb7009">Plus de détails...</a><br /></td></tr>
 <tr class="separator:a7d696819731bd2b3192488addfbb7009"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa62ebcc0e00cdfca1c0640417069f6e0"><td class="memItemLeft" align="right" valign="top">QString&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtextes.html#aa62ebcc0e00cdfca1c0640417069f6e0">to_string</a> () const</td></tr>
+<tr class="memdesc:aa62ebcc0e00cdfca1c0640417069f6e0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retourne l'ensemble de textes au format QString.  <a href="#aa62ebcc0e00cdfca1c0640417069f6e0">Plus de détails...</a><br /></td></tr>
 <tr class="separator:aa62ebcc0e00cdfca1c0640417069f6e0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7b9f02a341d284ea7a7454642ff5135c"><td class="memItemLeft" align="right" valign="top">QString&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtextes.html#a7b9f02a341d284ea7a7454642ff5135c">to_string_lisible</a> () const</td></tr>
+<tr class="memdesc:a7b9f02a341d284ea7a7454642ff5135c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retourne l'ensemble de textes au format QString avec séparation des textes.  <a href="#a7b9f02a341d284ea7a7454642ff5135c">Plus de détails...</a><br /></td></tr>
 <tr class="separator:a7b9f02a341d284ea7a7454642ff5135c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a43f525d434beb88abf038c54fe656d91"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtextes.html#a43f525d434beb88abf038c54fe656d91">ajouter_texte</a> (const <a class="el" href="classconfiguration.html">configuration</a> &amp;config, const <a class="el" href="classtexte.html">texte</a> &amp;t)</td></tr>
+<tr class="memdesc:a43f525d434beb88abf038c54fe656d91"><td class="mdescLeft">&#160;</td><td class="mdescRight">Ajoute un texte donné.  <a href="#a43f525d434beb88abf038c54fe656d91">Plus de détails...</a><br /></td></tr>
 <tr class="separator:a43f525d434beb88abf038c54fe656d91"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Description détaillée</h2>
-<div class="textblock">
-<p class="definition">Définition à la ligne <a class="el" href="textes_8h_source.html#l00008">8</a> du fichier <a class="el" href="textes_8h_source.html">textes.h</a>.</p>
+<div class="textblock"><p>Classe décrivant un ensemble de textes. </p>
+<dl class="section author"><dt>Auteur</dt><dd>Sébastien Angibaud </dd></dl>
+
+<p class="definition">Définition à la ligne <a class="el" href="textes_8h_source.html#l00018">18</a> du fichier <a class="el" href="textes_8h_source.html">textes.h</a>.</p>
 </div><h2 class="groupheader">Documentation des constructeurs et destructeur</h2>
 <a id="a55e1bcf7d622e225bf23041f765b0e18"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a55e1bcf7d622e225bf23041f765b0e18">&#9670;&nbsp;</a></span>textes() <span class="overload">[1/2]</span></h2>
@@ -110,7 +120,10 @@ Fonctions membres publiques</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Définition à la ligne <a class="el" href="textes_8cpp_source.html#l00004">4</a> du fichier <a class="el" href="textes_8cpp_source.html">textes.cpp</a>.</p>
+<p>Construteur par défaut de la classe textes. </p>
+<hr/>
+ 
+<p class="definition">Définition à la ligne <a class="el" href="textes_8cpp_source.html#l00011">11</a> du fichier <a class="el" href="textes_8cpp_source.html">textes.cpp</a>.</p>
 
 </div>
 </div>
@@ -130,7 +143,16 @@ Fonctions membres publiques</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Définition à la ligne <a class="el" href="textes_8cpp_source.html#l00010">10</a> du fichier <a class="el" href="textes_8cpp_source.html">textes.cpp</a>.</p>
+<p>Constructeur de la class textes. </p>
+<hr/>
+ <dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">valeur</td><td>La chaîne de caractères induisant l'ensemble de textes. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Définition à la ligne <a class="el" href="textes_8cpp_source.html#l00021">21</a> du fichier <a class="el" href="textes_8cpp_source.html">textes.cpp</a>.</p>
 
 </div>
 </div>
@@ -161,7 +183,17 @@ Fonctions membres publiques</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Définition à la ligne <a class="el" href="textes_8cpp_source.html#l00040">40</a> du fichier <a class="el" href="textes_8cpp_source.html">textes.cpp</a>.</p>
+<p>Ajoute un texte donné. </p>
+<hr/>
+ <dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">config</td><td>La configuration à associer au texte ajouté. </td></tr>
+    <tr><td class="paramname">t</td><td>Le texte à ajouter. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Définition à la ligne <a class="el" href="textes_8cpp_source.html#l00064">64</a> du fichier <a class="el" href="textes_8cpp_source.html">textes.cpp</a>.</p>
 
 </div>
 </div>
@@ -180,7 +212,11 @@ Fonctions membres publiques</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Définition à la ligne <a class="el" href="textes_8cpp_source.html#l00017">17</a> du fichier <a class="el" href="textes_8cpp_source.html">textes.cpp</a>.</p>
+<p>Retourne l'ensemble de textes au format QString. </p>
+<hr/>
+ <dl class="section return"><dt>Renvoie</dt><dd>L'ensemble de textes au format QString. </dd></dl>
+
+<p class="definition">Définition à la ligne <a class="el" href="textes_8cpp_source.html#l00032">32</a> du fichier <a class="el" href="textes_8cpp_source.html">textes.cpp</a>.</p>
 
 </div>
 </div>
@@ -199,7 +235,11 @@ Fonctions membres publiques</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Définition à la ligne <a class="el" href="textes_8cpp_source.html#l00027">27</a> du fichier <a class="el" href="textes_8cpp_source.html">textes.cpp</a>.</p>
+<p>Retourne l'ensemble de textes au format QString avec séparation des textes. </p>
+<hr/>
+ <dl class="section return"><dt>Renvoie</dt><dd>L'ensemble de textes au format QString. </dd></dl>
+
+<p class="definition">Définition à la ligne <a class="el" href="textes_8cpp_source.html#l00046">46</a> du fichier <a class="el" href="textes_8cpp_source.html">textes.cpp</a>.</p>
 
 </div>
 </div>
@@ -210,7 +250,7 @@ Fonctions membres publiques</h2></td></tr>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Généré le Mardi 7 Février 2017 11:42:26 pour Emgine par &#160;<a href="http://www.doxygen.org/index.html">
+Généré le Mardi 7 Février 2017 13:51:39 pour Emgine par &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.13
 </small></address>

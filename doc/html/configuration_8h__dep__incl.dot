@@ -83,9 +83,9 @@ digraph "entete/compilation/configuration.h"
   Node5 -> Node34 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
   Node34 [label="src/fonction/fonction\l_source/fonction_source\l_texte.cpp",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$fonction__source__texte_8cpp.html"];
   Node4 -> Node35 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
-  Node35 [label="entete/element/texte.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$texte_8h.html"];
+  Node35 [label="entete/element/texte.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$texte_8h.html",tooltip="Fichier de déclaration de la classe texte. "];
   Node35 -> Node36 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
-  Node36 [label="entete/element/textes.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$textes_8h.html"];
+  Node36 [label="entete/element/textes.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$textes_8h.html",tooltip="Fichier de déclaration de la classe textes. "];
   Node36 -> Node5 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
   Node36 -> Node37 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
   Node37 [label="entete/projet/base\l_fonction.h",height=0.2,width=0.4,color="red", fillcolor="white", style="filled",URL="$base__fonction_8h.html",tooltip="Déclaration de la classe base_fonction. "];
@@ -115,7 +115,7 @@ digraph "entete/compilation/configuration.h"
   Node37 -> Node62 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
   Node62 [label="src/compilation/log\l_widget_item.cpp",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$log__widget__item_8cpp.html",tooltip="Fichier d&#39;implémentation de la classe log_widget_item. "];
   Node37 -> Node63 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
-  Node63 [label="src/element/texte.cpp",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$texte_8cpp.html"];
+  Node63 [label="src/element/texte.cpp",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$texte_8cpp.html",tooltip="Fichier d&#39;implémentation de la classe texte. "];
   Node37 -> Node13 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
   Node37 -> Node24 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
   Node37 -> Node14 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
@@ -139,7 +139,7 @@ digraph "entete/compilation/configuration.h"
   Node72 -> Node42 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
   Node42 [label="src/fonction_widget\l/fonction_sortie_widget\l/fonction_sortie_texte\l_widget.cpp",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$fonction__sortie__texte__widget_8cpp.html"];
   Node36 -> Node73 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
-  Node73 [label="src/element/textes.cpp",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$textes_8cpp.html"];
+  Node73 [label="src/element/textes.cpp",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$textes_8cpp.html",tooltip="Fichier d&#39;implémentation de la classe textes. "];
   Node35 -> Node74 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
   Node74 [label="entete/fonction_widget\l/fonction_sortie_widget\l/texte_widget_item.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$texte__widget__item_8h.html"];
   Node74 -> Node42 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];

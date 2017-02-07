@@ -1,23 +1,37 @@
 #ifndef BASE_NOEUD_H
 #define BASE_NOEUD_H
 
-#include <QTreeWidgetItem>
-#include <QObject>
-#include "entete/compilation/compilateur.h"
+/** \file base_noeud.h
+ * \brief Fichier de déclaration de la classe base_noeud.
+ * \author Sébastien Angibaud
+ */
 
-class fonctions_conteneur;
+#include <QObject>
+#include <QTreeWidgetItem>
+
 class objet_selectionnable;
 
+/**
+ * \class base_noeud
+ * \brief Classe décrivant un noeud quelconque de l'explorateur.
+ * \author Sébastien Angibaud
+ */
 class base_noeud : public QTreeWidgetItem
 {
     public:
-        /*!
-        \brief Type décrivant les différents types de noeud.
-        */
+        /** \enum type_noeud
+         *  \author Sébastien Angibaud
+         *  \brief Enumération représentant les différents types de noeud de l'explorateur.
+         */
         enum type_noeud{
-            type_projet = QTreeWidgetItem::UserType,
-            type_parametre,
-            type_fonction
+            /** \brief Type de noeud pour les projets. */
+            TYPE_NOEUD_PROJET = QTreeWidgetItem::UserType,
+
+            /** \brief Type de noeud pour les paramètres. */
+            TYPE_NOEUD_PARAMETRE,
+
+            /** \brief Type de noeud pour les fonctions. */
+            TYPE_NOEUD_FONCTION
         };
 
     public:
@@ -25,14 +39,16 @@ class base_noeud : public QTreeWidgetItem
         ~base_noeud();
 
         objet_selectionnable *get_objet() const;
-        void update_style(bool actif);
-
+        void mettre_a_jour_style(bool actif);
         bool get_save_expanded() const;
         void save_expanded();
         virtual void mise_a_jour_icone();
 
     protected:
+        /** \brief L'objet sélectionnable associé au noeud. */
         objet_selectionnable * m_objet;
+
+        /** \brief Sauvegarde de l'état d'expansion du noeud avant compactage automatique. */
         bool m_save_expanded;
 };
 

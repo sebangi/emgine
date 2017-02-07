@@ -16,5 +16,5 @@ digraph "fonction_sortie_texte_widget::sauvegarder_texte"
   Node33 -> Node38 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
   Node38 [label="texte_widget_item::\lget_texte",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classtexte__widget__item.html#aa7b79c434b1d0ea9250762aae38d95a5"];
   Node33 -> Node39 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
-  Node39 [label="texte::to_string_lisible",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classtexte.html#a9c669914e39b9bd4075a6840ac923087"];
+  Node39 [label="texte::to_string_lisible",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classtexte.html#a9c669914e39b9bd4075a6840ac923087",tooltip="Convertit le texte au format QString avec séparateur de ligne. "];
 }

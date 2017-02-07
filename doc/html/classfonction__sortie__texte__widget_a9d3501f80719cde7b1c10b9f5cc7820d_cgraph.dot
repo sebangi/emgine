@@ -27,7 +27,7 @@ digraph "fonction_sortie_texte_widget::fonction_sortie_texte_widget"
   Node10 [label="projet::get_dossier",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classprojet.html#a090c95e58831875cf4e81928c1d75b7e"];
   Node6 -> Node5 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
   Node6 -> Node11 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
-  Node11 [label="texte::to_string_lisible",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classtexte.html#a9c669914e39b9bd4075a6840ac923087"];
+  Node11 [label="texte::to_string_lisible",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classtexte.html#a9c669914e39b9bd4075a6840ac923087",tooltip="Convertit le texte au format QString avec séparateur de ligne. "];
   Node1 -> Node12 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
   Node12 [label="fonction_sortie_texte\l_widget::creer_liste_texte",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classfonction__sortie__texte__widget.html#a09615dfdc31610fe303d041613cc7dc9"];
   Node1 -> Node13 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];

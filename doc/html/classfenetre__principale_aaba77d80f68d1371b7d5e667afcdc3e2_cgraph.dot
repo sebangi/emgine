@@ -126,5 +126,5 @@ digraph "fenetre_principale::creer_projet"
   Node569 -> Node571 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
   Node571 [label="base_fonction::set\l_conteneur",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classbase__fonction.html#aa487a07ab1961bfbdf04ddd3c72b4d3c"];
   Node478 -> Node572 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
-  Node572 [label="texte::to_string_lisible",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classtexte.html#a9c669914e39b9bd4075a6840ac923087"];
+  Node572 [label="texte::to_string_lisible",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classtexte.html#a9c669914e39b9bd4075a6840ac923087",tooltip="Convertit le texte au format QString avec séparateur de ligne. "];
 }
