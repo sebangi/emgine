@@ -1,0 +1,10 @@
+<map id="fonction_sortie_texte_widget::showContextMenu" name="fonction_sortie_texte_widget::showContextMenu">
+<area shape="rect" id="node2" href="$classfonction__sortie__texte__widget.html#a93e0c2bbb93180e935e40e1830984122" title="fonction_sortie_texte\l_widget::creer_projet" alt="" coords="258,26,401,67"/>
+<area shape="rect" id="node4" href="$classfonction__sortie__texte__widget.html#a956d512437dfa8bc0920c191af010e59" title="fonction_sortie_texte\l_widget::sauvegarder_texte" alt="" coords="238,133,421,174"/>
+<area shape="rect" id="node3" href="$classtexte__widget__item.html#ac44b3d9bd91591cf701399120973642d" title="texte_widget_item::\lget_texte" alt="" coords="476,5,612,46"/>
+<area shape="rect" id="node5" href="$classobjet__selectionnable.html#ab48a75e720955aebe27f720dfaa5e78e" title="objet_selectionnable\l::get_projet" alt="" coords="474,94,614,135"/>
+<area shape="rect" id="node7" href="$classprojet.html#a6f3595b0a0025ddf250561ebbfb3726b" title="projet::est_nouveau" alt="" coords="476,160,612,187"/>
+<area shape="rect" id="node8" href="$classprojet.html#aa44b3d76899e78d5259dec6fdf5e6855" title="projet::get_dossier" alt="" coords="479,211,609,237"/>
+<area shape="rect" id="node9" href="$classtexte.html#a199d73842cb743e47fdd71afc7bbe1d0" title="Convertit le texte au format QString avec séparateur de ligne. " alt="" coords="469,261,619,288"/>
+<area shape="rect" id="node6" href="$classobjet__selectionnable.html#a97e33c61983d5c7811e8bacff8f114c4" title="objet_selectionnable\l::est_projet" alt="" coords="667,94,807,135"/>
+</map>

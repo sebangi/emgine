@@ -38,6 +38,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Recherche');
     <ul class="tablist">
       <li><a href="index.html"><span>Page&#160;principale</span></a></li>
       <li><a href="pages.html"><span>Pages&#160;associées</span></a></li>
+      <li><a href="modules.html"><span>Modules</span></a></li>
       <li class="current"><a href="annotated.html"><span>Classes</span></a></li>
       <li><a href="files.html"><span>Fichiers</span></a></li>
       <li>
@@ -71,7 +72,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Recherche');
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>Tout</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Fonctions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Définitions de type</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Énumérations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Pages</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>Tout</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Espaces de nommage</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Fichiers</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Fonctions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Définitions de type</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Énumérations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Valeurs énumérées</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&#160;</span>Groupes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(10)"><span class="SelectionMark">&#160;</span>Pages</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -90,39 +91,152 @@ var searchBox = new SearchBox("searchBox", "search",false,'Recherche');
 <div class="title">Référence de la classe bibliotheque_fonctions</div>  </div>
 </div><!--header-->
 <div class="contents">
+
+<p><code>#include &lt;<a class="el" href="bibliotheque__fonctions_8h_source.html">bibliotheque_fonctions.h</a>&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-methods"></a>
 Fonctions membres publiques statiques</h2></td></tr>
-<tr class="memitem:a97e2db5603fe4267df7ace47f110b6e0"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a97e2db5603fe4267df7ace47f110b6e0"></a>
-static <a class="el" href="classbase__fonction.html">base_fonction</a> *&#160;</td><td class="memItemRight" valign="bottom"><b>get_fonction</b> (type_id_fonction id)</td></tr>
+<tr class="memitem:a97e2db5603fe4267df7ace47f110b6e0"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classbase__fonction.html">base_fonction</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classbibliotheque__fonctions.html#a97e2db5603fe4267df7ace47f110b6e0">get_fonction</a> (<a class="el" href="define__fonction_8h.html#af2e23e67d8ce69a3ba22b4d5b2855b2f">type_id_fonction</a> id)</td></tr>
 <tr class="separator:a97e2db5603fe4267df7ace47f110b6e0"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af09bab02cd189c76012784c77f336a90"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="af09bab02cd189c76012784c77f336a90"></a>
-static QString&#160;</td><td class="memItemRight" valign="bottom"><b>get_aide</b> (type_id_fonction id)</td></tr>
+<tr class="memitem:af09bab02cd189c76012784c77f336a90"><td class="memItemLeft" align="right" valign="top">static QString&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classbibliotheque__fonctions.html#af09bab02cd189c76012784c77f336a90">get_aide</a> (<a class="el" href="define__fonction_8h.html#af2e23e67d8ce69a3ba22b4d5b2855b2f">type_id_fonction</a> id)</td></tr>
 <tr class="separator:af09bab02cd189c76012784c77f336a90"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac8c035960c49cdf0fe7437b82739154e"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ac8c035960c49cdf0fe7437b82739154e"></a>
-static QString&#160;</td><td class="memItemRight" valign="bottom"><b>get_nom</b> (type_id_fonction id)</td></tr>
+<tr class="memitem:ac8c035960c49cdf0fe7437b82739154e"><td class="memItemLeft" align="right" valign="top">static QString&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classbibliotheque__fonctions.html#ac8c035960c49cdf0fe7437b82739154e">get_nom</a> (<a class="el" href="define__fonction_8h.html#af2e23e67d8ce69a3ba22b4d5b2855b2f">type_id_fonction</a> id)</td></tr>
 <tr class="separator:ac8c035960c49cdf0fe7437b82739154e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a04f3a1112f61c115ccb77d9cd0d33d1a"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a04f3a1112f61c115ccb77d9cd0d33d1a"></a>
-static bool&#160;</td><td class="memItemRight" valign="bottom"><b>contient_mot_cle</b> (type_id_fonction id, const QString &amp;cle)</td></tr>
+<tr class="memitem:a04f3a1112f61c115ccb77d9cd0d33d1a"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classbibliotheque__fonctions.html#a04f3a1112f61c115ccb77d9cd0d33d1a">contient_mot_cle</a> (<a class="el" href="define__fonction_8h.html#af2e23e67d8ce69a3ba22b4d5b2855b2f">type_id_fonction</a> id, const QString &amp;cle)</td></tr>
 <tr class="separator:a04f3a1112f61c115ccb77d9cd0d33d1a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-static-attribs"></a>
 Attributs privés statiques</h2></td></tr>
 <tr class="memitem:a4dd28c86134053a78298a3cd566ae546"><td class="memItemLeft" align="right" valign="top">static std::map<br class="typebreak"/>
-&lt; type_id_fonction, QString &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>s_fonctions_aide</b></td></tr>
+&lt; <a class="el" href="define__fonction_8h.html#af2e23e67d8ce69a3ba22b4d5b2855b2f">type_id_fonction</a>, QString &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classbibliotheque__fonctions.html#a4dd28c86134053a78298a3cd566ae546">s_fonctions_aide</a></td></tr>
 <tr class="separator:a4dd28c86134053a78298a3cd566ae546"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7684a2aa4cbcbaa1ec909274027271bf"><td class="memItemLeft" align="right" valign="top">static std::map<br class="typebreak"/>
-&lt; type_id_fonction, QString &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>s_fonctions_nom</b></td></tr>
+&lt; <a class="el" href="define__fonction_8h.html#af2e23e67d8ce69a3ba22b4d5b2855b2f">type_id_fonction</a>, QString &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classbibliotheque__fonctions.html#a7684a2aa4cbcbaa1ec909274027271bf">s_fonctions_nom</a></td></tr>
 <tr class="separator:a7684a2aa4cbcbaa1ec909274027271bf"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9d2d4c4d203f964885415418809474d6"><td class="memItemLeft" align="right" valign="top">static std::map<br class="typebreak"/>
-&lt; type_id_fonction, std::set<br class="typebreak"/>
-&lt; QString &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>s_categories</b></td></tr>
+&lt; <a class="el" href="define__fonction_8h.html#af2e23e67d8ce69a3ba22b4d5b2855b2f">type_id_fonction</a>, std::set<br class="typebreak"/>
+&lt; QString &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classbibliotheque__fonctions.html#a9d2d4c4d203f964885415418809474d6">s_categories</a></td></tr>
 <tr class="separator:a9d2d4c4d203f964885415418809474d6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Description détaillée</h2>
 <div class="textblock">
 <p>Définition à la ligne <a class="el" href="bibliotheque__fonctions_8h_source.html#l00012">12</a> du fichier <a class="el" href="bibliotheque__fonctions_8h_source.html">bibliotheque_fonctions.h</a>.</p>
-</div><h2 class="groupheader">Documentation des données membres</h2>
+</div><h2 class="groupheader">Documentation des fonctions membres</h2>
+<a class="anchor" id="a04f3a1112f61c115ccb77d9cd0d33d1a"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool bibliotheque_fonctions::contient_mot_cle </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="define__fonction_8h.html#af2e23e67d8ce69a3ba22b4d5b2855b2f">type_id_fonction</a>&#160;</td>
+          <td class="paramname"><em>id</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const QString &amp;&#160;</td>
+          <td class="paramname"><em>cle</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Définition à la ligne <a class="el" href="bibliotheque__fonctions_8cpp_source.html#l00114">114</a> du fichier <a class="el" href="bibliotheque__fonctions_8cpp_source.html">bibliotheque_fonctions.cpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="af09bab02cd189c76012784c77f336a90"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QString bibliotheque_fonctions::get_aide </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="define__fonction_8h.html#af2e23e67d8ce69a3ba22b4d5b2855b2f">type_id_fonction</a>&#160;</td>
+          <td class="paramname"><em>id</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Définition à la ligne <a class="el" href="bibliotheque__fonctions_8cpp_source.html#l00094">94</a> du fichier <a class="el" href="bibliotheque__fonctions_8cpp_source.html">bibliotheque_fonctions.cpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a97e2db5603fe4267df7ace47f110b6e0"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classbase__fonction.html">base_fonction</a> * bibliotheque_fonctions::get_fonction </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="define__fonction_8h.html#af2e23e67d8ce69a3ba22b4d5b2855b2f">type_id_fonction</a>&#160;</td>
+          <td class="paramname"><em>id</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Définition à la ligne <a class="el" href="bibliotheque__fonctions_8cpp_source.html#l00072">72</a> du fichier <a class="el" href="bibliotheque__fonctions_8cpp_source.html">bibliotheque_fonctions.cpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ac8c035960c49cdf0fe7437b82739154e"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QString bibliotheque_fonctions::get_nom </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="define__fonction_8h.html#af2e23e67d8ce69a3ba22b4d5b2855b2f">type_id_fonction</a>&#160;</td>
+          <td class="paramname"><em>id</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Définition à la ligne <a class="el" href="bibliotheque__fonctions_8cpp_source.html#l00104">104</a> du fichier <a class="el" href="bibliotheque__fonctions_8cpp_source.html">bibliotheque_fonctions.cpp</a>.</p>
+
+</div>
+</div>
+<h2 class="groupheader">Documentation des données membres</h2>
 <a class="anchor" id="a9d2d4c4d203f964885415418809474d6"></a>
 <div class="memitem">
 <div class="memproto">
@@ -131,7 +245,7 @@ Attributs privés statiques</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">std::map&lt; type_id_fonction, std::set&lt; QString &gt; &gt; bibliotheque_fonctions::s_categories</td>
+          <td class="memname">std::map&lt; <a class="el" href="define__fonction_8h.html#af2e23e67d8ce69a3ba22b4d5b2855b2f">type_id_fonction</a>, std::set&lt; QString &gt; &gt; bibliotheque_fonctions::s_categories</td>
         </tr>
       </table>
   </td>
@@ -142,28 +256,31 @@ Attributs privés statiques</h2></td></tr>
 </div><div class="memdoc">
 <b>Valeur initiale :</b><div class="fragment"><div class="line">=</div>
 <div class="line">{</div>
-<div class="line">    { f_source_booleen,</div>
+<div class="line">    { <a class="code" href="define__fonction_8h.html#af2e23e67d8ce69a3ba22b4d5b2855b2fa9bb494a0d36e96b39fe7c5ff4b19ff83">f_source_booleen</a>,</div>
 <div class="line">      { <span class="stringliteral">&quot;booléen&quot;</span>, <span class="stringliteral">&quot;booleen&quot;</span> }</div>
 <div class="line">    },</div>
-<div class="line">    { f_source_entier,</div>
+<div class="line">    { <a class="code" href="define__fonction_8h.html#af2e23e67d8ce69a3ba22b4d5b2855b2fa5da1d9acd6aeac2342de1d5407ba965c">f_source_entier</a>,</div>
 <div class="line">      {  }</div>
 <div class="line">    },</div>
-<div class="line">    { f_source_texte,</div>
+<div class="line">    { <a class="code" href="define__fonction_8h.html#af2e23e67d8ce69a3ba22b4d5b2855b2fafaea8cb267e301ef1af74d6fd3035439">f_source_texte</a>,</div>
 <div class="line">      { }</div>
 <div class="line">    },</div>
-<div class="line">    { f_source_caractere,</div>
+<div class="line">    { <a class="code" href="define__fonction_8h.html#af2e23e67d8ce69a3ba22b4d5b2855b2fac318eeebfb3489978f33ad25d8a1d4a0">f_source_fichier_texte</a>,</div>
+<div class="line">      { }</div>
+<div class="line">    },</div>
+<div class="line">    { <a class="code" href="define__fonction_8h.html#af2e23e67d8ce69a3ba22b4d5b2855b2fa7f4dc8a876adddf33d01d47bbc61bea9">f_source_caractere</a>,</div>
 <div class="line">      { <span class="stringliteral">&quot;caracteres&quot;</span> }</div>
 <div class="line">    },</div>
-<div class="line">    { f_source_choix,</div>
+<div class="line">    { <a class="code" href="define__fonction_8h.html#af2e23e67d8ce69a3ba22b4d5b2855b2fa3f7f3f5c65aad3f1be225b8aaeed3174">f_source_choix</a>,</div>
 <div class="line">      { }</div>
 <div class="line">    },</div>
-<div class="line">    { f_source_generateur_permutation,</div>
+<div class="line">    { <a class="code" href="define__fonction_8h.html#af2e23e67d8ce69a3ba22b4d5b2855b2faa169e967c92b77c5e135e55ec6b04623">f_source_generateur_permutation</a>,</div>
 <div class="line">      { }</div>
 <div class="line">    },</div>
-<div class="line">    { f_conversion_cesar,</div>
+<div class="line">    { <a class="code" href="define__fonction_8h.html#af2e23e67d8ce69a3ba22b4d5b2855b2faaf8ad8213ccc11be34b247fc757eb644">f_conversion_cesar</a>,</div>
 <div class="line">      { }</div>
 <div class="line">    },</div>
-<div class="line">    { f_sortie_texte,</div>
+<div class="line">    { <a class="code" href="define__fonction_8h.html#af2e23e67d8ce69a3ba22b4d5b2855b2fa0596ae563bb3f03b2b3f4e3ee952ef54">f_sortie_texte</a>,</div>
 <div class="line">      { }</div>
 <div class="line">    }</div>
 <div class="line">}</div>
@@ -180,7 +297,7 @@ Attributs privés statiques</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">std::map&lt; type_id_fonction, QString &gt; bibliotheque_fonctions::s_fonctions_aide</td>
+          <td class="memname">std::map&lt; <a class="el" href="define__fonction_8h.html#af2e23e67d8ce69a3ba22b4d5b2855b2f">type_id_fonction</a>, QString &gt; bibliotheque_fonctions::s_fonctions_aide</td>
         </tr>
       </table>
   </td>
@@ -191,14 +308,15 @@ Attributs privés statiques</h2></td></tr>
 </div><div class="memdoc">
 <b>Valeur initiale :</b><div class="fragment"><div class="line">=</div>
 <div class="line">{</div>
-<div class="line">    { f_source_booleen, <span class="stringliteral">&quot;Source de type Oui ou Non&quot;</span> },</div>
-<div class="line">    { f_source_entier, <span class="stringliteral">&quot;Source de type entier&quot;</span> },</div>
-<div class="line">    { f_source_texte, <span class="stringliteral">&quot;Source textuelle&quot;</span> },</div>
-<div class="line">    { f_source_caractere, <span class="stringliteral">&quot;Source de type un caractère&quot;</span> },</div>
-<div class="line">    { f_source_choix, <span class="stringliteral">&quot;Source de type choix&quot;</span> },</div>
-<div class="line">    { f_source_generateur_permutation, <span class="stringliteral">&quot;Générateur de permutations&quot;</span> },</div>
-<div class="line">    { f_conversion_cesar, <span class="stringliteral">&quot;Outil pour décoder/encoder avec César.\nLe code César (ou chiffre de César) est un chiffrement par décalage parmi les plus simples et les plus connu, il utilise la substitution d&#39;une lettre par une autre plus loin dans l&#39;alphabet.&quot;</span> },</div>
-<div class="line">    { f_sortie_texte, <span class="stringliteral">&quot;Sortie textuelle : la liste de tous les textes obtenus.&quot;</span> }</div>
+<div class="line">    { <a class="code" href="define__fonction_8h.html#af2e23e67d8ce69a3ba22b4d5b2855b2fa9bb494a0d36e96b39fe7c5ff4b19ff83">f_source_booleen</a>, <span class="stringliteral">&quot;Source de type Oui ou Non&quot;</span> },</div>
+<div class="line">    { <a class="code" href="define__fonction_8h.html#af2e23e67d8ce69a3ba22b4d5b2855b2fa5da1d9acd6aeac2342de1d5407ba965c">f_source_entier</a>, <span class="stringliteral">&quot;Source de type entier&quot;</span> },</div>
+<div class="line">    { <a class="code" href="define__fonction_8h.html#af2e23e67d8ce69a3ba22b4d5b2855b2fafaea8cb267e301ef1af74d6fd3035439">f_source_texte</a>, <span class="stringliteral">&quot;Source textuelle&quot;</span> },</div>
+<div class="line">    { <a class="code" href="define__fonction_8h.html#af2e23e67d8ce69a3ba22b4d5b2855b2fac318eeebfb3489978f33ad25d8a1d4a0">f_source_fichier_texte</a>, <span class="stringliteral">&quot;Source fichier textuel&quot;</span> },</div>
+<div class="line">    { <a class="code" href="define__fonction_8h.html#af2e23e67d8ce69a3ba22b4d5b2855b2fa7f4dc8a876adddf33d01d47bbc61bea9">f_source_caractere</a>, <span class="stringliteral">&quot;Source de type un caractère&quot;</span> },</div>
+<div class="line">    { <a class="code" href="define__fonction_8h.html#af2e23e67d8ce69a3ba22b4d5b2855b2fa3f7f3f5c65aad3f1be225b8aaeed3174">f_source_choix</a>, <span class="stringliteral">&quot;Source de type choix&quot;</span> },</div>
+<div class="line">    { <a class="code" href="define__fonction_8h.html#af2e23e67d8ce69a3ba22b4d5b2855b2faa169e967c92b77c5e135e55ec6b04623">f_source_generateur_permutation</a>, <span class="stringliteral">&quot;Générateur de permutations&quot;</span> },</div>
+<div class="line">    { <a class="code" href="define__fonction_8h.html#af2e23e67d8ce69a3ba22b4d5b2855b2faaf8ad8213ccc11be34b247fc757eb644">f_conversion_cesar</a>, <span class="stringliteral">&quot;Outil pour décoder/encoder avec César.\nLe code César (ou chiffre de César) est un chiffrement par décalage parmi les plus simples et les plus connu, il utilise la substitution d&#39;une lettre par une autre plus loin dans l&#39;alphabet.&quot;</span> },</div>
+<div class="line">    { <a class="code" href="define__fonction_8h.html#af2e23e67d8ce69a3ba22b4d5b2855b2fa0596ae563bb3f03b2b3f4e3ee952ef54">f_sortie_texte</a>, <span class="stringliteral">&quot;Sortie textuelle : la liste de tous les textes obtenus.&quot;</span> }</div>
 <div class="line">}</div>
 </div><!-- fragment -->
 <p>Définition à la ligne <a class="el" href="bibliotheque__fonctions_8h_source.html#l00022">22</a> du fichier <a class="el" href="bibliotheque__fonctions_8h_source.html">bibliotheque_fonctions.h</a>.</p>
@@ -213,7 +331,7 @@ Attributs privés statiques</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">std::map&lt; type_id_fonction, QString &gt; bibliotheque_fonctions::s_fonctions_nom</td>
+          <td class="memname">std::map&lt; <a class="el" href="define__fonction_8h.html#af2e23e67d8ce69a3ba22b4d5b2855b2f">type_id_fonction</a>, QString &gt; bibliotheque_fonctions::s_fonctions_nom</td>
         </tr>
       </table>
   </td>
@@ -224,14 +342,15 @@ Attributs privés statiques</h2></td></tr>
 </div><div class="memdoc">
 <b>Valeur initiale :</b><div class="fragment"><div class="line">=</div>
 <div class="line">{</div>
-<div class="line">    { f_source_booleen, <span class="stringliteral">&quot;Oui ou Non&quot;</span> },</div>
-<div class="line">    { f_source_entier, <span class="stringliteral">&quot;Entier&quot;</span> },</div>
-<div class="line">    { f_source_texte, <span class="stringliteral">&quot;Texte&quot;</span> },</div>
-<div class="line">    { f_source_caractere, <span class="stringliteral">&quot;Caractères&quot;</span> },</div>
-<div class="line">    { f_source_choix, <span class="stringliteral">&quot;Choix&quot;</span> },</div>
-<div class="line">    { f_source_generateur_permutation, <span class="stringliteral">&quot;Générateur de permutations&quot;</span> },</div>
-<div class="line">    { f_conversion_cesar, <span class="stringliteral">&quot;Chiffrement par Code César&quot;</span> },</div>
-<div class="line">    { f_sortie_texte, <span class="stringliteral">&quot;Textes&quot;</span> }</div>
+<div class="line">    { <a class="code" href="define__fonction_8h.html#af2e23e67d8ce69a3ba22b4d5b2855b2fa9bb494a0d36e96b39fe7c5ff4b19ff83">f_source_booleen</a>, <span class="stringliteral">&quot;Oui ou Non&quot;</span> },</div>
+<div class="line">    { <a class="code" href="define__fonction_8h.html#af2e23e67d8ce69a3ba22b4d5b2855b2fa5da1d9acd6aeac2342de1d5407ba965c">f_source_entier</a>, <span class="stringliteral">&quot;Entier&quot;</span> },</div>
+<div class="line">    { <a class="code" href="define__fonction_8h.html#af2e23e67d8ce69a3ba22b4d5b2855b2fafaea8cb267e301ef1af74d6fd3035439">f_source_texte</a>, <span class="stringliteral">&quot;Texte&quot;</span> },</div>
+<div class="line">    { <a class="code" href="define__fonction_8h.html#af2e23e67d8ce69a3ba22b4d5b2855b2fac318eeebfb3489978f33ad25d8a1d4a0">f_source_fichier_texte</a>, <span class="stringliteral">&quot;Fichier texte&quot;</span> },</div>
+<div class="line">    { <a class="code" href="define__fonction_8h.html#af2e23e67d8ce69a3ba22b4d5b2855b2fa7f4dc8a876adddf33d01d47bbc61bea9">f_source_caractere</a>, <span class="stringliteral">&quot;Caractères&quot;</span> },</div>
+<div class="line">    { <a class="code" href="define__fonction_8h.html#af2e23e67d8ce69a3ba22b4d5b2855b2fa3f7f3f5c65aad3f1be225b8aaeed3174">f_source_choix</a>, <span class="stringliteral">&quot;Choix&quot;</span> },</div>
+<div class="line">    { <a class="code" href="define__fonction_8h.html#af2e23e67d8ce69a3ba22b4d5b2855b2faa169e967c92b77c5e135e55ec6b04623">f_source_generateur_permutation</a>, <span class="stringliteral">&quot;Générateur de permutations&quot;</span> },</div>
+<div class="line">    { <a class="code" href="define__fonction_8h.html#af2e23e67d8ce69a3ba22b4d5b2855b2faaf8ad8213ccc11be34b247fc757eb644">f_conversion_cesar</a>, <span class="stringliteral">&quot;Chiffrement par Code César&quot;</span> },</div>
+<div class="line">    { <a class="code" href="define__fonction_8h.html#af2e23e67d8ce69a3ba22b4d5b2855b2fa0596ae563bb3f03b2b3f4e3ee952ef54">f_sortie_texte</a>, <span class="stringliteral">&quot;Textes&quot;</span> }</div>
 <div class="line">}</div>
 </div><!-- fragment -->
 <p>Définition à la ligne <a class="el" href="bibliotheque__fonctions_8h_source.html#l00023">23</a> du fichier <a class="el" href="bibliotheque__fonctions_8h_source.html">bibliotheque_fonctions.h</a>.</p>
@@ -245,7 +364,7 @@ Attributs privés statiques</h2></td></tr>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Généré le Mercredi 8 Février 2017 09:50:12 pour Emgine par &#160;<a href="http://www.doxygen.org/index.html">
+Généré le Mercredi 8 Février 2017 09:53:35 pour Emgine par &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.6
 </small></address>

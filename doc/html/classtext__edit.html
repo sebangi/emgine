@@ -38,6 +38,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Recherche');
     <ul class="tablist">
       <li><a href="index.html"><span>Page&#160;principale</span></a></li>
       <li><a href="pages.html"><span>Pages&#160;associées</span></a></li>
+      <li><a href="modules.html"><span>Modules</span></a></li>
       <li class="current"><a href="annotated.html"><span>Classes</span></a></li>
       <li><a href="files.html"><span>Fichiers</span></a></li>
       <li>
@@ -71,7 +72,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Recherche');
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>Tout</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Fonctions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Définitions de type</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Énumérations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Pages</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>Tout</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Espaces de nommage</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Fichiers</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Fonctions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Définitions de type</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Énumérations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Valeurs énumérées</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&#160;</span>Groupes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(10)"><span class="SelectionMark">&#160;</span>Pages</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -89,37 +90,105 @@ var searchBox = new SearchBox("searchBox", "search",false,'Recherche');
 <div class="title">Référence de la classe text_edit</div>  </div>
 </div><!--header-->
 <div class="contents">
+
+<p><code>#include &lt;<a class="el" href="text__edit_8h_source.html">text_edit.h</a>&gt;</code></p>
 <div class="dynheader">
 Graphe d'héritage de text_edit:</div>
 <div class="dyncontent">
 <div class="center"><img src="classtext__edit__inherit__graph.png" border="0" usemap="#text__edit_inherit__map" alt="Inheritance graph"/></div>
+<map name="text__edit_inherit__map" id="text__edit_inherit__map">
+</map>
 <center><span class="legend">[<a href="graph_legend.html">légende</a>]</span></center></div>
 <div class="dynheader">
 Graphe de collaboration de text_edit:</div>
 <div class="dyncontent">
 <div class="center"><img src="classtext__edit__coll__graph.png" border="0" usemap="#text__edit_coll__map" alt="Collaboration graph"/></div>
+<map name="text__edit_coll__map" id="text__edit_coll__map">
+</map>
 <center><span class="legend">[<a href="graph_legend.html">légende</a>]</span></center></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Fonctions membres publiques</h2></td></tr>
-<tr class="memitem:a2cab0c20c2287214746ae4698dda8363"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a2cab0c20c2287214746ae4698dda8363"></a>
-QSize&#160;</td><td class="memItemRight" valign="bottom"><b>sizeHint</b> () const </td></tr>
+<tr class="memitem:a655966d1d7d70259f214c0336812cbf1"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtext__edit.html#a655966d1d7d70259f214c0336812cbf1">text_edit</a> ()</td></tr>
+<tr class="separator:a655966d1d7d70259f214c0336812cbf1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2cab0c20c2287214746ae4698dda8363"><td class="memItemLeft" align="right" valign="top">QSize&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtext__edit.html#a2cab0c20c2287214746ae4698dda8363">sizeHint</a> () const </td></tr>
 <tr class="separator:a2cab0c20c2287214746ae4698dda8363"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a96d262da9527edf2aba1aa6c20dd8c68"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a96d262da9527edf2aba1aa6c20dd8c68"></a>
-QSize&#160;</td><td class="memItemRight" valign="bottom"><b>minimumSizeHint</b> () const </td></tr>
+<tr class="memitem:a96d262da9527edf2aba1aa6c20dd8c68"><td class="memItemLeft" align="right" valign="top">QSize&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtext__edit.html#a96d262da9527edf2aba1aa6c20dd8c68">minimumSizeHint</a> () const </td></tr>
 <tr class="separator:a96d262da9527edf2aba1aa6c20dd8c68"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Description détaillée</h2>
 <div class="textblock">
 <p>Définition à la ligne <a class="el" href="text__edit_8h_source.html#l00006">6</a> du fichier <a class="el" href="text__edit_8h_source.html">text_edit.h</a>.</p>
-</div><hr/>La documentation de cette classe a été générée à partir des fichiers suivants :<ul>
+</div><h2 class="groupheader">Documentation des constructeurs et destructeur</h2>
+<a class="anchor" id="a655966d1d7d70259f214c0336812cbf1"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">text_edit::text_edit </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Définition à la ligne <a class="el" href="text__edit_8cpp_source.html#l00004">4</a> du fichier <a class="el" href="text__edit_8cpp_source.html">text_edit.cpp</a>.</p>
+
+</div>
+</div>
+<h2 class="groupheader">Documentation des fonctions membres</h2>
+<a class="anchor" id="a96d262da9527edf2aba1aa6c20dd8c68"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">QSize text_edit::minimumSizeHint </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Définition à la ligne <a class="el" href="text__edit_8cpp_source.html#l00017">17</a> du fichier <a class="el" href="text__edit_8cpp_source.html">text_edit.cpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a2cab0c20c2287214746ae4698dda8363"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">QSize text_edit::sizeHint </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Définition à la ligne <a class="el" href="text__edit_8cpp_source.html#l00012">12</a> du fichier <a class="el" href="text__edit_8cpp_source.html">text_edit.cpp</a>.</p>
+
+<p><div class="dynheader">
+Voici le graphe d'appel pour cette fonction :</div>
+<div class="dyncontent">
+<div class="center"><img src="classtext__edit_a2cab0c20c2287214746ae4698dda8363_cgraph.png" border="0" usemap="#classtext__edit_a2cab0c20c2287214746ae4698dda8363_cgraph" alt=""/></div>
+<map name="classtext__edit_a2cab0c20c2287214746ae4698dda8363_cgraph" id="classtext__edit_a2cab0c20c2287214746ae4698dda8363_cgraph">
+<area shape="rect" id="node2" href="classtext__edit.html#a96d262da9527edf2aba1aa6c20dd8c68" title="text_edit::minimumSizeHint" alt="" coords="182,5,365,32"/></map>
+</div>
+</p>
+
+</div>
+</div>
+<hr/>La documentation de cette classe a été générée à partir des fichiers suivants :<ul>
 <li>entete/fonction_widget/<a class="el" href="text__edit_8h_source.html">text_edit.h</a></li>
 <li>src/fonction_widget/<a class="el" href="text__edit_8cpp_source.html">text_edit.cpp</a></li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Généré le Mercredi 8 Février 2017 09:50:12 pour Emgine par &#160;<a href="http://www.doxygen.org/index.html">
+Généré le Mercredi 8 Février 2017 09:53:36 pour Emgine par &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.6
 </small></address>

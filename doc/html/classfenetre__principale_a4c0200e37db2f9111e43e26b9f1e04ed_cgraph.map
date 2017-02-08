@@ -1,0 +1,12 @@
+<map id="fenetre_principale::on_externe_objet_deselectionne" name="fenetre_principale::on_externe_objet_deselectionne">
+<area shape="rect" id="node2" href="$classfenetre__principale.html#a0e4687512b180aef1eb6f75359b13cee" title="Met à jour les boutons d&#39;ajout de fonctions selon un objet donné. " alt="" coords="269,115,432,171"/>
+<area shape="rect" id="node8" href="$classfenetre__principale.html#a254e577618618631bd05597f6630fcc4" title="Met à jour les boutons de la fenêtre selon un projet donné. " alt="" coords="269,216,432,272"/>
+<area shape="rect" id="node3" href="$classobjet__selectionnable.html#abed9a58bb39d15353db880fbd0808714" title="objet_selectionnable\l::est_conteneur" alt="" coords="491,5,631,46"/>
+<area shape="rect" id="node4" href="$classobjet__selectionnable.html#a1cf41e42861e0b033d2704802905e81a" title="objet_selectionnable\l::est_verrouille_avec\l_parent" alt="" coords="691,103,834,159"/>
+<area shape="rect" id="node6" href="$classobjet__selectionnable.html#ab5d7e0b9f000ba34d9d60b36590f1fcf" title="objet_selectionnable\l::est_fonction" alt="" coords="491,122,631,163"/>
+<area shape="rect" id="node7" href="$classobjet__selectionnable.html#a57341a9bf3dbc66f4ad4414183b0d27c" title="objet_selectionnable\l::parents_verrouilles" alt="" coords="491,187,631,229"/>
+<area shape="rect" id="node5" href="$classobjet__selectionnable.html#a8b9cf156597fe8cc1b8f9408e1bfee8c" title="objet_selectionnable\l::est_verrouille" alt="" coords="883,110,1023,151"/>
+<area shape="rect" id="node9" href="$classprojet.html#a93d1671ebf1548df8908020a306b0ff1" title="projet::est_enregistrable" alt="" coords="481,253,642,280"/>
+<area shape="rect" id="node10" href="$classprojet.html#a6f3595b0a0025ddf250561ebbfb3726b" title="projet::est_nouveau" alt="" coords="695,228,831,255"/>
+<area shape="rect" id="node11" href="$classprojet.html#aed2138f12de82e59a3c88341abc8240e" title="projet::est_modifie" alt="" coords="698,279,827,305"/>
+</map>

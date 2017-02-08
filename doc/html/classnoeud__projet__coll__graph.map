@@ -1,5 +1,5 @@
 <map id="noeud_projet" name="noeud_projet">
-<area shape="rect" id="node2" href="$classnoeud__fonctions__conteneur.html" title="noeud_fonctions_conteneur" alt="" coords="27,253,208,280"/>
-<area shape="rect" id="node3" href="$classbase__noeud.html" title="base_noeud" alt="" coords="71,176,163,203"/>
+<area shape="rect" id="node2" href="$classnoeud__fonctions__conteneur.html" title="Classe décrivant un noeud associé à un fonctions_conteneur. " alt="" coords="27,253,208,280"/>
+<area shape="rect" id="node3" href="$classbase__noeud.html" title="Classe décrivant un noeud quelconque de l&#39;explorateur. " alt="" coords="71,176,163,203"/>
 <area shape="rect" id="node5" href="$classobjet__selectionnable.html" title="objet_selectionnable" alt="" coords="155,84,295,111"/>
 </map>

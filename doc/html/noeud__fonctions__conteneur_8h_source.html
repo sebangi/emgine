@@ -38,6 +38,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Recherche');
     <ul class="tablist">
       <li><a href="index.html"><span>Page&#160;principale</span></a></li>
       <li><a href="pages.html"><span>Pages&#160;associées</span></a></li>
+      <li><a href="modules.html"><span>Modules</span></a></li>
       <li><a href="annotated.html"><span>Classes</span></a></li>
       <li class="current"><a href="files.html"><span>Fichiers</span></a></li>
       <li>
@@ -61,6 +62,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Recherche');
   <div id="navrow2" class="tabs2">
     <ul class="tablist">
       <li><a href="files.html"><span>Liste&#160;des&#160;fichiers</span></a></li>
+      <li><a href="globals.html"><span>Membres&#160;de&#160;fichier</span></a></li>
     </ul>
   </div>
 <!-- window showing the filter options -->
@@ -68,7 +70,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Recherche');
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>Tout</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Fonctions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Définitions de type</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Énumérations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Pages</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>Tout</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Espaces de nommage</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Fichiers</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Fonctions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Définitions de type</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Énumérations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Valeurs énumérées</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&#160;</span>Groupes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(10)"><span class="SelectionMark">&#160;</span>Pages</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -87,31 +89,34 @@ var searchBox = new SearchBox("searchBox", "search",false,'Recherche');
 <div class="title">noeud_fonctions_conteneur.h</div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#ifndef NOEUD_FONCTIONS_CONTENEUR_H</span></div>
+<a href="noeud__fonctions__conteneur_8h.html">Aller à la documentation de ce fichier.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#ifndef NOEUD_FONCTIONS_CONTENEUR_H</span></div>
 <div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#define NOEUD_FONCTIONS_CONTENEUR_H</span></div>
 <div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="preprocessor"></span></div>
-<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &quot;entete/explorateur/base_noeud.h&quot;</span></div>
-<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;</div>
-<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="keyword">class </span><a class="code" href="classfonctions__conteneur.html">fonctions_conteneur</a>;</div>
-<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="keyword">class </span><a class="code" href="classbase__fonction.html">base_fonction</a>;</div>
-<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;</div>
-<div class="line"><a name="l00009"></a><span class="lineno"><a class="line" href="classnoeud__fonctions__conteneur.html">    9</a></span>&#160;<span class="keyword">class </span><a class="code" href="classnoeud__fonctions__conteneur.html">noeud_fonctions_conteneur</a> : <span class="keyword">public</span> <a class="code" href="classbase__noeud.html">base_noeud</a></div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;{</div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;     <span class="keyword">public</span>:</div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;        <a class="code" href="classnoeud__fonctions__conteneur.html">noeud_fonctions_conteneur</a>( <a class="code" href="classfonctions__conteneur.html">fonctions_conteneur</a> * conteneur, <a class="code" href="classbase__noeud.html#a5b77eba8eaa6aa32f4e5d820a84ded61">type_noeud</a> type );</div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;        ~<a class="code" href="classnoeud__fonctions__conteneur.html">noeud_fonctions_conteneur</a>();</div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;};</div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;</div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="preprocessor">#endif // NOEUD_FONCTIONS_CONTENEUR_H</span></div>
-<div class="ttc" id="classbase__noeud_html"><div class="ttname"><a href="classbase__noeud.html">base_noeud</a></div><div class="ttdef"><b>Definition:</b> <a href="base__noeud_8h_source.html#l00011">base_noeud.h:11</a></div></div>
-<div class="ttc" id="classbase__noeud_html_a5b77eba8eaa6aa32f4e5d820a84ded61"><div class="ttname"><a href="classbase__noeud.html#a5b77eba8eaa6aa32f4e5d820a84ded61">base_noeud::type_noeud</a></div><div class="ttdeci">type_noeud</div><div class="ttdoc">Type décrivant les différents types de noeud. </div><div class="ttdef"><b>Definition:</b> <a href="base__noeud_8h_source.html#l00017">base_noeud.h:17</a></div></div>
-<div class="ttc" id="classbase__fonction_html"><div class="ttname"><a href="classbase__fonction.html">base_fonction</a></div><div class="ttdoc">Classe décrivant une fonction de conversion d&#39;un texte. </div><div class="ttdef"><b>Definition:</b> <a href="base__fonction_8h_source.html#l00028">base_fonction.h:28</a></div></div>
-<div class="ttc" id="classnoeud__fonctions__conteneur_html"><div class="ttname"><a href="classnoeud__fonctions__conteneur.html">noeud_fonctions_conteneur</a></div><div class="ttdef"><b>Definition:</b> <a href="noeud__fonctions__conteneur_8h_source.html#l00009">noeud_fonctions_conteneur.h:9</a></div></div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="base__noeud_8h.html">entete/explorateur/base_noeud.h</a>&quot;</span></div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;</div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="keyword">class </span><a class="code" href="classbase__fonction.html">base_fonction</a>;</div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="keyword">class </span><a class="code" href="classfonctions__conteneur.html">fonctions_conteneur</a>;</div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;</div>
+<div class="line"><a name="l00019"></a><span class="lineno"><a class="line" href="classnoeud__fonctions__conteneur.html">   19</a></span>&#160;<span class="keyword">class </span><a class="code" href="classnoeud__fonctions__conteneur.html">noeud_fonctions_conteneur</a> : <span class="keyword">public</span> <a class="code" href="classbase__noeud.html">base_noeud</a></div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;{</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;     <span class="keyword">public</span>:</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;        <a class="code" href="classnoeud__fonctions__conteneur.html#a2a572bd61984ba0ad2cd07233a40713b">noeud_fonctions_conteneur</a>( <a class="code" href="classfonctions__conteneur.html">fonctions_conteneur</a> * conteneur, <a class="code" href="classbase__noeud.html#a5b77eba8eaa6aa32f4e5d820a84ded61">type_noeud</a> type );</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;        <a class="code" href="classnoeud__fonctions__conteneur.html#a0c5de40d0e65aff510594c96dc920033">~noeud_fonctions_conteneur</a>();</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;};</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="preprocessor">#endif // NOEUD_FONCTIONS_CONTENEUR_H</span></div>
+<div class="ttc" id="classbase__noeud_html"><div class="ttname"><a href="classbase__noeud.html">base_noeud</a></div><div class="ttdoc">Classe décrivant un noeud quelconque de l&#39;explorateur. </div><div class="ttdef"><b>Definition:</b> <a href="base__noeud_8h_source.html#l00019">base_noeud.h:19</a></div></div>
+<div class="ttc" id="classnoeud__fonctions__conteneur_html_a0c5de40d0e65aff510594c96dc920033"><div class="ttname"><a href="classnoeud__fonctions__conteneur.html#a0c5de40d0e65aff510594c96dc920033">noeud_fonctions_conteneur::~noeud_fonctions_conteneur</a></div><div class="ttdeci">~noeud_fonctions_conteneur()</div><div class="ttdoc">Le destructeur de la classe noeud_fonctions_conteneur. </div><div class="ttdef"><b>Definition:</b> <a href="noeud__fonctions__conteneur_8cpp_source.html#l00025">noeud_fonctions_conteneur.cpp:25</a></div></div>
+<div class="ttc" id="classbase__noeud_html_a5b77eba8eaa6aa32f4e5d820a84ded61"><div class="ttname"><a href="classbase__noeud.html#a5b77eba8eaa6aa32f4e5d820a84ded61">base_noeud::type_noeud</a></div><div class="ttdeci">type_noeud</div><div class="ttdoc">Enumération représentant les différents types de noeud de l&#39;explorateur. </div><div class="ttdef"><b>Definition:</b> <a href="base__noeud_8h_source.html#l00026">base_noeud.h:26</a></div></div>
+<div class="ttc" id="classbase__fonction_html"><div class="ttname"><a href="classbase__fonction.html">base_fonction</a></div><div class="ttdoc">Classe décrivant une fonction de conversion d&#39;un texte. </div><div class="ttdef"><b>Definition:</b> <a href="base__fonction_8h_source.html#l00033">base_fonction.h:33</a></div></div>
+<div class="ttc" id="classnoeud__fonctions__conteneur_html"><div class="ttname"><a href="classnoeud__fonctions__conteneur.html">noeud_fonctions_conteneur</a></div><div class="ttdoc">Classe décrivant un noeud associé à un fonctions_conteneur. </div><div class="ttdef"><b>Definition:</b> <a href="noeud__fonctions__conteneur_8h_source.html#l00019">noeud_fonctions_conteneur.h:19</a></div></div>
+<div class="ttc" id="base__noeud_8h_html"><div class="ttname"><a href="base__noeud_8h.html">base_noeud.h</a></div><div class="ttdoc">Fichier de déclaration de la classe base_noeud. </div></div>
 <div class="ttc" id="classfonctions__conteneur_html"><div class="ttname"><a href="classfonctions__conteneur.html">fonctions_conteneur</a></div><div class="ttdef"><b>Definition:</b> <a href="fonctions__conteneur_8h_source.html#l00011">fonctions_conteneur.h:11</a></div></div>
+<div class="ttc" id="classnoeud__fonctions__conteneur_html_a2a572bd61984ba0ad2cd07233a40713b"><div class="ttname"><a href="classnoeud__fonctions__conteneur.html#a2a572bd61984ba0ad2cd07233a40713b">noeud_fonctions_conteneur::noeud_fonctions_conteneur</a></div><div class="ttdeci">noeud_fonctions_conteneur(fonctions_conteneur *conteneur, type_noeud type)</div><div class="ttdoc">Constructeur de la classe noeud_fonctions_conteneur. </div><div class="ttdef"><b>Definition:</b> <a href="noeud__fonctions__conteneur_8cpp_source.html#l00016">noeud_fonctions_conteneur.cpp:16</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Généré le Mercredi 8 Février 2017 09:50:11 pour Emgine par &#160;<a href="http://www.doxygen.org/index.html">
+Généré le Mercredi 8 Février 2017 09:53:35 pour Emgine par &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.6
 </small></address>

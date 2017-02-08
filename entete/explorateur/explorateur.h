@@ -1,24 +1,37 @@
 #ifndef EXPLORATEUR_H
 #define EXPLORATEUR_H
 
-#include <QTreeWidget>
-#include "entete/explorateur/base_noeud.h"
-#include <map>
-#include "entete/projet/base_fonction.h"
+/** \file explorateur.h
+ * \brief Fichier de déclaration de la classe explorateur.
+ * \author Sébastien Angibaud
+ */
 
-class fenetre_principale;
-class noeud_projet;
-class projet;
-class base_parametre;
+#include <QTreeWidget>
+
+#include <map>
+
 class base_fonction;
 class base_noeud;
+class base_parametre;
+class fenetre_principale;
+class fonctions_conteneur;
+class noeud_projet;
 class objet_selectionnable;
+class projet;
 
+enum type_fonction;
+
+/**
+ * \class explorateur
+ * \brief Classe décrivant l'explorateur de projet.
+ * \author Sébastien Angibaud
+ */
 class explorateur : public QTreeWidget
 {
         Q_OBJECT
 
     private:
+        /** \brief Tableau associatif entre les objets sélectionnable et les noeuds associés. */
         typedef std::map< objet_selectionnable*, base_noeud*> map_selectionnable;
 
     public:
@@ -64,7 +77,7 @@ class explorateur : public QTreeWidget
         void ajouter_menu_verrouillage(QMenu & menu, objet_selectionnable * obj );
 
     signals:
-        void signal_e_demande_ajout_fonction(fonctions_conteneur *, objet_selectionnable*, base_fonction::type_fonction);
+        void signal_e_demande_ajout_fonction(fonctions_conteneur *, objet_selectionnable*, type_fonction);
         void signal_e_objet_selectionne(objet_selectionnable*);
         void signal_e_objet_deselectionne(objet_selectionnable*);
         void signal_e_enregistrer_projet(projet *);
@@ -104,18 +117,16 @@ class explorateur : public QTreeWidget
         void on_supprimer_fonction();
 
     private:
-        /** \brief Le noeud du context actuel. */
+        /** \brief Un pointeur sur le noeud du context actuel. */
         base_noeud* m_noeud_context;
 
-        /** \brief Le fonction à copier sous forme de chaine (en XML ). */
+        /** \brief L'objet à copier sous forme de chaine (en XML ). */
         QString m_a_copier;
 
-        /** \brief Le noeud à couper. */
+        /** \brief L'objet à couper. */
         objet_selectionnable* m_objet_a_couper;
 
-        fenetre_principale* m_fenetre_principale;
-
-        /** \brief La map reliant les objet sélectionnable au noeud. */
+        /** \brief La map reliant les objets sélectionnables aux noeuds. */
         map_selectionnable m_selectionnables;
 };
 

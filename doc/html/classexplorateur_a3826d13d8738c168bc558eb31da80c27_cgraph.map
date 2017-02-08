@@ -1,0 +1,5 @@
+<map id="explorateur::creer_copie" name="explorateur::creer_copie">
+<area shape="rect" id="node2" href="$classobjet__selectionnable.html#abed9a58bb39d15353db880fbd0808714" title="objet_selectionnable\l::est_conteneur" alt="" coords="366,9,506,50"/>
+<area shape="rect" id="node3" href="$classobjet__selectionnable.html#ab809d020155b7fec48ff3adbe15c9b65" title="objet_selectionnable\l::get_conteneur" alt="" coords="177,50,317,91"/>
+<area shape="rect" id="node4" href="$classfonctions__conteneur.html#a199dde0697eb91a9e54c1dfecb536a88" title="fonctions_conteneur\l::sauvegarder" alt="" coords="177,115,316,157"/>
+</map>

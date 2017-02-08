@@ -1,13 +1,23 @@
 #ifndef COMPILATION_WIDGET_H
 #define COMPILATION_WIDGET_H
 
-#include <QWidget>
-#include <QPushButton>
+/** \file logs_compilation_widget.h
+ * \brief Fichier de déclaration de la classe logs_compilation_widget.
+ * \author Sébastien Angibaud
+ */
+
 #include <QListWidget>
+#include <QPushButton>
+#include <QWidget>
 
 class log_compilation;
 class objet_selectionnable;
 
+/**
+ * \class logs_compilation_widget
+ * \brief Classe décrivant le widget affichant l'ensemble des logs.
+ * \author Sébastien Angibaud
+ */
 class logs_compilation_widget : public QWidget
 {
     Q_OBJECT
@@ -30,10 +40,19 @@ class logs_compilation_widget : public QWidget
         void on_externe_destruction_selectionnable(objet_selectionnable* obj);
 
     private:
+        /** \brief Le bouton pour cacher les logs. */
         QPushButton * m_cacher_bouton;
+
+        /** \brief Le bouton pour effacer les logs. */
         QPushButton * m_effacer_bouton;
+
+        /** \brief Le widget central. */
         QWidget * m_vue_widget;
+
+        /** \brief La liste des widgets internes. */
         QListWidget* m_liste;
+
+        /** \brief La position du dernier message ancien dans la liste. */
         int m_pos_marque_ancien;
 };
 

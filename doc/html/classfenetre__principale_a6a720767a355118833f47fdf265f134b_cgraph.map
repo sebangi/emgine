@@ -1,0 +1,10 @@
+<map id="fenetre_principale::on_externe_verrouillage_change" name="fenetre_principale::on_externe_verrouillage_change">
+<area shape="rect" id="node2" href="$classobjet__selectionnable.html#ad3c9ec08e1036a463b6b82176d52364d" title="objet_selectionnable\l::existe_selection" alt="" coords="233,5,373,46"/>
+<area shape="rect" id="node3" href="$classobjet__selectionnable.html#ae6be76843c7b502410ec8d2c1fff88a3" title="objet_selectionnable\l::get_selection" alt="" coords="233,70,373,111"/>
+<area shape="rect" id="node4" href="$classfenetre__principale.html#a0e4687512b180aef1eb6f75359b13cee" title="Met à jour les boutons d&#39;ajout de fonctions selon un objet donné. " alt="" coords="221,135,384,191"/>
+<area shape="rect" id="node5" href="$classobjet__selectionnable.html#abed9a58bb39d15353db880fbd0808714" title="objet_selectionnable\l::est_conteneur" alt="" coords="433,54,573,95"/>
+<area shape="rect" id="node6" href="$classobjet__selectionnable.html#a1cf41e42861e0b033d2704802905e81a" title="objet_selectionnable\l::est_verrouille_avec\l_parent" alt="" coords="622,168,765,224"/>
+<area shape="rect" id="node8" href="$classobjet__selectionnable.html#ab5d7e0b9f000ba34d9d60b36590f1fcf" title="objet_selectionnable\l::est_fonction" alt="" coords="433,171,573,213"/>
+<area shape="rect" id="node9" href="$classobjet__selectionnable.html#a57341a9bf3dbc66f4ad4414183b0d27c" title="objet_selectionnable\l::parents_verrouilles" alt="" coords="433,237,573,278"/>
+<area shape="rect" id="node7" href="$classobjet__selectionnable.html#a8b9cf156597fe8cc1b8f9408e1bfee8c" title="objet_selectionnable\l::est_verrouille" alt="" coords="814,175,954,217"/>
+</map>

@@ -1,0 +1,46 @@
+<map id="base_fonction_widget::base_fonction_widget" name="base_fonction_widget::base_fonction_widget">
+<area shape="rect" id="node2" href="$classbase__fonction__widget.html#a8f7d38b1f3eeacb69017621ee3fc055b" title="base_fonction_widget\l::init" alt="" coords="211,463,359,505"/>
+<area shape="rect" id="node45" href="$classbase__fonction__widget.html#a50fd671225550772c811014c33b7788f" title="base_fonction_widget\l::connecter_fonction" alt="" coords="666,729,814,770"/>
+<area shape="rect" id="node3" href="$classbase__fonction__widget.html#a6b560463afa616caac97f5e5a9d0456b" title="base_fonction_widget\l::on_parametre_switch" alt="" coords="433,70,588,111"/>
+<area shape="rect" id="node6" href="$classbase__fonction__widget.html#acb52c3b688b3821f7fb307dc136ff49d" title="Le bouton d&#39;inversion d&#39;activation est activé. " alt="" coords="431,135,591,177"/>
+<area shape="rect" id="node13" href="$classbase__fonction__widget.html#a9e1f1563d0793c0601c8dc5b8a1e7326" title="Le bouton de verrouillage d&#39;activation est activé. " alt="" coords="425,5,596,46"/>
+<area shape="rect" id="node16" href="$classbase__fonction__widget.html#aa9ed6c2c549d58a33a9ea3c36dae27ba" title="base_fonction_widget\l::on_aide" alt="" coords="437,303,585,345"/>
+<area shape="rect" id="node18" href="$classbase__fonction.html#acee6c2c0170e7a1bf8c0df49424ef2ba" title="Retourne le nom de la fonction. " alt="" coords="883,369,1045,396"/>
+<area shape="rect" id="node21" href="$classbase__fonction__widget.html#a2e6e9fd90f86e175e6202ec057f0f297" title="Le bouton fermer est activé. " alt="" coords="437,522,585,563"/>
+<area shape="rect" id="node24" href="$classbase__fonction__widget.html#a548a6571fb757666807a6b3e95485dea" title="Mise à jour du bouton d&#39;activation. " alt="" coords="1359,791,1507,833"/>
+<area shape="rect" id="node30" href="$classbase__fonction__widget.html#a9e330f5ec8c7eac285d1c78cc82e0ea0" title="Mise à jour du nom de l&#39;objet. " alt="" coords="1126,901,1277,942"/>
+<area shape="rect" id="node34" href="$classbase__fonction__widget.html#a6409997ef11539e0811573c7655532ee" title="Mise à jour du bouton de verrouillage. " alt="" coords="1359,568,1507,624"/>
+<area shape="rect" id="node36" href="$classbase__fonction__widget.html#a4820f0a814f27542d1f0c9dc8de535a3" title="base_fonction_widget\l::update_close_bouton" alt="" coords="1357,647,1510,689"/>
+<area shape="rect" id="node39" href="$classbase__fonction__widget.html#aae7f6163e10dcad3463d62ca366b0ab3" title="Mise à jour du bouton d&#39;activation. " alt="" coords="1117,366,1286,407"/>
+<area shape="rect" id="node41" href="$classbase__fonction__widget.html#adf4804d6d9006f77343cdd242e99b29b" title="Mise à jour de la visibilité. " alt="" coords="1127,450,1275,491"/>
+<area shape="rect" id="node43" href="$classbase__fonction.html#aa6a1b06544f57e26311eba48b08eaf54" title="base_fonction::parametres\l_begin" alt="" coords="423,690,599,731"/>
+<area shape="rect" id="node44" href="$classbase__fonction.html#a39f01a1372ee04c2620602c530431506" title="base_fonction::parametres_end" alt="" coords="409,201,613,228"/>
+<area shape="rect" id="node4" href="$classbase__fonction.html#a9a29109804d6f1a70350b45e8ef5a680" title="base_fonction::change\l_niveau_visibilite" alt="" coords="663,70,817,111"/>
+<area shape="rect" id="node5" href="$classbase__fonction.html#aac434731c9e5d95398d3baae6c74d447" title="base_fonction::set\l_niveau_visibilite" alt="" coords="1137,67,1266,109"/>
+<area shape="rect" id="node7" href="$classbase__fonction.html#aaf72b5fa4bf0bd4ee43d7eab0aeac984" title="base_fonction::inverser\l_activation" alt="" coords="661,135,819,177"/>
+<area shape="rect" id="node8" href="$classbase__fonction.html#a58252a04c7afea216c29d13132b0d6a2" title="base_fonction::set\l_est_active" alt="" coords="899,133,1029,174"/>
+<area shape="rect" id="node9" href="$classbase__fonction.html#a58bf7761b1416f494d035ca415d28dcd" title="base_fonction::get\l_niveau_visibilite" alt="" coords="1369,349,1498,390"/>
+<area shape="rect" id="node10" href="$classobjet__selectionnable.html#acb1bf63e061079a402c929ce346b0b22" title="objet_selectionnable\l::set_est_active" alt="" coords="1131,133,1271,174"/>
+<area shape="rect" id="node11" href="$classobjet__selectionnable.html#a9f76b8e89231a79c3fc840af874bd868" title="objet_selectionnable\l::modifier" alt="" coords="1363,70,1503,111"/>
+<area shape="rect" id="node12" href="$classobjet__selectionnable.html#a97e33c61983d5c7811e8bacff8f114c4" title="objet_selectionnable\l::est_projet" alt="" coords="1574,70,1714,111"/>
+<area shape="rect" id="node14" href="$classobjet__selectionnable.html#a028ac895965858e0e8e8e2cc25e8323c" title="objet_selectionnable\l::inverser_verrouillage" alt="" coords="665,5,815,46"/>
+<area shape="rect" id="node15" href="$classobjet__selectionnable.html#a5d39343f43293805a0b60e8520687d87" title="objet_selectionnable\l::set_verrouille" alt="" coords="894,6,1034,47"/>
+<area shape="rect" id="node17" href="$classbase__fonction__widget.html#ab743a655c281ef042772378c76c2de82" title="base_fonction_widget\l::aide" alt="" coords="666,303,814,345"/>
+<area shape="rect" id="node19" href="$classbase__fonction.html#a6b481e2cf54876fbc2c93feed56ed03d" title="Méthode d&#39;accès à l&#39;info bulle. " alt="" coords="899,198,1029,239"/>
+<area shape="rect" id="node20" href="$classbibliotheque__fonctions.html#af09bab02cd189c76012784c77f336a90" title="bibliotheque_fonctions\l::get_aide" alt="" coords="1126,250,1277,291"/>
+<area shape="rect" id="node22" href="$classbase__fonction__widget.html#a38df68f6f1a38a5d2f653ccc75b3d54d" title="Déconnecter la fonction. " alt="" coords="663,522,817,563"/>
+<area shape="rect" id="node23" href="$classbase__fonction__widget.html#ad5f92c5b95f40e2962fced2467de68bf" title="L&#39;activation de la fonction est modifié. " alt="" coords="885,769,1043,825"/>
+<area shape="rect" id="node32" href="$classbase__fonction__widget.html#a7aaa562bd9757a4a4365867b7fdaa024" title="Le verrouillage de la fonction est modifié. " alt="" coords="881,689,1047,745"/>
+<area shape="rect" id="node38" href="$classbase__fonction__widget.html#aca2caf600b1453a47ceca71cd3fdf6d9" title="base_fonction_widget\l::on_externe_niveau_visibilite\l_change" alt="" coords="867,508,1061,564"/>
+<area shape="rect" id="node25" href="$classobjet__selectionnable.html#a1cf41e42861e0b033d2704802905e81a" title="objet_selectionnable\l::est_verrouille_avec\l_parent" alt="" coords="1775,632,1918,688"/>
+<area shape="rect" id="node27" href="$classobjet__selectionnable.html#ada0d1bda8b5fdc1f81979720d40fb840" title="objet_selectionnable\l::est_active_avec_parent" alt="" coords="1763,845,1931,886"/>
+<area shape="rect" id="node29" href="$classobjet__selectionnable.html#a76587773c723728d21583bb87e995daa" title="objet_selectionnable\l::parents_actifs" alt="" coords="1574,786,1714,827"/>
+<area shape="rect" id="node26" href="$classobjet__selectionnable.html#a8b9cf156597fe8cc1b8f9408e1bfee8c" title="objet_selectionnable\l::est_verrouille" alt="" coords="1979,639,2119,681"/>
+<area shape="rect" id="node28" href="$classobjet__selectionnable.html#a9f9e2ccc04e3b2a55d7b51b85366488f" title="objet_selectionnable\l::est_active" alt="" coords="1979,845,2119,886"/>
+<area shape="rect" id="node31" href="$classbase__fonction.html#aecefb6e946e43e9d6dc835165ac7e265" title="Retourne le type de la fonction. " alt="" coords="1353,953,1514,980"/>
+<area shape="rect" id="node33" href="$classbase__fonction__widget.html#a7b70afc37ac7d91da2ce41bd62ea185c" title="base_fonction_widget\l::mettre_a_jour_verrouillage" alt="" coords="1110,697,1293,738"/>
+<area shape="rect" id="node37" href="$classbase__fonction__widget.html#aa4f470af8fb51c1ff276b18205104c94" title="base_fonction_widget\l::informer_verrouillage\l_change" alt="" coords="1358,712,1509,768"/>
+<area shape="rect" id="node35" href="$classobjet__selectionnable.html#a57341a9bf3dbc66f4ad4414183b0d27c" title="objet_selectionnable\l::parents_verrouilles" alt="" coords="1574,555,1714,597"/>
+<area shape="rect" id="node40" href="$classbase__fonction.html#a03d8376d2bf2e060849862cb7c71a658" title="base_fonction::get\l_max_niveau_visibilite" alt="" coords="1357,414,1510,455"/>
+<area shape="rect" id="node42" href="$classbase__fonction.html#ad31ae314c198bbd010aff1224144ec71" title="base_fonction::a_parametre" alt="" coords="1342,480,1525,507"/>
+</map>

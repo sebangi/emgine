@@ -38,6 +38,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Recherche');
     <ul class="tablist">
       <li><a href="index.html"><span>Page&#160;principale</span></a></li>
       <li><a href="pages.html"><span>Pages&#160;associées</span></a></li>
+      <li><a href="modules.html"><span>Modules</span></a></li>
       <li><a href="annotated.html"><span>Classes</span></a></li>
       <li class="current"><a href="files.html"><span>Fichiers</span></a></li>
       <li>
@@ -61,6 +62,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Recherche');
   <div id="navrow2" class="tabs2">
     <ul class="tablist">
       <li><a href="files.html"><span>Liste&#160;des&#160;fichiers</span></a></li>
+      <li><a href="globals.html"><span>Membres&#160;de&#160;fichier</span></a></li>
     </ul>
   </div>
 <!-- window showing the filter options -->
@@ -68,7 +70,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Recherche');
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>Tout</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Fonctions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Définitions de type</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Énumérations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Pages</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>Tout</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Espaces de nommage</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Fichiers</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Fonctions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Définitions de type</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Énumérations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Valeurs énumérées</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&#160;</span>Groupes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(10)"><span class="SelectionMark">&#160;</span>Pages</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -87,33 +89,38 @@ var searchBox = new SearchBox("searchBox", "search",false,'Recherche');
 <div class="title">noeud_fonction.h</div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#ifndef NOEUD_FONCTION_H</span></div>
+<a href="noeud__fonction_8h.html">Aller à la documentation de ce fichier.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#ifndef NOEUD_FONCTION_H</span></div>
 <div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#define NOEUD_FONCTION_H</span></div>
 <div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="preprocessor"></span></div>
-<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &quot;entete/explorateur/base_noeud.h&quot;</span></div>
-<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;</div>
-<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="keyword">class </span><a class="code" href="classbase__fonction.html">base_fonction</a>;</div>
-<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;</div>
-<div class="line"><a name="l00008"></a><span class="lineno"><a class="line" href="classnoeud__fonction.html">    8</a></span>&#160;<span class="keyword">class </span><a class="code" href="classnoeud__fonction.html">noeud_fonction</a> : <span class="keyword">public</span> <a class="code" href="classbase__noeud.html">base_noeud</a></div>
-<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;{</div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;    <span class="keyword">public</span>:</div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;        <a class="code" href="classnoeud__fonction.html">noeud_fonction</a>( <a class="code" href="classbase__fonction.html">base_fonction</a>* p );</div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;        ~<a class="code" href="classnoeud__fonction.html">noeud_fonction</a>();</div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;</div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;        <a class="code" href="classbase__fonction.html">base_fonction</a>* get_fonction() <span class="keyword">const</span>;</div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;        <span class="keywordtype">void</span> update_style(<span class="keywordtype">bool</span> actif);</div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;        <span class="keywordtype">void</span> mise_a_jour_icone();</div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;};</div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;</div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;</div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="preprocessor">#endif // NOEUD_FONCTION_H</span></div>
-<div class="ttc" id="classbase__noeud_html"><div class="ttname"><a href="classbase__noeud.html">base_noeud</a></div><div class="ttdef"><b>Definition:</b> <a href="base__noeud_8h_source.html#l00011">base_noeud.h:11</a></div></div>
-<div class="ttc" id="classnoeud__fonction_html"><div class="ttname"><a href="classnoeud__fonction.html">noeud_fonction</a></div><div class="ttdef"><b>Definition:</b> <a href="noeud__fonction_8h_source.html#l00008">noeud_fonction.h:8</a></div></div>
-<div class="ttc" id="classbase__fonction_html"><div class="ttname"><a href="classbase__fonction.html">base_fonction</a></div><div class="ttdoc">Classe décrivant une fonction de conversion d&#39;un texte. </div><div class="ttdef"><b>Definition:</b> <a href="base__fonction_8h_source.html#l00028">base_fonction.h:28</a></div></div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="base__noeud_8h.html">entete/explorateur/base_noeud.h</a>&quot;</span></div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;</div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="keyword">class </span><a class="code" href="classbase__fonction.html">base_fonction</a>;</div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;</div>
+<div class="line"><a name="l00018"></a><span class="lineno"><a class="line" href="classnoeud__fonction.html">   18</a></span>&#160;<span class="keyword">class </span><a class="code" href="classnoeud__fonction.html">noeud_fonction</a> : <span class="keyword">public</span> <a class="code" href="classbase__noeud.html">base_noeud</a></div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;{</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;    <span class="keyword">public</span>:</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;        <a class="code" href="classnoeud__fonction.html#aba33288a86bb8d8af361053fcc329ed2">noeud_fonction</a>( <a class="code" href="classbase__fonction.html">base_fonction</a>* p );</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;        <a class="code" href="classnoeud__fonction.html#a7a6d791675adfbc9686d4bc20d2eebf6">~noeud_fonction</a>();</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;        <a class="code" href="classbase__fonction.html">base_fonction</a>* <a class="code" href="classnoeud__fonction.html#ab72266977ba111c9a48ff4bab0fa19b7">get_fonction</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="classnoeud__fonction.html#a8b55f13102b0e4101a89104600a50d5e">mettre_a_jour_style</a>(<span class="keywordtype">bool</span> actif);</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="classnoeud__fonction.html#a8710e51af70c842c067e2b905091bc4e">mise_a_jour_icone</a>();</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;};</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="preprocessor">#endif // NOEUD_FONCTION_H</span></div>
+<div class="ttc" id="classnoeud__fonction_html_a7a6d791675adfbc9686d4bc20d2eebf6"><div class="ttname"><a href="classnoeud__fonction.html#a7a6d791675adfbc9686d4bc20d2eebf6">noeud_fonction::~noeud_fonction</a></div><div class="ttdeci">~noeud_fonction()</div><div class="ttdoc">Destructeur de la classe noeud_foonction. </div><div class="ttdef"><b>Definition:</b> <a href="noeud__fonction_8cpp_source.html#l00027">noeud_fonction.cpp:27</a></div></div>
+<div class="ttc" id="classnoeud__fonction_html_a8710e51af70c842c067e2b905091bc4e"><div class="ttname"><a href="classnoeud__fonction.html#a8710e51af70c842c067e2b905091bc4e">noeud_fonction::mise_a_jour_icone</a></div><div class="ttdeci">void mise_a_jour_icone()</div><div class="ttdoc">Fonction mettant à jour l&#39;icone. </div><div class="ttdef"><b>Definition:</b> <a href="noeud__fonction_8cpp_source.html#l00043">noeud_fonction.cpp:43</a></div></div>
+<div class="ttc" id="classbase__noeud_html"><div class="ttname"><a href="classbase__noeud.html">base_noeud</a></div><div class="ttdoc">Classe décrivant un noeud quelconque de l&#39;explorateur. </div><div class="ttdef"><b>Definition:</b> <a href="base__noeud_8h_source.html#l00019">base_noeud.h:19</a></div></div>
+<div class="ttc" id="classnoeud__fonction_html_ab72266977ba111c9a48ff4bab0fa19b7"><div class="ttname"><a href="classnoeud__fonction.html#ab72266977ba111c9a48ff4bab0fa19b7">noeud_fonction::get_fonction</a></div><div class="ttdeci">base_fonction * get_fonction() const </div><div class="ttdoc">Retourne la fonction associée au noeud. </div><div class="ttdef"><b>Definition:</b> <a href="noeud__fonction_8cpp_source.html#l00035">noeud_fonction.cpp:35</a></div></div>
+<div class="ttc" id="classnoeud__fonction_html_a8b55f13102b0e4101a89104600a50d5e"><div class="ttname"><a href="classnoeud__fonction.html#a8b55f13102b0e4101a89104600a50d5e">noeud_fonction::mettre_a_jour_style</a></div><div class="ttdeci">void mettre_a_jour_style(bool actif)</div></div>
+<div class="ttc" id="classnoeud__fonction_html"><div class="ttname"><a href="classnoeud__fonction.html">noeud_fonction</a></div><div class="ttdoc">Classe décrivant un noeud associé à une fonction. </div><div class="ttdef"><b>Definition:</b> <a href="noeud__fonction_8h_source.html#l00018">noeud_fonction.h:18</a></div></div>
+<div class="ttc" id="classbase__fonction_html"><div class="ttname"><a href="classbase__fonction.html">base_fonction</a></div><div class="ttdoc">Classe décrivant une fonction de conversion d&#39;un texte. </div><div class="ttdef"><b>Definition:</b> <a href="base__fonction_8h_source.html#l00033">base_fonction.h:33</a></div></div>
+<div class="ttc" id="base__noeud_8h_html"><div class="ttname"><a href="base__noeud_8h.html">base_noeud.h</a></div><div class="ttdoc">Fichier de déclaration de la classe base_noeud. </div></div>
+<div class="ttc" id="classnoeud__fonction_html_aba33288a86bb8d8af361053fcc329ed2"><div class="ttname"><a href="classnoeud__fonction.html#aba33288a86bb8d8af361053fcc329ed2">noeud_fonction::noeud_fonction</a></div><div class="ttdeci">noeud_fonction(base_fonction *p)</div><div class="ttdoc">Constructeur de la classe neoud_fonction. </div><div class="ttdef"><b>Definition:</b> <a href="noeud__fonction_8cpp_source.html#l00015">noeud_fonction.cpp:15</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Généré le Mercredi 8 Février 2017 09:50:11 pour Emgine par &#160;<a href="http://www.doxygen.org/index.html">
+Généré le Mercredi 8 Février 2017 09:53:35 pour Emgine par &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.6
 </small></address>

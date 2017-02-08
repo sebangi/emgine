@@ -1,55 +1,61 @@
+/** \file log_compilation.cpp
+ * \brief Fichier d'implémentation de la class log_compilation.
+ * \author Sébastien Angibaud
+ */
+
 #include "entete/compilation/log_compilation.h"
-#include "entete/projet/projet.h"
-#include "entete/projet/base_fonction.h"
-#include "entete/projet/base_parametre.h"
+
+#include "entete/projet/objet_selectionnable.h"
 
 #include <iostream>
 
+/** --------------------------------------------------------------------------------------
+ * \brief Constructeur de la classe log_compilation.
+ * \param type Le type du message.
+ * \param message Le message.
+ */
 log_compilation::log_compilation(type_log type, QString message)
-    : m_type(type), m_projet(NULL), m_fonction(NULL), m_parametre(NULL), m_message(message)
+    : m_type(type), m_objet(NULL), m_message(message)
 {
 
 }
 
-log_compilation::log_compilation(type_log type, projet *p, QString message)
-    : m_type(type), m_projet(p), m_fonction(NULL), m_parametre(NULL), m_message(message)
+/** --------------------------------------------------------------------------------------
+ * \brief Constructeur de la classe log_compilation.
+ * \param type Le type du message.
+ * \param obj Un pointeur sur l'objet associé au message.
+ * \param message Le message.
+ */
+log_compilation::log_compilation(type_log type, objet_selectionnable *obj, QString message)
+    : m_type(type), m_objet(obj), m_message(message)
 {
 
 }
 
-log_compilation::log_compilation(type_log type, base_fonction *f, QString message)
-    : m_type(type), m_projet(NULL), m_fonction(f), m_parametre(NULL), m_message(message)
-{
-    if ( f != NULL )
-    {
-        connect( f, SIGNAL(signal_destruction_fonction(base_fonction*)),
-                 this, SLOT(on_externe_supprimer_fonction(base_fonction*)));
-    }
-}
-
-log_compilation::log_compilation(type_log type, base_parametre *p, QString message)
-    : m_type(type), m_projet(NULL), m_fonction(NULL), m_parametre(p), m_message(message)
-{
-
-}
-
+/** --------------------------------------------------------------------------------------
+ * \brief Constructeur par recopie de la classe log_compilation.
+ * \param log Le log_compilation à copier.
+ */
 log_compilation::log_compilation(const log_compilation &log)
-    : m_type(log.m_type), m_projet(log.m_projet), m_fonction(log.m_fonction),
-      m_parametre(log.m_parametre), m_message(log.m_message)
+    : m_type(log.m_type), m_objet(log.m_objet), m_message(log.m_message)
 {
 
 }
 
+/** --------------------------------------------------------------------------------------
+ * \brief Fonction appelée lors de la suppression d'un objet.
+ * \param obj Un pointeur sur l'objet sélectionné.
+ */
 void log_compilation::informe_supression_selectionnable(objet_selectionnable *obj)
 {
-    if ( (objet_selectionnable *)m_fonction == obj)
-        m_fonction = NULL;
-    else if ( (objet_selectionnable *)m_parametre == obj )
-        m_parametre = NULL;
-    else if ( (objet_selectionnable *)m_projet == obj )
-        m_projet = NULL;
+    if ( m_objet == obj)
+        m_objet = NULL;
 }
 
+/** --------------------------------------------------------------------------------------
+ * \brief Calcul et retourne le message du log.
+ * \return Le message du log.
+ */
 QString log_compilation::get_message() const
 {
     switch ( m_type )
@@ -67,38 +73,28 @@ QString log_compilation::get_message() const
     }
 }
 
-projet *log_compilation::get_projet()
-{
-    return m_projet;
-}
-
-base_fonction *log_compilation::get_fonction()
-{
-    return m_fonction;
-}
-
-base_parametre *log_compilation::get_parametre()
-{
-    return m_parametre;
-}
-
+/** --------------------------------------------------------------------------------------
+ * \brief Accesseur de l'objet associé.
+ * \return Pointeur sur l'objet associé.
+ */
 objet_selectionnable *log_compilation::get_selectionnable()
 {
-    if ( m_fonction != NULL )
-        return (objet_selectionnable*)m_fonction;
-    else if ( m_parametre != NULL )
-        return (objet_selectionnable*)m_parametre;
-    else if ( m_projet != NULL )
-        return (objet_selectionnable*)m_projet;
-    else
-        return NULL;
+    return m_objet;
 }
 
+/** --------------------------------------------------------------------------------------
+ * \brief Accesseur du type de message.
+ * \return Le type du message.
+ */
 log_compilation::type_log log_compilation::get_type() const
 {
     return m_type;
 }
 
+/** --------------------------------------------------------------------------------------
+ * \brief Accesseur du type sous forme QString.
+ * \return Le type sous forme QString.
+ */
 QString log_compilation::get_type_string() const
 {
     switch ( m_type )
@@ -128,6 +124,10 @@ QString log_compilation::get_type_string() const
     }
 }
 
+/** --------------------------------------------------------------------------------------
+ * \brief Retourne la couleur associée au message (dépendant du type).
+ * \return La couleur associée au message.
+ */
 QColor log_compilation::get_couleur() const
 {
     switch ( m_type )
@@ -157,10 +157,3 @@ QColor log_compilation::get_couleur() const
     }
 }
 
-void log_compilation::on_externe_supprimer_fonction(base_fonction *f)
-{
-    disconnect( f, SIGNAL(signal_destruction_fonction(base_fonction*)),
-                this, SLOT(on_externe_supprimer_fonction(base_fonction*)));
-
-    m_fonction = NULL;
-}

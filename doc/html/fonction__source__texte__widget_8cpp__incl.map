@@ -1,0 +1,24 @@
+<map id="src/fonction_widget/fonction_source_widget/fonction_source_texte_widget.cpp" name="src/fonction_widget/fonction_source_widget/fonction_source_texte_widget.cpp">
+<area shape="rect" id="node2" href="$fonction__source__texte__widget_8h.html" title="entete/fonction_widget\l/fonction_source_widget\l/fonction_source_texte_widget.h" alt="" coords="841,125,1051,181"/>
+<area shape="rect" id="node13" href="$text__edit_8h.html" title="entete/fonction_widget\l/text_edit.h" alt="" coords="942,334,1095,375"/>
+<area shape="rect" id="node15" href="$fonction__source__texte_8h.html" title="entete/fonction/fonction\l_source/fonction_source\l_texte.h" alt="" coords="1127,125,1291,181"/>
+<area shape="rect" id="node3" href="$base__fonction__widget__avec__text__edit_8h.html" title="entete/fonction_widget\l/base_fonction_widget\l_avec_text_edit.h" alt="" coords="870,229,1023,285"/>
+<area shape="rect" id="node4" href="$base__fonction__widget_8h.html" title="entete/fonction_widget\l/base_fonction_widget.h" alt="" coords="485,334,648,375"/>
+<area shape="rect" id="node5" href="$define_8h.html" title="entete/define.h" alt="" coords="513,432,620,459"/>
+<area shape="rect" id="node16" href="$fonction__base__source_8h.html" title="entete/fonction/fonction\l_source/fonction_base_source.h" alt="" coords="1364,237,1573,278"/>
+<area shape="rect" id="node17" href="$base__fonction_8h.html" title="Déclaration de la classe base_fonction. " alt="" coords="1574,334,1700,375"/>
+<area shape="rect" id="node24" href="$textes_8h.html" title="Fichier de déclaration de la classe textes. " alt="" coords="1550,523,1708,549"/>
+<area shape="rect" id="node33" href="$base__parametre_8h.html" title="entete/projet/base\l_parametre.h" alt="" coords="1098,425,1224,466"/>
+<area shape="rect" id="node34" href="$fonctions__conteneur_8h.html" title="entete/projet/fonctions\l_conteneur.h" alt="" coords="1305,515,1455,557"/>
+<area shape="rect" id="node36" href="$objet__selectionnable_8h.html" title="entete/projet/objet\l_selectionnable.h" alt="" coords="1479,606,1605,647"/>
+<area shape="rect" id="node39" href="$algo___p_m_i_p_l_8h.html" title="entete/fonction/algorithme\l/algo_PMIPL.h" alt="" coords="1891,697,2063,738"/>
+<area shape="rect" id="node40" href="$algo___l_i_p_l_8h.html" title="entete/fonction/algorithme\l/algo_LIPL.h" alt="" coords="2015,606,2187,647"/>
+<area shape="rect" id="node41" href="$define__fonction_8h.html" title="Déclaration des énumérations utiles aux fonctions. " alt="" coords="1713,425,1860,466"/>
+<area shape="rect" id="node25" href="$texte_8h.html" title="Fichier de déclaration de la classe texte. " alt="" coords="1699,613,1851,640"/>
+<area shape="rect" id="node26" href="$configuration_8h.html" title="Fichier de déclaration de la classe configuration. " alt="" coords="2139,697,2267,738"/>
+<area shape="rect" id="node28" href="$ligne_8h.html" title="Fichier de déclaration de la classe ligne. " alt="" coords="1717,704,1867,731"/>
+<area shape="rect" id="node27" href="$define__parametre_8h.html" title="Déclaration des énumérations utiles aux parametres. " alt="" coords="1959,787,2105,829"/>
+<area shape="rect" id="node29" href="$mot_8h.html" title="Fichier de déclaration de la classe mot. " alt="" coords="1767,795,1912,821"/>
+<area shape="rect" id="node30" href="$base__element_8h.html" title="Fichier de déclaration de la classe bae_element. " alt="" coords="1303,878,1443,919"/>
+<area shape="rect" id="node31" href="$type__element_8h.html" title="type_element.h" alt="" coords="1198,968,1308,995"/>
+</map>

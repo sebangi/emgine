@@ -1,0 +1,11 @@
+<map id="fonction_source_fichier_texte_widget::on_choisir_click" name="fonction_source_fichier_texte_widget::on_choisir_click">
+<area shape="rect" id="node2" href="$classfonction__source__fichier__texte__widget.html#a36bc7e33b5f848d625eff183456aa040" title="fonction_source_fichier\l_texte_widget::choisir\l_nom_fichier" alt="" coords="259,131,415,187"/>
+<area shape="rect" id="node3" href="$classobjet__selectionnable.html#ab48a75e720955aebe27f720dfaa5e78e" title="objet_selectionnable\l::get_projet" alt="" coords="473,29,613,70"/>
+<area shape="rect" id="node5" href="$classprojet.html#a6f3595b0a0025ddf250561ebbfb3726b" title="projet::est_nouveau" alt="" coords="475,95,611,121"/>
+<area shape="rect" id="node6" href="$classprojet.html#aa44b3d76899e78d5259dec6fdf5e6855" title="projet::get_dossier" alt="" coords="478,145,607,172"/>
+<area shape="rect" id="node7" href="$classfonction__source__fichier__texte__widget.html#a602f7386cba89d269efae599ad828106" title="fonction_source_fichier\l_texte_widget::update\l_boutons" alt="" coords="465,285,621,341"/>
+<area shape="rect" id="node10" href="$classobjet__selectionnable.html#a9f76b8e89231a79c3fc840af874bd868" title="objet_selectionnable\l::modifier" alt="" coords="473,221,613,262"/>
+<area shape="rect" id="node4" href="$classobjet__selectionnable.html#a97e33c61983d5c7811e8bacff8f114c4" title="objet_selectionnable\l::est_projet" alt="" coords="671,113,811,154"/>
+<area shape="rect" id="node8" href="$classobjet__selectionnable.html#a1cf41e42861e0b033d2704802905e81a" title="objet_selectionnable\l::est_verrouille_avec\l_parent" alt="" coords="670,285,813,341"/>
+<area shape="rect" id="node9" href="$classobjet__selectionnable.html#a8b9cf156597fe8cc1b8f9408e1bfee8c" title="objet_selectionnable\l::est_verrouille" alt="" coords="862,293,1002,334"/>
+</map>

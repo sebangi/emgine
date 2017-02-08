@@ -1,6 +1,6 @@
 <map id="Graphe hiérarchique des classes" name="Graphe hiérarchique des classes">
-<area shape="rect" id="node2" href="$classligne.html" title="ligne" alt="" coords="117,5,166,32"/>
-<area shape="rect" id="node3" href="$classmot.html" title="mot" alt="" coords="119,56,163,83"/>
-<area shape="rect" id="node4" href="$classtexte.html" title="texte" alt="" coords="116,107,167,133"/>
-<area shape="rect" id="node5" href="$classtextes.html" title="textes" alt="" coords="112,157,171,184"/>
+<area shape="rect" id="node2" href="$classligne.html" title="Classe décrivant une ligne, i.e. un tableau de mots. " alt="" coords="117,5,166,32"/>
+<area shape="rect" id="node3" href="$classmot.html" title="Classe décrivant un mot, i.e. un tableau d&#39;élément. " alt="" coords="119,56,163,83"/>
+<area shape="rect" id="node4" href="$classtexte.html" title="Classe décrivant un texte, i.e. un tableau de ligne. " alt="" coords="116,107,167,133"/>
+<area shape="rect" id="node5" href="$classtextes.html" title="Classe décrivant un ensemble de textes. " alt="" coords="112,157,171,184"/>
 </map>

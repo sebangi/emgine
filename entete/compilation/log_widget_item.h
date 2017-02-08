@@ -1,10 +1,20 @@
 #ifndef LOG_WIDGET_ITEM_H
 #define LOG_WIDGET_ITEM_H
 
+/** \file log_widget_item.h
+ * \brief Fichier de déclaration de la classe log_widget_item.
+ * \author Sébastien Angibaud
+ */
+
 #include "entete/compilation/log_compilation.h"
 
 #include <QListWidgetItem>
 
+/**
+ * \class log_widget_item
+ * \brief Classe décrivant le widget item affichant un message de log.
+ * \author Sébastien Angibaud
+ */
 class log_widget_item : public  QListWidgetItem
 {
     public:
@@ -19,6 +29,7 @@ class log_widget_item : public  QListWidgetItem
             void init();
 
     private:
+            /** \brief Le log associé. */
             log_compilation m_log;
 };
 

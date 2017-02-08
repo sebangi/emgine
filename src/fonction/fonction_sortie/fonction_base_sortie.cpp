@@ -4,7 +4,7 @@
 #include <iostream>
 
 fonction_base_sortie::fonction_base_sortie(fonctions_conteneur * conteneur)
-    : base_fonction(conteneur, fonction_sortie)
+    : base_fonction(conteneur, type_fonction::fonction_sortie)
 {
 }
 

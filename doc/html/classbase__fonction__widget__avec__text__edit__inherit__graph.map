@@ -1,5 +1,6 @@
 <map id="base_fonction_widget_avec_text_edit" name="base_fonction_widget_avec_text_edit">
-<area shape="rect" id="node5" href="$classfonction__source__caractere__widget.html" title="fonction_source_caractere\l_widget" alt="" coords="5,246,179,287"/>
-<area shape="rect" id="node6" href="$classfonction__source__texte__widget.html" title="fonction_source_texte\l_widget" alt="" coords="203,246,353,287"/>
-<area shape="rect" id="node2" href="$classbase__fonction__widget.html" title="base_fonction_widget" alt="" coords="111,80,259,107"/>
+<area shape="rect" id="node5" href="$classfonction__source__caractere__widget.html" title="fonction_source_caractere\l_widget" alt="" coords="579,5,754,46"/>
+<area shape="rect" id="node6" href="$classfonction__source__fichier__texte__widget.html" title="fonction_source_fichier\l_texte_widget" alt="" coords="589,70,745,111"/>
+<area shape="rect" id="node7" href="$classfonction__source__texte__widget.html" title="fonction_source_texte\l_widget" alt="" coords="591,135,742,177"/>
+<area shape="rect" id="node2" href="$classbase__fonction__widget.html" title="base_fonction_widget" alt="" coords="185,77,333,104"/>
 </map>

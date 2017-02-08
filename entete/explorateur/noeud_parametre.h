@@ -1,10 +1,20 @@
 #ifndef NOEUD_PARAMETRE_H
 #define NOEUD_PARAMETRE_H
 
+/** \file noeud_parametre.h
+ * \brief Fichier de déclaration de la classe noeud_parametre.
+ * \author Sébastien Angibaud
+ */
+
 #include "entete/explorateur/base_noeud.h"
 
 class base_parametre;
 
+/**
+ * \class noeud_parametre
+ * \brief Classe décrivant un noeud associé à un paramètre.
+ * \author Sébastien Angibaud
+ */
 class noeud_parametre : public base_noeud
 {
     public:

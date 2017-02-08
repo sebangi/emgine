@@ -1,0 +1,11 @@
+<map id="explorateur::ajouter_menu_enregistrement" name="explorateur::ajouter_menu_enregistrement">
+<area shape="rect" id="node2" href="$classobjet__selectionnable.html#ab48a75e720955aebe27f720dfaa5e78e" title="objet_selectionnable\l::get_projet" alt="" coords="474,29,614,70"/>
+<area shape="rect" id="node4" href="$classprojet.html#a93d1671ebf1548df8908020a306b0ff1" title="projet::est_enregistrable" alt="" coords="233,204,394,231"/>
+<area shape="rect" id="node7" href="$classexplorateur.html#a73040f7ee6da27e4396e15c7df7ace5c" title="explorateur::on_enregistrer" alt="" coords="225,36,401,63"/>
+<area shape="rect" id="node9" href="$classexplorateur.html#aa6321767a6f4a8afaf43f1ea952528df" title="explorateur::on_enregistrer_sous" alt="" coords="208,87,419,113"/>
+<area shape="rect" id="node10" href="$classexplorateur.html#a897a29fae3bb3df4c5129ea820774334" title="explorateur::on_dupliquer\l_projet" alt="" coords="230,138,397,179"/>
+<area shape="rect" id="node3" href="$classobjet__selectionnable.html#a97e33c61983d5c7811e8bacff8f114c4" title="objet_selectionnable\l::est_projet" alt="" coords="670,29,810,70"/>
+<area shape="rect" id="node5" href="$classprojet.html#a6f3595b0a0025ddf250561ebbfb3726b" title="projet::est_nouveau" alt="" coords="476,179,612,205"/>
+<area shape="rect" id="node6" href="$classprojet.html#aed2138f12de82e59a3c88341abc8240e" title="projet::est_modifie" alt="" coords="479,229,609,256"/>
+<area shape="rect" id="node8" href="$classbase__noeud.html#ae78124477ea5148f16c2da42ac766f4c" title="Retourne l&#39;objet sélectionnable associé au noeud. " alt="" coords="467,95,621,121"/>
+</map>

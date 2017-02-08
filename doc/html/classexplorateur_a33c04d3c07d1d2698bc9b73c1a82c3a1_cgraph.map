@@ -1,3 +1,5 @@
 <map id="explorateur::on_supprimer_fonction" name="explorateur::on_supprimer_fonction">
-<area shape="rect" id="node2" href="$classbase__fonction.html#acee6c2c0170e7a1bf8c0df49424ef2ba" title="Retourne le nom de la fonction. " alt="" coords="227,12,389,39"/>
+<area shape="rect" id="node2" href="$classbase__noeud.html#ae78124477ea5148f16c2da42ac766f4c" title="Retourne l&#39;objet sélectionnable associé au noeud. " alt="" coords="231,5,385,32"/>
+<area shape="rect" id="node3" href="$classobjet__selectionnable.html#abed9a58bb39d15353db880fbd0808714" title="objet_selectionnable\l::est_conteneur" alt="" coords="238,57,378,98"/>
+<area shape="rect" id="node4" href="$classbase__fonction.html#acee6c2c0170e7a1bf8c0df49424ef2ba" title="Retourne le nom de la fonction. " alt="" coords="227,123,389,149"/>
 </map>

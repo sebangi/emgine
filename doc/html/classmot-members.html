@@ -38,6 +38,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Recherche');
     <ul class="tablist">
       <li><a href="index.html"><span>Page&#160;principale</span></a></li>
       <li><a href="pages.html"><span>Pages&#160;associées</span></a></li>
+      <li><a href="modules.html"><span>Modules</span></a></li>
       <li class="current"><a href="annotated.html"><span>Classes</span></a></li>
       <li><a href="files.html"><span>Fichiers</span></a></li>
       <li>
@@ -71,7 +72,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Recherche');
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>Tout</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Fonctions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Définitions de type</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Énumérations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Pages</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>Tout</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Espaces de nommage</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Fichiers</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Fonctions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Définitions de type</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Énumérations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Valeurs énumérées</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&#160;</span>Groupes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(10)"><span class="SelectionMark">&#160;</span>Pages</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -89,16 +90,16 @@ var searchBox = new SearchBox("searchBox", "search",false,'Recherche');
 
 <p>Liste complète des membres de <a class="el" href="classmot.html">mot</a>, y compris les membres hérités :</p>
 <table class="directory">
-  <tr bgcolor="#f0f0f0" class="even"><td class="entry"><b>m_separateur_caractere</b> (défini dans <a class="el" href="classmot.html">mot</a>)</td><td class="entry"><a class="el" href="classmot.html">mot</a></td><td class="entry"><span class="mlabel">private</span></td></tr>
-  <tr bgcolor="#f0f0f0"><td class="entry"><b>mot</b>() (défini dans <a class="el" href="classmot.html">mot</a>)</td><td class="entry"><a class="el" href="classmot.html">mot</a></td><td class="entry"></td></tr>
-  <tr bgcolor="#f0f0f0" class="even"><td class="entry"><b>mot</b>(const QString &amp;valeur, const QString &amp;separateur_caractere=&quot;&quot;) (défini dans <a class="el" href="classmot.html">mot</a>)</td><td class="entry"><a class="el" href="classmot.html">mot</a></td><td class="entry"></td></tr>
-  <tr bgcolor="#f0f0f0"><td class="entry"><b>nb_caracteres</b>() const  (défini dans <a class="el" href="classmot.html">mot</a>)</td><td class="entry"><a class="el" href="classmot.html">mot</a></td><td class="entry"></td></tr>
-  <tr bgcolor="#f0f0f0" class="even"><td class="entry"><b>to_string</b>() const  (défini dans <a class="el" href="classmot.html">mot</a>)</td><td class="entry"><a class="el" href="classmot.html">mot</a></td><td class="entry"></td></tr>
-  <tr bgcolor="#f0f0f0"><td class="entry"><b>to_string_lisible</b>() const  (défini dans <a class="el" href="classmot.html">mot</a>)</td><td class="entry"><a class="el" href="classmot.html">mot</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="classmot.html#afe069ff829948c14b73a5c8c8250a8cf">m_separateur_caractere</a></td><td class="entry"><a class="el" href="classmot.html">mot</a></td><td class="entry"><span class="mlabel">private</span></td></tr>
+  <tr><td class="entry"><a class="el" href="classmot.html#a563ee5cf398fc1a13732ec9b2b6747ec">mot</a>()</td><td class="entry"><a class="el" href="classmot.html">mot</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="classmot.html#ae6f520d993322be0c75d5490d9d5f52b">mot</a>(const QString &amp;valeur, const QString &amp;separateur_caractere=&quot;&quot;)</td><td class="entry"><a class="el" href="classmot.html">mot</a></td><td class="entry"></td></tr>
+  <tr><td class="entry"><a class="el" href="classmot.html#afda7d448982a5cece83b6459b319fed1">nb_caracteres</a>() const </td><td class="entry"><a class="el" href="classmot.html">mot</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="classmot.html#a5b93cf9b6d98e3a37f6bd312d1acc6e4">to_string</a>() const </td><td class="entry"><a class="el" href="classmot.html">mot</a></td><td class="entry"></td></tr>
+  <tr><td class="entry"><a class="el" href="classmot.html#a20c9b3d510eea3af4bb4a757a56d4481">to_string_lisible</a>() const </td><td class="entry"><a class="el" href="classmot.html">mot</a></td><td class="entry"></td></tr>
 </table></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Généré le Mercredi 8 Février 2017 09:50:12 pour Emgine par &#160;<a href="http://www.doxygen.org/index.html">
+Généré le Mercredi 8 Février 2017 09:53:36 pour Emgine par &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.6
 </small></address>

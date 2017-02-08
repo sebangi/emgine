@@ -1,0 +1,6 @@
+<map id="base_fonction_widget::on_inverser_verrouillage" name="base_fonction_widget::on_inverser_verrouillage">
+<area shape="rect" id="node2" href="$classobjet__selectionnable.html#a028ac895965858e0e8e8e2cc25e8323c" title="objet_selectionnable\l::inverser_verrouillage" alt="" coords="224,29,373,70"/>
+<area shape="rect" id="node3" href="$classobjet__selectionnable.html#a5d39343f43293805a0b60e8520687d87" title="objet_selectionnable\l::set_verrouille" alt="" coords="422,29,562,70"/>
+<area shape="rect" id="node4" href="$classobjet__selectionnable.html#a9f76b8e89231a79c3fc840af874bd868" title="objet_selectionnable\l::modifier" alt="" coords="611,29,751,70"/>
+<area shape="rect" id="node5" href="$classobjet__selectionnable.html#a97e33c61983d5c7811e8bacff8f114c4" title="objet_selectionnable\l::est_projet" alt="" coords="801,29,941,70"/>
+</map>

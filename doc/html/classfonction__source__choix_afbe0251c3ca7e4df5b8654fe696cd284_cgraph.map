@@ -1,0 +1,8 @@
+<map id="fonction_source_choix::executer" name="fonction_source_choix::executer">
+<area shape="rect" id="node2" href="$classligne.html#abb194a19c94d5d7ec48ef442f5043d1e" title="Ajoute un mot à la ligne. " alt="" coords="209,19,335,45"/>
+<area shape="rect" id="node4" href="$classtexte.html#abb3d9763a37659b12552379cb4e0dc8c" title="Ajoute une ligne donnée en fin de texte. " alt="" coords="206,95,338,121"/>
+<area shape="rect" id="node3" href="$classmot.html#afda7d448982a5cece83b6459b319fed1" title="Retourne le nombre de caractère du mot. " alt="" coords="393,5,527,32"/>
+<area shape="rect" id="node5" href="$classligne.html#aaac5ddde199a1b6ab8643ad357b499af" title="Retourne le nombre de caractères de la ligne. " alt="" coords="391,56,529,83"/>
+<area shape="rect" id="node6" href="$classligne.html#af2ae6c2a8588cee920e5904b1afd586d" title="Retourne le nombre de mots de la ligne. " alt="" coords="407,107,513,133"/>
+<area shape="rect" id="node7" href="$classligne.html#ad3f6d09a6c032e2de9e6db727a57af66" title="Convertit et retourne la ligne au format QString avec l&#39;ajout de séparateur. " alt="" coords="387,157,533,184"/>
+</map>

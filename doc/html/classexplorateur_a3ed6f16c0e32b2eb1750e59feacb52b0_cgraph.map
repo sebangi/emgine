@@ -1,0 +1,6 @@
+<map id="explorateur::faire_couper" name="explorateur::faire_couper">
+<area shape="rect" id="node2" href="$classobjet__selectionnable.html#abed9a58bb39d15353db880fbd0808714" title="objet_selectionnable\l::est_conteneur" alt="" coords="382,15,522,56"/>
+<area shape="rect" id="node3" href="$classobjet__selectionnable.html#ab809d020155b7fec48ff3adbe15c9b65" title="objet_selectionnable\l::get_conteneur" alt="" coords="183,56,323,98"/>
+<area shape="rect" id="node4" href="$classfonctions__conteneur.html#a0e66abe2fb75854bdf225621ee4f7fb4" title="fonctions_conteneur\l::fonctions_const_begin" alt="" coords="173,122,333,163"/>
+<area shape="rect" id="node5" href="$classfonctions__conteneur.html#ad9d7f30426cbfab3d39505bb94b1f0d5" title="fonctions_conteneur\l::fonctions_const_end" alt="" coords="178,187,329,228"/>
+</map>

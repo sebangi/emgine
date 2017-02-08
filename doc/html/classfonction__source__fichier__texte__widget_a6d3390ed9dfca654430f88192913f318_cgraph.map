@@ -1,0 +1,6 @@
+<map id="fonction_source_fichier_texte_widget::on_charger_click" name="fonction_source_fichier_texte_widget::on_charger_click">
+<area shape="rect" id="node2" href="$classfonction__source__fichier__texte__widget.html#a0e3fd3e05dd0e88b743b969d968f7228" title="fonction_source_fichier\l_texte_widget::charger\l_fichier" alt="" coords="265,29,421,85"/>
+<area shape="rect" id="node3" href="$classfonction__source__fichier__texte__widget.html#a602f7386cba89d269efae599ad828106" title="fonction_source_fichier\l_texte_widget::update\l_boutons" alt="" coords="470,29,626,85"/>
+<area shape="rect" id="node4" href="$classobjet__selectionnable.html#a1cf41e42861e0b033d2704802905e81a" title="objet_selectionnable\l::est_verrouille_avec\l_parent" alt="" coords="675,29,818,85"/>
+<area shape="rect" id="node5" href="$classobjet__selectionnable.html#a8b9cf156597fe8cc1b8f9408e1bfee8c" title="objet_selectionnable\l::est_verrouille" alt="" coords="867,37,1007,78"/>
+</map>

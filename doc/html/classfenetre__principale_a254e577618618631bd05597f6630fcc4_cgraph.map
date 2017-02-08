@@ -1,0 +1,5 @@
+<map id="fenetre_principale::mettre_a_jour_boutons_projet" name="fenetre_principale::mettre_a_jour_boutons_projet">
+<area shape="rect" id="node2" href="$classprojet.html#a93d1671ebf1548df8908020a306b0ff1" title="projet::est_enregistrable" alt="" coords="217,31,378,57"/>
+<area shape="rect" id="node3" href="$classprojet.html#a6f3595b0a0025ddf250561ebbfb3726b" title="projet::est_nouveau" alt="" coords="427,5,563,32"/>
+<area shape="rect" id="node4" href="$classprojet.html#aed2138f12de82e59a3c88341abc8240e" title="projet::est_modifie" alt="" coords="430,56,559,83"/>
+</map>

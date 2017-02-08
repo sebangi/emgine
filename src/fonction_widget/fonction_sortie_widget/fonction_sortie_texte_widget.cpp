@@ -2,6 +2,7 @@
 #include "entete/fonction_widget/fonction_sortie_widget/texte_widget_item.h"
 #include "entete/fonction_widget/fonction_sortie_widget/liste_texte_widget.h"
 #include "entete/fonction/fonction_sortie/fonction_sortie_texte.h"
+#include "entete/projet/projet.h"
 
 #include <iostream>
 #include <QHBoxLayout>
@@ -9,6 +10,7 @@
 #include <QApplication>
 #include <QStyle>
 #include <QFileDialog>
+#include <QTextStream>
 #include <QMessageBox>
 
 fonction_sortie_texte_widget::fonction_sortie_texte_widget(base_fonction *fonction, QWidget *parent)
@@ -105,11 +107,11 @@ void fonction_sortie_texte_widget::creer_projet()
 
 void fonction_sortie_texte_widget::sauvegarder_texte()
 {
-    texte_widget_item *item = (texte_widget_item *)m_liste_texte->takeItem(m_liste_texte->currentRow());
+    QString dir = "mes_projets";
+    if ( ! m_fonction->get_projet()->est_nouveau() )
+        dir = m_fonction->get_projet()->get_dossier();
 
-    std::cout << item->get_texte().to_string_lisible().toStdString() << std::endl;
-
-    QString nom_fichier = QFileDialog::getSaveFileName( this, "Sauvegarder le fichier", "mes_projets", "*.txt" );
+    QString nom_fichier = QFileDialog::getSaveFileName( this, "Sauvegarder le fichier", dir, "*.txt" );
 
     if ( nom_fichier.isEmpty() )
         return;
@@ -119,17 +121,17 @@ void fonction_sortie_texte_widget::sauvegarder_texte()
             nom_fichier += ".txt";
 
         QFile file(nom_fichier);
-        if (! file.open(QIODevice::WriteOnly)) {
+
+        if (! file.open(QIODevice::WriteOnly  | QIODevice::Text)) {
             QMessageBox::information(this, tr("Impossible d'ouvrir le fichier"),
                                      file.errorString());
             return;
         }
 
-        // store data in f
-        QDataStream out(&file);
-        //out.setVersion(QDataStream::Qt_5_7);
-        QString s("item->get_texte().to_string_lisible()");
-        out << s.toLatin1();
+        texte_widget_item *item = (texte_widget_item *)m_liste_texte->takeItem(m_liste_texte->currentRow());
+
+        QTextStream out(&file);
+        out << item->get_texte().to_string_lisible();
 
         file.close();
     }

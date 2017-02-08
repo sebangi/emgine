@@ -38,6 +38,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Recherche');
     <ul class="tablist">
       <li><a href="index.html"><span>Page&#160;principale</span></a></li>
       <li><a href="pages.html"><span>Pages&#160;associées</span></a></li>
+      <li><a href="modules.html"><span>Modules</span></a></li>
       <li><a href="annotated.html"><span>Classes</span></a></li>
       <li class="current"><a href="files.html"><span>Fichiers</span></a></li>
       <li>
@@ -61,6 +62,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Recherche');
   <div id="navrow2" class="tabs2">
     <ul class="tablist">
       <li><a href="files.html"><span>Liste&#160;des&#160;fichiers</span></a></li>
+      <li><a href="globals.html"><span>Membres&#160;de&#160;fichier</span></a></li>
     </ul>
   </div>
 <!-- window showing the filter options -->
@@ -68,7 +70,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Recherche');
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>Tout</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Fonctions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Définitions de type</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Énumérations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Pages</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>Tout</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Espaces de nommage</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Fichiers</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Fonctions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Définitions de type</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Énumérations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Valeurs énumérées</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&#160;</span>Groupes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(10)"><span class="SelectionMark">&#160;</span>Pages</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -87,7 +89,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Recherche');
 <div class="title">ui_fenetre_principale.h</div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">/********************************************************************************</span></div>
+<a href="entete_2ui__fenetre__principale_8h.html">Aller à la documentation de ce fichier.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">/********************************************************************************</span></div>
 <div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment">** Form generated from reading UI file &#39;fenetre_principale.ui&#39;</span></div>
 <div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment">**</span></div>
 <div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment">** Created by: Qt User Interface Compiler version 5.7.0</span></div>
@@ -116,73 +118,73 @@ var searchBox = new SearchBox("searchBox", "search",false,'Recherche');
 <div class="line"><a name="l00027"></a><span class="lineno"><a class="line" href="class_ui__fenetre__principale.html">   27</a></span>&#160;<span class="keyword">class </span><a class="code" href="class_ui__fenetre__principale.html">Ui_fenetre_principale</a></div>
 <div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;{</div>
 <div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="keyword">public</span>:</div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;    QWidget *centralWidget;</div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;    QVBoxLayout *verticalLayout_2;</div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    QVBoxLayout *centralLayout;</div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    QMenuBar *menuBar;</div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    QMenu *menuFichier;</div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    QMenu *menuAide;</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    QToolBar *mainToolBar;</div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    QStatusBar *statusBar;</div>
+<div class="line"><a name="l00030"></a><span class="lineno"><a class="line" href="class_ui__fenetre__principale.html#a8919428f2aa72bf1b9f040a45e85c43f">   30</a></span>&#160;    QWidget *<a class="code" href="class_ui__fenetre__principale.html#a8919428f2aa72bf1b9f040a45e85c43f">centralWidget</a>;</div>
+<div class="line"><a name="l00031"></a><span class="lineno"><a class="line" href="class_ui__fenetre__principale.html#a995502b3df1b31518de9144d9b515a79">   31</a></span>&#160;    QVBoxLayout *<a class="code" href="class_ui__fenetre__principale.html#a995502b3df1b31518de9144d9b515a79">verticalLayout_2</a>;</div>
+<div class="line"><a name="l00032"></a><span class="lineno"><a class="line" href="class_ui__fenetre__principale.html#ab38df9eeda9cb0ea0e30d76775091355">   32</a></span>&#160;    QVBoxLayout *<a class="code" href="class_ui__fenetre__principale.html#ab38df9eeda9cb0ea0e30d76775091355">centralLayout</a>;</div>
+<div class="line"><a name="l00033"></a><span class="lineno"><a class="line" href="class_ui__fenetre__principale.html#a0743ed7618c433b1f7bc11a3f7182e71">   33</a></span>&#160;    QMenuBar *<a class="code" href="class_ui__fenetre__principale.html#a0743ed7618c433b1f7bc11a3f7182e71">menuBar</a>;</div>
+<div class="line"><a name="l00034"></a><span class="lineno"><a class="line" href="class_ui__fenetre__principale.html#a0ce53fb1d991367d368fe3be0e2f41f8">   34</a></span>&#160;    QMenu *<a class="code" href="class_ui__fenetre__principale.html#a0ce53fb1d991367d368fe3be0e2f41f8">menuFichier</a>;</div>
+<div class="line"><a name="l00035"></a><span class="lineno"><a class="line" href="class_ui__fenetre__principale.html#ab75d4118f4fe0c457cc5bb44395cbff9">   35</a></span>&#160;    QMenu *<a class="code" href="class_ui__fenetre__principale.html#ab75d4118f4fe0c457cc5bb44395cbff9">menuAide</a>;</div>
+<div class="line"><a name="l00036"></a><span class="lineno"><a class="line" href="class_ui__fenetre__principale.html#a1c64c93c323c5ad67f97cb8b9021862a">   36</a></span>&#160;    QToolBar *<a class="code" href="class_ui__fenetre__principale.html#a1c64c93c323c5ad67f97cb8b9021862a">mainToolBar</a>;</div>
+<div class="line"><a name="l00037"></a><span class="lineno"><a class="line" href="class_ui__fenetre__principale.html#a4cd602e913cb4e1b934b23f61d96a0c3">   37</a></span>&#160;    QStatusBar *<a class="code" href="class_ui__fenetre__principale.html#a4cd602e913cb4e1b934b23f61d96a0c3">statusBar</a>;</div>
 <div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;</div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    <span class="keywordtype">void</span> setupUi(QMainWindow *<a class="code" href="classfenetre__principale.html">fenetre_principale</a>)</div>
+<div class="line"><a name="l00039"></a><span class="lineno"><a class="line" href="class_ui__fenetre__principale.html#a03e70469429493f8e6a00b111ad322a4">   39</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_ui__fenetre__principale.html#a03e70469429493f8e6a00b111ad322a4">setupUi</a>(QMainWindow *<a class="code" href="classfenetre__principale.html">fenetre_principale</a>)</div>
 <div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    {</div>
 <div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;        <span class="keywordflow">if</span> (fenetre_principale-&gt;objectName().isEmpty())</div>
 <div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;            fenetre_principale-&gt;setObjectName(QStringLiteral(<span class="stringliteral">&quot;fenetre_principale&quot;</span>));</div>
 <div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;        fenetre_principale-&gt;resize(650, 419);</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;        centralWidget = <span class="keyword">new</span> QWidget(fenetre_principale);</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;        centralWidget-&gt;setObjectName(QStringLiteral(<span class="stringliteral">&quot;centralWidget&quot;</span>));</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;        centralWidget-&gt;setAutoFillBackground(<span class="keyword">true</span>);</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;        verticalLayout_2 = <span class="keyword">new</span> QVBoxLayout(centralWidget);</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;        verticalLayout_2-&gt;setSpacing(0);</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;        verticalLayout_2-&gt;setContentsMargins(11, 11, 11, 11);</div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;        verticalLayout_2-&gt;setObjectName(QStringLiteral(<span class="stringliteral">&quot;verticalLayout_2&quot;</span>));</div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;        verticalLayout_2-&gt;setContentsMargins(0, 0, 0, 0);</div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;        centralLayout = <span class="keyword">new</span> QVBoxLayout();</div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;        centralLayout-&gt;setSpacing(0);</div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;        centralLayout-&gt;setObjectName(QStringLiteral(<span class="stringliteral">&quot;centralLayout&quot;</span>));</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;        <a class="code" href="class_ui__fenetre__principale.html#a8919428f2aa72bf1b9f040a45e85c43f">centralWidget</a> = <span class="keyword">new</span> QWidget(fenetre_principale);</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;        <a class="code" href="class_ui__fenetre__principale.html#a8919428f2aa72bf1b9f040a45e85c43f">centralWidget</a>-&gt;setObjectName(QStringLiteral(<span class="stringliteral">&quot;centralWidget&quot;</span>));</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;        <a class="code" href="class_ui__fenetre__principale.html#a8919428f2aa72bf1b9f040a45e85c43f">centralWidget</a>-&gt;setAutoFillBackground(<span class="keyword">true</span>);</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;        <a class="code" href="class_ui__fenetre__principale.html#a995502b3df1b31518de9144d9b515a79">verticalLayout_2</a> = <span class="keyword">new</span> QVBoxLayout(<a class="code" href="class_ui__fenetre__principale.html#a8919428f2aa72bf1b9f040a45e85c43f">centralWidget</a>);</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;        <a class="code" href="class_ui__fenetre__principale.html#a995502b3df1b31518de9144d9b515a79">verticalLayout_2</a>-&gt;setSpacing(0);</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;        <a class="code" href="class_ui__fenetre__principale.html#a995502b3df1b31518de9144d9b515a79">verticalLayout_2</a>-&gt;setContentsMargins(11, 11, 11, 11);</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;        <a class="code" href="class_ui__fenetre__principale.html#a995502b3df1b31518de9144d9b515a79">verticalLayout_2</a>-&gt;setObjectName(QStringLiteral(<span class="stringliteral">&quot;verticalLayout_2&quot;</span>));</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;        <a class="code" href="class_ui__fenetre__principale.html#a995502b3df1b31518de9144d9b515a79">verticalLayout_2</a>-&gt;setContentsMargins(0, 0, 0, 0);</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;        <a class="code" href="class_ui__fenetre__principale.html#ab38df9eeda9cb0ea0e30d76775091355">centralLayout</a> = <span class="keyword">new</span> QVBoxLayout();</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;        <a class="code" href="class_ui__fenetre__principale.html#ab38df9eeda9cb0ea0e30d76775091355">centralLayout</a>-&gt;setSpacing(0);</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;        <a class="code" href="class_ui__fenetre__principale.html#ab38df9eeda9cb0ea0e30d76775091355">centralLayout</a>-&gt;setObjectName(QStringLiteral(<span class="stringliteral">&quot;centralLayout&quot;</span>));</div>
 <div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;</div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;        verticalLayout_2-&gt;addLayout(centralLayout);</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;        <a class="code" href="class_ui__fenetre__principale.html#a995502b3df1b31518de9144d9b515a79">verticalLayout_2</a>-&gt;addLayout(<a class="code" href="class_ui__fenetre__principale.html#ab38df9eeda9cb0ea0e30d76775091355">centralLayout</a>);</div>
 <div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;</div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;        fenetre_principale-&gt;setCentralWidget(centralWidget);</div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;        menuBar = <span class="keyword">new</span> QMenuBar(fenetre_principale);</div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;        menuBar-&gt;setObjectName(QStringLiteral(<span class="stringliteral">&quot;menuBar&quot;</span>));</div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;        menuBar-&gt;setGeometry(QRect(0, 0, 650, 25));</div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;        menuFichier = <span class="keyword">new</span> QMenu(menuBar);</div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;        menuFichier-&gt;setObjectName(QStringLiteral(<span class="stringliteral">&quot;menuFichier&quot;</span>));</div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;        menuAide = <span class="keyword">new</span> QMenu(menuBar);</div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;        menuAide-&gt;setObjectName(QStringLiteral(<span class="stringliteral">&quot;menuAide&quot;</span>));</div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;        fenetre_principale-&gt;setMenuBar(menuBar);</div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;        mainToolBar = <span class="keyword">new</span> QToolBar(fenetre_principale);</div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;        mainToolBar-&gt;setObjectName(QStringLiteral(<span class="stringliteral">&quot;mainToolBar&quot;</span>));</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;        fenetre_principale-&gt;setCentralWidget(<a class="code" href="class_ui__fenetre__principale.html#a8919428f2aa72bf1b9f040a45e85c43f">centralWidget</a>);</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;        <a class="code" href="class_ui__fenetre__principale.html#a0743ed7618c433b1f7bc11a3f7182e71">menuBar</a> = <span class="keyword">new</span> QMenuBar(fenetre_principale);</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;        <a class="code" href="class_ui__fenetre__principale.html#a0743ed7618c433b1f7bc11a3f7182e71">menuBar</a>-&gt;setObjectName(QStringLiteral(<span class="stringliteral">&quot;menuBar&quot;</span>));</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;        <a class="code" href="class_ui__fenetre__principale.html#a0743ed7618c433b1f7bc11a3f7182e71">menuBar</a>-&gt;setGeometry(QRect(0, 0, 650, 25));</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;        <a class="code" href="class_ui__fenetre__principale.html#a0ce53fb1d991367d368fe3be0e2f41f8">menuFichier</a> = <span class="keyword">new</span> QMenu(<a class="code" href="class_ui__fenetre__principale.html#a0743ed7618c433b1f7bc11a3f7182e71">menuBar</a>);</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;        <a class="code" href="class_ui__fenetre__principale.html#a0ce53fb1d991367d368fe3be0e2f41f8">menuFichier</a>-&gt;setObjectName(QStringLiteral(<span class="stringliteral">&quot;menuFichier&quot;</span>));</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;        <a class="code" href="class_ui__fenetre__principale.html#ab75d4118f4fe0c457cc5bb44395cbff9">menuAide</a> = <span class="keyword">new</span> QMenu(<a class="code" href="class_ui__fenetre__principale.html#a0743ed7618c433b1f7bc11a3f7182e71">menuBar</a>);</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;        <a class="code" href="class_ui__fenetre__principale.html#ab75d4118f4fe0c457cc5bb44395cbff9">menuAide</a>-&gt;setObjectName(QStringLiteral(<span class="stringliteral">&quot;menuAide&quot;</span>));</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;        fenetre_principale-&gt;setMenuBar(<a class="code" href="class_ui__fenetre__principale.html#a0743ed7618c433b1f7bc11a3f7182e71">menuBar</a>);</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;        <a class="code" href="class_ui__fenetre__principale.html#a1c64c93c323c5ad67f97cb8b9021862a">mainToolBar</a> = <span class="keyword">new</span> QToolBar(fenetre_principale);</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;        <a class="code" href="class_ui__fenetre__principale.html#a1c64c93c323c5ad67f97cb8b9021862a">mainToolBar</a>-&gt;setObjectName(QStringLiteral(<span class="stringliteral">&quot;mainToolBar&quot;</span>));</div>
 <div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;        QSizePolicy sizePolicy(QSizePolicy::Preferred, QSizePolicy::Fixed);</div>
 <div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;        sizePolicy.setHorizontalStretch(0);</div>
 <div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;        sizePolicy.setVerticalStretch(0);</div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;        sizePolicy.setHeightForWidth(mainToolBar-&gt;sizePolicy().hasHeightForWidth());</div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;        mainToolBar-&gt;setSizePolicy(sizePolicy);</div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;        mainToolBar-&gt;setLayoutDirection(Qt::LeftToRight);</div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;        mainToolBar-&gt;setMovable(<span class="keyword">false</span>);</div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;        mainToolBar-&gt;setOrientation(Qt::Vertical);</div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;        mainToolBar-&gt;setIconSize(QSize(32, 32));</div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;        mainToolBar-&gt;setFloatable(<span class="keyword">true</span>);</div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;        fenetre_principale-&gt;addToolBar(Qt::TopToolBarArea, mainToolBar);</div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;        statusBar = <span class="keyword">new</span> QStatusBar(fenetre_principale);</div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;        statusBar-&gt;setObjectName(QStringLiteral(<span class="stringliteral">&quot;statusBar&quot;</span>));</div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;        fenetre_principale-&gt;setStatusBar(statusBar);</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;        sizePolicy.setHeightForWidth(<a class="code" href="class_ui__fenetre__principale.html#a1c64c93c323c5ad67f97cb8b9021862a">mainToolBar</a>-&gt;sizePolicy().hasHeightForWidth());</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;        <a class="code" href="class_ui__fenetre__principale.html#a1c64c93c323c5ad67f97cb8b9021862a">mainToolBar</a>-&gt;setSizePolicy(sizePolicy);</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;        <a class="code" href="class_ui__fenetre__principale.html#a1c64c93c323c5ad67f97cb8b9021862a">mainToolBar</a>-&gt;setLayoutDirection(Qt::LeftToRight);</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;        <a class="code" href="class_ui__fenetre__principale.html#a1c64c93c323c5ad67f97cb8b9021862a">mainToolBar</a>-&gt;setMovable(<span class="keyword">false</span>);</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;        <a class="code" href="class_ui__fenetre__principale.html#a1c64c93c323c5ad67f97cb8b9021862a">mainToolBar</a>-&gt;setOrientation(Qt::Vertical);</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;        <a class="code" href="class_ui__fenetre__principale.html#a1c64c93c323c5ad67f97cb8b9021862a">mainToolBar</a>-&gt;setIconSize(QSize(32, 32));</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;        <a class="code" href="class_ui__fenetre__principale.html#a1c64c93c323c5ad67f97cb8b9021862a">mainToolBar</a>-&gt;setFloatable(<span class="keyword">true</span>);</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;        fenetre_principale-&gt;addToolBar(Qt::TopToolBarArea, <a class="code" href="class_ui__fenetre__principale.html#a1c64c93c323c5ad67f97cb8b9021862a">mainToolBar</a>);</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;        <a class="code" href="class_ui__fenetre__principale.html#a4cd602e913cb4e1b934b23f61d96a0c3">statusBar</a> = <span class="keyword">new</span> QStatusBar(fenetre_principale);</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;        <a class="code" href="class_ui__fenetre__principale.html#a4cd602e913cb4e1b934b23f61d96a0c3">statusBar</a>-&gt;setObjectName(QStringLiteral(<span class="stringliteral">&quot;statusBar&quot;</span>));</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;        fenetre_principale-&gt;setStatusBar(<a class="code" href="class_ui__fenetre__principale.html#a4cd602e913cb4e1b934b23f61d96a0c3">statusBar</a>);</div>
 <div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;</div>
-<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;        menuBar-&gt;addAction(menuFichier-&gt;menuAction());</div>
-<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;        menuBar-&gt;addAction(menuAide-&gt;menuAction());</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;        <a class="code" href="class_ui__fenetre__principale.html#a0743ed7618c433b1f7bc11a3f7182e71">menuBar</a>-&gt;addAction(<a class="code" href="class_ui__fenetre__principale.html#a0ce53fb1d991367d368fe3be0e2f41f8">menuFichier</a>-&gt;menuAction());</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;        <a class="code" href="class_ui__fenetre__principale.html#a0743ed7618c433b1f7bc11a3f7182e71">menuBar</a>-&gt;addAction(<a class="code" href="class_ui__fenetre__principale.html#ab75d4118f4fe0c457cc5bb44395cbff9">menuAide</a>-&gt;menuAction());</div>
 <div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;</div>
-<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;        retranslateUi(fenetre_principale);</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;        <a class="code" href="class_ui__fenetre__principale.html#aa9395cee8a007d3ab04582352aa73e70">retranslateUi</a>(fenetre_principale);</div>
 <div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;</div>
 <div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;        QMetaObject::connectSlotsByName(fenetre_principale);</div>
 <div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;    } <span class="comment">// setupUi</span></div>
 <div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;</div>
-<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;    <span class="keywordtype">void</span> retranslateUi(QMainWindow *fenetre_principale)</div>
+<div class="line"><a name="l00092"></a><span class="lineno"><a class="line" href="class_ui__fenetre__principale.html#aa9395cee8a007d3ab04582352aa73e70">   92</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_ui__fenetre__principale.html#aa9395cee8a007d3ab04582352aa73e70">retranslateUi</a>(QMainWindow *<a class="code" href="classfenetre__principale.html">fenetre_principale</a>)</div>
 <div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;    {</div>
 <div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;        fenetre_principale-&gt;setWindowTitle(QApplication::translate(<span class="stringliteral">&quot;fenetre_principale&quot;</span>, <span class="stringliteral">&quot;Mon d\303\251codeur&quot;</span>, 0));</div>
-<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;        menuFichier-&gt;setTitle(QApplication::translate(<span class="stringliteral">&quot;fenetre_principale&quot;</span>, <span class="stringliteral">&quot;Fichier&quot;</span>, 0));</div>
-<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;        menuAide-&gt;setTitle(QApplication::translate(<span class="stringliteral">&quot;fenetre_principale&quot;</span>, <span class="stringliteral">&quot;Aide&quot;</span>, 0));</div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;        <a class="code" href="class_ui__fenetre__principale.html#a0ce53fb1d991367d368fe3be0e2f41f8">menuFichier</a>-&gt;setTitle(QApplication::translate(<span class="stringliteral">&quot;fenetre_principale&quot;</span>, <span class="stringliteral">&quot;Fichier&quot;</span>, 0));</div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;        <a class="code" href="class_ui__fenetre__principale.html#ab75d4118f4fe0c457cc5bb44395cbff9">menuAide</a>-&gt;setTitle(QApplication::translate(<span class="stringliteral">&quot;fenetre_principale&quot;</span>, <span class="stringliteral">&quot;Aide&quot;</span>, 0));</div>
 <div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;    } <span class="comment">// retranslateUi</span></div>
 <div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;</div>
 <div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;};</div>
@@ -194,13 +196,23 @@ var searchBox = new SearchBox("searchBox", "search",false,'Recherche');
 <div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;QT_END_NAMESPACE</div>
 <div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;</div>
 <div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;<span class="preprocessor">#endif // UI_FENETRE_PRINCIPALE_H</span></div>
+<div class="ttc" id="class_ui__fenetre__principale_html_a995502b3df1b31518de9144d9b515a79"><div class="ttname"><a href="class_ui__fenetre__principale.html#a995502b3df1b31518de9144d9b515a79">Ui_fenetre_principale::verticalLayout_2</a></div><div class="ttdeci">QVBoxLayout * verticalLayout_2</div><div class="ttdef"><b>Definition:</b> <a href="entete_2ui__fenetre__principale_8h_source.html#l00031">ui_fenetre_principale.h:31</a></div></div>
+<div class="ttc" id="class_ui__fenetre__principale_html_aa9395cee8a007d3ab04582352aa73e70"><div class="ttname"><a href="class_ui__fenetre__principale.html#aa9395cee8a007d3ab04582352aa73e70">Ui_fenetre_principale::retranslateUi</a></div><div class="ttdeci">void retranslateUi(QMainWindow *fenetre_principale)</div><div class="ttdef"><b>Definition:</b> <a href="entete_2ui__fenetre__principale_8h_source.html#l00092">ui_fenetre_principale.h:92</a></div></div>
 <div class="ttc" id="class_ui_1_1fenetre__principale_html"><div class="ttname"><a href="class_ui_1_1fenetre__principale.html">Ui::fenetre_principale</a></div><div class="ttdef"><b>Definition:</b> <a href="entete_2ui__fenetre__principale_8h_source.html#l00102">ui_fenetre_principale.h:102</a></div></div>
+<div class="ttc" id="class_ui__fenetre__principale_html_ab38df9eeda9cb0ea0e30d76775091355"><div class="ttname"><a href="class_ui__fenetre__principale.html#ab38df9eeda9cb0ea0e30d76775091355">Ui_fenetre_principale::centralLayout</a></div><div class="ttdeci">QVBoxLayout * centralLayout</div><div class="ttdef"><b>Definition:</b> <a href="entete_2ui__fenetre__principale_8h_source.html#l00032">ui_fenetre_principale.h:32</a></div></div>
+<div class="ttc" id="class_ui__fenetre__principale_html_a8919428f2aa72bf1b9f040a45e85c43f"><div class="ttname"><a href="class_ui__fenetre__principale.html#a8919428f2aa72bf1b9f040a45e85c43f">Ui_fenetre_principale::centralWidget</a></div><div class="ttdeci">QWidget * centralWidget</div><div class="ttdef"><b>Definition:</b> <a href="entete_2ui__fenetre__principale_8h_source.html#l00030">ui_fenetre_principale.h:30</a></div></div>
+<div class="ttc" id="class_ui__fenetre__principale_html_ab75d4118f4fe0c457cc5bb44395cbff9"><div class="ttname"><a href="class_ui__fenetre__principale.html#ab75d4118f4fe0c457cc5bb44395cbff9">Ui_fenetre_principale::menuAide</a></div><div class="ttdeci">QMenu * menuAide</div><div class="ttdef"><b>Definition:</b> <a href="entete_2ui__fenetre__principale_8h_source.html#l00035">ui_fenetre_principale.h:35</a></div></div>
+<div class="ttc" id="class_ui__fenetre__principale_html_a03e70469429493f8e6a00b111ad322a4"><div class="ttname"><a href="class_ui__fenetre__principale.html#a03e70469429493f8e6a00b111ad322a4">Ui_fenetre_principale::setupUi</a></div><div class="ttdeci">void setupUi(QMainWindow *fenetre_principale)</div><div class="ttdef"><b>Definition:</b> <a href="entete_2ui__fenetre__principale_8h_source.html#l00039">ui_fenetre_principale.h:39</a></div></div>
 <div class="ttc" id="class_ui__fenetre__principale_html"><div class="ttname"><a href="class_ui__fenetre__principale.html">Ui_fenetre_principale</a></div><div class="ttdef"><b>Definition:</b> <a href="entete_2ui__fenetre__principale_8h_source.html#l00027">ui_fenetre_principale.h:27</a></div></div>
-<div class="ttc" id="classfenetre__principale_html"><div class="ttname"><a href="classfenetre__principale.html">fenetre_principale</a></div><div class="ttdoc">Classe décrivant un texte. </div><div class="ttdef"><b>Definition:</b> <a href="fenetre__principale_8h_source.html#l00035">fenetre_principale.h:35</a></div></div>
+<div class="ttc" id="class_ui__fenetre__principale_html_a0743ed7618c433b1f7bc11a3f7182e71"><div class="ttname"><a href="class_ui__fenetre__principale.html#a0743ed7618c433b1f7bc11a3f7182e71">Ui_fenetre_principale::menuBar</a></div><div class="ttdeci">QMenuBar * menuBar</div><div class="ttdef"><b>Definition:</b> <a href="entete_2ui__fenetre__principale_8h_source.html#l00033">ui_fenetre_principale.h:33</a></div></div>
+<div class="ttc" id="class_ui__fenetre__principale_html_a0ce53fb1d991367d368fe3be0e2f41f8"><div class="ttname"><a href="class_ui__fenetre__principale.html#a0ce53fb1d991367d368fe3be0e2f41f8">Ui_fenetre_principale::menuFichier</a></div><div class="ttdeci">QMenu * menuFichier</div><div class="ttdef"><b>Definition:</b> <a href="entete_2ui__fenetre__principale_8h_source.html#l00034">ui_fenetre_principale.h:34</a></div></div>
+<div class="ttc" id="classfenetre__principale_html"><div class="ttname"><a href="classfenetre__principale.html">fenetre_principale</a></div><div class="ttdoc">Classe représentant la fenètre principale du projet Emgine. </div><div class="ttdef"><b>Definition:</b> <a href="fenetre__principale_8h_source.html#l00047">fenetre_principale.h:47</a></div></div>
+<div class="ttc" id="class_ui__fenetre__principale_html_a4cd602e913cb4e1b934b23f61d96a0c3"><div class="ttname"><a href="class_ui__fenetre__principale.html#a4cd602e913cb4e1b934b23f61d96a0c3">Ui_fenetre_principale::statusBar</a></div><div class="ttdeci">QStatusBar * statusBar</div><div class="ttdef"><b>Definition:</b> <a href="entete_2ui__fenetre__principale_8h_source.html#l00037">ui_fenetre_principale.h:37</a></div></div>
+<div class="ttc" id="class_ui__fenetre__principale_html_a1c64c93c323c5ad67f97cb8b9021862a"><div class="ttname"><a href="class_ui__fenetre__principale.html#a1c64c93c323c5ad67f97cb8b9021862a">Ui_fenetre_principale::mainToolBar</a></div><div class="ttdeci">QToolBar * mainToolBar</div><div class="ttdef"><b>Definition:</b> <a href="entete_2ui__fenetre__principale_8h_source.html#l00036">ui_fenetre_principale.h:36</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Généré le Mercredi 8 Février 2017 09:50:11 pour Emgine par &#160;<a href="http://www.doxygen.org/index.html">
+Généré le Mercredi 8 Février 2017 09:53:35 pour Emgine par &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.6
 </small></address>

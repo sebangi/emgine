@@ -1,0 +1,31 @@
+<map id="fenetre_principale::~fenetre_principale" name="fenetre_principale::~fenetre_principale">
+<area shape="rect" id="node2" href="$classfenetre__principale.html#a9444e0050840e093234b1021c1d84257" title="Retire toutes les connections. " alt="" coords="195,509,319,550"/>
+<area shape="rect" id="node3" href="$classfenetre__principale.html#a8b316bf468199a13edc6433f56f73eec" title="Retire les connections de tous les projets. " alt="" coords="368,509,515,550"/>
+<area shape="rect" id="node4" href="$classfenetre__principale.html#a22d6f55191f52646244f97ac3bb903c2" title="Retire les connections pour un projet donné. " alt="" coords="563,509,703,550"/>
+<area shape="rect" id="node5" href="$classfenetre__principale.html#aa3031f71451237710b8e71ffc9df4f23" title="Fonction appelée lorsque l&#39;état de modification d&#39;un projet change. " alt="" coords="757,285,934,341"/>
+<area shape="rect" id="node19" href="$classfenetre__principale.html#aac51e3e43a291658385b410ad158f24d" title="Fonction appelée lorsque l&#39;état d&#39;exécutabitlité d&#39;un projet change. " alt="" coords="775,468,916,524"/>
+<area shape="rect" id="node22" href="$classfenetre__principale.html#a31a75b71153c61bb51cc1226eed99cfa" title="Enregistre un projet donné avec un nom de fichier spécifié. " alt="" coords="993,579,1143,621"/>
+<area shape="rect" id="node28" href="$classfenetre__principale.html#adaef8393373145bd29e7c168b518ede4" title="Enregistre un projet donné sous. " alt="" coords="752,621,939,662"/>
+<area shape="rect" id="node6" href="$classobjet__selectionnable.html#ad3c9ec08e1036a463b6b82176d52364d" title="objet_selectionnable\l::existe_selection" alt="" coords="1209,383,1349,425"/>
+<area shape="rect" id="node7" href="$classobjet__selectionnable.html#afdc2163828d829f786887b60e11e4717" title="objet_selectionnable\l::get_projet_courant" alt="" coords="998,383,1138,425"/>
+<area shape="rect" id="node8" href="$classfenetre__principale.html#a254e577618618631bd05597f6630fcc4" title="Met à jour les boutons de la fenêtre selon un projet donné. " alt="" coords="987,252,1149,308"/>
+<area shape="rect" id="node12" href="$classfenetre__principale.html#a0e4687512b180aef1eb6f75359b13cee" title="Met à jour les boutons d&#39;ajout de fonctions selon un objet donné. " alt="" coords="987,108,1149,164"/>
+<area shape="rect" id="node18" href="$classobjet__selectionnable.html#ae6be76843c7b502410ec8d2c1fff88a3" title="objet_selectionnable\l::get_selection" alt="" coords="998,187,1138,229"/>
+<area shape="rect" id="node9" href="$classprojet.html#a93d1671ebf1548df8908020a306b0ff1" title="projet::est_enregistrable" alt="" coords="1198,267,1359,293"/>
+<area shape="rect" id="node10" href="$classprojet.html#a6f3595b0a0025ddf250561ebbfb3726b" title="projet::est_nouveau" alt="" coords="1412,292,1548,319"/>
+<area shape="rect" id="node11" href="$classprojet.html#aed2138f12de82e59a3c88341abc8240e" title="projet::est_modifie" alt="" coords="1415,241,1545,268"/>
+<area shape="rect" id="node13" href="$classobjet__selectionnable.html#abed9a58bb39d15353db880fbd0808714" title="objet_selectionnable\l::est_conteneur" alt="" coords="1209,70,1349,111"/>
+<area shape="rect" id="node14" href="$classobjet__selectionnable.html#a1cf41e42861e0b033d2704802905e81a" title="objet_selectionnable\l::est_verrouille_avec\l_parent" alt="" coords="1409,60,1551,116"/>
+<area shape="rect" id="node16" href="$classobjet__selectionnable.html#ab5d7e0b9f000ba34d9d60b36590f1fcf" title="objet_selectionnable\l::est_fonction" alt="" coords="1209,187,1349,229"/>
+<area shape="rect" id="node17" href="$classobjet__selectionnable.html#a57341a9bf3dbc66f4ad4414183b0d27c" title="objet_selectionnable\l::parents_verrouilles" alt="" coords="1209,5,1349,46"/>
+<area shape="rect" id="node15" href="$classobjet__selectionnable.html#a8b9cf156597fe8cc1b8f9408e1bfee8c" title="objet_selectionnable\l::est_verrouille" alt="" coords="1601,67,1741,109"/>
+<area shape="rect" id="node20" href="$classfenetre__principale.html#a91384185c4d7425bb5c1d12072cabeae" title="Met à jour les boutons d&#39;exécution selon un projet donné. " alt="" coords="991,500,1145,556"/>
+<area shape="rect" id="node21" href="$classprojet.html#a29fc0b26b1f163ca1754e2ea390e6eaf" title="projet::est_executable" alt="" coords="1203,515,1354,541"/>
+<area shape="rect" id="node23" href="$classprojet.html#ad8800652d03f73eaad197af702d3d133" title="projet::set_nom_fichier" alt="" coords="1201,631,1356,657"/>
+<area shape="rect" id="node25" href="$classprojet.html#a83aaa7aa7215729f319047a1f74d0a31" title="projet::sauvegarder" alt="" coords="1212,576,1345,603"/>
+<area shape="rect" id="node24" href="$classprojet.html#a3020254e65eb57b4c36bf7990021ad2b" title="projet::set_nom" alt="" coords="1424,635,1536,661"/>
+<area shape="rect" id="node26" href="$classobjet__selectionnable.html#adb99710921bdf74dfe35ee9d75b995a3" title="objet_selectionnable\l::sauvegarder" alt="" coords="1410,503,1550,545"/>
+<area shape="rect" id="node27" href="$classfonctions__conteneur.html#a199dde0697eb91a9e54c1dfecb536a88" title="fonctions_conteneur\l::sauvegarder" alt="" coords="1411,569,1549,610"/>
+<area shape="rect" id="node29" href="$classprojet.html#a45627f0408d5e108eb3f5ffa769024d2" title="projet::get_nom_fichier" alt="" coords="991,645,1145,672"/>
+<area shape="rect" id="node30" href="$classprojet.html#aa44b3d76899e78d5259dec6fdf5e6855" title="projet::get_dossier" alt="" coords="1003,696,1133,723"/>
+</map>

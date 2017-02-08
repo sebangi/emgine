@@ -1,0 +1,10 @@
+<map id="texte_widget_item::update" name="texte_widget_item::update">
+<area shape="rect" id="node2" href="$classtexte.html#a6991dd762a6992df1c1274187730ed4b" title="Retourne l&#39;état de visibilité de la configuration. " alt="" coords="209,5,367,46"/>
+<area shape="rect" id="node3" href="$classtexte.html#a58c8a67b25121fb80813d8a423864bf7" title="Retourne une ligne de séparation au format QString. La largeur de la séparation s&#39;adpate au contenu d..." alt="" coords="197,71,379,97"/>
+<area shape="rect" id="node4" href="$classtexte.html#ace1bb739ade673e761e5beabe12179c4" title="Retourne les informations de taille du texte (nombre de lignes, de mots et de caractères) au format Q..." alt="" coords="195,122,381,163"/>
+<area shape="rect" id="node8" href="$classtexte.html#a390b0b5b896139c08ba2947e2f00bc18" title="Accesseur de la configuration des paramètres au format QString. " alt="" coords="189,188,387,215"/>
+<area shape="rect" id="node9" href="$classtexte.html#a199d73842cb743e47fdd71afc7bbe1d0" title="Convertit le texte au format QString avec séparateur de ligne. " alt="" coords="213,239,363,265"/>
+<area shape="rect" id="node5" href="$classtexte.html#a2a18e98d6efd4265582dc7e2809106a2" title="Retourne le nombre de lignes du texte. " alt="" coords="448,79,563,105"/>
+<area shape="rect" id="node6" href="$classtexte.html#a739191215f853717aaf52a1666011e6d" title="Retourne le nombre de mots du texte. " alt="" coords="451,129,560,156"/>
+<area shape="rect" id="node7" href="$classtexte.html#ab04c894506ff1faeaed9d4c73cd415f0" title="Retourne le nombre de caractères du texte. " alt="" coords="435,180,576,207"/>
+</map>

@@ -38,6 +38,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Recherche');
     <ul class="tablist">
       <li><a href="index.html"><span>Page&#160;principale</span></a></li>
       <li><a href="pages.html"><span>Pages&#160;associées</span></a></li>
+      <li><a href="modules.html"><span>Modules</span></a></li>
       <li class="current"><a href="annotated.html"><span>Classes</span></a></li>
       <li><a href="files.html"><span>Fichiers</span></a></li>
       <li>
@@ -71,7 +72,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Recherche');
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>Tout</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Fonctions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Définitions de type</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Énumérations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Pages</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>Tout</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Espaces de nommage</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Fichiers</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Fonctions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Définitions de type</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Énumérations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Valeurs énumérées</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&#160;</span>Groupes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(10)"><span class="SelectionMark">&#160;</span>Pages</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -90,54 +91,213 @@ var searchBox = new SearchBox("searchBox", "search",false,'Recherche');
 <div class="title">Référence de la classe texte_widget_item</div>  </div>
 </div><!--header-->
 <div class="contents">
+
+<p><code>#include &lt;<a class="el" href="texte__widget__item_8h_source.html">texte_widget_item.h</a>&gt;</code></p>
 <div class="dynheader">
 Graphe d'héritage de texte_widget_item:</div>
 <div class="dyncontent">
 <div class="center"><img src="classtexte__widget__item__inherit__graph.png" border="0" usemap="#texte__widget__item_inherit__map" alt="Inheritance graph"/></div>
+<map name="texte__widget__item_inherit__map" id="texte__widget__item_inherit__map">
+</map>
 <center><span class="legend">[<a href="graph_legend.html">légende</a>]</span></center></div>
 <div class="dynheader">
 Graphe de collaboration de texte_widget_item:</div>
 <div class="dyncontent">
 <div class="center"><img src="classtexte__widget__item__coll__graph.png" border="0" usemap="#texte__widget__item_coll__map" alt="Collaboration graph"/></div>
 <map name="texte__widget__item_coll__map" id="texte__widget__item_coll__map">
-<area shape="rect" id="node3" href="classtexte.html" title="texte" alt="" coords="149,189,200,216"/><area shape="rect" id="node5" href="classconfiguration.html" title="configuration" alt="" coords="220,99,316,125"/></map>
+<area shape="rect" id="node3" href="classtexte.html" title="Classe décrivant un texte, i.e. un tableau de ligne. " alt="" coords="149,189,200,216"/><area shape="rect" id="node5" href="classconfiguration.html" title="Classe décrivant un configuration lors d&#39;une exécution. Pour un texte donné, une configuration corres..." alt="" coords="220,99,316,125"/></map>
 <center><span class="legend">[<a href="graph_legend.html">légende</a>]</span></center></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Fonctions membres publiques</h2></td></tr>
-<tr class="memitem:a9e9cba757712fb588863825aa3bdc7ea"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a9e9cba757712fb588863825aa3bdc7ea"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>texte_widget_item</b> (<a class="el" href="classtexte.html">texte</a> &amp;t, int num)</td></tr>
+<tr class="memitem:a9e9cba757712fb588863825aa3bdc7ea"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtexte__widget__item.html#a9e9cba757712fb588863825aa3bdc7ea">texte_widget_item</a> (<a class="el" href="classtexte.html">texte</a> &amp;t, int num)</td></tr>
 <tr class="separator:a9e9cba757712fb588863825aa3bdc7ea"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a520df962f6588a4007d506b728d184cd"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a520df962f6588a4007d506b728d184cd"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>update</b> ()</td></tr>
+<tr class="memitem:a520df962f6588a4007d506b728d184cd"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtexte__widget__item.html#a520df962f6588a4007d506b728d184cd">update</a> ()</td></tr>
 <tr class="separator:a520df962f6588a4007d506b728d184cd"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac44b3d9bd91591cf701399120973642d"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ac44b3d9bd91591cf701399120973642d"></a>
-<a class="el" href="classtexte.html">texte</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>get_texte</b> () const </td></tr>
+<tr class="memitem:ac44b3d9bd91591cf701399120973642d"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classtexte.html">texte</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtexte__widget__item.html#ac44b3d9bd91591cf701399120973642d">get_texte</a> () const </td></tr>
 <tr class="separator:ac44b3d9bd91591cf701399120973642d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:abbbfe7e9b0bae3f64e43a3af1b1f2a01"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="abbbfe7e9b0bae3f64e43a3af1b1f2a01"></a>
-int&#160;</td><td class="memItemRight" valign="bottom"><b>get_height</b> () const </td></tr>
+<tr class="memitem:abbbfe7e9b0bae3f64e43a3af1b1f2a01"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtexte__widget__item.html#abbbfe7e9b0bae3f64e43a3af1b1f2a01">get_height</a> () const </td></tr>
 <tr class="separator:abbbfe7e9b0bae3f64e43a3af1b1f2a01"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
 Attributs privés</h2></td></tr>
-<tr class="memitem:ae44e78a9a5d3981833b5b59ab77ff36f"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ae44e78a9a5d3981833b5b59ab77ff36f"></a>
-<a class="el" href="classtexte.html">texte</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>m_texte</b></td></tr>
+<tr class="memitem:ae44e78a9a5d3981833b5b59ab77ff36f"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classtexte.html">texte</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtexte__widget__item.html#ae44e78a9a5d3981833b5b59ab77ff36f">m_texte</a></td></tr>
 <tr class="separator:ae44e78a9a5d3981833b5b59ab77ff36f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a85231790a6bc99f166d907b272609b01"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a85231790a6bc99f166d907b272609b01"></a>
-int&#160;</td><td class="memItemRight" valign="bottom"><b>m_num</b></td></tr>
+<tr class="memitem:a85231790a6bc99f166d907b272609b01"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtexte__widget__item.html#a85231790a6bc99f166d907b272609b01">m_num</a></td></tr>
 <tr class="separator:a85231790a6bc99f166d907b272609b01"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Description détaillée</h2>
 <div class="textblock">
 <p>Définition à la ligne <a class="el" href="texte__widget__item_8h_source.html#l00010">10</a> du fichier <a class="el" href="texte__widget__item_8h_source.html">texte_widget_item.h</a>.</p>
-</div><hr/>La documentation de cette classe a été générée à partir des fichiers suivants :<ul>
+</div><h2 class="groupheader">Documentation des constructeurs et destructeur</h2>
+<a class="anchor" id="a9e9cba757712fb588863825aa3bdc7ea"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">texte_widget_item::texte_widget_item </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classtexte.html">texte</a> &amp;&#160;</td>
+          <td class="paramname"><em>t</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>num</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Définition à la ligne <a class="el" href="texte__widget__item_8cpp_source.html#l00005">5</a> du fichier <a class="el" href="texte__widget__item_8cpp_source.html">texte_widget_item.cpp</a>.</p>
+
+<p><div class="dynheader">
+Voici le graphe d'appel pour cette fonction :</div>
+<div class="dyncontent">
+<div class="center"><img src="classtexte__widget__item_a9e9cba757712fb588863825aa3bdc7ea_cgraph.png" border="0" usemap="#classtexte__widget__item_a9e9cba757712fb588863825aa3bdc7ea_cgraph" alt=""/></div>
+<map name="classtexte__widget__item_a9e9cba757712fb588863825aa3bdc7ea_cgraph" id="classtexte__widget__item_a9e9cba757712fb588863825aa3bdc7ea_cgraph">
+<area shape="rect" id="node2" href="classtexte__widget__item.html#a520df962f6588a4007d506b728d184cd" title="texte_widget_item::\lupdate" alt="" coords="189,122,325,163"/><area shape="rect" id="node3" href="classtexte.html#a6991dd762a6992df1c1274187730ed4b" title="Retourne l&#39;état de visibilité de la configuration. " alt="" coords="393,5,551,46"/><area shape="rect" id="node4" href="classtexte.html#a58c8a67b25121fb80813d8a423864bf7" title="Retourne une ligne de séparation au format QString. La largeur de la séparation s&#39;adpate au contenu d..." alt="" coords="381,71,563,97"/><area shape="rect" id="node5" href="classtexte.html#ace1bb739ade673e761e5beabe12179c4" title="Retourne les informations de taille du texte (nombre de lignes, de mots et de caractères) au format Q..." alt="" coords="379,122,565,163"/><area shape="rect" id="node9" href="classtexte.html#a390b0b5b896139c08ba2947e2f00bc18" title="Accesseur de la configuration des paramètres au format QString. " alt="" coords="373,188,571,215"/><area shape="rect" id="node10" href="classtexte.html#a199d73842cb743e47fdd71afc7bbe1d0" title="Convertit le texte au format QString avec séparateur de ligne. " alt="" coords="397,239,547,265"/><area shape="rect" id="node6" href="classtexte.html#a2a18e98d6efd4265582dc7e2809106a2" title="Retourne le nombre de lignes du texte. " alt="" coords="632,79,747,105"/><area shape="rect" id="node7" href="classtexte.html#a739191215f853717aaf52a1666011e6d" title="Retourne le nombre de mots du texte. " alt="" coords="635,129,744,156"/><area shape="rect" id="node8" href="classtexte.html#ab04c894506ff1faeaed9d4c73cd415f0" title="Retourne le nombre de caractères du texte. " alt="" coords="619,180,760,207"/></map>
+</div>
+</p>
+
+</div>
+</div>
+<h2 class="groupheader">Documentation des fonctions membres</h2>
+<a class="anchor" id="abbbfe7e9b0bae3f64e43a3af1b1f2a01"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int texte_widget_item::get_height </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Définition à la ligne <a class="el" href="texte__widget__item_8h_source.html#l00022">22</a> du fichier <a class="el" href="texte__widget__item_8h_source.html">texte_widget_item.h</a>.</p>
+
+<p><div class="dynheader">
+Voici le graphe d'appel pour cette fonction :</div>
+<div class="dyncontent">
+<div class="center"><img src="classtexte__widget__item_abbbfe7e9b0bae3f64e43a3af1b1f2a01_cgraph.png" border="0" usemap="#classtexte__widget__item_abbbfe7e9b0bae3f64e43a3af1b1f2a01_cgraph" alt=""/></div>
+<map name="classtexte__widget__item_abbbfe7e9b0bae3f64e43a3af1b1f2a01_cgraph" id="classtexte__widget__item_abbbfe7e9b0bae3f64e43a3af1b1f2a01_cgraph">
+<area shape="rect" id="node2" href="classtexte.html#ade806accef90cf9d30b823c5be3e5f0b" title="Retourne le nombre de lignes dui texte avec les informations (configuration et taille). " alt="" coords="189,5,328,46"/></map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="ac44b3d9bd91591cf701399120973642d"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classtexte.html">texte</a> &amp; texte_widget_item::get_texte </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Définition à la ligne <a class="el" href="texte__widget__item_8cpp_source.html#l00022">22</a> du fichier <a class="el" href="texte__widget__item_8cpp_source.html">texte_widget_item.cpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a520df962f6588a4007d506b728d184cd"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void texte_widget_item::update </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Définition à la ligne <a class="el" href="texte__widget__item_8cpp_source.html#l00011">11</a> du fichier <a class="el" href="texte__widget__item_8cpp_source.html">texte_widget_item.cpp</a>.</p>
+
+<p><div class="dynheader">
+Voici le graphe d'appel pour cette fonction :</div>
+<div class="dyncontent">
+<div class="center"><img src="classtexte__widget__item_a520df962f6588a4007d506b728d184cd_cgraph.png" border="0" usemap="#classtexte__widget__item_a520df962f6588a4007d506b728d184cd_cgraph" alt=""/></div>
+<map name="classtexte__widget__item_a520df962f6588a4007d506b728d184cd_cgraph" id="classtexte__widget__item_a520df962f6588a4007d506b728d184cd_cgraph">
+<area shape="rect" id="node2" href="classtexte.html#a6991dd762a6992df1c1274187730ed4b" title="Retourne l&#39;état de visibilité de la configuration. " alt="" coords="209,5,367,46"/><area shape="rect" id="node3" href="classtexte.html#a58c8a67b25121fb80813d8a423864bf7" title="Retourne une ligne de séparation au format QString. La largeur de la séparation s&#39;adpate au contenu d..." alt="" coords="197,71,379,97"/><area shape="rect" id="node4" href="classtexte.html#ace1bb739ade673e761e5beabe12179c4" title="Retourne les informations de taille du texte (nombre de lignes, de mots et de caractères) au format Q..." alt="" coords="195,122,381,163"/><area shape="rect" id="node8" href="classtexte.html#a390b0b5b896139c08ba2947e2f00bc18" title="Accesseur de la configuration des paramètres au format QString. " alt="" coords="189,188,387,215"/><area shape="rect" id="node9" href="classtexte.html#a199d73842cb743e47fdd71afc7bbe1d0" title="Convertit le texte au format QString avec séparateur de ligne. " alt="" coords="213,239,363,265"/><area shape="rect" id="node5" href="classtexte.html#a2a18e98d6efd4265582dc7e2809106a2" title="Retourne le nombre de lignes du texte. " alt="" coords="448,79,563,105"/><area shape="rect" id="node6" href="classtexte.html#a739191215f853717aaf52a1666011e6d" title="Retourne le nombre de mots du texte. " alt="" coords="451,129,560,156"/><area shape="rect" id="node7" href="classtexte.html#ab04c894506ff1faeaed9d4c73cd415f0" title="Retourne le nombre de caractères du texte. " alt="" coords="435,180,576,207"/></map>
+</div>
+</p>
+
+</div>
+</div>
+<h2 class="groupheader">Documentation des données membres</h2>
+<a class="anchor" id="a85231790a6bc99f166d907b272609b01"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int texte_widget_item::m_num</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Définition à la ligne <a class="el" href="texte__widget__item_8h_source.html#l00014">14</a> du fichier <a class="el" href="texte__widget__item_8h_source.html">texte_widget_item.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ae44e78a9a5d3981833b5b59ab77ff36f"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classtexte.html">texte</a>&amp; texte_widget_item::m_texte</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Définition à la ligne <a class="el" href="texte__widget__item_8h_source.html#l00013">13</a> du fichier <a class="el" href="texte__widget__item_8h_source.html">texte_widget_item.h</a>.</p>
+
+</div>
+</div>
+<hr/>La documentation de cette classe a été générée à partir des fichiers suivants :<ul>
 <li>entete/fonction_widget/fonction_sortie_widget/<a class="el" href="texte__widget__item_8h_source.html">texte_widget_item.h</a></li>
 <li>src/fonction_widget/fonction_sortie_widget/<a class="el" href="texte__widget__item_8cpp_source.html">texte_widget_item.cpp</a></li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Généré le Mercredi 8 Février 2017 09:50:12 pour Emgine par &#160;<a href="http://www.doxygen.org/index.html">
+Généré le Mercredi 8 Février 2017 09:53:36 pour Emgine par &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.6
 </small></address>

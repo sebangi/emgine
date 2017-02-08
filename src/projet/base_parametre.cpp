@@ -2,6 +2,7 @@
 
 #include "entete/explorateur/noeud_parametre.h"
 #include "entete/explorateur/noeud_fonction.h"
+#include "entete/projet/base_fonction.h"
 #include "entete/fonction/bibliotheque_fonctions.h"
 #include "entete/fonction/fonction_source/fonction_source_booleen.h"
 #include "entete/fonction/fonction_source/fonction_source_texte.h"
@@ -153,7 +154,7 @@ bool base_parametre::est_valide(logs_compilation_widget * vue_logs)
                                    "\" n'a aucune fonction active") );
         result = false;
     }
-    else if ( ! actifs.front()->get_type() == base_fonction::fonction_source )
+    else if ( ! ( actifs.front()->get_type() == type_fonction::fonction_source ) )
     {
         vue_logs->ajouter_log
                 ( log_compilation( log_compilation::LOG_ERREUR, this,

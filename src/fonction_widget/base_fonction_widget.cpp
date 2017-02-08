@@ -277,11 +277,11 @@ void base_fonction_widget::update_object_name()
     {
         if ( ! m_fonction->est_active_avec_parent() )
             setObjectName("FonctionInactiveWidget");
-        else if ( m_fonction->get_type() == base_fonction::fonction_source )
+        else if ( m_fonction->get_type() == type_fonction::fonction_source )
             setObjectName("FonctionSourceWidget");
-        else if ( m_fonction->get_type() == base_fonction::fonction_conversion )
+        else if ( m_fonction->get_type() == type_fonction::fonction_conversion )
             setObjectName("FonctionConversionWidget");
-        else if ( m_fonction->get_type() == base_fonction::fonction_sortie )
+        else if ( m_fonction->get_type() == type_fonction::fonction_sortie )
             setObjectName("FonctionSortieWidget");
 
         style()->unpolish(this);
@@ -292,17 +292,17 @@ void base_fonction_widget::update_object_name()
             m_separation1->setObjectName("separation_inactive");
             m_separation2->setObjectName("separation_inactive");
         }
-        else if (  m_fonction->get_type() == base_fonction::fonction_source  )
+        else if (  m_fonction->get_type() == type_fonction::fonction_source  )
         {
             m_separation1->setObjectName("separation_source");
             m_separation2->setObjectName("separation_source");
         }
-        else if (  m_fonction->get_type() == base_fonction::fonction_conversion  )
+        else if (  m_fonction->get_type() == type_fonction::fonction_conversion  )
         {
             m_separation1->setObjectName("separation_conversion");
             m_separation2->setObjectName("separation_conversion");
         }
-        else if (  m_fonction->get_type() == base_fonction::fonction_sortie  )
+        else if (  m_fonction->get_type() == type_fonction::fonction_sortie  )
         {
             m_separation1->setObjectName("separation_sortie");
             m_separation2->setObjectName("separation_sortie");

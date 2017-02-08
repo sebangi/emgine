@@ -1,6 +1,6 @@
 <map id="base_noeud" name="base_noeud">
-<area shape="rect" id="node3" href="$classnoeud__fonction.html" title="noeud_fonction" alt="" coords="5,155,115,181"/>
-<area shape="rect" id="node4" href="$classnoeud__fonctions__conteneur.html" title="noeud_fonctions_conteneur" alt="" coords="140,155,321,181"/>
-<area shape="rect" id="node6" href="$classnoeud__parametre.html" title="noeud_parametre" alt="" coords="345,155,468,181"/>
-<area shape="rect" id="node5" href="$classnoeud__projet.html" title="noeud_projet" alt="" coords="183,229,279,256"/>
+<area shape="rect" id="node3" href="$classnoeud__fonction.html" title="Classe décrivant un noeud associé à une fonction. " alt="" coords="5,155,115,181"/>
+<area shape="rect" id="node4" href="$classnoeud__fonctions__conteneur.html" title="Classe décrivant un noeud associé à un fonctions_conteneur. " alt="" coords="140,155,321,181"/>
+<area shape="rect" id="node6" href="$classnoeud__parametre.html" title="Classe décrivant un noeud associé à un paramètre. " alt="" coords="345,155,468,181"/>
+<area shape="rect" id="node5" href="$classnoeud__projet.html" title="Classe décrivant un noeud associé à un projet. " alt="" coords="183,229,279,256"/>
 </map>

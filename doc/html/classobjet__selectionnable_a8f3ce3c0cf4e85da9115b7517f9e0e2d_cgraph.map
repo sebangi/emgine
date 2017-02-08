@@ -1,0 +1,7 @@
+<map id="objet_selectionnable::charger" name="objet_selectionnable::charger">
+<area shape="rect" id="node2" href="$classobjet__selectionnable.html#ae58408e8c4421e9c33bc488381e8c0a4" title="objet_selectionnable\l::est_etendu" alt="" coords="195,5,335,46"/>
+<area shape="rect" id="node3" href="$classobjet__selectionnable.html#aafef1c588ce9d5f7956c321799986b9b" title="objet_selectionnable\l::set_est_etendu" alt="" coords="195,70,335,111"/>
+<area shape="rect" id="node4" href="$classobjet__selectionnable.html#a5d39343f43293805a0b60e8520687d87" title="objet_selectionnable\l::set_verrouille" alt="" coords="195,135,335,177"/>
+<area shape="rect" id="node5" href="$classobjet__selectionnable.html#a9f76b8e89231a79c3fc840af874bd868" title="objet_selectionnable\l::modifier" alt="" coords="385,135,525,177"/>
+<area shape="rect" id="node6" href="$classobjet__selectionnable.html#a97e33c61983d5c7811e8bacff8f114c4" title="objet_selectionnable\l::est_projet" alt="" coords="574,135,714,177"/>
+</map>

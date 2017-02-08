@@ -1,0 +1,5 @@
+<map id="log_widget_item::log_widget_item" name="log_widget_item::log_widget_item">
+<area shape="rect" id="node2" href="$classlog__widget__item.html#a2a224a580279770eb5e688e1fcefa40d" title="Initialise le widget. " alt="" coords="195,45,336,72"/>
+<area shape="rect" id="node3" href="$classlog__compilation.html#a5de84eabf90a75391b2ceccb58084b17" title="Retourne la couleur associée au message (dépendant du type). " alt="" coords="384,5,523,46"/>
+<area shape="rect" id="node4" href="$classlog__compilation.html#afae502578c98e3603fcc754478296159" title="Calcul et retourne le message du log. " alt="" coords="384,70,523,111"/>
+</map>

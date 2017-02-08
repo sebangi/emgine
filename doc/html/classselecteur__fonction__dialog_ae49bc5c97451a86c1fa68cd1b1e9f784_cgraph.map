@@ -1,0 +1,12 @@
+<map id="selecteur_fonction_dialog::selecteur_fonction_dialog" name="selecteur_fonction_dialog::selecteur_fonction_dialog">
+<area shape="rect" id="node2" href="$classselecteur__fonction__dialog.html#ae8cbcccac4d3c20126c2d204a82fec42" title="selecteur_fonction\l_dialog::chercher" alt="" coords="261,5,389,46"/>
+<area shape="rect" id="node3" href="$classselecteur__fonction__dialog.html#ab0db8346953650fe30b55193d198b7db" title="selecteur_fonction\l_dialog::calcul_nb_colonnes" alt="" coords="233,70,418,111"/>
+<area shape="rect" id="node4" href="$classselecteur__fonction__dialog.html#a5a9accd19e0f47cfc378f47c03b48ce6" title="selecteur_fonction\l_dialog::init_choix" alt="" coords="261,135,389,177"/>
+<area shape="rect" id="node5" href="$classselecteur__fonction__dialog.html#a3cf5a2551433071da63eb34f9d2f2a81" title="selecteur_fonction\l_dialog::ajouter_choix" alt="" coords="467,135,615,177"/>
+<area shape="rect" id="node6" href="$classselecteur__fonction__dialog.html#a008277592e1a0b3d3e4e7c4f927fb061" title="selecteur_fonction\l_dialog::choisir" alt="" coords="664,135,792,177"/>
+<area shape="rect" id="node7" href="$classbouton__choix__fonction.html#aea2d48c212b1a6ce5cbbbbef5067afe4" title="bouton_choix_fonction\l::get_fonction" alt="" coords="840,75,992,117"/>
+<area shape="rect" id="node9" href="$classbase__fonction.html#a4d7a7d067af71e0c5e9ec7d6188ac9d1" title="base_fonction::set_id" alt="" coords="843,143,989,169"/>
+<area shape="rect" id="node11" href="$classbouton__choix__fonction.html#a6f9941227d6d1cccc4f78073dd4a0e71" title="bouton_choix_fonction\l::get_id_fonction" alt="" coords="840,194,992,235"/>
+<area shape="rect" id="node8" href="$classbibliotheque__fonctions.html#a97e2db5603fe4267df7ace47f110b6e0" title="bibliotheque_fonctions\l::get_fonction" alt="" coords="1041,73,1191,114"/>
+<area shape="rect" id="node10" href="$classbibliotheque__fonctions.html#ac8c035960c49cdf0fe7437b82739154e" title="bibliotheque_fonctions\l::get_nom" alt="" coords="1041,138,1191,179"/>
+</map>

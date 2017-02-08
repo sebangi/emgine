@@ -38,6 +38,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Recherche');
     <ul class="tablist">
       <li><a href="index.html"><span>Page&#160;principale</span></a></li>
       <li><a href="pages.html"><span>Pages&#160;associées</span></a></li>
+      <li><a href="modules.html"><span>Modules</span></a></li>
       <li class="current"><a href="annotated.html"><span>Classes</span></a></li>
       <li><a href="files.html"><span>Fichiers</span></a></li>
       <li>
@@ -71,7 +72,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Recherche');
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>Tout</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Fonctions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Définitions de type</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Énumérations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Pages</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>Tout</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Espaces de nommage</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Fichiers</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Fonctions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Définitions de type</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Énumérations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Valeurs énumérées</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&#160;</span>Groupes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(10)"><span class="SelectionMark">&#160;</span>Pages</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -89,77 +90,199 @@ var searchBox = new SearchBox("searchBox", "search",false,'Recherche');
 <div class="title">Référence de la classe noeud_parametre</div>  </div>
 </div><!--header-->
 <div class="contents">
+
+<p>Classe décrivant un noeud associé à un paramètre.  
+ <a href="classnoeud__parametre.html#details">Plus de détails...</a></p>
+
+<p><code>#include &lt;<a class="el" href="noeud__parametre_8h_source.html">noeud_parametre.h</a>&gt;</code></p>
 <div class="dynheader">
 Graphe d'héritage de noeud_parametre:</div>
 <div class="dyncontent">
 <div class="center"><img src="classnoeud__parametre__inherit__graph.png" border="0" usemap="#noeud__parametre_inherit__map" alt="Inheritance graph"/></div>
 <map name="noeud__parametre_inherit__map" id="noeud__parametre_inherit__map">
-<area shape="rect" id="node2" href="classbase__noeud.html" title="base_noeud" alt="" coords="22,80,113,107"/></map>
+<area shape="rect" id="node2" href="classbase__noeud.html" title="Classe décrivant un noeud quelconque de l&#39;explorateur. " alt="" coords="22,80,113,107"/></map>
 <center><span class="legend">[<a href="graph_legend.html">légende</a>]</span></center></div>
 <div class="dynheader">
 Graphe de collaboration de noeud_parametre:</div>
 <div class="dyncontent">
 <div class="center"><img src="classnoeud__parametre__coll__graph.png" border="0" usemap="#noeud__parametre_coll__map" alt="Collaboration graph"/></div>
 <map name="noeud__parametre_coll__map" id="noeud__parametre_coll__map">
-<area shape="rect" id="node2" href="classbase__noeud.html" title="base_noeud" alt="" coords="71,176,163,203"/><area shape="rect" id="node4" href="classobjet__selectionnable.html" title="objet_selectionnable" alt="" coords="155,84,295,111"/></map>
+<area shape="rect" id="node2" href="classbase__noeud.html" title="Classe décrivant un noeud quelconque de l&#39;explorateur. " alt="" coords="71,176,163,203"/><area shape="rect" id="node4" href="classobjet__selectionnable.html" title="objet_selectionnable" alt="" coords="155,84,295,111"/></map>
 <center><span class="legend">[<a href="graph_legend.html">légende</a>]</span></center></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Fonctions membres publiques</h2></td></tr>
-<tr class="memitem:a62a09806916d342436ae4afaed51acaa"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a62a09806916d342436ae4afaed51acaa"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>noeud_parametre</b> (<a class="el" href="classbase__parametre.html">base_parametre</a> *p)</td></tr>
+<tr class="memitem:a62a09806916d342436ae4afaed51acaa"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classnoeud__parametre.html#a62a09806916d342436ae4afaed51acaa">noeud_parametre</a> (<a class="el" href="classbase__parametre.html">base_parametre</a> *p)</td></tr>
+<tr class="memdesc:a62a09806916d342436ae4afaed51acaa"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructeur de la classe <a class="el" href="classnoeud__parametre.html" title="Classe décrivant un noeud associé à un paramètre. ">noeud_parametre</a>.  <a href="#a62a09806916d342436ae4afaed51acaa">Plus de détails...</a><br/></td></tr>
 <tr class="separator:a62a09806916d342436ae4afaed51acaa"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5249a296c69c21671bf817aa1a90fd27"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a5249a296c69c21671bf817aa1a90fd27"></a>
-<a class="el" href="classbase__parametre.html">base_parametre</a> *&#160;</td><td class="memItemRight" valign="bottom"><b>get_parametre</b> () const </td></tr>
+<tr class="memitem:afbe7e14d60e0ae5bd32251fe950d1f69"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classnoeud__parametre.html#afbe7e14d60e0ae5bd32251fe950d1f69">~noeud_parametre</a> ()</td></tr>
+<tr class="memdesc:afbe7e14d60e0ae5bd32251fe950d1f69"><td class="mdescLeft">&#160;</td><td class="mdescRight">Destructeur de la classe <a class="el" href="classnoeud__parametre.html" title="Classe décrivant un noeud associé à un paramètre. ">noeud_parametre</a>.  <a href="#afbe7e14d60e0ae5bd32251fe950d1f69">Plus de détails...</a><br/></td></tr>
+<tr class="separator:afbe7e14d60e0ae5bd32251fe950d1f69"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5249a296c69c21671bf817aa1a90fd27"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classbase__parametre.html">base_parametre</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classnoeud__parametre.html#a5249a296c69c21671bf817aa1a90fd27">get_parametre</a> () const </td></tr>
+<tr class="memdesc:a5249a296c69c21671bf817aa1a90fd27"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retourne le paramètre associé au noeud.  <a href="#a5249a296c69c21671bf817aa1a90fd27">Plus de détails...</a><br/></td></tr>
 <tr class="separator:a5249a296c69c21671bf817aa1a90fd27"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0bd17d737add6286416757452f4a8c02"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a0bd17d737add6286416757452f4a8c02"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>mise_a_jour_icone</b> ()</td></tr>
+<tr class="memitem:a0bd17d737add6286416757452f4a8c02"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classnoeud__parametre.html#a0bd17d737add6286416757452f4a8c02">mise_a_jour_icone</a> ()</td></tr>
+<tr class="memdesc:a0bd17d737add6286416757452f4a8c02"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fonction mettant à jour l'icône.  <a href="#a0bd17d737add6286416757452f4a8c02">Plus de détails...</a><br/></td></tr>
 <tr class="separator:a0bd17d737add6286416757452f4a8c02"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_methods_classbase__noeud"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_classbase__noeud')"><img src="closed.png" alt="-"/>&#160;Fonctions membres publiques hérités de <a class="el" href="classbase__noeud.html">base_noeud</a></td></tr>
-<tr class="memitem:ac1ff8d19de3a701eec02917a8da3c916 inherit pub_methods_classbase__noeud"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ac1ff8d19de3a701eec02917a8da3c916"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>base_noeud</b> (<a class="el" href="classobjet__selectionnable.html">objet_selectionnable</a> *obj, <a class="el" href="classbase__noeud.html#a5b77eba8eaa6aa32f4e5d820a84ded61">type_noeud</a> type)</td></tr>
+<tr class="memitem:ac1ff8d19de3a701eec02917a8da3c916 inherit pub_methods_classbase__noeud"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classbase__noeud.html#ac1ff8d19de3a701eec02917a8da3c916">base_noeud</a> (<a class="el" href="classobjet__selectionnable.html">objet_selectionnable</a> *obj, <a class="el" href="classbase__noeud.html#a5b77eba8eaa6aa32f4e5d820a84ded61">type_noeud</a> type)</td></tr>
+<tr class="memdesc:ac1ff8d19de3a701eec02917a8da3c916 inherit pub_methods_classbase__noeud"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructeur de la classe <a class="el" href="classbase__noeud.html" title="Classe décrivant un noeud quelconque de l&#39;explorateur. ">base_noeud</a>.  <a href="#ac1ff8d19de3a701eec02917a8da3c916">Plus de détails...</a><br/></td></tr>
 <tr class="separator:ac1ff8d19de3a701eec02917a8da3c916 inherit pub_methods_classbase__noeud"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae78124477ea5148f16c2da42ac766f4c inherit pub_methods_classbase__noeud"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ae78124477ea5148f16c2da42ac766f4c"></a>
-<a class="el" href="classobjet__selectionnable.html">objet_selectionnable</a> *&#160;</td><td class="memItemRight" valign="bottom"><b>get_objet</b> () const </td></tr>
+<tr class="memitem:a15afae5b064afa045a8fea545f33b58e inherit pub_methods_classbase__noeud"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classbase__noeud.html#a15afae5b064afa045a8fea545f33b58e">~base_noeud</a> ()</td></tr>
+<tr class="memdesc:a15afae5b064afa045a8fea545f33b58e inherit pub_methods_classbase__noeud"><td class="mdescLeft">&#160;</td><td class="mdescRight">Destructeur de la classe <a class="el" href="classbase__noeud.html" title="Classe décrivant un noeud quelconque de l&#39;explorateur. ">base_noeud</a>.  <a href="#a15afae5b064afa045a8fea545f33b58e">Plus de détails...</a><br/></td></tr>
+<tr class="separator:a15afae5b064afa045a8fea545f33b58e inherit pub_methods_classbase__noeud"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae78124477ea5148f16c2da42ac766f4c inherit pub_methods_classbase__noeud"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classobjet__selectionnable.html">objet_selectionnable</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classbase__noeud.html#ae78124477ea5148f16c2da42ac766f4c">get_objet</a> () const </td></tr>
+<tr class="memdesc:ae78124477ea5148f16c2da42ac766f4c inherit pub_methods_classbase__noeud"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retourne l'objet sélectionnable associé au noeud.  <a href="#ae78124477ea5148f16c2da42ac766f4c">Plus de détails...</a><br/></td></tr>
 <tr class="separator:ae78124477ea5148f16c2da42ac766f4c inherit pub_methods_classbase__noeud"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a783e0dfa46ccf7dbf033d9309b878ba8 inherit pub_methods_classbase__noeud"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a783e0dfa46ccf7dbf033d9309b878ba8"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>update_style</b> (bool actif)</td></tr>
-<tr class="separator:a783e0dfa46ccf7dbf033d9309b878ba8 inherit pub_methods_classbase__noeud"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:afb0d91325a08bb6e7e0234036035e574 inherit pub_methods_classbase__noeud"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="afb0d91325a08bb6e7e0234036035e574"></a>
-bool&#160;</td><td class="memItemRight" valign="bottom"><b>get_save_expanded</b> () const </td></tr>
+<tr class="memitem:a12165cb731bfc08c958ccabad752d092 inherit pub_methods_classbase__noeud"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classbase__noeud.html#a12165cb731bfc08c958ccabad752d092">mettre_a_jour_style</a> (bool actif)</td></tr>
+<tr class="memdesc:a12165cb731bfc08c958ccabad752d092 inherit pub_methods_classbase__noeud"><td class="mdescLeft">&#160;</td><td class="mdescRight">Met à jour le style du noeud.  <a href="#a12165cb731bfc08c958ccabad752d092">Plus de détails...</a><br/></td></tr>
+<tr class="separator:a12165cb731bfc08c958ccabad752d092 inherit pub_methods_classbase__noeud"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afb0d91325a08bb6e7e0234036035e574 inherit pub_methods_classbase__noeud"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classbase__noeud.html#afb0d91325a08bb6e7e0234036035e574">get_save_expanded</a> () const </td></tr>
+<tr class="memdesc:afb0d91325a08bb6e7e0234036035e574 inherit pub_methods_classbase__noeud"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retourne l'état d'expansion sauvegardé avant le compactage automatique.  <a href="#afb0d91325a08bb6e7e0234036035e574">Plus de détails...</a><br/></td></tr>
 <tr class="separator:afb0d91325a08bb6e7e0234036035e574 inherit pub_methods_classbase__noeud"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5fe905edcc9ff83f21a5d324c8a21bda inherit pub_methods_classbase__noeud"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a5fe905edcc9ff83f21a5d324c8a21bda"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>save_expanded</b> ()</td></tr>
+<tr class="memitem:a5fe905edcc9ff83f21a5d324c8a21bda inherit pub_methods_classbase__noeud"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classbase__noeud.html#a5fe905edcc9ff83f21a5d324c8a21bda">save_expanded</a> ()</td></tr>
+<tr class="memdesc:a5fe905edcc9ff83f21a5d324c8a21bda inherit pub_methods_classbase__noeud"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sauvegarde l'état d'expansion.  <a href="#a5fe905edcc9ff83f21a5d324c8a21bda">Plus de détails...</a><br/></td></tr>
 <tr class="separator:a5fe905edcc9ff83f21a5d324c8a21bda inherit pub_methods_classbase__noeud"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="inherited"></a>
 Membres hérités additionnels</h2></td></tr>
 <tr class="inherit_header pub_types_classbase__noeud"><td colspan="2" onclick="javascript:toggleInherit('pub_types_classbase__noeud')"><img src="closed.png" alt="-"/>&#160;Types publics hérités de <a class="el" href="classbase__noeud.html">base_noeud</a></td></tr>
-<tr class="memitem:a5b77eba8eaa6aa32f4e5d820a84ded61 inherit pub_types_classbase__noeud"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classbase__noeud.html#a5b77eba8eaa6aa32f4e5d820a84ded61">type_noeud</a> { <b>type_projet</b> = QTreeWidgetItem::UserType, 
-<b>type_parametre</b>, 
-<b>type_fonction</b>
+<tr class="memitem:a5b77eba8eaa6aa32f4e5d820a84ded61 inherit pub_types_classbase__noeud"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classbase__noeud.html#a5b77eba8eaa6aa32f4e5d820a84ded61">type_noeud</a> { <a class="el" href="classbase__noeud.html#a5b77eba8eaa6aa32f4e5d820a84ded61af635270c1a6e6c2c5045b82a07ce3f73">TYPE_NOEUD_PROJET</a> = QTreeWidgetItem::UserType, 
+<a class="el" href="classbase__noeud.html#a5b77eba8eaa6aa32f4e5d820a84ded61a673ffb877215e8974f83bc5b40f13afa">TYPE_NOEUD_PARAMETRE</a>, 
+<a class="el" href="classbase__noeud.html#a5b77eba8eaa6aa32f4e5d820a84ded61a6fee1ae6f20f05801ca89c47eb68866d">TYPE_NOEUD_FONCTION</a>
  }</td></tr>
-<tr class="memdesc:a5b77eba8eaa6aa32f4e5d820a84ded61"><td class="mdescLeft">&#160;</td><td class="mdescRight">Type décrivant les différents types de noeud. <br/></td></tr>
+<tr class="memdesc:a5b77eba8eaa6aa32f4e5d820a84ded61"><td class="mdescLeft">&#160;</td><td class="mdescRight">Enumération représentant les différents types de noeud de l'explorateur.  <a href="classbase__noeud.html#a5b77eba8eaa6aa32f4e5d820a84ded61">Plus de détails...</a><br/></td></tr>
 <tr class="separator:a5b77eba8eaa6aa32f4e5d820a84ded61 inherit pub_types_classbase__noeud"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pro_attribs_classbase__noeud"><td colspan="2" onclick="javascript:toggleInherit('pro_attribs_classbase__noeud')"><img src="closed.png" alt="-"/>&#160;Attributs protégés hérités de <a class="el" href="classbase__noeud.html">base_noeud</a></td></tr>
-<tr class="memitem:aca3d2aa6d514c236b59f5bbdfede9c48 inherit pro_attribs_classbase__noeud"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aca3d2aa6d514c236b59f5bbdfede9c48"></a>
-<a class="el" href="classobjet__selectionnable.html">objet_selectionnable</a> *&#160;</td><td class="memItemRight" valign="bottom"><b>m_objet</b></td></tr>
+<tr class="memitem:aca3d2aa6d514c236b59f5bbdfede9c48 inherit pro_attribs_classbase__noeud"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classobjet__selectionnable.html">objet_selectionnable</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classbase__noeud.html#aca3d2aa6d514c236b59f5bbdfede9c48">m_objet</a></td></tr>
+<tr class="memdesc:aca3d2aa6d514c236b59f5bbdfede9c48 inherit pro_attribs_classbase__noeud"><td class="mdescLeft">&#160;</td><td class="mdescRight">L'objet sélectionnable associé au noeud.  <a href="#aca3d2aa6d514c236b59f5bbdfede9c48">Plus de détails...</a><br/></td></tr>
 <tr class="separator:aca3d2aa6d514c236b59f5bbdfede9c48 inherit pro_attribs_classbase__noeud"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:afe99db4530e71421ab8c669cc6af4ecc inherit pro_attribs_classbase__noeud"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="afe99db4530e71421ab8c669cc6af4ecc"></a>
-bool&#160;</td><td class="memItemRight" valign="bottom"><b>m_save_expanded</b></td></tr>
+<tr class="memitem:afe99db4530e71421ab8c669cc6af4ecc inherit pro_attribs_classbase__noeud"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classbase__noeud.html#afe99db4530e71421ab8c669cc6af4ecc">m_save_expanded</a></td></tr>
+<tr class="memdesc:afe99db4530e71421ab8c669cc6af4ecc inherit pro_attribs_classbase__noeud"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sauvegarde de l'état d'expansion du noeud avant compactage automatique.  <a href="#afe99db4530e71421ab8c669cc6af4ecc">Plus de détails...</a><br/></td></tr>
 <tr class="separator:afe99db4530e71421ab8c669cc6af4ecc inherit pro_attribs_classbase__noeud"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Description détaillée</h2>
-<div class="textblock">
-<p>Définition à la ligne <a class="el" href="noeud__parametre_8h_source.html#l00008">8</a> du fichier <a class="el" href="noeud__parametre_8h_source.html">noeud_parametre.h</a>.</p>
-</div><hr/>La documentation de cette classe a été générée à partir des fichiers suivants :<ul>
+<div class="textblock"><p>Classe décrivant un noeud associé à un paramètre. </p>
+<dl class="section author"><dt>Auteur</dt><dd>Sébastien Angibaud </dd></dl>
+
+<p>Définition à la ligne <a class="el" href="noeud__parametre_8h_source.html#l00018">18</a> du fichier <a class="el" href="noeud__parametre_8h_source.html">noeud_parametre.h</a>.</p>
+</div><h2 class="groupheader">Documentation des constructeurs et destructeur</h2>
+<a class="anchor" id="a62a09806916d342436ae4afaed51acaa"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">noeud_parametre::noeud_parametre </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classbase__parametre.html">base_parametre</a> *&#160;</td>
+          <td class="paramname"><em>p</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Constructeur de la classe <a class="el" href="classnoeud__parametre.html" title="Classe décrivant un noeud associé à un paramètre. ">noeud_parametre</a>. </p>
+<hr/>
+ <dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">p</td><td>Un pointeur sur le paramètre associé au noeud. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Définition à la ligne <a class="el" href="noeud__parametre_8cpp_source.html#l00021">21</a> du fichier <a class="el" href="noeud__parametre_8cpp_source.html">noeud_parametre.cpp</a>.</p>
+
+<p><div class="dynheader">
+Voici le graphe d'appel pour cette fonction :</div>
+<div class="dyncontent">
+<div class="center"><img src="classnoeud__parametre_a62a09806916d342436ae4afaed51acaa_cgraph.png" border="0" usemap="#classnoeud__parametre_a62a09806916d342436ae4afaed51acaa_cgraph" alt=""/></div>
+<map name="classnoeud__parametre_a62a09806916d342436ae4afaed51acaa_cgraph" id="classnoeud__parametre_a62a09806916d342436ae4afaed51acaa_cgraph">
+<area shape="rect" id="node2" href="classbase__parametre.html#a091ac3f7f7229a65c9f79390bb3dac6f" title="base_parametre::get_nom" alt="" coords="219,5,392,32"/><area shape="rect" id="node3" href="classnoeud__parametre.html#a0bd17d737add6286416757452f4a8c02" title="Fonction mettant à jour l&#39;icône. " alt="" coords="226,57,385,98"/></map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="afbe7e14d60e0ae5bd32251fe950d1f69"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">noeud_parametre::~noeud_parametre </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Destructeur de la classe <a class="el" href="classnoeud__parametre.html" title="Classe décrivant un noeud associé à un paramètre. ">noeud_parametre</a>. </p>
+<hr/>
+ 
+<p>Définition à la ligne <a class="el" href="noeud__parametre_8cpp_source.html#l00037">37</a> du fichier <a class="el" href="noeud__parametre_8cpp_source.html">noeud_parametre.cpp</a>.</p>
+
+</div>
+</div>
+<h2 class="groupheader">Documentation des fonctions membres</h2>
+<a class="anchor" id="a5249a296c69c21671bf817aa1a90fd27"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classbase__parametre.html">base_parametre</a> * noeud_parametre::get_parametre </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Retourne le paramètre associé au noeud. </p>
+<hr/>
+ <dl class="section return"><dt>Renvoie</dt><dd>Un pointeur sur le paramètre associé au noeud. </dd></dl>
+
+<p>Définition à la ligne <a class="el" href="noeud__parametre_8cpp_source.html#l00045">45</a> du fichier <a class="el" href="noeud__parametre_8cpp_source.html">noeud_parametre.cpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a0bd17d737add6286416757452f4a8c02"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void noeud_parametre::mise_a_jour_icone </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Fonction mettant à jour l'icône. </p>
+<hr/>
+ 
+<p>Réimplémentée à partir de <a class="el" href="classbase__noeud.html#ace8a7076d9e5a5d6644d801ac53f2f93">base_noeud</a>.</p>
+
+<p>Définition à la ligne <a class="el" href="noeud__parametre_8cpp_source.html#l00053">53</a> du fichier <a class="el" href="noeud__parametre_8cpp_source.html">noeud_parametre.cpp</a>.</p>
+
+</div>
+</div>
+<hr/>La documentation de cette classe a été générée à partir des fichiers suivants :<ul>
 <li>entete/explorateur/<a class="el" href="noeud__parametre_8h_source.html">noeud_parametre.h</a></li>
 <li>src/explorateur/<a class="el" href="noeud__parametre_8cpp_source.html">noeud_parametre.cpp</a></li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Généré le Mercredi 8 Février 2017 09:50:12 pour Emgine par &#160;<a href="http://www.doxygen.org/index.html">
+Généré le Mercredi 8 Février 2017 09:53:36 pour Emgine par &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.6
 </small></address>

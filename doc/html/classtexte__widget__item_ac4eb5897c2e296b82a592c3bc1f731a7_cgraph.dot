@@ -1,0 +1,9 @@
+digraph "texte_widget_item::get_height"
+{
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="LR";
+  Node10 [label="texte_widget_item::\lget_height",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black"];
+  Node10 -> Node11 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node11 [label="texte::get_nb_lignes\l_avec_information",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classtexte.html#adfac38f4dc66e91e773490c14f0d8689",tooltip="Retourne le nombre de lignes dui texte avec les informations (configuration et taille). "];
+}

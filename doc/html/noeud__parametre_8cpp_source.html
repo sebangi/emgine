@@ -38,6 +38,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Recherche');
     <ul class="tablist">
       <li><a href="index.html"><span>Page&#160;principale</span></a></li>
       <li><a href="pages.html"><span>Pages&#160;associées</span></a></li>
+      <li><a href="modules.html"><span>Modules</span></a></li>
       <li><a href="annotated.html"><span>Classes</span></a></li>
       <li class="current"><a href="files.html"><span>Fichiers</span></a></li>
       <li>
@@ -61,6 +62,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Recherche');
   <div id="navrow2" class="tabs2">
     <ul class="tablist">
       <li><a href="files.html"><span>Liste&#160;des&#160;fichiers</span></a></li>
+      <li><a href="globals.html"><span>Membres&#160;de&#160;fichier</span></a></li>
     </ul>
   </div>
 <!-- window showing the filter options -->
@@ -68,7 +70,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Recherche');
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>Tout</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Fonctions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Définitions de type</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Énumérations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Pages</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>Tout</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Espaces de nommage</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Fichiers</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Fonctions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Définitions de type</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Énumérations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Valeurs énumérées</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&#160;</span>Groupes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(10)"><span class="SelectionMark">&#160;</span>Pages</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -87,55 +89,69 @@ var searchBox = new SearchBox("searchBox", "search",false,'Recherche');
 <div class="title">noeud_parametre.cpp</div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#include &quot;entete/explorateur/noeud_parametre.h&quot;</span></div>
-<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor">#include &quot;entete/explorateur/noeud_fonction.h&quot;</span></div>
-<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="preprocessor">#include &quot;entete/projet/base_parametre.h&quot;</span></div>
-<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &quot;entete/projet/base_fonction.h&quot;</span></div>
-<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#include &quot;entete/fenetre_principale.h&quot;</span></div>
-<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="preprocessor">#include &quot;entete/compilation/logs_compilation_widget.h&quot;</span></div>
-<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="preprocessor">#include &quot;entete/projet/objet_selectionnable.h&quot;</span></div>
-<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;</div>
-<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#include &lt;iostream&gt;</span></div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="preprocessor">#include &lt;QApplication&gt;</span></div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="preprocessor">#include &lt;QFont&gt;</span></div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;</div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;noeud_parametre::noeud_parametre( <a class="code" href="classbase__parametre.html">base_parametre</a> * p )</div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;    : <a class="code" href="classbase__noeud.html">base_noeud</a>( (<a class="code" href="classobjet__selectionnable.html">objet_selectionnable</a> *)p, <a class="code" href="classbase__noeud.html">base_noeud</a>::type_parametre )</div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;{</div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;    setFlags(Qt::ItemIsEnabled | Qt::ItemIsSelectable | Qt::ItemIsDropEnabled );</div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;</div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;    setText(0, p-&gt;get_nom());</div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;    QFont font = this-&gt;font(0);</div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;    font.setItalic(<span class="keyword">true</span>);</div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;    setFont(0, font);</div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;</div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;    mise_a_jour_icone();</div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;}</div>
+<a href="noeud__parametre_8cpp.html">Aller à la documentation de ce fichier.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;</div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="noeud__parametre_8h.html">entete/explorateur/noeud_parametre.h</a>&quot;</span></div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;</div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="logs__compilation__widget_8h.html">entete/compilation/logs_compilation_widget.h</a>&quot;</span></div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="noeud__fonction_8h.html">entete/explorateur/noeud_fonction.h</a>&quot;</span></div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="fenetre__principale_8h.html">entete/fenetre_principale.h</a>&quot;</span></div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="base__fonction_8h.html">entete/projet/base_fonction.h</a>&quot;</span></div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="base__parametre_8h.html">entete/projet/base_parametre.h</a>&quot;</span></div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="objet__selectionnable_8h.html">entete/projet/objet_selectionnable.h</a>&quot;</span></div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;</div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="preprocessor">#include &lt;QApplication&gt;</span></div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="preprocessor">#include &lt;QFont&gt;</span></div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;</div>
+<div class="line"><a name="l00021"></a><span class="lineno"><a class="line" href="classnoeud__parametre.html#a62a09806916d342436ae4afaed51acaa">   21</a></span>&#160;<a class="code" href="classnoeud__parametre.html#a62a09806916d342436ae4afaed51acaa">noeud_parametre::noeud_parametre</a>( <a class="code" href="classbase__parametre.html">base_parametre</a> * p )</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;    : <a class="code" href="classbase__noeud.html">base_noeud</a>( (<a class="code" href="classobjet__selectionnable.html">objet_selectionnable</a> *)p, <a class="code" href="classbase__noeud.html">base_noeud</a>::TYPE_NOEUD_PARAMETRE )</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;{</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;    setFlags(Qt::ItemIsEnabled | Qt::ItemIsSelectable | Qt::ItemIsDropEnabled );</div>
 <div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;</div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;noeud_parametre::~noeud_parametre()</div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;{</div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;}</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;</div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<a class="code" href="classbase__parametre.html">base_parametre</a>* noeud_parametre::get_parametre()<span class="keyword"> const</span></div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;<span class="keyword"></span>{</div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    <span class="keywordflow">return</span> (<a class="code" href="classbase__parametre.html">base_parametre</a>*)m_objet;</div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;}</div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;</div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;<span class="keywordtype">void</span> noeud_parametre::mise_a_jour_icone()</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;{</div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    QIcon icon1;</div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    icon1.addFile(QString::fromUtf8(<span class="stringliteral">&quot;icons/parameters.png&quot;</span>), QSize(), QIcon::Normal, QIcon::Off);</div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    setIcon( 0, icon1 );</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;}</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;</div>
-<div class="ttc" id="classbase__noeud_html"><div class="ttname"><a href="classbase__noeud.html">base_noeud</a></div><div class="ttdef"><b>Definition:</b> <a href="base__noeud_8h_source.html#l00011">base_noeud.h:11</a></div></div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;    setText(0, p-&gt;<a class="code" href="classbase__parametre.html#a091ac3f7f7229a65c9f79390bb3dac6f">get_nom</a>());</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;    QFont font = this-&gt;font(0);</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;    font.setItalic(<span class="keyword">true</span>);</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;    setFont(0, font);</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;    <a class="code" href="classnoeud__parametre.html#a0bd17d737add6286416757452f4a8c02">mise_a_jour_icone</a>();</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;}</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;</div>
+<div class="line"><a name="l00037"></a><span class="lineno"><a class="line" href="classnoeud__parametre.html#afbe7e14d60e0ae5bd32251fe950d1f69">   37</a></span>&#160;<a class="code" href="classnoeud__parametre.html#afbe7e14d60e0ae5bd32251fe950d1f69">noeud_parametre::~noeud_parametre</a>()</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;{</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;}</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;</div>
+<div class="line"><a name="l00045"></a><span class="lineno"><a class="line" href="classnoeud__parametre.html#a5249a296c69c21671bf817aa1a90fd27">   45</a></span>&#160;<a class="code" href="classbase__parametre.html">base_parametre</a>* <a class="code" href="classnoeud__parametre.html#a5249a296c69c21671bf817aa1a90fd27">noeud_parametre::get_parametre</a>()<span class="keyword"> const</span></div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;<span class="keyword"></span>{</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    <span class="keywordflow">return</span> (<a class="code" href="classbase__parametre.html">base_parametre</a>*)<a class="code" href="classbase__noeud.html#aca3d2aa6d514c236b59f5bbdfede9c48">m_objet</a>;</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;}</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;</div>
+<div class="line"><a name="l00053"></a><span class="lineno"><a class="line" href="classnoeud__parametre.html#a0bd17d737add6286416757452f4a8c02">   53</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="classnoeud__parametre.html#a0bd17d737add6286416757452f4a8c02">noeud_parametre::mise_a_jour_icone</a>()</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;{</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;    QIcon icon1;</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;    icon1.addFile(QString::fromUtf8(<span class="stringliteral">&quot;icons/parameters.png&quot;</span>), QSize(), QIcon::Normal, QIcon::Off);</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;    setIcon( 0, icon1 );</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;}</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;</div>
+<div class="ttc" id="base__parametre_8h_html"><div class="ttname"><a href="base__parametre_8h.html">base_parametre.h</a></div></div>
+<div class="ttc" id="logs__compilation__widget_8h_html"><div class="ttname"><a href="logs__compilation__widget_8h.html">logs_compilation_widget.h</a></div><div class="ttdoc">Fichier de déclaration de la classe logs_compilation_widget. </div></div>
+<div class="ttc" id="classbase__noeud_html"><div class="ttname"><a href="classbase__noeud.html">base_noeud</a></div><div class="ttdoc">Classe décrivant un noeud quelconque de l&#39;explorateur. </div><div class="ttdef"><b>Definition:</b> <a href="base__noeud_8h_source.html#l00019">base_noeud.h:19</a></div></div>
+<div class="ttc" id="classnoeud__parametre_html_afbe7e14d60e0ae5bd32251fe950d1f69"><div class="ttname"><a href="classnoeud__parametre.html#afbe7e14d60e0ae5bd32251fe950d1f69">noeud_parametre::~noeud_parametre</a></div><div class="ttdeci">~noeud_parametre()</div><div class="ttdoc">Destructeur de la classe noeud_parametre. </div><div class="ttdef"><b>Definition:</b> <a href="noeud__parametre_8cpp_source.html#l00037">noeud_parametre.cpp:37</a></div></div>
+<div class="ttc" id="noeud__fonction_8h_html"><div class="ttname"><a href="noeud__fonction_8h.html">noeud_fonction.h</a></div><div class="ttdoc">Fichier de déclaration de la classe noeud_fonction. </div></div>
 <div class="ttc" id="classbase__parametre_html"><div class="ttname"><a href="classbase__parametre.html">base_parametre</a></div><div class="ttdoc">Classe décrivant un parametre d&#39;une fonction. </div><div class="ttdef"><b>Definition:</b> <a href="base__parametre_8h_source.html#l00020">base_parametre.h:20</a></div></div>
+<div class="ttc" id="fenetre__principale_8h_html"><div class="ttname"><a href="fenetre__principale_8h.html">fenetre_principale.h</a></div><div class="ttdoc">Déclaration de la classe fenetre_principale. </div></div>
 <div class="ttc" id="classobjet__selectionnable_html"><div class="ttname"><a href="classobjet__selectionnable.html">objet_selectionnable</a></div><div class="ttdef"><b>Definition:</b> <a href="objet__selectionnable_8h_source.html#l00011">objet_selectionnable.h:11</a></div></div>
+<div class="ttc" id="classbase__parametre_html_a091ac3f7f7229a65c9f79390bb3dac6f"><div class="ttname"><a href="classbase__parametre.html#a091ac3f7f7229a65c9f79390bb3dac6f">base_parametre::get_nom</a></div><div class="ttdeci">QString get_nom() const </div><div class="ttdef"><b>Definition:</b> <a href="base__parametre_8cpp_source.html#l00044">base_parametre.cpp:44</a></div></div>
+<div class="ttc" id="noeud__parametre_8h_html"><div class="ttname"><a href="noeud__parametre_8h.html">noeud_parametre.h</a></div><div class="ttdoc">Fichier de déclaration de la classe noeud_parametre. </div></div>
+<div class="ttc" id="classnoeud__parametre_html_a5249a296c69c21671bf817aa1a90fd27"><div class="ttname"><a href="classnoeud__parametre.html#a5249a296c69c21671bf817aa1a90fd27">noeud_parametre::get_parametre</a></div><div class="ttdeci">base_parametre * get_parametre() const </div><div class="ttdoc">Retourne le paramètre associé au noeud. </div><div class="ttdef"><b>Definition:</b> <a href="noeud__parametre_8cpp_source.html#l00045">noeud_parametre.cpp:45</a></div></div>
+<div class="ttc" id="base__fonction_8h_html"><div class="ttname"><a href="base__fonction_8h.html">base_fonction.h</a></div><div class="ttdoc">Déclaration de la classe base_fonction. </div></div>
+<div class="ttc" id="objet__selectionnable_8h_html"><div class="ttname"><a href="objet__selectionnable_8h.html">objet_selectionnable.h</a></div></div>
+<div class="ttc" id="classnoeud__parametre_html_a0bd17d737add6286416757452f4a8c02"><div class="ttname"><a href="classnoeud__parametre.html#a0bd17d737add6286416757452f4a8c02">noeud_parametre::mise_a_jour_icone</a></div><div class="ttdeci">void mise_a_jour_icone()</div><div class="ttdoc">Fonction mettant à jour l&#39;icône. </div><div class="ttdef"><b>Definition:</b> <a href="noeud__parametre_8cpp_source.html#l00053">noeud_parametre.cpp:53</a></div></div>
+<div class="ttc" id="classnoeud__parametre_html_a62a09806916d342436ae4afaed51acaa"><div class="ttname"><a href="classnoeud__parametre.html#a62a09806916d342436ae4afaed51acaa">noeud_parametre::noeud_parametre</a></div><div class="ttdeci">noeud_parametre(base_parametre *p)</div><div class="ttdoc">Constructeur de la classe noeud_parametre. </div><div class="ttdef"><b>Definition:</b> <a href="noeud__parametre_8cpp_source.html#l00021">noeud_parametre.cpp:21</a></div></div>
+<div class="ttc" id="classbase__noeud_html_aca3d2aa6d514c236b59f5bbdfede9c48"><div class="ttname"><a href="classbase__noeud.html#aca3d2aa6d514c236b59f5bbdfede9c48">base_noeud::m_objet</a></div><div class="ttdeci">objet_selectionnable * m_objet</div><div class="ttdoc">L&#39;objet sélectionnable associé au noeud. </div><div class="ttdef"><b>Definition:</b> <a href="base__noeud_8h_source.html#l00049">base_noeud.h:49</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Généré le Mercredi 8 Février 2017 09:50:11 pour Emgine par &#160;<a href="http://www.doxygen.org/index.html">
+Généré le Mercredi 8 Février 2017 09:53:35 pour Emgine par &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.6
 </small></address>

@@ -1,58 +1,70 @@
 #ifndef LOG_COMPILATION_H
 #define LOG_COMPILATION_H
 
-#include <QString>
-#include <QListWidgetItem>
+/** \file log_compilation.h
+ * \brief Fichier de déclaration de la class log_compilation.
+ * \author Sébastien Angibaud
+ */
 
-class projet;
-class base_fonction;
-class base_parametre;
+#include <QListWidgetItem>
+#include <QString>
+
 class objet_selectionnable;
 
+/**
+ * \class log_compilation
+ * \brief Classe décrivant un message de compilation.
+ * \author Sébastien Angibaud
+ */
 class log_compilation : public QObject
 {
         Q_OBJECT
 
     public:
-        /*!
-        \brief Type décrivant les différents types de log.
-        */
+        /** \enum type_log
+         * \brief Type décrivant les différents types de log.
+         */
         enum type_log{
+            /** \brief Log non typé. */
             LOG_NO_TYPE = QListWidgetItem::UserType,
+
+            /** \brief Log de type information. */
             LOG_INFORMATION,
+
+            /** \brief Log de type erreur. */
             LOG_ERREUR,
+
+            /** \brief Log de type warning. */
             LOG_WARNING,
+
+            /** \brief Log de type succès. */
             LOG_SUCCES,
+
+            /** \brief Log de type important. */
             LOG_IMPORTANT
         };
 
     public:
         log_compilation( type_log type, QString get_message );
-        log_compilation( type_log type, projet* f, QString get_message );
-        log_compilation( type_log type, base_fonction* f, QString get_message );
-        log_compilation( type_log type, base_parametre* f, QString get_message );
+        log_compilation( type_log type, objet_selectionnable* obj, QString get_message );
         log_compilation( const log_compilation& log );
 
         void informe_supression_selectionnable(objet_selectionnable * obj);
 
         QString get_message() const;
-        projet *get_projet();
-        base_fonction *get_fonction();
-        base_parametre *get_parametre();
         objet_selectionnable *get_selectionnable();
-
         type_log get_type() const;
         QString get_type_string() const;
         QColor get_couleur() const;
 
-    private slots:
-        void on_externe_supprimer_fonction(base_fonction *f);
-
     private:
+        /** \brief Le type du message. */
         type_log m_type;
-        projet* m_projet;
-        base_fonction* m_fonction;
-        base_parametre* m_parametre;
+
+        /** \brief Un pointeur sur l'objet associé au message. */
+        objet_selectionnable* m_objet;
+
+        /** \brief Le message. */
         QString m_message;
 };
 

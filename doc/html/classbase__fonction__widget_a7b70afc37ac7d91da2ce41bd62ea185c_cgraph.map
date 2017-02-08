@@ -1,0 +1,12 @@
+<map id="base_fonction_widget::mettre_a_jour_verrouillage" name="base_fonction_widget::mettre_a_jour_verrouillage">
+<area shape="rect" id="node2" href="$classbase__fonction__widget.html#a6409997ef11539e0811573c7655532ee" title="Mise à jour du bouton de verrouillage. " alt="" coords="239,111,387,167"/>
+<area shape="rect" id="node6" href="$classbase__fonction__widget.html#a548a6571fb757666807a6b3e95485dea" title="Mise à jour du bouton d&#39;activation. " alt="" coords="239,190,387,231"/>
+<area shape="rect" id="node10" href="$classbase__fonction__widget.html#a4820f0a814f27542d1f0c9dc8de535a3" title="base_fonction_widget\l::update_close_bouton" alt="" coords="438,5,591,46"/>
+<area shape="rect" id="node11" href="$classbase__fonction__widget.html#aa4f470af8fb51c1ff276b18205104c94" title="base_fonction_widget\l::informer_verrouillage\l_change" alt="" coords="238,255,389,311"/>
+<area shape="rect" id="node3" href="$classobjet__selectionnable.html#a57341a9bf3dbc66f4ad4414183b0d27c" title="objet_selectionnable\l::parents_verrouilles" alt="" coords="445,70,585,111"/>
+<area shape="rect" id="node4" href="$classobjet__selectionnable.html#a1cf41e42861e0b033d2704802905e81a" title="objet_selectionnable\l::est_verrouille_avec\l_parent" alt="" coords="653,92,795,148"/>
+<area shape="rect" id="node5" href="$classobjet__selectionnable.html#a8b9cf156597fe8cc1b8f9408e1bfee8c" title="objet_selectionnable\l::est_verrouille" alt="" coords="857,99,997,141"/>
+<area shape="rect" id="node7" href="$classobjet__selectionnable.html#ada0d1bda8b5fdc1f81979720d40fb840" title="objet_selectionnable\l::est_active_avec_parent" alt="" coords="640,267,808,309"/>
+<area shape="rect" id="node9" href="$classobjet__selectionnable.html#a76587773c723728d21583bb87e995daa" title="objet_selectionnable\l::parents_actifs" alt="" coords="445,238,585,279"/>
+<area shape="rect" id="node8" href="$classobjet__selectionnable.html#a9f9e2ccc04e3b2a55d7b51b85366488f" title="objet_selectionnable\l::est_active" alt="" coords="857,267,997,309"/>
+</map>

@@ -67,7 +67,9 @@ SOURCES += \
     src/fonction/fonction_source/fonction_source_choix.cpp \
     src/fonction_widget/fonction_source_widget/fonction_source_choix_widget.cpp \
     src/fonction/fonction_source/fonction_source_permutation.cpp \
-    src/fonction_widget/text_edit.cpp
+    src/fonction_widget/text_edit.cpp \
+    src/fonction/fonction_source/fonction_source_fichier_texte.cpp \
+    src/fonction_widget/fonction_source_widget/fonction_source_fichier_texte_widget.cpp
 
 HEADERS  += \
         entete/compilation/compilateur.h \
@@ -124,7 +126,9 @@ HEADERS  += \
     entete/fonction_widget/fonction_source_widget/fonction_source_choix_widget.h \
     entete/fonction/fonction_source/fonction_source_permutation.h \
     entete/fonction/define_fonction.h \
-    entete/fonction/define_parametre.h
+    entete/fonction/define_parametre.h \
+    entete/fonction/fonction_source/fonction_source_fichier_texte.h \
+    entete/fonction_widget/fonction_source_widget/fonction_source_fichier_texte_widget.h
 
 FORMS    += \
     fenetre_principale.ui

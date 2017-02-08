@@ -38,6 +38,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Recherche');
     <ul class="tablist">
       <li><a href="index.html"><span>Page&#160;principale</span></a></li>
       <li><a href="pages.html"><span>Pages&#160;associées</span></a></li>
+      <li><a href="modules.html"><span>Modules</span></a></li>
       <li class="current"><a href="annotated.html"><span>Classes</span></a></li>
       <li><a href="files.html"><span>Fichiers</span></a></li>
       <li>
@@ -71,7 +72,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Recherche');
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>Tout</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Fonctions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Définitions de type</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Énumérations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Pages</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>Tout</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Espaces de nommage</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Fichiers</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Fonctions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Définitions de type</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Énumérations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Valeurs énumérées</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&#160;</span>Groupes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(10)"><span class="SelectionMark">&#160;</span>Pages</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -108,329 +109,243 @@ Graphe de collaboration de base_parametre:</div>
 <div class="dyncontent">
 <div class="center"><img src="classbase__parametre__coll__graph.png" border="0" usemap="#base__parametre_coll__map" alt="Collaboration graph"/></div>
 <map name="base__parametre_coll__map" id="base__parametre_coll__map">
-<area shape="rect" id="node2" href="classfonctions__conteneur.html" title="fonctions_conteneur" alt="" coords="5,163,144,189"/><area shape="rect" id="node7" href="classbase__fonction.html" title="Classe décrivant une fonction de conversion d&#39;un texte. " alt="" coords="85,253,187,280"/><area shape="rect" id="node3" href="classobjet__selectionnable.html" title="objet_selectionnable" alt="" coords="77,84,216,111"/><area shape="rect" id="node5" href="classtextes.html" title="textes" alt="" coords="256,253,313,280"/></map>
+<area shape="rect" id="node2" href="classfonctions__conteneur.html" title="fonctions_conteneur" alt="" coords="5,163,144,189"/><area shape="rect" id="node7" href="classbase__fonction.html" title="Classe décrivant une fonction de conversion d&#39;un texte. " alt="" coords="85,253,187,280"/><area shape="rect" id="node3" href="classobjet__selectionnable.html" title="objet_selectionnable" alt="" coords="77,84,216,111"/><area shape="rect" id="node5" href="classtextes.html" title="Classe décrivant un ensemble de textes. " alt="" coords="256,253,313,280"/></map>
 <center><span class="legend">[<a href="graph_legend.html">légende</a>]</span></center></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-types"></a>
 Types publics</h2></td></tr>
-<tr class="memitem:af9c2486b3b357c96d118835057f8adae"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><b>type_mode_configuration_visibilite</b> { <b>CONFIGURATION_INVISIBLE</b> = 0, 
-<b>CONFIGURATION_VISIBLE</b>
+<tr class="memitem:af9c2486b3b357c96d118835057f8adae"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classbase__parametre.html#af9c2486b3b357c96d118835057f8adae">type_mode_configuration_visibilite</a> { <a class="el" href="classbase__parametre.html#af9c2486b3b357c96d118835057f8adaeadfbbf08303aacb9416ee3c670b148cfb">CONFIGURATION_INVISIBLE</a> = 0, 
+<a class="el" href="classbase__parametre.html#af9c2486b3b357c96d118835057f8adaeaf98cdae55633838eff7a5dbd7333b6ab">CONFIGURATION_VISIBLE</a>
  }</td></tr>
 <tr class="separator:af9c2486b3b357c96d118835057f8adae"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a64ac5a31d511d54e78437d8f3aff9c31"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><b>type_mode_contenu_parametre</b> { <b>CONTENU_PARAM_VIDE_IMPOSSIBLE</b> = 0, 
-<b>CONTENU_PARAM_VIDE_POSSIBLE</b>
+<tr class="memitem:a64ac5a31d511d54e78437d8f3aff9c31"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classbase__parametre.html#a64ac5a31d511d54e78437d8f3aff9c31">type_mode_contenu_parametre</a> { <a class="el" href="classbase__parametre.html#a64ac5a31d511d54e78437d8f3aff9c31a1f9e9f4cf5bb76a89755b29da8330d01">CONTENU_PARAM_VIDE_IMPOSSIBLE</a> = 0, 
+<a class="el" href="classbase__parametre.html#a64ac5a31d511d54e78437d8f3aff9c31aa3c146050ef4bce27e4c817b29b6e379">CONTENU_PARAM_VIDE_POSSIBLE</a>
  }</td></tr>
 <tr class="separator:a64ac5a31d511d54e78437d8f3aff9c31"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9e5b987e53d5cc9d49a3e2637b6b61b9"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classbase__parametre.html#a9e5b987e53d5cc9d49a3e2637b6b61b9">type_algorithme</a> { <b>ALGO_AUCUN</b> = 0, 
-<b>ALGO_PMIPL</b>, 
-<b>ALGO_LIPL</b>
+<tr class="memitem:a9e5b987e53d5cc9d49a3e2637b6b61b9"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classbase__parametre.html#a9e5b987e53d5cc9d49a3e2637b6b61b9">type_algorithme</a> { <a class="el" href="classbase__parametre.html#a9e5b987e53d5cc9d49a3e2637b6b61b9a5f1b24c0f5e48cfedd51df4c8bfbb8f6">ALGO_AUCUN</a> = 0, 
+<a class="el" href="classbase__parametre.html#a9e5b987e53d5cc9d49a3e2637b6b61b9a9b18e290d243fe0ff40d265a8590ee72">ALGO_PMIPL</a>, 
+<a class="el" href="classbase__parametre.html#a9e5b987e53d5cc9d49a3e2637b6b61b9a8ad63cb966853fdccf61b916ac91e778">ALGO_LIPL</a>
  }</td></tr>
-<tr class="memdesc:a9e5b987e53d5cc9d49a3e2637b6b61b9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Enumération décrivant les différents algorithmes pour l'excution des paramètres. <br/></td></tr>
+<tr class="memdesc:a9e5b987e53d5cc9d49a3e2637b6b61b9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Enumération décrivant les différents algorithmes pour l'excution des paramètres.  <a href="classbase__parametre.html#a9e5b987e53d5cc9d49a3e2637b6b61b9">Plus de détails...</a><br/></td></tr>
 <tr class="separator:a9e5b987e53d5cc9d49a3e2637b6b61b9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_types_classfonctions__conteneur"><td colspan="2" onclick="javascript:toggleInherit('pub_types_classfonctions__conteneur')"><img src="closed.png" alt="-"/>&#160;Types publics hérités de <a class="el" href="classfonctions__conteneur.html">fonctions_conteneur</a></td></tr>
-<tr class="memitem:af28c537e8b22badf4ab754c003de72c3 inherit pub_types_classfonctions__conteneur"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="af28c537e8b22badf4ab754c003de72c3"></a>
-typedef QList&lt; <a class="el" href="classbase__fonction.html">base_fonction</a> * &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>type_fonctions</b></td></tr>
+<tr class="memitem:af28c537e8b22badf4ab754c003de72c3 inherit pub_types_classfonctions__conteneur"><td class="memItemLeft" align="right" valign="top">typedef QList&lt; <a class="el" href="classbase__fonction.html">base_fonction</a> * &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfonctions__conteneur.html#af28c537e8b22badf4ab754c003de72c3">type_fonctions</a></td></tr>
 <tr class="separator:af28c537e8b22badf4ab754c003de72c3 inherit pub_types_classfonctions__conteneur"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af69a1efeb888ab26251ecce96c4bf5e9 inherit pub_types_classfonctions__conteneur"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="af69a1efeb888ab26251ecce96c4bf5e9"></a>
-typedef type_fonctions::iterator&#160;</td><td class="memItemRight" valign="bottom"><b>fonctions_iterateur</b></td></tr>
+<tr class="memitem:af69a1efeb888ab26251ecce96c4bf5e9 inherit pub_types_classfonctions__conteneur"><td class="memItemLeft" align="right" valign="top">typedef type_fonctions::iterator&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfonctions__conteneur.html#af69a1efeb888ab26251ecce96c4bf5e9">fonctions_iterateur</a></td></tr>
 <tr class="separator:af69a1efeb888ab26251ecce96c4bf5e9 inherit pub_types_classfonctions__conteneur"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:abc69be8ea089b7f3370998c14a3bbf09 inherit pub_types_classfonctions__conteneur"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="abc69be8ea089b7f3370998c14a3bbf09"></a>
-typedef <br class="typebreak"/>
-type_fonctions::const_iterator&#160;</td><td class="memItemRight" valign="bottom"><b>fonctions_const_iterateur</b></td></tr>
+<tr class="memitem:abc69be8ea089b7f3370998c14a3bbf09 inherit pub_types_classfonctions__conteneur"><td class="memItemLeft" align="right" valign="top">typedef <br class="typebreak"/>
+type_fonctions::const_iterator&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfonctions__conteneur.html#abc69be8ea089b7f3370998c14a3bbf09">fonctions_const_iterateur</a></td></tr>
 <tr class="separator:abc69be8ea089b7f3370998c14a3bbf09 inherit pub_types_classfonctions__conteneur"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Fonctions membres publiques</h2></td></tr>
-<tr class="memitem:a46c6ce135d895280f0b3df2474c701db"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a46c6ce135d895280f0b3df2474c701db"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>base_parametre</b> (<a class="el" href="classobjet__selectionnable.html">objet_selectionnable</a> *parent, QString nom, QString aide, type_mode_contenu_parametre mode_contenu_parametre, type_mode_configuration_visibilite dans_configuration, <a class="el" href="classbase__parametre.html#a9e5b987e53d5cc9d49a3e2637b6b61b9">type_algorithme</a> algorithme)</td></tr>
+<tr class="memitem:a46c6ce135d895280f0b3df2474c701db"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classbase__parametre.html#a46c6ce135d895280f0b3df2474c701db">base_parametre</a> (<a class="el" href="classobjet__selectionnable.html">objet_selectionnable</a> *parent, QString nom, QString aide, <a class="el" href="classbase__parametre.html#a64ac5a31d511d54e78437d8f3aff9c31">type_mode_contenu_parametre</a> mode_contenu_parametre, <a class="el" href="classbase__parametre.html#af9c2486b3b357c96d118835057f8adae">type_mode_configuration_visibilite</a> dans_configuration, <a class="el" href="classbase__parametre.html#a9e5b987e53d5cc9d49a3e2637b6b61b9">type_algorithme</a> algorithme)</td></tr>
 <tr class="separator:a46c6ce135d895280f0b3df2474c701db"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a94fc09ef65311c599930eb15516cf3a7"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a94fc09ef65311c599930eb15516cf3a7"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>sauvegarder</b> (QXmlStreamWriter &amp;stream) const </td></tr>
+<tr class="memitem:ac7443c8ab74482e1993c222126936148"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classbase__parametre.html#ac7443c8ab74482e1993c222126936148">~base_parametre</a> ()</td></tr>
+<tr class="separator:ac7443c8ab74482e1993c222126936148"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a94fc09ef65311c599930eb15516cf3a7"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classbase__parametre.html#a94fc09ef65311c599930eb15516cf3a7">sauvegarder</a> (QXmlStreamWriter &amp;stream) const </td></tr>
 <tr class="separator:a94fc09ef65311c599930eb15516cf3a7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a091ac3f7f7229a65c9f79390bb3dac6f"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a091ac3f7f7229a65c9f79390bb3dac6f"></a>
-QString&#160;</td><td class="memItemRight" valign="bottom"><b>get_nom</b> () const </td></tr>
+<tr class="memitem:a091ac3f7f7229a65c9f79390bb3dac6f"><td class="memItemLeft" align="right" valign="top">QString&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classbase__parametre.html#a091ac3f7f7229a65c9f79390bb3dac6f">get_nom</a> () const </td></tr>
 <tr class="separator:a091ac3f7f7229a65c9f79390bb3dac6f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad26e8c378a50fa3b2058953fb611d212"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ad26e8c378a50fa3b2058953fb611d212"></a>
-QString&#160;</td><td class="memItemRight" valign="bottom"><b>get_titre</b> () const </td></tr>
+<tr class="memitem:ad26e8c378a50fa3b2058953fb611d212"><td class="memItemLeft" align="right" valign="top">QString&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classbase__parametre.html#ad26e8c378a50fa3b2058953fb611d212">get_titre</a> () const </td></tr>
 <tr class="separator:ad26e8c378a50fa3b2058953fb611d212"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0cc29100a25c6f277986f5be55a4e4af"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a0cc29100a25c6f277986f5be55a4e4af"></a>
-QString&#160;</td><td class="memItemRight" valign="bottom"><b>get_valeur_courte</b> () const </td></tr>
+<tr class="memitem:a0cc29100a25c6f277986f5be55a4e4af"><td class="memItemLeft" align="right" valign="top">QString&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classbase__parametre.html#a0cc29100a25c6f277986f5be55a4e4af">get_valeur_courte</a> () const </td></tr>
 <tr class="separator:a0cc29100a25c6f277986f5be55a4e4af"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0320499057fd15a513ea6bb63201f0de"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a0320499057fd15a513ea6bb63201f0de"></a>
-QString&#160;</td><td class="memItemRight" valign="bottom"><b>get_aide</b> () const </td></tr>
+<tr class="memitem:a0320499057fd15a513ea6bb63201f0de"><td class="memItemLeft" align="right" valign="top">QString&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classbase__parametre.html#a0320499057fd15a513ea6bb63201f0de">get_aide</a> () const </td></tr>
 <tr class="separator:a0320499057fd15a513ea6bb63201f0de"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3e10ebe3766ea354e05ef0b84a28395a"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a3e10ebe3766ea354e05ef0b84a28395a"></a>
-QString&#160;</td><td class="memItemRight" valign="bottom"><b>get_aide_algorithme</b> () const </td></tr>
+<tr class="memitem:a3e10ebe3766ea354e05ef0b84a28395a"><td class="memItemLeft" align="right" valign="top">QString&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classbase__parametre.html#a3e10ebe3766ea354e05ef0b84a28395a">get_aide_algorithme</a> () const </td></tr>
 <tr class="separator:a3e10ebe3766ea354e05ef0b84a28395a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5e8cb0e47779687edc3af33865655542"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a5e8cb0e47779687edc3af33865655542"></a>
-bool&#160;</td><td class="memItemRight" valign="bottom"><b>est_parametre</b> () const </td></tr>
+<tr class="memitem:a5e8cb0e47779687edc3af33865655542"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classbase__parametre.html#a5e8cb0e47779687edc3af33865655542">est_parametre</a> () const </td></tr>
 <tr class="separator:a5e8cb0e47779687edc3af33865655542"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:adfbae22169cb11d6348906ca12cba66f"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="adfbae22169cb11d6348906ca12cba66f"></a>
-<a class="el" href="classbase__fonction.html">base_fonction</a> *&#160;</td><td class="memItemRight" valign="bottom"><b>get_fonction_parent</b> () const </td></tr>
+<tr class="memitem:adfbae22169cb11d6348906ca12cba66f"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classbase__fonction.html">base_fonction</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classbase__parametre.html#adfbae22169cb11d6348906ca12cba66f">get_fonction_parent</a> () const </td></tr>
 <tr class="separator:adfbae22169cb11d6348906ca12cba66f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa5ab6bd61e0430ac05132475cfea88b4"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aa5ab6bd61e0430ac05132475cfea88b4"></a>
-bool&#160;</td><td class="memItemRight" valign="bottom"><b>is_requis</b> () const </td></tr>
+<tr class="memitem:aa5ab6bd61e0430ac05132475cfea88b4"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classbase__parametre.html#aa5ab6bd61e0430ac05132475cfea88b4">is_requis</a> () const </td></tr>
 <tr class="separator:aa5ab6bd61e0430ac05132475cfea88b4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac2818ac8537052da7635f8fcd7310d31"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ac2818ac8537052da7635f8fcd7310d31"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>set_booleen_par_defaut</b> (bool valeur)</td></tr>
+<tr class="memitem:ac2818ac8537052da7635f8fcd7310d31"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classbase__parametre.html#ac2818ac8537052da7635f8fcd7310d31">set_booleen_par_defaut</a> (bool valeur)</td></tr>
 <tr class="separator:ac2818ac8537052da7635f8fcd7310d31"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2cc3aa1cdceeb7dae6d7ea63cc7c2311"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a2cc3aa1cdceeb7dae6d7ea63cc7c2311"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>set_texte_par_defaut</b> (QString <a class="el" href="classtexte.html">texte</a>, QString separ_caractere=&quot;&quot;, QString separ_mot=&quot; &quot;, QString separ_ligne=&quot;\n&quot;)</td></tr>
+<tr class="memitem:a2cc3aa1cdceeb7dae6d7ea63cc7c2311"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classbase__parametre.html#a2cc3aa1cdceeb7dae6d7ea63cc7c2311">set_texte_par_defaut</a> (QString <a class="el" href="classtexte.html">texte</a>, QString separ_caractere=&quot;&quot;, QString separ_mot=&quot; &quot;, QString separ_ligne=&quot;\n&quot;)</td></tr>
 <tr class="separator:a2cc3aa1cdceeb7dae6d7ea63cc7c2311"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa7e6376b3dab3e9bb6fe29e112a06cbe"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aa7e6376b3dab3e9bb6fe29e112a06cbe"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>set_caractere_par_defaut</b> (QString s)</td></tr>
+<tr class="memitem:aa7e6376b3dab3e9bb6fe29e112a06cbe"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classbase__parametre.html#aa7e6376b3dab3e9bb6fe29e112a06cbe">set_caractere_par_defaut</a> (QString s)</td></tr>
 <tr class="separator:aa7e6376b3dab3e9bb6fe29e112a06cbe"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a214c2b5d4d7ad61ba5fbe99ba4477b23"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a214c2b5d4d7ad61ba5fbe99ba4477b23"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>set_choix_par_defaut</b> (const QStringList &amp;selection)</td></tr>
+<tr class="memitem:a214c2b5d4d7ad61ba5fbe99ba4477b23"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classbase__parametre.html#a214c2b5d4d7ad61ba5fbe99ba4477b23">set_choix_par_defaut</a> (const QStringList &amp;selection)</td></tr>
 <tr class="separator:a214c2b5d4d7ad61ba5fbe99ba4477b23"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab67ff65df492815b729410f64bb2bef7"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ab67ff65df492815b729410f64bb2bef7"></a>
-const <a class="el" href="classtextes.html">textes</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>get_textes_out</b> () const </td></tr>
+<tr class="memitem:ab67ff65df492815b729410f64bb2bef7"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="classtextes.html">textes</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classbase__parametre.html#ab67ff65df492815b729410f64bb2bef7">get_textes_out</a> () const </td></tr>
 <tr class="separator:ab67ff65df492815b729410f64bb2bef7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5a2f1cde20d86a4bdeda4e9f1da30ac3"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a5a2f1cde20d86a4bdeda4e9f1da30ac3"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>set_textes_out</b> (const <a class="el" href="classtextes.html">textes</a> &amp;textes_out)</td></tr>
+<tr class="memitem:a5a2f1cde20d86a4bdeda4e9f1da30ac3"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classbase__parametre.html#a5a2f1cde20d86a4bdeda4e9f1da30ac3">set_textes_out</a> (const <a class="el" href="classtextes.html">textes</a> &amp;textes_out)</td></tr>
 <tr class="separator:a5a2f1cde20d86a4bdeda4e9f1da30ac3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5e241bb14cb089f1fedb5509218be625"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a5e241bb14cb089f1fedb5509218be625"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>set_id</b> (const type_id_parametre &amp;value)</td></tr>
+<tr class="memitem:a5e241bb14cb089f1fedb5509218be625"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classbase__parametre.html#a5e241bb14cb089f1fedb5509218be625">set_id</a> (const <a class="el" href="define__parametre_8h.html#a621f68a7400bb79e0ffd7db8c7eca85c">type_id_parametre</a> &amp;value)</td></tr>
 <tr class="separator:a5e241bb14cb089f1fedb5509218be625"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a04d32b14608a3ed6d64b1579135c8a48"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a04d32b14608a3ed6d64b1579135c8a48"></a>
-bool&#160;</td><td class="memItemRight" valign="bottom"><b>est_valide</b> (<a class="el" href="classlogs__compilation__widget.html">logs_compilation_widget</a> *vue_logs)</td></tr>
+<tr class="memitem:a04d32b14608a3ed6d64b1579135c8a48"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classbase__parametre.html#a04d32b14608a3ed6d64b1579135c8a48">est_valide</a> (<a class="el" href="classlogs__compilation__widget.html">logs_compilation_widget</a> *vue_logs)</td></tr>
 <tr class="separator:a04d32b14608a3ed6d64b1579135c8a48"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa5379f5616ee687d1f94cee586ca819c"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aa5379f5616ee687d1f94cee586ca819c"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>charger</b> (QXmlStreamReader &amp;xml)</td></tr>
+<tr class="memitem:aa5379f5616ee687d1f94cee586ca819c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classbase__parametre.html#aa5379f5616ee687d1f94cee586ca819c">charger</a> (QXmlStreamReader &amp;xml)</td></tr>
 <tr class="separator:aa5379f5616ee687d1f94cee586ca819c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1486b7faa1e0d6c33d4ad53ea30d2828"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a1486b7faa1e0d6c33d4ad53ea30d2828"></a>
-bool&#160;</td><td class="memItemRight" valign="bottom"><b>configuration_visible</b> () const </td></tr>
+<tr class="memitem:a1486b7faa1e0d6c33d4ad53ea30d2828"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classbase__parametre.html#a1486b7faa1e0d6c33d4ad53ea30d2828">configuration_visible</a> () const </td></tr>
 <tr class="separator:a1486b7faa1e0d6c33d4ad53ea30d2828"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aeec324199a052ddfa5b527556322547f"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aeec324199a052ddfa5b527556322547f"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>inverser_configuration_visibilite</b> ()</td></tr>
+<tr class="memitem:aeec324199a052ddfa5b527556322547f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classbase__parametre.html#aeec324199a052ddfa5b527556322547f">inverser_configuration_visibilite</a> ()</td></tr>
 <tr class="separator:aeec324199a052ddfa5b527556322547f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a24ccf52bde9b64c89b6be719c3fea585"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a24ccf52bde9b64c89b6be719c3fea585"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>set_mode_configuration_visibilite</b> (type_mode_configuration_visibilite visible)</td></tr>
+<tr class="memitem:a24ccf52bde9b64c89b6be719c3fea585"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classbase__parametre.html#a24ccf52bde9b64c89b6be719c3fea585">set_mode_configuration_visibilite</a> (<a class="el" href="classbase__parametre.html#af9c2486b3b357c96d118835057f8adae">type_mode_configuration_visibilite</a> visible)</td></tr>
 <tr class="separator:a24ccf52bde9b64c89b6be719c3fea585"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a82fedbba6a0a16b62fefaa8c47bbe477"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a82fedbba6a0a16b62fefaa8c47bbe477"></a>
-bool&#160;</td><td class="memItemRight" valign="bottom"><b>peut_etre_vide</b> () const </td></tr>
+<tr class="memitem:a82fedbba6a0a16b62fefaa8c47bbe477"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classbase__parametre.html#a82fedbba6a0a16b62fefaa8c47bbe477">peut_etre_vide</a> () const </td></tr>
 <tr class="separator:a82fedbba6a0a16b62fefaa8c47bbe477"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac3851f398225da98842d42ebf1fa1825"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ac3851f398225da98842d42ebf1fa1825"></a>
-type_type_parametre&#160;</td><td class="memItemRight" valign="bottom"><b>get_type</b> () const </td></tr>
+<tr class="memitem:ac3851f398225da98842d42ebf1fa1825"><td class="memItemLeft" align="right" valign="top"><a class="el" href="define__parametre_8h.html#aed2bf0fd75a4a7818ae039ad1d14762d">type_type_parametre</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classbase__parametre.html#ac3851f398225da98842d42ebf1fa1825">get_type</a> () const </td></tr>
 <tr class="separator:ac3851f398225da98842d42ebf1fa1825"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_methods_classfonctions__conteneur"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_classfonctions__conteneur')"><img src="closed.png" alt="-"/>&#160;Fonctions membres publiques hérités de <a class="el" href="classfonctions__conteneur.html">fonctions_conteneur</a></td></tr>
-<tr class="memitem:ab3b8dde523b703584d0c2504c63d6c45 inherit pub_methods_classfonctions__conteneur"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ab3b8dde523b703584d0c2504c63d6c45"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>fonctions_conteneur</b> (<a class="el" href="classobjet__selectionnable.html">objet_selectionnable</a> *parent)</td></tr>
+<tr class="memitem:ab3b8dde523b703584d0c2504c63d6c45 inherit pub_methods_classfonctions__conteneur"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfonctions__conteneur.html#ab3b8dde523b703584d0c2504c63d6c45">fonctions_conteneur</a> (<a class="el" href="classobjet__selectionnable.html">objet_selectionnable</a> *parent)</td></tr>
 <tr class="separator:ab3b8dde523b703584d0c2504c63d6c45 inherit pub_methods_classfonctions__conteneur"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5498a158c4d4f16fc63e54809ce381d5 inherit pub_methods_classfonctions__conteneur"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a5498a158c4d4f16fc63e54809ce381d5"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>ajouter_fonction</b> (<a class="el" href="classbase__fonction.html">base_fonction</a> *f, <a class="el" href="classobjet__selectionnable.html">objet_selectionnable</a> *obj_ref)</td></tr>
+<tr class="memitem:aa969d87758ff9d61e544c43d39ee69ad inherit pub_methods_classfonctions__conteneur"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfonctions__conteneur.html#aa969d87758ff9d61e544c43d39ee69ad">~fonctions_conteneur</a> ()</td></tr>
+<tr class="separator:aa969d87758ff9d61e544c43d39ee69ad inherit pub_methods_classfonctions__conteneur"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5498a158c4d4f16fc63e54809ce381d5 inherit pub_methods_classfonctions__conteneur"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfonctions__conteneur.html#a5498a158c4d4f16fc63e54809ce381d5">ajouter_fonction</a> (<a class="el" href="classbase__fonction.html">base_fonction</a> *f, <a class="el" href="classobjet__selectionnable.html">objet_selectionnable</a> *obj_ref)</td></tr>
 <tr class="separator:a5498a158c4d4f16fc63e54809ce381d5 inherit pub_methods_classfonctions__conteneur"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a807b51ba64dd85bb844c44cfe2d0f116 inherit pub_methods_classfonctions__conteneur"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a807b51ba64dd85bb844c44cfe2d0f116"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>supprimer_fonction</b> (<a class="el" href="classbase__fonction.html">base_fonction</a> *f)</td></tr>
+<tr class="memitem:a807b51ba64dd85bb844c44cfe2d0f116 inherit pub_methods_classfonctions__conteneur"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfonctions__conteneur.html#a807b51ba64dd85bb844c44cfe2d0f116">supprimer_fonction</a> (<a class="el" href="classbase__fonction.html">base_fonction</a> *f)</td></tr>
 <tr class="separator:a807b51ba64dd85bb844c44cfe2d0f116 inherit pub_methods_classfonctions__conteneur"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa1db33c3a0bf76b354e77b4a4324357a inherit pub_methods_classfonctions__conteneur"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aa1db33c3a0bf76b354e77b4a4324357a"></a>
-fonctions_iterateur&#160;</td><td class="memItemRight" valign="bottom"><b>fonctions_begin</b> ()</td></tr>
+<tr class="memitem:aa1db33c3a0bf76b354e77b4a4324357a inherit pub_methods_classfonctions__conteneur"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classfonctions__conteneur.html#af69a1efeb888ab26251ecce96c4bf5e9">fonctions_iterateur</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfonctions__conteneur.html#aa1db33c3a0bf76b354e77b4a4324357a">fonctions_begin</a> ()</td></tr>
 <tr class="separator:aa1db33c3a0bf76b354e77b4a4324357a inherit pub_methods_classfonctions__conteneur"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a165ee65380980b58b521a62810cd7e27 inherit pub_methods_classfonctions__conteneur"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a165ee65380980b58b521a62810cd7e27"></a>
-fonctions_iterateur&#160;</td><td class="memItemRight" valign="bottom"><b>fonctions_end</b> ()</td></tr>
+<tr class="memitem:a165ee65380980b58b521a62810cd7e27 inherit pub_methods_classfonctions__conteneur"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classfonctions__conteneur.html#af69a1efeb888ab26251ecce96c4bf5e9">fonctions_iterateur</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfonctions__conteneur.html#a165ee65380980b58b521a62810cd7e27">fonctions_end</a> ()</td></tr>
 <tr class="separator:a165ee65380980b58b521a62810cd7e27 inherit pub_methods_classfonctions__conteneur"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0e66abe2fb75854bdf225621ee4f7fb4 inherit pub_methods_classfonctions__conteneur"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a0e66abe2fb75854bdf225621ee4f7fb4"></a>
-fonctions_const_iterateur&#160;</td><td class="memItemRight" valign="bottom"><b>fonctions_const_begin</b> () const </td></tr>
+<tr class="memitem:a0e66abe2fb75854bdf225621ee4f7fb4 inherit pub_methods_classfonctions__conteneur"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classfonctions__conteneur.html#abc69be8ea089b7f3370998c14a3bbf09">fonctions_const_iterateur</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfonctions__conteneur.html#a0e66abe2fb75854bdf225621ee4f7fb4">fonctions_const_begin</a> () const </td></tr>
 <tr class="separator:a0e66abe2fb75854bdf225621ee4f7fb4 inherit pub_methods_classfonctions__conteneur"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad9d7f30426cbfab3d39505bb94b1f0d5 inherit pub_methods_classfonctions__conteneur"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ad9d7f30426cbfab3d39505bb94b1f0d5"></a>
-fonctions_const_iterateur&#160;</td><td class="memItemRight" valign="bottom"><b>fonctions_const_end</b> () const </td></tr>
+<tr class="memitem:ad9d7f30426cbfab3d39505bb94b1f0d5 inherit pub_methods_classfonctions__conteneur"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classfonctions__conteneur.html#abc69be8ea089b7f3370998c14a3bbf09">fonctions_const_iterateur</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfonctions__conteneur.html#ad9d7f30426cbfab3d39505bb94b1f0d5">fonctions_const_end</a> () const </td></tr>
 <tr class="separator:ad9d7f30426cbfab3d39505bb94b1f0d5 inherit pub_methods_classfonctions__conteneur"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a61f2cd0bf2ee27462f470e36a2f43869 inherit pub_methods_classfonctions__conteneur"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a61f2cd0bf2ee27462f470e36a2f43869"></a>
-int&#160;</td><td class="memItemRight" valign="bottom"><b>get_position</b> (<a class="el" href="classbase__fonction.html">base_fonction</a> *f)</td></tr>
+<tr class="memitem:a61f2cd0bf2ee27462f470e36a2f43869 inherit pub_methods_classfonctions__conteneur"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfonctions__conteneur.html#a61f2cd0bf2ee27462f470e36a2f43869">get_position</a> (<a class="el" href="classbase__fonction.html">base_fonction</a> *f)</td></tr>
 <tr class="separator:a61f2cd0bf2ee27462f470e36a2f43869 inherit pub_methods_classfonctions__conteneur"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:adeb212d1b2b09ec309d005839a732570 inherit pub_methods_classfonctions__conteneur"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="adeb212d1b2b09ec309d005839a732570"></a>
-bool&#160;</td><td class="memItemRight" valign="bottom"><b>est_conteneur</b> () const </td></tr>
+<tr class="memitem:adeb212d1b2b09ec309d005839a732570 inherit pub_methods_classfonctions__conteneur"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfonctions__conteneur.html#adeb212d1b2b09ec309d005839a732570">est_conteneur</a> () const </td></tr>
 <tr class="separator:adeb212d1b2b09ec309d005839a732570 inherit pub_methods_classfonctions__conteneur"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2e241972228c75c5550287bd0fa6501e inherit pub_methods_classfonctions__conteneur"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a2e241972228c75c5550287bd0fa6501e"></a>
-<a class="el" href="classobjet__selectionnable.html">objet_selectionnable</a> *&#160;</td><td class="memItemRight" valign="bottom"><b>charger_fonction</b> (QXmlStreamReader &amp;xml, <a class="el" href="classobjet__selectionnable.html">objet_selectionnable</a> *obj_ref)</td></tr>
+<tr class="memitem:a2e241972228c75c5550287bd0fa6501e inherit pub_methods_classfonctions__conteneur"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classobjet__selectionnable.html">objet_selectionnable</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfonctions__conteneur.html#a2e241972228c75c5550287bd0fa6501e">charger_fonction</a> (QXmlStreamReader &amp;xml, <a class="el" href="classobjet__selectionnable.html">objet_selectionnable</a> *obj_ref)</td></tr>
 <tr class="separator:a2e241972228c75c5550287bd0fa6501e inherit pub_methods_classfonctions__conteneur"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aeb43e1fd3929d565f33b34db7ce8c583 inherit pub_methods_classfonctions__conteneur"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aeb43e1fd3929d565f33b34db7ce8c583"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>charger_fonctions</b> (QXmlStreamReader &amp;xml, <a class="el" href="classobjet__selectionnable.html">objet_selectionnable</a> *obj_ref)</td></tr>
+<tr class="memitem:aeb43e1fd3929d565f33b34db7ce8c583 inherit pub_methods_classfonctions__conteneur"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfonctions__conteneur.html#aeb43e1fd3929d565f33b34db7ce8c583">charger_fonctions</a> (QXmlStreamReader &amp;xml, <a class="el" href="classobjet__selectionnable.html">objet_selectionnable</a> *obj_ref)</td></tr>
 <tr class="separator:aeb43e1fd3929d565f33b34db7ce8c583 inherit pub_methods_classfonctions__conteneur"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a199dde0697eb91a9e54c1dfecb536a88 inherit pub_methods_classfonctions__conteneur"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a199dde0697eb91a9e54c1dfecb536a88"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>sauvegarder</b> (QXmlStreamWriter &amp;stream) const </td></tr>
+<tr class="memitem:a199dde0697eb91a9e54c1dfecb536a88 inherit pub_methods_classfonctions__conteneur"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfonctions__conteneur.html#a199dde0697eb91a9e54c1dfecb536a88">sauvegarder</a> (QXmlStreamWriter &amp;stream) const </td></tr>
 <tr class="separator:a199dde0697eb91a9e54c1dfecb536a88 inherit pub_methods_classfonctions__conteneur"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_methods_classobjet__selectionnable"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_classobjet__selectionnable')"><img src="closed.png" alt="-"/>&#160;Fonctions membres publiques hérités de <a class="el" href="classobjet__selectionnable.html">objet_selectionnable</a></td></tr>
-<tr class="memitem:af68427cda8defcbcf0d21de69730a4f6 inherit pub_methods_classobjet__selectionnable"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="af68427cda8defcbcf0d21de69730a4f6"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>objet_selectionnable</b> (<a class="el" href="classobjet__selectionnable.html">objet_selectionnable</a> *parent=NULL)</td></tr>
+<tr class="memitem:af68427cda8defcbcf0d21de69730a4f6 inherit pub_methods_classobjet__selectionnable"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classobjet__selectionnable.html#af68427cda8defcbcf0d21de69730a4f6">objet_selectionnable</a> (<a class="el" href="classobjet__selectionnable.html">objet_selectionnable</a> *parent=NULL)</td></tr>
 <tr class="separator:af68427cda8defcbcf0d21de69730a4f6 inherit pub_methods_classobjet__selectionnable"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a645da22be6e3f8747086da238e788fb9 inherit pub_methods_classobjet__selectionnable"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a645da22be6e3f8747086da238e788fb9"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>selectionner</b> ()</td></tr>
+<tr class="memitem:a2c7f03948af9a366ecc00b792603526e inherit pub_methods_classobjet__selectionnable"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classobjet__selectionnable.html#a2c7f03948af9a366ecc00b792603526e">~objet_selectionnable</a> ()</td></tr>
+<tr class="separator:a2c7f03948af9a366ecc00b792603526e inherit pub_methods_classobjet__selectionnable"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a645da22be6e3f8747086da238e788fb9 inherit pub_methods_classobjet__selectionnable"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classobjet__selectionnable.html#a645da22be6e3f8747086da238e788fb9">selectionner</a> ()</td></tr>
 <tr class="separator:a645da22be6e3f8747086da238e788fb9 inherit pub_methods_classobjet__selectionnable"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab809d020155b7fec48ff3adbe15c9b65 inherit pub_methods_classobjet__selectionnable"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ab809d020155b7fec48ff3adbe15c9b65"></a>
-<a class="el" href="classfonctions__conteneur.html">fonctions_conteneur</a> *&#160;</td><td class="memItemRight" valign="bottom"><b>get_conteneur</b> ()</td></tr>
+<tr class="memitem:ab809d020155b7fec48ff3adbe15c9b65 inherit pub_methods_classobjet__selectionnable"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classfonctions__conteneur.html">fonctions_conteneur</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classobjet__selectionnable.html#ab809d020155b7fec48ff3adbe15c9b65">get_conteneur</a> ()</td></tr>
 <tr class="separator:ab809d020155b7fec48ff3adbe15c9b65 inherit pub_methods_classobjet__selectionnable"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa80aeba62e29922d6d7289a836228dfc inherit pub_methods_classobjet__selectionnable"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aa80aeba62e29922d6d7289a836228dfc"></a>
-const <a class="el" href="classfonctions__conteneur.html">fonctions_conteneur</a> *&#160;</td><td class="memItemRight" valign="bottom"><b>get_conteneur</b> () const </td></tr>
+<tr class="memitem:aa80aeba62e29922d6d7289a836228dfc inherit pub_methods_classobjet__selectionnable"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="classfonctions__conteneur.html">fonctions_conteneur</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classobjet__selectionnable.html#aa80aeba62e29922d6d7289a836228dfc">get_conteneur</a> () const </td></tr>
 <tr class="separator:aa80aeba62e29922d6d7289a836228dfc inherit pub_methods_classobjet__selectionnable"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6f00a6275b09a11fb43316144e2d4b86 inherit pub_methods_classobjet__selectionnable"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a6f00a6275b09a11fb43316144e2d4b86"></a>
-<a class="el" href="classfonctions__conteneur.html">fonctions_conteneur</a> *&#160;</td><td class="memItemRight" valign="bottom"><b>get_conteneur_precedant</b> ()</td></tr>
+<tr class="memitem:a6f00a6275b09a11fb43316144e2d4b86 inherit pub_methods_classobjet__selectionnable"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classfonctions__conteneur.html">fonctions_conteneur</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classobjet__selectionnable.html#a6f00a6275b09a11fb43316144e2d4b86">get_conteneur_precedant</a> ()</td></tr>
 <tr class="separator:a6f00a6275b09a11fb43316144e2d4b86 inherit pub_methods_classobjet__selectionnable"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab48a75e720955aebe27f720dfaa5e78e inherit pub_methods_classobjet__selectionnable"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ab48a75e720955aebe27f720dfaa5e78e"></a>
-<a class="el" href="classprojet.html">projet</a> *&#160;</td><td class="memItemRight" valign="bottom"><b>get_projet</b> ()</td></tr>
+<tr class="memitem:ab48a75e720955aebe27f720dfaa5e78e inherit pub_methods_classobjet__selectionnable"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classprojet.html">projet</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classobjet__selectionnable.html#ab48a75e720955aebe27f720dfaa5e78e">get_projet</a> ()</td></tr>
 <tr class="separator:ab48a75e720955aebe27f720dfaa5e78e inherit pub_methods_classobjet__selectionnable"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aaa39f8be3dfaeb095cc12a217b234f9b inherit pub_methods_classobjet__selectionnable"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aaa39f8be3dfaeb095cc12a217b234f9b"></a>
-bool&#160;</td><td class="memItemRight" valign="bottom"><b>est_dans_projet</b> () const </td></tr>
+<tr class="memitem:aaa39f8be3dfaeb095cc12a217b234f9b inherit pub_methods_classobjet__selectionnable"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classobjet__selectionnable.html#aaa39f8be3dfaeb095cc12a217b234f9b">est_dans_projet</a> () const </td></tr>
 <tr class="separator:aaa39f8be3dfaeb095cc12a217b234f9b inherit pub_methods_classobjet__selectionnable"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a97e33c61983d5c7811e8bacff8f114c4 inherit pub_methods_classobjet__selectionnable"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a97e33c61983d5c7811e8bacff8f114c4"></a>
-virtual bool&#160;</td><td class="memItemRight" valign="bottom"><b>est_projet</b> () const </td></tr>
+<tr class="memitem:a97e33c61983d5c7811e8bacff8f114c4 inherit pub_methods_classobjet__selectionnable"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classobjet__selectionnable.html#a97e33c61983d5c7811e8bacff8f114c4">est_projet</a> () const </td></tr>
 <tr class="separator:a97e33c61983d5c7811e8bacff8f114c4 inherit pub_methods_classobjet__selectionnable"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab5d7e0b9f000ba34d9d60b36590f1fcf inherit pub_methods_classobjet__selectionnable"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ab5d7e0b9f000ba34d9d60b36590f1fcf"></a>
-virtual bool&#160;</td><td class="memItemRight" valign="bottom"><b>est_fonction</b> () const </td></tr>
+<tr class="memitem:ab5d7e0b9f000ba34d9d60b36590f1fcf inherit pub_methods_classobjet__selectionnable"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classobjet__selectionnable.html#ab5d7e0b9f000ba34d9d60b36590f1fcf">est_fonction</a> () const </td></tr>
 <tr class="separator:ab5d7e0b9f000ba34d9d60b36590f1fcf inherit pub_methods_classobjet__selectionnable"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9f9e2ccc04e3b2a55d7b51b85366488f inherit pub_methods_classobjet__selectionnable"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a9f9e2ccc04e3b2a55d7b51b85366488f"></a>
-bool&#160;</td><td class="memItemRight" valign="bottom"><b>est_active</b> () const </td></tr>
+<tr class="memitem:a9f9e2ccc04e3b2a55d7b51b85366488f inherit pub_methods_classobjet__selectionnable"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classobjet__selectionnable.html#a9f9e2ccc04e3b2a55d7b51b85366488f">est_active</a> () const </td></tr>
 <tr class="separator:a9f9e2ccc04e3b2a55d7b51b85366488f inherit pub_methods_classobjet__selectionnable"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:acb1bf63e061079a402c929ce346b0b22 inherit pub_methods_classobjet__selectionnable"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="acb1bf63e061079a402c929ce346b0b22"></a>
-virtual void&#160;</td><td class="memItemRight" valign="bottom"><b>set_est_active</b> (bool active)</td></tr>
+<tr class="memitem:acb1bf63e061079a402c929ce346b0b22 inherit pub_methods_classobjet__selectionnable"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classobjet__selectionnable.html#acb1bf63e061079a402c929ce346b0b22">set_est_active</a> (bool active)</td></tr>
 <tr class="separator:acb1bf63e061079a402c929ce346b0b22 inherit pub_methods_classobjet__selectionnable"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ada0d1bda8b5fdc1f81979720d40fb840 inherit pub_methods_classobjet__selectionnable"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ada0d1bda8b5fdc1f81979720d40fb840"></a>
-bool&#160;</td><td class="memItemRight" valign="bottom"><b>est_active_avec_parent</b> () const </td></tr>
+<tr class="memitem:ada0d1bda8b5fdc1f81979720d40fb840 inherit pub_methods_classobjet__selectionnable"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classobjet__selectionnable.html#ada0d1bda8b5fdc1f81979720d40fb840">est_active_avec_parent</a> () const </td></tr>
 <tr class="separator:ada0d1bda8b5fdc1f81979720d40fb840 inherit pub_methods_classobjet__selectionnable"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a76587773c723728d21583bb87e995daa inherit pub_methods_classobjet__selectionnable"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a76587773c723728d21583bb87e995daa"></a>
-bool&#160;</td><td class="memItemRight" valign="bottom"><b>parents_actifs</b> () const </td></tr>
+<tr class="memitem:a76587773c723728d21583bb87e995daa inherit pub_methods_classobjet__selectionnable"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classobjet__selectionnable.html#a76587773c723728d21583bb87e995daa">parents_actifs</a> () const </td></tr>
 <tr class="separator:a76587773c723728d21583bb87e995daa inherit pub_methods_classobjet__selectionnable"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab2b3d6e89c6a33d83d79bafd6e36a671 inherit pub_methods_classobjet__selectionnable"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ab2b3d6e89c6a33d83d79bafd6e36a671"></a>
-bool&#160;</td><td class="memItemRight" valign="bottom"><b>a_ancetre</b> (<a class="el" href="classobjet__selectionnable.html">objet_selectionnable</a> *obj) const </td></tr>
+<tr class="memitem:ab2b3d6e89c6a33d83d79bafd6e36a671 inherit pub_methods_classobjet__selectionnable"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classobjet__selectionnable.html#ab2b3d6e89c6a33d83d79bafd6e36a671">a_ancetre</a> (<a class="el" href="classobjet__selectionnable.html">objet_selectionnable</a> *obj) const </td></tr>
 <tr class="separator:ab2b3d6e89c6a33d83d79bafd6e36a671 inherit pub_methods_classobjet__selectionnable"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8b9cf156597fe8cc1b8f9408e1bfee8c inherit pub_methods_classobjet__selectionnable"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a8b9cf156597fe8cc1b8f9408e1bfee8c"></a>
-virtual bool&#160;</td><td class="memItemRight" valign="bottom"><b>est_verrouille</b> () const </td></tr>
+<tr class="memitem:a8b9cf156597fe8cc1b8f9408e1bfee8c inherit pub_methods_classobjet__selectionnable"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classobjet__selectionnable.html#a8b9cf156597fe8cc1b8f9408e1bfee8c">est_verrouille</a> () const </td></tr>
 <tr class="separator:a8b9cf156597fe8cc1b8f9408e1bfee8c inherit pub_methods_classobjet__selectionnable"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5d39343f43293805a0b60e8520687d87 inherit pub_methods_classobjet__selectionnable"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a5d39343f43293805a0b60e8520687d87"></a>
-virtual void&#160;</td><td class="memItemRight" valign="bottom"><b>set_verrouille</b> (bool verrouille)</td></tr>
+<tr class="memitem:a5d39343f43293805a0b60e8520687d87 inherit pub_methods_classobjet__selectionnable"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classobjet__selectionnable.html#a5d39343f43293805a0b60e8520687d87">set_verrouille</a> (bool verrouille)</td></tr>
 <tr class="separator:a5d39343f43293805a0b60e8520687d87 inherit pub_methods_classobjet__selectionnable"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a028ac895965858e0e8e8e2cc25e8323c inherit pub_methods_classobjet__selectionnable"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a028ac895965858e0e8e8e2cc25e8323c"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>inverser_verrouillage</b> ()</td></tr>
+<tr class="memitem:a028ac895965858e0e8e8e2cc25e8323c inherit pub_methods_classobjet__selectionnable"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classobjet__selectionnable.html#a028ac895965858e0e8e8e2cc25e8323c">inverser_verrouillage</a> ()</td></tr>
 <tr class="separator:a028ac895965858e0e8e8e2cc25e8323c inherit pub_methods_classobjet__selectionnable"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1cf41e42861e0b033d2704802905e81a inherit pub_methods_classobjet__selectionnable"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a1cf41e42861e0b033d2704802905e81a"></a>
-bool&#160;</td><td class="memItemRight" valign="bottom"><b>est_verrouille_avec_parent</b> () const </td></tr>
+<tr class="memitem:a1cf41e42861e0b033d2704802905e81a inherit pub_methods_classobjet__selectionnable"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classobjet__selectionnable.html#a1cf41e42861e0b033d2704802905e81a">est_verrouille_avec_parent</a> () const </td></tr>
 <tr class="separator:a1cf41e42861e0b033d2704802905e81a inherit pub_methods_classobjet__selectionnable"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a57341a9bf3dbc66f4ad4414183b0d27c inherit pub_methods_classobjet__selectionnable"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a57341a9bf3dbc66f4ad4414183b0d27c"></a>
-bool&#160;</td><td class="memItemRight" valign="bottom"><b>parents_verrouilles</b> () const </td></tr>
+<tr class="memitem:a57341a9bf3dbc66f4ad4414183b0d27c inherit pub_methods_classobjet__selectionnable"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classobjet__selectionnable.html#a57341a9bf3dbc66f4ad4414183b0d27c">parents_verrouilles</a> () const </td></tr>
 <tr class="separator:a57341a9bf3dbc66f4ad4414183b0d27c inherit pub_methods_classobjet__selectionnable"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae58408e8c4421e9c33bc488381e8c0a4 inherit pub_methods_classobjet__selectionnable"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ae58408e8c4421e9c33bc488381e8c0a4"></a>
-bool&#160;</td><td class="memItemRight" valign="bottom"><b>est_etendu</b> () const </td></tr>
+<tr class="memitem:ae58408e8c4421e9c33bc488381e8c0a4 inherit pub_methods_classobjet__selectionnable"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classobjet__selectionnable.html#ae58408e8c4421e9c33bc488381e8c0a4">est_etendu</a> () const </td></tr>
 <tr class="separator:ae58408e8c4421e9c33bc488381e8c0a4 inherit pub_methods_classobjet__selectionnable"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aafef1c588ce9d5f7956c321799986b9b inherit pub_methods_classobjet__selectionnable"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aafef1c588ce9d5f7956c321799986b9b"></a>
-virtual void&#160;</td><td class="memItemRight" valign="bottom"><b>set_est_etendu</b> (bool est_etendu)</td></tr>
+<tr class="memitem:aafef1c588ce9d5f7956c321799986b9b inherit pub_methods_classobjet__selectionnable"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classobjet__selectionnable.html#aafef1c588ce9d5f7956c321799986b9b">set_est_etendu</a> (bool <a class="el" href="classobjet__selectionnable.html#ae58408e8c4421e9c33bc488381e8c0a4">est_etendu</a>)</td></tr>
 <tr class="separator:aafef1c588ce9d5f7956c321799986b9b inherit pub_methods_classobjet__selectionnable"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9f76b8e89231a79c3fc840af874bd868 inherit pub_methods_classobjet__selectionnable"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a9f76b8e89231a79c3fc840af874bd868"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>modifier</b> (bool change_executable=true)</td></tr>
+<tr class="memitem:a9f76b8e89231a79c3fc840af874bd868 inherit pub_methods_classobjet__selectionnable"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classobjet__selectionnable.html#a9f76b8e89231a79c3fc840af874bd868">modifier</a> (bool change_executable=true)</td></tr>
 <tr class="separator:a9f76b8e89231a79c3fc840af874bd868 inherit pub_methods_classobjet__selectionnable"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:adb99710921bdf74dfe35ee9d75b995a3 inherit pub_methods_classobjet__selectionnable"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="adb99710921bdf74dfe35ee9d75b995a3"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>sauvegarder</b> (QXmlStreamWriter &amp;stream) const </td></tr>
+<tr class="memitem:adb99710921bdf74dfe35ee9d75b995a3 inherit pub_methods_classobjet__selectionnable"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classobjet__selectionnable.html#adb99710921bdf74dfe35ee9d75b995a3">sauvegarder</a> (QXmlStreamWriter &amp;stream) const </td></tr>
 <tr class="separator:adb99710921bdf74dfe35ee9d75b995a3 inherit pub_methods_classobjet__selectionnable"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-attribs"></a>
 Attributs protégés</h2></td></tr>
-<tr class="memitem:afa54d3e720cab0ee5de13c30c0597adb"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="afa54d3e720cab0ee5de13c30c0597adb"></a>
-QString&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classbase__parametre.html#afa54d3e720cab0ee5de13c30c0597adb">m_nom</a></td></tr>
-<tr class="memdesc:afa54d3e720cab0ee5de13c30c0597adb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Le nom de la fonction. <br/></td></tr>
+<tr class="memitem:afa54d3e720cab0ee5de13c30c0597adb"><td class="memItemLeft" align="right" valign="top">QString&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classbase__parametre.html#afa54d3e720cab0ee5de13c30c0597adb">m_nom</a></td></tr>
+<tr class="memdesc:afa54d3e720cab0ee5de13c30c0597adb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Le nom de la fonction.  <a href="#afa54d3e720cab0ee5de13c30c0597adb">Plus de détails...</a><br/></td></tr>
 <tr class="separator:afa54d3e720cab0ee5de13c30c0597adb"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af62a651d367056e1079b09c485c5d557"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="af62a651d367056e1079b09c485c5d557"></a>
-QString&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classbase__parametre.html#af62a651d367056e1079b09c485c5d557">m_aide</a></td></tr>
-<tr class="memdesc:af62a651d367056e1079b09c485c5d557"><td class="mdescLeft">&#160;</td><td class="mdescRight">L'aide utilisateur du parametre. <br/></td></tr>
+<tr class="memitem:af62a651d367056e1079b09c485c5d557"><td class="memItemLeft" align="right" valign="top">QString&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classbase__parametre.html#af62a651d367056e1079b09c485c5d557">m_aide</a></td></tr>
+<tr class="memdesc:af62a651d367056e1079b09c485c5d557"><td class="mdescLeft">&#160;</td><td class="mdescRight">L'aide utilisateur du parametre.  <a href="#af62a651d367056e1079b09c485c5d557">Plus de détails...</a><br/></td></tr>
 <tr class="separator:af62a651d367056e1079b09c485c5d557"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a375558920c778ff013e4bac75b092573"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a375558920c778ff013e4bac75b092573"></a>
-type_mode_contenu_parametre&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classbase__parametre.html#a375558920c778ff013e4bac75b092573">m_mode_contenu_parametre</a></td></tr>
-<tr class="memdesc:a375558920c778ff013e4bac75b092573"><td class="mdescLeft">&#160;</td><td class="mdescRight">Indique si le parametre est requis. <br/></td></tr>
+<tr class="memitem:a375558920c778ff013e4bac75b092573"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classbase__parametre.html#a64ac5a31d511d54e78437d8f3aff9c31">type_mode_contenu_parametre</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classbase__parametre.html#a375558920c778ff013e4bac75b092573">m_mode_contenu_parametre</a></td></tr>
+<tr class="memdesc:a375558920c778ff013e4bac75b092573"><td class="mdescLeft">&#160;</td><td class="mdescRight">Indique si le parametre est requis.  <a href="#a375558920c778ff013e4bac75b092573">Plus de détails...</a><br/></td></tr>
 <tr class="separator:a375558920c778ff013e4bac75b092573"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a88d6d3a7fc836a2f134344ff5a3185ed"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a88d6d3a7fc836a2f134344ff5a3185ed"></a>
-<a class="el" href="classbase__fonction.html">base_fonction</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classbase__parametre.html#a88d6d3a7fc836a2f134344ff5a3185ed">m_fonction_parent</a></td></tr>
-<tr class="memdesc:a88d6d3a7fc836a2f134344ff5a3185ed"><td class="mdescLeft">&#160;</td><td class="mdescRight">La fonction parent. <br/></td></tr>
+<tr class="memitem:a88d6d3a7fc836a2f134344ff5a3185ed"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classbase__fonction.html">base_fonction</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classbase__parametre.html#a88d6d3a7fc836a2f134344ff5a3185ed">m_fonction_parent</a></td></tr>
+<tr class="memdesc:a88d6d3a7fc836a2f134344ff5a3185ed"><td class="mdescLeft">&#160;</td><td class="mdescRight">La fonction parent.  <a href="#a88d6d3a7fc836a2f134344ff5a3185ed">Plus de détails...</a><br/></td></tr>
 <tr class="separator:a88d6d3a7fc836a2f134344ff5a3185ed"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8018b4687fbb14a97ff34661e0481c20"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a8018b4687fbb14a97ff34661e0481c20"></a>
-<a class="el" href="classtextes.html">textes</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classbase__parametre.html#a8018b4687fbb14a97ff34661e0481c20">m_textes_out</a></td></tr>
-<tr class="memdesc:a8018b4687fbb14a97ff34661e0481c20"><td class="mdescLeft">&#160;</td><td class="mdescRight">La valeur réelle du parametre. <br/></td></tr>
+<tr class="memitem:a8018b4687fbb14a97ff34661e0481c20"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classtextes.html">textes</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classbase__parametre.html#a8018b4687fbb14a97ff34661e0481c20">m_textes_out</a></td></tr>
+<tr class="memdesc:a8018b4687fbb14a97ff34661e0481c20"><td class="mdescLeft">&#160;</td><td class="mdescRight">La valeur réelle du parametre.  <a href="#a8018b4687fbb14a97ff34661e0481c20">Plus de détails...</a><br/></td></tr>
 <tr class="separator:a8018b4687fbb14a97ff34661e0481c20"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a00aff6ab5a2e2a4cdea8cfc62ebdf06a"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a00aff6ab5a2e2a4cdea8cfc62ebdf06a"></a>
-type_id_parametre&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classbase__parametre.html#a00aff6ab5a2e2a4cdea8cfc62ebdf06a">m_id</a></td></tr>
-<tr class="memdesc:a00aff6ab5a2e2a4cdea8cfc62ebdf06a"><td class="mdescLeft">&#160;</td><td class="mdescRight">L'identifiant du paramètre. <br/></td></tr>
+<tr class="memitem:a00aff6ab5a2e2a4cdea8cfc62ebdf06a"><td class="memItemLeft" align="right" valign="top"><a class="el" href="define__parametre_8h.html#a621f68a7400bb79e0ffd7db8c7eca85c">type_id_parametre</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classbase__parametre.html#a00aff6ab5a2e2a4cdea8cfc62ebdf06a">m_id</a></td></tr>
+<tr class="memdesc:a00aff6ab5a2e2a4cdea8cfc62ebdf06a"><td class="mdescLeft">&#160;</td><td class="mdescRight">L'identifiant du paramètre.  <a href="#a00aff6ab5a2e2a4cdea8cfc62ebdf06a">Plus de détails...</a><br/></td></tr>
 <tr class="separator:a00aff6ab5a2e2a4cdea8cfc62ebdf06a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a489eac8ac5b24f3295bb0122f1bacbb5"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a489eac8ac5b24f3295bb0122f1bacbb5"></a>
-type_mode_configuration_visibilite&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classbase__parametre.html#a489eac8ac5b24f3295bb0122f1bacbb5">m_mode_configuration_visibilite</a></td></tr>
-<tr class="memdesc:a489eac8ac5b24f3295bb0122f1bacbb5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Indique si le paramètre doit figurer dans la configuration. <br/></td></tr>
+<tr class="memitem:a489eac8ac5b24f3295bb0122f1bacbb5"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classbase__parametre.html#af9c2486b3b357c96d118835057f8adae">type_mode_configuration_visibilite</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classbase__parametre.html#a489eac8ac5b24f3295bb0122f1bacbb5">m_mode_configuration_visibilite</a></td></tr>
+<tr class="memdesc:a489eac8ac5b24f3295bb0122f1bacbb5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Indique si le paramètre doit figurer dans la configuration.  <a href="#a489eac8ac5b24f3295bb0122f1bacbb5">Plus de détails...</a><br/></td></tr>
 <tr class="separator:a489eac8ac5b24f3295bb0122f1bacbb5"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa922c5061129a19c401693fca50fba69"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aa922c5061129a19c401693fca50fba69"></a>
-<a class="el" href="classbase__parametre.html#a9e5b987e53d5cc9d49a3e2637b6b61b9">type_algorithme</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classbase__parametre.html#aa922c5061129a19c401693fca50fba69">m_algorithme</a></td></tr>
-<tr class="memdesc:aa922c5061129a19c401693fca50fba69"><td class="mdescLeft">&#160;</td><td class="mdescRight">Le type d'algorithme utilisé. <br/></td></tr>
+<tr class="memitem:aa922c5061129a19c401693fca50fba69"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classbase__parametre.html#a9e5b987e53d5cc9d49a3e2637b6b61b9">type_algorithme</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classbase__parametre.html#aa922c5061129a19c401693fca50fba69">m_algorithme</a></td></tr>
+<tr class="memdesc:aa922c5061129a19c401693fca50fba69"><td class="mdescLeft">&#160;</td><td class="mdescRight">Le type d'algorithme utilisé.  <a href="#aa922c5061129a19c401693fca50fba69">Plus de détails...</a><br/></td></tr>
 <tr class="separator:aa922c5061129a19c401693fca50fba69"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6976dbd4a62eeeedb59e2ae062ec9724"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a6976dbd4a62eeeedb59e2ae062ec9724"></a>
-type_type_parametre&#160;</td><td class="memItemRight" valign="bottom"><b>m_type</b></td></tr>
+<tr class="memitem:a6976dbd4a62eeeedb59e2ae062ec9724"><td class="memItemLeft" align="right" valign="top"><a class="el" href="define__parametre_8h.html#aed2bf0fd75a4a7818ae039ad1d14762d">type_type_parametre</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classbase__parametre.html#a6976dbd4a62eeeedb59e2ae062ec9724">m_type</a></td></tr>
 <tr class="separator:a6976dbd4a62eeeedb59e2ae062ec9724"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pro_attribs_classfonctions__conteneur"><td colspan="2" onclick="javascript:toggleInherit('pro_attribs_classfonctions__conteneur')"><img src="closed.png" alt="-"/>&#160;Attributs protégés hérités de <a class="el" href="classfonctions__conteneur.html">fonctions_conteneur</a></td></tr>
-<tr class="memitem:ae453f7e33190b767f875bcc1018c32d7 inherit pro_attribs_classfonctions__conteneur"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ae453f7e33190b767f875bcc1018c32d7"></a>
-type_fonctions&#160;</td><td class="memItemRight" valign="bottom"><b>m_fonctions</b></td></tr>
+<tr class="memitem:ae453f7e33190b767f875bcc1018c32d7 inherit pro_attribs_classfonctions__conteneur"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classfonctions__conteneur.html#af28c537e8b22badf4ab754c003de72c3">type_fonctions</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfonctions__conteneur.html#ae453f7e33190b767f875bcc1018c32d7">m_fonctions</a></td></tr>
 <tr class="separator:ae453f7e33190b767f875bcc1018c32d7 inherit pro_attribs_classfonctions__conteneur"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pro_attribs_classobjet__selectionnable"><td colspan="2" onclick="javascript:toggleInherit('pro_attribs_classobjet__selectionnable')"><img src="closed.png" alt="-"/>&#160;Attributs protégés hérités de <a class="el" href="classobjet__selectionnable.html">objet_selectionnable</a></td></tr>
-<tr class="memitem:ab345c9277c7192ea5b01e2796ec099dc inherit pro_attribs_classobjet__selectionnable"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ab345c9277c7192ea5b01e2796ec099dc"></a>
-<a class="el" href="classobjet__selectionnable.html">objet_selectionnable</a> *&#160;</td><td class="memItemRight" valign="bottom"><b>m_objet_parent</b></td></tr>
+<tr class="memitem:ab345c9277c7192ea5b01e2796ec099dc inherit pro_attribs_classobjet__selectionnable"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classobjet__selectionnable.html">objet_selectionnable</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classobjet__selectionnable.html#ab345c9277c7192ea5b01e2796ec099dc">m_objet_parent</a></td></tr>
 <tr class="separator:ab345c9277c7192ea5b01e2796ec099dc inherit pro_attribs_classobjet__selectionnable"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:afb0e6eeeac420371f55aac0e455e1a84 inherit pro_attribs_classobjet__selectionnable"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="afb0e6eeeac420371f55aac0e455e1a84"></a>
-bool&#160;</td><td class="memItemRight" valign="bottom"><b>m_est_active</b></td></tr>
+<tr class="memitem:afb0e6eeeac420371f55aac0e455e1a84 inherit pro_attribs_classobjet__selectionnable"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classobjet__selectionnable.html#afb0e6eeeac420371f55aac0e455e1a84">m_est_active</a></td></tr>
 <tr class="separator:afb0e6eeeac420371f55aac0e455e1a84 inherit pro_attribs_classobjet__selectionnable"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2b200ce9a6ff0feab9b77d63f5d072bd inherit pro_attribs_classobjet__selectionnable"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a2b200ce9a6ff0feab9b77d63f5d072bd"></a>
-bool&#160;</td><td class="memItemRight" valign="bottom"><b>m_est_etendu</b></td></tr>
+<tr class="memitem:a2b200ce9a6ff0feab9b77d63f5d072bd inherit pro_attribs_classobjet__selectionnable"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classobjet__selectionnable.html#a2b200ce9a6ff0feab9b77d63f5d072bd">m_est_etendu</a></td></tr>
 <tr class="separator:a2b200ce9a6ff0feab9b77d63f5d072bd inherit pro_attribs_classobjet__selectionnable"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:acc586244b54a6c7cdd49cef6b44fd156 inherit pro_attribs_classobjet__selectionnable"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="acc586244b54a6c7cdd49cef6b44fd156"></a>
-bool&#160;</td><td class="memItemRight" valign="bottom"><b>m_verrouille</b></td></tr>
+<tr class="memitem:acc586244b54a6c7cdd49cef6b44fd156 inherit pro_attribs_classobjet__selectionnable"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classobjet__selectionnable.html#acc586244b54a6c7cdd49cef6b44fd156">m_verrouille</a></td></tr>
 <tr class="separator:acc586244b54a6c7cdd49cef6b44fd156 inherit pro_attribs_classobjet__selectionnable"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="inherited"></a>
 Membres hérités additionnels</h2></td></tr>
 <tr class="inherit_header signals_classfonctions__conteneur"><td colspan="2" onclick="javascript:toggleInherit('signals_classfonctions__conteneur')"><img src="closed.png" alt="-"/>&#160;Signaux hérités de <a class="el" href="classfonctions__conteneur.html">fonctions_conteneur</a></td></tr>
-<tr class="memitem:a35b4cb96ffdc456bf02a40cf2e4e28ba inherit signals_classfonctions__conteneur"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a35b4cb96ffdc456bf02a40cf2e4e28ba"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>signal_fc_creation_fonction</b> (<a class="el" href="classbase__fonction.html">base_fonction</a> *)</td></tr>
+<tr class="memitem:a35b4cb96ffdc456bf02a40cf2e4e28ba inherit signals_classfonctions__conteneur"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfonctions__conteneur.html#a35b4cb96ffdc456bf02a40cf2e4e28ba">signal_fc_creation_fonction</a> (<a class="el" href="classbase__fonction.html">base_fonction</a> *)</td></tr>
 <tr class="separator:a35b4cb96ffdc456bf02a40cf2e4e28ba inherit signals_classfonctions__conteneur"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header signals_classobjet__selectionnable"><td colspan="2" onclick="javascript:toggleInherit('signals_classobjet__selectionnable')"><img src="closed.png" alt="-"/>&#160;Signaux hérités de <a class="el" href="classobjet__selectionnable.html">objet_selectionnable</a></td></tr>
-<tr class="memitem:a3c288bfdd00e94dfb082fc7d55e1d411 inherit signals_classobjet__selectionnable"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a3c288bfdd00e94dfb082fc7d55e1d411"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>signal_os_selectionne</b> (<a class="el" href="classobjet__selectionnable.html">objet_selectionnable</a> *)</td></tr>
+<tr class="memitem:a3c288bfdd00e94dfb082fc7d55e1d411 inherit signals_classobjet__selectionnable"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classobjet__selectionnable.html#a3c288bfdd00e94dfb082fc7d55e1d411">signal_os_selectionne</a> (<a class="el" href="classobjet__selectionnable.html">objet_selectionnable</a> *)</td></tr>
 <tr class="separator:a3c288bfdd00e94dfb082fc7d55e1d411 inherit signals_classobjet__selectionnable"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9b592ea610dfcffc63bd4eb3ca3d2633 inherit signals_classobjet__selectionnable"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a9b592ea610dfcffc63bd4eb3ca3d2633"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>signal_os_deselectionne</b> (<a class="el" href="classobjet__selectionnable.html">objet_selectionnable</a> *)</td></tr>
+<tr class="memitem:a9b592ea610dfcffc63bd4eb3ca3d2633 inherit signals_classobjet__selectionnable"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classobjet__selectionnable.html#a9b592ea610dfcffc63bd4eb3ca3d2633">signal_os_deselectionne</a> (<a class="el" href="classobjet__selectionnable.html">objet_selectionnable</a> *)</td></tr>
 <tr class="separator:a9b592ea610dfcffc63bd4eb3ca3d2633 inherit signals_classobjet__selectionnable"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac59cb48c83f3f5e994a0929b11e8aa22 inherit signals_classobjet__selectionnable"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ac59cb48c83f3f5e994a0929b11e8aa22"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>signal_os_destruction_selectionnable</b> (<a class="el" href="classobjet__selectionnable.html">objet_selectionnable</a> *)</td></tr>
+<tr class="memitem:ac59cb48c83f3f5e994a0929b11e8aa22 inherit signals_classobjet__selectionnable"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classobjet__selectionnable.html#ac59cb48c83f3f5e994a0929b11e8aa22">signal_os_destruction_selectionnable</a> (<a class="el" href="classobjet__selectionnable.html">objet_selectionnable</a> *)</td></tr>
 <tr class="separator:ac59cb48c83f3f5e994a0929b11e8aa22 inherit signals_classobjet__selectionnable"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8d490913018c0df790d83537b2169955 inherit signals_classobjet__selectionnable"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a8d490913018c0df790d83537b2169955"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>signal_verrouillage_change</b> (<a class="el" href="classobjet__selectionnable.html">objet_selectionnable</a> *f)</td></tr>
+<tr class="memitem:a8d490913018c0df790d83537b2169955 inherit signals_classobjet__selectionnable"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classobjet__selectionnable.html#a8d490913018c0df790d83537b2169955">signal_verrouillage_change</a> (<a class="el" href="classobjet__selectionnable.html">objet_selectionnable</a> *f)</td></tr>
 <tr class="separator:a8d490913018c0df790d83537b2169955 inherit signals_classobjet__selectionnable"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_static_methods_classobjet__selectionnable"><td colspan="2" onclick="javascript:toggleInherit('pub_static_methods_classobjet__selectionnable')"><img src="closed.png" alt="-"/>&#160;Fonctions membres publiques statiques hérités de <a class="el" href="classobjet__selectionnable.html">objet_selectionnable</a></td></tr>
-<tr class="memitem:ae6be76843c7b502410ec8d2c1fff88a3 inherit pub_static_methods_classobjet__selectionnable"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ae6be76843c7b502410ec8d2c1fff88a3"></a>
-static <a class="el" href="classobjet__selectionnable.html">objet_selectionnable</a> *&#160;</td><td class="memItemRight" valign="bottom"><b>get_selection</b> ()</td></tr>
+<tr class="memitem:ae6be76843c7b502410ec8d2c1fff88a3 inherit pub_static_methods_classobjet__selectionnable"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classobjet__selectionnable.html">objet_selectionnable</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classobjet__selectionnable.html#ae6be76843c7b502410ec8d2c1fff88a3">get_selection</a> ()</td></tr>
 <tr class="separator:ae6be76843c7b502410ec8d2c1fff88a3 inherit pub_static_methods_classobjet__selectionnable"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aeac1931a7976c17cd05e456d128ccba3 inherit pub_static_methods_classobjet__selectionnable"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aeac1931a7976c17cd05e456d128ccba3"></a>
-static <a class="el" href="classfonctions__conteneur.html">fonctions_conteneur</a> *&#160;</td><td class="memItemRight" valign="bottom"><b>get_conteneur_courant</b> ()</td></tr>
+<tr class="memitem:aeac1931a7976c17cd05e456d128ccba3 inherit pub_static_methods_classobjet__selectionnable"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classfonctions__conteneur.html">fonctions_conteneur</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classobjet__selectionnable.html#aeac1931a7976c17cd05e456d128ccba3">get_conteneur_courant</a> ()</td></tr>
 <tr class="separator:aeac1931a7976c17cd05e456d128ccba3 inherit pub_static_methods_classobjet__selectionnable"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:afdc2163828d829f786887b60e11e4717 inherit pub_static_methods_classobjet__selectionnable"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="afdc2163828d829f786887b60e11e4717"></a>
-static <a class="el" href="classprojet.html">projet</a> *&#160;</td><td class="memItemRight" valign="bottom"><b>get_projet_courant</b> ()</td></tr>
+<tr class="memitem:afdc2163828d829f786887b60e11e4717 inherit pub_static_methods_classobjet__selectionnable"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classprojet.html">projet</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classobjet__selectionnable.html#afdc2163828d829f786887b60e11e4717">get_projet_courant</a> ()</td></tr>
 <tr class="separator:afdc2163828d829f786887b60e11e4717 inherit pub_static_methods_classobjet__selectionnable"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad3c9ec08e1036a463b6b82176d52364d inherit pub_static_methods_classobjet__selectionnable"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ad3c9ec08e1036a463b6b82176d52364d"></a>
-static bool&#160;</td><td class="memItemRight" valign="bottom"><b>existe_selection</b> ()</td></tr>
+<tr class="memitem:ad3c9ec08e1036a463b6b82176d52364d inherit pub_static_methods_classobjet__selectionnable"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classobjet__selectionnable.html#ad3c9ec08e1036a463b6b82176d52364d">existe_selection</a> ()</td></tr>
 <tr class="separator:ad3c9ec08e1036a463b6b82176d52364d inherit pub_static_methods_classobjet__selectionnable"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab2fb752b9ba998ed26975936d1d5beaa inherit pub_static_methods_classobjet__selectionnable"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ab2fb752b9ba998ed26975936d1d5beaa"></a>
-static void&#160;</td><td class="memItemRight" valign="bottom"><b>forcer_deselection</b> ()</td></tr>
+<tr class="memitem:ab2fb752b9ba998ed26975936d1d5beaa inherit pub_static_methods_classobjet__selectionnable"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classobjet__selectionnable.html#ab2fb752b9ba998ed26975936d1d5beaa">forcer_deselection</a> ()</td></tr>
 <tr class="separator:ab2fb752b9ba998ed26975936d1d5beaa inherit pub_static_methods_classobjet__selectionnable"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pro_methods_classfonctions__conteneur"><td colspan="2" onclick="javascript:toggleInherit('pro_methods_classfonctions__conteneur')"><img src="closed.png" alt="-"/>&#160;Fonctions membres protégées hérités de <a class="el" href="classfonctions__conteneur.html">fonctions_conteneur</a></td></tr>
-<tr class="memitem:aa648c8850d0e453e173c920f4f94d571 inherit pro_methods_classfonctions__conteneur"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aa648c8850d0e453e173c920f4f94d571"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>clear_fonctions</b> ()</td></tr>
+<tr class="memitem:aa648c8850d0e453e173c920f4f94d571 inherit pro_methods_classfonctions__conteneur"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfonctions__conteneur.html#aa648c8850d0e453e173c920f4f94d571">clear_fonctions</a> ()</td></tr>
 <tr class="separator:aa648c8850d0e453e173c920f4f94d571 inherit pro_methods_classfonctions__conteneur"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1e40d824eca4c76fe0b1f6e56550c62d inherit pro_methods_classfonctions__conteneur"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a1e40d824eca4c76fe0b1f6e56550c62d"></a>
-int&#160;</td><td class="memItemRight" valign="bottom"><b>get_nb_fonctions_actives</b> () const </td></tr>
+<tr class="memitem:a1e40d824eca4c76fe0b1f6e56550c62d inherit pro_methods_classfonctions__conteneur"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfonctions__conteneur.html#a1e40d824eca4c76fe0b1f6e56550c62d">get_nb_fonctions_actives</a> () const </td></tr>
 <tr class="separator:a1e40d824eca4c76fe0b1f6e56550c62d inherit pro_methods_classfonctions__conteneur"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6c8f53c6a83be7f543817d2624f16356 inherit pro_methods_classfonctions__conteneur"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a6c8f53c6a83be7f543817d2624f16356"></a>
-const <a class="el" href="classbase__fonction.html">base_fonction</a> *&#160;</td><td class="memItemRight" valign="bottom"><b>premiere_fonction_active</b> () const </td></tr>
+<tr class="memitem:a6c8f53c6a83be7f543817d2624f16356 inherit pro_methods_classfonctions__conteneur"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="classbase__fonction.html">base_fonction</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classfonctions__conteneur.html#a6c8f53c6a83be7f543817d2624f16356">premiere_fonction_active</a> () const </td></tr>
 <tr class="separator:a6c8f53c6a83be7f543817d2624f16356 inherit pro_methods_classfonctions__conteneur"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pro_methods_classobjet__selectionnable"><td colspan="2" onclick="javascript:toggleInherit('pro_methods_classobjet__selectionnable')"><img src="closed.png" alt="-"/>&#160;Fonctions membres protégées hérités de <a class="el" href="classobjet__selectionnable.html">objet_selectionnable</a></td></tr>
-<tr class="memitem:a555085da89b30b07349064bb54a26138 inherit pro_methods_classobjet__selectionnable"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a555085da89b30b07349064bb54a26138"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>deselectionner</b> ()</td></tr>
+<tr class="memitem:a555085da89b30b07349064bb54a26138 inherit pro_methods_classobjet__selectionnable"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classobjet__selectionnable.html#a555085da89b30b07349064bb54a26138">deselectionner</a> ()</td></tr>
 <tr class="separator:a555085da89b30b07349064bb54a26138 inherit pro_methods_classobjet__selectionnable"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8f3ce3c0cf4e85da9115b7517f9e0e2d inherit pro_methods_classobjet__selectionnable"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a8f3ce3c0cf4e85da9115b7517f9e0e2d"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>charger</b> (QXmlStreamReader &amp;xml)</td></tr>
+<tr class="memitem:a8f3ce3c0cf4e85da9115b7517f9e0e2d inherit pro_methods_classobjet__selectionnable"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classobjet__selectionnable.html#a8f3ce3c0cf4e85da9115b7517f9e0e2d">charger</a> (QXmlStreamReader &amp;xml)</td></tr>
 <tr class="separator:a8f3ce3c0cf4e85da9115b7517f9e0e2d inherit pro_methods_classobjet__selectionnable"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pro_static_attribs_classobjet__selectionnable"><td colspan="2" onclick="javascript:toggleInherit('pro_static_attribs_classobjet__selectionnable')"><img src="closed.png" alt="-"/>&#160;Attributs protégés statiques hérités de <a class="el" href="classobjet__selectionnable.html">objet_selectionnable</a></td></tr>
-<tr class="memitem:a4fdc91751c9dc77565b2b0cab50a726a inherit pro_static_attribs_classobjet__selectionnable"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a4fdc91751c9dc77565b2b0cab50a726a"></a>
-static <a class="el" href="classobjet__selectionnable.html">objet_selectionnable</a> *&#160;</td><td class="memItemRight" valign="bottom"><b>s_objet_courant</b> = NULL</td></tr>
+<tr class="memitem:a4fdc91751c9dc77565b2b0cab50a726a inherit pro_static_attribs_classobjet__selectionnable"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classobjet__selectionnable.html">objet_selectionnable</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classobjet__selectionnable.html#a4fdc91751c9dc77565b2b0cab50a726a">s_objet_courant</a> = NULL</td></tr>
 <tr class="separator:a4fdc91751c9dc77565b2b0cab50a726a inherit pro_static_attribs_classobjet__selectionnable"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Description détaillée</h2>
@@ -438,14 +353,907 @@ static <a class="el" href="classobjet__selectionnable.html">objet_selectionnable
 <dl class="section author"><dt>Auteur</dt><dd>Sébastien Angibaud </dd></dl>
 
 <p>Définition à la ligne <a class="el" href="base__parametre_8h_source.html#l00020">20</a> du fichier <a class="el" href="base__parametre_8h_source.html">base_parametre.h</a>.</p>
-</div><hr/>La documentation de cette classe a été générée à partir des fichiers suivants :<ul>
+</div><h2 class="groupheader">Documentation des énumérations membres</h2>
+<a class="anchor" id="a9e5b987e53d5cc9d49a3e2637b6b61b9"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum <a class="el" href="classbase__parametre.html#a9e5b987e53d5cc9d49a3e2637b6b61b9">base_parametre::type_algorithme</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Enumération décrivant les différents algorithmes pour l'excution des paramètres. </p>
+<table class="fieldtable">
+<tr><th colspan="2">Valeurs énumérées</th></tr><tr><td class="fieldname"><em><a class="anchor" id="a9e5b987e53d5cc9d49a3e2637b6b61b9a5f1b24c0f5e48cfedd51df4c8bfbb8f6"></a>ALGO_AUCUN</em>&#160;</td><td class="fielddoc">
+</td></tr>
+<tr><td class="fieldname"><em><a class="anchor" id="a9e5b987e53d5cc9d49a3e2637b6b61b9a9b18e290d243fe0ff40d265a8590ee72"></a>ALGO_PMIPL</em>&#160;</td><td class="fielddoc">
+</td></tr>
+<tr><td class="fieldname"><em><a class="anchor" id="a9e5b987e53d5cc9d49a3e2637b6b61b9a8ad63cb966853fdccf61b916ac91e778"></a>ALGO_LIPL</em>&#160;</td><td class="fielddoc">
+</td></tr>
+</table>
+
+<p>Définition à la ligne <a class="el" href="base__parametre_8h_source.html#l00040">40</a> du fichier <a class="el" href="base__parametre_8h_source.html">base_parametre.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="af9c2486b3b357c96d118835057f8adae"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum <a class="el" href="classbase__parametre.html#af9c2486b3b357c96d118835057f8adae">base_parametre::type_mode_configuration_visibilite</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<table class="fieldtable">
+<tr><th colspan="2">Valeurs énumérées</th></tr><tr><td class="fieldname"><em><a class="anchor" id="af9c2486b3b357c96d118835057f8adaeadfbbf08303aacb9416ee3c670b148cfb"></a>CONFIGURATION_INVISIBLE</em>&#160;</td><td class="fielddoc">
+</td></tr>
+<tr><td class="fieldname"><em><a class="anchor" id="af9c2486b3b357c96d118835057f8adaeaf98cdae55633838eff7a5dbd7333b6ab"></a>CONFIGURATION_VISIBLE</em>&#160;</td><td class="fielddoc">
+</td></tr>
+</table>
+
+<p>Définition à la ligne <a class="el" href="base__parametre_8h_source.html#l00026">26</a> du fichier <a class="el" href="base__parametre_8h_source.html">base_parametre.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a64ac5a31d511d54e78437d8f3aff9c31"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum <a class="el" href="classbase__parametre.html#a64ac5a31d511d54e78437d8f3aff9c31">base_parametre::type_mode_contenu_parametre</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<table class="fieldtable">
+<tr><th colspan="2">Valeurs énumérées</th></tr><tr><td class="fieldname"><em><a class="anchor" id="a64ac5a31d511d54e78437d8f3aff9c31a1f9e9f4cf5bb76a89755b29da8330d01"></a>CONTENU_PARAM_VIDE_IMPOSSIBLE</em>&#160;</td><td class="fielddoc">
+</td></tr>
+<tr><td class="fieldname"><em><a class="anchor" id="a64ac5a31d511d54e78437d8f3aff9c31aa3c146050ef4bce27e4c817b29b6e379"></a>CONTENU_PARAM_VIDE_POSSIBLE</em>&#160;</td><td class="fielddoc">
+</td></tr>
+</table>
+
+<p>Définition à la ligne <a class="el" href="base__parametre_8h_source.html#l00033">33</a> du fichier <a class="el" href="base__parametre_8h_source.html">base_parametre.h</a>.</p>
+
+</div>
+</div>
+<h2 class="groupheader">Documentation des constructeurs et destructeur</h2>
+<a class="anchor" id="a46c6ce135d895280f0b3df2474c701db"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">base_parametre::base_parametre </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classobjet__selectionnable.html">objet_selectionnable</a> *&#160;</td>
+          <td class="paramname"><em>parent</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">QString&#160;</td>
+          <td class="paramname"><em>nom</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">QString&#160;</td>
+          <td class="paramname"><em>aide</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classbase__parametre.html#a64ac5a31d511d54e78437d8f3aff9c31">type_mode_contenu_parametre</a>&#160;</td>
+          <td class="paramname"><em>mode_contenu_parametre</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classbase__parametre.html#af9c2486b3b357c96d118835057f8adae">type_mode_configuration_visibilite</a>&#160;</td>
+          <td class="paramname"><em>dans_configuration</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classbase__parametre.html#a9e5b987e53d5cc9d49a3e2637b6b61b9">type_algorithme</a>&#160;</td>
+          <td class="paramname"><em>algorithme</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Définition à la ligne <a class="el" href="base__parametre_8cpp_source.html#l00017">17</a> du fichier <a class="el" href="base__parametre_8cpp_source.html">base_parametre.cpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ac7443c8ab74482e1993c222126936148"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">base_parametre::~base_parametre </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Définition à la ligne <a class="el" href="base__parametre_8cpp_source.html#l00028">28</a> du fichier <a class="el" href="base__parametre_8cpp_source.html">base_parametre.cpp</a>.</p>
+
+<p><div class="dynheader">
+Voici le graphe d'appel pour cette fonction :</div>
+<div class="dyncontent">
+<div class="center"><img src="classbase__parametre_ac7443c8ab74482e1993c222126936148_cgraph.png" border="0" usemap="#classbase__parametre_ac7443c8ab74482e1993c222126936148_cgraph" alt=""/></div>
+<map name="classbase__parametre_ac7443c8ab74482e1993c222126936148_cgraph" id="classbase__parametre_ac7443c8ab74482e1993c222126936148_cgraph">
+<area shape="rect" id="node2" href="classfonctions__conteneur.html#aa648c8850d0e453e173c920f4f94d571" title="fonctions_conteneur\l::clear_fonctions" alt="" coords="213,5,352,46"/></map>
+</div>
+</p>
+
+</div>
+</div>
+<h2 class="groupheader">Documentation des fonctions membres</h2>
+<a class="anchor" id="aa5379f5616ee687d1f94cee586ca819c"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void base_parametre::charger </td>
+          <td>(</td>
+          <td class="paramtype">QXmlStreamReader &amp;&#160;</td>
+          <td class="paramname"><em>xml</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Définition à la ligne <a class="el" href="base__parametre_8cpp_source.html#l00173">173</a> du fichier <a class="el" href="base__parametre_8cpp_source.html">base_parametre.cpp</a>.</p>
+
+<p><div class="dynheader">
+Voici le graphe d'appel pour cette fonction :</div>
+<div class="dyncontent">
+<div class="center"><img src="classbase__parametre_aa5379f5616ee687d1f94cee586ca819c_cgraph.png" border="0" usemap="#classbase__parametre_aa5379f5616ee687d1f94cee586ca819c_cgraph" alt=""/></div>
+<map name="classbase__parametre_aa5379f5616ee687d1f94cee586ca819c_cgraph" id="classbase__parametre_aa5379f5616ee687d1f94cee586ca819c_cgraph">
+<area shape="rect" id="node2" href="classbase__parametre.html#a24ccf52bde9b64c89b6be719c3fea585" title="base_parametre::set\l_mode_configuration\l_visibilite" alt="" coords="222,55,365,111"/><area shape="rect" id="node3" href="classobjet__selectionnable.html#a8f3ce3c0cf4e85da9115b7517f9e0e2d" title="objet_selectionnable\l::charger" alt="" coords="814,113,954,154"/><area shape="rect" id="node9" href="classfonctions__conteneur.html#aeb43e1fd3929d565f33b34db7ce8c583" title="fonctions_conteneur\l::charger_fonctions" alt="" coords="224,215,363,257"/><area shape="rect" id="node4" href="classobjet__selectionnable.html#ae58408e8c4421e9c33bc488381e8c0a4" title="objet_selectionnable\l::est_etendu" alt="" coords="1021,6,1161,47"/><area shape="rect" id="node5" href="classobjet__selectionnable.html#aafef1c588ce9d5f7956c321799986b9b" title="objet_selectionnable\l::set_est_etendu" alt="" coords="1021,71,1161,113"/><area shape="rect" id="node6" href="classobjet__selectionnable.html#a5d39343f43293805a0b60e8520687d87" title="objet_selectionnable\l::set_verrouille" alt="" coords="1021,137,1161,178"/><area shape="rect" id="node7" href="classobjet__selectionnable.html#a9f76b8e89231a79c3fc840af874bd868" title="objet_selectionnable\l::modifier" alt="" coords="1217,457,1357,498"/><area shape="rect" id="node8" href="classobjet__selectionnable.html#a97e33c61983d5c7811e8bacff8f114c4" title="objet_selectionnable\l::est_projet" alt="" coords="1406,655,1546,697"/><area shape="rect" id="node10" href="classfonctions__conteneur.html#a2e241972228c75c5550287bd0fa6501e" title="fonctions_conteneur\l::charger_fonction" alt="" coords="413,259,552,301"/><area shape="rect" id="node11" href="classbibliotheque__fonctions.html#a97e2db5603fe4267df7ace47f110b6e0" title="bibliotheque_fonctions\l::get_fonction" alt="" coords="602,215,753,257"/><area shape="rect" id="node12" href="classbase__fonction.html#a693965131515a05876dd55562cba2757" title="base_fonction::charger" alt="" coords="600,281,755,308"/><area shape="rect" id="node20" href="classfonctions__conteneur.html#a5498a158c4d4f16fc63e54809ce381d5" title="fonctions_conteneur\l::ajouter_fonction" alt="" coords="608,581,747,622"/><area shape="rect" id="node13" href="classbase__fonction.html#aac434731c9e5d95398d3baae6c74d447" title="base_fonction::set\l_niveau_visibilite" alt="" coords="1026,202,1155,243"/><area shape="rect" id="node14" href="classbase__fonction.html#a58252a04c7afea216c29d13132b0d6a2" title="base_fonction::set\l_est_active" alt="" coords="819,230,949,271"/><area shape="rect" id="node17" href="classbase__fonction.html#aecefb6e946e43e9d6dc835165ac7e265" title="Retourne le type de la fonction. " alt="" coords="803,296,965,323"/><area shape="rect" id="node18" href="classbase__fonction.html#a96c37e73c9822d7e9b483ce5fa37bd16" title="base_fonction::charger\l_parametres" alt="" coords="807,347,961,389"/><area shape="rect" id="node15" href="classbase__fonction.html#a58bf7761b1416f494d035ca415d28dcd" title="base_fonction::get\l_niveau_visibilite" alt="" coords="1026,267,1155,309"/><area shape="rect" id="node16" href="classobjet__selectionnable.html#acb1bf63e061079a402c929ce346b0b22" title="objet_selectionnable\l::set_est_active" alt="" coords="1021,333,1161,374"/><area shape="rect" id="node19" href="classbase__fonction.html#a46971e37a472f45a8031be6e8aec15f2" title="base_fonction::charger\l_parametre" alt="" coords="1013,398,1168,439"/><area shape="rect" id="node21" href="classbase__fonction.html#aa487a07ab1961bfbdf04ddd3c72b4d3c" title="base_fonction::set\l_conteneur" alt="" coords="819,515,949,557"/><area shape="rect" id="node22" href="classobjet__selectionnable.html#abed9a58bb39d15353db880fbd0808714" title="objet_selectionnable\l::est_conteneur" alt="" coords="814,581,954,622"/><area shape="rect" id="node23" href="classfonctions__conteneur.html#a138f2393529381205980123dff37d99e" title="fonctions_conteneur\l::on_supprimer_fonction" alt="" coords="803,646,965,687"/><area shape="rect" id="node25" href="classobjet__selectionnable.html#ab48a75e720955aebe27f720dfaa5e78e" title="objet_selectionnable\l::get_projet" alt="" coords="1217,655,1357,697"/><area shape="rect" id="node26" href="classobjet__selectionnable.html#aaa39f8be3dfaeb095cc12a217b234f9b" title="objet_selectionnable\l::est_dans_projet" alt="" coords="1217,750,1357,791"/><area shape="rect" id="node24" href="classfonctions__conteneur.html#a807b51ba64dd85bb844c44cfe2d0f116" title="fonctions_conteneur\l::supprimer_fonction" alt="" coords="1021,646,1161,687"/></map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="a1486b7faa1e0d6c33d4ad53ea30d2828"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool base_parametre::configuration_visible </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Définition à la ligne <a class="el" href="base__parametre_8cpp_source.html#l00204">204</a> du fichier <a class="el" href="base__parametre_8cpp_source.html">base_parametre.cpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a5e8cb0e47779687edc3af33865655542"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool base_parametre::est_parametre </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Réimplémentée à partir de <a class="el" href="classobjet__selectionnable.html#a928feb3830d6c538a4a15c1d76da3dfd">objet_selectionnable</a>.</p>
+
+<p>Définition à la ligne <a class="el" href="base__parametre_8cpp_source.html#l00083">83</a> du fichier <a class="el" href="base__parametre_8cpp_source.html">base_parametre.cpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a04d32b14608a3ed6d64b1579135c8a48"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool base_parametre::est_valide </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classlogs__compilation__widget.html">logs_compilation_widget</a> *&#160;</td>
+          <td class="paramname"><em>vue_logs</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Définition à la ligne <a class="el" href="base__parametre_8cpp_source.html#l00139">139</a> du fichier <a class="el" href="base__parametre_8cpp_source.html">base_parametre.cpp</a>.</p>
+
+<p><div class="dynheader">
+Voici le graphe d'appel pour cette fonction :</div>
+<div class="dyncontent">
+<div class="center"><img src="classbase__parametre_a04d32b14608a3ed6d64b1579135c8a48_cgraph.png" border="0" usemap="#classbase__parametre_a04d32b14608a3ed6d64b1579135c8a48_cgraph" alt=""/></div>
+<map name="classbase__parametre_a04d32b14608a3ed6d64b1579135c8a48_cgraph" id="classbase__parametre_a04d32b14608a3ed6d64b1579135c8a48_cgraph">
+<area shape="rect" id="node2" href="classlogs__compilation__widget.html#a51fcc25d77ca9beafc2721d9c84f07a7" title="Ajoute un log à la liste des logs. " alt="" coords="195,57,359,98"/><area shape="rect" id="node6" href="classbase__fonction.html#acee6c2c0170e7a1bf8c0df49424ef2ba" title="Retourne le nom de la fonction. " alt="" coords="197,123,358,149"/><area shape="rect" id="node3" href="classlog__widget__item.html#a50885aa7f8b31392370fe1dafe982a62" title="Accesseur du log associé. " alt="" coords="409,5,575,32"/><area shape="rect" id="node4" href="classlog__compilation.html#a33648aa43d6eac93335fbf032c581f67" title="Accesseur de l&#39;objet associé. " alt="" coords="423,57,561,98"/><area shape="rect" id="node5" href="classlogs__compilation__widget.html#aa1e59554cb81d84ad0cd4245b166b2df" title="Fonction appelée lors de la destruction d&#39;un objet sélectionnable. " alt="" coords="409,121,575,177"/></map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="a0320499057fd15a513ea6bb63201f0de"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">QString base_parametre::get_aide </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Définition à la ligne <a class="el" href="base__parametre_8cpp_source.html#l00066">66</a> du fichier <a class="el" href="base__parametre_8cpp_source.html">base_parametre.cpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a3e10ebe3766ea354e05ef0b84a28395a"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">QString base_parametre::get_aide_algorithme </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Définition à la ligne <a class="el" href="base__parametre_8cpp_source.html#l00071">71</a> du fichier <a class="el" href="base__parametre_8cpp_source.html">base_parametre.cpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="adfbae22169cb11d6348906ca12cba66f"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classbase__fonction.html">base_fonction</a> * base_parametre::get_fonction_parent </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Définition à la ligne <a class="el" href="base__parametre_8cpp_source.html#l00088">88</a> du fichier <a class="el" href="base__parametre_8cpp_source.html">base_parametre.cpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a091ac3f7f7229a65c9f79390bb3dac6f"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">QString base_parametre::get_nom </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Définition à la ligne <a class="el" href="base__parametre_8cpp_source.html#l00044">44</a> du fichier <a class="el" href="base__parametre_8cpp_source.html">base_parametre.cpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ab67ff65df492815b729410f64bb2bef7"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const <a class="el" href="classtextes.html">textes</a> &amp; base_parametre::get_textes_out </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Définition à la ligne <a class="el" href="base__parametre_8cpp_source.html#l00124">124</a> du fichier <a class="el" href="base__parametre_8cpp_source.html">base_parametre.cpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ad26e8c378a50fa3b2058953fb611d212"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QString base_parametre::get_titre </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Implémente <a class="el" href="classfonctions__conteneur.html#ab81d1b229c4f0564ef2aef27345bf1ad">fonctions_conteneur</a>.</p>
+
+<p>Définition à la ligne <a class="el" href="base__parametre_8cpp_source.html#l00049">49</a> du fichier <a class="el" href="base__parametre_8cpp_source.html">base_parametre.cpp</a>.</p>
+
+<p><div class="dynheader">
+Voici le graphe d'appel pour cette fonction :</div>
+<div class="dyncontent">
+<div class="center"><img src="classbase__parametre_ad26e8c378a50fa3b2058953fb611d212_cgraph.png" border="0" usemap="#classbase__parametre_ad26e8c378a50fa3b2058953fb611d212_cgraph" alt=""/></div>
+<map name="classbase__parametre_ad26e8c378a50fa3b2058953fb611d212_cgraph" id="classbase__parametre_ad26e8c378a50fa3b2058953fb611d212_cgraph">
+<area shape="rect" id="node2" href="classbase__parametre.html#adfbae22169cb11d6348906ca12cba66f" title="base_parametre::get\l_fonction_parent" alt="" coords="211,5,352,46"/><area shape="rect" id="node3" href="classbase__fonction.html#acee6c2c0170e7a1bf8c0df49424ef2ba" title="Retourne le nom de la fonction. " alt="" coords="201,71,362,97"/><area shape="rect" id="node4" href="classbase__parametre.html#a091ac3f7f7229a65c9f79390bb3dac6f" title="base_parametre::get_nom" alt="" coords="195,121,368,148"/></map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="ac3851f398225da98842d42ebf1fa1825"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="define__parametre_8h.html#aed2bf0fd75a4a7818ae039ad1d14762d">type_type_parametre</a> base_parametre::get_type </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Définition à la ligne <a class="el" href="base__parametre_8cpp_source.html#l00229">229</a> du fichier <a class="el" href="base__parametre_8cpp_source.html">base_parametre.cpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a0cc29100a25c6f277986f5be55a4e4af"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">QString base_parametre::get_valeur_courte </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Définition à la ligne <a class="el" href="base__parametre_8cpp_source.html#l00054">54</a> du fichier <a class="el" href="base__parametre_8cpp_source.html">base_parametre.cpp</a>.</p>
+
+<p><div class="dynheader">
+Voici le graphe d'appel pour cette fonction :</div>
+<div class="dyncontent">
+<div class="center"><img src="classbase__parametre_a0cc29100a25c6f277986f5be55a4e4af_cgraph.png" border="0" usemap="#classbase__parametre_a0cc29100a25c6f277986f5be55a4e4af_cgraph" alt=""/></div>
+<map name="classbase__parametre_a0cc29100a25c6f277986f5be55a4e4af_cgraph" id="classbase__parametre_a0cc29100a25c6f277986f5be55a4e4af_cgraph">
+<area shape="rect" id="node2" href="classfonctions__conteneur.html#a1e40d824eca4c76fe0b1f6e56550c62d" title="fonctions_conteneur\l::get_nb_fonctions_actives" alt="" coords="195,5,373,46"/><area shape="rect" id="node3" href="classfonctions__conteneur.html#a6c8f53c6a83be7f543817d2624f16356" title="fonctions_conteneur\l::premiere_fonction\l_active" alt="" coords="215,69,353,125"/><area shape="rect" id="node4" href="classbase__fonction.html#aa0ad813556f7c6b4ec8e35a34ced4436" title="base_fonction::get\l_valeur_courte" alt="" coords="219,149,349,190"/></map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="aeec324199a052ddfa5b527556322547f"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void base_parametre::inverser_configuration_visibilite </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Définition à la ligne <a class="el" href="base__parametre_8cpp_source.html#l00209">209</a> du fichier <a class="el" href="base__parametre_8cpp_source.html">base_parametre.cpp</a>.</p>
+
+<p><div class="dynheader">
+Voici le graphe d'appel pour cette fonction :</div>
+<div class="dyncontent">
+<div class="center"><img src="classbase__parametre_aeec324199a052ddfa5b527556322547f_cgraph.png" border="0" usemap="#classbase__parametre_aeec324199a052ddfa5b527556322547f_cgraph" alt=""/></div>
+<map name="classbase__parametre_aeec324199a052ddfa5b527556322547f_cgraph" id="classbase__parametre_aeec324199a052ddfa5b527556322547f_cgraph">
+<area shape="rect" id="node2" href="classobjet__selectionnable.html#a9f76b8e89231a79c3fc840af874bd868" title="objet_selectionnable\l::modifier" alt="" coords="225,29,365,70"/><area shape="rect" id="node3" href="classobjet__selectionnable.html#a97e33c61983d5c7811e8bacff8f114c4" title="objet_selectionnable\l::est_projet" alt="" coords="414,29,554,70"/></map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="aa5ab6bd61e0430ac05132475cfea88b4"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool base_parametre::is_requis </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Définition à la ligne <a class="el" href="base__parametre_8cpp_source.html#l00093">93</a> du fichier <a class="el" href="base__parametre_8cpp_source.html">base_parametre.cpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a82fedbba6a0a16b62fefaa8c47bbe477"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool base_parametre::peut_etre_vide </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Définition à la ligne <a class="el" href="base__parametre_8cpp_source.html#l00224">224</a> du fichier <a class="el" href="base__parametre_8cpp_source.html">base_parametre.cpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a94fc09ef65311c599930eb15516cf3a7"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void base_parametre::sauvegarder </td>
+          <td>(</td>
+          <td class="paramtype">QXmlStreamWriter &amp;&#160;</td>
+          <td class="paramname"><em>stream</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Définition à la ligne <a class="el" href="base__parametre_8cpp_source.html#l00033">33</a> du fichier <a class="el" href="base__parametre_8cpp_source.html">base_parametre.cpp</a>.</p>
+
+<p><div class="dynheader">
+Voici le graphe d'appel pour cette fonction :</div>
+<div class="dyncontent">
+<div class="center"><img src="classbase__parametre_a94fc09ef65311c599930eb15516cf3a7_cgraph.png" border="0" usemap="#classbase__parametre_a94fc09ef65311c599930eb15516cf3a7_cgraph" alt=""/></div>
+<map name="classbase__parametre_a94fc09ef65311c599930eb15516cf3a7_cgraph" id="classbase__parametre_a94fc09ef65311c599930eb15516cf3a7_cgraph">
+<area shape="rect" id="node2" href="classobjet__selectionnable.html#adb99710921bdf74dfe35ee9d75b995a3" title="objet_selectionnable\l::sauvegarder" alt="" coords="249,5,389,46"/><area shape="rect" id="node3" href="classfonctions__conteneur.html#a199dde0697eb91a9e54c1dfecb536a88" title="fonctions_conteneur\l::sauvegarder" alt="" coords="249,70,388,111"/></map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="ac2818ac8537052da7635f8fcd7310d31"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void base_parametre::set_booleen_par_defaut </td>
+          <td>(</td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>valeur</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Définition à la ligne <a class="el" href="base__parametre_8cpp_source.html#l00098">98</a> du fichier <a class="el" href="base__parametre_8cpp_source.html">base_parametre.cpp</a>.</p>
+
+<p><div class="dynheader">
+Voici le graphe d'appel pour cette fonction :</div>
+<div class="dyncontent">
+<div class="center"><img src="classbase__parametre_ac2818ac8537052da7635f8fcd7310d31_cgraph.png" border="0" usemap="#classbase__parametre_ac2818ac8537052da7635f8fcd7310d31_cgraph" alt=""/></div>
+<map name="classbase__parametre_ac2818ac8537052da7635f8fcd7310d31_cgraph" id="classbase__parametre_ac2818ac8537052da7635f8fcd7310d31_cgraph">
+<area shape="rect" id="node2" href="classfonctions__conteneur.html#a5498a158c4d4f16fc63e54809ce381d5" title="fonctions_conteneur\l::ajouter_fonction" alt="" coords="197,158,336,199"/><area shape="rect" id="node3" href="classbase__fonction.html#aa487a07ab1961bfbdf04ddd3c72b4d3c" title="base_fonction::set\l_conteneur" alt="" coords="401,5,530,46"/><area shape="rect" id="node4" href="classobjet__selectionnable.html#abed9a58bb39d15353db880fbd0808714" title="objet_selectionnable\l::est_conteneur" alt="" coords="395,70,535,111"/><area shape="rect" id="node5" href="classfonctions__conteneur.html#a138f2393529381205980123dff37d99e" title="fonctions_conteneur\l::on_supprimer_fonction" alt="" coords="385,187,546,229"/><area shape="rect" id="node7" href="classobjet__selectionnable.html#ab48a75e720955aebe27f720dfaa5e78e" title="objet_selectionnable\l::get_projet" alt="" coords="785,157,925,198"/><area shape="rect" id="node9" href="classobjet__selectionnable.html#a9f76b8e89231a79c3fc840af874bd868" title="objet_selectionnable\l::modifier" alt="" coords="785,246,925,287"/><area shape="rect" id="node10" href="classobjet__selectionnable.html#aaa39f8be3dfaeb095cc12a217b234f9b" title="objet_selectionnable\l::est_dans_projet" alt="" coords="595,329,735,370"/><area shape="rect" id="node6" href="classfonctions__conteneur.html#a807b51ba64dd85bb844c44cfe2d0f116" title="fonctions_conteneur\l::supprimer_fonction" alt="" coords="595,187,735,229"/><area shape="rect" id="node8" href="classobjet__selectionnable.html#a97e33c61983d5c7811e8bacff8f114c4" title="objet_selectionnable\l::est_projet" alt="" coords="974,246,1114,287"/></map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="aa7e6376b3dab3e9bb6fe29e112a06cbe"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void base_parametre::set_caractere_par_defaut </td>
+          <td>(</td>
+          <td class="paramtype">QString&#160;</td>
+          <td class="paramname"><em>s</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Définition à la ligne <a class="el" href="base__parametre_8cpp_source.html#l00112">112</a> du fichier <a class="el" href="base__parametre_8cpp_source.html">base_parametre.cpp</a>.</p>
+
+<p><div class="dynheader">
+Voici le graphe d'appel pour cette fonction :</div>
+<div class="dyncontent">
+<div class="center"><img src="classbase__parametre_aa7e6376b3dab3e9bb6fe29e112a06cbe_cgraph.png" border="0" usemap="#classbase__parametre_aa7e6376b3dab3e9bb6fe29e112a06cbe_cgraph" alt=""/></div>
+<map name="classbase__parametre_aa7e6376b3dab3e9bb6fe29e112a06cbe_cgraph" id="classbase__parametre_aa7e6376b3dab3e9bb6fe29e112a06cbe_cgraph">
+<area shape="rect" id="node2" href="classfonctions__conteneur.html#a5498a158c4d4f16fc63e54809ce381d5" title="fonctions_conteneur\l::ajouter_fonction" alt="" coords="205,158,344,199"/><area shape="rect" id="node3" href="classbase__fonction.html#aa487a07ab1961bfbdf04ddd3c72b4d3c" title="base_fonction::set\l_conteneur" alt="" coords="409,5,538,46"/><area shape="rect" id="node4" href="classobjet__selectionnable.html#abed9a58bb39d15353db880fbd0808714" title="objet_selectionnable\l::est_conteneur" alt="" coords="403,70,543,111"/><area shape="rect" id="node5" href="classfonctions__conteneur.html#a138f2393529381205980123dff37d99e" title="fonctions_conteneur\l::on_supprimer_fonction" alt="" coords="393,187,554,229"/><area shape="rect" id="node7" href="classobjet__selectionnable.html#ab48a75e720955aebe27f720dfaa5e78e" title="objet_selectionnable\l::get_projet" alt="" coords="793,157,933,198"/><area shape="rect" id="node9" href="classobjet__selectionnable.html#a9f76b8e89231a79c3fc840af874bd868" title="objet_selectionnable\l::modifier" alt="" coords="793,246,933,287"/><area shape="rect" id="node10" href="classobjet__selectionnable.html#aaa39f8be3dfaeb095cc12a217b234f9b" title="objet_selectionnable\l::est_dans_projet" alt="" coords="603,329,743,370"/><area shape="rect" id="node6" href="classfonctions__conteneur.html#a807b51ba64dd85bb844c44cfe2d0f116" title="fonctions_conteneur\l::supprimer_fonction" alt="" coords="603,187,743,229"/><area shape="rect" id="node8" href="classobjet__selectionnable.html#a97e33c61983d5c7811e8bacff8f114c4" title="objet_selectionnable\l::est_projet" alt="" coords="982,246,1122,287"/></map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="a214c2b5d4d7ad61ba5fbe99ba4477b23"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void base_parametre::set_choix_par_defaut </td>
+          <td>(</td>
+          <td class="paramtype">const QStringList &amp;&#160;</td>
+          <td class="paramname"><em>selection</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Définition à la ligne <a class="el" href="base__parametre_8cpp_source.html#l00118">118</a> du fichier <a class="el" href="base__parametre_8cpp_source.html">base_parametre.cpp</a>.</p>
+
+<p><div class="dynheader">
+Voici le graphe d'appel pour cette fonction :</div>
+<div class="dyncontent">
+<div class="center"><img src="classbase__parametre_a214c2b5d4d7ad61ba5fbe99ba4477b23_cgraph.png" border="0" usemap="#classbase__parametre_a214c2b5d4d7ad61ba5fbe99ba4477b23_cgraph" alt=""/></div>
+<map name="classbase__parametre_a214c2b5d4d7ad61ba5fbe99ba4477b23_cgraph" id="classbase__parametre_a214c2b5d4d7ad61ba5fbe99ba4477b23_cgraph">
+<area shape="rect" id="node2" href="classfonctions__conteneur.html#a5498a158c4d4f16fc63e54809ce381d5" title="fonctions_conteneur\l::ajouter_fonction" alt="" coords="195,158,333,199"/><area shape="rect" id="node3" href="classbase__fonction.html#aa487a07ab1961bfbdf04ddd3c72b4d3c" title="base_fonction::set\l_conteneur" alt="" coords="398,5,527,46"/><area shape="rect" id="node4" href="classobjet__selectionnable.html#abed9a58bb39d15353db880fbd0808714" title="objet_selectionnable\l::est_conteneur" alt="" coords="393,70,533,111"/><area shape="rect" id="node5" href="classfonctions__conteneur.html#a138f2393529381205980123dff37d99e" title="fonctions_conteneur\l::on_supprimer_fonction" alt="" coords="382,187,543,229"/><area shape="rect" id="node7" href="classobjet__selectionnable.html#ab48a75e720955aebe27f720dfaa5e78e" title="objet_selectionnable\l::get_projet" alt="" coords="782,157,922,198"/><area shape="rect" id="node9" href="classobjet__selectionnable.html#a9f76b8e89231a79c3fc840af874bd868" title="objet_selectionnable\l::modifier" alt="" coords="782,246,922,287"/><area shape="rect" id="node10" href="classobjet__selectionnable.html#aaa39f8be3dfaeb095cc12a217b234f9b" title="objet_selectionnable\l::est_dans_projet" alt="" coords="593,329,733,370"/><area shape="rect" id="node6" href="classfonctions__conteneur.html#a807b51ba64dd85bb844c44cfe2d0f116" title="fonctions_conteneur\l::supprimer_fonction" alt="" coords="593,187,733,229"/><area shape="rect" id="node8" href="classobjet__selectionnable.html#a97e33c61983d5c7811e8bacff8f114c4" title="objet_selectionnable\l::est_projet" alt="" coords="971,246,1111,287"/></map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="a5e241bb14cb089f1fedb5509218be625"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void base_parametre::set_id </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="define__parametre_8h.html#a621f68a7400bb79e0ffd7db8c7eca85c">type_id_parametre</a> &amp;&#160;</td>
+          <td class="paramname"><em>value</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Définition à la ligne <a class="el" href="base__parametre_8cpp_source.html#l00134">134</a> du fichier <a class="el" href="base__parametre_8cpp_source.html">base_parametre.cpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a24ccf52bde9b64c89b6be719c3fea585"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void base_parametre::set_mode_configuration_visibilite </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classbase__parametre.html#af9c2486b3b357c96d118835057f8adae">type_mode_configuration_visibilite</a>&#160;</td>
+          <td class="paramname"><em>visible</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Définition à la ligne <a class="el" href="base__parametre_8cpp_source.html#l00219">219</a> du fichier <a class="el" href="base__parametre_8cpp_source.html">base_parametre.cpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a2cc3aa1cdceeb7dae6d7ea63cc7c2311"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void base_parametre::set_texte_par_defaut </td>
+          <td>(</td>
+          <td class="paramtype">QString&#160;</td>
+          <td class="paramname"><em>texte</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">QString&#160;</td>
+          <td class="paramname"><em>separ_caractere</em> = <code>&quot;&quot;</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">QString&#160;</td>
+          <td class="paramname"><em>separ_mot</em> = <code>&quot;&#160;&quot;</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">QString&#160;</td>
+          <td class="paramname"><em>separ_ligne</em> = <code>&quot;\n&quot;</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Définition à la ligne <a class="el" href="base__parametre_8cpp_source.html#l00105">105</a> du fichier <a class="el" href="base__parametre_8cpp_source.html">base_parametre.cpp</a>.</p>
+
+<p><div class="dynheader">
+Voici le graphe d'appel pour cette fonction :</div>
+<div class="dyncontent">
+<div class="center"><img src="classbase__parametre_a2cc3aa1cdceeb7dae6d7ea63cc7c2311_cgraph.png" border="0" usemap="#classbase__parametre_a2cc3aa1cdceeb7dae6d7ea63cc7c2311_cgraph" alt=""/></div>
+<map name="classbase__parametre_a2cc3aa1cdceeb7dae6d7ea63cc7c2311_cgraph" id="classbase__parametre_a2cc3aa1cdceeb7dae6d7ea63cc7c2311_cgraph">
+<area shape="rect" id="node2" href="classfonctions__conteneur.html#a5498a158c4d4f16fc63e54809ce381d5" title="fonctions_conteneur\l::ajouter_fonction" alt="" coords="195,158,333,199"/><area shape="rect" id="node3" href="classbase__fonction.html#aa487a07ab1961bfbdf04ddd3c72b4d3c" title="base_fonction::set\l_conteneur" alt="" coords="398,5,527,46"/><area shape="rect" id="node4" href="classobjet__selectionnable.html#abed9a58bb39d15353db880fbd0808714" title="objet_selectionnable\l::est_conteneur" alt="" coords="393,70,533,111"/><area shape="rect" id="node5" href="classfonctions__conteneur.html#a138f2393529381205980123dff37d99e" title="fonctions_conteneur\l::on_supprimer_fonction" alt="" coords="382,187,543,229"/><area shape="rect" id="node7" href="classobjet__selectionnable.html#ab48a75e720955aebe27f720dfaa5e78e" title="objet_selectionnable\l::get_projet" alt="" coords="782,157,922,198"/><area shape="rect" id="node9" href="classobjet__selectionnable.html#a9f76b8e89231a79c3fc840af874bd868" title="objet_selectionnable\l::modifier" alt="" coords="782,246,922,287"/><area shape="rect" id="node10" href="classobjet__selectionnable.html#aaa39f8be3dfaeb095cc12a217b234f9b" title="objet_selectionnable\l::est_dans_projet" alt="" coords="593,329,733,370"/><area shape="rect" id="node6" href="classfonctions__conteneur.html#a807b51ba64dd85bb844c44cfe2d0f116" title="fonctions_conteneur\l::supprimer_fonction" alt="" coords="593,187,733,229"/><area shape="rect" id="node8" href="classobjet__selectionnable.html#a97e33c61983d5c7811e8bacff8f114c4" title="objet_selectionnable\l::est_projet" alt="" coords="971,246,1111,287"/></map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="a5a2f1cde20d86a4bdeda4e9f1da30ac3"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void base_parametre::set_textes_out </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classtextes.html">textes</a> &amp;&#160;</td>
+          <td class="paramname"><em>textes_out</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Définition à la ligne <a class="el" href="base__parametre_8cpp_source.html#l00129">129</a> du fichier <a class="el" href="base__parametre_8cpp_source.html">base_parametre.cpp</a>.</p>
+
+</div>
+</div>
+<h2 class="groupheader">Documentation des données membres</h2>
+<a class="anchor" id="af62a651d367056e1079b09c485c5d557"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QString base_parametre::m_aide</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>L'aide utilisateur du parametre. </p>
+
+<p>Définition à la ligne <a class="el" href="base__parametre_8h_source.html#l00091">91</a> du fichier <a class="el" href="base__parametre_8h_source.html">base_parametre.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="aa922c5061129a19c401693fca50fba69"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classbase__parametre.html#a9e5b987e53d5cc9d49a3e2637b6b61b9">type_algorithme</a> base_parametre::m_algorithme</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Le type d'algorithme utilisé. </p>
+
+<p>Définition à la ligne <a class="el" href="base__parametre_8h_source.html#l00109">109</a> du fichier <a class="el" href="base__parametre_8h_source.html">base_parametre.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a88d6d3a7fc836a2f134344ff5a3185ed"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classbase__fonction.html">base_fonction</a>* base_parametre::m_fonction_parent</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>La fonction parent. </p>
+
+<p>Définition à la ligne <a class="el" href="base__parametre_8h_source.html#l00097">97</a> du fichier <a class="el" href="base__parametre_8h_source.html">base_parametre.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a00aff6ab5a2e2a4cdea8cfc62ebdf06a"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="define__parametre_8h.html#a621f68a7400bb79e0ffd7db8c7eca85c">type_id_parametre</a> base_parametre::m_id</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>L'identifiant du paramètre. </p>
+
+<p>Définition à la ligne <a class="el" href="base__parametre_8h_source.html#l00103">103</a> du fichier <a class="el" href="base__parametre_8h_source.html">base_parametre.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a489eac8ac5b24f3295bb0122f1bacbb5"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classbase__parametre.html#af9c2486b3b357c96d118835057f8adae">type_mode_configuration_visibilite</a> base_parametre::m_mode_configuration_visibilite</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Indique si le paramètre doit figurer dans la configuration. </p>
+
+<p>Définition à la ligne <a class="el" href="base__parametre_8h_source.html#l00106">106</a> du fichier <a class="el" href="base__parametre_8h_source.html">base_parametre.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a375558920c778ff013e4bac75b092573"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classbase__parametre.html#a64ac5a31d511d54e78437d8f3aff9c31">type_mode_contenu_parametre</a> base_parametre::m_mode_contenu_parametre</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Indique si le parametre est requis. </p>
+
+<p>Définition à la ligne <a class="el" href="base__parametre_8h_source.html#l00094">94</a> du fichier <a class="el" href="base__parametre_8h_source.html">base_parametre.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="afa54d3e720cab0ee5de13c30c0597adb"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QString base_parametre::m_nom</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Le nom de la fonction. </p>
+
+<p>Définition à la ligne <a class="el" href="base__parametre_8h_source.html#l00088">88</a> du fichier <a class="el" href="base__parametre_8h_source.html">base_parametre.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a8018b4687fbb14a97ff34661e0481c20"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classtextes.html">textes</a> base_parametre::m_textes_out</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>La valeur réelle du parametre. </p>
+
+<p>Définition à la ligne <a class="el" href="base__parametre_8h_source.html#l00100">100</a> du fichier <a class="el" href="base__parametre_8h_source.html">base_parametre.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a6976dbd4a62eeeedb59e2ae062ec9724"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="define__parametre_8h.html#aed2bf0fd75a4a7818ae039ad1d14762d">type_type_parametre</a> base_parametre::m_type</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Définition à la ligne <a class="el" href="base__parametre_8h_source.html#l00111">111</a> du fichier <a class="el" href="base__parametre_8h_source.html">base_parametre.h</a>.</p>
+
+</div>
+</div>
+<hr/>La documentation de cette classe a été générée à partir des fichiers suivants :<ul>
 <li>entete/projet/<a class="el" href="base__parametre_8h_source.html">base_parametre.h</a></li>
 <li>src/projet/<a class="el" href="base__parametre_8cpp_source.html">base_parametre.cpp</a></li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Généré le Mercredi 8 Février 2017 09:50:12 pour Emgine par &#160;<a href="http://www.doxygen.org/index.html">
+Généré le Mercredi 8 Février 2017 09:53:35 pour Emgine par &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.6
 </small></address>

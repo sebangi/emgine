@@ -1,0 +1,47 @@
+<map id="explorateur::ajouter_menu_conteneur" name="explorateur::ajouter_menu_conteneur">
+<area shape="rect" id="node2" href="$classexplorateur.html#ad6ea829268272e407807e82a039eee42" title="explorateur::ajouter\l_menu_ajout_fonction" alt="" coords="187,463,336,505"/>
+<area shape="rect" id="node13" href="$classexplorateur.html#a57e9b7f934e2a1e699d816d144fb2338" title="explorateur::ajouter\l_menu_copier_coller" alt="" coords="191,241,332,282"/>
+<area shape="rect" id="node3" href="$classobjet__selectionnable.html#abed9a58bb39d15353db880fbd0808714" title="objet_selectionnable\l::est_conteneur" alt="" coords="1398,274,1538,315"/>
+<area shape="rect" id="node4" href="$classobjet__selectionnable.html#a1cf41e42861e0b033d2704802905e81a" title="objet_selectionnable\l::est_verrouille_avec\l_parent" alt="" coords="593,632,735,688"/>
+<area shape="rect" id="node6" href="$classobjet__selectionnable.html#ab5d7e0b9f000ba34d9d60b36590f1fcf" title="objet_selectionnable\l::est_fonction" alt="" coords="391,299,531,341"/>
+<area shape="rect" id="node7" href="$classobjet__selectionnable.html#a57341a9bf3dbc66f4ad4414183b0d27c" title="objet_selectionnable\l::parents_verrouilles" alt="" coords="391,613,531,654"/>
+<area shape="rect" id="node8" href="$classexplorateur.html#a9f87ebe9efe7486d6e781556238feb4e" title="explorateur::on_ajout\l_source" alt="" coords="390,430,533,471"/>
+<area shape="rect" id="node11" href="$classexplorateur.html#a513ccd6238459ae6982973a5b671a63b" title="explorateur::on_ajout\l_fonction_conversion" alt="" coords="389,495,534,537"/>
+<area shape="rect" id="node12" href="$classexplorateur.html#aad600593e3982f73bd876a32cc4b8381" title="explorateur::on_ajout\l_sortie" alt="" coords="390,365,533,406"/>
+<area shape="rect" id="node5" href="$classobjet__selectionnable.html#a8b9cf156597fe8cc1b8f9408e1bfee8c" title="objet_selectionnable\l::est_verrouille" alt="" coords="799,657,939,698"/>
+<area shape="rect" id="node9" href="$classbase__noeud.html#ae78124477ea5148f16c2da42ac766f4c" title="Retourne l&#39;objet sélectionnable associé au noeud. " alt="" coords="587,329,741,356"/>
+<area shape="rect" id="node10" href="$classobjet__selectionnable.html#ab809d020155b7fec48ff3adbe15c9b65" title="objet_selectionnable\l::get_conteneur" alt="" coords="799,421,939,462"/>
+<area shape="rect" id="node14" href="$classexplorateur.html#ab3b5326853acdf90c798ad2b8e3dfbb8" title="explorateur::on_copier" alt="" coords="386,107,537,133"/>
+<area shape="rect" id="node17" href="$classexplorateur.html#ab3eaff6725b5b3bfcded294beed49449" title="explorateur::on_couper" alt="" coords="384,56,539,83"/>
+<area shape="rect" id="node18" href="$classobjet__selectionnable.html#ab2b3d6e89c6a33d83d79bafd6e36a671" title="objet_selectionnable\l::a_ancetre" alt="" coords="391,182,531,223"/>
+<area shape="rect" id="node19" href="$classexplorateur.html#a5394562c6a7168f624d9ee1f7a2736fa" title="explorateur::on_coller" alt="" coords="388,248,535,275"/>
+<area shape="rect" id="node15" href="$classexplorateur.html#a3826d13d8738c168bc558eb31da80c27" title="explorateur::creer\l_copie" alt="" coords="603,99,725,141"/>
+<area shape="rect" id="node16" href="$classfonctions__conteneur.html#a199dde0697eb91a9e54c1dfecb536a88" title="fonctions_conteneur\l::sauvegarder" alt="" coords="800,149,939,190"/>
+<area shape="rect" id="node20" href="$classexplorateur.html#a3ed6f16c0e32b2eb1750e59feacb52b0" title="explorateur::faire\l_couper" alt="" coords="605,263,723,305"/>
+<area shape="rect" id="node23" href="$classexplorateur.html#aacc4e1d3c87901d284230bdd1bbb4c26" title="explorateur::faire\l_coller" alt="" coords="605,533,723,574"/>
+<area shape="rect" id="node21" href="$classfonctions__conteneur.html#a0e66abe2fb75854bdf225621ee4f7fb4" title="fonctions_conteneur\l::fonctions_const_begin" alt="" coords="789,331,949,373"/>
+<area shape="rect" id="node22" href="$classfonctions__conteneur.html#ad9d7f30426cbfab3d39505bb94b1f0d5" title="fonctions_conteneur\l::fonctions_const_end" alt="" coords="794,266,945,307"/>
+<area shape="rect" id="node24" href="$classfonctions__conteneur.html#aeb43e1fd3929d565f33b34db7ce8c583" title="fonctions_conteneur\l::charger_fonctions" alt="" coords="800,591,939,633"/>
+<area shape="rect" id="node25" href="$classfonctions__conteneur.html#a2e241972228c75c5550287bd0fa6501e" title="fonctions_conteneur\l::charger_fonction" alt="" coords="997,687,1136,729"/>
+<area shape="rect" id="node26" href="$classbibliotheque__fonctions.html#a97e2db5603fe4267df7ace47f110b6e0" title="bibliotheque_fonctions\l::get_fonction" alt="" coords="1186,687,1337,729"/>
+<area shape="rect" id="node27" href="$classbase__fonction.html#a693965131515a05876dd55562cba2757" title="base_fonction::charger" alt="" coords="1184,1045,1339,1072"/>
+<area shape="rect" id="node41" href="$classfonctions__conteneur.html#a5498a158c4d4f16fc63e54809ce381d5" title="fonctions_conteneur\l::ajouter_fonction" alt="" coords="1192,753,1331,794"/>
+<area shape="rect" id="node28" href="$classbase__fonction.html#aac434731c9e5d95398d3baae6c74d447" title="base_fonction::set\l_niveau_visibilite" alt="" coords="1610,902,1739,943"/>
+<area shape="rect" id="node29" href="$classbase__fonction.html#a58252a04c7afea216c29d13132b0d6a2" title="base_fonction::set\l_est_active" alt="" coords="1403,970,1533,1011"/>
+<area shape="rect" id="node34" href="$classbase__fonction.html#aecefb6e946e43e9d6dc835165ac7e265" title="Retourne le type de la fonction. " alt="" coords="1387,1155,1549,1181"/>
+<area shape="rect" id="node35" href="$classobjet__selectionnable.html#a8f3ce3c0cf4e85da9115b7517f9e0e2d" title="objet_selectionnable\l::charger" alt="" coords="1398,1218,1538,1259"/>
+<area shape="rect" id="node39" href="$classbase__fonction.html#a96c37e73c9822d7e9b483ce5fa37bd16" title="base_fonction::charger\l_parametres" alt="" coords="1391,1038,1545,1079"/>
+<area shape="rect" id="node30" href="$classbase__fonction.html#a58bf7761b1416f494d035ca415d28dcd" title="base_fonction::get\l_niveau_visibilite" alt="" coords="1610,967,1739,1009"/>
+<area shape="rect" id="node31" href="$classobjet__selectionnable.html#acb1bf63e061079a402c929ce346b0b22" title="objet_selectionnable\l::set_est_active" alt="" coords="1605,1033,1745,1074"/>
+<area shape="rect" id="node32" href="$classobjet__selectionnable.html#a9f76b8e89231a79c3fc840af874bd868" title="objet_selectionnable\l::modifier" alt="" coords="1801,843,1941,885"/>
+<area shape="rect" id="node33" href="$classobjet__selectionnable.html#a97e33c61983d5c7811e8bacff8f114c4" title="objet_selectionnable\l::est_projet" alt="" coords="1990,714,2130,755"/>
+<area shape="rect" id="node36" href="$classobjet__selectionnable.html#ae58408e8c4421e9c33bc488381e8c0a4" title="objet_selectionnable\l::est_etendu" alt="" coords="1605,1229,1745,1270"/>
+<area shape="rect" id="node37" href="$classobjet__selectionnable.html#aafef1c588ce9d5f7956c321799986b9b" title="objet_selectionnable\l::set_est_etendu" alt="" coords="1605,1163,1745,1205"/>
+<area shape="rect" id="node38" href="$classobjet__selectionnable.html#a5d39343f43293805a0b60e8520687d87" title="objet_selectionnable\l::set_verrouille" alt="" coords="1605,1294,1745,1335"/>
+<area shape="rect" id="node40" href="$classbase__fonction.html#a46971e37a472f45a8031be6e8aec15f2" title="base_fonction::charger\l_parametre" alt="" coords="1597,1098,1752,1139"/>
+<area shape="rect" id="node42" href="$classbase__fonction.html#aa487a07ab1961bfbdf04ddd3c72b4d3c" title="base_fonction::set\l_conteneur" alt="" coords="1403,785,1533,826"/>
+<area shape="rect" id="node43" href="$classfonctions__conteneur.html#a138f2393529381205980123dff37d99e" title="fonctions_conteneur\l::on_supprimer_fonction" alt="" coords="1387,719,1549,761"/>
+<area shape="rect" id="node45" href="$classobjet__selectionnable.html#ab48a75e720955aebe27f720dfaa5e78e" title="objet_selectionnable\l::get_projet" alt="" coords="1801,714,1941,755"/>
+<area shape="rect" id="node46" href="$classobjet__selectionnable.html#aaa39f8be3dfaeb095cc12a217b234f9b" title="objet_selectionnable\l::est_dans_projet" alt="" coords="1801,615,1941,657"/>
+<area shape="rect" id="node44" href="$classfonctions__conteneur.html#a807b51ba64dd85bb844c44cfe2d0f116" title="fonctions_conteneur\l::supprimer_fonction" alt="" coords="1605,719,1745,761"/>
+</map>

@@ -1,0 +1,9 @@
+<map id="base_fonction_widget::on_inverser_activation" name="base_fonction_widget::on_inverser_activation">
+<area shape="rect" id="node2" href="$classbase__fonction.html#aaf72b5fa4bf0bd4ee43d7eab0aeac984" title="base_fonction::inverser\l_activation" alt="" coords="213,70,371,111"/>
+<area shape="rect" id="node3" href="$classbase__fonction.html#a58252a04c7afea216c29d13132b0d6a2" title="base_fonction::set\l_est_active" alt="" coords="419,70,549,111"/>
+<area shape="rect" id="node4" href="$classbase__fonction.html#a58bf7761b1416f494d035ca415d28dcd" title="base_fonction::get\l_niveau_visibilite" alt="" coords="603,5,733,46"/>
+<area shape="rect" id="node5" href="$classbase__fonction.html#aac434731c9e5d95398d3baae6c74d447" title="base_fonction::set\l_niveau_visibilite" alt="" coords="603,70,733,111"/>
+<area shape="rect" id="node6" href="$classobjet__selectionnable.html#acb1bf63e061079a402c929ce346b0b22" title="objet_selectionnable\l::set_est_active" alt="" coords="598,135,738,177"/>
+<area shape="rect" id="node7" href="$classobjet__selectionnable.html#a9f76b8e89231a79c3fc840af874bd868" title="objet_selectionnable\l::modifier" alt="" coords="787,135,927,177"/>
+<area shape="rect" id="node8" href="$classobjet__selectionnable.html#a97e33c61983d5c7811e8bacff8f114c4" title="objet_selectionnable\l::est_projet" alt="" coords="977,135,1117,177"/>
+</map>

@@ -1,0 +1,5 @@
+<map id="explorateur::on_ajout_fonction_conversion" name="explorateur::on_ajout_fonction_conversion">
+<area shape="rect" id="node2" href="$classbase__noeud.html#ae78124477ea5148f16c2da42ac766f4c" title="Retourne l&#39;objet sélectionnable associé au noeud. " alt="" coords="201,5,354,32"/>
+<area shape="rect" id="node3" href="$classobjet__selectionnable.html#ab809d020155b7fec48ff3adbe15c9b65" title="objet_selectionnable\l::get_conteneur" alt="" coords="207,81,347,122"/>
+<area shape="rect" id="node4" href="$classobjet__selectionnable.html#abed9a58bb39d15353db880fbd0808714" title="objet_selectionnable\l::est_conteneur" alt="" coords="403,81,543,122"/>
+</map>

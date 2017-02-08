@@ -4,16 +4,12 @@ ETAPE 1 : FONCTIONNALITES DE BASES
 * FINI
 
 ETAPE 2 : VERSION 0.1
-* réflexion poussée sur les fonctionnalités de base à ajouter avant d'ajouter de nouvelles fonctions
-* vérifier ordre methodes
-* sort alphabétique (include + .pro)
 * documentation Doxygen
 * Tagger sous git la version 0.1
 
-ETAPE 3
-* sauvegarde d'un texte sortie
-
-ETAPE 4 : NON PRIORITAIRE
+ETAPE 3 : NON PRIORITAIRE
+* corriger les itérations sur source_texte et source_fichier_texte
+* connaitre le répertoir racine de l'application et travailler en relatif
 * gestion des dictionnaires
 * améliorer la mise en page de l'aide des paramètres
 * améliorer la mise en page de l'aide des fonctions

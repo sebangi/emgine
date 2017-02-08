@@ -1,0 +1,14 @@
+<map id="fonction_sortie_texte_widget::init" name="fonction_sortie_texte_widget::init">
+<area shape="rect" id="node2" href="$classfonction__sortie__texte__widget.html#a16858f16b7b0292b91c6e97cb58324bb" title="fonction_sortie_texte\l_widget::onTexteDoubleClicked" alt="" coords="198,53,405,94"/>
+<area shape="rect" id="node3" href="$classfonction__sortie__texte__widget.html#a4c99b99c452082c81a5b8546a17d0272" title="fonction_sortie_texte\l_widget::showContextMenu" alt="" coords="209,118,393,159"/>
+<area shape="rect" id="node12" href="$classfonction__sortie__texte__widget.html#a09615dfdc31610fe303d041613cc7dc9" title="fonction_sortie_texte\l_widget::creer_liste_texte" alt="" coords="460,213,631,254"/>
+<area shape="rect" id="node13" href="$classfonction__sortie__texte__widget.html#aed4a0de68bc4c71252460bfe9e0d7a20" title="fonction_sortie_texte\l_widget::on_externe_fst\l_textes_modifie" alt="" coords="221,235,382,291"/>
+<area shape="rect" id="node4" href="$classfonction__sortie__texte__widget.html#a93e0c2bbb93180e935e40e1830984122" title="fonction_sortie_texte\l_widget::creer_projet" alt="" coords="474,26,617,67"/>
+<area shape="rect" id="node6" href="$classfonction__sortie__texte__widget.html#a956d512437dfa8bc0920c191af010e59" title="fonction_sortie_texte\l_widget::sauvegarder_texte" alt="" coords="454,133,637,174"/>
+<area shape="rect" id="node5" href="$classtexte__widget__item.html#ac44b3d9bd91591cf701399120973642d" title="texte_widget_item::\lget_texte" alt="" coords="692,5,828,46"/>
+<area shape="rect" id="node7" href="$classobjet__selectionnable.html#ab48a75e720955aebe27f720dfaa5e78e" title="objet_selectionnable\l::get_projet" alt="" coords="690,94,830,135"/>
+<area shape="rect" id="node9" href="$classprojet.html#a6f3595b0a0025ddf250561ebbfb3726b" title="projet::est_nouveau" alt="" coords="692,160,828,187"/>
+<area shape="rect" id="node10" href="$classprojet.html#aa44b3d76899e78d5259dec6fdf5e6855" title="projet::get_dossier" alt="" coords="695,211,825,237"/>
+<area shape="rect" id="node11" href="$classtexte.html#a199d73842cb743e47fdd71afc7bbe1d0" title="Convertit le texte au format QString avec séparateur de ligne. " alt="" coords="685,261,835,288"/>
+<area shape="rect" id="node8" href="$classobjet__selectionnable.html#a97e33c61983d5c7811e8bacff8f114c4" title="objet_selectionnable\l::est_projet" alt="" coords="883,94,1023,135"/>
+</map>

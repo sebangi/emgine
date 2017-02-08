@@ -38,6 +38,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Recherche');
     <ul class="tablist">
       <li><a href="index.html"><span>Page&#160;principale</span></a></li>
       <li><a href="pages.html"><span>Pages&#160;associées</span></a></li>
+      <li><a href="modules.html"><span>Modules</span></a></li>
       <li><a href="annotated.html"><span>Classes</span></a></li>
       <li><a href="files.html"><span>Fichiers</span></a></li>
       <li>
@@ -63,7 +64,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Recherche');
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>Tout</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Fonctions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Définitions de type</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Énumérations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Pages</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>Tout</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Espaces de nommage</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Fichiers</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Fonctions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Définitions de type</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Énumérations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Valeurs énumérées</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&#160;</span>Groupes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(10)"><span class="SelectionMark">&#160;</span>Pages</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -92,23 +93,28 @@ Graphe des dépendances de répertoires pour element:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="files"></a>
 Fichiers</h2></td></tr>
-<tr class="memitem:base__element_8h"><td class="memItemLeft" align="right" valign="top">fichier &#160;</td><td class="memItemRight" valign="bottom"><b>base_element.h</b> <a href="base__element_8h_source.html">[code]</a></td></tr>
+<tr class="memitem:base__element_8h"><td class="memItemLeft" align="right" valign="top">fichier &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="base__element_8h.html">base_element.h</a> <a href="base__element_8h_source.html">[code]</a></td></tr>
+<tr class="memdesc:base__element_8h"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fichier de déclaration de la classe bae_element. <br/></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ligne_8h"><td class="memItemLeft" align="right" valign="top">fichier &#160;</td><td class="memItemRight" valign="bottom"><b>ligne.h</b> <a href="ligne_8h_source.html">[code]</a></td></tr>
+<tr class="memitem:ligne_8h"><td class="memItemLeft" align="right" valign="top">fichier &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ligne_8h.html">ligne.h</a> <a href="ligne_8h_source.html">[code]</a></td></tr>
+<tr class="memdesc:ligne_8h"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fichier de déclaration de la classe ligne. <br/></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:mot_8h"><td class="memItemLeft" align="right" valign="top">fichier &#160;</td><td class="memItemRight" valign="bottom"><b>mot.h</b> <a href="mot_8h_source.html">[code]</a></td></tr>
+<tr class="memitem:mot_8h"><td class="memItemLeft" align="right" valign="top">fichier &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mot_8h.html">mot.h</a> <a href="mot_8h_source.html">[code]</a></td></tr>
+<tr class="memdesc:mot_8h"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fichier de déclaration de la classe mot. <br/></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:texte_8h"><td class="memItemLeft" align="right" valign="top">fichier &#160;</td><td class="memItemRight" valign="bottom"><b>texte.h</b> <a href="texte_8h_source.html">[code]</a></td></tr>
+<tr class="memitem:texte_8h"><td class="memItemLeft" align="right" valign="top">fichier &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="texte_8h.html">texte.h</a> <a href="texte_8h_source.html">[code]</a></td></tr>
+<tr class="memdesc:texte_8h"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fichier de déclaration de la classe texte. <br/></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:textes_8h"><td class="memItemLeft" align="right" valign="top">fichier &#160;</td><td class="memItemRight" valign="bottom"><b>textes.h</b> <a href="textes_8h_source.html">[code]</a></td></tr>
+<tr class="memitem:textes_8h"><td class="memItemLeft" align="right" valign="top">fichier &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="textes_8h.html">textes.h</a> <a href="textes_8h_source.html">[code]</a></td></tr>
+<tr class="memdesc:textes_8h"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fichier de déclaration de la classe textes. <br/></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:type__element_8h"><td class="memItemLeft" align="right" valign="top">fichier &#160;</td><td class="memItemRight" valign="bottom"><b>type_element.h</b> <a href="type__element_8h_source.html">[code]</a></td></tr>
+<tr class="memitem:type__element_8h"><td class="memItemLeft" align="right" valign="top">fichier &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="type__element_8h.html">type_element.h</a> <a href="type__element_8h_source.html">[code]</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Généré le Mercredi 8 Février 2017 09:50:12 pour Emgine par &#160;<a href="http://www.doxygen.org/index.html">
+Généré le Mercredi 8 Février 2017 09:53:36 pour Emgine par &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.6
 </small></address>

@@ -38,6 +38,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Recherche');
     <ul class="tablist">
       <li><a href="index.html"><span>Page&#160;principale</span></a></li>
       <li><a href="pages.html"><span>Pages&#160;associées</span></a></li>
+      <li><a href="modules.html"><span>Modules</span></a></li>
       <li><a href="annotated.html"><span>Classes</span></a></li>
       <li class="current"><a href="files.html"><span>Fichiers</span></a></li>
       <li>
@@ -61,6 +62,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Recherche');
   <div id="navrow2" class="tabs2">
     <ul class="tablist">
       <li><a href="files.html"><span>Liste&#160;des&#160;fichiers</span></a></li>
+      <li><a href="globals.html"><span>Membres&#160;de&#160;fichier</span></a></li>
     </ul>
   </div>
 <!-- window showing the filter options -->
@@ -68,7 +70,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Recherche');
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>Tout</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Fonctions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Définitions de type</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Énumérations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Pages</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>Tout</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Espaces de nommage</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Fichiers</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Fonctions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Définitions de type</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Énumérations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Valeurs énumérées</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&#160;</span>Groupes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(10)"><span class="SelectionMark">&#160;</span>Pages</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -87,7 +89,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Recherche');
 <div class="title">base_parametre_widget.cpp</div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#include &quot;entete/fonction_widget/base_parametre_widget.h&quot;</span></div>
+<a href="base__parametre__widget_8cpp.html">Aller à la documentation de ce fichier.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="base__parametre__widget_8h.html">entete/fonction_widget/base_parametre_widget.h</a>&quot;</span></div>
 <div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor">#include &lt;QHBoxLayout&gt;</span></div>
 <div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="preprocessor">#include &lt;QLabel&gt;</span></div>
 <div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &lt;QStyle&gt;</span></div>
@@ -95,26 +97,26 @@ var searchBox = new SearchBox("searchBox", "search",false,'Recherche');
 <div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="preprocessor">#include &lt;QPainter&gt;</span></div>
 <div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="preprocessor">#include &lt;QApplication&gt;</span></div>
 <div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor">#include &lt;QMessageBox&gt;</span></div>
-<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#include &quot;entete/projet/base_parametre.h&quot;</span></div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="preprocessor">#include &quot;entete/projet/base_fonction.h&quot;</span></div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="preprocessor">#include &quot;entete/fenetre_principale.h&quot;</span></div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="preprocessor">#include &quot;entete/explorateur/explorateur.h&quot;</span></div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="preprocessor">#include &quot;entete/explorateur/noeud_parametre.h&quot;</span></div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="preprocessor">#include &quot;entete/fonction_widget/parametre_aide_message_box.h&quot;</span></div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="base__parametre_8h.html">entete/projet/base_parametre.h</a>&quot;</span></div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="base__fonction_8h.html">entete/projet/base_fonction.h</a>&quot;</span></div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="fenetre__principale_8h.html">entete/fenetre_principale.h</a>&quot;</span></div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="explorateur_8h.html">entete/explorateur/explorateur.h</a>&quot;</span></div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="noeud__parametre_8h.html">entete/explorateur/noeud_parametre.h</a>&quot;</span></div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="parametre__aide__message__box_8h.html">entete/fonction_widget/parametre_aide_message_box.h</a>&quot;</span></div>
 <div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="preprocessor">#include &lt;iostream&gt;</span></div>
 <div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="preprocessor">#include &lt;math.h&gt;</span></div>
 <div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;</div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;base_parametre_widget::base_parametre_widget(<a class="code" href="classbase__parametre.html">base_parametre</a>* param, QWidget* parent)</div>
+<div class="line"><a name="l00018"></a><span class="lineno"><a class="line" href="classbase__parametre__widget.html#aaea22dd4fbb9de4beb9f8fe26fb6c906">   18</a></span>&#160;<a class="code" href="classbase__parametre__widget.html#aaea22dd4fbb9de4beb9f8fe26fb6c906">base_parametre_widget::base_parametre_widget</a>(<a class="code" href="classbase__parametre.html">base_parametre</a>* param, QWidget* parent)</div>
 <div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;    : QWidget(parent), m_parametre(param)</div>
 <div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;{</div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;    init();</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;    <a class="code" href="classbase__parametre__widget.html#a6b1bd10070e508623e3083e93c4b78d4">init</a>();</div>
 <div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;}</div>
 <div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;</div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;base_parametre_widget::~base_parametre_widget()</div>
+<div class="line"><a name="l00024"></a><span class="lineno"><a class="line" href="classbase__parametre__widget.html#a03d430df55791379b891473c34186a9f">   24</a></span>&#160;<a class="code" href="classbase__parametre__widget.html#a03d430df55791379b891473c34186a9f">base_parametre_widget::~base_parametre_widget</a>()</div>
 <div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;{</div>
 <div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;}</div>
 <div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;</div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="keywordtype">void</span> base_parametre_widget::paintEvent(QPaintEvent *)</div>
+<div class="line"><a name="l00028"></a><span class="lineno"><a class="line" href="classbase__parametre__widget.html#ab5b4289d89b55b8068433313c5a2d020">   28</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="classbase__parametre__widget.html#ab5b4289d89b55b8068433313c5a2d020">base_parametre_widget::paintEvent</a>(QPaintEvent *)</div>
 <div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;{</div>
 <div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;    QStyleOption opt;</div>
 <div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;    opt.init(<span class="keyword">this</span>);</div>
@@ -122,44 +124,44 @@ var searchBox = new SearchBox("searchBox", "search",false,'Recherche');
 <div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    style()-&gt;drawPrimitive(QStyle::PE_Widget, &amp;opt, &amp;p, <span class="keyword">this</span>);</div>
 <div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;}</div>
 <div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;<span class="keywordtype">void</span> base_parametre_widget::informer_verrouillage_change()</div>
+<div class="line"><a name="l00036"></a><span class="lineno"><a class="line" href="classbase__parametre__widget.html#a31796da6c046e8616994c323c710da89">   36</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="classbase__parametre__widget.html#a31796da6c046e8616994c323c710da89">base_parametre_widget::informer_verrouillage_change</a>()</div>
 <div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;{</div>
 <div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    <a class="code" href="classbase__parametre__widget.html#a0e8a415acdd2eaa7aa595664b7415b96">mettre_a_jour_configuration</a>();</div>
 <div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;}</div>
 <div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;<span class="keywordtype">void</span> base_parametre_widget::init()</div>
+<div class="line"><a name="l00041"></a><span class="lineno"><a class="line" href="classbase__parametre__widget.html#a6b1bd10070e508623e3083e93c4b78d4">   41</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="classbase__parametre__widget.html#a6b1bd10070e508623e3083e93c4b78d4">base_parametre_widget::init</a>()</div>
 <div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;{</div>
 <div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    QHBoxLayout * main_layout = <span class="keyword">new</span> QHBoxLayout();</div>
 <div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    main_layout-&gt;setMargin(5);</div>
 <div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    main_layout-&gt;setSpacing(5);</div>
 <div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    QLabel * nom = <span class="keyword">new</span> QLabel( m_parametre-&gt;get_nom() + <span class="stringliteral">&quot; : &quot;</span> );</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    QLabel * nom = <span class="keyword">new</span> QLabel( <a class="code" href="classbase__parametre__widget.html#a25ff35712a1837f1a91e307bd52ba801">m_parametre</a>-&gt;<a class="code" href="classbase__parametre.html#a091ac3f7f7229a65c9f79390bb3dac6f">get_nom</a>() + <span class="stringliteral">&quot; : &quot;</span> );</div>
 <div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    nom-&gt;setObjectName(<span class="stringliteral">&quot;NomParametre&quot;</span>);</div>
 <div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    nom-&gt;setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Expanding);</div>
 <div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    nom-&gt;setAlignment(Qt::AlignRight | Qt::AlignVCenter);</div>
 <div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;    main_layout-&gt;addWidget(nom,3);</div>
 <div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;</div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    QLabel * valeur = <span class="keyword">new</span> QLabel( calcul_valeur_courte() );</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    QLabel * valeur = <span class="keyword">new</span> QLabel( <a class="code" href="classbase__parametre__widget.html#aba9696c931b1497310193dd800a13f87">calcul_valeur_courte</a>() );</div>
 <div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;    valeur-&gt;setObjectName(<span class="stringliteral">&quot;ValeurCourte&quot;</span>);</div>
 <div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;    valeur-&gt;setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Expanding);</div>
 <div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;    valeur-&gt;setAlignment(Qt::AlignLeft | Qt::AlignVCenter);</div>
 <div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;    main_layout-&gt;addWidget(valeur,7);</div>
 <div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;</div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;    m_configuration_bouton = <span class="keyword">new</span> QPushButton();</div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;    m_configuration_bouton-&gt;setObjectName(<span class="stringliteral">&quot;BoutonParametreWidget&quot;</span>);</div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;    m_configuration_bouton-&gt;setFixedSize(30,30);</div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;    connect(m_configuration_bouton, SIGNAL(released()), <span class="keyword">this</span>, SLOT(on_inverser_configuration()));</div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;    main_layout-&gt;addWidget(m_configuration_bouton,1);</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;    <a class="code" href="classbase__parametre__widget.html#a567627185997bd326888f7eb19f12054">m_configuration_bouton</a> = <span class="keyword">new</span> QPushButton();</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;    <a class="code" href="classbase__parametre__widget.html#a567627185997bd326888f7eb19f12054">m_configuration_bouton</a>-&gt;setObjectName(<span class="stringliteral">&quot;BoutonParametreWidget&quot;</span>);</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;    <a class="code" href="classbase__parametre__widget.html#a567627185997bd326888f7eb19f12054">m_configuration_bouton</a>-&gt;setFixedSize(30,30);</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;    connect(<a class="code" href="classbase__parametre__widget.html#a567627185997bd326888f7eb19f12054">m_configuration_bouton</a>, SIGNAL(released()), <span class="keyword">this</span>, SLOT(<a class="code" href="classbase__parametre__widget.html#a22f1269b8a0d9e4de8ca6dcf41269bb7">on_inverser_configuration</a>()));</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;    main_layout-&gt;addWidget(<a class="code" href="classbase__parametre__widget.html#a567627185997bd326888f7eb19f12054">m_configuration_bouton</a>,1);</div>
 <div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;    <a class="code" href="classbase__parametre__widget.html#a0e8a415acdd2eaa7aa595664b7415b96">mettre_a_jour_configuration</a>();</div>
 <div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;</div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;    m_aide_bouton = <span class="keyword">new</span> QPushButton();</div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;    m_aide_bouton-&gt;setObjectName(<span class="stringliteral">&quot;BoutonParametreWidget&quot;</span>);</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;    <a class="code" href="classbase__parametre__widget.html#a6176994fe6bbd762b073e8854ee1a5cd">m_aide_bouton</a> = <span class="keyword">new</span> QPushButton();</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;    <a class="code" href="classbase__parametre__widget.html#a6176994fe6bbd762b073e8854ee1a5cd">m_aide_bouton</a>-&gt;setObjectName(<span class="stringliteral">&quot;BoutonParametreWidget&quot;</span>);</div>
 <div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;    QIcon icon1;</div>
 <div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;    icon1.addFile(QString::fromUtf8(<span class="stringliteral">&quot;icons/info.png&quot;</span>), QSize(), QIcon::Normal, QIcon::Off);</div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;    m_aide_bouton-&gt;setIcon( icon1 );</div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;    m_aide_bouton-&gt;setFixedSize(30,30);</div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;    connect(m_aide_bouton, SIGNAL(released()), <span class="keyword">this</span>, SLOT(on_aide()));</div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;    main_layout-&gt;addWidget(m_aide_bouton,1);</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;    <a class="code" href="classbase__parametre__widget.html#a6176994fe6bbd762b073e8854ee1a5cd">m_aide_bouton</a>-&gt;setIcon( icon1 );</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;    <a class="code" href="classbase__parametre__widget.html#a6176994fe6bbd762b073e8854ee1a5cd">m_aide_bouton</a>-&gt;setFixedSize(30,30);</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;    connect(<a class="code" href="classbase__parametre__widget.html#a6176994fe6bbd762b073e8854ee1a5cd">m_aide_bouton</a>, SIGNAL(released()), <span class="keyword">this</span>, SLOT(<a class="code" href="classbase__parametre__widget.html#a11be4f7e775052c0f6f3d6cfc6ae242c">on_aide</a>()));</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;    main_layout-&gt;addWidget(<a class="code" href="classbase__parametre__widget.html#a6176994fe6bbd762b073e8854ee1a5cd">m_aide_bouton</a>,1);</div>
 <div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;</div>
 <div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;    setLayout(main_layout);</div>
 <div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;    <a class="code" href="classbase__parametre__widget.html#a7de9b4d0c6307442c1c718613dfa1b3e">update_object_name</a>();</div>
@@ -168,13 +170,13 @@ var searchBox = new SearchBox("searchBox", "search",false,'Recherche');
 <div class="line"><a name="l00082"></a><span class="lineno"><a class="line" href="classbase__parametre__widget.html#a0e8a415acdd2eaa7aa595664b7415b96">   82</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="classbase__parametre__widget.html#a0e8a415acdd2eaa7aa595664b7415b96">base_parametre_widget::mettre_a_jour_configuration</a>()</div>
 <div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;{</div>
 <div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;    QIcon icon1;</div>
-<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;    <span class="keywordflow">if</span> ( m_parametre-&gt;configuration_visible() )</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;    <span class="keywordflow">if</span> ( <a class="code" href="classbase__parametre__widget.html#a25ff35712a1837f1a91e307bd52ba801">m_parametre</a>-&gt;<a class="code" href="classbase__parametre.html#a1486b7faa1e0d6c33d4ad53ea30d2828">configuration_visible</a>() )</div>
 <div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;        icon1.addFile(QString::fromUtf8(<span class="stringliteral">&quot;icons/log.png&quot;</span>), QSize(), QIcon::Normal, QIcon::Off);</div>
 <div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;    <span class="keywordflow">else</span></div>
 <div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;        icon1.addFile(QString::fromUtf8(<span class="stringliteral">&quot;icons/no_log.png&quot;</span>), QSize(), QIcon::Normal, QIcon::Off);</div>
 <div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;</div>
-<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;    m_configuration_bouton-&gt;setIcon( icon1 );</div>
-<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;    m_configuration_bouton-&gt;setEnabled( ! m_parametre-&gt;est_verrouille_avec_parent() );</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;    <a class="code" href="classbase__parametre__widget.html#a567627185997bd326888f7eb19f12054">m_configuration_bouton</a>-&gt;setIcon( icon1 );</div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;    <a class="code" href="classbase__parametre__widget.html#a567627185997bd326888f7eb19f12054">m_configuration_bouton</a>-&gt;setEnabled( ! <a class="code" href="classbase__parametre__widget.html#a25ff35712a1837f1a91e307bd52ba801">m_parametre</a>-&gt;<a class="code" href="classobjet__selectionnable.html#a1cf41e42861e0b033d2704802905e81a">est_verrouille_avec_parent</a>() );</div>
 <div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;}</div>
 <div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;</div>
 <div class="line"><a name="l00097"></a><span class="lineno"><a class="line" href="classbase__parametre__widget.html#a7de9b4d0c6307442c1c718613dfa1b3e">   97</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="classbase__parametre__widget.html#a7de9b4d0c6307442c1c718613dfa1b3e">base_parametre_widget::update_object_name</a>()</div>
@@ -185,16 +187,16 @@ var searchBox = new SearchBox("searchBox", "search",false,'Recherche');
 <div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;    style()-&gt;polish(<span class="keyword">this</span>);</div>
 <div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;}</div>
 <div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;</div>
-<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;<span class="keywordtype">void</span> base_parametre_widget::aide()</div>
+<div class="line"><a name="l00105"></a><span class="lineno"><a class="line" href="classbase__parametre__widget.html#a111b8e68e610e34757d0722e04a7b8ed">  105</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="classbase__parametre__widget.html#a111b8e68e610e34757d0722e04a7b8ed">base_parametre_widget::aide</a>()</div>
 <div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;{</div>
-<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;    <a class="code" href="classparametre__aide__message__box.html">parametre_aide_message_box</a> msgBox(<span class="keyword">this</span>, m_parametre);</div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;    <a class="code" href="classparametre__aide__message__box.html">parametre_aide_message_box</a> msgBox(<span class="keyword">this</span>, <a class="code" href="classbase__parametre__widget.html#a25ff35712a1837f1a91e307bd52ba801">m_parametre</a>);</div>
 <div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;</div>
 <div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;    msgBox.exec();</div>
 <div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;}</div>
 <div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;</div>
-<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;QString base_parametre_widget::calcul_valeur_courte()<span class="keyword"> const</span></div>
+<div class="line"><a name="l00112"></a><span class="lineno"><a class="line" href="classbase__parametre__widget.html#aba9696c931b1497310193dd800a13f87">  112</a></span>&#160;QString <a class="code" href="classbase__parametre__widget.html#aba9696c931b1497310193dd800a13f87">base_parametre_widget::calcul_valeur_courte</a>()<span class="keyword"> const</span></div>
 <div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;<span class="keyword"></span>{</div>
-<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;    QString s = m_parametre-&gt;get_valeur_courte();</div>
+<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;    QString s = <a class="code" href="classbase__parametre__widget.html#a25ff35712a1837f1a91e307bd52ba801">m_parametre</a>-&gt;<a class="code" href="classbase__parametre.html#a0cc29100a25c6f277986f5be55a4e4af">get_valeur_courte</a>();</div>
 <div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;</div>
 <div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;    s.replace ( <span class="stringliteral">&quot;\n&quot;</span>, <span class="stringliteral">&quot;|&quot;</span> );</div>
 <div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;    <span class="keywordflow">if</span> ( s.size() &gt; 40 )</div>
@@ -206,7 +208,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Recherche');
 <div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;    <span class="keywordflow">return</span> s;</div>
 <div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;}</div>
 <div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;</div>
-<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;<span class="keywordtype">bool</span> base_parametre_widget::event(QEvent* e)</div>
+<div class="line"><a name="l00126"></a><span class="lineno"><a class="line" href="classbase__parametre__widget.html#adb5f5940f0b86aef24ae028aca7fba90">  126</a></span>&#160;<span class="keywordtype">bool</span> <a class="code" href="classbase__parametre__widget.html#adb5f5940f0b86aef24ae028aca7fba90">base_parametre_widget::event</a>(QEvent* e)</div>
 <div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;{</div>
 <div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;    <span class="keywordtype">bool</span> action = <span class="keyword">true</span>;</div>
 <div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;</div>
@@ -226,37 +228,65 @@ var searchBox = new SearchBox("searchBox", "search",false,'Recherche');
 <div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160;    <span class="keywordflow">return</span> QWidget::event(e); <span class="comment">// Or whatever parent class you have.</span></div>
 <div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160;}</div>
 <div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;</div>
-<div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;<span class="keywordtype">void</span> base_parametre_widget::on_aide()</div>
+<div class="line"><a name="l00146"></a><span class="lineno"><a class="line" href="classbase__parametre__widget.html#a11be4f7e775052c0f6f3d6cfc6ae242c">  146</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="classbase__parametre__widget.html#a11be4f7e775052c0f6f3d6cfc6ae242c">base_parametre_widget::on_aide</a>()</div>
 <div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;{</div>
-<div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;    aide();</div>
+<div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;    <a class="code" href="classbase__parametre__widget.html#a111b8e68e610e34757d0722e04a7b8ed">aide</a>();</div>
 <div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;}</div>
 <div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;</div>
-<div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;<span class="keywordtype">void</span> base_parametre_widget::on_inverser_configuration()</div>
+<div class="line"><a name="l00151"></a><span class="lineno"><a class="line" href="classbase__parametre__widget.html#a22f1269b8a0d9e4de8ca6dcf41269bb7">  151</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="classbase__parametre__widget.html#a22f1269b8a0d9e4de8ca6dcf41269bb7">base_parametre_widget::on_inverser_configuration</a>()</div>
 <div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;{</div>
-<div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;    m_parametre-&gt;inverser_configuration_visibilite();</div>
+<div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;    <a class="code" href="classbase__parametre__widget.html#a25ff35712a1837f1a91e307bd52ba801">m_parametre</a>-&gt;<a class="code" href="classbase__parametre.html#aeec324199a052ddfa5b527556322547f">inverser_configuration_visibilite</a>();</div>
 <div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;    <a class="code" href="classbase__parametre__widget.html#a0e8a415acdd2eaa7aa595664b7415b96">mettre_a_jour_configuration</a>();</div>
 <div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;}</div>
 <div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;</div>
-<div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;<span class="keywordtype">void</span> base_parametre_widget::mouseDoubleClickEvent( QMouseEvent * e )</div>
+<div class="line"><a name="l00157"></a><span class="lineno"><a class="line" href="classbase__parametre__widget.html#abca01598dd3c1bab7f7866f0d229779a">  157</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="classbase__parametre__widget.html#abca01598dd3c1bab7f7866f0d229779a">base_parametre_widget::mouseDoubleClickEvent</a>( QMouseEvent * e )</div>
 <div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;{</div>
 <div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;    <span class="keywordflow">if</span> ( e-&gt;button() == Qt::LeftButton )</div>
-<div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;        m_parametre-&gt;selectionner();</div>
+<div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;        <a class="code" href="classbase__parametre__widget.html#a25ff35712a1837f1a91e307bd52ba801">m_parametre</a>-&gt;<a class="code" href="classobjet__selectionnable.html#a645da22be6e3f8747086da238e788fb9">selectionner</a>();</div>
 <div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;}</div>
 <div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;</div>
-<div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;<span class="keywordtype">void</span> base_parametre_widget::mouseReleaseEvent( QMouseEvent * e )</div>
+<div class="line"><a name="l00163"></a><span class="lineno"><a class="line" href="classbase__parametre__widget.html#a208b72015370880efedad76aee4cc461">  163</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="classbase__parametre__widget.html#a208b72015370880efedad76aee4cc461">base_parametre_widget::mouseReleaseEvent</a>( QMouseEvent * e )</div>
 <div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;{</div>
 <div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;    <span class="keywordflow">if</span> ( e-&gt;button() == Qt::LeftButton )</div>
-<div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;        m_parametre-&gt;selectionner();</div>
+<div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;        <a class="code" href="classbase__parametre__widget.html#a25ff35712a1837f1a91e307bd52ba801">m_parametre</a>-&gt;<a class="code" href="classobjet__selectionnable.html#a645da22be6e3f8747086da238e788fb9">selectionner</a>();</div>
 <div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;}</div>
 <div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;</div>
+<div class="ttc" id="classbase__parametre__widget_html_aba9696c931b1497310193dd800a13f87"><div class="ttname"><a href="classbase__parametre__widget.html#aba9696c931b1497310193dd800a13f87">base_parametre_widget::calcul_valeur_courte</a></div><div class="ttdeci">QString calcul_valeur_courte() const </div><div class="ttdef"><b>Definition:</b> <a href="base__parametre__widget_8cpp_source.html#l00112">base_parametre_widget.cpp:112</a></div></div>
+<div class="ttc" id="classobjet__selectionnable_html_a1cf41e42861e0b033d2704802905e81a"><div class="ttname"><a href="classobjet__selectionnable.html#a1cf41e42861e0b033d2704802905e81a">objet_selectionnable::est_verrouille_avec_parent</a></div><div class="ttdeci">bool est_verrouille_avec_parent() const </div><div class="ttdef"><b>Definition:</b> <a href="objet__selectionnable_8cpp_source.html#l00162">objet_selectionnable.cpp:162</a></div></div>
+<div class="ttc" id="base__parametre_8h_html"><div class="ttname"><a href="base__parametre_8h.html">base_parametre.h</a></div></div>
+<div class="ttc" id="classbase__parametre__widget_html_a22f1269b8a0d9e4de8ca6dcf41269bb7"><div class="ttname"><a href="classbase__parametre__widget.html#a22f1269b8a0d9e4de8ca6dcf41269bb7">base_parametre_widget::on_inverser_configuration</a></div><div class="ttdeci">void on_inverser_configuration()</div><div class="ttdef"><b>Definition:</b> <a href="base__parametre__widget_8cpp_source.html#l00151">base_parametre_widget.cpp:151</a></div></div>
+<div class="ttc" id="classbase__parametre__widget_html_ab5b4289d89b55b8068433313c5a2d020"><div class="ttname"><a href="classbase__parametre__widget.html#ab5b4289d89b55b8068433313c5a2d020">base_parametre_widget::paintEvent</a></div><div class="ttdeci">void paintEvent(QPaintEvent *)</div><div class="ttdef"><b>Definition:</b> <a href="base__parametre__widget_8cpp_source.html#l00028">base_parametre_widget.cpp:28</a></div></div>
+<div class="ttc" id="classbase__parametre__widget_html_adb5f5940f0b86aef24ae028aca7fba90"><div class="ttname"><a href="classbase__parametre__widget.html#adb5f5940f0b86aef24ae028aca7fba90">base_parametre_widget::event</a></div><div class="ttdeci">bool event(QEvent *e) override</div><div class="ttdef"><b>Definition:</b> <a href="base__parametre__widget_8cpp_source.html#l00126">base_parametre_widget.cpp:126</a></div></div>
+<div class="ttc" id="classbase__parametre_html_a1486b7faa1e0d6c33d4ad53ea30d2828"><div class="ttname"><a href="classbase__parametre.html#a1486b7faa1e0d6c33d4ad53ea30d2828">base_parametre::configuration_visible</a></div><div class="ttdeci">bool configuration_visible() const </div><div class="ttdef"><b>Definition:</b> <a href="base__parametre_8cpp_source.html#l00204">base_parametre.cpp:204</a></div></div>
+<div class="ttc" id="classobjet__selectionnable_html_a645da22be6e3f8747086da238e788fb9"><div class="ttname"><a href="classobjet__selectionnable.html#a645da22be6e3f8747086da238e788fb9">objet_selectionnable::selectionner</a></div><div class="ttdeci">void selectionner()</div><div class="ttdef"><b>Definition:</b> <a href="objet__selectionnable_8cpp_source.html#l00021">objet_selectionnable.cpp:21</a></div></div>
 <div class="ttc" id="classbase__parametre_html"><div class="ttname"><a href="classbase__parametre.html">base_parametre</a></div><div class="ttdoc">Classe décrivant un parametre d&#39;une fonction. </div><div class="ttdef"><b>Definition:</b> <a href="base__parametre_8h_source.html#l00020">base_parametre.h:20</a></div></div>
+<div class="ttc" id="explorateur_8h_html"><div class="ttname"><a href="explorateur_8h.html">explorateur.h</a></div><div class="ttdoc">Fichier de déclaration de la classe explorateur. </div></div>
+<div class="ttc" id="classbase__parametre__widget_html_a03d430df55791379b891473c34186a9f"><div class="ttname"><a href="classbase__parametre__widget.html#a03d430df55791379b891473c34186a9f">base_parametre_widget::~base_parametre_widget</a></div><div class="ttdeci">~base_parametre_widget()</div><div class="ttdef"><b>Definition:</b> <a href="base__parametre__widget_8cpp_source.html#l00024">base_parametre_widget.cpp:24</a></div></div>
 <div class="ttc" id="classbase__parametre__widget_html_a0e8a415acdd2eaa7aa595664b7415b96"><div class="ttname"><a href="classbase__parametre__widget.html#a0e8a415acdd2eaa7aa595664b7415b96">base_parametre_widget::mettre_a_jour_configuration</a></div><div class="ttdeci">void mettre_a_jour_configuration()</div><div class="ttdoc">Mettre à jour la visualisation de la configuration. </div><div class="ttdef"><b>Definition:</b> <a href="base__parametre__widget_8cpp_source.html#l00082">base_parametre_widget.cpp:82</a></div></div>
+<div class="ttc" id="classbase__parametre__widget_html_a6b1bd10070e508623e3083e93c4b78d4"><div class="ttname"><a href="classbase__parametre__widget.html#a6b1bd10070e508623e3083e93c4b78d4">base_parametre_widget::init</a></div><div class="ttdeci">void init()</div><div class="ttdef"><b>Definition:</b> <a href="base__parametre__widget_8cpp_source.html#l00041">base_parametre_widget.cpp:41</a></div></div>
 <div class="ttc" id="classbase__parametre__widget_html_a7de9b4d0c6307442c1c718613dfa1b3e"><div class="ttname"><a href="classbase__parametre__widget.html#a7de9b4d0c6307442c1c718613dfa1b3e">base_parametre_widget::update_object_name</a></div><div class="ttdeci">void update_object_name()</div><div class="ttdoc">Mise à jour du nom de l&#39;objet. </div><div class="ttdef"><b>Definition:</b> <a href="base__parametre__widget_8cpp_source.html#l00097">base_parametre_widget.cpp:97</a></div></div>
+<div class="ttc" id="fenetre__principale_8h_html"><div class="ttname"><a href="fenetre__principale_8h.html">fenetre_principale.h</a></div><div class="ttdoc">Déclaration de la classe fenetre_principale. </div></div>
+<div class="ttc" id="classbase__parametre__widget_html_aaea22dd4fbb9de4beb9f8fe26fb6c906"><div class="ttname"><a href="classbase__parametre__widget.html#aaea22dd4fbb9de4beb9f8fe26fb6c906">base_parametre_widget::base_parametre_widget</a></div><div class="ttdeci">base_parametre_widget(base_parametre *param, QWidget *parent=0)</div><div class="ttdef"><b>Definition:</b> <a href="base__parametre__widget_8cpp_source.html#l00018">base_parametre_widget.cpp:18</a></div></div>
+<div class="ttc" id="classbase__parametre__widget_html_a208b72015370880efedad76aee4cc461"><div class="ttname"><a href="classbase__parametre__widget.html#a208b72015370880efedad76aee4cc461">base_parametre_widget::mouseReleaseEvent</a></div><div class="ttdeci">void mouseReleaseEvent(QMouseEvent *e)</div><div class="ttdef"><b>Definition:</b> <a href="base__parametre__widget_8cpp_source.html#l00163">base_parametre_widget.cpp:163</a></div></div>
+<div class="ttc" id="classbase__parametre__widget_html_a567627185997bd326888f7eb19f12054"><div class="ttname"><a href="classbase__parametre__widget.html#a567627185997bd326888f7eb19f12054">base_parametre_widget::m_configuration_bouton</a></div><div class="ttdeci">QPushButton * m_configuration_bouton</div><div class="ttdef"><b>Definition:</b> <a href="base__parametre__widget_8h_source.html#l00038">base_parametre_widget.h:38</a></div></div>
+<div class="ttc" id="classbase__parametre__widget_html_a11be4f7e775052c0f6f3d6cfc6ae242c"><div class="ttname"><a href="classbase__parametre__widget.html#a11be4f7e775052c0f6f3d6cfc6ae242c">base_parametre_widget::on_aide</a></div><div class="ttdeci">void on_aide()</div><div class="ttdef"><b>Definition:</b> <a href="base__parametre__widget_8cpp_source.html#l00146">base_parametre_widget.cpp:146</a></div></div>
+<div class="ttc" id="classbase__parametre_html_a091ac3f7f7229a65c9f79390bb3dac6f"><div class="ttname"><a href="classbase__parametre.html#a091ac3f7f7229a65c9f79390bb3dac6f">base_parametre::get_nom</a></div><div class="ttdeci">QString get_nom() const </div><div class="ttdef"><b>Definition:</b> <a href="base__parametre_8cpp_source.html#l00044">base_parametre.cpp:44</a></div></div>
+<div class="ttc" id="base__parametre__widget_8h_html"><div class="ttname"><a href="base__parametre__widget_8h.html">base_parametre_widget.h</a></div></div>
+<div class="ttc" id="noeud__parametre_8h_html"><div class="ttname"><a href="noeud__parametre_8h.html">noeud_parametre.h</a></div><div class="ttdoc">Fichier de déclaration de la classe noeud_parametre. </div></div>
+<div class="ttc" id="parametre__aide__message__box_8h_html"><div class="ttname"><a href="parametre__aide__message__box_8h.html">parametre_aide_message_box.h</a></div></div>
+<div class="ttc" id="classbase__parametre__widget_html_a6176994fe6bbd762b073e8854ee1a5cd"><div class="ttname"><a href="classbase__parametre__widget.html#a6176994fe6bbd762b073e8854ee1a5cd">base_parametre_widget::m_aide_bouton</a></div><div class="ttdeci">QPushButton * m_aide_bouton</div><div class="ttdef"><b>Definition:</b> <a href="base__parametre__widget_8h_source.html#l00039">base_parametre_widget.h:39</a></div></div>
+<div class="ttc" id="classbase__parametre__widget_html_a25ff35712a1837f1a91e307bd52ba801"><div class="ttname"><a href="classbase__parametre__widget.html#a25ff35712a1837f1a91e307bd52ba801">base_parametre_widget::m_parametre</a></div><div class="ttdeci">base_parametre * m_parametre</div><div class="ttdef"><b>Definition:</b> <a href="base__parametre__widget_8h_source.html#l00037">base_parametre_widget.h:37</a></div></div>
+<div class="ttc" id="base__fonction_8h_html"><div class="ttname"><a href="base__fonction_8h.html">base_fonction.h</a></div><div class="ttdoc">Déclaration de la classe base_fonction. </div></div>
 <div class="ttc" id="classparametre__aide__message__box_html"><div class="ttname"><a href="classparametre__aide__message__box.html">parametre_aide_message_box</a></div><div class="ttdef"><b>Definition:</b> <a href="parametre__aide__message__box_8h_source.html#l00008">parametre_aide_message_box.h:8</a></div></div>
+<div class="ttc" id="classbase__parametre_html_aeec324199a052ddfa5b527556322547f"><div class="ttname"><a href="classbase__parametre.html#aeec324199a052ddfa5b527556322547f">base_parametre::inverser_configuration_visibilite</a></div><div class="ttdeci">void inverser_configuration_visibilite()</div><div class="ttdef"><b>Definition:</b> <a href="base__parametre_8cpp_source.html#l00209">base_parametre.cpp:209</a></div></div>
+<div class="ttc" id="classbase__parametre_html_a0cc29100a25c6f277986f5be55a4e4af"><div class="ttname"><a href="classbase__parametre.html#a0cc29100a25c6f277986f5be55a4e4af">base_parametre::get_valeur_courte</a></div><div class="ttdeci">QString get_valeur_courte() const </div><div class="ttdef"><b>Definition:</b> <a href="base__parametre_8cpp_source.html#l00054">base_parametre.cpp:54</a></div></div>
+<div class="ttc" id="classbase__parametre__widget_html_a31796da6c046e8616994c323c710da89"><div class="ttname"><a href="classbase__parametre__widget.html#a31796da6c046e8616994c323c710da89">base_parametre_widget::informer_verrouillage_change</a></div><div class="ttdeci">void informer_verrouillage_change()</div><div class="ttdef"><b>Definition:</b> <a href="base__parametre__widget_8cpp_source.html#l00036">base_parametre_widget.cpp:36</a></div></div>
+<div class="ttc" id="classbase__parametre__widget_html_a111b8e68e610e34757d0722e04a7b8ed"><div class="ttname"><a href="classbase__parametre__widget.html#a111b8e68e610e34757d0722e04a7b8ed">base_parametre_widget::aide</a></div><div class="ttdeci">void aide()</div><div class="ttdef"><b>Definition:</b> <a href="base__parametre__widget_8cpp_source.html#l00105">base_parametre_widget.cpp:105</a></div></div>
+<div class="ttc" id="classbase__parametre__widget_html_abca01598dd3c1bab7f7866f0d229779a"><div class="ttname"><a href="classbase__parametre__widget.html#abca01598dd3c1bab7f7866f0d229779a">base_parametre_widget::mouseDoubleClickEvent</a></div><div class="ttdeci">void mouseDoubleClickEvent(QMouseEvent *e)</div><div class="ttdef"><b>Definition:</b> <a href="base__parametre__widget_8cpp_source.html#l00157">base_parametre_widget.cpp:157</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Généré le Mercredi 8 Février 2017 09:50:11 pour Emgine par &#160;<a href="http://www.doxygen.org/index.html">
+Généré le Mercredi 8 Février 2017 09:53:35 pour Emgine par &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.6
 </small></address>

@@ -1,9 +1,20 @@
 #ifndef BASE_ELEMENT_H
 #define BASE_ELEMENT_H
 
+/** \file base_element.h
+ * \brief Fichier de déclaration de la classe bae_element.
+ * \author Sébastien Angibaud
+ */
+
 #include "type_element.h"
+
 #include <QString>
 
+/**
+ * \class base_element
+ * \brief Classe décrivant un élément de texte. Cela peut être un caractère, un entier, un booléen ou une chaine de caractère.
+ * \author Sébastien Angibaud
+ */
 class base_element
 {
     public:
@@ -23,11 +34,19 @@ class base_element
         bool operator <(const base_element& e) const;
 
     private:
+        /** \brief Le type de l'élément. */
         type_element m_type;
 
+        /** \brief La valeur booléenne de l'élément. */
         bool m_booleen;
+
+        /** \brief La valeur entière de l'élément. */
         int m_entier;
+
+        /** \brief La valeur de type caractère de l'élément. */
         QChar m_caractere;
+
+        /** \brief La valeur de string de l'élément. */
         QString m_string;
 };
 

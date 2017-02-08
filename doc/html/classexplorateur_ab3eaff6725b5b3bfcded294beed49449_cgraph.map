@@ -1,0 +1,7 @@
+<map id="explorateur::on_couper" name="explorateur::on_couper">
+<area shape="rect" id="node2" href="$classexplorateur.html#a3826d13d8738c168bc558eb31da80c27" title="explorateur::creer\l_copie" alt="" coords="224,49,347,90"/>
+<area shape="rect" id="node6" href="$classbase__noeud.html#ae78124477ea5148f16c2da42ac766f4c" title="Retourne l&#39;objet sélectionnable associé au noeud. " alt="" coords="209,115,362,141"/>
+<area shape="rect" id="node3" href="$classobjet__selectionnable.html#abed9a58bb39d15353db880fbd0808714" title="objet_selectionnable\l::est_conteneur" alt="" coords="601,7,741,49"/>
+<area shape="rect" id="node4" href="$classobjet__selectionnable.html#ab809d020155b7fec48ff3adbe15c9b65" title="objet_selectionnable\l::get_conteneur" alt="" coords="411,49,551,90"/>
+<area shape="rect" id="node5" href="$classfonctions__conteneur.html#a199dde0697eb91a9e54c1dfecb536a88" title="fonctions_conteneur\l::sauvegarder" alt="" coords="412,114,551,155"/>
+</map>

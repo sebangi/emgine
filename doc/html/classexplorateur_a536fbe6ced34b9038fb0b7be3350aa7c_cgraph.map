@@ -1,0 +1,51 @@
+<map id="explorateur::ajouter_menu_projet" name="explorateur::ajouter_menu_projet">
+<area shape="rect" id="node2" href="$classexplorateur.html#a605b2ce839fb7f8c314e69a0c0239e27" title="explorateur::ajouter\l_menu_enregistrement" alt="" coords="192,162,347,203"/>
+<area shape="rect" id="node12" href="$classexplorateur.html#a959592d5ad501ab3272a898720cc8984" title="explorateur::ajouter\l_menu_verrouillage" alt="" coords="202,1070,337,1111"/>
+<area shape="rect" id="node21" href="$classexplorateur.html#ad6ea829268272e407807e82a039eee42" title="explorateur::ajouter\l_menu_ajout_fonction" alt="" coords="195,866,344,907"/>
+<area shape="rect" id="node27" href="$classexplorateur.html#a57e9b7f934e2a1e699d816d144fb2338" title="explorateur::ajouter\l_menu_copier_coller" alt="" coords="199,599,340,641"/>
+<area shape="rect" id="node48" href="$classexplorateur.html#a3003b185d8bbe1c1b87daad6fba7f6a0" title="explorateur::ajouter\l_menu_supprimer_projet" alt="" coords="187,453,351,494"/>
+<area shape="rect" id="node3" href="$classobjet__selectionnable.html#ab48a75e720955aebe27f720dfaa5e78e" title="objet_selectionnable\l::get_projet" alt="" coords="1481,238,1621,279"/>
+<area shape="rect" id="node5" href="$classprojet.html#a93d1671ebf1548df8908020a306b0ff1" title="projet::est_enregistrable" alt="" coords="425,93,586,120"/>
+<area shape="rect" id="node8" href="$classexplorateur.html#a73040f7ee6da27e4396e15c7df7ace5c" title="explorateur::on_enregistrer" alt="" coords="417,144,593,171"/>
+<area shape="rect" id="node10" href="$classexplorateur.html#aa6321767a6f4a8afaf43f1ea952528df" title="explorateur::on_enregistrer_sous" alt="" coords="400,195,611,221"/>
+<area shape="rect" id="node11" href="$classexplorateur.html#a897a29fae3bb3df4c5129ea820774334" title="explorateur::on_dupliquer\l_projet" alt="" coords="422,246,589,287"/>
+<area shape="rect" id="node4" href="$classobjet__selectionnable.html#a97e33c61983d5c7811e8bacff8f114c4" title="objet_selectionnable\l::est_projet" alt="" coords="2059,299,2199,341"/>
+<area shape="rect" id="node6" href="$classprojet.html#a6f3595b0a0025ddf250561ebbfb3726b" title="projet::est_nouveau" alt="" coords="668,93,804,120"/>
+<area shape="rect" id="node7" href="$classprojet.html#aed2138f12de82e59a3c88341abc8240e" title="projet::est_modifie" alt="" coords="671,43,801,69"/>
+<area shape="rect" id="node9" href="$classbase__noeud.html#ae78124477ea5148f16c2da42ac766f4c" title="Retourne l&#39;objet sélectionnable associé au noeud. " alt="" coords="659,523,813,549"/>
+<area shape="rect" id="node13" href="$classobjet__selectionnable.html#a1cf41e42861e0b033d2704802905e81a" title="objet_selectionnable\l::est_verrouille_avec\l_parent" alt="" coords="665,1088,807,1144"/>
+<area shape="rect" id="node15" href="$classobjet__selectionnable.html#ab5d7e0b9f000ba34d9d60b36590f1fcf" title="objet_selectionnable\l::est_fonction" alt="" coords="435,1005,575,1046"/>
+<area shape="rect" id="node16" href="$classexplorateur.html#add77f5981057fc14b9bbac37c251a467" title="explorateur::on_verrouiller\l_selectionnable" alt="" coords="420,1238,591,1279"/>
+<area shape="rect" id="node20" href="$classobjet__selectionnable.html#a57341a9bf3dbc66f4ad4414183b0d27c" title="objet_selectionnable\l::parents_verrouilles" alt="" coords="435,1070,575,1111"/>
+<area shape="rect" id="node14" href="$classobjet__selectionnable.html#a8b9cf156597fe8cc1b8f9408e1bfee8c" title="objet_selectionnable\l::est_verrouille" alt="" coords="871,1095,1011,1137"/>
+<area shape="rect" id="node17" href="$classobjet__selectionnable.html#a028ac895965858e0e8e8e2cc25e8323c" title="objet_selectionnable\l::inverser_verrouillage" alt="" coords="1069,1170,1219,1211"/>
+<area shape="rect" id="node18" href="$classobjet__selectionnable.html#a5d39343f43293805a0b60e8520687d87" title="objet_selectionnable\l::set_verrouille" alt="" coords="1681,1066,1821,1107"/>
+<area shape="rect" id="node19" href="$classobjet__selectionnable.html#a9f76b8e89231a79c3fc840af874bd868" title="objet_selectionnable\l::modifier" alt="" coords="1870,347,2010,389"/>
+<area shape="rect" id="node22" href="$classobjet__selectionnable.html#abed9a58bb39d15353db880fbd0808714" title="objet_selectionnable\l::est_conteneur" alt="" coords="1481,606,1621,647"/>
+<area shape="rect" id="node23" href="$classexplorateur.html#a9f87ebe9efe7486d6e781556238feb4e" title="explorateur::on_ajout\l_source" alt="" coords="434,706,577,747"/>
+<area shape="rect" id="node25" href="$classexplorateur.html#a513ccd6238459ae6982973a5b671a63b" title="explorateur::on_ajout\l_fonction_conversion" alt="" coords="433,771,578,813"/>
+<area shape="rect" id="node26" href="$classexplorateur.html#aad600593e3982f73bd876a32cc4b8381" title="explorateur::on_ajout\l_sortie" alt="" coords="434,837,577,878"/>
+<area shape="rect" id="node24" href="$classobjet__selectionnable.html#ab809d020155b7fec48ff3adbe15c9b65" title="objet_selectionnable\l::get_conteneur" alt="" coords="871,839,1011,881"/>
+<area shape="rect" id="node28" href="$classexplorateur.html#ab3b5326853acdf90c798ad2b8e3dfbb8" title="explorateur::on_copier" alt="" coords="430,515,581,541"/>
+<area shape="rect" id="node31" href="$classexplorateur.html#ab3eaff6725b5b3bfcded294beed49449" title="explorateur::on_couper" alt="" coords="428,464,583,491"/>
+<area shape="rect" id="node32" href="$classobjet__selectionnable.html#ab2b3d6e89c6a33d83d79bafd6e36a671" title="objet_selectionnable\l::a_ancetre" alt="" coords="435,641,575,682"/>
+<area shape="rect" id="node33" href="$classexplorateur.html#a5394562c6a7168f624d9ee1f7a2736fa" title="explorateur::on_coller" alt="" coords="432,565,579,592"/>
+<area shape="rect" id="node29" href="$classexplorateur.html#a3826d13d8738c168bc558eb31da80c27" title="explorateur::creer\l_copie" alt="" coords="675,457,797,498"/>
+<area shape="rect" id="node30" href="$classfonctions__conteneur.html#a199dde0697eb91a9e54c1dfecb536a88" title="fonctions_conteneur\l::sauvegarder" alt="" coords="872,398,1011,439"/>
+<area shape="rect" id="node34" href="$classexplorateur.html#a3ed6f16c0e32b2eb1750e59feacb52b0" title="explorateur::faire\l_couper" alt="" coords="677,679,795,721"/>
+<area shape="rect" id="node37" href="$classexplorateur.html#aacc4e1d3c87901d284230bdd1bbb4c26" title="explorateur::faire\l_coller" alt="" coords="677,574,795,615"/>
+<area shape="rect" id="node35" href="$classfonctions__conteneur.html#a0e66abe2fb75854bdf225621ee4f7fb4" title="fonctions_conteneur\l::fonctions_const_begin" alt="" coords="861,633,1021,674"/>
+<area shape="rect" id="node36" href="$classfonctions__conteneur.html#ad9d7f30426cbfab3d39505bb94b1f0d5" title="fonctions_conteneur\l::fonctions_const_end" alt="" coords="866,698,1017,739"/>
+<area shape="rect" id="node38" href="$classfonctions__conteneur.html#aeb43e1fd3929d565f33b34db7ce8c583" title="fonctions_conteneur\l::charger_fonctions" alt="" coords="872,515,1011,557"/>
+<area shape="rect" id="node39" href="$classfonctions__conteneur.html#a2e241972228c75c5550287bd0fa6501e" title="fonctions_conteneur\l::charger_fonction" alt="" coords="1075,545,1213,586"/>
+<area shape="rect" id="node40" href="$classbibliotheque__fonctions.html#a97e2db5603fe4267df7ace47f110b6e0" title="bibliotheque_fonctions\l::get_fonction" alt="" coords="1269,545,1419,586"/>
+<area shape="rect" id="node41" href="$classbase__fonction.html#a693965131515a05876dd55562cba2757" title="base_fonction::charger" alt="" coords="1267,956,1421,983"/>
+<area shape="rect" id="node47" href="$classfonctions__conteneur.html#a5498a158c4d4f16fc63e54809ce381d5" title="fonctions_conteneur\l::ajouter_fonction" alt="" coords="1275,347,1413,389"/>
+<area shape="rect" id="node42" href="$classbase__fonction.html#aac434731c9e5d95398d3baae6c74d447" title="base_fonction::set\l_niveau_visibilite" alt="" coords="1686,974,1815,1015"/>
+<area shape="rect" id="node43" href="$classbase__fonction.html#a58252a04c7afea216c29d13132b0d6a2" title="base_fonction::set\l_est_active" alt="" coords="1486,949,1615,990"/>
+<area shape="rect" id="node44" href="$classbase__fonction.html#aecefb6e946e43e9d6dc835165ac7e265" title="Retourne le type de la fonction. " alt="" coords="1470,832,1631,859"/>
+<area shape="rect" id="node45" href="$classobjet__selectionnable.html#a8f3ce3c0cf4e85da9115b7517f9e0e2d" title="objet_selectionnable\l::charger" alt="" coords="1481,1066,1621,1107"/>
+<area shape="rect" id="node46" href="$classbase__fonction.html#a96c37e73c9822d7e9b483ce5fa37bd16" title="base_fonction::charger\l_parametres" alt="" coords="1473,883,1628,925"/>
+<area shape="rect" id="node49" href="$classexplorateur.html#af384b08871362ec45d8554e4fffa1e0d" title="explorateur::on_fermer\l_projet" alt="" coords="429,331,581,373"/>
+<area shape="rect" id="node50" href="$classprojet.html#adbb06eb069730cd0c973881af783b967" title="projet::fermer" alt="" coords="687,347,785,373"/>
+</map>

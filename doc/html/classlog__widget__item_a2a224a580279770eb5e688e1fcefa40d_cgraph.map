@@ -1,0 +1,4 @@
+<map id="log_widget_item::init" name="log_widget_item::init">
+<area shape="rect" id="node2" href="$classlog__compilation.html#a5de84eabf90a75391b2ceccb58084b17" title="Retourne la couleur associée au message (dépendant du type). " alt="" coords="195,5,333,46"/>
+<area shape="rect" id="node3" href="$classlog__compilation.html#afae502578c98e3603fcc754478296159" title="Calcul et retourne le message du log. " alt="" coords="195,70,333,111"/>
+</map>

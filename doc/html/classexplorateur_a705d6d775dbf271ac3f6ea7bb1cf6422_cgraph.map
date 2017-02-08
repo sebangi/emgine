@@ -1,0 +1,8 @@
+<map id="explorateur::ajouter_menu_supprimer_fonction" name="explorateur::ajouter_menu_supprimer_fonction">
+<area shape="rect" id="node2" href="$classexplorateur.html#a33c04d3c07d1d2698bc9b73c1a82c3a1" title="Le bouton fermer est activé. " alt="" coords="233,62,405,103"/>
+<area shape="rect" id="node6" href="$classobjet__selectionnable.html#a1cf41e42861e0b033d2704802905e81a" title="objet_selectionnable\l::est_verrouille_avec\l_parent" alt="" coords="247,157,390,213"/>
+<area shape="rect" id="node3" href="$classbase__noeud.html#ae78124477ea5148f16c2da42ac766f4c" title="Retourne l&#39;objet sélectionnable associé au noeud. " alt="" coords="458,5,611,32"/>
+<area shape="rect" id="node4" href="$classobjet__selectionnable.html#abed9a58bb39d15353db880fbd0808714" title="objet_selectionnable\l::est_conteneur" alt="" coords="465,57,605,98"/>
+<area shape="rect" id="node5" href="$classbase__fonction.html#acee6c2c0170e7a1bf8c0df49424ef2ba" title="Retourne le nom de la fonction. " alt="" coords="454,123,615,149"/>
+<area shape="rect" id="node7" href="$classobjet__selectionnable.html#a8b9cf156597fe8cc1b8f9408e1bfee8c" title="objet_selectionnable\l::est_verrouille" alt="" coords="465,174,605,215"/>
+</map>

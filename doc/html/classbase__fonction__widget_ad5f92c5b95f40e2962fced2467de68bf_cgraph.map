@@ -1,5 +1,10 @@
 <map id="base_fonction_widget::on_externe_activation_fonction_change" name="base_fonction_widget::on_externe_activation_fonction_change">
-<area shape="rect" id="node2" href="$classbase__fonction__widget.html#a548a6571fb757666807a6b3e95485dea" title="Mise à jour du bouton d&#39;activation. " alt="" coords="213,5,361,46"/>
-<area shape="rect" id="node3" href="$classbase__fonction__widget.html#a9e330f5ec8c7eac285d1c78cc82e0ea0" title="Mise à jour du nom de l&#39;objet. " alt="" coords="211,70,362,111"/>
-<area shape="rect" id="node4" href="$classbase__fonction.html#adfc285cf65ced571b1e1ff6b59439695" title="Retourne le type de la fonction. " alt="" coords="411,77,573,104"/>
+<area shape="rect" id="node2" href="$classbase__fonction__widget.html#a548a6571fb757666807a6b3e95485dea" title="Mise à jour du bouton d&#39;activation. " alt="" coords="213,129,361,170"/>
+<area shape="rect" id="node8" href="$classbase__fonction__widget.html#a9e330f5ec8c7eac285d1c78cc82e0ea0" title="Mise à jour du nom de l&#39;objet. " alt="" coords="211,219,362,261"/>
+<area shape="rect" id="node3" href="$classobjet__selectionnable.html#a1cf41e42861e0b033d2704802905e81a" title="objet_selectionnable\l::est_verrouille_avec\l_parent" alt="" coords="421,29,563,85"/>
+<area shape="rect" id="node5" href="$classobjet__selectionnable.html#ada0d1bda8b5fdc1f81979720d40fb840" title="objet_selectionnable\l::est_active_avec_parent" alt="" coords="621,161,789,202"/>
+<area shape="rect" id="node7" href="$classobjet__selectionnable.html#a76587773c723728d21583bb87e995daa" title="objet_selectionnable\l::parents_actifs" alt="" coords="422,161,562,202"/>
+<area shape="rect" id="node4" href="$classobjet__selectionnable.html#a8b9cf156597fe8cc1b8f9408e1bfee8c" title="objet_selectionnable\l::est_verrouille" alt="" coords="635,37,775,78"/>
+<area shape="rect" id="node6" href="$classobjet__selectionnable.html#a9f9e2ccc04e3b2a55d7b51b85366488f" title="objet_selectionnable\l::est_active" alt="" coords="838,161,978,202"/>
+<area shape="rect" id="node9" href="$classbase__fonction.html#aecefb6e946e43e9d6dc835165ac7e265" title="Retourne le type de la fonction. " alt="" coords="411,277,573,304"/>
 </map>

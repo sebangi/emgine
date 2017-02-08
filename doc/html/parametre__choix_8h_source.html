@@ -38,6 +38,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Recherche');
     <ul class="tablist">
       <li><a href="index.html"><span>Page&#160;principale</span></a></li>
       <li><a href="pages.html"><span>Pages&#160;associées</span></a></li>
+      <li><a href="modules.html"><span>Modules</span></a></li>
       <li><a href="annotated.html"><span>Classes</span></a></li>
       <li class="current"><a href="files.html"><span>Fichiers</span></a></li>
       <li>
@@ -61,6 +62,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Recherche');
   <div id="navrow2" class="tabs2">
     <ul class="tablist">
       <li><a href="files.html"><span>Liste&#160;des&#160;fichiers</span></a></li>
+      <li><a href="globals.html"><span>Membres&#160;de&#160;fichier</span></a></li>
     </ul>
   </div>
 <!-- window showing the filter options -->
@@ -68,7 +70,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Recherche');
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>Tout</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Fonctions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Définitions de type</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Énumérations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Pages</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>Tout</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Espaces de nommage</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Fichiers</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Fonctions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Définitions de type</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Énumérations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Valeurs énumérées</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&#160;</span>Groupes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(10)"><span class="SelectionMark">&#160;</span>Pages</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -87,10 +89,10 @@ var searchBox = new SearchBox("searchBox", "search",false,'Recherche');
 <div class="title">parametre_choix.h</div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#ifndef PARAMETRE_CHOIX_H</span></div>
+<a href="parametre__choix_8h.html">Aller à la documentation de ce fichier.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#ifndef PARAMETRE_CHOIX_H</span></div>
 <div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#define PARAMETRE_CHOIX_H</span></div>
 <div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="preprocessor"></span></div>
-<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &quot;entete/projet/base_parametre.h&quot;</span></div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="base__parametre_8h.html">entete/projet/base_parametre.h</a>&quot;</span></div>
 <div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#include &lt;QStringList&gt;</span></div>
 <div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;</div>
 <div class="line"><a name="l00011"></a><span class="lineno"><a class="line" href="classparametre__choix.html">   11</a></span>&#160;<span class="keyword">class </span><a class="code" href="classparametre__choix.html">parametre_choix</a> : <span class="keyword">public</span> <a class="code" href="classbase__parametre.html">base_parametre</a></div>
@@ -98,30 +100,39 @@ var searchBox = new SearchBox("searchBox", "search",false,'Recherche');
 <div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;        Q_OBJECT</div>
 <div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;</div>
 <div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;    <span class="keyword">public</span>:</div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;        <a class="code" href="classparametre__choix.html">parametre_choix</a>( <a class="code" href="classobjet__selectionnable.html">objet_selectionnable</a> * parent, QString nom, QString aide,</div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;                         type_mode_contenu_parametre mode_contenu_parametre,</div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;                         type_mode_configuration_visibilite mode_configuration_visibilite,</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;        <a class="code" href="classparametre__choix.html#a5a2e76f23ae43509378f6ab30d2a5887">parametre_choix</a>( <a class="code" href="classobjet__selectionnable.html">objet_selectionnable</a> * parent, QString nom, QString aide,</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;                         <a class="code" href="classbase__parametre.html#a64ac5a31d511d54e78437d8f3aff9c31">type_mode_contenu_parametre</a> mode_contenu_parametre,</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;                         <a class="code" href="classbase__parametre.html#af9c2486b3b357c96d118835057f8adae">type_mode_configuration_visibilite</a> mode_configuration_visibilite,</div>
 <div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;                         <a class="code" href="classbase__parametre.html#a9e5b987e53d5cc9d49a3e2637b6b61b9">type_algorithme</a> algorithme,</div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;                         <span class="keyword">const</span> QStringList &amp; get_choix, <span class="keywordtype">bool</span> multiple_selection);</div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;        ~<a class="code" href="classparametre__choix.html">parametre_choix</a>();</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;                         <span class="keyword">const</span> QStringList &amp; <a class="code" href="classparametre__choix.html#a40fec67842f8bb85a0fb07f9e688fe10">get_choix</a>, <span class="keywordtype">bool</span> <a class="code" href="classparametre__choix.html#a3a3e6af284461ca57d663ead37fcd812">multiple_selection</a>);</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;        <a class="code" href="classparametre__choix.html#afd115af1faf09780d43aebe05071ca31">~parametre_choix</a>();</div>
 <div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;</div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;        QStringList get_choix() <span class="keyword">const</span>;</div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;        <span class="keywordtype">bool</span> multiple_selection() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;        QStringList <a class="code" href="classparametre__choix.html#a40fec67842f8bb85a0fb07f9e688fe10">get_choix</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;        <span class="keywordtype">bool</span> <a class="code" href="classparametre__choix.html#a3a3e6af284461ca57d663ead37fcd812">multiple_selection</a>() <span class="keyword">const</span>;</div>
 <div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;</div>
 <div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;    <span class="keyword">private</span>:</div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;        QStringList m_choix;</div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;        <span class="keywordtype">bool</span> m_multiple_selection;</div>
+<div class="line"><a name="l00027"></a><span class="lineno"><a class="line" href="classparametre__choix.html#a4cbf97ad93b1867e2497a6efefdf1da7">   27</a></span>&#160;        QStringList <a class="code" href="classparametre__choix.html#a4cbf97ad93b1867e2497a6efefdf1da7">m_choix</a>;</div>
+<div class="line"><a name="l00028"></a><span class="lineno"><a class="line" href="classparametre__choix.html#a27281d923a4cf369ebaa33a6fe3a13b8">   28</a></span>&#160;        <span class="keywordtype">bool</span> <a class="code" href="classparametre__choix.html#a27281d923a4cf369ebaa33a6fe3a13b8">m_multiple_selection</a>;</div>
 <div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;};</div>
 <div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;</div>
 <div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;<span class="preprocessor">#endif // PARAMETRE_CHOIX_H</span></div>
+<div class="ttc" id="base__parametre_8h_html"><div class="ttname"><a href="base__parametre_8h.html">base_parametre.h</a></div></div>
+<div class="ttc" id="classparametre__choix_html_a40fec67842f8bb85a0fb07f9e688fe10"><div class="ttname"><a href="classparametre__choix.html#a40fec67842f8bb85a0fb07f9e688fe10">parametre_choix::get_choix</a></div><div class="ttdeci">QStringList get_choix() const </div><div class="ttdef"><b>Definition:</b> <a href="parametre__choix_8cpp_source.html#l00023">parametre_choix.cpp:23</a></div></div>
+<div class="ttc" id="classparametre__choix_html_a27281d923a4cf369ebaa33a6fe3a13b8"><div class="ttname"><a href="classparametre__choix.html#a27281d923a4cf369ebaa33a6fe3a13b8">parametre_choix::m_multiple_selection</a></div><div class="ttdeci">bool m_multiple_selection</div><div class="ttdef"><b>Definition:</b> <a href="parametre__choix_8h_source.html#l00028">parametre_choix.h:28</a></div></div>
 <div class="ttc" id="classbase__parametre_html"><div class="ttname"><a href="classbase__parametre.html">base_parametre</a></div><div class="ttdoc">Classe décrivant un parametre d&#39;une fonction. </div><div class="ttdef"><b>Definition:</b> <a href="base__parametre_8h_source.html#l00020">base_parametre.h:20</a></div></div>
+<div class="ttc" id="classparametre__choix_html_a3a3e6af284461ca57d663ead37fcd812"><div class="ttname"><a href="classparametre__choix.html#a3a3e6af284461ca57d663ead37fcd812">parametre_choix::multiple_selection</a></div><div class="ttdeci">bool multiple_selection() const </div><div class="ttdef"><b>Definition:</b> <a href="parametre__choix_8cpp_source.html#l00028">parametre_choix.cpp:28</a></div></div>
 <div class="ttc" id="classparametre__choix_html"><div class="ttname"><a href="classparametre__choix.html">parametre_choix</a></div><div class="ttdoc">Classe décrivant un parametre de type choix. </div><div class="ttdef"><b>Definition:</b> <a href="parametre__choix_8h_source.html#l00011">parametre_choix.h:11</a></div></div>
 <div class="ttc" id="classobjet__selectionnable_html"><div class="ttname"><a href="classobjet__selectionnable.html">objet_selectionnable</a></div><div class="ttdef"><b>Definition:</b> <a href="objet__selectionnable_8h_source.html#l00011">objet_selectionnable.h:11</a></div></div>
+<div class="ttc" id="classbase__parametre_html_af9c2486b3b357c96d118835057f8adae"><div class="ttname"><a href="classbase__parametre.html#af9c2486b3b357c96d118835057f8adae">base_parametre::type_mode_configuration_visibilite</a></div><div class="ttdeci">type_mode_configuration_visibilite</div><div class="ttdef"><b>Definition:</b> <a href="base__parametre_8h_source.html#l00026">base_parametre.h:26</a></div></div>
+<div class="ttc" id="classbase__parametre_html_a64ac5a31d511d54e78437d8f3aff9c31"><div class="ttname"><a href="classbase__parametre.html#a64ac5a31d511d54e78437d8f3aff9c31">base_parametre::type_mode_contenu_parametre</a></div><div class="ttdeci">type_mode_contenu_parametre</div><div class="ttdef"><b>Definition:</b> <a href="base__parametre_8h_source.html#l00033">base_parametre.h:33</a></div></div>
+<div class="ttc" id="classparametre__choix_html_a4cbf97ad93b1867e2497a6efefdf1da7"><div class="ttname"><a href="classparametre__choix.html#a4cbf97ad93b1867e2497a6efefdf1da7">parametre_choix::m_choix</a></div><div class="ttdeci">QStringList m_choix</div><div class="ttdef"><b>Definition:</b> <a href="parametre__choix_8h_source.html#l00027">parametre_choix.h:27</a></div></div>
+<div class="ttc" id="classparametre__choix_html_a5a2e76f23ae43509378f6ab30d2a5887"><div class="ttname"><a href="classparametre__choix.html#a5a2e76f23ae43509378f6ab30d2a5887">parametre_choix::parametre_choix</a></div><div class="ttdeci">parametre_choix(objet_selectionnable *parent, QString nom, QString aide, type_mode_contenu_parametre mode_contenu_parametre, type_mode_configuration_visibilite mode_configuration_visibilite, type_algorithme algorithme, const QStringList &amp;get_choix, bool multiple_selection)</div><div class="ttdef"><b>Definition:</b> <a href="parametre__choix_8cpp_source.html#l00007">parametre_choix.cpp:7</a></div></div>
 <div class="ttc" id="classbase__parametre_html_a9e5b987e53d5cc9d49a3e2637b6b61b9"><div class="ttname"><a href="classbase__parametre.html#a9e5b987e53d5cc9d49a3e2637b6b61b9">base_parametre::type_algorithme</a></div><div class="ttdeci">type_algorithme</div><div class="ttdoc">Enumération décrivant les différents algorithmes pour l&#39;excution des paramètres. </div><div class="ttdef"><b>Definition:</b> <a href="base__parametre_8h_source.html#l00040">base_parametre.h:40</a></div></div>
+<div class="ttc" id="classparametre__choix_html_afd115af1faf09780d43aebe05071ca31"><div class="ttname"><a href="classparametre__choix.html#afd115af1faf09780d43aebe05071ca31">parametre_choix::~parametre_choix</a></div><div class="ttdeci">~parametre_choix()</div><div class="ttdef"><b>Definition:</b> <a href="parametre__choix_8cpp_source.html#l00018">parametre_choix.cpp:18</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Généré le Mercredi 8 Février 2017 09:50:11 pour Emgine par &#160;<a href="http://www.doxygen.org/index.html">
+Généré le Mercredi 8 Février 2017 09:53:35 pour Emgine par &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.6
 </small></address>

@@ -1,12 +1,24 @@
 #ifndef LIGNE_H
 #define LIGNE_H
 
+/** \file ligne.h
+ * \brief Fichier de déclaration de la classe ligne.
+ * \author Sébastien Angibaud
+ */
+
 #include "entete/element/mot.h"
+
 #include <vector>
 
+/**
+ * \class ligne
+ * \brief Classe décrivant une ligne, i.e. un tableau de mots.
+ * \author Sébastien Angibaud
+ */
 class ligne : public std::vector< mot >
 {
     private:
+        /** \brief Alias de la classe mère. */
         typedef std::vector< mot > super;
 
     public:
@@ -14,6 +26,7 @@ class ligne : public std::vector< mot >
         ligne(const QString &valeur, const QString & separateur_mot = " ");
 
         void ajouter_mot( const mot & m);
+
         QString to_string() const;
         QString to_string_lisible() const;
 
@@ -23,8 +36,10 @@ class ligne : public std::vector< mot >
         bool operator<(const ligne & l) const;
 
     private:
+        /** \brief Le séparateur de mot. */
         QString m_separateur_mot;
 
+        /** \brief Le nombre de caractères dans la ligne. */
         size_type m_nb_caracteres;
 };
 

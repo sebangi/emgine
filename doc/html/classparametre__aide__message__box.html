@@ -38,6 +38,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Recherche');
     <ul class="tablist">
       <li><a href="index.html"><span>Page&#160;principale</span></a></li>
       <li><a href="pages.html"><span>Pages&#160;associées</span></a></li>
+      <li><a href="modules.html"><span>Modules</span></a></li>
       <li class="current"><a href="annotated.html"><span>Classes</span></a></li>
       <li><a href="files.html"><span>Fichiers</span></a></li>
       <li>
@@ -71,7 +72,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Recherche');
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>Tout</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Fonctions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Définitions de type</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Énumérations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Pages</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>Tout</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Espaces de nommage</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Fichiers</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Fonctions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Définitions de type</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Énumérations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Valeurs énumérées</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&#160;</span>Groupes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(10)"><span class="SelectionMark">&#160;</span>Pages</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -91,48 +92,145 @@ var searchBox = new SearchBox("searchBox", "search",false,'Recherche');
 <div class="title">Référence de la classe parametre_aide_message_box</div>  </div>
 </div><!--header-->
 <div class="contents">
+
+<p><code>#include &lt;<a class="el" href="parametre__aide__message__box_8h_source.html">parametre_aide_message_box.h</a>&gt;</code></p>
 <div class="dynheader">
 Graphe d'héritage de parametre_aide_message_box:</div>
 <div class="dyncontent">
 <div class="center"><img src="classparametre__aide__message__box__inherit__graph.png" border="0" usemap="#parametre__aide__message__box_inherit__map" alt="Inheritance graph"/></div>
+<map name="parametre__aide__message__box_inherit__map" id="parametre__aide__message__box_inherit__map">
+</map>
 <center><span class="legend">[<a href="graph_legend.html">légende</a>]</span></center></div>
 <div class="dynheader">
 Graphe de collaboration de parametre_aide_message_box:</div>
 <div class="dyncontent">
 <div class="center"><img src="classparametre__aide__message__box__coll__graph.png" border="0" usemap="#parametre__aide__message__box_coll__map" alt="Collaboration graph"/></div>
 <map name="parametre__aide__message__box_coll__map" id="parametre__aide__message__box_coll__map">
-<area shape="rect" id="node3" href="classbase__parametre.html" title="Classe décrivant un parametre d&#39;une fonction. " alt="" coords="123,344,237,371"/><area shape="rect" id="node4" href="classfonctions__conteneur.html" title="fonctions_conteneur" alt="" coords="49,163,188,189"/><area shape="rect" id="node9" href="classbase__fonction.html" title="Classe décrivant une fonction de conversion d&#39;un texte. " alt="" coords="129,253,231,280"/><area shape="rect" id="node5" href="classobjet__selectionnable.html" title="objet_selectionnable" alt="" coords="121,84,260,111"/><area shape="rect" id="node7" href="classtextes.html" title="textes" alt="" coords="300,253,357,280"/></map>
+<area shape="rect" id="node3" href="classbase__parametre.html" title="Classe décrivant un parametre d&#39;une fonction. " alt="" coords="123,344,237,371"/><area shape="rect" id="node4" href="classfonctions__conteneur.html" title="fonctions_conteneur" alt="" coords="49,163,188,189"/><area shape="rect" id="node9" href="classbase__fonction.html" title="Classe décrivant une fonction de conversion d&#39;un texte. " alt="" coords="129,253,231,280"/><area shape="rect" id="node5" href="classobjet__selectionnable.html" title="objet_selectionnable" alt="" coords="121,84,260,111"/><area shape="rect" id="node7" href="classtextes.html" title="Classe décrivant un ensemble de textes. " alt="" coords="300,253,357,280"/></map>
 <center><span class="legend">[<a href="graph_legend.html">légende</a>]</span></center></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Fonctions membres publiques</h2></td></tr>
-<tr class="memitem:af7a3923ef429beccd5ad6e972fbd7ee8"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="af7a3923ef429beccd5ad6e972fbd7ee8"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>parametre_aide_message_box</b> (QWidget *parent, const <a class="el" href="classbase__parametre.html">base_parametre</a> *parametre)</td></tr>
+<tr class="memitem:af7a3923ef429beccd5ad6e972fbd7ee8"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classparametre__aide__message__box.html#af7a3923ef429beccd5ad6e972fbd7ee8">parametre_aide_message_box</a> (QWidget *parent, const <a class="el" href="classbase__parametre.html">base_parametre</a> *parametre)</td></tr>
 <tr class="separator:af7a3923ef429beccd5ad6e972fbd7ee8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-methods"></a>
 Fonctions membres privées</h2></td></tr>
-<tr class="memitem:af4b7a3717225812cb914c79415b4682f"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="af4b7a3717225812cb914c79415b4682f"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>init</b> ()</td></tr>
+<tr class="memitem:af4b7a3717225812cb914c79415b4682f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classparametre__aide__message__box.html#af4b7a3717225812cb914c79415b4682f">init</a> ()</td></tr>
 <tr class="separator:af4b7a3717225812cb914c79415b4682f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
 Attributs privés</h2></td></tr>
-<tr class="memitem:a27d01c8e70a6980fdd5303763165d59b"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a27d01c8e70a6980fdd5303763165d59b"></a>
-const <a class="el" href="classbase__parametre.html">base_parametre</a> *&#160;</td><td class="memItemRight" valign="bottom"><b>m_parametre</b></td></tr>
+<tr class="memitem:a27d01c8e70a6980fdd5303763165d59b"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="classbase__parametre.html">base_parametre</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classparametre__aide__message__box.html#a27d01c8e70a6980fdd5303763165d59b">m_parametre</a></td></tr>
 <tr class="separator:a27d01c8e70a6980fdd5303763165d59b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Description détaillée</h2>
 <div class="textblock">
 <p>Définition à la ligne <a class="el" href="parametre__aide__message__box_8h_source.html#l00008">8</a> du fichier <a class="el" href="parametre__aide__message__box_8h_source.html">parametre_aide_message_box.h</a>.</p>
-</div><hr/>La documentation de cette classe a été générée à partir des fichiers suivants :<ul>
+</div><h2 class="groupheader">Documentation des constructeurs et destructeur</h2>
+<a class="anchor" id="af7a3923ef429beccd5ad6e972fbd7ee8"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">parametre_aide_message_box::parametre_aide_message_box </td>
+          <td>(</td>
+          <td class="paramtype">QWidget *&#160;</td>
+          <td class="paramname"><em>parent</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classbase__parametre.html">base_parametre</a> *&#160;</td>
+          <td class="paramname"><em>parametre</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Définition à la ligne <a class="el" href="parametre__aide__message__box_8cpp_source.html#l00009">9</a> du fichier <a class="el" href="parametre__aide__message__box_8cpp_source.html">parametre_aide_message_box.cpp</a>.</p>
+
+<p><div class="dynheader">
+Voici le graphe d'appel pour cette fonction :</div>
+<div class="dyncontent">
+<div class="center"><img src="classparametre__aide__message__box_af7a3923ef429beccd5ad6e972fbd7ee8_cgraph.png" border="0" usemap="#classparametre__aide__message__box_af7a3923ef429beccd5ad6e972fbd7ee8_cgraph" alt=""/></div>
+<map name="classparametre__aide__message__box_af7a3923ef429beccd5ad6e972fbd7ee8_cgraph" id="classparametre__aide__message__box_af7a3923ef429beccd5ad6e972fbd7ee8_cgraph">
+<area shape="rect" id="node2" href="classparametre__aide__message__box.html#af4b7a3717225812cb914c79415b4682f" title="parametre_aide_message\l_box::init" alt="" coords="288,114,459,155"/><area shape="rect" id="node3" href="classbase__parametre.html#adfbae22169cb11d6348906ca12cba66f" title="base_parametre::get\l_fonction_parent" alt="" coords="523,5,664,46"/><area shape="rect" id="node4" href="classbase__fonction.html#acee6c2c0170e7a1bf8c0df49424ef2ba" title="Retourne le nom de la fonction. " alt="" coords="513,71,674,97"/><area shape="rect" id="node5" href="classbase__parametre.html#a091ac3f7f7229a65c9f79390bb3dac6f" title="base_parametre::get_nom" alt="" coords="507,121,680,148"/><area shape="rect" id="node6" href="classbase__parametre.html#a0320499057fd15a513ea6bb63201f0de" title="base_parametre::get_aide" alt="" coords="507,172,679,199"/><area shape="rect" id="node7" href="classbase__parametre.html#a3e10ebe3766ea354e05ef0b84a28395a" title="base_parametre::get\l_aide_algorithme" alt="" coords="523,223,664,265"/></map>
+</div>
+</p>
+
+</div>
+</div>
+<h2 class="groupheader">Documentation des fonctions membres</h2>
+<a class="anchor" id="af4b7a3717225812cb914c79415b4682f"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void parametre_aide_message_box::init </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Définition à la ligne <a class="el" href="parametre__aide__message__box_8cpp_source.html#l00015">15</a> du fichier <a class="el" href="parametre__aide__message__box_8cpp_source.html">parametre_aide_message_box.cpp</a>.</p>
+
+<p><div class="dynheader">
+Voici le graphe d'appel pour cette fonction :</div>
+<div class="dyncontent">
+<div class="center"><img src="classparametre__aide__message__box_af4b7a3717225812cb914c79415b4682f_cgraph.png" border="0" usemap="#classparametre__aide__message__box_af4b7a3717225812cb914c79415b4682f_cgraph" alt=""/></div>
+<map name="classparametre__aide__message__box_af4b7a3717225812cb914c79415b4682f_cgraph" id="classparametre__aide__message__box_af4b7a3717225812cb914c79415b4682f_cgraph">
+<area shape="rect" id="node2" href="classbase__parametre.html#adfbae22169cb11d6348906ca12cba66f" title="base_parametre::get\l_fonction_parent" alt="" coords="240,5,381,46"/><area shape="rect" id="node3" href="classbase__fonction.html#acee6c2c0170e7a1bf8c0df49424ef2ba" title="Retourne le nom de la fonction. " alt="" coords="230,71,391,97"/><area shape="rect" id="node4" href="classbase__parametre.html#a091ac3f7f7229a65c9f79390bb3dac6f" title="base_parametre::get_nom" alt="" coords="224,121,397,148"/><area shape="rect" id="node5" href="classbase__parametre.html#a0320499057fd15a513ea6bb63201f0de" title="base_parametre::get_aide" alt="" coords="225,172,397,199"/><area shape="rect" id="node6" href="classbase__parametre.html#a3e10ebe3766ea354e05ef0b84a28395a" title="base_parametre::get\l_aide_algorithme" alt="" coords="240,223,381,265"/></map>
+</div>
+</p>
+
+</div>
+</div>
+<h2 class="groupheader">Documentation des données membres</h2>
+<a class="anchor" id="a27d01c8e70a6980fdd5303763165d59b"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const <a class="el" href="classbase__parametre.html">base_parametre</a>* parametre_aide_message_box::m_parametre</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Définition à la ligne <a class="el" href="parametre__aide__message__box_8h_source.html#l00017">17</a> du fichier <a class="el" href="parametre__aide__message__box_8h_source.html">parametre_aide_message_box.h</a>.</p>
+
+</div>
+</div>
+<hr/>La documentation de cette classe a été générée à partir des fichiers suivants :<ul>
 <li>entete/fonction_widget/<a class="el" href="parametre__aide__message__box_8h_source.html">parametre_aide_message_box.h</a></li>
 <li>src/fonction_widget/<a class="el" href="parametre__aide__message__box_8cpp_source.html">parametre_aide_message_box.cpp</a></li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Généré le Mercredi 8 Février 2017 09:50:12 pour Emgine par &#160;<a href="http://www.doxygen.org/index.html">
+Généré le Mercredi 8 Février 2017 09:53:36 pour Emgine par &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.6
 </small></address>

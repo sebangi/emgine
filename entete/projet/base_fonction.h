@@ -1,6 +1,11 @@
 #ifndef BASE_FONCTION_H
 #define BASE_FONCTION_H
 
+/** \file base_fonction.h
+ * \brief Déclaration de la classe base_fonction.
+ * \author Sébastien Angibaud
+ */
+
 #include <string>
 #include <QString>
 #include <list>
@@ -30,14 +35,6 @@ class base_fonction : public objet_selectionnable
         Q_OBJECT
 
     public:
-        enum type_fonction
-        {
-            fonction_source = 0,
-            fonction_conversion,
-            fonction_sortie
-        };
-
-    public:
         typedef std::map< type_id_parametre, base_parametre *> type_parametres;
         typedef type_parametres::iterator parametres_iterateur;
         typedef type_parametres::const_iterator parametres_const_iterateur;
@@ -46,7 +43,7 @@ class base_fonction : public objet_selectionnable
         typedef void ( base_fonction::*pf_exec_callback)( compilateur &, const textes &, textes & );
 
     public:
-        base_fonction( fonctions_conteneur * parent, type_fonction type = fonction_conversion);
+        base_fonction( fonctions_conteneur * parent, type_fonction type = type_fonction::fonction_conversion);
         virtual ~base_fonction();
         virtual void initialisation_par_defaut();
 

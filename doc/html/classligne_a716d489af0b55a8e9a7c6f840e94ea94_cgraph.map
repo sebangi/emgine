@@ -1,0 +1,4 @@
+<map id="ligne::ligne" name="ligne::ligne">
+<area shape="rect" id="node2" href="$classligne.html#abb194a19c94d5d7ec48ef442f5043d1e" title="Ajoute un mot à la ligne. " alt="" coords="139,5,264,32"/>
+<area shape="rect" id="node3" href="$classmot.html#afda7d448982a5cece83b6459b319fed1" title="Retourne le nombre de caractère du mot. " alt="" coords="313,5,447,32"/>
+</map>

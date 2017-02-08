@@ -38,6 +38,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Recherche');
     <ul class="tablist">
       <li><a href="index.html"><span>Page&#160;principale</span></a></li>
       <li><a href="pages.html"><span>Pages&#160;associées</span></a></li>
+      <li><a href="modules.html"><span>Modules</span></a></li>
       <li><a href="annotated.html"><span>Classes</span></a></li>
       <li class="current"><a href="files.html"><span>Fichiers</span></a></li>
       <li>
@@ -61,6 +62,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Recherche');
   <div id="navrow2" class="tabs2">
     <ul class="tablist">
       <li><a href="files.html"><span>Liste&#160;des&#160;fichiers</span></a></li>
+      <li><a href="globals.html"><span>Membres&#160;de&#160;fichier</span></a></li>
     </ul>
   </div>
 <!-- window showing the filter options -->
@@ -68,7 +70,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Recherche');
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>Tout</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Fonctions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Définitions de type</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Énumérations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Pages</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>Tout</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Espaces de nommage</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Fichiers</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Fonctions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Définitions de type</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Énumérations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Valeurs énumérées</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&#160;</span>Groupes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(10)"><span class="SelectionMark">&#160;</span>Pages</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -87,10 +89,10 @@ var searchBox = new SearchBox("searchBox", "search",false,'Recherche');
 <div class="title">text_edit.cpp</div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#include &quot;entete/fonction_widget/text_edit.h&quot;</span></div>
+<a href="text__edit_8cpp.html">Aller à la documentation de ce fichier.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="text__edit_8h.html">entete/fonction_widget/text_edit.h</a>&quot;</span></div>
 <div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor">#include &lt;iostream&gt;</span></div>
 <div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;</div>
-<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;text_edit::text_edit()</div>
+<div class="line"><a name="l00004"></a><span class="lineno"><a class="line" href="classtext__edit.html#a655966d1d7d70259f214c0336812cbf1">    4</a></span>&#160;<a class="code" href="classtext__edit.html#a655966d1d7d70259f214c0336812cbf1">text_edit::text_edit</a>()</div>
 <div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;{</div>
 <div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;    setLineWrapMode(QPlainTextEdit::NoWrap);</div>
 <div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;    setMinimumHeight(20);</div>
@@ -98,21 +100,25 @@ var searchBox = new SearchBox("searchBox", "search",false,'Recherche');
 <div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;    setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Fixed);</div>
 <div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;}</div>
 <div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;</div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;QSize text_edit::sizeHint()<span class="keyword"> const</span></div>
+<div class="line"><a name="l00012"></a><span class="lineno"><a class="line" href="classtext__edit.html#a2cab0c20c2287214746ae4698dda8363">   12</a></span>&#160;QSize <a class="code" href="classtext__edit.html#a2cab0c20c2287214746ae4698dda8363">text_edit::sizeHint</a>()<span class="keyword"> const</span></div>
 <div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="keyword"></span>{</div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;    <span class="keywordflow">return</span> minimumSizeHint();</div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="classtext__edit.html#a96d262da9527edf2aba1aa6c20dd8c68">minimumSizeHint</a>();</div>
 <div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;}</div>
 <div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;</div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;QSize text_edit::minimumSizeHint()<span class="keyword"> const</span></div>
+<div class="line"><a name="l00017"></a><span class="lineno"><a class="line" href="classtext__edit.html#a96d262da9527edf2aba1aa6c20dd8c68">   17</a></span>&#160;QSize <a class="code" href="classtext__edit.html#a96d262da9527edf2aba1aa6c20dd8c68">text_edit::minimumSizeHint</a>()<span class="keyword"> const</span></div>
 <div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="keyword"></span>{</div>
 <div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;    QFontMetrics fm(this-&gt;font());</div>
 <div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;</div>
 <div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;    <span class="keywordflow">return</span> QSize(maximumWidth(), (document()-&gt;lineCount() + 2) * fm.lineSpacing());</div>
 <div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;}</div>
+<div class="ttc" id="classtext__edit_html_a96d262da9527edf2aba1aa6c20dd8c68"><div class="ttname"><a href="classtext__edit.html#a96d262da9527edf2aba1aa6c20dd8c68">text_edit::minimumSizeHint</a></div><div class="ttdeci">QSize minimumSizeHint() const </div><div class="ttdef"><b>Definition:</b> <a href="text__edit_8cpp_source.html#l00017">text_edit.cpp:17</a></div></div>
+<div class="ttc" id="text__edit_8h_html"><div class="ttname"><a href="text__edit_8h.html">text_edit.h</a></div></div>
+<div class="ttc" id="classtext__edit_html_a2cab0c20c2287214746ae4698dda8363"><div class="ttname"><a href="classtext__edit.html#a2cab0c20c2287214746ae4698dda8363">text_edit::sizeHint</a></div><div class="ttdeci">QSize sizeHint() const </div><div class="ttdef"><b>Definition:</b> <a href="text__edit_8cpp_source.html#l00012">text_edit.cpp:12</a></div></div>
+<div class="ttc" id="classtext__edit_html_a655966d1d7d70259f214c0336812cbf1"><div class="ttname"><a href="classtext__edit.html#a655966d1d7d70259f214c0336812cbf1">text_edit::text_edit</a></div><div class="ttdeci">text_edit()</div><div class="ttdef"><b>Definition:</b> <a href="text__edit_8cpp_source.html#l00004">text_edit.cpp:4</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Généré le Mercredi 8 Février 2017 09:50:11 pour Emgine par &#160;<a href="http://www.doxygen.org/index.html">
+Généré le Mercredi 8 Février 2017 09:53:35 pour Emgine par &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.6
 </small></address>

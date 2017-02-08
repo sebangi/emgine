@@ -38,6 +38,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Recherche');
     <ul class="tablist">
       <li><a href="index.html"><span>Page&#160;principale</span></a></li>
       <li><a href="pages.html"><span>Pages&#160;associées</span></a></li>
+      <li><a href="modules.html"><span>Modules</span></a></li>
       <li><a href="annotated.html"><span>Classes</span></a></li>
       <li class="current"><a href="files.html"><span>Fichiers</span></a></li>
       <li>
@@ -61,6 +62,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Recherche');
   <div id="navrow2" class="tabs2">
     <ul class="tablist">
       <li><a href="files.html"><span>Liste&#160;des&#160;fichiers</span></a></li>
+      <li><a href="globals.html"><span>Membres&#160;de&#160;fichier</span></a></li>
     </ul>
   </div>
 <!-- window showing the filter options -->
@@ -68,7 +70,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Recherche');
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>Tout</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Fonctions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Définitions de type</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Énumérations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Pages</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>Tout</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Espaces de nommage</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Fichiers</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Fonctions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Définitions de type</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Énumérations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Valeurs énumérées</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&#160;</span>Groupes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(10)"><span class="SelectionMark">&#160;</span>Pages</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -87,38 +89,45 @@ var searchBox = new SearchBox("searchBox", "search",false,'Recherche');
 <div class="title">log_widget_item.h</div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#ifndef LOG_WIDGET_ITEM_H</span></div>
+<a href="log__widget__item_8h.html">Aller à la documentation de ce fichier.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#ifndef LOG_WIDGET_ITEM_H</span></div>
 <div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#define LOG_WIDGET_ITEM_H</span></div>
 <div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="preprocessor"></span></div>
-<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &quot;entete/compilation/log_compilation.h&quot;</span></div>
-<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;</div>
-<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="preprocessor">#include &lt;QListWidgetItem&gt;</span></div>
-<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;</div>
-<div class="line"><a name="l00008"></a><span class="lineno"><a class="line" href="classlog__widget__item.html">    8</a></span>&#160;<span class="keyword">class </span><a class="code" href="classlog__widget__item.html">log_widget_item</a> : <span class="keyword">public</span>  QListWidgetItem</div>
-<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;{</div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;    <span class="keyword">public</span>:</div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;            <a class="code" href="classlog__widget__item.html">log_widget_item</a>(<span class="keyword">const</span> <a class="code" href="classlog__compilation.html">log_compilation</a>&amp; get_log);</div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="log__compilation_8h.html">entete/compilation/log_compilation.h</a>&quot;</span></div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;</div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="preprocessor">#include &lt;QListWidgetItem&gt;</span></div>
 <div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;</div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;            <a class="code" href="classlog__compilation.html">log_compilation</a>&amp; get_log();</div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;</div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;            <span class="keywordtype">void</span> informe_supression_selectionnable(<a class="code" href="classobjet__selectionnable.html">objet_selectionnable</a> * obj);</div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;            <span class="keywordtype">void</span> marquer_comme_ancien();</div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;</div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;    <span class="keyword">private</span>:</div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;            <span class="keywordtype">void</span> init();</div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;</div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;    <span class="keyword">private</span>:</div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;            <a class="code" href="classlog__compilation.html">log_compilation</a> m_log;</div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;};</div>
+<div class="line"><a name="l00018"></a><span class="lineno"><a class="line" href="classlog__widget__item.html">   18</a></span>&#160;<span class="keyword">class </span><a class="code" href="classlog__widget__item.html">log_widget_item</a> : <span class="keyword">public</span>  QListWidgetItem</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;{</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;    <span class="keyword">public</span>:</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;            <a class="code" href="classlog__widget__item.html#ae66d4c5883726828f787b2f202a0ba29">log_widget_item</a>(<span class="keyword">const</span> <a class="code" href="classlog__compilation.html">log_compilation</a>&amp; <a class="code" href="classlog__widget__item.html#a50885aa7f8b31392370fe1dafe982a62">get_log</a>);</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;            <a class="code" href="classlog__compilation.html">log_compilation</a>&amp; <a class="code" href="classlog__widget__item.html#a50885aa7f8b31392370fe1dafe982a62">get_log</a>();</div>
 <div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;</div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="preprocessor">#endif // LOG_WIDGET_ITEM_H</span></div>
-<div class="ttc" id="classlog__widget__item_html"><div class="ttname"><a href="classlog__widget__item.html">log_widget_item</a></div><div class="ttdef"><b>Definition:</b> <a href="log__widget__item_8h_source.html#l00008">log_widget_item.h:8</a></div></div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;            <span class="keywordtype">void</span> <a class="code" href="classlog__widget__item.html#abb258a7d8800463366980e94c5dda121">informe_supression_selectionnable</a>(<a class="code" href="classobjet__selectionnable.html">objet_selectionnable</a> * obj);</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;            <span class="keywordtype">void</span> <a class="code" href="classlog__widget__item.html#ac28d7c59488288a2f1b69b7577fc71b7">marquer_comme_ancien</a>();</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;    <span class="keyword">private</span>:</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;            <span class="keywordtype">void</span> <a class="code" href="classlog__widget__item.html#a2a224a580279770eb5e688e1fcefa40d">init</a>();</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;    <span class="keyword">private</span>:</div>
+<div class="line"><a name="l00033"></a><span class="lineno"><a class="line" href="classlog__widget__item.html#a11b40beb3186a52a60cb029dce22c03f">   33</a></span>&#160;            <a class="code" href="classlog__compilation.html">log_compilation</a> <a class="code" href="classlog__widget__item.html#a11b40beb3186a52a60cb029dce22c03f">m_log</a>;</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;};</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;<span class="preprocessor">#endif // LOG_WIDGET_ITEM_H</span></div>
+<div class="ttc" id="classlog__widget__item_html_a2a224a580279770eb5e688e1fcefa40d"><div class="ttname"><a href="classlog__widget__item.html#a2a224a580279770eb5e688e1fcefa40d">log_widget_item::init</a></div><div class="ttdeci">void init()</div><div class="ttdoc">Initialise le widget. </div><div class="ttdef"><b>Definition:</b> <a href="log__widget__item_8cpp_source.html#l00026">log_widget_item.cpp:26</a></div></div>
+<div class="ttc" id="classlog__widget__item_html_ac28d7c59488288a2f1b69b7577fc71b7"><div class="ttname"><a href="classlog__widget__item.html#ac28d7c59488288a2f1b69b7577fc71b7">log_widget_item::marquer_comme_ancien</a></div><div class="ttdeci">void marquer_comme_ancien()</div><div class="ttdoc">Marque tous les messages comme ancien. </div><div class="ttdef"><b>Definition:</b> <a href="log__widget__item_8cpp_source.html#l00053">log_widget_item.cpp:53</a></div></div>
+<div class="ttc" id="log__compilation_8h_html"><div class="ttname"><a href="log__compilation_8h.html">log_compilation.h</a></div><div class="ttdoc">Fichier de déclaration de la class log_compilation. </div></div>
+<div class="ttc" id="classlog__widget__item_html_ae66d4c5883726828f787b2f202a0ba29"><div class="ttname"><a href="classlog__widget__item.html#ae66d4c5883726828f787b2f202a0ba29">log_widget_item::log_widget_item</a></div><div class="ttdeci">log_widget_item(const log_compilation &amp;get_log)</div><div class="ttdoc">Construteur de la classe log_widget_item. </div><div class="ttdef"><b>Definition:</b> <a href="log__widget__item_8cpp_source.html#l00017">log_widget_item.cpp:17</a></div></div>
+<div class="ttc" id="classlog__widget__item_html"><div class="ttname"><a href="classlog__widget__item.html">log_widget_item</a></div><div class="ttdoc">Classe décrivant le widget item affichant un message de log. </div><div class="ttdef"><b>Definition:</b> <a href="log__widget__item_8h_source.html#l00018">log_widget_item.h:18</a></div></div>
 <div class="ttc" id="classobjet__selectionnable_html"><div class="ttname"><a href="classobjet__selectionnable.html">objet_selectionnable</a></div><div class="ttdef"><b>Definition:</b> <a href="objet__selectionnable_8h_source.html#l00011">objet_selectionnable.h:11</a></div></div>
-<div class="ttc" id="classlog__compilation_html"><div class="ttname"><a href="classlog__compilation.html">log_compilation</a></div><div class="ttdef"><b>Definition:</b> <a href="log__compilation_8h_source.html#l00012">log_compilation.h:12</a></div></div>
+<div class="ttc" id="classlog__widget__item_html_a50885aa7f8b31392370fe1dafe982a62"><div class="ttname"><a href="classlog__widget__item.html#a50885aa7f8b31392370fe1dafe982a62">log_widget_item::get_log</a></div><div class="ttdeci">log_compilation &amp; get_log()</div><div class="ttdoc">Accesseur du log associé. </div><div class="ttdef"><b>Definition:</b> <a href="log__widget__item_8cpp_source.html#l00036">log_widget_item.cpp:36</a></div></div>
+<div class="ttc" id="classlog__compilation_html"><div class="ttname"><a href="classlog__compilation.html">log_compilation</a></div><div class="ttdoc">Classe décrivant un message de compilation. </div><div class="ttdef"><b>Definition:</b> <a href="log__compilation_8h_source.html#l00019">log_compilation.h:19</a></div></div>
+<div class="ttc" id="classlog__widget__item_html_a11b40beb3186a52a60cb029dce22c03f"><div class="ttname"><a href="classlog__widget__item.html#a11b40beb3186a52a60cb029dce22c03f">log_widget_item::m_log</a></div><div class="ttdeci">log_compilation m_log</div><div class="ttdoc">Le log associé. </div><div class="ttdef"><b>Definition:</b> <a href="log__widget__item_8h_source.html#l00033">log_widget_item.h:33</a></div></div>
+<div class="ttc" id="classlog__widget__item_html_abb258a7d8800463366980e94c5dda121"><div class="ttname"><a href="classlog__widget__item.html#abb258a7d8800463366980e94c5dda121">log_widget_item::informe_supression_selectionnable</a></div><div class="ttdeci">void informe_supression_selectionnable(objet_selectionnable *obj)</div><div class="ttdoc">Fonction appelée lors de la suppression d&#39;un objet sélectionnable. </div><div class="ttdef"><b>Definition:</b> <a href="log__widget__item_8cpp_source.html#l00045">log_widget_item.cpp:45</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Généré le Mercredi 8 Février 2017 09:50:11 pour Emgine par &#160;<a href="http://www.doxygen.org/index.html">
+Généré le Mercredi 8 Février 2017 09:53:35 pour Emgine par &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.6
 </small></address>

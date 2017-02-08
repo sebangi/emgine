@@ -3,6 +3,7 @@
 #include "entete/fonction/fonction_source/fonction_source_booleen.h"
 #include "entete/fonction/fonction_source/fonction_source_entier.h"
 #include "entete/fonction/fonction_source/fonction_source_texte.h"
+#include "entete/fonction/fonction_source/fonction_source_fichier_texte.h"
 #include "entete/fonction/fonction_source/fonction_source_caractere.h"
 #include "entete/fonction/fonction_source/fonction_source_choix.h"
 #include "entete/fonction/fonction_source/fonction_source_permutation.h"
@@ -16,6 +17,7 @@ std::map<type_id_fonction, QString> bibliotheque_fonctions::s_fonctions_nom =
     { f_source_booleen, "Oui ou Non" },
     { f_source_entier, "Entier" },
     { f_source_texte, "Texte" },
+    { f_source_fichier_texte, "Fichier texte" },
     { f_source_caractere, "Caractères" },
     { f_source_choix, "Choix" },
     { f_source_generateur_permutation, "Générateur de permutations" },
@@ -28,6 +30,7 @@ std::map<type_id_fonction, QString> bibliotheque_fonctions::s_fonctions_aide =
     { f_source_booleen, "Source de type Oui ou Non" },
     { f_source_entier, "Source de type entier" },
     { f_source_texte, "Source textuelle" },
+    { f_source_fichier_texte, "Source fichier textuel" },
     { f_source_caractere, "Source de type un caractère" },
     { f_source_choix, "Source de type choix" },
     { f_source_generateur_permutation, "Générateur de permutations" },
@@ -44,6 +47,9 @@ std::map<type_id_fonction, std::set<QString> > bibliotheque_fonctions::s_categor
       {  }
     },
     { f_source_texte,
+      { }
+    },
+    { f_source_fichier_texte,
       { }
     },
     { f_source_caractere,
@@ -70,6 +76,7 @@ base_fonction *bibliotheque_fonctions::get_fonction(type_id_fonction id)
         case f_source_booleen : return new fonction_source_booleen(NULL);
         case f_source_entier : return new fonction_source_entier(NULL);
         case f_source_texte : return new fonction_source_texte(NULL);
+        case f_source_fichier_texte : return new fonction_source_fichier_texte(NULL);
         case f_source_caractere : return new fonction_source_caractere(NULL);
         case f_source_choix : return new fonction_source_choix(NULL);
         case f_source_generateur_permutation : return new fonction_source_permutation(NULL);

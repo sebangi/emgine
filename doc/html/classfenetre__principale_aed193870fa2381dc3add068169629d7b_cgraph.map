@@ -1,0 +1,13 @@
+<map id="fenetre_principale::on_externe_fermeture_projet" name="fenetre_principale::on_externe_fermeture_projet">
+<area shape="rect" id="node2" href="$classprojet.html#a93d1671ebf1548df8908020a306b0ff1" title="projet::est_enregistrable" alt="" coords="211,56,373,83"/>
+<area shape="rect" id="node3" href="$classprojet.html#a6f3595b0a0025ddf250561ebbfb3726b" title="projet::est_nouveau" alt="" coords="431,5,567,32"/>
+<area shape="rect" id="node5" href="$classfenetre__principale.html#a31a75b71153c61bb51cc1226eed99cfa" title="Enregistre un projet donné avec un nom de fichier spécifié. " alt="" coords="217,107,367,149"/>
+<area shape="rect" id="node11" href="$classobjet__selectionnable.html#ab2fb752b9ba998ed26975936d1d5beaa" title="objet_selectionnable\l::forcer_deselection" alt="" coords="222,190,362,231"/>
+<area shape="rect" id="node4" href="$classprojet.html#aed2138f12de82e59a3c88341abc8240e" title="projet::est_modifie" alt="" coords="434,56,563,83"/>
+<area shape="rect" id="node6" href="$classprojet.html#ad8800652d03f73eaad197af702d3d133" title="projet::set_nom_fichier" alt="" coords="421,107,576,133"/>
+<area shape="rect" id="node8" href="$classprojet.html#a83aaa7aa7215729f319047a1f74d0a31" title="projet::sauvegarder" alt="" coords="432,157,565,184"/>
+<area shape="rect" id="node7" href="$classprojet.html#a3020254e65eb57b4c36bf7990021ad2b" title="projet::set_nom" alt="" coords="639,99,751,125"/>
+<area shape="rect" id="node9" href="$classobjet__selectionnable.html#adb99710921bdf74dfe35ee9d75b995a3" title="objet_selectionnable\l::sauvegarder" alt="" coords="625,150,765,191"/>
+<area shape="rect" id="node10" href="$classfonctions__conteneur.html#a199dde0697eb91a9e54c1dfecb536a88" title="fonctions_conteneur\l::sauvegarder" alt="" coords="625,215,764,257"/>
+<area shape="rect" id="node12" href="$classobjet__selectionnable.html#a555085da89b30b07349064bb54a26138" title="objet_selectionnable\l::deselectionner" alt="" coords="429,209,569,250"/>
+</map>

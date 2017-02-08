@@ -1,0 +1,7 @@
+<map id="fenetre_principale::on_enregistrer_projet" name="fenetre_principale::on_enregistrer_projet">
+<area shape="rect" id="node2" href="$classprojet.html#ad8800652d03f73eaad197af702d3d133" title="projet::set_nom_fichier" alt="" coords="205,9,360,36"/>
+<area shape="rect" id="node4" href="$classprojet.html#a83aaa7aa7215729f319047a1f74d0a31" title="projet::sauvegarder" alt="" coords="216,64,349,91"/>
+<area shape="rect" id="node3" href="$classprojet.html#a3020254e65eb57b4c36bf7990021ad2b" title="projet::set_nom" alt="" coords="423,5,535,32"/>
+<area shape="rect" id="node5" href="$classobjet__selectionnable.html#adb99710921bdf74dfe35ee9d75b995a3" title="objet_selectionnable\l::sauvegarder" alt="" coords="409,57,549,98"/>
+<area shape="rect" id="node6" href="$classfonctions__conteneur.html#a199dde0697eb91a9e54c1dfecb536a88" title="fonctions_conteneur\l::sauvegarder" alt="" coords="409,122,548,163"/>
+</map>

@@ -1,0 +1,9 @@
+<map id="selecteur_fonction_dialog::init_choix" name="selecteur_fonction_dialog::init_choix">
+<area shape="rect" id="node2" href="$classselecteur__fonction__dialog.html#a3cf5a2551433071da63eb34f9d2f2a81" title="selecteur_fonction\l_dialog::ajouter_choix" alt="" coords="182,67,330,109"/>
+<area shape="rect" id="node3" href="$classselecteur__fonction__dialog.html#a008277592e1a0b3d3e4e7c4f927fb061" title="selecteur_fonction\l_dialog::choisir" alt="" coords="379,67,507,109"/>
+<area shape="rect" id="node4" href="$classbouton__choix__fonction.html#aea2d48c212b1a6ce5cbbbbef5067afe4" title="bouton_choix_fonction\l::get_fonction" alt="" coords="555,7,707,49"/>
+<area shape="rect" id="node6" href="$classbase__fonction.html#a4d7a7d067af71e0c5e9ec7d6188ac9d1" title="base_fonction::set_id" alt="" coords="557,75,704,101"/>
+<area shape="rect" id="node8" href="$classbouton__choix__fonction.html#a6f9941227d6d1cccc4f78073dd4a0e71" title="bouton_choix_fonction\l::get_id_fonction" alt="" coords="555,126,707,167"/>
+<area shape="rect" id="node5" href="$classbibliotheque__fonctions.html#a97e2db5603fe4267df7ace47f110b6e0" title="bibliotheque_fonctions\l::get_fonction" alt="" coords="755,5,906,46"/>
+<area shape="rect" id="node7" href="$classbibliotheque__fonctions.html#ac8c035960c49cdf0fe7437b82739154e" title="bibliotheque_fonctions\l::get_nom" alt="" coords="755,70,906,111"/>
+</map>

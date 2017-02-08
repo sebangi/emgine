@@ -1,21 +1,28 @@
+/** \file explorateur.cpp
+ * \brief Fichier d'implémentation de la classe explorateur.
+ * \author Sébastien Angibaud
+ */
+
 #include "entete/explorateur/explorateur.h"
+
 #include "entete/explorateur/base_noeud.h"
-#include "entete/explorateur/noeud_projet.h"
 #include "entete/explorateur/noeud_fonction.h"
 #include "entete/explorateur/noeud_parametre.h"
-#include "entete/projet/projet.h"
-#include "entete/projet/fonctions_conteneur.h"
-#include "entete/projet/objet_selectionnable.h"
+#include "entete/explorateur/noeud_projet.h"
 #include "entete/fenetre_principale.h"
 #include "entete/fonction/bibliotheque_fonctions.h"
+#include "entete/projet/base_fonction.h"
+#include "entete/projet/fonctions_conteneur.h"
+#include "entete/projet/objet_selectionnable.h"
+#include "entete/projet/projet.h"
+
 #include <QAction>
-#include <QMenu>
-#include <QKeyEvent>
-#include <iostream>
 #include <QApplication>
-#include <QXmlStreamReader>
 #include <QHeaderView>
+#include <QKeyEvent>
+#include <QMenu>
 #include <QMessageBox>
+#include <QXmlStreamReader>
 
 explorateur::explorateur(QWidget *parent)
     : QTreeWidget(parent), m_noeud_context(NULL), m_objet_a_couper(NULL)
@@ -64,7 +71,7 @@ projet * explorateur::get_projet_selon_nom_fichier(const QString &nom_fichier)
     QTreeWidgetItemIterator it(this);
     while (*it)
     {
-        if ( (*it)->type() == base_noeud::type_projet )
+        if ( (*it)->type() == base_noeud::TYPE_NOEUD_PROJET )
         {
             if ( ((noeud_projet*)(*it))->get_projet()->get_nom_fichier() == nom_fichier )
                 p = ((noeud_projet*)(*it))->get_projet();
@@ -121,7 +128,7 @@ void explorateur::mettre_a_jour_activation( base_noeud* n, bool actif, bool chan
         bool change = true;
 
         if ( actif )
-            if ( n->child(i)->type() == base_noeud::type_fonction )
+            if ( n->child(i)->type() == base_noeud::TYPE_NOEUD_FONCTION )
                 if ( ! ((noeud_fonction*)(n->child(i)))->get_fonction()->est_active() )
                     change = false;
 
@@ -129,7 +136,7 @@ void explorateur::mettre_a_jour_activation( base_noeud* n, bool actif, bool chan
             mettre_a_jour_activation( (base_noeud*)n->child(i), actif, false );
     }
 
-    n->update_style( actif );
+    n->mettre_a_jour_style( actif );
 }
 
 
@@ -140,7 +147,7 @@ void explorateur::mettre_a_jour_verrouillage( base_noeud* n, bool verrouillage )
         bool change = true;
 
         if ( verrouillage )
-            if ( n->child(i)->type() == base_noeud::type_fonction )
+            if ( n->child(i)->type() == base_noeud::TYPE_NOEUD_FONCTION )
                 if ( ((noeud_fonction*)(n->child(i)))->get_fonction()->est_verrouille() )
                     change = false;
 
@@ -785,17 +792,17 @@ void explorateur::deconnecter_projet(projet *p)
 
 void explorateur::on_ajout_source()
 {
-    emit signal_e_demande_ajout_fonction(m_noeud_context->get_objet()->get_conteneur(), m_noeud_context->get_objet(), base_fonction::fonction_source);
+    emit signal_e_demande_ajout_fonction(m_noeud_context->get_objet()->get_conteneur(), m_noeud_context->get_objet(), type_fonction::fonction_source);
 }
 
 void explorateur::on_ajout_sortie()
 {
-    emit signal_e_demande_ajout_fonction(m_noeud_context->get_objet()->get_conteneur(), m_noeud_context->get_objet(), base_fonction::fonction_sortie);
+    emit signal_e_demande_ajout_fonction(m_noeud_context->get_objet()->get_conteneur(), m_noeud_context->get_objet(), type_fonction::fonction_sortie);
 }
 
 void explorateur::on_ajout_fonction_conversion()
 {
-    emit signal_e_demande_ajout_fonction(m_noeud_context->get_objet()->get_conteneur(), m_noeud_context->get_objet(), base_fonction::fonction_conversion);
+    emit signal_e_demande_ajout_fonction(m_noeud_context->get_objet()->get_conteneur(), m_noeud_context->get_objet(), type_fonction::fonction_conversion);
 }
 
 void explorateur::on_activer_fonction()
@@ -848,7 +855,7 @@ void explorateur::on_coller()
 
 void explorateur::on_fermer_projet()
 {
-    if ( m_noeud_context->type() == base_noeud::type_projet )
+    if ( m_noeud_context->type() == base_noeud::TYPE_NOEUD_PROJET )
         m_noeud_context->get_objet()->get_projet()->fermer();
 }
 

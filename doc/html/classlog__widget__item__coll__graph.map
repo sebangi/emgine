@@ -1,9 +1,4 @@
 <map id="log_widget_item" name="log_widget_item">
-<area shape="rect" id="node3" href="$classlog__compilation.html" title="log_compilation" alt="" coords="149,445,260,472"/>
-<area shape="rect" id="node7" href="$classobjet__selectionnable.html" title="objet_selectionnable" alt="" coords="230,84,369,111"/>
-<area shape="rect" id="node5" href="$classbase__parametre.html" title="Classe décrivant un parametre d&#39;une fonction. " alt="" coords="363,355,477,381"/>
-<area shape="rect" id="node6" href="$classfonctions__conteneur.html" title="fonctions_conteneur" alt="" coords="231,163,369,189"/>
-<area shape="rect" id="node10" href="$classbase__fonction.html" title="Classe décrivant une fonction de conversion d&#39;un texte. " alt="" coords="249,253,351,280"/>
-<area shape="rect" id="node11" href="$classprojet.html" title="Classe décrivant un projet. " alt="" coords="141,304,195,331"/>
-<area shape="rect" id="node8" href="$classtextes.html" title="textes" alt="" coords="499,253,556,280"/>
+<area shape="rect" id="node3" href="$classlog__compilation.html" title="Classe décrivant un message de compilation. " alt="" coords="149,176,260,203"/>
+<area shape="rect" id="node5" href="$classobjet__selectionnable.html" title="objet_selectionnable" alt="" coords="189,84,328,111"/>
 </map>

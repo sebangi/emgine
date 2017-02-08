@@ -1,23 +1,36 @@
-#include "entete/compilation/logs_compilation_widget.h"
+/** \file logs_compilation_widget.cpp
+ * \brief Fichier d'implémentation de la class logs_compilation_widget.
+ * \author Sébastien Angibaud
+ */
+
 #include "entete/compilation/log_compilation.h"
 #include "entete/compilation/log_widget_item.h"
-#include "entete/projet/objet_selectionnable.h"
+#include "entete/compilation/logs_compilation_widget.h"
 #include "entete/fenetre_principale.h"
+#include "entete/projet/objet_selectionnable.h"
 
+#include <iostream>
+#include <QApplication>
+#include <QGroupBox>
 #include <QHBoxLayout>
 #include <QLabel>
-#include <QToolBar>
-#include <iostream>
 #include <QStyle>
-#include <QGroupBox>
-#include <QApplication>
+#include <QToolBar>
 
+/** --------------------------------------------------------------------------------------
+ * \brief Constructeur de la classe logs_compilation_widget.
+ * \param parent Un pointeur sur le widget parent.
+ */
 logs_compilation_widget::logs_compilation_widget(QWidget *parent)
     : QWidget(parent), m_pos_marque_ancien(0)
 {
     init_widgets();
 }
 
+/** --------------------------------------------------------------------------------------
+ * \brief Ajoute un log à la liste des logs.
+ * \param log Le log à ajouter.
+ */
 void logs_compilation_widget::ajouter_log(const log_compilation& log)
 {
     log_widget_item* item = new log_widget_item(log);
@@ -31,6 +44,9 @@ void logs_compilation_widget::ajouter_log(const log_compilation& log)
                 this, SLOT(on_externe_destruction_selectionnable(objet_selectionnable*)));
 }
 
+/** --------------------------------------------------------------------------------------
+ * \brief Marque tous logs comme étant ancien.
+ */
 void logs_compilation_widget::marquer_comme_ancien()
 {
     for ( int i = m_pos_marque_ancien; i < m_liste->count(); ++i )
@@ -41,6 +57,9 @@ void logs_compilation_widget::marquer_comme_ancien()
     m_pos_marque_ancien = m_liste->count();
 }
 
+/** --------------------------------------------------------------------------------------
+ * \brief Initialise le widget.
+ */
 void logs_compilation_widget::init_widgets()
 {
     setObjectName("logs_compilation_widget");
@@ -102,6 +121,9 @@ void logs_compilation_widget::init_widgets()
     setVisible( false );
 }
 
+/** --------------------------------------------------------------------------------------
+ * \brief Efface l'ensemble des logs.
+ */
 void logs_compilation_widget::clear()
 {
     m_liste->clear();
@@ -109,11 +131,17 @@ void logs_compilation_widget::clear()
     m_effacer_bouton->setEnabled(false);
 }
 
+/** --------------------------------------------------------------------------------------
+ * \brief Fonction appelée lors d'une demande d'effacement des logs.
+ */
 void logs_compilation_widget::on_effacer()
 {
     clear();
 }
 
+/** --------------------------------------------------------------------------------------
+ * \brief Fonction appelée pour demander à cacher des logs.
+ */
 void logs_compilation_widget::on_cacher_switch()
 {
     setVisible( false );
@@ -125,6 +153,10 @@ void logs_compilation_widget::on_cacher_switch()
     resize(save_size);
 }
 
+/** --------------------------------------------------------------------------------------
+ * \brief Fonction appelée lors d'un click sur un item de la liste.
+ * \param item L'item clické.
+ */
 void logs_compilation_widget::onLogClicked(QListWidgetItem* item)
 {
     objet_selectionnable * obj = ((log_widget_item*)item)->get_log().get_selectionnable() ;
@@ -132,6 +164,10 @@ void logs_compilation_widget::onLogClicked(QListWidgetItem* item)
         obj->selectionner();
 }
 
+/** --------------------------------------------------------------------------------------
+ * \brief Fonction appelée lors de la destruction d'un objet sélectionnable.
+ * \param obj Un pointeur sur l'objet détruit.
+ */
 void logs_compilation_widget::on_externe_destruction_selectionnable(objet_selectionnable *obj)
 {
     disconnect( obj, SIGNAL(signal_os_destruction_selectionnable(objet_selectionnable*)),

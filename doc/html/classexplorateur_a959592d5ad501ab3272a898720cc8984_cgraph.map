@@ -1,0 +1,12 @@
+<map id="explorateur::ajouter_menu_verrouillage" name="explorateur::ajouter_menu_verrouillage">
+<area shape="rect" id="node2" href="$classobjet__selectionnable.html#a1cf41e42861e0b033d2704802905e81a" title="objet_selectionnable\l::est_verrouille_avec\l_parent" alt="" coords="414,29,557,85"/>
+<area shape="rect" id="node4" href="$classobjet__selectionnable.html#ab5d7e0b9f000ba34d9d60b36590f1fcf" title="objet_selectionnable\l::est_fonction" alt="" coords="205,33,345,74"/>
+<area shape="rect" id="node5" href="$classexplorateur.html#add77f5981057fc14b9bbac37c251a467" title="explorateur::on_verrouiller\l_selectionnable" alt="" coords="189,163,360,205"/>
+<area shape="rect" id="node11" href="$classobjet__selectionnable.html#a57341a9bf3dbc66f4ad4414183b0d27c" title="objet_selectionnable\l::parents_verrouilles" alt="" coords="205,98,345,139"/>
+<area shape="rect" id="node3" href="$classobjet__selectionnable.html#a8b9cf156597fe8cc1b8f9408e1bfee8c" title="objet_selectionnable\l::est_verrouille" alt="" coords="611,37,751,78"/>
+<area shape="rect" id="node6" href="$classbase__noeud.html#ae78124477ea5148f16c2da42ac766f4c" title="Retourne l&#39;objet sélectionnable associé au noeud. " alt="" coords="409,141,562,168"/>
+<area shape="rect" id="node7" href="$classobjet__selectionnable.html#a028ac895965858e0e8e8e2cc25e8323c" title="objet_selectionnable\l::inverser_verrouillage" alt="" coords="411,193,560,234"/>
+<area shape="rect" id="node8" href="$classobjet__selectionnable.html#a5d39343f43293805a0b60e8520687d87" title="objet_selectionnable\l::set_verrouille" alt="" coords="611,193,751,234"/>
+<area shape="rect" id="node9" href="$classobjet__selectionnable.html#a9f76b8e89231a79c3fc840af874bd868" title="objet_selectionnable\l::modifier" alt="" coords="801,193,941,234"/>
+<area shape="rect" id="node10" href="$classobjet__selectionnable.html#a97e33c61983d5c7811e8bacff8f114c4" title="objet_selectionnable\l::est_projet" alt="" coords="990,193,1130,234"/>
+</map>

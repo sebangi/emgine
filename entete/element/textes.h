@@ -1,10 +1,20 @@
 #ifndef TEXTES_H
 #define TEXTES_H
 
+/** \file textes.h
+ * \brief Fichier de déclaration de la classe textes.
+ * \author Sébastien Angibaud
+ */
+
 #include "entete/element/texte.h"
 
 #include <vector>
 
+/**
+ * \class textes
+ * \brief Classe décrivant un ensemble de textes.
+ * \author Sébastien Angibaud
+ */
 class textes : public std::vector< texte >
 {
     public:

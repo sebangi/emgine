@@ -179,7 +179,10 @@ QString projet::get_nom_fichier() const
 
 QString projet::get_dossier() const
 {
-    return QFileInfo(m_nom_fichier).absolutePath();
+    if ( m_nom_fichier.isEmpty() )
+        return "";
+    else
+        return QFileInfo(m_nom_fichier).absolutePath();
 }
 
 void projet::set_nom_fichier(const QString &nom_fichier)
@@ -206,7 +209,7 @@ bool projet::est_valide(logs_compilation_widget * vue_logs)
                                    "Le projet \"" + m_nom + "\" n'a aucune fonction active") );
         result = false;
     }
-    else if ( ! actifs.front()->get_type() == base_fonction::fonction_source )
+    else if ( ! ( actifs.front()->get_type() == type_fonction::fonction_source ) )
     {
         vue_logs->ajouter_log
                 ( log_compilation( log_compilation::LOG_ERREUR, this,

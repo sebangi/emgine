@@ -1,0 +1,5 @@
+<map id="explorateur::mettre_a_jour_activation" name="explorateur::mettre_a_jour_activation">
+<area shape="rect" id="node2" href="$classbase__noeud.html#afb0d91325a08bb6e7e0234036035e574" title="Retourne l&#39;état d&#39;expansion sauvegardé avant le compactage automatique. " alt="" coords="203,5,357,46"/>
+<area shape="rect" id="node3" href="$classbase__noeud.html#a5fe905edcc9ff83f21a5d324c8a21bda" title="Sauvegarde l&#39;état d&#39;expansion. " alt="" coords="185,71,375,97"/>
+<area shape="rect" id="node4" href="$classbase__noeud.html#a12165cb731bfc08c958ccabad752d092" title="Met à jour le style du noeud. " alt="" coords="211,122,349,163"/>
+</map>

@@ -1,4 +1,4 @@
 <map id="compilateur" name="compilateur">
-<area shape="rect" id="node2" href="$classconfiguration.html" title="configuration" alt="" coords="40,99,136,125"/>
-<area shape="rect" id="node4" href="$classlogs__compilation__widget.html" title="logs_compilation_widget" alt="" coords="161,99,324,125"/>
+<area shape="rect" id="node2" href="$classconfiguration.html" title="Classe décrivant un configuration lors d&#39;une exécution. Pour un texte donné, une configuration corres..." alt="" coords="40,99,136,125"/>
+<area shape="rect" id="node4" href="$classlogs__compilation__widget.html" title="Classe décrivant le widget affichant l&#39;ensemble des logs. " alt="" coords="161,99,324,125"/>
 </map>

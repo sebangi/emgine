@@ -38,6 +38,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Recherche');
     <ul class="tablist">
       <li><a href="index.html"><span>Page&#160;principale</span></a></li>
       <li><a href="pages.html"><span>Pages&#160;associées</span></a></li>
+      <li><a href="modules.html"><span>Modules</span></a></li>
       <li class="current"><a href="annotated.html"><span>Classes</span></a></li>
       <li><a href="files.html"><span>Fichiers</span></a></li>
       <li>
@@ -71,7 +72,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Recherche');
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>Tout</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Fonctions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Définitions de type</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Énumérations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Pages</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>Tout</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Espaces de nommage</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Fichiers</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Fonctions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Définitions de type</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Énumérations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Valeurs énumérées</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&#160;</span>Groupes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(10)"><span class="SelectionMark">&#160;</span>Pages</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -84,6 +85,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Recherche');
 <div class="header">
   <div class="summary">
 <a href="#pub-types">Types publics</a> &#124;
+<a href="#pub-methods">Fonctions membres publiques</a> &#124;
 <a href="#pub-static-methods">Fonctions membres publiques statiques</a> &#124;
 <a href="#pri-static-attribs">Attributs privés statiques</a> &#124;
 <a href="classliste__choix-members.html">Liste de tous les membres</a>  </div>
@@ -91,58 +93,314 @@ var searchBox = new SearchBox("searchBox", "search",false,'Recherche');
 <div class="title">Référence de la classe liste_choix</div>  </div>
 </div><!--header-->
 <div class="contents">
+
+<p><code>#include &lt;<a class="el" href="liste__choix_8h_source.html">liste_choix.h</a>&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-types"></a>
 Types publics</h2></td></tr>
-<tr class="memitem:a682db50de2fcc2902105ae4d31c228ce"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a682db50de2fcc2902105ae4d31c228ce"></a>
-typedef std::vector&lt; choix &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classliste__choix.html#a682db50de2fcc2902105ae4d31c228ce">type_tableau_choix</a></td></tr>
-<tr class="memdesc:a682db50de2fcc2902105ae4d31c228ce"><td class="mdescLeft">&#160;</td><td class="mdescRight">Type décrivant un tableau de fonctions choisies. <br/></td></tr>
+<tr class="memitem:a682db50de2fcc2902105ae4d31c228ce"><td class="memItemLeft" align="right" valign="top">typedef std::vector&lt; choix &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classliste__choix.html#a682db50de2fcc2902105ae4d31c228ce">type_tableau_choix</a></td></tr>
+<tr class="memdesc:a682db50de2fcc2902105ae4d31c228ce"><td class="mdescLeft">&#160;</td><td class="mdescRight">Type décrivant un tableau de fonctions choisies.  <a href="#a682db50de2fcc2902105ae4d31c228ce">Plus de détails...</a><br/></td></tr>
 <tr class="separator:a682db50de2fcc2902105ae4d31c228ce"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
+Fonctions membres publiques</h2></td></tr>
+<tr class="memitem:a180eae227fe1046e32ffced5fab93814"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classliste__choix.html#a180eae227fe1046e32ffced5fab93814">liste_choix</a> ()</td></tr>
+<tr class="separator:a180eae227fe1046e32ffced5fab93814"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-methods"></a>
 Fonctions membres publiques statiques</h2></td></tr>
-<tr class="memitem:ab7f1d4e0e7d6ef7d3d45b99496ecc9b7"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ab7f1d4e0e7d6ef7d3d45b99496ecc9b7"></a>
-static void&#160;</td><td class="memItemRight" valign="bottom"><b>appliquer</b> (const old_texte &amp;source, old_texte &amp;resultat)</td></tr>
+<tr class="memitem:ab7f1d4e0e7d6ef7d3d45b99496ecc9b7"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classliste__choix.html#ab7f1d4e0e7d6ef7d3d45b99496ecc9b7">appliquer</a> (const old_texte &amp;source, old_texte &amp;resultat)</td></tr>
 <tr class="separator:ab7f1d4e0e7d6ef7d3d45b99496ecc9b7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:afb50b3cd09e21e9419bcd858f277f2ca"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="afb50b3cd09e21e9419bcd858f277f2ca"></a>
-static unsigned int&#160;</td><td class="memItemRight" valign="bottom"><b>get_nb_choix</b> ()</td></tr>
+<tr class="memitem:afb50b3cd09e21e9419bcd858f277f2ca"><td class="memItemLeft" align="right" valign="top">static unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classliste__choix.html#afb50b3cd09e21e9419bcd858f277f2ca">get_nb_choix</a> ()</td></tr>
 <tr class="separator:afb50b3cd09e21e9419bcd858f277f2ca"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac85f7f99d5fce6984fc4015c06abcb83"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ac85f7f99d5fce6984fc4015c06abcb83"></a>
-static const choix &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>get_choix</b> (unsigned int index)</td></tr>
+<tr class="memitem:ac85f7f99d5fce6984fc4015c06abcb83"><td class="memItemLeft" align="right" valign="top">static const choix &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classliste__choix.html#ac85f7f99d5fce6984fc4015c06abcb83">get_choix</a> (unsigned int index)</td></tr>
 <tr class="separator:ac85f7f99d5fce6984fc4015c06abcb83"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af49057074d304ed26706205e177ec415"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="af49057074d304ed26706205e177ec415"></a>
-static bool&#160;</td><td class="memItemRight" valign="bottom"><b>supprimer</b> (unsigned int index)</td></tr>
+<tr class="memitem:af49057074d304ed26706205e177ec415"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classliste__choix.html#af49057074d304ed26706205e177ec415">supprimer</a> (unsigned int index)</td></tr>
 <tr class="separator:af49057074d304ed26706205e177ec415"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9c00ca1b4f6f7a2720d691d0e2d2b1ef"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a9c00ca1b4f6f7a2720d691d0e2d2b1ef"></a>
-static bool&#160;</td><td class="memItemRight" valign="bottom"><b>monter</b> (unsigned int index)</td></tr>
+<tr class="memitem:a9c00ca1b4f6f7a2720d691d0e2d2b1ef"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classliste__choix.html#a9c00ca1b4f6f7a2720d691d0e2d2b1ef">monter</a> (unsigned int index)</td></tr>
 <tr class="separator:a9c00ca1b4f6f7a2720d691d0e2d2b1ef"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:adf86e7d3fc5d76b0f526771aadbaad24"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="adf86e7d3fc5d76b0f526771aadbaad24"></a>
-static bool&#160;</td><td class="memItemRight" valign="bottom"><b>descendre</b> (unsigned int index)</td></tr>
+<tr class="memitem:adf86e7d3fc5d76b0f526771aadbaad24"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classliste__choix.html#adf86e7d3fc5d76b0f526771aadbaad24">descendre</a> (unsigned int index)</td></tr>
 <tr class="separator:adf86e7d3fc5d76b0f526771aadbaad24"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0527098d571879a22533a1b983f41d95"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a0527098d571879a22533a1b983f41d95"></a>
-static void&#160;</td><td class="memItemRight" valign="bottom"><b>clear</b> ()</td></tr>
+<tr class="memitem:a0527098d571879a22533a1b983f41d95"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classliste__choix.html#a0527098d571879a22533a1b983f41d95">clear</a> ()</td></tr>
 <tr class="separator:a0527098d571879a22533a1b983f41d95"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6b44850004ffd8e3c4bb787a08d9f246"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a6b44850004ffd8e3c4bb787a08d9f246"></a>
-static void&#160;</td><td class="memItemRight" valign="bottom"><b>ajout_choix</b> (const choix &amp;c)</td></tr>
+<tr class="memitem:a6b44850004ffd8e3c4bb787a08d9f246"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classliste__choix.html#a6b44850004ffd8e3c4bb787a08d9f246">ajout_choix</a> (const choix &amp;c)</td></tr>
 <tr class="separator:a6b44850004ffd8e3c4bb787a08d9f246"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-static-attribs"></a>
 Attributs privés statiques</h2></td></tr>
-<tr class="memitem:ab033adf713728b76ed70686e0c453f5e"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ab033adf713728b76ed70686e0c453f5e"></a>
-static <a class="el" href="classliste__choix.html#a682db50de2fcc2902105ae4d31c228ce">type_tableau_choix</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classliste__choix.html#ab033adf713728b76ed70686e0c453f5e">s_choix</a></td></tr>
-<tr class="memdesc:ab033adf713728b76ed70686e0c453f5e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Tableau des fonctions choisies. <br/></td></tr>
+<tr class="memitem:ab033adf713728b76ed70686e0c453f5e"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classliste__choix.html#a682db50de2fcc2902105ae4d31c228ce">type_tableau_choix</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classliste__choix.html#ab033adf713728b76ed70686e0c453f5e">s_choix</a></td></tr>
+<tr class="memdesc:ab033adf713728b76ed70686e0c453f5e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Tableau des fonctions choisies.  <a href="#ab033adf713728b76ed70686e0c453f5e">Plus de détails...</a><br/></td></tr>
 <tr class="separator:ab033adf713728b76ed70686e0c453f5e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Description détaillée</h2>
 <div class="textblock">
 <p>Définition à la ligne <a class="el" href="liste__choix_8h_source.html#l00007">7</a> du fichier <a class="el" href="liste__choix_8h_source.html">liste_choix.h</a>.</p>
-</div><hr/>La documentation de cette classe a été générée à partir du fichier suivant :<ul>
+</div><h2 class="groupheader">Documentation des définitions de type membres</h2>
+<a class="anchor" id="a682db50de2fcc2902105ae4d31c228ce"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef std::vector&lt; choix &gt; <a class="el" href="classliste__choix.html#a682db50de2fcc2902105ae4d31c228ce">liste_choix::type_tableau_choix</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Type décrivant un tableau de fonctions choisies. </p>
+
+<p>Définition à la ligne <a class="el" href="liste__choix_8h_source.html#l00013">13</a> du fichier <a class="el" href="liste__choix_8h_source.html">liste_choix.h</a>.</p>
+
+</div>
+</div>
+<h2 class="groupheader">Documentation des constructeurs et destructeur</h2>
+<a class="anchor" id="a180eae227fe1046e32ffced5fab93814"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">liste_choix::liste_choix </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<h2 class="groupheader">Documentation des fonctions membres</h2>
+<a class="anchor" id="a6b44850004ffd8e3c4bb787a08d9f246"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static void liste_choix::ajout_choix </td>
+          <td>(</td>
+          <td class="paramtype">const choix &amp;&#160;</td>
+          <td class="paramname"><em>c</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="ab7f1d4e0e7d6ef7d3d45b99496ecc9b7"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static void liste_choix::appliquer </td>
+          <td>(</td>
+          <td class="paramtype">const old_texte &amp;&#160;</td>
+          <td class="paramname"><em>source</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">old_texte &amp;&#160;</td>
+          <td class="paramname"><em>resultat</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a0527098d571879a22533a1b983f41d95"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static void liste_choix::clear </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="adf86e7d3fc5d76b0f526771aadbaad24"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static bool liste_choix::descendre </td>
+          <td>(</td>
+          <td class="paramtype">unsigned int&#160;</td>
+          <td class="paramname"><em>index</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="ac85f7f99d5fce6984fc4015c06abcb83"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static const choix&amp; liste_choix::get_choix </td>
+          <td>(</td>
+          <td class="paramtype">unsigned int&#160;</td>
+          <td class="paramname"><em>index</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="afb50b3cd09e21e9419bcd858f277f2ca"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static unsigned int liste_choix::get_nb_choix </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a9c00ca1b4f6f7a2720d691d0e2d2b1ef"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static bool liste_choix::monter </td>
+          <td>(</td>
+          <td class="paramtype">unsigned int&#160;</td>
+          <td class="paramname"><em>index</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="af49057074d304ed26706205e177ec415"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static bool liste_choix::supprimer </td>
+          <td>(</td>
+          <td class="paramtype">unsigned int&#160;</td>
+          <td class="paramname"><em>index</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<h2 class="groupheader">Documentation des données membres</h2>
+<a class="anchor" id="ab033adf713728b76ed70686e0c453f5e"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classliste__choix.html#a682db50de2fcc2902105ae4d31c228ce">type_tableau_choix</a> liste_choix::s_choix</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Tableau des fonctions choisies. </p>
+
+<p>Définition à la ligne <a class="el" href="liste__choix_8h_source.html#l00031">31</a> du fichier <a class="el" href="liste__choix_8h_source.html">liste_choix.h</a>.</p>
+
+</div>
+</div>
+<hr/>La documentation de cette classe a été générée à partir du fichier suivant :<ul>
 <li>entete/<a class="el" href="liste__choix_8h_source.html">liste_choix.h</a></li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Généré le Mercredi 8 Février 2017 09:50:12 pour Emgine par &#160;<a href="http://www.doxygen.org/index.html">
+Généré le Mercredi 8 Février 2017 09:53:36 pour Emgine par &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.6
 </small></address>
