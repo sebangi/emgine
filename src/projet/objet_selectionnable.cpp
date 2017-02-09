@@ -257,6 +257,10 @@ bool objet_selectionnable::est_etendu() const
     return m_est_etendu;
 }
 
+/** --------------------------------------------------------------------------------------
+ * \brief Sauvegarde l'objet sélectionnable dans un flux donné.
+ * \param stream Le flux Xml dans lequel écrire.
+ */
 void objet_selectionnable::sauvegarder( QXmlStreamWriter & stream ) const
 {
     stream.writeStartElement("objet_selectionnable");

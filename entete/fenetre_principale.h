@@ -2,7 +2,7 @@
 #define FENETRE_PRINCIPALE_H
 
 /** \file fenetre_principale.h
- * \brief Déclaration de la classe fenetre_principale.
+ * \brief Fichier de déclaration de la classe fenetre_principale.
  * \author Sébastien Angibaud
  */
 

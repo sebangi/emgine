@@ -1,7 +1,7 @@
 #ifndef NOEUD_PROJET_H
 #define NOEUD_PROJET_H
 
-/** \file noeud_projet
+/** \file noeud_projet.h
  * \brief Fichier de déclaration de la classe noeud_projet.
  * \author Sébastien Angibaud
  */

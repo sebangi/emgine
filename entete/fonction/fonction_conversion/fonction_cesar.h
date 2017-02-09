@@ -1,24 +1,33 @@
 #ifndef FONCTION_CESAR_H
 #define FONCTION_CESAR_H
 
+/** \file fonction_cesar.h
+ * \brief Fichier de déclaration de la classe fonction_cesar.
+ * \author Sébastien Angibaud
+ */
+
 #include "entete/projet/base_fonction.h"
+
 #include <map>
 #include <vector>
 
 class base_element;
 
-/*!
- \brief Classe décrivant une fonction permettant de réaliser un décalage de césar.
- \author Sébastien Angibaud
-*/
+/**
+ * \class fonction_cesar
+ * \brief Classe décrivant une fonction permettant de réaliser un <b>décalage de césar</b>.
+ *  - Le décalage peut être additif ou soustractif ou une séquence de ce choix.
+ *  - Le décalage se fait suivant un entier ou une séquence d'entier.
+ *  - Chaque mot de la ligne spécifie un alphabet.
+ * \author Sébastien Angibaud
+ */
 class fonction_cesar : public base_fonction
 {
     public:
         fonction_cesar(fonctions_conteneur * conteneur);
+
         void initialisation_par_defaut();
-
         void executer( compilateur & compil, const textes & textes_in, textes & textes_out );
-
         QString get_valeur_courte() const;
 
     private:
@@ -29,19 +38,11 @@ class fonction_cesar : public base_fonction
         void execution_specifique( compilateur &compil, const textes & textes_in, textes & textes_out );
 
     private:
+        /** \brief Tableau associant à chaque élément sa position dans l'alphabet. */
         std::map<base_element, std::pair<int, int>> m_position_alphabet;
+
+        /** \brief L'ensemble des alphabets. */
         std::vector< std::vector<base_element> > m_alphabets;
-
-        bool m_additif_courant;
-
-        mot::const_iterator m_it_decalage_debut;
-        mot::const_iterator m_it_decalage;
-        mot::const_iterator m_it_decalage_fin;
-
-        mot::const_iterator m_it_soustractif_debut;
-        mot::const_iterator m_it_soustractif;
-        mot::const_iterator m_it_soustractif_fin;
-
 };
 
 #endif // FONCTION_CESAR_H

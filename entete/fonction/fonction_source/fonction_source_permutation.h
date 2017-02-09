@@ -1,8 +1,18 @@
 #ifndef FONCTION_SOURCE_PERMUTATION_H
 #define FONCTION_SOURCE_PERMUTATION_H
 
+/** \file fonction_source_permutation.h
+ * \brief Fichier de déclaration de la classe fonction_source_permutation.
+ * \author Sébastien Angibaud
+ */
+
 #include "entete/fonction/fonction_source/fonction_base_source.h"
 
+/**
+ * \class fonction_source_permutation
+ * \brief Classe décrivant une fonction source générant toutes les permutations d'une liste d'éléments fournis.
+ * \author Sébastien Angibaud
+ */
 class fonction_source_permutation : public fonction_base_source
 {
     public:
@@ -14,7 +24,6 @@ class fonction_source_permutation : public fonction_base_source
         base_fonction_widget *generer_fonction_widget();
         void executer( compilateur & compil, const textes & textes_in, textes & texte_sout );
         QString get_valeur_courte() const;
-
         QString get_string_valeur() const;
         void set_string_valeur(const QString & valeur);
 

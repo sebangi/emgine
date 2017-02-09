@@ -1,7 +1,7 @@
 #ifndef NOEUD_FONCTIONS_CONTENEUR_H
 #define NOEUD_FONCTIONS_CONTENEUR_H
 
-/** \file noeud_fonctions_conteneur
+/** \file noeud_fonctions_conteneur.h
  * \brief Fichier de déclaration de la classe noeud_fonctions_conteneur.
  * \author Sébastien Angibaud
  */

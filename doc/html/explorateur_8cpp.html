@@ -3,16 +3,15 @@
 <head>
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
-<meta name="generator" content="Doxygen 1.8.6"/>
+<meta name="generator" content="Doxygen 1.8.13"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
 <title>Emgine: Référence du fichier src/explorateur/explorateur.cpp</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
-<script type="text/javascript">
-  $(document).ready(function() { searchBox.OnSelectItem(0); });
-</script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
@@ -21,7 +20,7 @@
 <table cellspacing="0" cellpadding="0">
  <tbody>
  <tr style="height: 56px;">
-  <td style="padding-left: 0.5em;">
+  <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">Emgine
    </div>
   </td>
@@ -30,47 +29,25 @@
 </table>
 </div>
 <!-- end header part -->
-<!-- Généré par Doxygen 1.8.6 -->
+<!-- Généré par Doxygen 1.8.13 -->
 <script type="text/javascript">
 var searchBox = new SearchBox("searchBox", "search",false,'Recherche');
 </script>
-  <div id="navrow1" class="tabs">
-    <ul class="tablist">
-      <li><a href="index.html"><span>Page&#160;principale</span></a></li>
-      <li><a href="pages.html"><span>Pages&#160;associées</span></a></li>
-      <li><a href="modules.html"><span>Modules</span></a></li>
-      <li><a href="annotated.html"><span>Classes</span></a></li>
-      <li class="current"><a href="files.html"><span>Fichiers</span></a></li>
-      <li>
-        <div id="MSearchBox" class="MSearchBoxInactive">
-        <span class="left">
-          <img id="MSearchSelect" src="search/mag_sel.png"
-               onmouseover="return searchBox.OnSearchSelectShow()"
-               onmouseout="return searchBox.OnSearchSelectHide()"
-               alt=""/>
-          <input type="text" id="MSearchField" value="Recherche" accesskey="S"
-               onfocus="searchBox.OnSearchFieldFocus(true)" 
-               onblur="searchBox.OnSearchFieldFocus(false)" 
-               onkeyup="searchBox.OnSearchFieldChange(event)"/>
-          </span><span class="right">
-            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
-          </span>
-        </div>
-      </li>
-    </ul>
-  </div>
-  <div id="navrow2" class="tabs2">
-    <ul class="tablist">
-      <li><a href="files.html"><span>Liste&#160;des&#160;fichiers</span></a></li>
-      <li><a href="globals.html"><span>Membres&#160;de&#160;fichier</span></a></li>
-    </ul>
-  </div>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+$(function() {
+  initMenu('',true,false,'search.php','Recherche');
+  $(document).ready(function() { init_search(); });
+});
+</script>
+<div id="main-nav"></div>
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>Tout</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Espaces de nommage</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Fichiers</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Fonctions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Définitions de type</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Énumérations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Valeurs énumérées</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&#160;</span>Groupes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(10)"><span class="SelectionMark">&#160;</span>Pages</a></div>
+</div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -92,30 +69,54 @@ var searchBox = new SearchBox("searchBox", "search",false,'Recherche');
 
 <p>Fichier d'implémentation de la classe explorateur.  
 <a href="#details">Plus de détails...</a></p>
-<div class="textblock"><code>#include &quot;<a class="el" href="explorateur_8h_source.html">entete/explorateur/explorateur.h</a>&quot;</code><br/>
-<code>#include &quot;<a class="el" href="base__noeud_8h_source.html">entete/explorateur/base_noeud.h</a>&quot;</code><br/>
-<code>#include &quot;<a class="el" href="noeud__fonction_8h_source.html">entete/explorateur/noeud_fonction.h</a>&quot;</code><br/>
-<code>#include &quot;<a class="el" href="noeud__parametre_8h_source.html">entete/explorateur/noeud_parametre.h</a>&quot;</code><br/>
-<code>#include &quot;<a class="el" href="noeud__projet_8h_source.html">entete/explorateur/noeud_projet.h</a>&quot;</code><br/>
-<code>#include &quot;<a class="el" href="fenetre__principale_8h_source.html">entete/fenetre_principale.h</a>&quot;</code><br/>
-<code>#include &quot;<a class="el" href="bibliotheque__fonctions_8h_source.html">entete/fonction/bibliotheque_fonctions.h</a>&quot;</code><br/>
-<code>#include &quot;<a class="el" href="base__fonction_8h_source.html">entete/projet/base_fonction.h</a>&quot;</code><br/>
-<code>#include &quot;<a class="el" href="fonctions__conteneur_8h_source.html">entete/projet/fonctions_conteneur.h</a>&quot;</code><br/>
-<code>#include &quot;<a class="el" href="objet__selectionnable_8h_source.html">entete/projet/objet_selectionnable.h</a>&quot;</code><br/>
-<code>#include &quot;<a class="el" href="projet_8h_source.html">entete/projet/projet.h</a>&quot;</code><br/>
-<code>#include &lt;QAction&gt;</code><br/>
-<code>#include &lt;QApplication&gt;</code><br/>
-<code>#include &lt;QHeaderView&gt;</code><br/>
-<code>#include &lt;QKeyEvent&gt;</code><br/>
-<code>#include &lt;QMenu&gt;</code><br/>
-<code>#include &lt;QMessageBox&gt;</code><br/>
-<code>#include &lt;QXmlStreamReader&gt;</code><br/>
+<div class="textblock"><code>#include &quot;<a class="el" href="explorateur_8h_source.html">entete/explorateur/explorateur.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="base__noeud_8h_source.html">entete/explorateur/base_noeud.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="noeud__fonction_8h_source.html">entete/explorateur/noeud_fonction.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="noeud__parametre_8h_source.html">entete/explorateur/noeud_parametre.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="noeud__projet_8h_source.html">entete/explorateur/noeud_projet.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="fenetre__principale_8h_source.html">entete/fenetre_principale.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="bibliotheque__fonctions_8h_source.html">entete/fonction/bibliotheque_fonctions.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="base__fonction_8h_source.html">entete/projet/base_fonction.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="fonctions__conteneur_8h_source.html">entete/projet/fonctions_conteneur.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="objet__selectionnable_8h_source.html">entete/projet/objet_selectionnable.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="projet_8h_source.html">entete/projet/projet.h</a>&quot;</code><br />
+<code>#include &lt;QAction&gt;</code><br />
+<code>#include &lt;QApplication&gt;</code><br />
+<code>#include &lt;QHeaderView&gt;</code><br />
+<code>#include &lt;QKeyEvent&gt;</code><br />
+<code>#include &lt;QMenu&gt;</code><br />
+<code>#include &lt;QMessageBox&gt;</code><br />
+<code>#include &lt;QXmlStreamReader&gt;</code><br />
 </div><div class="textblock"><div class="dynheader">
 Graphe des dépendances par inclusion de explorateur.cpp:</div>
 <div class="dyncontent">
 <div class="center"><img src="explorateur_8cpp__incl.png" border="0" usemap="#src_2explorateur_2explorateur_8cpp" alt=""/></div>
 <map name="src_2explorateur_2explorateur_8cpp" id="src_2explorateur_2explorateur_8cpp">
-<area shape="rect" id="node2" href="explorateur_8h.html" title="Fichier de déclaration de la classe explorateur. " alt="" coords="78,81,204,122"/><area shape="rect" id="node5" href="base__noeud_8h.html" title="Fichier de déclaration de la classe base_noeud. " alt="" coords="2346,262,2472,303"/><area shape="rect" id="node8" href="noeud__fonction_8h.html" title="Fichier de déclaration de la classe noeud_fonction. " alt="" coords="2379,171,2505,213"/><area shape="rect" id="node9" href="noeud__parametre_8h.html" title="Fichier de déclaration de la classe noeud_parametre. " alt="" coords="1946,171,2083,213"/><area shape="rect" id="node10" href="noeud__projet_8h.html" title="entete/explorateur\l/noeud_projet.h" alt="" coords="1997,81,2123,122"/><area shape="rect" id="node12" href="fenetre__principale_8h.html" title="Déclaration de la classe fenetre_principale. " alt="" coords="2115,269,2289,296"/><area shape="rect" id="node20" href="bibliotheque__fonctions_8h.html" title="entete/fonction/bibliotheque\l_fonctions.h" alt="" coords="263,81,444,122"/><area shape="rect" id="node24" href="base__fonction_8h.html" title="Déclaration de la classe base_fonction. " alt="" coords="771,81,897,122"/><area shape="rect" id="node38" href="fonctions__conteneur_8h.html" title="entete/projet/fonctions\l_conteneur.h" alt="" coords="1517,262,1667,303"/><area shape="rect" id="node40" href="objet__selectionnable_8h.html" title="entete/projet/objet\l_selectionnable.h" alt="" coords="1463,353,1589,394"/><area shape="rect" id="node43" href="projet_8h.html" title="entete/projet/projet.h" alt="" coords="1679,179,1819,205"/><area shape="rect" id="node11" href="noeud__fonctions__conteneur_8h.html" title="entete/explorateur\l/noeud_fonctions_conteneur.h" alt="" coords="2107,171,2303,213"/><area shape="rect" id="node21" href="define__fonction_8h.html" title="Déclaration des énumérations utiles aux fonctions. " alt="" coords="280,171,427,213"/><area shape="rect" id="node28" href="textes_8h.html" title="Fichier de déclaration de la classe textes. " alt="" coords="909,269,1067,296"/><area shape="rect" id="node37" href="base__parametre_8h.html" title="entete/projet/base\l_parametre.h" alt="" coords="1134,171,1260,213"/><area shape="rect" id="node41" href="algo___p_m_i_p_l_8h.html" title="entete/fonction/algorithme\l/algo_PMIPL.h" alt="" coords="433,443,604,485"/><area shape="rect" id="node42" href="algo___l_i_p_l_8h.html" title="entete/fonction/algorithme\l/algo_LIPL.h" alt="" coords="678,353,849,394"/><area shape="rect" id="node29" href="texte_8h.html" title="Fichier de déclaration de la classe texte. " alt="" coords="879,360,1031,387"/><area shape="rect" id="node30" href="configuration_8h.html" title="Fichier de déclaration de la classe configuration. " alt="" coords="855,443,983,485"/><area shape="rect" id="node32" href="ligne_8h.html" title="Fichier de déclaration de la classe ligne. " alt="" coords="629,451,779,477"/><area shape="rect" id="node31" href="define__parametre_8h.html" title="Déclaration des énumérations utiles aux parametres. " alt="" coords="785,534,932,575"/><area shape="rect" id="node33" href="mot_8h.html" title="Fichier de déclaration de la classe mot. " alt="" coords="565,541,709,568"/><area shape="rect" id="node34" href="base__element_8h.html" title="Fichier de déclaration de la classe bae_element. " alt="" coords="1031,625,1171,666"/><area shape="rect" id="node35" href="type__element_8h.html" title="type_element.h" alt="" coords="1057,715,1167,741"/></map>
+<area shape="rect" id="node2" href="explorateur_8h.html" title="Fichier de déclaration de la classe explorateur. " alt="" coords="78,81,204,122"/>
+<area shape="rect" id="node5" href="base__noeud_8h.html" title="Fichier de déclaration de la classe base_noeud. " alt="" coords="2346,262,2472,303"/>
+<area shape="rect" id="node8" href="noeud__fonction_8h.html" title="Fichier de déclaration de la classe noeud_fonction. " alt="" coords="2379,171,2505,213"/>
+<area shape="rect" id="node9" href="noeud__parametre_8h.html" title="Fichier de déclaration de la classe noeud_parametre. " alt="" coords="1946,171,2083,213"/>
+<area shape="rect" id="node10" href="noeud__projet_8h.html" title="entete/explorateur\l/noeud_projet.h" alt="" coords="1997,81,2123,122"/>
+<area shape="rect" id="node12" href="fenetre__principale_8h.html" title="Déclaration de la classe fenetre_principale. " alt="" coords="2115,269,2289,296"/>
+<area shape="rect" id="node20" href="bibliotheque__fonctions_8h.html" title="entete/fonction/bibliotheque\l_fonctions.h" alt="" coords="263,81,444,122"/>
+<area shape="rect" id="node24" href="base__fonction_8h.html" title="Déclaration de la classe base_fonction. " alt="" coords="771,81,897,122"/>
+<area shape="rect" id="node38" href="fonctions__conteneur_8h.html" title="entete/projet/fonctions\l_conteneur.h" alt="" coords="1517,262,1667,303"/>
+<area shape="rect" id="node40" href="objet__selectionnable_8h.html" title="entete/projet/objet\l_selectionnable.h" alt="" coords="1463,353,1589,394"/>
+<area shape="rect" id="node43" href="projet_8h.html" title="entete/projet/projet.h" alt="" coords="1679,179,1819,205"/>
+<area shape="rect" id="node11" href="noeud__fonctions__conteneur_8h.html" title="entete/explorateur\l/noeud_fonctions_conteneur.h" alt="" coords="2107,171,2303,213"/>
+<area shape="rect" id="node21" href="define__fonction_8h.html" title="Déclaration des énumérations utiles aux fonctions. " alt="" coords="280,171,427,213"/>
+<area shape="rect" id="node28" href="textes_8h.html" title="Fichier de déclaration de la classe textes. " alt="" coords="909,269,1067,296"/>
+<area shape="rect" id="node37" href="base__parametre_8h.html" title="entete/projet/base\l_parametre.h" alt="" coords="1134,171,1260,213"/>
+<area shape="rect" id="node41" href="algo___p_m_i_p_l_8h.html" title="entete/fonction/algorithme\l/algo_PMIPL.h" alt="" coords="433,443,604,485"/>
+<area shape="rect" id="node42" href="algo___l_i_p_l_8h.html" title="entete/fonction/algorithme\l/algo_LIPL.h" alt="" coords="678,353,849,394"/>
+<area shape="rect" id="node29" href="texte_8h.html" title="Fichier de déclaration de la classe texte. " alt="" coords="879,360,1031,387"/>
+<area shape="rect" id="node30" href="configuration_8h.html" title="Fichier de déclaration de la classe configuration. " alt="" coords="855,443,983,485"/>
+<area shape="rect" id="node32" href="ligne_8h.html" title="Fichier de déclaration de la classe ligne. " alt="" coords="629,451,779,477"/>
+<area shape="rect" id="node31" href="define__parametre_8h.html" title="Déclaration des énumérations utiles aux parametres. " alt="" coords="785,534,932,575"/>
+<area shape="rect" id="node33" href="mot_8h.html" title="Fichier de déclaration de la classe mot. " alt="" coords="565,541,709,568"/>
+<area shape="rect" id="node34" href="base__element_8h.html" title="Fichier de déclaration de la classe bae_element. " alt="" coords="1031,625,1171,666"/>
+<area shape="rect" id="node35" href="type__element_8h.html" title="type_element.h" alt="" coords="1057,715,1167,741"/>
+</map>
 </div>
 </div>
 <p><a href="explorateur_8cpp_source.html">Aller au code source de ce fichier.</a></p>
@@ -123,13 +124,13 @@ Graphe des dépendances par inclusion de explorateur.cpp:</div>
 <div class="textblock"><p>Fichier d'implémentation de la classe explorateur. </p>
 <dl class="section author"><dt>Auteur</dt><dd>Sébastien Angibaud </dd></dl>
 
-<p>Définition dans le fichier <a class="el" href="explorateur_8cpp_source.html">explorateur.cpp</a>.</p>
+<p class="definition">Définition dans le fichier <a class="el" href="explorateur_8cpp_source.html">explorateur.cpp</a>.</p>
 </div></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Généré le Mercredi 8 Février 2017 09:53:35 pour Emgine par &#160;<a href="http://www.doxygen.org/index.html">
+Généré le Jeudi 9 Février 2017 15:10:55 pour Emgine par &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
-</a> 1.8.6
+</a> 1.8.13
 </small></address>
 </body>
 </html>

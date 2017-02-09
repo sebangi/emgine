@@ -3,16 +3,15 @@
 <head>
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
-<meta name="generator" content="Doxygen 1.8.6"/>
+<meta name="generator" content="Doxygen 1.8.13"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
 <title>Emgine:  Fichier source de entete/fonction/bibliotheque_fonctions.h</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
-<script type="text/javascript">
-  $(document).ready(function() { searchBox.OnSelectItem(0); });
-</script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
@@ -21,7 +20,7 @@
 <table cellspacing="0" cellpadding="0">
  <tbody>
  <tr style="height: 56px;">
-  <td style="padding-left: 0.5em;">
+  <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">Emgine
    </div>
   </td>
@@ -30,47 +29,25 @@
 </table>
 </div>
 <!-- end header part -->
-<!-- Généré par Doxygen 1.8.6 -->
+<!-- Généré par Doxygen 1.8.13 -->
 <script type="text/javascript">
 var searchBox = new SearchBox("searchBox", "search",false,'Recherche');
 </script>
-  <div id="navrow1" class="tabs">
-    <ul class="tablist">
-      <li><a href="index.html"><span>Page&#160;principale</span></a></li>
-      <li><a href="pages.html"><span>Pages&#160;associées</span></a></li>
-      <li><a href="modules.html"><span>Modules</span></a></li>
-      <li><a href="annotated.html"><span>Classes</span></a></li>
-      <li class="current"><a href="files.html"><span>Fichiers</span></a></li>
-      <li>
-        <div id="MSearchBox" class="MSearchBoxInactive">
-        <span class="left">
-          <img id="MSearchSelect" src="search/mag_sel.png"
-               onmouseover="return searchBox.OnSearchSelectShow()"
-               onmouseout="return searchBox.OnSearchSelectHide()"
-               alt=""/>
-          <input type="text" id="MSearchField" value="Recherche" accesskey="S"
-               onfocus="searchBox.OnSearchFieldFocus(true)" 
-               onblur="searchBox.OnSearchFieldFocus(false)" 
-               onkeyup="searchBox.OnSearchFieldChange(event)"/>
-          </span><span class="right">
-            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
-          </span>
-        </div>
-      </li>
-    </ul>
-  </div>
-  <div id="navrow2" class="tabs2">
-    <ul class="tablist">
-      <li><a href="files.html"><span>Liste&#160;des&#160;fichiers</span></a></li>
-      <li><a href="globals.html"><span>Membres&#160;de&#160;fichier</span></a></li>
-    </ul>
-  </div>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+$(function() {
+  initMenu('',true,false,'search.php','Recherche');
+  $(document).ready(function() { init_search(); });
+});
+</script>
+<div id="main-nav"></div>
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>Tout</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Espaces de nommage</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Fichiers</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Fonctions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Définitions de type</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Énumérations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Valeurs énumérées</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&#160;</span>Groupes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(10)"><span class="SelectionMark">&#160;</span>Pages</a></div>
+</div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -89,50 +66,23 @@ var searchBox = new SearchBox("searchBox", "search",false,'Recherche');
 <div class="title">bibliotheque_fonctions.h</div>  </div>
 </div><!--header-->
 <div class="contents">
-<a href="bibliotheque__fonctions_8h.html">Aller à la documentation de ce fichier.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#ifndef BIBLIOTHEQUE_FONCTION_H</span></div>
-<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#define BIBLIOTHEQUE_FONCTION_H</span></div>
-<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="preprocessor"></span></div>
-<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="define__fonction_8h.html">entete/fonction/define_fonction.h</a>&quot;</span></div>
-<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;</div>
-<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="preprocessor">#include &lt;map&gt;</span></div>
-<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="preprocessor">#include &lt;set&gt;</span></div>
-<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor">#include &lt;QString&gt;</span></div>
-<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;</div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="keyword">class </span><a class="code" href="classbase__fonction.html">base_fonction</a>;</div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;</div>
-<div class="line"><a name="l00012"></a><span class="lineno"><a class="line" href="classbibliotheque__fonctions.html">   12</a></span>&#160;<span class="keyword">class </span><a class="code" href="classbibliotheque__fonctions.html">bibliotheque_fonctions</a></div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;{        </div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;    <span class="keyword">public</span>:</div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;        <span class="keyword">static</span> <a class="code" href="classbase__fonction.html">base_fonction</a> *<a class="code" href="classbibliotheque__fonctions.html#a97e2db5603fe4267df7ace47f110b6e0">get_fonction</a>(<a class="code" href="define__fonction_8h.html#af2e23e67d8ce69a3ba22b4d5b2855b2f">type_id_fonction</a> <span class="keywordtype">id</span>);</div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;</div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;        <span class="keyword">static</span> QString <a class="code" href="classbibliotheque__fonctions.html#af09bab02cd189c76012784c77f336a90">get_aide</a>(<a class="code" href="define__fonction_8h.html#af2e23e67d8ce69a3ba22b4d5b2855b2f">type_id_fonction</a> <span class="keywordtype">id</span>);</div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;        <span class="keyword">static</span> QString <a class="code" href="classbibliotheque__fonctions.html#ac8c035960c49cdf0fe7437b82739154e">get_nom</a>(<a class="code" href="define__fonction_8h.html#af2e23e67d8ce69a3ba22b4d5b2855b2f">type_id_fonction</a> <span class="keywordtype">id</span>);</div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;        <span class="keyword">static</span> <span class="keywordtype">bool</span> <a class="code" href="classbibliotheque__fonctions.html#a04f3a1112f61c115ccb77d9cd0d33d1a">contient_mot_cle</a>(<a class="code" href="define__fonction_8h.html#af2e23e67d8ce69a3ba22b4d5b2855b2f">type_id_fonction</a> <span class="keywordtype">id</span>, <span class="keyword">const</span> QString &amp; cle );</div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;</div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;    <span class="keyword">private</span>:</div>
-<div class="line"><a name="l00022"></a><span class="lineno"><a class="line" href="classbibliotheque__fonctions.html#a4dd28c86134053a78298a3cd566ae546">   22</a></span>&#160;        <span class="keyword">static</span> std::map&lt;type_id_fonction, QString&gt; <a class="code" href="classbibliotheque__fonctions.html#a4dd28c86134053a78298a3cd566ae546">s_fonctions_aide</a>;</div>
-<div class="line"><a name="l00023"></a><span class="lineno"><a class="line" href="classbibliotheque__fonctions.html#a7684a2aa4cbcbaa1ec909274027271bf">   23</a></span>&#160;        <span class="keyword">static</span> std::map&lt;type_id_fonction, QString&gt; <a class="code" href="classbibliotheque__fonctions.html#a7684a2aa4cbcbaa1ec909274027271bf">s_fonctions_nom</a>;</div>
-<div class="line"><a name="l00024"></a><span class="lineno"><a class="line" href="classbibliotheque__fonctions.html#a9d2d4c4d203f964885415418809474d6">   24</a></span>&#160;        <span class="keyword">static</span> std::map&lt;type_id_fonction, std::set&lt;QString&gt; &gt; <a class="code" href="classbibliotheque__fonctions.html#a9d2d4c4d203f964885415418809474d6">s_categories</a>;</div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;};</div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;</div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="preprocessor">#endif // BIBLIOTHEQUE_FONCTION_H</span></div>
-<div class="ttc" id="classbibliotheque__fonctions_html_a7684a2aa4cbcbaa1ec909274027271bf"><div class="ttname"><a href="classbibliotheque__fonctions.html#a7684a2aa4cbcbaa1ec909274027271bf">bibliotheque_fonctions::s_fonctions_nom</a></div><div class="ttdeci">static std::map&lt; type_id_fonction, QString &gt; s_fonctions_nom</div><div class="ttdef"><b>Definition:</b> <a href="bibliotheque__fonctions_8h_source.html#l00023">bibliotheque_fonctions.h:23</a></div></div>
+<a href="bibliotheque__fonctions_8h.html">Aller à la documentation de ce fichier.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#ifndef BIBLIOTHEQUE_FONCTION_H</span></div><div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor">#define BIBLIOTHEQUE_FONCTION_H</span></div><div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;</div><div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="define__fonction_8h.html">entete/fonction/define_fonction.h</a>&quot;</span></div><div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;</div><div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="preprocessor">#include &lt;QString&gt;</span></div><div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;</div><div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="preprocessor">#include &lt;map&gt;</span></div><div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="preprocessor">#include &lt;set&gt;</span></div><div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;</div><div class="line"><a name="l00016"></a><span class="lineno"><a class="line" href="classbibliotheque__fonction.html">   16</a></span>&#160;<span class="keyword">class </span><a class="code" href="classbase__fonction.html">base_fonction</a>;</div><div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;</div><div class="line"><a name="l00023"></a><span class="lineno"><a class="line" href="classbibliotheque__fonctions.html">   23</a></span>&#160;<span class="keyword">class </span><a class="code" href="classbibliotheque__fonctions.html">bibliotheque_fonctions</a></div><div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;{        </div><div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;    <span class="keyword">public</span>:</div><div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;        <span class="keyword">static</span> <a class="code" href="classbase__fonction.html">base_fonction</a> *<a class="code" href="classbibliotheque__fonctions.html#a97e2db5603fe4267df7ace47f110b6e0">get_fonction</a>(<a class="code" href="define__fonction_8h.html#af2e23e67d8ce69a3ba22b4d5b2855b2f">type_id_fonction</a> <span class="keywordtype">id</span>);</div><div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;</div><div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;        <span class="keyword">static</span> QString <a class="code" href="classbibliotheque__fonctions.html#af09bab02cd189c76012784c77f336a90">get_aide</a>(<a class="code" href="define__fonction_8h.html#af2e23e67d8ce69a3ba22b4d5b2855b2f">type_id_fonction</a> <span class="keywordtype">id</span>);</div><div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;        <span class="keyword">static</span> QString <a class="code" href="classbibliotheque__fonctions.html#ac8c035960c49cdf0fe7437b82739154e">get_nom</a>(<a class="code" href="define__fonction_8h.html#af2e23e67d8ce69a3ba22b4d5b2855b2f">type_id_fonction</a> <span class="keywordtype">id</span>);</div><div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;        <span class="keyword">static</span> <span class="keywordtype">bool</span> <a class="code" href="classbibliotheque__fonctions.html#a04f3a1112f61c115ccb77d9cd0d33d1a">contient_mot_cle</a>(<a class="code" href="define__fonction_8h.html#af2e23e67d8ce69a3ba22b4d5b2855b2f">type_id_fonction</a> <span class="keywordtype">id</span>, <span class="keyword">const</span> QString &amp; cle );</div><div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;</div><div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    <span class="keyword">private</span>:</div><div class="line"><a name="l00034"></a><span class="lineno"><a class="line" href="classbibliotheque__fonctions.html#a4dd28c86134053a78298a3cd566ae546">   34</a></span>&#160;        <span class="keyword">static</span> std::map&lt;type_id_fonction, QString&gt; <a class="code" href="classbibliotheque__fonctions.html#a4dd28c86134053a78298a3cd566ae546">s_fonctions_aide</a>;</div><div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;</div><div class="line"><a name="l00037"></a><span class="lineno"><a class="line" href="classbibliotheque__fonctions.html#a7684a2aa4cbcbaa1ec909274027271bf">   37</a></span>&#160;        <span class="keyword">static</span> std::map&lt;type_id_fonction, QString&gt; <a class="code" href="classbibliotheque__fonctions.html#a7684a2aa4cbcbaa1ec909274027271bf">s_fonctions_nom</a>;</div><div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;</div><div class="line"><a name="l00040"></a><span class="lineno"><a class="line" href="classbibliotheque__fonctions.html#a9d2d4c4d203f964885415418809474d6">   40</a></span>&#160;        <span class="keyword">static</span> std::map&lt;type_id_fonction, std::set&lt;QString&gt; &gt; <a class="code" href="classbibliotheque__fonctions.html#a9d2d4c4d203f964885415418809474d6">s_categories</a>;</div><div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;};</div><div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;</div><div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;<span class="preprocessor">#endif // BIBLIOTHEQUE_FONCTION_H</span></div><div class="ttc" id="classbibliotheque__fonctions_html_a7684a2aa4cbcbaa1ec909274027271bf"><div class="ttname"><a href="classbibliotheque__fonctions.html#a7684a2aa4cbcbaa1ec909274027271bf">bibliotheque_fonctions::s_fonctions_nom</a></div><div class="ttdeci">static std::map&lt; type_id_fonction, QString &gt; s_fonctions_nom</div><div class="ttdoc">Les noms de chaque fonction. </div><div class="ttdef"><b>Definition:</b> <a href="bibliotheque__fonctions_8h_source.html#l00037">bibliotheque_fonctions.h:37</a></div></div>
 <div class="ttc" id="define__fonction_8h_html"><div class="ttname"><a href="define__fonction_8h.html">define_fonction.h</a></div><div class="ttdoc">Déclaration des énumérations utiles aux fonctions. </div></div>
-<div class="ttc" id="classbibliotheque__fonctions_html_ac8c035960c49cdf0fe7437b82739154e"><div class="ttname"><a href="classbibliotheque__fonctions.html#ac8c035960c49cdf0fe7437b82739154e">bibliotheque_fonctions::get_nom</a></div><div class="ttdeci">static QString get_nom(type_id_fonction id)</div><div class="ttdef"><b>Definition:</b> <a href="bibliotheque__fonctions_8cpp_source.html#l00104">bibliotheque_fonctions.cpp:104</a></div></div>
-<div class="ttc" id="classbibliotheque__fonctions_html_a97e2db5603fe4267df7ace47f110b6e0"><div class="ttname"><a href="classbibliotheque__fonctions.html#a97e2db5603fe4267df7ace47f110b6e0">bibliotheque_fonctions::get_fonction</a></div><div class="ttdeci">static base_fonction * get_fonction(type_id_fonction id)</div><div class="ttdef"><b>Definition:</b> <a href="bibliotheque__fonctions_8cpp_source.html#l00072">bibliotheque_fonctions.cpp:72</a></div></div>
-<div class="ttc" id="classbibliotheque__fonctions_html_a04f3a1112f61c115ccb77d9cd0d33d1a"><div class="ttname"><a href="classbibliotheque__fonctions.html#a04f3a1112f61c115ccb77d9cd0d33d1a">bibliotheque_fonctions::contient_mot_cle</a></div><div class="ttdeci">static bool contient_mot_cle(type_id_fonction id, const QString &amp;cle)</div><div class="ttdef"><b>Definition:</b> <a href="bibliotheque__fonctions_8cpp_source.html#l00114">bibliotheque_fonctions.cpp:114</a></div></div>
-<div class="ttc" id="classbibliotheque__fonctions_html_a4dd28c86134053a78298a3cd566ae546"><div class="ttname"><a href="classbibliotheque__fonctions.html#a4dd28c86134053a78298a3cd566ae546">bibliotheque_fonctions::s_fonctions_aide</a></div><div class="ttdeci">static std::map&lt; type_id_fonction, QString &gt; s_fonctions_aide</div><div class="ttdef"><b>Definition:</b> <a href="bibliotheque__fonctions_8h_source.html#l00022">bibliotheque_fonctions.h:22</a></div></div>
+<div class="ttc" id="classbibliotheque__fonctions_html_ac8c035960c49cdf0fe7437b82739154e"><div class="ttname"><a href="classbibliotheque__fonctions.html#ac8c035960c49cdf0fe7437b82739154e">bibliotheque_fonctions::get_nom</a></div><div class="ttdeci">static QString get_nom(type_id_fonction id)</div><div class="ttdoc">Retourne le nom pour un type de fonction donné. </div><div class="ttdef"><b>Definition:</b> <a href="bibliotheque__fonctions_8cpp_source.html#l00127">bibliotheque_fonctions.cpp:127</a></div></div>
+<div class="ttc" id="classbibliotheque__fonctions_html_a97e2db5603fe4267df7ace47f110b6e0"><div class="ttname"><a href="classbibliotheque__fonctions.html#a97e2db5603fe4267df7ace47f110b6e0">bibliotheque_fonctions::get_fonction</a></div><div class="ttdeci">static base_fonction * get_fonction(type_id_fonction id)</div><div class="ttdoc">Crée et retourne une fonction pour un type donné. </div><div class="ttdef"><b>Definition:</b> <a href="bibliotheque__fonctions_8cpp_source.html#l00085">bibliotheque_fonctions.cpp:85</a></div></div>
+<div class="ttc" id="classbibliotheque__fonctions_html_a04f3a1112f61c115ccb77d9cd0d33d1a"><div class="ttname"><a href="classbibliotheque__fonctions.html#a04f3a1112f61c115ccb77d9cd0d33d1a">bibliotheque_fonctions::contient_mot_cle</a></div><div class="ttdeci">static bool contient_mot_cle(type_id_fonction id, const QString &amp;cle)</div><div class="ttdoc">Indique si une fonction d&amp;#39;un type donné contient un mot clé spécifié. </div><div class="ttdef"><b>Definition:</b> <a href="bibliotheque__fonctions_8cpp_source.html#l00143">bibliotheque_fonctions.cpp:143</a></div></div>
+<div class="ttc" id="classbibliotheque__fonctions_html_a4dd28c86134053a78298a3cd566ae546"><div class="ttname"><a href="classbibliotheque__fonctions.html#a4dd28c86134053a78298a3cd566ae546">bibliotheque_fonctions::s_fonctions_aide</a></div><div class="ttdeci">static std::map&lt; type_id_fonction, QString &gt; s_fonctions_aide</div><div class="ttdoc">Les textes d&amp;#39;aide pour chaque fonction. </div><div class="ttdef"><b>Definition:</b> <a href="bibliotheque__fonctions_8h_source.html#l00034">bibliotheque_fonctions.h:34</a></div></div>
 <div class="ttc" id="define__fonction_8h_html_af2e23e67d8ce69a3ba22b4d5b2855b2f"><div class="ttname"><a href="define__fonction_8h.html#af2e23e67d8ce69a3ba22b4d5b2855b2f">type_id_fonction</a></div><div class="ttdeci">type_id_fonction</div><div class="ttdoc">Enumération représentant les différentes fonctions. </div><div class="ttdef"><b>Definition:</b> <a href="define__fonction_8h_source.html#l00030">define_fonction.h:30</a></div></div>
-<div class="ttc" id="classbibliotheque__fonctions_html"><div class="ttname"><a href="classbibliotheque__fonctions.html">bibliotheque_fonctions</a></div><div class="ttdef"><b>Definition:</b> <a href="bibliotheque__fonctions_8h_source.html#l00012">bibliotheque_fonctions.h:12</a></div></div>
-<div class="ttc" id="classbase__fonction_html"><div class="ttname"><a href="classbase__fonction.html">base_fonction</a></div><div class="ttdoc">Classe décrivant une fonction de conversion d&#39;un texte. </div><div class="ttdef"><b>Definition:</b> <a href="base__fonction_8h_source.html#l00033">base_fonction.h:33</a></div></div>
-<div class="ttc" id="classbibliotheque__fonctions_html_a9d2d4c4d203f964885415418809474d6"><div class="ttname"><a href="classbibliotheque__fonctions.html#a9d2d4c4d203f964885415418809474d6">bibliotheque_fonctions::s_categories</a></div><div class="ttdeci">static std::map&lt; type_id_fonction, std::set&lt; QString &gt; &gt; s_categories</div><div class="ttdef"><b>Definition:</b> <a href="bibliotheque__fonctions_8h_source.html#l00024">bibliotheque_fonctions.h:24</a></div></div>
-<div class="ttc" id="classbibliotheque__fonctions_html_af09bab02cd189c76012784c77f336a90"><div class="ttname"><a href="classbibliotheque__fonctions.html#af09bab02cd189c76012784c77f336a90">bibliotheque_fonctions::get_aide</a></div><div class="ttdeci">static QString get_aide(type_id_fonction id)</div><div class="ttdef"><b>Definition:</b> <a href="bibliotheque__fonctions_8cpp_source.html#l00094">bibliotheque_fonctions.cpp:94</a></div></div>
+<div class="ttc" id="classbibliotheque__fonctions_html"><div class="ttname"><a href="classbibliotheque__fonctions.html">bibliotheque_fonctions</a></div><div class="ttdef"><b>Definition:</b> <a href="bibliotheque__fonctions_8h_source.html#l00023">bibliotheque_fonctions.h:23</a></div></div>
+<div class="ttc" id="classbase__fonction_html"><div class="ttname"><a href="classbase__fonction.html">base_fonction</a></div><div class="ttdoc">Classe décrivant une fonction de conversion d&amp;#39;un texte. </div><div class="ttdef"><b>Definition:</b> <a href="base__fonction_8h_source.html#l00033">base_fonction.h:33</a></div></div>
+<div class="ttc" id="classbibliotheque__fonctions_html_a9d2d4c4d203f964885415418809474d6"><div class="ttname"><a href="classbibliotheque__fonctions.html#a9d2d4c4d203f964885415418809474d6">bibliotheque_fonctions::s_categories</a></div><div class="ttdeci">static std::map&lt; type_id_fonction, std::set&lt; QString &gt; &gt; s_categories</div><div class="ttdoc">Les catégories de chaque fonction. </div><div class="ttdef"><b>Definition:</b> <a href="bibliotheque__fonctions_8h_source.html#l00040">bibliotheque_fonctions.h:40</a></div></div>
+<div class="ttc" id="classbibliotheque__fonctions_html_af09bab02cd189c76012784c77f336a90"><div class="ttname"><a href="classbibliotheque__fonctions.html#af09bab02cd189c76012784c77f336a90">bibliotheque_fonctions::get_aide</a></div><div class="ttdeci">static QString get_aide(type_id_fonction id)</div><div class="ttdoc">Retourne le texte d&amp;#39;aide pour un type de fonction donné. </div><div class="ttdef"><b>Definition:</b> <a href="bibliotheque__fonctions_8cpp_source.html#l00112">bibliotheque_fonctions.cpp:112</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Généré le Mercredi 8 Février 2017 09:53:35 pour Emgine par &#160;<a href="http://www.doxygen.org/index.html">
+Généré le Jeudi 9 Février 2017 15:10:45 pour Emgine par &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
-</a> 1.8.6
+</a> 1.8.13
 </small></address>
 </body>
 </html>

@@ -1,6 +1,6 @@
 /**
  * \file fenetre_principale.cpp
- * \brief Implémentation de la classe fenetre_principale.
+ * \brief Fichier d'implémentation de la classe fenetre_principale.
  * \author Sébastien Angibaud
  */
 
@@ -40,6 +40,7 @@
 #include <string>
 #include <vector>
 
+// Initialisation des variables membres statiques
 explorateur * fenetre_principale::s_explorateur = NULL;
 vue_fonctions * fenetre_principale::s_vue_fonctions = NULL;
 compilateur * fenetre_principale::s_compilateur = NULL;

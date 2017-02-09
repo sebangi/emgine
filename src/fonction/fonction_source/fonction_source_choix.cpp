@@ -1,13 +1,23 @@
+/** \file fonction_source_choix.cpp
+ * \brief Fichier d'implémentationde la classe fonction_source_choix.
+ * \author Sébastien Angibaud
+ */
+
 #include "entete/fonction/fonction_source/fonction_source_choix.h"
 
-#include "entete/fonction_widget/fonction_source_widget/fonction_source_choix_widget.h"
 #include "entete/compilation/compilateur.h"
-#include "entete/parametre/parametre_choix.h"
 #include "entete/compilation/log_compilation.h"
 #include "entete/compilation/logs_compilation_widget.h"
+#include "entete/fonction_widget/fonction_source_widget/fonction_source_choix_widget.h"
+#include "entete/parametre/parametre_choix.h"
 
 #include <iostream>
 
+/** --------------------------------------------------------------------------------------
+ * \brief Constructeur de la classe fonction_source_choix.
+ * \param conteneur Un pointeur sur le conteneur de al fonction.
+ * \param selection La sélection initiale.
+ */
 fonction_source_choix::fonction_source_choix( fonctions_conteneur * conteneur, const QStringList & selection )
     : fonction_base_source(conteneur), m_selection(selection), m_sur_une_seule_ligne(false),
       m_multiple_selection(false)
@@ -24,19 +34,29 @@ fonction_source_choix::fonction_source_choix( fonctions_conteneur * conteneur, c
             }
 }
 
+/** --------------------------------------------------------------------------------------
+ * \brief Destructeur de la classe fonction_source_choix.
+ */
 fonction_source_choix::~fonction_source_choix()
 {
 
 }
 
+/** --------------------------------------------------------------------------------------
+ * \brief Construit et retourne le widget associé à cette fonction.
+ * \return Un pointeur sur le widget créé.
+ */
 base_fonction_widget *fonction_source_choix::generer_fonction_widget()
 {
     return new fonction_source_choix_widget(this);
 }
 
-/*! --------------------------------------------------------------------------------------
- \brief Exécution de la fonction.
-*/
+/** --------------------------------------------------------------------------------------
+ * \brief Execute la fonction.
+ * \param compil Le compilateur utilisé.
+ * \param textes_in Le texte source en entrée.
+ * \param textes_out Le texte de sortie généré.
+ */
 void fonction_source_choix::executer( compilateur &compil, const textes & textes_in, textes & textes_out )
 {
     texte t;
@@ -67,8 +87,10 @@ void fonction_source_choix::executer( compilateur &compil, const textes & textes
     textes_out.push_back(t);
 }
 
-/*! --------------------------------------------------------------------------------------
- \brief Indique si la fonction est valide.
+/** --------------------------------------------------------------------------------------
+  \brief Teste si la fonction est valide.
+  \param vue_logs Un pointeur sur le widget de vue des logs.
+  \return \b True si la fonction est valide, \b False sinon.
 */
 bool fonction_source_choix::est_valide(logs_compilation_widget * vue_logs)
 {
@@ -85,16 +107,28 @@ bool fonction_source_choix::est_valide(logs_compilation_widget * vue_logs)
     return false;
 }
 
+/** --------------------------------------------------------------------------------------
+ * \brief Accesseurs des choix possibles.
+ * \return La liste des choix possibles.
+ */
 const QStringList & fonction_source_choix::get_choix() const
 {
     return m_choix;
 }
 
+/** --------------------------------------------------------------------------------------
+ * \brief Retourne si la sélection peut être multiple.
+ * \return \b True si la sélection peut être multiple, \b False sinon.
+ */
 bool fonction_source_choix::get_multiple_selection() const
 {
     return m_multiple_selection;
 }
 
+/** --------------------------------------------------------------------------------------
+ * \brief Retourne la valeur de la fonction en version raccourci.
+ * \return La valeur courte de la fonction.
+ */
 QString fonction_source_choix::get_valeur_courte() const
 {
     QString resultat;
@@ -114,16 +148,28 @@ QString fonction_source_choix::get_valeur_courte() const
     return resultat;
 }
 
+/** --------------------------------------------------------------------------------------
+ * \brief Accesseur de la sélection de choix courante.
+ * \return La liste des choix sélectionnés.
+ */
 const QStringList& fonction_source_choix::get_selection() const
 {
     return m_selection;
 }
 
+/** --------------------------------------------------------------------------------------
+ * \brief Initialise la sélection des choix.
+ * \param selection La nouvelle sélection.
+ */
 void fonction_source_choix::set_selection(const QStringList & selection)
 {
     m_selection = selection;
 }
 
+/** --------------------------------------------------------------------------------------
+ * \brief Accesseur de la valeur de la fonction au format QString.
+ * \return La valeur de la fonction au format QString.
+ */
 QString fonction_source_choix::get_string_valeur() const
 {
     QString resultat;
@@ -143,6 +189,10 @@ QString fonction_source_choix::get_string_valeur() const
     return resultat;
 }
 
+/** --------------------------------------------------------------------------------------
+ * \brief Initilialise la valeur de la fonction à partir d'un QString donné.
+ * \param valeur La nouvelle valeur de la fonction au format QString.
+ */
 void fonction_source_choix::set_string_valeur(const QString &valeur)
 {
     m_selection = valeur.split( "\n" );

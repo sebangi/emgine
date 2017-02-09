@@ -1,7 +1,7 @@
 #ifndef ALGO_PMIPL_H
 #define ALGO_PMIPL_H
 
-/** \file algo_PMIPL
+/** \file algo_PMIPL.h
  * \brief Fichier de déclaration de la classe algo_PMIPL.
  * \author Sébastien Angibaud
  */

@@ -132,6 +132,10 @@ void fonctions_conteneur::charger_fonctions(QXmlStreamReader & xml, objet_select
     }
 }
 
+/** --------------------------------------------------------------------------------------
+ * \brief Sauvegarde le fonctions_conteneur dans un flux donné.
+ * \param stream Le flux Xml dans lequel écrire.
+ */
 void fonctions_conteneur::sauvegarder(QXmlStreamWriter &stream) const
 {
     stream.writeStartElement("fonctions");

@@ -1,15 +1,23 @@
+/** \file bibliotheque_fonctions.cpp
+ * \brief Fichier d'implémentation de la classe bibliotheque_fonction.
+ * \author Sébastien Angibaud
+ */
+
 #include "entete/fonction/bibliotheque_fonctions.h"
 
+// include des fonctions source
 #include "entete/fonction/fonction_source/fonction_source_booleen.h"
-#include "entete/fonction/fonction_source/fonction_source_entier.h"
-#include "entete/fonction/fonction_source/fonction_source_texte.h"
-#include "entete/fonction/fonction_source/fonction_source_fichier_texte.h"
 #include "entete/fonction/fonction_source/fonction_source_caractere.h"
 #include "entete/fonction/fonction_source/fonction_source_choix.h"
+#include "entete/fonction/fonction_source/fonction_source_entier.h"
+#include "entete/fonction/fonction_source/fonction_source_fichier_texte.h"
 #include "entete/fonction/fonction_source/fonction_source_permutation.h"
+#include "entete/fonction/fonction_source/fonction_source_texte.h"
 
+// include des fonctions de conversion
 #include "entete/fonction/fonction_sortie/fonction_sortie_texte.h"
 
+// include des fonctions de sortie
 #include "entete/fonction/fonction_conversion/fonction_cesar.h"
 
 std::map<type_id_fonction, QString> bibliotheque_fonctions::s_fonctions_nom =
@@ -69,7 +77,12 @@ std::map<type_id_fonction, std::set<QString> > bibliotheque_fonctions::s_categor
     }
 };
 
-base_fonction *bibliotheque_fonctions::get_fonction(type_id_fonction id)
+/** --------------------------------------------------------------------------------------
+ * \brief Crée et retourne une fonction pour un type donné.
+ * \param id Le type de fonction à créer.
+ * \return Un pointeur sur la fonction créée.
+ */
+base_fonction * bibliotheque_fonctions::get_fonction(type_id_fonction id)
 {
     switch ( id ) {
         // SOURCES
@@ -91,6 +104,11 @@ base_fonction *bibliotheque_fonctions::get_fonction(type_id_fonction id)
     }
 }
 
+/** --------------------------------------------------------------------------------------
+ * \brief Retourne le texte d'aide pour un type de fonction donné.
+ * \param id Le type de la fonction à considérer.
+ * \return Le texte d'aide.
+ */
 QString bibliotheque_fonctions::get_aide(type_id_fonction id)
 {
     std::map<type_id_fonction, QString>::iterator it = s_fonctions_aide.find(id);
@@ -101,6 +119,11 @@ QString bibliotheque_fonctions::get_aide(type_id_fonction id)
         return it->second;
 }
 
+/** --------------------------------------------------------------------------------------
+ * \brief Retourne le nom pour un type de fonction donné.
+ * \param id Le type de la fonction à considérer.
+ * \return Le nom de la fonction.
+ */
 QString bibliotheque_fonctions::get_nom(type_id_fonction id)
 {
     std::map<type_id_fonction, QString>::iterator it = s_fonctions_nom.find(id);
@@ -111,6 +134,12 @@ QString bibliotheque_fonctions::get_nom(type_id_fonction id)
         return it->second;
 }
 
+/** --------------------------------------------------------------------------------------
+ * \brief Indique si une fonction d'un type donné contient un mot clé spécifié.
+ * \param id Le type de la fonction à considérer.
+ * \param cle Le mot clé à chercher.
+ * \return \b True si le mot clé a été trouvé, \b False sinon.
+ */
 bool bibliotheque_fonctions::contient_mot_cle(type_id_fonction id, const QString &cle)
 {
     if ( cle.isEmpty() )

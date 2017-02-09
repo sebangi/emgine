@@ -1,0 +1,31 @@
+digraph "vue_fonctions::creer_vue_conteneur"
+{
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="LR";
+  Node173 [label="vue_fonctions::creer\l_vue_conteneur",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black"];
+  Node173 -> Node174 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node174 [label="objet_selectionnable\l::est_projet",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classobjet__selectionnable.html#a49ea1a29523e46f099896477a2b43eaa"];
+  Node173 -> Node175 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node175 [label="fonctions_conteneur\l::get_titre",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classfonctions__conteneur.html#ab81d1b229c4f0564ef2aef27345bf1ad"];
+  Node173 -> Node176 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node176 [label="fonctions_conteneur\l::fonctions_begin",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classfonctions__conteneur.html#aa1db33c3a0bf76b354e77b4a4324357a"];
+  Node173 -> Node177 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node177 [label="fonctions_conteneur\l::fonctions_end",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classfonctions__conteneur.html#a165ee65380980b58b521a62810cd7e27"];
+  Node173 -> Node178 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node178 [label="vue_fonctions::ajouter\l_vue_fonction",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classvue__fonctions.html#a8965a0253e4ffc9fddb3fb4c595ff751",tooltip="Ajoute la vue de la fonction. "];
+  Node178 -> Node179 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node179 [label="base_fonction::generer\l_fonction_widget",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classbase__fonction.html#ad5c8ce64c897fba9cc84bf4dae60ee9a",tooltip="Construit et retourne le widget associé à cette fonction. "];
+  Node178 -> Node180 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node180 [label="vue_fonctions::on_externe\l_fonction_widget_size_change",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classvue__fonctions.html#aead9d73dffeef24ed7ba17edcda415f3"];
+  Node180 -> Node181 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node181 [label="vue_fonctions::adjust\l_size_vue_fonction",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classvue__fonctions.html#a782d0cc63a33af720f8c44958d595425"];
+  Node178 -> Node182 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node182 [label="vue_fonctions::on_externe\l_demande_creation_projet",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classvue__fonctions.html#ae54ea51dbad2688ef17e17bd03c6a955"];
+  Node178 -> Node183 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node183 [label="base_fonction::get\l_position",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classbase__fonction.html#aa42a2214daf8e49a79b627f62ab9105e",tooltip="Retourne la position d&#39;une fonction dans son conteneur. "];
+  Node183 -> Node184 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node184 [label="fonctions_conteneur\l::get_position",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classfonctions__conteneur.html#a61f2cd0bf2ee27462f470e36a2f43869"];
+  Node178 -> Node185 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node185 [label="base_fonction::get_type",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classbase__fonction.html#a8ed620b54f5ef377c2593952eafd6ad9",tooltip="Accesseur du type de la fonction.  Le type de la fonction. "];
+}

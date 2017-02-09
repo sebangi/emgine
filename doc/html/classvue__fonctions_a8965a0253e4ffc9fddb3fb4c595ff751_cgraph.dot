@@ -1,0 +1,21 @@
+digraph "vue_fonctions::ajouter_vue_fonction"
+{
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="LR";
+  Node116 [label="vue_fonctions::ajouter\l_vue_fonction",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black"];
+  Node116 -> Node117 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node117 [label="base_fonction::generer\l_fonction_widget",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classbase__fonction.html#ad5c8ce64c897fba9cc84bf4dae60ee9a",tooltip="Construit et retourne le widget associé à cette fonction. "];
+  Node116 -> Node118 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node118 [label="vue_fonctions::on_externe\l_fonction_widget_size_change",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classvue__fonctions.html#aead9d73dffeef24ed7ba17edcda415f3"];
+  Node118 -> Node119 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node119 [label="vue_fonctions::adjust\l_size_vue_fonction",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classvue__fonctions.html#a782d0cc63a33af720f8c44958d595425"];
+  Node116 -> Node120 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node120 [label="vue_fonctions::on_externe\l_demande_creation_projet",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classvue__fonctions.html#ae54ea51dbad2688ef17e17bd03c6a955"];
+  Node116 -> Node121 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node121 [label="base_fonction::get\l_position",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classbase__fonction.html#aa42a2214daf8e49a79b627f62ab9105e",tooltip="Retourne la position d&#39;une fonction dans son conteneur. "];
+  Node121 -> Node122 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node122 [label="fonctions_conteneur\l::get_position",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classfonctions__conteneur.html#a61f2cd0bf2ee27462f470e36a2f43869"];
+  Node116 -> Node123 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node123 [label="base_fonction::get_type",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classbase__fonction.html#a8ed620b54f5ef377c2593952eafd6ad9",tooltip="Accesseur du type de la fonction.  Le type de la fonction. "];
+}

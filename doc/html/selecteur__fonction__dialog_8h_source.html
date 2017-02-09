@@ -3,16 +3,15 @@
 <head>
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
-<meta name="generator" content="Doxygen 1.8.6"/>
+<meta name="generator" content="Doxygen 1.8.13"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
 <title>Emgine:  Fichier source de entete/fonction_widget/selecteur_fonction_dialog.h</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
-<script type="text/javascript">
-  $(document).ready(function() { searchBox.OnSelectItem(0); });
-</script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
@@ -21,7 +20,7 @@
 <table cellspacing="0" cellpadding="0">
  <tbody>
  <tr style="height: 56px;">
-  <td style="padding-left: 0.5em;">
+  <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">Emgine
    </div>
   </td>
@@ -30,47 +29,25 @@
 </table>
 </div>
 <!-- end header part -->
-<!-- Généré par Doxygen 1.8.6 -->
+<!-- Généré par Doxygen 1.8.13 -->
 <script type="text/javascript">
 var searchBox = new SearchBox("searchBox", "search",false,'Recherche');
 </script>
-  <div id="navrow1" class="tabs">
-    <ul class="tablist">
-      <li><a href="index.html"><span>Page&#160;principale</span></a></li>
-      <li><a href="pages.html"><span>Pages&#160;associées</span></a></li>
-      <li><a href="modules.html"><span>Modules</span></a></li>
-      <li><a href="annotated.html"><span>Classes</span></a></li>
-      <li class="current"><a href="files.html"><span>Fichiers</span></a></li>
-      <li>
-        <div id="MSearchBox" class="MSearchBoxInactive">
-        <span class="left">
-          <img id="MSearchSelect" src="search/mag_sel.png"
-               onmouseover="return searchBox.OnSearchSelectShow()"
-               onmouseout="return searchBox.OnSearchSelectHide()"
-               alt=""/>
-          <input type="text" id="MSearchField" value="Recherche" accesskey="S"
-               onfocus="searchBox.OnSearchFieldFocus(true)" 
-               onblur="searchBox.OnSearchFieldFocus(false)" 
-               onkeyup="searchBox.OnSearchFieldChange(event)"/>
-          </span><span class="right">
-            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
-          </span>
-        </div>
-      </li>
-    </ul>
-  </div>
-  <div id="navrow2" class="tabs2">
-    <ul class="tablist">
-      <li><a href="files.html"><span>Liste&#160;des&#160;fichiers</span></a></li>
-      <li><a href="globals.html"><span>Membres&#160;de&#160;fichier</span></a></li>
-    </ul>
-  </div>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+$(function() {
+  initMenu('',true,false,'search.php','Recherche');
+  $(document).ready(function() { init_search(); });
+});
+</script>
+<div id="main-nav"></div>
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>Tout</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Espaces de nommage</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Fichiers</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Fonctions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Définitions de type</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Énumérations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Valeurs énumérées</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&#160;</span>Groupes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(10)"><span class="SelectionMark">&#160;</span>Pages</a></div>
+</div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -89,60 +66,16 @@ var searchBox = new SearchBox("searchBox", "search",false,'Recherche');
 <div class="title">selecteur_fonction_dialog.h</div>  </div>
 </div><!--header-->
 <div class="contents">
-<a href="selecteur__fonction__dialog_8h.html">Aller à la documentation de ce fichier.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#ifndef SELECTEUR_FONCTION_DIALOG_H</span></div>
-<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#define SELECTEUR_FONCTION_DIALOG_H</span></div>
-<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="preprocessor"></span></div>
-<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="base__fonction_8h.html">entete/projet/base_fonction.h</a>&quot;</span></div>
-<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="bouton__choix__fonction_8h.html">entete/fonction_widget/bouton_choix_fonction.h</a>&quot;</span></div>
-<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="define_8h.html">entete/define.h</a>&quot;</span></div>
-<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="preprocessor">#include &lt;QDialog&gt;</span></div>
-<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor">#include &lt;QLineEdit&gt;</span></div>
-<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#include &lt;QPushButton&gt;</span></div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;</div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="keyword">class </span>QDialogButtonBox;</div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="keyword">class </span>QGridLayout;</div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="keyword">class </span><a class="code" href="classbase__fonction.html">base_fonction</a>;</div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;</div>
-<div class="line"><a name="l00015"></a><span class="lineno"><a class="line" href="classselecteur__fonction__dialog.html">   15</a></span>&#160;<span class="keyword">class </span><a class="code" href="classselecteur__fonction__dialog.html">selecteur_fonction_dialog</a> : <span class="keyword">public</span> QDialog</div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;{</div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;        Q_OBJECT</div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;</div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;    <span class="keyword">public</span>:</div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;        <span class="keyword">explicit</span> <a class="code" href="classselecteur__fonction__dialog.html#ae49bc5c97451a86c1fa68cd1b1e9f784">selecteur_fonction_dialog</a>(<a class="code" href="define__fonction_8h.html#aec9ce9333a6fdec0537c3525ad6f21e3">type_fonction</a> type, QWidget *parent = 0);</div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;</div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;        <a class="code" href="classbase__fonction.html">base_fonction</a> * <a class="code" href="classselecteur__fonction__dialog.html#a7971b10182a4fbb0a556940b7af9770a">get_fonction</a>() <span class="keyword">const</span>;</div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;</div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;    <span class="keyword">private</span>:</div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="classselecteur__fonction__dialog.html#a5a9accd19e0f47cfc378f47c03b48ce6">init_choix</a>(<a class="code" href="define__fonction_8h.html#aec9ce9333a6fdec0537c3525ad6f21e3">type_fonction</a> type);</div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="classselecteur__fonction__dialog.html#a3cf5a2551433071da63eb34f9d2f2a81">ajouter_choix</a>(<a class="code" href="define__fonction_8h.html#af2e23e67d8ce69a3ba22b4d5b2855b2f">type_id_fonction</a> nom);</div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;</div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;    <span class="keyword">private</span> slots:</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="classselecteur__fonction__dialog.html#a008277592e1a0b3d3e4e7c4f927fb061">choisir</a>();</div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="classselecteur__fonction__dialog.html#ae8cbcccac4d3c20126c2d204a82fec42">chercher</a>();</div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="classselecteur__fonction__dialog.html#ae8cbcccac4d3c20126c2d204a82fec42">chercher</a>(<span class="keyword">const</span> QString &amp;);</div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="classselecteur__fonction__dialog.html#ab0db8346953650fe30b55193d198b7db">calcul_nb_colonnes</a>(<a class="code" href="define__fonction_8h.html#aec9ce9333a6fdec0537c3525ad6f21e3">type_fonction</a> type);</div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;</div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    <span class="keyword">private</span>:</div>
-<div class="line"><a name="l00035"></a><span class="lineno"><a class="line" href="classselecteur__fonction__dialog.html#ac2ce57d6c0475833fdf37cd34c65712d">   35</a></span>&#160;        QDialogButtonBox *<a class="code" href="classselecteur__fonction__dialog.html#ac2ce57d6c0475833fdf37cd34c65712d">m_buttonBox</a>;</div>
-<div class="line"><a name="l00036"></a><span class="lineno"><a class="line" href="classselecteur__fonction__dialog.html#ae067a57b53310c944275ae2a7d478975">   36</a></span>&#160;        QGridLayout *<a class="code" href="classselecteur__fonction__dialog.html#ae067a57b53310c944275ae2a7d478975">m_grid_layout</a>;</div>
-<div class="line"><a name="l00037"></a><span class="lineno"><a class="line" href="classselecteur__fonction__dialog.html#a69d2997cbabedec264aeb61ecab129b4">   37</a></span>&#160;        <a class="code" href="classbase__fonction.html">base_fonction</a> * <a class="code" href="classselecteur__fonction__dialog.html#a69d2997cbabedec264aeb61ecab129b4">m_fonction</a>;</div>
-<div class="line"><a name="l00038"></a><span class="lineno"><a class="line" href="classselecteur__fonction__dialog.html#a92fe56c16aa7f2a80d5742e2a6a65d72">   38</a></span>&#160;        QLineEdit * <a class="code" href="classselecteur__fonction__dialog.html#a92fe56c16aa7f2a80d5742e2a6a65d72">m_recherche</a>;</div>
-<div class="line"><a name="l00039"></a><span class="lineno"><a class="line" href="classselecteur__fonction__dialog.html#a5522d58d1f0cacd454eb638a3db5bba5">   39</a></span>&#160;        <span class="keywordtype">int</span> <a class="code" href="classselecteur__fonction__dialog.html#a5522d58d1f0cacd454eb638a3db5bba5">m_nb_colonnes</a>;</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;</div>
-<div class="line"><a name="l00041"></a><span class="lineno"><a class="line" href="classselecteur__fonction__dialog.html#a81734475fbd5202c768e7746bd55c8e0">   41</a></span>&#160;        QList&lt; bouton_choix_fonction * &gt; <a class="code" href="classselecteur__fonction__dialog.html#a81734475fbd5202c768e7746bd55c8e0">m_boutons</a>;</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;};</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;<span class="preprocessor">#endif // SELECTEUR_FONCTION_DIALOG_H</span></div>
-<div class="ttc" id="classselecteur__fonction__dialog_html_a5a9accd19e0f47cfc378f47c03b48ce6"><div class="ttname"><a href="classselecteur__fonction__dialog.html#a5a9accd19e0f47cfc378f47c03b48ce6">selecteur_fonction_dialog::init_choix</a></div><div class="ttdeci">void init_choix(type_fonction type)</div><div class="ttdef"><b>Definition:</b> <a href="selecteur__fonction__dialog_8cpp_source.html#l00060">selecteur_fonction_dialog.cpp:60</a></div></div>
-<div class="ttc" id="classselecteur__fonction__dialog_html_a7971b10182a4fbb0a556940b7af9770a"><div class="ttname"><a href="classselecteur__fonction__dialog.html#a7971b10182a4fbb0a556940b7af9770a">selecteur_fonction_dialog::get_fonction</a></div><div class="ttdeci">base_fonction * get_fonction() const </div><div class="ttdef"><b>Definition:</b> <a href="selecteur__fonction__dialog_8cpp_source.html#l00055">selecteur_fonction_dialog.cpp:55</a></div></div>
+<a href="selecteur__fonction__dialog_8h.html">Aller à la documentation de ce fichier.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#ifndef SELECTEUR_FONCTION_DIALOG_H</span></div><div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor">#define SELECTEUR_FONCTION_DIALOG_H</span></div><div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;</div><div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="base__fonction_8h.html">entete/projet/base_fonction.h</a>&quot;</span></div><div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="bouton__choix__fonction_8h.html">entete/fonction_widget/bouton_choix_fonction.h</a>&quot;</span></div><div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="define_8h.html">entete/define.h</a>&quot;</span></div><div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="preprocessor">#include &lt;QDialog&gt;</span></div><div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor">#include &lt;QLineEdit&gt;</span></div><div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#include &lt;QPushButton&gt;</span></div><div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;</div><div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="keyword">class </span>QDialogButtonBox;</div><div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="keyword">class </span>QGridLayout;</div><div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="keyword">class </span><a class="code" href="classbase__fonction.html">base_fonction</a>;</div><div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;</div><div class="line"><a name="l00015"></a><span class="lineno"><a class="line" href="classselecteur__fonction__dialog.html">   15</a></span>&#160;<span class="keyword">class </span><a class="code" href="classselecteur__fonction__dialog.html">selecteur_fonction_dialog</a> : <span class="keyword">public</span> QDialog</div><div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;{</div><div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;        Q_OBJECT</div><div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;</div><div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;    <span class="keyword">public</span>:</div><div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;        <span class="keyword">explicit</span> <a class="code" href="classselecteur__fonction__dialog.html#ae49bc5c97451a86c1fa68cd1b1e9f784">selecteur_fonction_dialog</a>(<a class="code" href="define__fonction_8h.html#aec9ce9333a6fdec0537c3525ad6f21e3">type_fonction</a> type, QWidget *parent = 0);</div><div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;</div><div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;        <a class="code" href="classbase__fonction.html">base_fonction</a> * <a class="code" href="classselecteur__fonction__dialog.html#a35a75e577db0e5ca0e9ac64b5202e176">get_fonction</a>() <span class="keyword">const</span>;</div><div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;</div><div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;    <span class="keyword">private</span>:</div><div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="classselecteur__fonction__dialog.html#a5a9accd19e0f47cfc378f47c03b48ce6">init_choix</a>(<a class="code" href="define__fonction_8h.html#aec9ce9333a6fdec0537c3525ad6f21e3">type_fonction</a> type);</div><div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="classselecteur__fonction__dialog.html#a3cf5a2551433071da63eb34f9d2f2a81">ajouter_choix</a>(<a class="code" href="define__fonction_8h.html#af2e23e67d8ce69a3ba22b4d5b2855b2f">type_id_fonction</a> nom);</div><div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;</div><div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;    <span class="keyword">private</span> slots:</div><div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="classselecteur__fonction__dialog.html#a008277592e1a0b3d3e4e7c4f927fb061">choisir</a>();</div><div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="classselecteur__fonction__dialog.html#ae8cbcccac4d3c20126c2d204a82fec42">chercher</a>();</div><div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="classselecteur__fonction__dialog.html#ae8cbcccac4d3c20126c2d204a82fec42">chercher</a>(<span class="keyword">const</span> QString &amp;);</div><div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="classselecteur__fonction__dialog.html#ab0db8346953650fe30b55193d198b7db">calcul_nb_colonnes</a>(<a class="code" href="define__fonction_8h.html#aec9ce9333a6fdec0537c3525ad6f21e3">type_fonction</a> type);</div><div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;</div><div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    <span class="keyword">private</span>:</div><div class="line"><a name="l00035"></a><span class="lineno"><a class="line" href="classselecteur__fonction__dialog.html#ac2ce57d6c0475833fdf37cd34c65712d">   35</a></span>&#160;        QDialogButtonBox *<a class="code" href="classselecteur__fonction__dialog.html#ac2ce57d6c0475833fdf37cd34c65712d">m_buttonBox</a>;</div><div class="line"><a name="l00036"></a><span class="lineno"><a class="line" href="classselecteur__fonction__dialog.html#ae067a57b53310c944275ae2a7d478975">   36</a></span>&#160;        QGridLayout *<a class="code" href="classselecteur__fonction__dialog.html#ae067a57b53310c944275ae2a7d478975">m_grid_layout</a>;</div><div class="line"><a name="l00037"></a><span class="lineno"><a class="line" href="classselecteur__fonction__dialog.html#a69d2997cbabedec264aeb61ecab129b4">   37</a></span>&#160;        <a class="code" href="classbase__fonction.html">base_fonction</a> * <a class="code" href="classselecteur__fonction__dialog.html#a69d2997cbabedec264aeb61ecab129b4">m_fonction</a>;</div><div class="line"><a name="l00038"></a><span class="lineno"><a class="line" href="classselecteur__fonction__dialog.html#a92fe56c16aa7f2a80d5742e2a6a65d72">   38</a></span>&#160;        QLineEdit * <a class="code" href="classselecteur__fonction__dialog.html#a92fe56c16aa7f2a80d5742e2a6a65d72">m_recherche</a>;</div><div class="line"><a name="l00039"></a><span class="lineno"><a class="line" href="classselecteur__fonction__dialog.html#a5522d58d1f0cacd454eb638a3db5bba5">   39</a></span>&#160;        <span class="keywordtype">int</span> <a class="code" href="classselecteur__fonction__dialog.html#a5522d58d1f0cacd454eb638a3db5bba5">m_nb_colonnes</a>;</div><div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;</div><div class="line"><a name="l00041"></a><span class="lineno"><a class="line" href="classselecteur__fonction__dialog.html#a81734475fbd5202c768e7746bd55c8e0">   41</a></span>&#160;        QList&lt; bouton_choix_fonction * &gt; <a class="code" href="classselecteur__fonction__dialog.html#a81734475fbd5202c768e7746bd55c8e0">m_boutons</a>;</div><div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;};</div><div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;</div><div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;<span class="preprocessor">#endif // SELECTEUR_FONCTION_DIALOG_H</span></div><div class="ttc" id="classselecteur__fonction__dialog_html_a5a9accd19e0f47cfc378f47c03b48ce6"><div class="ttname"><a href="classselecteur__fonction__dialog.html#a5a9accd19e0f47cfc378f47c03b48ce6">selecteur_fonction_dialog::init_choix</a></div><div class="ttdeci">void init_choix(type_fonction type)</div><div class="ttdef"><b>Definition:</b> <a href="selecteur__fonction__dialog_8cpp_source.html#l00060">selecteur_fonction_dialog.cpp:60</a></div></div>
+<div class="ttc" id="classselecteur__fonction__dialog_html_a35a75e577db0e5ca0e9ac64b5202e176"><div class="ttname"><a href="classselecteur__fonction__dialog.html#a35a75e577db0e5ca0e9ac64b5202e176">selecteur_fonction_dialog::get_fonction</a></div><div class="ttdeci">base_fonction * get_fonction() const</div><div class="ttdef"><b>Definition:</b> <a href="selecteur__fonction__dialog_8cpp_source.html#l00055">selecteur_fonction_dialog.cpp:55</a></div></div>
 <div class="ttc" id="classselecteur__fonction__dialog_html_ae49bc5c97451a86c1fa68cd1b1e9f784"><div class="ttname"><a href="classselecteur__fonction__dialog.html#ae49bc5c97451a86c1fa68cd1b1e9f784">selecteur_fonction_dialog::selecteur_fonction_dialog</a></div><div class="ttdeci">selecteur_fonction_dialog(type_fonction type, QWidget *parent=0)</div><div class="ttdef"><b>Definition:</b> <a href="selecteur__fonction__dialog_8cpp_source.html#l00013">selecteur_fonction_dialog.cpp:13</a></div></div>
 <div class="ttc" id="define__fonction_8h_html_af2e23e67d8ce69a3ba22b4d5b2855b2f"><div class="ttname"><a href="define__fonction_8h.html#af2e23e67d8ce69a3ba22b4d5b2855b2f">type_id_fonction</a></div><div class="ttdeci">type_id_fonction</div><div class="ttdoc">Enumération représentant les différentes fonctions. </div><div class="ttdef"><b>Definition:</b> <a href="define__fonction_8h_source.html#l00030">define_fonction.h:30</a></div></div>
 <div class="ttc" id="classselecteur__fonction__dialog_html_a69d2997cbabedec264aeb61ecab129b4"><div class="ttname"><a href="classselecteur__fonction__dialog.html#a69d2997cbabedec264aeb61ecab129b4">selecteur_fonction_dialog::m_fonction</a></div><div class="ttdeci">base_fonction * m_fonction</div><div class="ttdef"><b>Definition:</b> <a href="selecteur__fonction__dialog_8h_source.html#l00037">selecteur_fonction_dialog.h:37</a></div></div>
 <div class="ttc" id="classselecteur__fonction__dialog_html_ab0db8346953650fe30b55193d198b7db"><div class="ttname"><a href="classselecteur__fonction__dialog.html#ab0db8346953650fe30b55193d198b7db">selecteur_fonction_dialog::calcul_nb_colonnes</a></div><div class="ttdeci">void calcul_nb_colonnes(type_fonction type)</div><div class="ttdef"><b>Definition:</b> <a href="selecteur__fonction__dialog_8cpp_source.html#l00128">selecteur_fonction_dialog.cpp:128</a></div></div>
 <div class="ttc" id="classselecteur__fonction__dialog_html_a3cf5a2551433071da63eb34f9d2f2a81"><div class="ttname"><a href="classselecteur__fonction__dialog.html#a3cf5a2551433071da63eb34f9d2f2a81">selecteur_fonction_dialog::ajouter_choix</a></div><div class="ttdeci">void ajouter_choix(type_id_fonction nom)</div><div class="ttdef"><b>Definition:</b> <a href="selecteur__fonction__dialog_8cpp_source.html#l00080">selecteur_fonction_dialog.cpp:80</a></div></div>
-<div class="ttc" id="classbase__fonction_html"><div class="ttname"><a href="classbase__fonction.html">base_fonction</a></div><div class="ttdoc">Classe décrivant une fonction de conversion d&#39;un texte. </div><div class="ttdef"><b>Definition:</b> <a href="base__fonction_8h_source.html#l00033">base_fonction.h:33</a></div></div>
-<div class="ttc" id="classselecteur__fonction__dialog_html_a81734475fbd5202c768e7746bd55c8e0"><div class="ttname"><a href="classselecteur__fonction__dialog.html#a81734475fbd5202c768e7746bd55c8e0">selecteur_fonction_dialog::m_boutons</a></div><div class="ttdeci">QList&lt; bouton_choix_fonction * &gt; m_boutons</div><div class="ttdef"><b>Definition:</b> <a href="selecteur__fonction__dialog_8h_source.html#l00041">selecteur_fonction_dialog.h:41</a></div></div>
-<div class="ttc" id="define__fonction_8h_html_aec9ce9333a6fdec0537c3525ad6f21e3"><div class="ttname"><a href="define__fonction_8h.html#aec9ce9333a6fdec0537c3525ad6f21e3">type_fonction</a></div><div class="ttdeci">type_fonction</div><div class="ttdoc">Enumération représentant les différents types d&#39;élément. </div><div class="ttdef"><b>Definition:</b> <a href="define__fonction_8h_source.html#l00013">define_fonction.h:13</a></div></div>
+<div class="ttc" id="classbase__fonction_html"><div class="ttname"><a href="classbase__fonction.html">base_fonction</a></div><div class="ttdoc">Classe décrivant une fonction de conversion d&amp;#39;un texte. </div><div class="ttdef"><b>Definition:</b> <a href="base__fonction_8h_source.html#l00033">base_fonction.h:33</a></div></div>
+<div class="ttc" id="classselecteur__fonction__dialog_html_a81734475fbd5202c768e7746bd55c8e0"><div class="ttname"><a href="classselecteur__fonction__dialog.html#a81734475fbd5202c768e7746bd55c8e0">selecteur_fonction_dialog::m_boutons</a></div><div class="ttdeci">QList&lt; bouton_choix_fonction *&gt; m_boutons</div><div class="ttdef"><b>Definition:</b> <a href="selecteur__fonction__dialog_8h_source.html#l00041">selecteur_fonction_dialog.h:41</a></div></div>
+<div class="ttc" id="define__fonction_8h_html_aec9ce9333a6fdec0537c3525ad6f21e3"><div class="ttname"><a href="define__fonction_8h.html#aec9ce9333a6fdec0537c3525ad6f21e3">type_fonction</a></div><div class="ttdeci">type_fonction</div><div class="ttdoc">Enumération représentant les différents types d&amp;#39;élément. </div><div class="ttdef"><b>Definition:</b> <a href="define__fonction_8h_source.html#l00013">define_fonction.h:13</a></div></div>
 <div class="ttc" id="classselecteur__fonction__dialog_html"><div class="ttname"><a href="classselecteur__fonction__dialog.html">selecteur_fonction_dialog</a></div><div class="ttdef"><b>Definition:</b> <a href="selecteur__fonction__dialog_8h_source.html#l00015">selecteur_fonction_dialog.h:15</a></div></div>
 <div class="ttc" id="classselecteur__fonction__dialog_html_ae8cbcccac4d3c20126c2d204a82fec42"><div class="ttname"><a href="classselecteur__fonction__dialog.html#ae8cbcccac4d3c20126c2d204a82fec42">selecteur_fonction_dialog::chercher</a></div><div class="ttdeci">void chercher()</div><div class="ttdef"><b>Definition:</b> <a href="selecteur__fonction__dialog_8cpp_source.html#l00114">selecteur_fonction_dialog.cpp:114</a></div></div>
 <div class="ttc" id="bouton__choix__fonction_8h_html"><div class="ttname"><a href="bouton__choix__fonction_8h.html">bouton_choix_fonction.h</a></div></div>
@@ -152,13 +85,13 @@ var searchBox = new SearchBox("searchBox", "search",false,'Recherche');
 <div class="ttc" id="classselecteur__fonction__dialog_html_a5522d58d1f0cacd454eb638a3db5bba5"><div class="ttname"><a href="classselecteur__fonction__dialog.html#a5522d58d1f0cacd454eb638a3db5bba5">selecteur_fonction_dialog::m_nb_colonnes</a></div><div class="ttdeci">int m_nb_colonnes</div><div class="ttdef"><b>Definition:</b> <a href="selecteur__fonction__dialog_8h_source.html#l00039">selecteur_fonction_dialog.h:39</a></div></div>
 <div class="ttc" id="base__fonction_8h_html"><div class="ttname"><a href="base__fonction_8h.html">base_fonction.h</a></div><div class="ttdoc">Déclaration de la classe base_fonction. </div></div>
 <div class="ttc" id="classselecteur__fonction__dialog_html_ac2ce57d6c0475833fdf37cd34c65712d"><div class="ttname"><a href="classselecteur__fonction__dialog.html#ac2ce57d6c0475833fdf37cd34c65712d">selecteur_fonction_dialog::m_buttonBox</a></div><div class="ttdeci">QDialogButtonBox * m_buttonBox</div><div class="ttdef"><b>Definition:</b> <a href="selecteur__fonction__dialog_8h_source.html#l00035">selecteur_fonction_dialog.h:35</a></div></div>
-<div class="ttc" id="define_8h_html"><div class="ttname"><a href="define_8h.html">define.h</a></div></div>
+<div class="ttc" id="define_8h_html"><div class="ttname"><a href="define_8h.html">define.h</a></div><div class="ttdoc">Fichier de déclaration des constantes globales. </div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Généré le Mercredi 8 Février 2017 09:53:35 pour Emgine par &#160;<a href="http://www.doxygen.org/index.html">
+Généré le Jeudi 9 Février 2017 15:10:47 pour Emgine par &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
-</a> 1.8.6
+</a> 1.8.13
 </small></address>
 </body>
 </html>

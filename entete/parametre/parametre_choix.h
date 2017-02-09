@@ -1,10 +1,17 @@
 #ifndef PARAMETRE_CHOIX_H
 #define PARAMETRE_CHOIX_H
 
+/** \file parametre_choix.h
+ * \brief Fichier de déclaration de la classe parametre_choix.
+ * \author Sébastien Angibaud
+ */
+
 #include "entete/projet/base_parametre.h"
+
 #include <QStringList>
 
 /**
+ \class parametre_choix
  \brief Classe décrivant un parametre de type choix.
  \author Sébastien Angibaud
 */
@@ -24,7 +31,10 @@ class parametre_choix : public base_parametre
         bool multiple_selection() const;
 
     private:
+        /** \brief La liste des choix possibles. */
         QStringList m_choix;
+
+        /** \brief Booléen indiquant si la sélection peut être multiple. */
         bool m_multiple_selection;
 };
 

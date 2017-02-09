@@ -3,16 +3,15 @@
 <head>
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
-<meta name="generator" content="Doxygen 1.8.6"/>
+<meta name="generator" content="Doxygen 1.8.13"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
 <title>Emgine: Référence du fichier entete/element/base_element.h</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
-<script type="text/javascript">
-  $(document).ready(function() { searchBox.OnSelectItem(0); });
-</script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
@@ -21,7 +20,7 @@
 <table cellspacing="0" cellpadding="0">
  <tbody>
  <tr style="height: 56px;">
-  <td style="padding-left: 0.5em;">
+  <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">Emgine
    </div>
   </td>
@@ -30,47 +29,25 @@
 </table>
 </div>
 <!-- end header part -->
-<!-- Généré par Doxygen 1.8.6 -->
+<!-- Généré par Doxygen 1.8.13 -->
 <script type="text/javascript">
 var searchBox = new SearchBox("searchBox", "search",false,'Recherche');
 </script>
-  <div id="navrow1" class="tabs">
-    <ul class="tablist">
-      <li><a href="index.html"><span>Page&#160;principale</span></a></li>
-      <li><a href="pages.html"><span>Pages&#160;associées</span></a></li>
-      <li><a href="modules.html"><span>Modules</span></a></li>
-      <li><a href="annotated.html"><span>Classes</span></a></li>
-      <li class="current"><a href="files.html"><span>Fichiers</span></a></li>
-      <li>
-        <div id="MSearchBox" class="MSearchBoxInactive">
-        <span class="left">
-          <img id="MSearchSelect" src="search/mag_sel.png"
-               onmouseover="return searchBox.OnSearchSelectShow()"
-               onmouseout="return searchBox.OnSearchSelectHide()"
-               alt=""/>
-          <input type="text" id="MSearchField" value="Recherche" accesskey="S"
-               onfocus="searchBox.OnSearchFieldFocus(true)" 
-               onblur="searchBox.OnSearchFieldFocus(false)" 
-               onkeyup="searchBox.OnSearchFieldChange(event)"/>
-          </span><span class="right">
-            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
-          </span>
-        </div>
-      </li>
-    </ul>
-  </div>
-  <div id="navrow2" class="tabs2">
-    <ul class="tablist">
-      <li><a href="files.html"><span>Liste&#160;des&#160;fichiers</span></a></li>
-      <li><a href="globals.html"><span>Membres&#160;de&#160;fichier</span></a></li>
-    </ul>
-  </div>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+$(function() {
+  initMenu('',true,false,'search.php','Recherche');
+  $(document).ready(function() { init_search(); });
+});
+</script>
+<div id="main-nav"></div>
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>Tout</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Espaces de nommage</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Fichiers</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Fonctions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Définitions de type</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Énumérations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Valeurs énumérées</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&#160;</span>Groupes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(10)"><span class="SelectionMark">&#160;</span>Pages</a></div>
+</div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -94,21 +71,71 @@ var searchBox = new SearchBox("searchBox", "search",false,'Recherche');
 
 <p>Fichier de déclaration de la classe bae_element.  
 <a href="#details">Plus de détails...</a></p>
-<div class="textblock"><code>#include &quot;<a class="el" href="type__element_8h_source.html">type_element.h</a>&quot;</code><br/>
-<code>#include &lt;QString&gt;</code><br/>
+<div class="textblock"><code>#include &quot;<a class="el" href="type__element_8h_source.html">type_element.h</a>&quot;</code><br />
+<code>#include &lt;QString&gt;</code><br />
 </div><div class="textblock"><div class="dynheader">
 Graphe des dépendances par inclusion de base_element.h:</div>
 <div class="dyncontent">
 <div class="center"><img src="base__element_8h__incl.png" border="0" usemap="#entete_2element_2base__element_8h" alt=""/></div>
 <map name="entete_2element_2base__element_8h" id="entete_2element_2base__element_8h">
-<area shape="rect" id="node2" href="type__element_8h.html" title="type_element.h" alt="" coords="5,96,115,123"/></map>
+<area shape="rect" id="node2" href="type__element_8h.html" title="type_element.h" alt="" coords="5,96,115,123"/>
+</map>
 </div>
 </div><div class="textblock"><div class="dynheader">
 Ce graphe montre quels fichiers incluent directement ou indirectement ce fichier :</div>
 <div class="dyncontent">
 <div class="center"><img src="base__element_8h__dep__incl.png" border="0" usemap="#entete_2element_2base__element_8hdep" alt=""/></div>
 <map name="entete_2element_2base__element_8hdep" id="entete_2element_2base__element_8hdep">
-<area shape="rect" id="node2" href="mot_8h.html" title="Fichier de déclaration de la classe mot. " alt="" coords="3207,96,3351,123"/><area shape="rect" id="node10" href="fonction__cesar_8cpp.html" title="src/fonction/fonction\l_conversion/fonction\l_cesar.cpp" alt="" coords="4356,784,4498,840"/><area shape="rect" id="node36" href="base__parametre_8h.html" title="entete/projet/base\l_parametre.h" alt="" coords="3663,477,3789,518"/><area shape="rect" id="node50" href="base__element_8cpp.html" title="Fichier d&#39;implémentation de la classe base_element. " alt="" coords="4853,96,5051,123"/><area shape="rect" id="node3" href="ligne_8h.html" title="Fichier de déclaration de la classe ligne. " alt="" coords="3204,185,3354,212"/><area shape="rect" id="node46" href="algo___p_m_i_p_l_8h.html" title="entete/fonction/algorithme\l/algo_PMIPL.h" alt="" coords="3379,178,3550,219"/><area shape="rect" id="node48" href="mot_8cpp.html" title="Fichier d&#39;implémentation de la classe mot. " alt="" coords="2850,185,2990,212"/><area shape="rect" id="node49" href="fonction__source__booleen_8cpp.html" title="src/fonction/fonction\l_source/fonction_source\l_booleen.cpp" alt="" coords="3016,171,3179,227"/><area shape="rect" id="node4" href="texte_8h.html" title="Fichier de déclaration de la classe texte. " alt="" coords="3215,283,3367,309"/><area shape="rect" id="node43" href="algo___l_i_p_l_8h.html" title="entete/fonction/algorithme\l/algo_LIPL.h" alt="" coords="2247,275,2418,317"/><area shape="rect" id="node45" href="ligne_8cpp.html" title="Fichier d&#39;implémentation de la classe ligne. " alt="" coords="2882,283,3029,309"/><area shape="rect" id="node5" href="textes_8h.html" title="Fichier de déclaration de la classe textes. " alt="" coords="3387,380,3545,407"/><area shape="rect" id="node13" href="fonction__sortie__texte_8cpp.html" title="src/fonction/fonction\l_sortie/fonction_sortie\l_texte.cpp" alt="" coords="3904,888,4054,944"/><area shape="rect" id="node24" href="texte_8cpp.html" title="Fichier d&#39;implémentation de la classe texte. " alt="" coords="3081,687,3229,713"/><area shape="rect" id="node41" href="texte__widget__item_8h.html" title="entete/fonction_widget\l/fonction_sortie_widget\l/texte_widget_item.h" alt="" coords="3155,365,3310,421"/><area shape="rect" id="node42" href="liste__texte__widget_8cpp.html" title="src/fonction_widget\l/fonction_sortie_widget\l/liste_texte_widget.cpp" alt="" coords="3129,469,3285,525"/><area shape="rect" id="node6" href="base__fonction_8h.html" title="Déclaration de la classe base_fonction. " alt="" coords="1943,574,2069,615"/><area shape="rect" id="node7" href="fonction__cesar_8h.html" title="entete/fonction/fonction\l_conversion/fonction_cesar.h" alt="" coords="2865,679,3057,721"/><area shape="rect" id="node11" href="fonction__base__sortie_8h.html" title="entete/fonction/fonction\l_sortie/fonction_base_sortie.h" alt="" coords="1795,679,1990,721"/><area shape="rect" id="node14" href="fonction__base__source_8h.html" title="entete/fonction/fonction\l_source/fonction_base_source.h" alt="" coords="1509,679,1718,721"/><area shape="rect" id="node15" href="noeud__fonction_8cpp.html" title="src/explorateur/noeud\l_fonction.cpp" alt="" coords="1369,791,1515,833"/><area shape="rect" id="node16" href="base__fonction_8cpp.html" title="src/projet/base_fonction.cpp" alt="" coords="1702,799,1889,825"/><area shape="rect" id="node17" href="projet_8cpp.html" title="src/projet/projet.cpp" alt="" coords="1540,799,1677,825"/><area shape="rect" id="node18" href="bouton__choix__fonction_8h.html" title="entete/fonction_widget\l/bouton_choix_fonction.h" alt="" coords="1165,679,1331,721"/><area shape="rect" id="node19" href="selecteur__fonction__dialog_8h.html" title="entete/fonction_widget\l/selecteur_fonction_dialog.h" alt="" coords="955,791,1139,833"/><area shape="rect" id="node20" href="bouton__choix__fonction_8cpp.html" title="src/fonction_widget\l/bouton_choix_fonction.cpp" alt="" coords="1163,791,1345,833"/><area shape="rect" id="node21" href="compilateur_8cpp.html" title="Fichier d&#39;implémentation de la classe compilateur. " alt="" coords="2015,687,2221,713"/><area shape="rect" id="node22" href="configuration_8cpp.html" title="Fichier d&#39;implémentation de la class configuration. " alt="" coords="2246,687,2459,713"/><area shape="rect" id="node23" href="log__widget__item_8cpp.html" title="Fichier d&#39;implémentation de la classe log_widget_item. " alt="" coords="2483,679,2613,721"/><area shape="rect" id="node25" href="explorateur_8cpp.html" title="Fichier d&#39;implémentation de la classe explorateur. " alt="" coords="2639,687,2839,713"/><area shape="rect" id="node26" href="noeud__fonctions__conteneur_8cpp.html" title="Fichier d&#39;implémentation de la class noeud_fonctions_conteneur. " alt="" coords="34,679,205,721"/><area shape="rect" id="node27" href="noeud__parametre_8cpp.html" title="Fichier d&#39;implémentation de la classe noeud_parametre. " alt="" coords="3254,679,3401,721"/><area shape="rect" id="node28" href="noeud__projet_8cpp.html" title="Fichier d&#39;implémentation de la classe noeud_projet. " alt="" coords="229,679,375,721"/><area shape="rect" id="node29" href="base__fonction__widget_8cpp.html" title="src/fonction_widget\l/base_fonction_widget.cpp" alt="" coords="400,679,577,721"/><area shape="rect" id="node30" href="base__parametre__widget_8cpp.html" title="src/fonction_widget\l/base_parametre_widget.cpp" alt="" coords="3425,679,3614,721"/><area shape="rect" id="node31" href="parametre__aide__message__box_8cpp.html" title="src/fonction_widget\l/parametre_aide_message\l_box.cpp" alt="" coords="3639,672,3813,728"/><area shape="rect" id="node32" href="vue__fonctions_8cpp.html" title="src/fonction_widget\l/vue_fonctions.cpp" alt="" coords="601,679,735,721"/><area shape="rect" id="node33" href="base__parametre_8cpp.html" title="src/projet/base_parametre.cpp" alt="" coords="3837,687,4035,713"/><area shape="rect" id="node34" href="fonctions__conteneur_8cpp.html" title="src/projet/fonctions\l_conteneur.cpp" alt="" coords="761,679,894,721"/><area shape="rect" id="node35" href="objet__selectionnable_8cpp.html" title="src/projet/objet_selectionnable.cpp" alt="" coords="919,687,1141,713"/><area shape="rect" id="node8" href="fenetre__principale_8cpp.html" title="Implémentation de la classe fenetre_principale. " alt="" coords="2641,903,2811,929"/><area shape="rect" id="node9" href="bibliotheque__fonctions_8cpp.html" title="src/fonction/bibliotheque\l_fonctions.cpp" alt="" coords="2857,895,3019,937"/><area shape="rect" id="node12" href="fonction__sortie__texte_8h.html" title="entete/fonction/fonction\l_sortie/fonction_sortie\l_texte.h" alt="" coords="2764,784,2922,840"/><area shape="rect" id="node37" href="parametre__choix_8h.html" title="entete/parametre/parametre\l_choix.h" alt="" coords="4152,574,4334,615"/><area shape="rect" id="node38" href="fonction__source__choix_8cpp.html" title="src/fonction/fonction\l_source/fonction_source\l_choix.cpp" alt="" coords="4161,672,4325,728"/><area shape="rect" id="node39" href="fonction__source__choix__widget_8cpp.html" title="src/fonction_widget\l/fonction_source_widget\l/fonction_source_choix\l_widget.cpp" alt="" coords="4350,665,4513,735"/><area shape="rect" id="node40" href="parametre__choix_8cpp.html" title="src/parametre/parametre\l_choix.cpp" alt="" coords="4537,679,4701,721"/><area shape="rect" id="node44" href="algo___l_i_p_l_8cpp.html" title="src/fonction/algorithme\l/algo_LIPL.cpp" alt="" coords="2141,373,2294,414"/><area shape="rect" id="node47" href="algo___p_m_i_p_l_8cpp.html" title="src/fonction/algorithme\l/algo_PMIPL.cpp" alt="" coords="3391,275,3545,317"/></map>
+<area shape="rect" id="node2" href="mot_8h.html" title="Fichier de déclaration de la classe mot. " alt="" coords="3207,96,3351,123"/>
+<area shape="rect" id="node10" href="fonction__cesar_8cpp.html" title="src/fonction/fonction\l_conversion/fonction\l_cesar.cpp" alt="" coords="4356,784,4498,840"/>
+<area shape="rect" id="node36" href="base__parametre_8h.html" title="entete/projet/base\l_parametre.h" alt="" coords="3663,477,3789,518"/>
+<area shape="rect" id="node50" href="base__element_8cpp.html" title="Fichier d&#39;implémentation de la classe base_element. " alt="" coords="4853,96,5051,123"/>
+<area shape="rect" id="node3" href="ligne_8h.html" title="Fichier de déclaration de la classe ligne. " alt="" coords="3204,185,3354,212"/>
+<area shape="rect" id="node46" href="algo___p_m_i_p_l_8h.html" title="entete/fonction/algorithme\l/algo_PMIPL.h" alt="" coords="3379,178,3550,219"/>
+<area shape="rect" id="node48" href="mot_8cpp.html" title="Fichier d&#39;implémentation de la classe mot. " alt="" coords="2850,185,2990,212"/>
+<area shape="rect" id="node49" href="fonction__source__booleen_8cpp.html" title="src/fonction/fonction\l_source/fonction_source\l_booleen.cpp" alt="" coords="3016,171,3179,227"/>
+<area shape="rect" id="node4" href="texte_8h.html" title="Fichier de déclaration de la classe texte. " alt="" coords="3215,283,3367,309"/>
+<area shape="rect" id="node43" href="algo___l_i_p_l_8h.html" title="entete/fonction/algorithme\l/algo_LIPL.h" alt="" coords="2247,275,2418,317"/>
+<area shape="rect" id="node45" href="ligne_8cpp.html" title="Fichier d&#39;implémentation de la classe ligne. " alt="" coords="2882,283,3029,309"/>
+<area shape="rect" id="node5" href="textes_8h.html" title="Fichier de déclaration de la classe textes. " alt="" coords="3387,380,3545,407"/>
+<area shape="rect" id="node13" href="fonction__sortie__texte_8cpp.html" title="src/fonction/fonction\l_sortie/fonction_sortie\l_texte.cpp" alt="" coords="3904,888,4054,944"/>
+<area shape="rect" id="node24" href="texte_8cpp.html" title="Fichier d&#39;implémentation de la classe texte. " alt="" coords="3081,687,3229,713"/>
+<area shape="rect" id="node41" href="texte__widget__item_8h.html" title="entete/fonction_widget\l/fonction_sortie_widget\l/texte_widget_item.h" alt="" coords="3155,365,3310,421"/>
+<area shape="rect" id="node42" href="liste__texte__widget_8cpp.html" title="src/fonction_widget\l/fonction_sortie_widget\l/liste_texte_widget.cpp" alt="" coords="3129,469,3285,525"/>
+<area shape="rect" id="node6" href="base__fonction_8h.html" title="Déclaration de la classe base_fonction. " alt="" coords="1943,574,2069,615"/>
+<area shape="rect" id="node7" href="fonction__cesar_8h.html" title="entete/fonction/fonction\l_conversion/fonction_cesar.h" alt="" coords="2865,679,3057,721"/>
+<area shape="rect" id="node11" href="fonction__base__sortie_8h.html" title="entete/fonction/fonction\l_sortie/fonction_base_sortie.h" alt="" coords="1795,679,1990,721"/>
+<area shape="rect" id="node14" href="fonction__base__source_8h.html" title="entete/fonction/fonction\l_source/fonction_base_source.h" alt="" coords="1509,679,1718,721"/>
+<area shape="rect" id="node15" href="noeud__fonction_8cpp.html" title="src/explorateur/noeud\l_fonction.cpp" alt="" coords="1369,791,1515,833"/>
+<area shape="rect" id="node16" href="base__fonction_8cpp.html" title="src/projet/base_fonction.cpp" alt="" coords="1702,799,1889,825"/>
+<area shape="rect" id="node17" href="projet_8cpp.html" title="src/projet/projet.cpp" alt="" coords="1540,799,1677,825"/>
+<area shape="rect" id="node18" href="bouton__choix__fonction_8h.html" title="entete/fonction_widget\l/bouton_choix_fonction.h" alt="" coords="1165,679,1331,721"/>
+<area shape="rect" id="node19" href="selecteur__fonction__dialog_8h.html" title="entete/fonction_widget\l/selecteur_fonction_dialog.h" alt="" coords="955,791,1139,833"/>
+<area shape="rect" id="node20" href="bouton__choix__fonction_8cpp.html" title="src/fonction_widget\l/bouton_choix_fonction.cpp" alt="" coords="1163,791,1345,833"/>
+<area shape="rect" id="node21" href="compilateur_8cpp.html" title="Fichier d&#39;implémentation de la classe compilateur. " alt="" coords="2015,687,2221,713"/>
+<area shape="rect" id="node22" href="configuration_8cpp.html" title="Fichier d&#39;implémentation de la class configuration. " alt="" coords="2246,687,2459,713"/>
+<area shape="rect" id="node23" href="log__widget__item_8cpp.html" title="Fichier d&#39;implémentation de la classe log_widget_item. " alt="" coords="2483,679,2613,721"/>
+<area shape="rect" id="node25" href="explorateur_8cpp.html" title="Fichier d&#39;implémentation de la classe explorateur. " alt="" coords="2639,687,2839,713"/>
+<area shape="rect" id="node26" href="noeud__fonctions__conteneur_8cpp.html" title="Fichier d&#39;implémentation de la class noeud_fonctions_conteneur. " alt="" coords="34,679,205,721"/>
+<area shape="rect" id="node27" href="noeud__parametre_8cpp.html" title="Fichier d&#39;implémentation de la classe noeud_parametre. " alt="" coords="3254,679,3401,721"/>
+<area shape="rect" id="node28" href="noeud__projet_8cpp.html" title="Fichier d&#39;implémentation de la classe noeud_projet. " alt="" coords="229,679,375,721"/>
+<area shape="rect" id="node29" href="base__fonction__widget_8cpp.html" title="src/fonction_widget\l/base_fonction_widget.cpp" alt="" coords="400,679,577,721"/>
+<area shape="rect" id="node30" href="base__parametre__widget_8cpp.html" title="src/fonction_widget\l/base_parametre_widget.cpp" alt="" coords="3425,679,3614,721"/>
+<area shape="rect" id="node31" href="parametre__aide__message__box_8cpp.html" title="src/fonction_widget\l/parametre_aide_message\l_box.cpp" alt="" coords="3639,672,3813,728"/>
+<area shape="rect" id="node32" href="vue__fonctions_8cpp.html" title="src/fonction_widget\l/vue_fonctions.cpp" alt="" coords="601,679,735,721"/>
+<area shape="rect" id="node33" href="base__parametre_8cpp.html" title="src/projet/base_parametre.cpp" alt="" coords="3837,687,4035,713"/>
+<area shape="rect" id="node34" href="fonctions__conteneur_8cpp.html" title="src/projet/fonctions\l_conteneur.cpp" alt="" coords="761,679,894,721"/>
+<area shape="rect" id="node35" href="objet__selectionnable_8cpp.html" title="src/projet/objet_selectionnable.cpp" alt="" coords="919,687,1141,713"/>
+<area shape="rect" id="node8" href="fenetre__principale_8cpp.html" title="Implémentation de la classe fenetre_principale. " alt="" coords="2641,903,2811,929"/>
+<area shape="rect" id="node9" href="bibliotheque__fonctions_8cpp.html" title="src/fonction/bibliotheque\l_fonctions.cpp" alt="" coords="2857,895,3019,937"/>
+<area shape="rect" id="node12" href="fonction__sortie__texte_8h.html" title="entete/fonction/fonction\l_sortie/fonction_sortie\l_texte.h" alt="" coords="2764,784,2922,840"/>
+<area shape="rect" id="node37" href="parametre__choix_8h.html" title="entete/parametre/parametre\l_choix.h" alt="" coords="4152,574,4334,615"/>
+<area shape="rect" id="node38" href="fonction__source__choix_8cpp.html" title="src/fonction/fonction\l_source/fonction_source\l_choix.cpp" alt="" coords="4161,672,4325,728"/>
+<area shape="rect" id="node39" href="fonction__source__choix__widget_8cpp.html" title="src/fonction_widget\l/fonction_source_widget\l/fonction_source_choix\l_widget.cpp" alt="" coords="4350,665,4513,735"/>
+<area shape="rect" id="node40" href="parametre__choix_8cpp.html" title="src/parametre/parametre\l_choix.cpp" alt="" coords="4537,679,4701,721"/>
+<area shape="rect" id="node44" href="algo___l_i_p_l_8cpp.html" title="src/fonction/algorithme\l/algo_LIPL.cpp" alt="" coords="2141,373,2294,414"/>
+<area shape="rect" id="node47" href="algo___p_m_i_p_l_8cpp.html" title="src/fonction/algorithme\l/algo_PMIPL.cpp" alt="" coords="3391,275,3545,317"/>
+</map>
 </div>
 </div>
 <p><a href="base__element_8h_source.html">Aller au code source de ce fichier.</a></p>
@@ -116,20 +143,20 @@ Ce graphe montre quels fichiers incluent directement ou indirectement ce fichier
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
 Classes</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classbase__element.html">base_element</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Classe décrivant un élément de texte. Cela peut être un caractère, un entier, un booléen ou une chaine de caractère.  <a href="classbase__element.html#details">Plus de détails...</a><br/></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Classe décrivant un élément de texte. Cela peut être un caractère, un entier, un booléen ou une chaine de caractère.  <a href="classbase__element.html#details">Plus de détails...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Description détaillée</h2>
 <div class="textblock"><p>Fichier de déclaration de la classe bae_element. </p>
 <dl class="section author"><dt>Auteur</dt><dd>Sébastien Angibaud </dd></dl>
 
-<p>Définition dans le fichier <a class="el" href="base__element_8h_source.html">base_element.h</a>.</p>
+<p class="definition">Définition dans le fichier <a class="el" href="base__element_8h_source.html">base_element.h</a>.</p>
 </div></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Généré le Mercredi 8 Février 2017 09:53:35 pour Emgine par &#160;<a href="http://www.doxygen.org/index.html">
+Généré le Jeudi 9 Février 2017 15:10:50 pour Emgine par &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
-</a> 1.8.6
+</a> 1.8.13
 </small></address>
 </body>
 </html>

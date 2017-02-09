@@ -3,16 +3,15 @@
 <head>
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
-<meta name="generator" content="Doxygen 1.8.6"/>
+<meta name="generator" content="Doxygen 1.8.13"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
 <title>Emgine:  Fichier source de entete/fonction/fonction_source/fonction_source_entier.h</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
-<script type="text/javascript">
-  $(document).ready(function() { searchBox.OnSelectItem(0); });
-</script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
@@ -21,7 +20,7 @@
 <table cellspacing="0" cellpadding="0">
  <tbody>
  <tr style="height: 56px;">
-  <td style="padding-left: 0.5em;">
+  <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">Emgine
    </div>
   </td>
@@ -30,47 +29,25 @@
 </table>
 </div>
 <!-- end header part -->
-<!-- Généré par Doxygen 1.8.6 -->
+<!-- Généré par Doxygen 1.8.13 -->
 <script type="text/javascript">
 var searchBox = new SearchBox("searchBox", "search",false,'Recherche');
 </script>
-  <div id="navrow1" class="tabs">
-    <ul class="tablist">
-      <li><a href="index.html"><span>Page&#160;principale</span></a></li>
-      <li><a href="pages.html"><span>Pages&#160;associées</span></a></li>
-      <li><a href="modules.html"><span>Modules</span></a></li>
-      <li><a href="annotated.html"><span>Classes</span></a></li>
-      <li class="current"><a href="files.html"><span>Fichiers</span></a></li>
-      <li>
-        <div id="MSearchBox" class="MSearchBoxInactive">
-        <span class="left">
-          <img id="MSearchSelect" src="search/mag_sel.png"
-               onmouseover="return searchBox.OnSearchSelectShow()"
-               onmouseout="return searchBox.OnSearchSelectHide()"
-               alt=""/>
-          <input type="text" id="MSearchField" value="Recherche" accesskey="S"
-               onfocus="searchBox.OnSearchFieldFocus(true)" 
-               onblur="searchBox.OnSearchFieldFocus(false)" 
-               onkeyup="searchBox.OnSearchFieldChange(event)"/>
-          </span><span class="right">
-            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
-          </span>
-        </div>
-      </li>
-    </ul>
-  </div>
-  <div id="navrow2" class="tabs2">
-    <ul class="tablist">
-      <li><a href="files.html"><span>Liste&#160;des&#160;fichiers</span></a></li>
-      <li><a href="globals.html"><span>Membres&#160;de&#160;fichier</span></a></li>
-    </ul>
-  </div>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+$(function() {
+  initMenu('',true,false,'search.php','Recherche');
+  $(document).ready(function() { init_search(); });
+});
+</script>
+<div id="main-nav"></div>
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>Tout</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Espaces de nommage</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Fichiers</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Fonctions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Définitions de type</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Énumérations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Valeurs énumérées</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&#160;</span>Groupes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(10)"><span class="SelectionMark">&#160;</span>Pages</a></div>
+</div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -89,56 +66,29 @@ var searchBox = new SearchBox("searchBox", "search",false,'Recherche');
 <div class="title">fonction_source_entier.h</div>  </div>
 </div><!--header-->
 <div class="contents">
-<a href="fonction__source__entier_8h.html">Aller à la documentation de ce fichier.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#ifndef FONCTION_SOURCE_ENTIER_H</span></div>
-<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#define FONCTION_SOURCE_ENTIER_H</span></div>
-<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="preprocessor"></span></div>
-<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="fonction__base__source_8h.html">entete/fonction/fonction_source/fonction_base_source.h</a>&quot;</span></div>
-<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;</div>
-<div class="line"><a name="l00006"></a><span class="lineno"><a class="line" href="classfonction__source__entier.html">    6</a></span>&#160;<span class="keyword">class </span><a class="code" href="classfonction__source__entier.html">fonction_source_entier</a> : <span class="keyword">public</span> <a class="code" href="classfonction__base__source.html">fonction_base_source</a></div>
-<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;{</div>
-<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;    <span class="keyword">public</span>:</div>
-<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;        <a class="code" href="classfonction__source__entier.html#a19ca6e6b2c9a117f3b6648649237ff93">fonction_source_entier</a>(<a class="code" href="classfonctions__conteneur.html">fonctions_conteneur</a> * conteneur, <span class="keywordtype">int</span> valeur = 0);</div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;        <a class="code" href="classfonction__source__entier.html#a2a4ab040d377a6ccdc07334784e66e75">~fonction_source_entier</a>();</div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;</div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;        QString <a class="code" href="classfonction__source__entier.html#ad8e946126c2b0e99487a7991ee7769a4">get_valeur_courte</a>() <span class="keyword">const</span>;</div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="classfonction__source__entier.html#adfaa477c4b948a2e28a885368a81e5f4">executer</a>( <a class="code" href="classcompilateur.html">compilateur</a> &amp; compil, <span class="keyword">const</span> <a class="code" href="classtextes.html">textes</a> &amp; textes_in, <a class="code" href="classtextes.html">textes</a> &amp; textes_out );</div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;</div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;        <span class="keywordtype">int</span> <a class="code" href="classfonction__source__entier.html#ac34a459c820233e9fec2b369c223f2ac">get_valeur</a>() <span class="keyword">const</span>;</div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="classfonction__source__entier.html#ad1f8d2398b7b69c88dad43d21bd6e690">set_valeur</a>(<span class="keywordtype">int</span> valeur);</div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;        QString <a class="code" href="classfonction__source__entier.html#ae05aab149edcea781ef7027ffa695c54">get_string_valeur</a>() <span class="keyword">const</span>;</div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="classfonction__source__entier.html#a6c391d5de90d0793e95e5b65d902dd1c">set_string_valeur</a>(<span class="keyword">const</span> QString &amp; valeur);</div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;</div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;    <span class="keyword">private</span>:</div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;        <span class="keywordtype">bool</span> <a class="code" href="classfonction__source__entier.html#afdc48f51bdebc173ded902baffe24f5e">est_valide</a>(<a class="code" href="classlogs__compilation__widget.html">logs_compilation_widget</a> * vue_logs);</div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;</div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;    <span class="keyword">private</span>:</div>
-<div class="line"><a name="l00024"></a><span class="lineno"><a class="line" href="classfonction__source__entier.html#aeb02925ead12ef719be2b1a0bfe2a2b4">   24</a></span>&#160;        <span class="keywordtype">int</span> <a class="code" href="classfonction__source__entier.html#aeb02925ead12ef719be2b1a0bfe2a2b4">m_valeur</a>;</div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;};</div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;</div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="preprocessor">#endif // FONCTION_SOURCE_ENTIER_H</span></div>
-<div class="ttc" id="classfonction__source__entier_html_aeb02925ead12ef719be2b1a0bfe2a2b4"><div class="ttname"><a href="classfonction__source__entier.html#aeb02925ead12ef719be2b1a0bfe2a2b4">fonction_source_entier::m_valeur</a></div><div class="ttdeci">int m_valeur</div><div class="ttdef"><b>Definition:</b> <a href="fonction__source__entier_8h_source.html#l00024">fonction_source_entier.h:24</a></div></div>
-<div class="ttc" id="classfonction__source__entier_html_a2a4ab040d377a6ccdc07334784e66e75"><div class="ttname"><a href="classfonction__source__entier.html#a2a4ab040d377a6ccdc07334784e66e75">fonction_source_entier::~fonction_source_entier</a></div><div class="ttdeci">~fonction_source_entier()</div><div class="ttdef"><b>Definition:</b> <a href="fonction__source__entier_8cpp_source.html#l00011">fonction_source_entier.cpp:11</a></div></div>
-<div class="ttc" id="classfonction__source__entier_html_ad8e946126c2b0e99487a7991ee7769a4"><div class="ttname"><a href="classfonction__source__entier.html#ad8e946126c2b0e99487a7991ee7769a4">fonction_source_entier::get_valeur_courte</a></div><div class="ttdeci">QString get_valeur_courte() const </div><div class="ttdef"><b>Definition:</b> <a href="fonction__source__entier_8cpp_source.html#l00032">fonction_source_entier.cpp:32</a></div></div>
-<div class="ttc" id="classfonction__source__entier_html_ae05aab149edcea781ef7027ffa695c54"><div class="ttname"><a href="classfonction__source__entier.html#ae05aab149edcea781ef7027ffa695c54">fonction_source_entier::get_string_valeur</a></div><div class="ttdeci">QString get_string_valeur() const </div><div class="ttdef"><b>Definition:</b> <a href="fonction__source__entier_8cpp_source.html#l00047">fonction_source_entier.cpp:47</a></div></div>
-<div class="ttc" id="classlogs__compilation__widget_html"><div class="ttname"><a href="classlogs__compilation__widget.html">logs_compilation_widget</a></div><div class="ttdoc">Classe décrivant le widget affichant l&#39;ensemble des logs. </div><div class="ttdef"><b>Definition:</b> <a href="logs__compilation__widget_8h_source.html#l00021">logs_compilation_widget.h:21</a></div></div>
-<div class="ttc" id="classcompilateur_html"><div class="ttname"><a href="classcompilateur.html">compilateur</a></div><div class="ttdoc">Classe décrivant un compilateur. Le compilateur a pour rôle d&#39;exécuter un projet. ...</div><div class="ttdef"><b>Definition:</b> <a href="compilateur_8h_source.html#l00030">compilateur.h:30</a></div></div>
-<div class="ttc" id="classfonction__source__entier_html_afdc48f51bdebc173ded902baffe24f5e"><div class="ttname"><a href="classfonction__source__entier.html#afdc48f51bdebc173ded902baffe24f5e">fonction_source_entier::est_valide</a></div><div class="ttdeci">bool est_valide(logs_compilation_widget *vue_logs)</div><div class="ttdoc">Indique si la fonction est valide. </div><div class="ttdef"><b>Definition:</b> <a href="fonction__source__entier_8cpp_source.html#l00060">fonction_source_entier.cpp:60</a></div></div>
-<div class="ttc" id="classfonction__base__source_html"><div class="ttname"><a href="classfonction__base__source.html">fonction_base_source</a></div><div class="ttdef"><b>Definition:</b> <a href="fonction__base__source_8h_source.html#l00008">fonction_base_source.h:8</a></div></div>
-<div class="ttc" id="fonction__base__source_8h_html"><div class="ttname"><a href="fonction__base__source_8h.html">fonction_base_source.h</a></div></div>
+<a href="fonction__source__entier_8h.html">Aller à la documentation de ce fichier.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#ifndef FONCTION_SOURCE_ENTIER_H</span></div><div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor">#define FONCTION_SOURCE_ENTIER_H</span></div><div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;</div><div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="fonction__base__source_8h.html">entete/fonction/fonction_source/fonction_base_source.h</a>&quot;</span></div><div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;</div><div class="line"><a name="l00016"></a><span class="lineno"><a class="line" href="classfonction__source__entier.html">   16</a></span>&#160;<span class="keyword">class </span><a class="code" href="classfonction__source__entier.html">fonction_source_entier</a> : <span class="keyword">public</span> <a class="code" href="classfonction__base__source.html">fonction_base_source</a></div><div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;{</div><div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;    <span class="keyword">public</span>:</div><div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;        <a class="code" href="classfonction__source__entier.html#a19ca6e6b2c9a117f3b6648649237ff93">fonction_source_entier</a>(<a class="code" href="classfonctions__conteneur.html">fonctions_conteneur</a> * conteneur, <span class="keywordtype">int</span> valeur = 0);</div><div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;        <a class="code" href="classfonction__source__entier.html#a2a4ab040d377a6ccdc07334784e66e75">~fonction_source_entier</a>();</div><div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;</div><div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;        QString <a class="code" href="classfonction__source__entier.html#afbad5c5ce50a9406fe08420dcb9bfa42">get_valeur_courte</a>() <span class="keyword">const</span>;</div><div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="classfonction__source__entier.html#adfaa477c4b948a2e28a885368a81e5f4">executer</a>( <a class="code" href="classcompilateur.html">compilateur</a> &amp; compil, <span class="keyword">const</span> <a class="code" href="classtextes.html">textes</a> &amp; textes_in, <a class="code" href="classtextes.html">textes</a> &amp; textes_out );</div><div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;        <span class="keywordtype">int</span> <a class="code" href="classfonction__source__entier.html#ade1df8fd923a6750637fa878707c1f52">get_valeur</a>() <span class="keyword">const</span>;</div><div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="classfonction__source__entier.html#ad1f8d2398b7b69c88dad43d21bd6e690">set_valeur</a>(<span class="keywordtype">int</span> valeur);</div><div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;        QString <a class="code" href="classfonction__source__entier.html#a1aff50ace09833c8ee0dd71e4059a43d">get_string_valeur</a>() <span class="keyword">const</span>;</div><div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="classfonction__source__entier.html#a6c391d5de90d0793e95e5b65d902dd1c">set_string_valeur</a>(<span class="keyword">const</span> QString &amp; valeur);</div><div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;</div><div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;    <span class="keyword">private</span>:</div><div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;        <span class="keywordtype">bool</span> <a class="code" href="classfonction__source__entier.html#afdc48f51bdebc173ded902baffe24f5e">est_valide</a>(<a class="code" href="classlogs__compilation__widget.html">logs_compilation_widget</a> * vue_logs);</div><div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;</div><div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    <span class="keyword">private</span>:</div><div class="line"><a name="l00034"></a><span class="lineno"><a class="line" href="classfonction__source__entier.html#aeb02925ead12ef719be2b1a0bfe2a2b4">   34</a></span>&#160;        <span class="keywordtype">int</span> <a class="code" href="classfonction__source__entier.html#aeb02925ead12ef719be2b1a0bfe2a2b4">m_valeur</a>;</div><div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;};</div><div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;</div><div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;<span class="preprocessor">#endif // FONCTION_SOURCE_ENTIER_H</span></div><div class="ttc" id="classfonction__source__entier_html_aeb02925ead12ef719be2b1a0bfe2a2b4"><div class="ttname"><a href="classfonction__source__entier.html#aeb02925ead12ef719be2b1a0bfe2a2b4">fonction_source_entier::m_valeur</a></div><div class="ttdeci">int m_valeur</div><div class="ttdoc">La valeur de la fonction. </div><div class="ttdef"><b>Definition:</b> <a href="fonction__source__entier_8h_source.html#l00034">fonction_source_entier.h:34</a></div></div>
+<div class="ttc" id="classfonction__source__entier_html_afbad5c5ce50a9406fe08420dcb9bfa42"><div class="ttname"><a href="classfonction__source__entier.html#afbad5c5ce50a9406fe08420dcb9bfa42">fonction_source_entier::get_valeur_courte</a></div><div class="ttdeci">QString get_valeur_courte() const</div><div class="ttdoc">Retourne la valeur de la fonction en version raccourci. </div><div class="ttdef"><b>Definition:</b> <a href="fonction__source__entier_8cpp_source.html#l00053">fonction_source_entier.cpp:53</a></div></div>
+<div class="ttc" id="classfonction__source__entier_html_a2a4ab040d377a6ccdc07334784e66e75"><div class="ttname"><a href="classfonction__source__entier.html#a2a4ab040d377a6ccdc07334784e66e75">fonction_source_entier::~fonction_source_entier</a></div><div class="ttdeci">~fonction_source_entier()</div><div class="ttdoc">Destructeur de la classe fonction_source_entier. </div><div class="ttdef"><b>Definition:</b> <a href="fonction__source__entier_8cpp_source.html#l00025">fonction_source_entier.cpp:25</a></div></div>
+<div class="ttc" id="classlogs__compilation__widget_html"><div class="ttname"><a href="classlogs__compilation__widget.html">logs_compilation_widget</a></div><div class="ttdoc">Classe décrivant le widget affichant l&amp;#39;ensemble des logs. </div><div class="ttdef"><b>Definition:</b> <a href="logs__compilation__widget_8h_source.html#l00021">logs_compilation_widget.h:21</a></div></div>
+<div class="ttc" id="classcompilateur_html"><div class="ttname"><a href="classcompilateur.html">compilateur</a></div><div class="ttdoc">Classe décrivant un compilateur. Le compilateur a pour rôle d&amp;#39;exécuter un projet. ...</div><div class="ttdef"><b>Definition:</b> <a href="compilateur_8h_source.html#l00030">compilateur.h:30</a></div></div>
+<div class="ttc" id="classfonction__source__entier_html_afdc48f51bdebc173ded902baffe24f5e"><div class="ttname"><a href="classfonction__source__entier.html#afdc48f51bdebc173ded902baffe24f5e">fonction_source_entier::est_valide</a></div><div class="ttdeci">bool est_valide(logs_compilation_widget *vue_logs)</div><div class="ttdoc">Teste si la fonction est valide. </div><div class="ttdef"><b>Definition:</b> <a href="fonction__source__entier_8cpp_source.html#l00099">fonction_source_entier.cpp:99</a></div></div>
+<div class="ttc" id="classfonction__source__entier_html_a1aff50ace09833c8ee0dd71e4059a43d"><div class="ttname"><a href="classfonction__source__entier.html#a1aff50ace09833c8ee0dd71e4059a43d">fonction_source_entier::get_string_valeur</a></div><div class="ttdeci">QString get_string_valeur() const</div><div class="ttdoc">Accesseur de la valeur de la fonction au format QString. </div><div class="ttdef"><b>Definition:</b> <a href="fonction__source__entier_8cpp_source.html#l00080">fonction_source_entier.cpp:80</a></div></div>
+<div class="ttc" id="classfonction__base__source_html"><div class="ttname"><a href="classfonction__base__source.html">fonction_base_source</a></div><div class="ttdoc">Classe commune à toutes les fonctions de type sortie. </div><div class="ttdef"><b>Definition:</b> <a href="fonction__base__source_8h_source.html#l00018">fonction_base_source.h:18</a></div></div>
+<div class="ttc" id="fonction__base__source_8h_html"><div class="ttname"><a href="fonction__base__source_8h.html">fonction_base_source.h</a></div><div class="ttdoc">Fichier de déclaration de la classe fonction_base_source. </div></div>
 <div class="ttc" id="classtextes_html"><div class="ttname"><a href="classtextes.html">textes</a></div><div class="ttdoc">Classe décrivant un ensemble de textes. </div><div class="ttdef"><b>Definition:</b> <a href="textes_8h_source.html#l00018">textes.h:18</a></div></div>
-<div class="ttc" id="classfonction__source__entier_html_ac34a459c820233e9fec2b369c223f2ac"><div class="ttname"><a href="classfonction__source__entier.html#ac34a459c820233e9fec2b369c223f2ac">fonction_source_entier::get_valeur</a></div><div class="ttdeci">int get_valeur() const </div><div class="ttdef"><b>Definition:</b> <a href="fonction__source__entier_8cpp_source.html#l00037">fonction_source_entier.cpp:37</a></div></div>
-<div class="ttc" id="classfonction__source__entier_html"><div class="ttname"><a href="classfonction__source__entier.html">fonction_source_entier</a></div><div class="ttdef"><b>Definition:</b> <a href="fonction__source__entier_8h_source.html#l00006">fonction_source_entier.h:6</a></div></div>
-<div class="ttc" id="classfonction__source__entier_html_ad1f8d2398b7b69c88dad43d21bd6e690"><div class="ttname"><a href="classfonction__source__entier.html#ad1f8d2398b7b69c88dad43d21bd6e690">fonction_source_entier::set_valeur</a></div><div class="ttdeci">void set_valeur(int valeur)</div><div class="ttdef"><b>Definition:</b> <a href="fonction__source__entier_8cpp_source.html#l00042">fonction_source_entier.cpp:42</a></div></div>
-<div class="ttc" id="classfonction__source__entier_html_a19ca6e6b2c9a117f3b6648649237ff93"><div class="ttname"><a href="classfonction__source__entier.html#a19ca6e6b2c9a117f3b6648649237ff93">fonction_source_entier::fonction_source_entier</a></div><div class="ttdeci">fonction_source_entier(fonctions_conteneur *conteneur, int valeur=0)</div><div class="ttdef"><b>Definition:</b> <a href="fonction__source__entier_8cpp_source.html#l00004">fonction_source_entier.cpp:4</a></div></div>
-<div class="ttc" id="classfonction__source__entier_html_a6c391d5de90d0793e95e5b65d902dd1c"><div class="ttname"><a href="classfonction__source__entier.html#a6c391d5de90d0793e95e5b65d902dd1c">fonction_source_entier::set_string_valeur</a></div><div class="ttdeci">void set_string_valeur(const QString &amp;valeur)</div><div class="ttdef"><b>Definition:</b> <a href="fonction__source__entier_8cpp_source.html#l00052">fonction_source_entier.cpp:52</a></div></div>
-<div class="ttc" id="classfonction__source__entier_html_adfaa477c4b948a2e28a885368a81e5f4"><div class="ttname"><a href="classfonction__source__entier.html#adfaa477c4b948a2e28a885368a81e5f4">fonction_source_entier::executer</a></div><div class="ttdeci">void executer(compilateur &amp;compil, const textes &amp;textes_in, textes &amp;textes_out)</div><div class="ttdoc">Exécution de la fonction. </div><div class="ttdef"><b>Definition:</b> <a href="fonction__source__entier_8cpp_source.html#l00019">fonction_source_entier.cpp:19</a></div></div>
+<div class="ttc" id="classfonction__source__entier_html"><div class="ttname"><a href="classfonction__source__entier.html">fonction_source_entier</a></div><div class="ttdoc">Classe décrivant une fonction source de type entier. </div><div class="ttdef"><b>Definition:</b> <a href="fonction__source__entier_8h_source.html#l00016">fonction_source_entier.h:16</a></div></div>
+<div class="ttc" id="classfonction__source__entier_html_ad1f8d2398b7b69c88dad43d21bd6e690"><div class="ttname"><a href="classfonction__source__entier.html#ad1f8d2398b7b69c88dad43d21bd6e690">fonction_source_entier::set_valeur</a></div><div class="ttdeci">void set_valeur(int valeur)</div><div class="ttdoc">Initialise la valeur de la fonction. </div><div class="ttdef"><b>Definition:</b> <a href="fonction__source__entier_8cpp_source.html#l00071">fonction_source_entier.cpp:71</a></div></div>
+<div class="ttc" id="classfonction__source__entier_html_a19ca6e6b2c9a117f3b6648649237ff93"><div class="ttname"><a href="classfonction__source__entier.html#a19ca6e6b2c9a117f3b6648649237ff93">fonction_source_entier::fonction_source_entier</a></div><div class="ttdeci">fonction_source_entier(fonctions_conteneur *conteneur, int valeur=0)</div><div class="ttdoc">Constructeur de la classe fonction_source_entier. </div><div class="ttdef"><b>Definition:</b> <a href="fonction__source__entier_8cpp_source.html#l00015">fonction_source_entier.cpp:15</a></div></div>
+<div class="ttc" id="classfonction__source__entier_html_a6c391d5de90d0793e95e5b65d902dd1c"><div class="ttname"><a href="classfonction__source__entier.html#a6c391d5de90d0793e95e5b65d902dd1c">fonction_source_entier::set_string_valeur</a></div><div class="ttdeci">void set_string_valeur(const QString &amp;valeur)</div><div class="ttdoc">Initilialise la valeur de la fonction à partir d&amp;#39;un QString donné. </div><div class="ttdef"><b>Definition:</b> <a href="fonction__source__entier_8cpp_source.html#l00089">fonction_source_entier.cpp:89</a></div></div>
+<div class="ttc" id="classfonction__source__entier_html_ade1df8fd923a6750637fa878707c1f52"><div class="ttname"><a href="classfonction__source__entier.html#ade1df8fd923a6750637fa878707c1f52">fonction_source_entier::get_valeur</a></div><div class="ttdeci">int get_valeur() const</div><div class="ttdoc">Accesseur de la valeur de la fonction. </div><div class="ttdef"><b>Definition:</b> <a href="fonction__source__entier_8cpp_source.html#l00062">fonction_source_entier.cpp:62</a></div></div>
+<div class="ttc" id="classfonction__source__entier_html_adfaa477c4b948a2e28a885368a81e5f4"><div class="ttname"><a href="classfonction__source__entier.html#adfaa477c4b948a2e28a885368a81e5f4">fonction_source_entier::executer</a></div><div class="ttdeci">void executer(compilateur &amp;compil, const textes &amp;textes_in, textes &amp;textes_out)</div><div class="ttdoc">Execute la fonction. </div><div class="ttdef"><b>Definition:</b> <a href="fonction__source__entier_8cpp_source.html#l00036">fonction_source_entier.cpp:36</a></div></div>
 <div class="ttc" id="classfonctions__conteneur_html"><div class="ttname"><a href="classfonctions__conteneur.html">fonctions_conteneur</a></div><div class="ttdef"><b>Definition:</b> <a href="fonctions__conteneur_8h_source.html#l00011">fonctions_conteneur.h:11</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Généré le Mercredi 8 Février 2017 09:53:35 pour Emgine par &#160;<a href="http://www.doxygen.org/index.html">
+Généré le Jeudi 9 Février 2017 15:10:46 pour Emgine par &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
-</a> 1.8.6
+</a> 1.8.13
 </small></address>
 </body>
 </html>

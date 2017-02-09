@@ -2,8 +2,7 @@ var searchData=
 [
   ['ui',['Ui',['../namespace_ui.html',1,'Ui'],['../group___ui.html',1,'(Espace de nommage global)']]],
   ['ui_5ffenetre_5fprincipale',['Ui_fenetre_principale',['../class_ui__fenetre__principale.html',1,'']]],
-  ['ui_5ffenetre_5fprincipale_2eh',['ui_fenetre_principale.h',['../ui__fenetre__principale_8h.html',1,'']]],
-  ['ui_5ffenetre_5fprincipale_2eh',['ui_fenetre_principale.h',['../entete_2ui__fenetre__principale_8h.html',1,'']]],
+  ['ui_5ffenetre_5fprincipale_2eh',['ui_fenetre_principale.h',['../entete_2ui__fenetre__principale_8h.html',1,'(Espace de nommage global)'],['../ui__fenetre__principale_8h.html',1,'(Espace de nommage global)']]],
   ['update',['update',['../classtexte__widget__item.html#a520df962f6588a4007d506b728d184cd',1,'texte_widget_item']]],
   ['update_5factif_5fbouton',['update_actif_bouton',['../classbase__fonction__widget.html#a548a6571fb757666807a6b3e95485dea',1,'base_fonction_widget']]],
   ['update_5fboutons',['update_boutons',['../classfonction__source__fichier__texte__widget.html#a602f7386cba89d269efae599ad828106',1,'fonction_source_fichier_texte_widget']]],

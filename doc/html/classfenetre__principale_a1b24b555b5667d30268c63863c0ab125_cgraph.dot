@@ -1,0 +1,19 @@
+digraph "fenetre_principale::on_ajouter_fonction_conversion_click"
+{
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="LR";
+  Node1087 [label="fenetre_principale\l::on_ajouter_fonction\l_conversion_click",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black"];
+  Node1087 -> Node1088 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node1088 [label="fenetre_principale\l::ajouter_conversion",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classfenetre__principale.html#a293eba9375bed6685f70ca228705f272",tooltip="Ajoute une fonction de conversion au projet courant. "];
+  Node1088 -> Node1089 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node1089 [label="objet_selectionnable\l::existe_selection",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classobjet__selectionnable.html#ad3c9ec08e1036a463b6b82176d52364d"];
+  Node1088 -> Node1090 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node1090 [label="fenetre_principale\l::ajouter_fonction",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classfenetre__principale.html#a0257f102b5827b67ca870579e062232e",tooltip="Ajoute une fonction dans un conteneur donné. "];
+  Node1090 -> Node1091 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node1091 [label="selecteur_fonction\l_dialog::get_fonction",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classselecteur__fonction__dialog.html#a35a75e577db0e5ca0e9ac64b5202e176"];
+  Node1090 -> Node1092 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node1092 [label="base_fonction::set\l_conteneur",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classbase__fonction.html#aa487a07ab1961bfbdf04ddd3c72b4d3c",tooltip="Initialise le conteneur de la fonction. "];
+  Node1088 -> Node1093 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node1093 [label="objet_selectionnable\l::get_selection",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classobjet__selectionnable.html#ae6be76843c7b502410ec8d2c1fff88a3"];
+}

@@ -6,25 +6,25 @@
  * \author Sébastien Angibaud
  */
 
-#include <string>
+#include "entete/element/textes.h"
+#include "entete/fonction/algorithme/algo_LIPL.h"
+#include "entete/fonction/algorithme/algo_PMIPL.h"
+#include "entete/fonction/define_fonction.h"
+#include "entete/projet/base_parametre.h"
+#include "entete/projet/fonctions_conteneur.h"
+#include "entete/projet/objet_selectionnable.h"
+
 #include <QString>
-#include <list>
-#include <set>
-#include <map>
 #include <QXmlStreamWriter>
 
-#include "entete/element/textes.h"
-#include "entete/projet/base_parametre.h"
-#include "entete/projet/objet_selectionnable.h"
-#include "entete/projet/fonctions_conteneur.h"
-#include "entete/fonction/algorithme/algo_PMIPL.h"
-#include "entete/fonction/algorithme/algo_LIPL.h"
-#include "entete/fonction/define_fonction.h"
+#include <list>
+#include <map>
+#include <set>
 
-class noeud_fonction;
 class base_fonction_widget;
 class compilateur;
 class logs_compilation_widget;
+class noeud_fonction;
 
 /**
  \brief Classe décrivant une fonction de conversion d'un texte.
@@ -35,65 +35,71 @@ class base_fonction : public objet_selectionnable
         Q_OBJECT
 
     public:
+        /** \brief Tableau associant à un identifiant le paramètre associé. */
         typedef std::map< type_id_parametre, base_parametre *> type_parametres;
+
+        /** \brief Itérateur sur le tableau de paramètres. */
         typedef type_parametres::iterator parametres_iterateur;
+
+        /** \brief Itérateur constant sur le tableau de paramètres. */
         typedef type_parametres::const_iterator parametres_const_iterateur;
 
     protected:
+        /** \brief Type des fonctions d'exécution. */
         typedef void ( base_fonction::*pf_exec_callback)( compilateur &, const textes &, textes & );
 
     public:
         base_fonction( fonctions_conteneur * parent, type_fonction type = type_fonction::fonction_conversion);
         virtual ~base_fonction();
-        virtual void initialisation_par_defaut();
 
         /**
-        \brief Méthode virtuelle pure d'application de la fonction.
+         * \brief Méthode virtuelle pure qui exécute la fonction.
+         * \param compil Le compilateur utilisé.
+         * \param textes_in Le texte source en entrée.
+         * \param textes_out Le texte de sortie généré.
         */
         virtual void executer( compilateur & compil, const textes & textes_in, textes & textes_out ) = 0;
 
-        /**
-        \brief Méthode d'accès à l'info bulle.
-        */
-        QString get_info_bulle() const;
-
-        bool est_fonction() const;
-
-        void sauvegarder( QXmlStreamWriter & stream ) const;
-        bool est_fonction_valide(logs_compilation_widget * vue_logs);
+        /** --------------------------------------------------------------------------------------
+         * \brief Méthode virtuelle pure retournant la valeur de la fonction en version raccourci.
+         * \return La valeur courte de la fonction.
+         */
         virtual QString get_valeur_courte() const = 0;
 
+        virtual void initialisation_par_defaut();
         virtual base_fonction_widget *generer_fonction_widget();
+        bool est_fonction() const;
+        void set_est_active(bool active);
+        void set_est_etendu(bool est_etendu);
 
+        QString get_info_bulle() const;
+        void sauvegarder( QXmlStreamWriter & stream ) const;
+        void charger(QXmlStreamReader & xm);
+
+        bool est_fonction_valide(logs_compilation_widget * vue_logs);
         QString get_nom() const;
         type_fonction get_type() const;
         void set_noeud( noeud_fonction * n );
         noeud_fonction * get_noeud();
-        void inverser_activation();
         int get_position();
+        int get_niveau_visibilite() const;
+        int get_max_niveau_visibilite() const;
+        void set_niveau_visibilite( int niveau_visibilite );
+        void change_niveau_visibilite();
+        void inverser_activation();
+        void set_id(const type_id_fonction &id);
+        type_id_fonction get_id() const;
+        fonctions_conteneur *get_conteneur() const;
+        void set_conteneur(fonctions_conteneur *conteneur);
 
+        // gestion des paramètres
         parametres_iterateur parametres_begin();
         parametres_iterateur parametres_end();
         parametres_const_iterateur parametres_const_begin() const;
         parametres_const_iterateur parametres_const_end() const;
 
         base_parametre* get_parametre(type_id_parametre id);
-
-        int get_niveau_visibilite() const;
-        int get_max_niveau_visibilite() const;
-        void set_niveau_visibilite( int niveau_visibilite );
-        void change_niveau_visibilite();
-        void set_est_active(bool active);
-        void set_est_etendu(bool est_etendu);
-
         bool a_parametre() const;
-
-        void set_id(const type_id_fonction &id);
-        type_id_fonction get_id() const;
-        void charger(QXmlStreamReader & xm);
-
-        fonctions_conteneur *get_conteneur() const;
-        void set_conteneur(fonctions_conteneur *conteneur);
 
     signals:
         void signal_destruction_fonction(base_fonction* f);
@@ -104,6 +110,12 @@ class base_fonction : public objet_selectionnable
     private:
         void charger_parametres(QXmlStreamReader & xm);
         void charger_parametre(QXmlStreamReader & xm);
+
+        /** --------------------------------------------------------------------------------------
+          \brief Méthode virtuelle pure testant si la fonction est valide.
+          \param vue_logs Un pointeur sur le widget de vue des logs.
+          \return \b True si la fonction est valide, \b False sinon.
+        */
         virtual bool est_valide(logs_compilation_widget * vue_logs) = 0;
 
     protected:
@@ -137,15 +149,29 @@ class base_fonction : public objet_selectionnable
         /** \brief La liste des parametres. */
         type_parametres m_parametres;
 
+        /** \brief Les valeurs courants des paramètres utilisant l'algorithme PMIPL. */
         algo_PMIPL::type_map_PMIPL m_map_PMIPL;
+
+        /** \brief Les valeurs courants des paramètres utilisant l'algorithme LIPL. */
         algo_LIPL::type_map_LIPL m_map_LIPL;
 
     private:
+        /** \brief Le type de la fonction. */
         type_fonction m_type;
+
+        /** \brief L'identifiant de la fonction. */
         type_id_fonction m_id;
+
+        /** \brief Le conteneur de la fonction. */
         fonctions_conteneur * m_conteneur;
+
+        /** \brief Le niveau de visibilité de la fonction. */
         int m_niveau_visibilite;
+
+        /** \brief Le niveau maximum de visibilité de la fonction. */
         int m_max_niveau_visibilite;
+
+        /** \brief Le niveau de visibilité de la fonction avant sa désactivation. */
         int m_niveau_visibilite_avant_desactivation;
 };
 

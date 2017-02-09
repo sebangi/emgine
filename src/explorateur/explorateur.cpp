@@ -236,7 +236,7 @@ void explorateur::faire_couper(objet_selectionnable * obj)
  * \brief Controle si le drag and drop est valide.
  * \param n_a_couper Un pointeur sur le noeud à couper.
  * \param n_conteneur Un pointeur sur le conteneur recevant la copie.
- * \param shift Booléen indiquant si la touche \i shift est pressée.
+ * \param shift Booléen indiquant si la touche \e shift est pressée.
  * \return \b True si le drag and drop est valide, \b False sinon.
  */
 bool explorateur::controler_drag_drop(base_noeud * n_a_couper, base_noeud * n_conteneur, bool shift)
@@ -259,7 +259,7 @@ bool explorateur::controler_drag_drop(base_noeud * n_a_couper, base_noeud * n_co
  * \brief Applique le drop.
  * \param n_a_couper Un poiteur sur le noeud à couper.
  * \param n_conteneur Un pointeur sur le conteneur recevant la copie.
- * \param shift Booléen indiquant si la touche \i shift est pressée.
+ * \param shift Booléen indiquant si la touche \e shift est pressée.
  */
 void explorateur::faire_drop(base_noeud * n_a_couper, base_noeud * n_conteneur, bool shift)
 {
@@ -341,9 +341,9 @@ void explorateur::on_externe_nom_projet_change(projet *p)
 
 /** --------------------------------------------------------------------------------------
  * \brief Fonction appelée lorsqu'un projet est détruit.
- * \param Un pointeur sur le projet détruit.
+ * \param p Un pointeur sur le projet détruit.
  */
-void explorateur::on_externe_destruction_projet(projet *p)
+void explorateur::on_externe_destruction_projet(projet * p)
 {
     map_selectionnable::iterator it = m_selectionnables.find(p);
 
@@ -372,7 +372,7 @@ void explorateur::on_externe_supprimer_fonction(base_fonction *f)
 
 /** --------------------------------------------------------------------------------------
  * \brief Ajoute une fonction à l'explorateur.
- * \param Un pointeur sur la fonction à ajouter.
+ * \param f Un pointeur sur la fonction à ajouter.
  */
 void explorateur::ajouter_fonction(base_fonction* f)
 {    
@@ -847,7 +847,7 @@ void explorateur::dragMoveEvent(QDragMoveEvent *e)
 
 /** --------------------------------------------------------------------------------------
  * \brief Fonction appelée lors d'un événement drop.
- * \param e Un pointeur sur l'événement.
+ * \param event Un pointeur sur l'événement.
  */
 void explorateur::dropEvent(QDropEvent * event)
 {

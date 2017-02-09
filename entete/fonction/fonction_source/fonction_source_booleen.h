@@ -1,8 +1,18 @@
 #ifndef FONCTION_SOURCE_BOOLEEN_H
 #define FONCTION_SOURCE_BOOLEEN_H
 
+/** \file fonction_source_booleen.h
+ * \brief Fichier de déclaration de la classe fonction_source_booleen.
+ * \author Sébastien Angibaud
+ */
+
 #include "entete/fonction/fonction_source/fonction_base_source.h"
 
+/**
+ * \class fonction_source_booleen
+ * \brief Classe décrivant une fonction source de type booléen (Oui ou Non).
+ * \author Sébastien Angibaud
+ */
 class fonction_source_booleen : public fonction_base_source
 {
     public:
@@ -12,7 +22,6 @@ class fonction_source_booleen : public fonction_base_source
         base_fonction_widget *generer_fonction_widget();
         void executer( compilateur & compil, const textes & textes_in, textes & textes_out );
         QString get_valeur_courte() const;
-
         bool get_valeur() const;
         void set_valeur(bool valeur);
         QString get_string_valeur() const;

@@ -1,10 +1,21 @@
+/** \file fonction_source_texte.cpp
+ * \brief Fichier d'implémentation de la classe fonction_source_texte.
+ * \author Sébastien Angibaud
+ */
+
 #include "entete/fonction/fonction_source/fonction_source_texte.h"
 
-#include "entete/fonction_widget/fonction_source_widget/fonction_source_texte_widget.h"
 #include "entete/compilation/compilateur.h"
 #include "entete/element/type_element.h"
+#include "entete/fonction_widget/fonction_source_widget/fonction_source_texte_widget.h"
+
 #include <iostream>
 
+/** --------------------------------------------------------------------------------------
+ * \brief Constructeur de la classe fonction_source_texte.
+ * \param conteneur Un pointeur sur le conteneur de la fonction.
+ * \param texte Le texte de la fonction.
+ */
 fonction_source_texte::fonction_source_texte(fonctions_conteneur * conteneur, QString texte)
     : fonction_base_source(conteneur), m_texte(texte)
 {
@@ -37,16 +48,28 @@ fonction_source_texte::fonction_source_texte(fonctions_conteneur * conteneur, QS
                                            base_parametre::ALGO_PMIPL) );
 }
 
+/** --------------------------------------------------------------------------------------
+ * \brief Destructeur de la classe fonction_source_texte.
+ */
 fonction_source_texte::~fonction_source_texte()
 {
 
 }
 
+/** --------------------------------------------------------------------------------------
+ * \brief Initialise par défaut la fonction.
+ */
 void fonction_source_texte::initialisation_par_defaut()
 {
     initialisation_par_defaut("", " ","\n");
 }
 
+/** --------------------------------------------------------------------------------------
+ * \brief Initialise les paramètres de la fonction.
+ * \param separ_caractere Le séparateur de caractères.
+ * \param separ_mot Le séparateur de mots.
+ * \param separ_ligne Le séparateur de lignes.
+ */
 void fonction_source_texte::initialisation_par_defaut(QString separ_caractere, QString separ_mot, QString separ_ligne )
 {
     m_parametres[PARAM_CARACTERE_SEPARATEUR]->set_caractere_par_defaut(separ_caractere);
@@ -54,41 +77,57 @@ void fonction_source_texte::initialisation_par_defaut(QString separ_caractere, Q
     m_parametres[PARAM_LIGNE_SEPARATEUR]->set_caractere_par_defaut(separ_ligne);
 }
 
+/** --------------------------------------------------------------------------------------
+ * \brief Construit et retourne le widget associé à cette fonction.
+ * \return Un pointeur sur le widget créé.
+ */
 base_fonction_widget *fonction_source_texte::generer_fonction_widget()
 {
     return new fonction_source_texte_widget(this);
 }
 
-/*! --------------------------------------------------------------------------------------
- \brief Exécution de la fonction.
-*/
+/** --------------------------------------------------------------------------------------
+ * \brief Execute la fonction.
+ * \param compil Le compilateur utilisé.
+ * \param textes_in Le texte source en entrée.
+ * \param textes_out Le texte de sortie généré.
+ */
 void fonction_source_texte::executer( compilateur &compil, const textes & textes_in, textes & textes_out )
 {
     algo_PMIPL_iteration_premier_mot_par_ligne
         ( PARAM_LIGNE_SEPARATEUR, compil, textes_in, textes_out, & base_fonction::callback_param_1 );
 }
 
-/*! --------------------------------------------------------------------------------------
-\brief Exécution de la fonction selon le parametre PARAM_LIGNE_SEPARATEUR.
-*/
+/** --------------------------------------------------------------------------------------
+ * \brief Exécute le paramètre PARAM_LIGNE_SEPARATEUR.
+ * \param compil Le compilateur utilisé.
+ * \param textes_in Le texte source en entrée.
+ * \param textes_out Le texte de sortie généré.
+ */
 void fonction_source_texte::callback_param_1( compilateur &compil, const textes & textes_in, textes & textes_out )
 {
     algo_PMIPL_iteration_premier_mot_par_ligne
         ( PARAM_MOT_SEPARATEUR, compil, textes_in, textes_out, & base_fonction::callback_param_2 );
 }
 
-/*! --------------------------------------------------------------------------------------
-\brief Exécution de la fonction selon le parametre PARAM_MOT_SEPARATEUR.
-*/
+/** --------------------------------------------------------------------------------------
+ * \brief Exécute le paramètre PARAM_MOT_SEPARATEUR.
+ * \param compil Le compilateur utilisé.
+ * \param textes_in Le texte source en entrée.
+ * \param textes_out Le texte de sortie généré.
+ */
 void fonction_source_texte::callback_param_2( compilateur &compil, const textes & textes_in, textes & textes_out )
 {
     algo_PMIPL_iteration_premier_mot_par_ligne
         ( PARAM_CARACTERE_SEPARATEUR, compil, textes_in, textes_out, & base_fonction::execution_specifique );
 }
 
-/*! --------------------------------------------------------------------------------------
- \brief Exécution de la fonction spécifique : fonction_source_texte.
-*/
+/** --------------------------------------------------------------------------------------
+ * \brief Exécute la fonction <b>fonction_texte</b>.
+ * \param compil Le compilateur utilisé.
+ * \param textes_in Le texte source en entrée.
+ * \param textes_out Le texte de sortie généré.
+ */
 void fonction_source_texte::execution_specifique( compilateur &compil, const textes & textes_in, textes & textes_out )
 {
     QString t_caractere = m_map_PMIPL[PARAM_CARACTERE_SEPARATEUR].mot_courant->to_string();
@@ -122,34 +161,56 @@ void fonction_source_texte::execution_specifique( compilateur &compil, const tex
     textes_out.ajouter_texte(compil.get_configuration(), t);
 }
 
-/*! --------------------------------------------------------------------------------------
- \brief Indique si la fonction est valide.
+/** --------------------------------------------------------------------------------------
+  \brief Teste si la fonction est valide.
+  \param vue_logs Un pointeur sur le widget de vue des logs.
+  \return \b True si la fonction est valide, \b False sinon.
 */
 bool fonction_source_texte::est_valide(logs_compilation_widget * vue_logs)
 {
     return true;
 }
 
+/** --------------------------------------------------------------------------------------
+ * \brief Retourne la valeur de la fonction en version raccourci.
+ * \return La valeur courte de la fonction.
+ */
 QString fonction_source_texte::get_valeur_courte() const
 {
     return m_texte;
 }
 
+/** --------------------------------------------------------------------------------------
+ * \brief Accesseur du nom de fichier source.
+ * \return Le nom du fichier source.
+ */
 QString fonction_source_texte::get_valeur() const
 {
     return m_texte;
 }
 
+/** --------------------------------------------------------------------------------------
+ * \brief Initilialise la valeur de la fonction.
+ * \param texte Le nouveau texte de la fonction.
+ */
 void fonction_source_texte::set_valeur(QString texte)
 {
     m_texte = texte;
 }
 
+/** --------------------------------------------------------------------------------------
+ * \brief Accesseur de la valeur de la fonction au format QString.
+ * \return La valeur de la fonction au format QString.
+ */
 QString fonction_source_texte::get_string_valeur() const
 {
     return m_texte;
 }
 
+/** --------------------------------------------------------------------------------------
+ * \brief Initilialise la valeur de la fonction à partir d'un QString donné.
+ * \param valeur La nouvelle valeur de la fonction au format QString.
+ */
 void fonction_source_texte::set_string_valeur(const QString &valeur)
 {
     m_texte = valeur;
