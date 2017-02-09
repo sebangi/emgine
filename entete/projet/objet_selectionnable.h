@@ -50,6 +50,7 @@ class objet_selectionnable : public QObject
         virtual void set_est_etendu(bool est_etendu);
         void modifier(bool change_executable = true);
         void sauvegarder( QXmlStreamWriter & stream ) const;
+        QString creer_copie() const;
 
     protected:
         void deselectionner();

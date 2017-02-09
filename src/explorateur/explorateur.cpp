@@ -24,6 +24,10 @@
 #include <QMessageBox>
 #include <QXmlStreamReader>
 
+/** --------------------------------------------------------------------------------------
+ * \brief Constructeur de la classe explorateur.
+ * \param parent Un pointeur sur le widget parent.
+ */
 explorateur::explorateur(QWidget *parent)
     : QTreeWidget(parent), m_noeud_context(NULL), m_objet_a_couper(NULL)
 {
@@ -60,29 +64,37 @@ explorateur::explorateur(QWidget *parent)
             this,SLOT(on_currentItemChanged(QTreeWidgetItem*)));
 }
 
+/** --------------------------------------------------------------------------------------
+ * \brief Destructeur de la classe explorateur.
+ */
 explorateur::~explorateur()
 {
 }
 
-projet * explorateur::get_projet_selon_nom_fichier(const QString &nom_fichier)
+/** --------------------------------------------------------------------------------------
+ * \brief Ajoute un projet dans l'explorateur.
+ * \param p Un pointeur sur le projet à ajouter.
+ */
+void explorateur::ajouter_projet(projet *p)
 {
-    projet * p = NULL;
-
-    QTreeWidgetItemIterator it(this);
-    while (*it)
+    if ( p != NULL )
     {
-        if ( (*it)->type() == base_noeud::TYPE_NOEUD_PROJET )
-        {
-            if ( ((noeud_projet*)(*it))->get_projet()->get_nom_fichier() == nom_fichier )
-                p = ((noeud_projet*)(*it))->get_projet();
-        }
+        base_noeud* noeud = new noeud_projet( p );
+        ajouter_selectionnable((objet_selectionnable*)p, noeud);
+        connecter_projet(p);
+        insertTopLevelItem( 0, noeud );
 
-        ++it;
+        for ( projet::fonctions_iterateur it = p->fonctions_begin(); it != p->fonctions_end(); ++it )
+            ajouter_fonction( *it );
+
+        noeud->setExpanded( p->est_etendu() );
     }
-
-    return p;
 }
 
+/** --------------------------------------------------------------------------------------
+ * \brief Fonction appelée lorsque l'état d'activation d'une fonction change.
+ * \param f Un pointeur sur la fonction dont l'activation vient de changer.
+ */
 void explorateur::on_externe_activation_fonction_change(base_fonction * f)
 {
     map_selectionnable::iterator it = m_selectionnables.find(f);
@@ -91,6 +103,10 @@ void explorateur::on_externe_activation_fonction_change(base_fonction * f)
         mettre_a_jour_activation(it->second, ((noeud_fonction*)(it->second))->get_fonction()->est_active(), true );
 }
 
+/** --------------------------------------------------------------------------------------
+ * \brief Fonction appelée lorsque le vérouillage d'un objet change.
+ * \param obj Un pointeur sur l'objet dont le verrouillage vient de changer.
+ */
 void explorateur::on_externe_verrouillage_change(objet_selectionnable *obj)
 {
     map_selectionnable::iterator it = m_selectionnables.find(obj);
@@ -99,6 +115,10 @@ void explorateur::on_externe_verrouillage_change(objet_selectionnable *obj)
         mettre_a_jour_verrouillage(it->second, it->second->get_objet()->est_verrouille() );
 }
 
+/** --------------------------------------------------------------------------------------
+ * \brief Fonction appelée lorsque l'état d'expansion d'une fonction change.
+ * \param f Un pointeur sur la fonction dont l'expansion vient de changer.
+ */
 void explorateur::on_externe_etendu_change(base_fonction *f)
 {
     map_selectionnable::iterator it = m_selectionnables.find(f);
@@ -107,6 +127,12 @@ void explorateur::on_externe_etendu_change(base_fonction *f)
         mettre_a_jour_etendu(it->second, ((noeud_fonction*)(it->second))->get_fonction()->est_etendu() );
 }
 
+/** --------------------------------------------------------------------------------------
+ * \brief Met à jour l'activation d'un noeud.
+ * \param n Un pointeur sur le noeud à mettre à jour.
+ * \param actif Booléen indiquant si le noeud est actif.
+ * \param change_expansion Booléen indiquant si l'état d'activation vient d'être modifié.
+ */
 void explorateur::mettre_a_jour_activation( base_noeud* n, bool actif, bool change_expansion )
 {
     if ( change_expansion )
@@ -139,7 +165,11 @@ void explorateur::mettre_a_jour_activation( base_noeud* n, bool actif, bool chan
     n->mettre_a_jour_style( actif );
 }
 
-
+/** --------------------------------------------------------------------------------------
+ * \brief Met à jour le verouillage d'un noeud.
+ * \param n Un pointeur sur le noeud à mettre à jour.
+ * \param verrouillage Booléen indiquant si le noeud doit être verrouillé.
+ */
 void explorateur::mettre_a_jour_verrouillage( base_noeud* n, bool verrouillage )
 {
     for ( int i = 0; i != n->childCount(); ++i )
@@ -158,28 +188,23 @@ void explorateur::mettre_a_jour_verrouillage( base_noeud* n, bool verrouillage )
     n->mise_a_jour_icone();
 }
 
+/** --------------------------------------------------------------------------------------
+ * \brief Met à jour l'état d'expansion d'un noeud.
+ * \param n Un pointeur sur le noeud à mettre à jour.
+ * \param etendu Booléen indiquant si le noeud doit être étendu.
+ */
 void explorateur::mettre_a_jour_etendu( base_noeud* n, bool etendu )
 {
     if ( n->isExpanded() != etendu )
         n->setExpanded(etendu);
 }
 
-void explorateur::creer_copie( const objet_selectionnable* obj, QString & copie )
-{
-    copie.clear();
-
-    QXmlStreamWriter XmlWriter(&copie);
-    XmlWriter.setAutoFormatting(true);
-    XmlWriter.writeStartDocument();
-
-    if ( obj->est_conteneur() )
-        obj->get_conteneur()->sauvegarder(XmlWriter);
-    else
-        ((const base_fonction*)obj)->sauvegarder(XmlWriter);
-
-    XmlWriter.writeEndDocument();
-}
-
+/** --------------------------------------------------------------------------------------
+ * \brief Applique le collage.
+ * \param conteneur Un poiinteur sur le conteneur recvant le collage.
+ * \param copie L'élément à copier au format QString (xml).
+ * \param obj_ref Un pointeur sur l'objet après lequel déposer la copie.
+ */
 void explorateur::faire_coller(objet_selectionnable * conteneur, QString & copie, objet_selectionnable * obj_ref)
 {
     QXmlStreamReader xmlReader(copie);
@@ -191,6 +216,10 @@ void explorateur::faire_coller(objet_selectionnable * conteneur, QString & copie
         conteneur->get_conteneur()->charger_fonction( xmlReader, obj_ref );
 }
 
+/** --------------------------------------------------------------------------------------
+ * \brief Applique le couper.
+ * \param obj Un pointeur sur l'objet à couper.
+ */
 void explorateur::faire_couper(objet_selectionnable * obj)
 {
     if ( obj->est_conteneur() )
@@ -203,6 +232,13 @@ void explorateur::faire_couper(objet_selectionnable * obj)
         delete obj;
 }
 
+/** --------------------------------------------------------------------------------------
+ * \brief Controle si le drag and drop est valide.
+ * \param n_a_couper Un pointeur sur le noeud à couper.
+ * \param n_conteneur Un pointeur sur le conteneur recevant la copie.
+ * \param shift Booléen indiquant si la touche \i shift est pressée.
+ * \return \b True si le drag and drop est valide, \b False sinon.
+ */
 bool explorateur::controler_drag_drop(base_noeud * n_a_couper, base_noeud * n_conteneur, bool shift)
 {
     bool autorise = true;
@@ -219,12 +255,18 @@ bool explorateur::controler_drag_drop(base_noeud * n_a_couper, base_noeud * n_co
     return autorise;
 }
 
+/** --------------------------------------------------------------------------------------
+ * \brief Applique le drop.
+ * \param n_a_couper Un poiteur sur le noeud à couper.
+ * \param n_conteneur Un pointeur sur le conteneur recevant la copie.
+ * \param shift Booléen indiquant si la touche \i shift est pressée.
+ */
 void explorateur::faire_drop(base_noeud * n_a_couper, base_noeud * n_conteneur, bool shift)
 {
     if ( controler_drag_drop(n_a_couper, n_conteneur, shift) )
     {
-        QString copie;
-        creer_copie(n_a_couper->get_objet(), copie);
+        QString copie = n_a_couper->get_objet()->creer_copie();
+
         if ( ! shift )
             faire_couper(n_a_couper->get_objet());
         n_conteneur->get_objet()->selectionner();
@@ -232,6 +274,10 @@ void explorateur::faire_drop(base_noeud * n_a_couper, base_noeud * n_conteneur, 
     }
 }
 
+/** --------------------------------------------------------------------------------------
+ * \brief Fonction appelée lorsqu'un objet est sélectionné.
+ * \param obj Un pointeur sur l'objet sélectionné.
+ */
 void explorateur::on_externe_objet_selectionne(objet_selectionnable *obj)
 {
     map_selectionnable::iterator it = m_selectionnables.find(obj);
@@ -251,6 +297,10 @@ void explorateur::on_externe_objet_selectionne(objet_selectionnable *obj)
     }
 }
 
+/** --------------------------------------------------------------------------------------
+ * \brief Fonction appelée lorsqu'un objet est désélectionné.
+ * \param obj Un pointeur sur l'objet désélectionné.
+ */
 void explorateur::on_externe_objet_deselectionne(objet_selectionnable *obj)
 {
     map_selectionnable::iterator it = m_selectionnables.find(obj->get_conteneur());
@@ -266,11 +316,19 @@ void explorateur::on_externe_objet_deselectionne(objet_selectionnable *obj)
     }
 }
 
+/** --------------------------------------------------------------------------------------
+ * \brief Fonction appelée lorsqu'un fonction est créée.
+ * \param f Un pointeur sur la fonction créée.
+ */
 void explorateur::on_externe_creation_fonction(base_fonction* f)
 {
     ajouter_fonction(f);
 }
 
+/** --------------------------------------------------------------------------------------
+ * \brief Fonction appelée lorsqu'un nom de projet change.
+ * \param p Un pointeur sur le projet dont le nom change.
+ */
 void explorateur::on_externe_nom_projet_change(projet *p)
 {
     map_selectionnable::iterator it = m_selectionnables.find(p);
@@ -281,6 +339,10 @@ void explorateur::on_externe_nom_projet_change(projet *p)
     }
 }
 
+/** --------------------------------------------------------------------------------------
+ * \brief Fonction appelée lorsqu'un projet est détruit.
+ * \param Un pointeur sur le projet détruit.
+ */
 void explorateur::on_externe_destruction_projet(projet *p)
 {
     map_selectionnable::iterator it = m_selectionnables.find(p);
@@ -293,6 +355,10 @@ void explorateur::on_externe_destruction_projet(projet *p)
     }
 }
 
+/** --------------------------------------------------------------------------------------
+ * \brief Fonction appelée lorsqu'une fonction est détruite.
+ * \param f Un pointeur sur la fonction détruite.
+ */
 void explorateur::on_externe_supprimer_fonction(base_fonction *f)
 {
     map_selectionnable::iterator it = m_selectionnables.find(f);
@@ -304,22 +370,10 @@ void explorateur::on_externe_supprimer_fonction(base_fonction *f)
     }
 }
 
-void explorateur::ajouter_projet(projet *p)
-{
-    if ( p != NULL )
-    {
-        base_noeud* noeud = new noeud_projet( p );
-        ajouter_selectionnable((objet_selectionnable*)p, noeud);
-        connecter_projet(p);
-        insertTopLevelItem( 0, noeud );
-
-        for ( projet::fonctions_iterateur it = p->fonctions_begin(); it != p->fonctions_end(); ++it )
-            ajouter_fonction( *it );
-
-        noeud->setExpanded( p->est_etendu() );
-    }
-}
-
+/** --------------------------------------------------------------------------------------
+ * \brief Ajoute une fonction à l'explorateur.
+ * \param Un pointeur sur la fonction à ajouter.
+ */
 void explorateur::ajouter_fonction(base_fonction* f)
 {    
     map_selectionnable::iterator it = m_selectionnables.find(f->get_conteneur());
@@ -329,7 +383,6 @@ void explorateur::ajouter_fonction(base_fonction* f)
         base_noeud* noeud = new noeud_fonction( f );
         ajouter_selectionnable((objet_selectionnable*)f, noeud);
 
-        //noeud_parent->addChild(noeud);
         noeud_parent->insertChild(f->get_position(), noeud);
 
         for ( base_fonction::parametres_iterateur it_p = f->parametres_begin(); it_p != f->parametres_end(); ++it_p )
@@ -342,6 +395,10 @@ void explorateur::ajouter_fonction(base_fonction* f)
     }
 }
 
+/** --------------------------------------------------------------------------------------
+ * \brief Ajoute un paramètre à l'explorateur.
+ * \param p Un pointeur sur le paramètre à ajouter.
+ */
 void explorateur::ajouter_parametre(base_parametre* p)
 {
     map_selectionnable::iterator it = m_selectionnables.find(p->get_fonction_parent());
@@ -363,43 +420,68 @@ void explorateur::ajouter_parametre(base_parametre* p)
     }
 }
 
+/** --------------------------------------------------------------------------------------
+ * \brief Ajoute un objet sélectionnable à l'explorateur.
+ * \param obj Un pointeur sur l'objet sélectionnable à ajouter.
+ * \param noeud Un pointeur sur le noeud associé à l'objet.
+ */
 void explorateur::ajouter_selectionnable(objet_selectionnable *obj, base_noeud *noeud)
 {
     m_selectionnables[obj] = noeud;
     connecter_selectionnable(obj);
 }
 
+/** --------------------------------------------------------------------------------------
+ * \brief Accesseur du noeud_context, i.e le noeud pour lequel le menu a été créé (par un click droit).
+ * \return Un pointeur sur le noeud_context.
+ */
 base_noeud *explorateur::get_noeud_context() const
 {
     return m_noeud_context;
 }
 
+/** --------------------------------------------------------------------------------------
+ * \brief Initialiser le noeud_context, i.e le noeud pour lequel le menu a été créé (par un click droit).
+ * \param noeud_context Un pointeur sur le nouveau noeud_context.
+ */
 void explorateur::set_noeud_context(base_noeud *noeud_context)
 {
     m_noeud_context = noeud_context;
 }
 
+/** --------------------------------------------------------------------------------------
+ * \brief Fonction appelée lorsqu'un noeud de l'explorateur est étendu.
+ * \param item Un pointeur sur le noeud étendu.
+ */
 void explorateur::on_itemExpanded(QTreeWidgetItem *item)
 {
     ((base_noeud*)item)->get_objet()->set_est_etendu( true );
 }
 
+/** --------------------------------------------------------------------------------------
+ * \brief Fonction appelée lorsqu'un noeud de l'explorateur n'est plus étendu.
+ * \param item Un pointeur sur le noeud modifié.
+ */
 void explorateur::on_itemCollapsed(QTreeWidgetItem *item)
 {
     ((base_noeud*)item)->get_objet()->set_est_etendu( false );
 }
 
 /** --------------------------------------------------------------------------------------
- \brief Evénément click sur un item de l'explorateur de projets.
-*/
+ * \brief Fonction appelée lors d'un click sur un noeud de l'explorateur.
+ * \param item Un pointeur sur le noeud clické.
+ * \param column La colonne clickée (Non utilisée, mais nécessaire car méthode virtuelle parente).
+ */
 void explorateur::on_itemClicked(QTreeWidgetItem *item, int column)
 {
     ((base_noeud*)item)->get_objet()->selectionner();
 }
 
 /** --------------------------------------------------------------------------------------
- \brief Evénément double click sur un item de l'explorateur de projets.
-*/
+ * \brief Fonction appelée lors d'un double click sur un noeud de l'explorateur.
+ * \param item Un pointeur sur le noeud double clické.
+ * \param column La colonne double clickée (Non utilisée, mais nécessaire car méthode virtuelle parente).
+ */
 void explorateur::on_itemDoubleClicked(QTreeWidgetItem *item, int column)
 {
     item->setExpanded( ! item->isExpanded() );
@@ -408,14 +490,19 @@ void explorateur::on_itemDoubleClicked(QTreeWidgetItem *item, int column)
 }
 
 /** --------------------------------------------------------------------------------------
- \brief Changement de sélection l'explorateur de projets.
-*/
+ * \brief Fonction appelée lors d'un changement de sélection dans l'explorateur.
+ * \param item Un pointeur sur le noeud nouvellement sélectionné.
+ */
 void explorateur::on_currentItemChanged(QTreeWidgetItem *item)
 {
     if ( item != NULL )
         ((base_noeud*)item)->get_objet()->selectionner();
 }
 
+/** --------------------------------------------------------------------------------------
+ * \brief Fonction appelée lors d'une demande d'ouverture de menu.
+ * \param pos La position du click.
+ */
 void explorateur::on_customContextMenuRequested(const QPoint &pos)
 {
     QTreeWidgetItem *node = itemAt( pos );
@@ -439,6 +526,11 @@ void explorateur::on_customContextMenuRequested(const QPoint &pos)
     menu.exec( mapToGlobal(pos) );
 }
 
+/** --------------------------------------------------------------------------------------
+ * \brief Ajoute dans un menu donné les actions d'un projet.
+ * \param menu Le menu à considérer.
+ * \param obj Un pointeur sur l'objet contexte du menu.
+ */
 void explorateur::ajouter_menu_projet(QMenu & menu, objet_selectionnable * obj )
 {
     ajouter_menu_enregistrement(menu, obj);
@@ -460,6 +552,11 @@ void explorateur::ajouter_menu_projet(QMenu & menu, objet_selectionnable * obj )
     ajouter_menu_supprimer_projet(menu, obj);
 }
 
+/** --------------------------------------------------------------------------------------
+ * \brief Ajoute dans un menu donné les actions d'un conteneur.
+ * \param menu Le menu à considérer.
+ * \param obj Un pointeur sur l'objet contexte du menu.
+ */
 void explorateur::ajouter_menu_conteneur(QMenu & menu, objet_selectionnable * obj )
 {
     ajouter_menu_ajout_fonction(menu, obj);
@@ -469,6 +566,11 @@ void explorateur::ajouter_menu_conteneur(QMenu & menu, objet_selectionnable * ob
     ajouter_menu_copier_coller(menu, obj);
 }
 
+/** --------------------------------------------------------------------------------------
+ * \brief Ajoute dans un menu donné les actions d'une fonction.
+ * \param menu Le menu à considérer.
+ * \param obj Un pointeur sur l'objet contexte du menu.
+ */
 void explorateur::ajouter_menu_fonction(QMenu & menu, objet_selectionnable * obj )
 {
     ajouter_menu_activation(menu, obj);
@@ -487,6 +589,11 @@ void explorateur::ajouter_menu_fonction(QMenu & menu, objet_selectionnable * obj
     ajouter_menu_supprimer_fonction(menu, obj);
 }
 
+/** --------------------------------------------------------------------------------------
+ * \brief Ajoute dans un menu donné l'action de supression d'un projet.
+ * \param menu Le menu à considérer.
+ * \param obj Un pointeur sur l'objet contexte du menu.
+ */
 void explorateur::ajouter_menu_supprimer_projet(QMenu & menu, objet_selectionnable * obj )
 {
     QStyle * style = QApplication::style();
@@ -497,6 +604,11 @@ void explorateur::ajouter_menu_supprimer_projet(QMenu & menu, objet_selectionnab
     menu.addAction(newAct_fermer);
 }
 
+/** --------------------------------------------------------------------------------------
+ * \brief Ajoute dans un menu donné l'action de suppression d'une fonction.
+ * \param menu Le menu à considérer.
+ * \param obj Un pointeur sur l'objet contexte du menu.
+ */
 void explorateur::ajouter_menu_supprimer_fonction(QMenu & menu, objet_selectionnable * obj )
 {
     QStyle * style = QApplication::style();
@@ -510,6 +622,11 @@ void explorateur::ajouter_menu_supprimer_fonction(QMenu & menu, objet_selectionn
     newAct_supprimer_fonction->setEnabled( ! obj->est_verrouille_avec_parent() );
 }
 
+/** --------------------------------------------------------------------------------------
+ * \brief Ajoute dans un menu donné les actions d'enregistrement d'un projet.
+ * \param menu Le menu à considérer.
+ * \param obj Un pointeur sur l'objet contexte du menu.
+ */
 void explorateur::ajouter_menu_enregistrement(QMenu & menu, objet_selectionnable * obj )
 {
     QStyle * style = QApplication::style();
@@ -533,6 +650,11 @@ void explorateur::ajouter_menu_enregistrement(QMenu & menu, objet_selectionnable
     menu.addAction(newAct_dupliquer);
 }
 
+/** --------------------------------------------------------------------------------------
+ * \brief Ajoute dans un menu donné les actions de copier/couper/coller.
+ * \param menu Le menu à considérer.
+ * \param obj Un pointeur sur l'objet contexte du menu.
+ */
 void explorateur::ajouter_menu_copier_coller(QMenu & menu, objet_selectionnable * obj )
 {
     QIcon icon_copier;
@@ -586,6 +708,11 @@ void explorateur::ajouter_menu_copier_coller(QMenu & menu, objet_selectionnable 
     newAct_coller->setEnabled(enabled);
 }
 
+/** --------------------------------------------------------------------------------------
+ * \brief Ajoute dans un menu donné les actions d'ajout de fonctions.
+ * \param menu Le menu à considérer.
+ * \param obj Un pointeur sur l'objet contexte du menu.
+ */
 void explorateur::ajouter_menu_ajout_fonction(QMenu & menu, objet_selectionnable * obj )
 {
     bool enabled = true;
@@ -630,6 +757,11 @@ void explorateur::ajouter_menu_ajout_fonction(QMenu & menu, objet_selectionnable
     newAct4->setEnabled( enabled );
 }
 
+/** --------------------------------------------------------------------------------------
+ * \brief Ajoute dans un menu donné l'action d'activation.
+ * \param menu Le menu à considérer.
+ * \param obj Un pointeur sur l'objet contexte du menu.
+ */
 void explorateur::ajouter_menu_activation(QMenu & menu, objet_selectionnable * obj )
 {
     QIcon icon_activer;
@@ -653,6 +785,11 @@ void explorateur::ajouter_menu_activation(QMenu & menu, objet_selectionnable * o
     newAct_activer->setEnabled( ! obj->est_verrouille_avec_parent() );
 }
 
+/** --------------------------------------------------------------------------------------
+ * \brief Ajoute dans un menu donné l'action de verrouillage.
+ * \param menu Le menu à considérer.
+ * \param obj Un pointeur sur l'objet contexte du menu.
+ */
 void explorateur::ajouter_menu_verrouillage(QMenu & menu, objet_selectionnable * obj )
 {
     QIcon icon;
@@ -681,6 +818,10 @@ void explorateur::ajouter_menu_verrouillage(QMenu & menu, objet_selectionnable *
     menu.addAction(newAct);
 }
 
+/** --------------------------------------------------------------------------------------
+ * \brief Fonction appelée lors d'un événement dragMove.
+ * \param e Un pointeur sur l'événement.
+ */
 void explorateur::dragMoveEvent(QDragMoveEvent *e)
 {
     QTreeWidgetItem *item = itemAt(e->pos());
@@ -704,6 +845,10 @@ void explorateur::dragMoveEvent(QDragMoveEvent *e)
     QTreeWidget::dragMoveEvent(e);
 }
 
+/** --------------------------------------------------------------------------------------
+ * \brief Fonction appelée lors d'un événement drop.
+ * \param e Un pointeur sur l'événement.
+ */
 void explorateur::dropEvent(QDropEvent * event)
 {
     QTreeWidgetItem * item = itemAt( event->pos() );
@@ -716,6 +861,10 @@ void explorateur::dropEvent(QDropEvent * event)
         event->ignore();
 }
 
+/** --------------------------------------------------------------------------------------
+ * \brief Ajoute les connects pour un objet donné.
+ * \param obj Un pointeur sur l'objet à connecter.
+ */
 void explorateur::connecter_selectionnable(objet_selectionnable *obj)
 {
     connect( obj, SIGNAL(signal_os_selectionne(objet_selectionnable*)),
@@ -724,6 +873,10 @@ void explorateur::connecter_selectionnable(objet_selectionnable *obj)
              this, SLOT(on_externe_objet_deselectionne(objet_selectionnable*)));
 }
 
+/** --------------------------------------------------------------------------------------
+ * \brief Retire les connects pour un objet donné.
+ * \param obj Un pointeur sur l'objet à déconnecter.
+ */
 void explorateur::deconnecter_selectionnable(objet_selectionnable *obj)
 {
     disconnect( obj, SIGNAL(signal_os_selectionne(objet_selectionnable*)),
@@ -732,6 +885,10 @@ void explorateur::deconnecter_selectionnable(objet_selectionnable *obj)
                 this, SLOT(on_externe_objet_deselectionne(objet_selectionnable*)));
 }
 
+/** --------------------------------------------------------------------------------------
+ * \brief Ajoute les connects pour un fonction donnée.
+ * \param f Un pointeur sur la fonction à connecter.
+ */
 void explorateur::connecter_fonction(base_fonction *f)
 {
     connect( f, SIGNAL(signal_destruction_fonction(base_fonction*)),
@@ -747,6 +904,10 @@ void explorateur::connecter_fonction(base_fonction *f)
              this, SLOT(on_externe_etendu_change(base_fonction *)));
 }
 
+/** --------------------------------------------------------------------------------------
+ * \brief Retire les connects pour un fonction donnée.
+ * \param f Un pointeur sur la fonction à déconnecter.
+ */
 void explorateur::deconnecter_fonction(base_fonction *f)
 {
     disconnect( f, SIGNAL(signal_destruction_fonction(base_fonction*)),
@@ -764,6 +925,10 @@ void explorateur::deconnecter_fonction(base_fonction *f)
     deconnecter_selectionnable(f);
 }
 
+/** --------------------------------------------------------------------------------------
+ * \brief Ajoute les connects pour un projet donné.
+ * \param p Un pointeur sur le projet à connecter.
+ */
 void explorateur::connecter_projet(projet *p)
 {
     connect( (fonctions_conteneur*)p, SIGNAL(signal_fc_creation_fonction(base_fonction*)),
@@ -776,6 +941,10 @@ void explorateur::connecter_projet(projet *p)
              this, SLOT(on_externe_destruction_projet(projet *)));
 }
 
+/** --------------------------------------------------------------------------------------
+ * \brief Retire les connects pour un projet donné.
+ * \param p Un pointeur sur le projet à déconnecter.
+ */
 void explorateur::deconnecter_projet(projet *p)
 {
     disconnect( (fonctions_conteneur*)p, SIGNAL(signal_fc_creation_fonction(base_fonction*)),
@@ -790,58 +959,91 @@ void explorateur::deconnecter_projet(projet *p)
     deconnecter_selectionnable(p);
 }
 
+/** --------------------------------------------------------------------------------------
+ * \brief Fonction appelée lors d'une demande d'ajout de fonction source.
+ */
 void explorateur::on_ajout_source()
 {
     emit signal_e_demande_ajout_fonction(m_noeud_context->get_objet()->get_conteneur(), m_noeud_context->get_objet(), type_fonction::fonction_source);
 }
 
+/** --------------------------------------------------------------------------------------
+ * \brief Fonction appelée lors d'une demande d'ajout de fonction de sortie.
+ */
 void explorateur::on_ajout_sortie()
 {
     emit signal_e_demande_ajout_fonction(m_noeud_context->get_objet()->get_conteneur(), m_noeud_context->get_objet(), type_fonction::fonction_sortie);
 }
 
+/** --------------------------------------------------------------------------------------
+ * \brief Fonction appelée lors d'une demande d'ajout de fonction de conversion.
+ */
 void explorateur::on_ajout_fonction_conversion()
 {
     emit signal_e_demande_ajout_fonction(m_noeud_context->get_objet()->get_conteneur(), m_noeud_context->get_objet(), type_fonction::fonction_conversion);
 }
 
+/** --------------------------------------------------------------------------------------
+ * \brief Fonction appelée lors d'une demande de changement d'activation d'une fonction.
+ */
 void explorateur::on_activer_fonction()
 {
     ((base_fonction*)(m_noeud_context->get_objet()))->inverser_activation();
 }
 
+/** --------------------------------------------------------------------------------------
+ * \brief Fonction appelée lors d'une demande de verrouillage d'un objet.
+ */
 void explorateur::on_verrouiller_selectionnable()
 {
     m_noeud_context->get_objet()->inverser_verrouillage();
 }
 
+/** --------------------------------------------------------------------------------------
+ * \brief Fonction appelée lors d'une demande d'enregistrement.
+ */
 void explorateur::on_enregistrer()
 {
     emit signal_e_enregistrer_projet(m_noeud_context->get_objet()->get_projet());
 }
 
+/** --------------------------------------------------------------------------------------
+ * \brief Fonction appelée lors d'une demande d'enregistrement sous.
+ */
 void explorateur::on_enregistrer_sous()
 {
     emit signal_e_enregistrer_projet_sous(m_noeud_context->get_objet()->get_projet());
 }
 
+/** --------------------------------------------------------------------------------------
+ * \brief Fonction appelée lors d'une demande de duplication.
+ */
 void explorateur::on_dupliquer_projet()
 {
     emit signal_e_dupliquer_projet(m_noeud_context->get_objet()->get_projet());
 }
 
+/** --------------------------------------------------------------------------------------
+ * \brief Fonction appelée lors d'une demande de copie.
+ */
 void explorateur::on_copier()
 {
-    creer_copie( m_noeud_context->get_objet(), m_a_copier );
+    m_a_copier = m_noeud_context->get_objet()->creer_copie();
     m_objet_a_couper = NULL;
 }
 
+/** --------------------------------------------------------------------------------------
+ * \brief Fonction appelée lors d'une demande de coupé.
+ */
 void explorateur::on_couper()
 {
-    creer_copie(m_noeud_context->get_objet(), m_a_copier);
+    m_a_copier = m_noeud_context->get_objet()->creer_copie();
     m_objet_a_couper = m_noeud_context->get_objet();
 }
 
+/** --------------------------------------------------------------------------------------
+ * \brief Fonction appelée lors d'une demande de collé.
+ */
 void explorateur::on_coller()
 {
     if ( m_objet_a_couper != NULL )
@@ -853,16 +1055,18 @@ void explorateur::on_coller()
     faire_coller(m_noeud_context->get_objet(), m_a_copier, m_noeud_context->get_objet());
 }
 
+/** --------------------------------------------------------------------------------------
+ * \brief Fonction appelée lors d'une demande de fermeture de projet.
+ */
 void explorateur::on_fermer_projet()
 {
     if ( m_noeud_context->type() == base_noeud::TYPE_NOEUD_PROJET )
         m_noeud_context->get_objet()->get_projet()->fermer();
 }
 
-
 /** --------------------------------------------------------------------------------------
- \brief Le bouton fermer est activé.
-*/
+ * \brief Fonction appelée lors d'une demande de suppression de fonction.
+ */
 void explorateur::on_supprimer_fonction()
 {
     if ( ! m_noeud_context->get_objet()->est_conteneur() )

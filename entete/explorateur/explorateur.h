@@ -38,7 +38,6 @@ class explorateur : public QTreeWidget
         explorateur(QWidget *parent = 0);
         ~explorateur();
 
-        projet * get_projet_selon_nom_fichier(const QString& nom_fichier);
         void ajouter_projet(projet* p);
 
     private:
@@ -123,7 +122,7 @@ class explorateur : public QTreeWidget
         /** \brief L'objet à copier sous forme de chaine (en XML ). */
         QString m_a_copier;
 
-        /** \brief L'objet à couper. */
+        /** \brief Un pointeur sur l'objet à couper. */
         objet_selectionnable* m_objet_a_couper;
 
         /** \brief La map reliant les objets sélectionnables aux noeuds. */

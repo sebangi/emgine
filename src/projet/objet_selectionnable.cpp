@@ -265,6 +265,29 @@ void objet_selectionnable::sauvegarder( QXmlStreamWriter & stream ) const
     stream.writeEndElement();
 }
 
+
+/** --------------------------------------------------------------------------------------
+ * \brief Crée une copie de l'objet au format QString.
+ */
+QString objet_selectionnable::creer_copie() const
+{
+    QString copie;
+
+    QXmlStreamWriter XmlWriter(&copie);
+    XmlWriter.setAutoFormatting(true);
+    XmlWriter.writeStartDocument();
+
+    if ( est_conteneur() )
+        get_conteneur()->sauvegarder(XmlWriter);
+    else
+        ((const base_fonction*)this)->sauvegarder(XmlWriter);
+
+    XmlWriter.writeEndDocument();
+
+    return copie;
+}
+
+
 void objet_selectionnable::charger(QXmlStreamReader & xml)
 {
     Q_ASSERT( xml.isStartElement() &&

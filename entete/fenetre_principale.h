@@ -76,6 +76,7 @@ class fenetre_principale : public QMainWindow
 
         void ajouter_projet( projet * p );
         bool on_enregistrer_projet( const QString & nom_fichier, projet * p);
+        projet * get_projet_selon_nom_fichier(const QString &nom_fichier);
         void ouvrir_projet();
         void creer_projet(QXmlStreamReader & xml, const QString & nom_fichier);
         void creer_projet(const texte & t);

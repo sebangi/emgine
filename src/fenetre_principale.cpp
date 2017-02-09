@@ -411,6 +411,22 @@ bool fenetre_principale::on_enregistrer_projet(const QString & nom_fichier, proj
 }
 
 /** --------------------------------------------------------------------------------------
+ * \brief Retourne un projet d'un nom de fichier donné.
+ * \param nom_fichier Le nom de fichier du projet à chercher.
+ * \return Un pointeur sur le projet. Retourne la valeur \b NULL si aucun projet n'a ce nom de fichier.
+ */
+projet * fenetre_principale::get_projet_selon_nom_fichier(const QString &nom_fichier)
+{
+    projet * p = NULL;
+
+    for ( type_projets::iterator it = s_projets.begin(); it != s_projets.end() && p == NULL; ++it )
+        if ( (*it)->get_nom_fichier() == nom_fichier )
+            p = *it;
+
+    return p;
+}
+
+/** --------------------------------------------------------------------------------------
  \brief Ouvre un projet.
 */
 void fenetre_principale::ouvrir_projet()
@@ -422,8 +438,7 @@ void fenetre_principale::ouvrir_projet()
     if (nom_fichier.isEmpty())
         return;
 
-    projet* existant = NULL;
-    existant = s_explorateur->get_projet_selon_nom_fichier(nom_fichier);
+    projet* existant = get_projet_selon_nom_fichier(nom_fichier);
 
     if ( existant != NULL )
         existant->selectionner();
@@ -762,15 +777,15 @@ void fenetre_principale::on_externe_fermeture_projet(projet *p)
             int ret = msgBox.exec();
 
             switch (ret) {
-              case QMessageBox::Save:
+                case QMessageBox::Save:
                     fermer = on_enregistrer_projet(p);
-                  break;
-              case QMessageBox::Discard:
+                    break;
+                case QMessageBox::Discard:
                     fermer = true;
-                  break;
-              case QMessageBox::Cancel:
-                  fermer = false;
-                  break;
+                    break;
+                case QMessageBox::Cancel:
+                    fermer = false;
+                    break;
             }
         }
 
