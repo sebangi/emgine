@@ -1,5 +1,5 @@
 <map id="base_fonction_widget" name="base_fonction_widget">
 <area shape="rect" id="node4" href="$classbase__fonction.html" title="Classe décrivant une fonction de conversion d&#39;un texte. " alt="" coords="258,253,360,280"/>
-<area shape="rect" id="node5" href="$classobjet__selectionnable.html" title="objet_selectionnable" alt="" coords="218,84,357,111"/>
-<area shape="rect" id="node7" href="$classfonctions__conteneur.html" title="fonctions_conteneur" alt="" coords="309,163,448,189"/>
+<area shape="rect" id="node5" href="$classobjet__selectionnable.html" title="Classe décrivant un objet sélectionnable dans l&#39;explorateur. " alt="" coords="218,84,357,111"/>
+<area shape="rect" id="node7" href="$classfonctions__conteneur.html" title="Classe décrivant un conteneur de fonctions. " alt="" coords="309,163,448,189"/>
 </map>

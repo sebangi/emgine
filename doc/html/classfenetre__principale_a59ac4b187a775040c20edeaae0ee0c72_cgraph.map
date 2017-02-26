@@ -1,10 +1,10 @@
 <map id="fenetre_principale::on_enregistrer_projet_click" name="fenetre_principale::on_enregistrer_projet_click">
-<area shape="rect" id="node2" href="$classobjet__selectionnable.html#ad3c9ec08e1036a463b6b82176d52364d" title="objet_selectionnable\l::existe_selection" alt="" coords="447,5,587,46"/>
+<area shape="rect" id="node2" href="$classobjet__selectionnable.html#ad3c9ec08e1036a463b6b82176d52364d" title="Indique s&#39;il existe un objet sélectionné. " alt="" coords="447,5,587,46"/>
 <area shape="rect" id="node3" href="$classfenetre__principale.html#a31a75b71153c61bb51cc1226eed99cfa" title="Enregistre un projet donné avec un nom de fichier spécifié. " alt="" coords="241,97,391,138"/>
-<area shape="rect" id="node9" href="$classobjet__selectionnable.html#afdc2163828d829f786887b60e11e4717" title="objet_selectionnable\l::get_projet_courant" alt="" coords="246,31,386,73"/>
-<area shape="rect" id="node4" href="$classprojet.html#ad8800652d03f73eaad197af702d3d133" title="projet::set_nom_fichier" alt="" coords="440,76,595,103"/>
-<area shape="rect" id="node6" href="$classprojet.html#a83aaa7aa7215729f319047a1f74d0a31" title="projet::sauvegarder" alt="" coords="451,131,584,157"/>
-<area shape="rect" id="node5" href="$classprojet.html#a3020254e65eb57b4c36bf7990021ad2b" title="projet::set_nom" alt="" coords="657,72,769,99"/>
-<area shape="rect" id="node7" href="$classobjet__selectionnable.html#adb99710921bdf74dfe35ee9d75b995a3" title="objet_selectionnable\l::sauvegarder" alt="" coords="643,123,783,165"/>
-<area shape="rect" id="node8" href="$classfonctions__conteneur.html#a199dde0697eb91a9e54c1dfecb536a88" title="fonctions_conteneur\l::sauvegarder" alt="" coords="644,189,783,230"/>
+<area shape="rect" id="node9" href="$classobjet__selectionnable.html#afdc2163828d829f786887b60e11e4717" title="Retourne le projet de la sélection courante. " alt="" coords="246,31,386,73"/>
+<area shape="rect" id="node4" href="$classprojet.html#ad8800652d03f73eaad197af702d3d133" title="Initialise le nom du fchier. " alt="" coords="440,76,595,103"/>
+<area shape="rect" id="node6" href="$classprojet.html#a83aaa7aa7215729f319047a1f74d0a31" title="Sauvegarde le projet dans un flux donné. " alt="" coords="451,131,584,157"/>
+<area shape="rect" id="node5" href="$classprojet.html#a3020254e65eb57b4c36bf7990021ad2b" title="Initialise le nom du projet. " alt="" coords="657,72,769,99"/>
+<area shape="rect" id="node7" href="$classobjet__selectionnable.html#adb99710921bdf74dfe35ee9d75b995a3" title="Sauvegarde l&#39;objet sélectionnable dans un flux donné. " alt="" coords="643,123,783,165"/>
+<area shape="rect" id="node8" href="$classfonctions__conteneur.html#a199dde0697eb91a9e54c1dfecb536a88" title="Sauvegarde le fonctions_conteneur dans un flux donné. " alt="" coords="644,189,783,230"/>
 </map>

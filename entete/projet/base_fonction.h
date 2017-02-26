@@ -79,8 +79,6 @@ class base_fonction : public objet_selectionnable
         bool est_fonction_valide(logs_compilation_widget * vue_logs);
         QString get_nom() const;
         type_fonction get_type() const;
-        void set_noeud( noeud_fonction * n );
-        noeud_fonction * get_noeud();
         int get_position();
         int get_niveau_visibilite() const;
         int get_max_niveau_visibilite() const;
@@ -102,9 +100,28 @@ class base_fonction : public objet_selectionnable
         bool a_parametre() const;
 
     signals:
+        /** --------------------------------------------------------------------------------------
+         * \brief Signal informant de la destruction d'une fonction.
+         * \param f Un pointeur sur la fonction détruite.
+         */
         void signal_destruction_fonction(base_fonction* f);
+
+        /** --------------------------------------------------------------------------------------
+         * \brief Signal informant d'une modification d'activation d'une fonction.
+         * \param f Un pointeur sur la fonction modifiée.
+         */
         void signal_activation_fonction_change(base_fonction * f);
+
+        /** --------------------------------------------------------------------------------------
+         * \brief Signal informant d'une modification de la visibilité d'une fonction.
+         * \param f Un pointeur sur la fonction modifiée.
+         */
         void signal_niveau_visibilite_change(base_fonction * f);
+
+        /** --------------------------------------------------------------------------------------
+         * \brief Signal informant d'une modification de l'état étendu d'une fonction.
+         * \param f Un pointeur sur la fonction modifiée.
+         */
         void signal_etendu_change(base_fonction * f);
 
     private:

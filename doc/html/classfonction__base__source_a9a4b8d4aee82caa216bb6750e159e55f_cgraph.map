@@ -1,4 +1,4 @@
 <map id="fonction_base_source::fonction_base_source" name="fonction_base_source::fonction_base_source">
-<area shape="rect" id="node2" href="$classbase__fonction.html#a9b3028a0f6132203dca22bf0977d39f7" title="base_fonction::set\l_est_etendu" alt="" coords="211,5,341,46"/>
-<area shape="rect" id="node3" href="$classobjet__selectionnable.html#aafef1c588ce9d5f7956c321799986b9b" title="objet_selectionnable\l::set_est_etendu" alt="" coords="390,5,530,46"/>
+<area shape="rect" id="node2" href="$classbase__fonction.html#a9b3028a0f6132203dca22bf0977d39f7" title="Initialise l&#39;état étendu de la fonction. " alt="" coords="211,5,341,46"/>
+<area shape="rect" id="node3" href="$classobjet__selectionnable.html#aafef1c588ce9d5f7956c321799986b9b" title="Initialise l&#39;état étendu de l&#39;objet. " alt="" coords="390,5,530,46"/>
 </map>

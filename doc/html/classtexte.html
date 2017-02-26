@@ -3,15 +3,16 @@
 <head>
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
-<meta name="generator" content="Doxygen 1.8.13"/>
-<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<meta name="generator" content="Doxygen 1.8.6"/>
 <title>Emgine: Référence de la classe texte</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+  $(document).ready(function() { searchBox.OnSelectItem(0); });
+</script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
@@ -20,7 +21,7 @@
 <table cellspacing="0" cellpadding="0">
  <tbody>
  <tr style="height: 56px;">
-  <td id="projectalign" style="padding-left: 0.5em;">
+  <td style="padding-left: 0.5em;">
    <div id="projectname">Emgine
    </div>
   </td>
@@ -29,25 +30,49 @@
 </table>
 </div>
 <!-- end header part -->
-<!-- Généré par Doxygen 1.8.13 -->
+<!-- Généré par Doxygen 1.8.6 -->
 <script type="text/javascript">
 var searchBox = new SearchBox("searchBox", "search",false,'Recherche');
 </script>
-<script type="text/javascript" src="menudata.js"></script>
-<script type="text/javascript" src="menu.js"></script>
-<script type="text/javascript">
-$(function() {
-  initMenu('',true,false,'search.php','Recherche');
-  $(document).ready(function() { init_search(); });
-});
-</script>
-<div id="main-nav"></div>
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>Page&#160;principale</span></a></li>
+      <li><a href="pages.html"><span>Pages&#160;associées</span></a></li>
+      <li><a href="modules.html"><span>Modules</span></a></li>
+      <li class="current"><a href="annotated.html"><span>Classes</span></a></li>
+      <li><a href="files.html"><span>Fichiers</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="Recherche" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
+          </span>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="annotated.html"><span>Liste&#160;des&#160;classes</span></a></li>
+      <li><a href="classes.html"><span>Index&#160;des&#160;classes</span></a></li>
+      <li><a href="inherits.html"><span>Hiérarchie&#160;des&#160;classes</span></a></li>
+      <li><a href="functions.html"><span>Membres&#160;de&#160;classe</span></a></li>
+    </ul>
+  </div>
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-</div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>Tout</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Fichiers</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Fonctions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Définitions de type</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Énumérations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Valeurs énumérées</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Groupes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&#160;</span>Pages</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -81,103 +106,107 @@ Graphe de collaboration de texte:</div>
 <div class="dyncontent">
 <div class="center"><img src="classtexte__coll__graph.png" border="0" usemap="#texte_coll__map" alt="Collaboration graph"/></div>
 <map name="texte_coll__map" id="texte_coll__map">
-<area shape="rect" id="node3" href="classconfiguration.html" title="Classe décrivant un configuration lors d&#39;une exécution. Pour un texte donné, une configuration corres..." alt="" coords="164,99,260,125"/>
-</map>
+<area shape="rect" id="node3" href="classconfiguration.html" title="Classe décrivant un configuration lors d&#39;une exécution. Pour un texte donné, une configuration corres..." alt="" coords="164,99,260,125"/></map>
 <center><span class="legend">[<a href="graph_legend.html">légende</a>]</span></center></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Fonctions membres publiques</h2></td></tr>
 <tr class="memitem:a76efdbc60519c5abe8437c2a6d9926c0"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtexte.html#a76efdbc60519c5abe8437c2a6d9926c0">texte</a> ()</td></tr>
-<tr class="memdesc:a76efdbc60519c5abe8437c2a6d9926c0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructeur par défaut de la classe texte.  <a href="#a76efdbc60519c5abe8437c2a6d9926c0">Plus de détails...</a><br /></td></tr>
+<tr class="memdesc:a76efdbc60519c5abe8437c2a6d9926c0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructeur par défaut de la classe texte.  <a href="#a76efdbc60519c5abe8437c2a6d9926c0">Plus de détails...</a><br/></td></tr>
 <tr class="separator:a76efdbc60519c5abe8437c2a6d9926c0"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0fb6c8b80669bfff019ae233776337d5"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtexte.html#a0fb6c8b80669bfff019ae233776337d5">texte</a> (const <a class="el" href="classconfiguration.html">configuration</a> &amp;config, const QString &amp;separateur_ligne=&quot;\)</td></tr>
-<tr class="memdesc:a0fb6c8b80669bfff019ae233776337d5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructeur de la classe texte.  <a href="#a0fb6c8b80669bfff019ae233776337d5">Plus de détails...</a><br /></td></tr>
-<tr class="separator:a0fb6c8b80669bfff019ae233776337d5"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa804e0976ae8e641499ef68c2124164f"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtexte.html#aa804e0976ae8e641499ef68c2124164f">texte</a> (const QString &amp;valeur, const QString &amp;separateur_ligne=&quot;\)</td></tr>
-<tr class="memdesc:aa804e0976ae8e641499ef68c2124164f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructeur de la classe texte.  <a href="#aa804e0976ae8e641499ef68c2124164f">Plus de détails...</a><br /></td></tr>
-<tr class="separator:aa804e0976ae8e641499ef68c2124164f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a24934ffcfb4d46b409593c2e16de1603"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtexte.html#a24934ffcfb4d46b409593c2e16de1603">texte</a> (const <a class="el" href="classconfiguration.html">configuration</a> &amp;config, const QString &amp;separateur_ligne=&quot;\n&quot;)</td></tr>
+<tr class="memdesc:a24934ffcfb4d46b409593c2e16de1603"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructeur de la classe texte.  <a href="#a24934ffcfb4d46b409593c2e16de1603">Plus de détails...</a><br/></td></tr>
+<tr class="separator:a24934ffcfb4d46b409593c2e16de1603"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab19d17064977b6893e13bf31548218f4"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtexte.html#ab19d17064977b6893e13bf31548218f4">texte</a> (const QString &amp;valeur, const QString &amp;separateur_ligne=&quot;\n&quot;)</td></tr>
+<tr class="memdesc:ab19d17064977b6893e13bf31548218f4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructeur de la classe texte.  <a href="#ab19d17064977b6893e13bf31548218f4">Plus de détails...</a><br/></td></tr>
+<tr class="separator:ab19d17064977b6893e13bf31548218f4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a344af8f134b06ddcb076b341caa3ed30"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtexte.html#a344af8f134b06ddcb076b341caa3ed30">~texte</a> ()</td></tr>
-<tr class="memdesc:a344af8f134b06ddcb076b341caa3ed30"><td class="mdescLeft">&#160;</td><td class="mdescRight">Destructeur de la classe texte.  <a href="#a344af8f134b06ddcb076b341caa3ed30">Plus de détails...</a><br /></td></tr>
+<tr class="memdesc:a344af8f134b06ddcb076b341caa3ed30"><td class="mdescLeft">&#160;</td><td class="mdescRight">Destructeur de la classe texte.  <a href="#a344af8f134b06ddcb076b341caa3ed30">Plus de détails...</a><br/></td></tr>
 <tr class="separator:a344af8f134b06ddcb076b341caa3ed30"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:abb3d9763a37659b12552379cb4e0dc8c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtexte.html#abb3d9763a37659b12552379cb4e0dc8c">ajouter_ligne</a> (const <a class="el" href="classligne.html">ligne</a> &amp;l)</td></tr>
-<tr class="memdesc:abb3d9763a37659b12552379cb4e0dc8c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Ajoute une ligne donnée en fin de texte.  <a href="#abb3d9763a37659b12552379cb4e0dc8c">Plus de détails...</a><br /></td></tr>
+<tr class="memdesc:abb3d9763a37659b12552379cb4e0dc8c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Ajoute une ligne donnée en fin de texte.  <a href="#abb3d9763a37659b12552379cb4e0dc8c">Plus de détails...</a><br/></td></tr>
 <tr class="separator:abb3d9763a37659b12552379cb4e0dc8c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0734254110460b5493c01b3923da7d13"><td class="memItemLeft" align="right" valign="top">QString&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtexte.html#a0734254110460b5493c01b3923da7d13">to_string</a> () const</td></tr>
-<tr class="memdesc:a0734254110460b5493c01b3923da7d13"><td class="mdescLeft">&#160;</td><td class="mdescRight">Convertit le texte au format QString.  <a href="#a0734254110460b5493c01b3923da7d13">Plus de détails...</a><br /></td></tr>
-<tr class="separator:a0734254110460b5493c01b3923da7d13"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9c669914e39b9bd4075a6840ac923087"><td class="memItemLeft" align="right" valign="top">QString&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtexte.html#a9c669914e39b9bd4075a6840ac923087">to_string_lisible</a> () const</td></tr>
-<tr class="memdesc:a9c669914e39b9bd4075a6840ac923087"><td class="mdescLeft">&#160;</td><td class="mdescRight">Convertit le texte au format QString avec séparateur de ligne.  <a href="#a9c669914e39b9bd4075a6840ac923087">Plus de détails...</a><br /></td></tr>
-<tr class="separator:a9c669914e39b9bd4075a6840ac923087"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae971342a9740882455cbf571eb5b3f39"><td class="memItemLeft" align="right" valign="top">QString&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtexte.html#ae971342a9740882455cbf571eb5b3f39">get_string_information_taille</a> () const</td></tr>
-<tr class="memdesc:ae971342a9740882455cbf571eb5b3f39"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retourne les informations de taille du texte (nombre de lignes, de mots et de caractères) au format QString.  <a href="#ae971342a9740882455cbf571eb5b3f39">Plus de détails...</a><br /></td></tr>
-<tr class="separator:ae971342a9740882455cbf571eb5b3f39"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5d8b028b3bb76a59689aeca2f5a9d660"><td class="memItemLeft" align="right" valign="top">QString&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtexte.html#a5d8b028b3bb76a59689aeca2f5a9d660">get_string_configuration</a> () const</td></tr>
-<tr class="memdesc:a5d8b028b3bb76a59689aeca2f5a9d660"><td class="mdescLeft">&#160;</td><td class="mdescRight">Accesseur de la configuration des paramètres au format QString.  <a href="#a5d8b028b3bb76a59689aeca2f5a9d660">Plus de détails...</a><br /></td></tr>
-<tr class="separator:a5d8b028b3bb76a59689aeca2f5a9d660"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3a3defd19103c120f383b4c7490a1868"><td class="memItemLeft" align="right" valign="top">QString&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtexte.html#a3a3defd19103c120f383b4c7490a1868">get_string_separation</a> () const</td></tr>
-<tr class="memdesc:a3a3defd19103c120f383b4c7490a1868"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retourne une ligne de séparation au format QString. La largeur de la séparation s'adpate au contenu du texte.  <a href="#a3a3defd19103c120f383b4c7490a1868">Plus de détails...</a><br /></td></tr>
-<tr class="separator:a3a3defd19103c120f383b4c7490a1868"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af5c9ca5662612af4dcd3c2a92581ba05"><td class="memItemLeft" align="right" valign="top">QString&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtexte.html#af5c9ca5662612af4dcd3c2a92581ba05">to_string</a> () const </td></tr>
+<tr class="memdesc:af5c9ca5662612af4dcd3c2a92581ba05"><td class="mdescLeft">&#160;</td><td class="mdescRight">Convertit le texte au format QString.  <a href="#af5c9ca5662612af4dcd3c2a92581ba05">Plus de détails...</a><br/></td></tr>
+<tr class="separator:af5c9ca5662612af4dcd3c2a92581ba05"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a199d73842cb743e47fdd71afc7bbe1d0"><td class="memItemLeft" align="right" valign="top">QString&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtexte.html#a199d73842cb743e47fdd71afc7bbe1d0">to_string_lisible</a> () const </td></tr>
+<tr class="memdesc:a199d73842cb743e47fdd71afc7bbe1d0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Convertit le texte au format QString avec séparateur de ligne.  <a href="#a199d73842cb743e47fdd71afc7bbe1d0">Plus de détails...</a><br/></td></tr>
+<tr class="separator:a199d73842cb743e47fdd71afc7bbe1d0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ace1bb739ade673e761e5beabe12179c4"><td class="memItemLeft" align="right" valign="top">QString&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtexte.html#ace1bb739ade673e761e5beabe12179c4">get_string_information_taille</a> () const </td></tr>
+<tr class="memdesc:ace1bb739ade673e761e5beabe12179c4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retourne les informations de taille du texte (nombre de lignes, de mots et de caractères) au format QString.  <a href="#ace1bb739ade673e761e5beabe12179c4">Plus de détails...</a><br/></td></tr>
+<tr class="separator:ace1bb739ade673e761e5beabe12179c4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a390b0b5b896139c08ba2947e2f00bc18"><td class="memItemLeft" align="right" valign="top">QString&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtexte.html#a390b0b5b896139c08ba2947e2f00bc18">get_string_configuration</a> () const </td></tr>
+<tr class="memdesc:a390b0b5b896139c08ba2947e2f00bc18"><td class="mdescLeft">&#160;</td><td class="mdescRight">Accesseur de la configuration des paramètres au format QString.  <a href="#a390b0b5b896139c08ba2947e2f00bc18">Plus de détails...</a><br/></td></tr>
+<tr class="separator:a390b0b5b896139c08ba2947e2f00bc18"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a58c8a67b25121fb80813d8a423864bf7"><td class="memItemLeft" align="right" valign="top">QString&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtexte.html#a58c8a67b25121fb80813d8a423864bf7">get_string_separation</a> () const </td></tr>
+<tr class="memdesc:a58c8a67b25121fb80813d8a423864bf7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retourne une ligne de séparation au format QString. La largeur de la séparation s'adpate au contenu du texte.  <a href="#a58c8a67b25121fb80813d8a423864bf7">Plus de détails...</a><br/></td></tr>
+<tr class="separator:a58c8a67b25121fb80813d8a423864bf7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2a87e62b08ada4a3f1c6c2108b1a6ff3"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtexte.html#a2a87e62b08ada4a3f1c6c2108b1a6ff3">ajouter_configuration</a> (const <a class="el" href="classconfiguration.html">configuration</a> &amp;config)</td></tr>
-<tr class="memdesc:a2a87e62b08ada4a3f1c6c2108b1a6ff3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Ajoute une configuration donnée.  <a href="#a2a87e62b08ada4a3f1c6c2108b1a6ff3">Plus de détails...</a><br /></td></tr>
+<tr class="memdesc:a2a87e62b08ada4a3f1c6c2108b1a6ff3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Ajoute une configuration donnée.  <a href="#a2a87e62b08ada4a3f1c6c2108b1a6ff3">Plus de détails...</a><br/></td></tr>
 <tr class="separator:a2a87e62b08ada4a3f1c6c2108b1a6ff3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1b779eb2037a80bf72c0d51056136ee5"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtexte.html#a1b779eb2037a80bf72c0d51056136ee5">ajouter_string_configuration</a> (const <a class="el" href="classconfiguration.html">configuration</a> &amp;config)</td></tr>
-<tr class="memdesc:a1b779eb2037a80bf72c0d51056136ee5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Met à jour la configuration au format QString lors de l'ajout d'une configuration donnée.  <a href="#a1b779eb2037a80bf72c0d51056136ee5">Plus de détails...</a><br /></td></tr>
+<tr class="memdesc:a1b779eb2037a80bf72c0d51056136ee5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Met à jour la configuration au format QString lors de l'ajout d'une configuration donnée.  <a href="#a1b779eb2037a80bf72c0d51056136ee5">Plus de détails...</a><br/></td></tr>
 <tr class="separator:a1b779eb2037a80bf72c0d51056136ee5"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a297670c9aab6ca2bc3a8cdf5b1da5051"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="classconfiguration.html">configuration</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtexte.html#a297670c9aab6ca2bc3a8cdf5b1da5051">get_configuration</a> () const</td></tr>
-<tr class="memdesc:a297670c9aab6ca2bc3a8cdf5b1da5051"><td class="mdescLeft">&#160;</td><td class="mdescRight">Accesseur de la configuration des paramètres induisant ce texte.  <a href="#a297670c9aab6ca2bc3a8cdf5b1da5051">Plus de détails...</a><br /></td></tr>
-<tr class="separator:a297670c9aab6ca2bc3a8cdf5b1da5051"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aeb51b7f7841725e561d7150037b37e67"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtexte.html#aeb51b7f7841725e561d7150037b37e67">get_configuration_visible</a> () const</td></tr>
-<tr class="memdesc:aeb51b7f7841725e561d7150037b37e67"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retourne l'état de visibilité de la configuration.  <a href="#aeb51b7f7841725e561d7150037b37e67">Plus de détails...</a><br /></td></tr>
-<tr class="separator:aeb51b7f7841725e561d7150037b37e67"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad60fd7c9f5d4364380c70e972d06f05c"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="classconfiguration.html">configuration</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtexte.html#ad60fd7c9f5d4364380c70e972d06f05c">get_configuration</a> () const </td></tr>
+<tr class="memdesc:ad60fd7c9f5d4364380c70e972d06f05c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Accesseur de la configuration des paramètres induisant ce texte.  <a href="#ad60fd7c9f5d4364380c70e972d06f05c">Plus de détails...</a><br/></td></tr>
+<tr class="separator:ad60fd7c9f5d4364380c70e972d06f05c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6991dd762a6992df1c1274187730ed4b"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtexte.html#a6991dd762a6992df1c1274187730ed4b">get_configuration_visible</a> () const </td></tr>
+<tr class="memdesc:a6991dd762a6992df1c1274187730ed4b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retourne l'état de visibilité de la configuration.  <a href="#a6991dd762a6992df1c1274187730ed4b">Plus de détails...</a><br/></td></tr>
+<tr class="separator:a6991dd762a6992df1c1274187730ed4b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3f637b43fef652f3e06c8efb49fe828d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtexte.html#a3f637b43fef652f3e06c8efb49fe828d">inverser_configuration_visibilite</a> ()</td></tr>
-<tr class="memdesc:a3f637b43fef652f3e06c8efb49fe828d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Inverse l'état de visibilité de la configuration.  <a href="#a3f637b43fef652f3e06c8efb49fe828d">Plus de détails...</a><br /></td></tr>
+<tr class="memdesc:a3f637b43fef652f3e06c8efb49fe828d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Inverse l'état de visibilité de la configuration.  <a href="#a3f637b43fef652f3e06c8efb49fe828d">Plus de détails...</a><br/></td></tr>
 <tr class="separator:a3f637b43fef652f3e06c8efb49fe828d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:adfac38f4dc66e91e773490c14f0d8689"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtexte.html#adfac38f4dc66e91e773490c14f0d8689">get_nb_lignes_avec_information</a> () const</td></tr>
-<tr class="memdesc:adfac38f4dc66e91e773490c14f0d8689"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retourne le nombre de lignes dui texte avec les informations (configuration et taille).  <a href="#adfac38f4dc66e91e773490c14f0d8689">Plus de détails...</a><br /></td></tr>
-<tr class="separator:adfac38f4dc66e91e773490c14f0d8689"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae8511739fb7e8c52a4c300676d6b30e0"><td class="memItemLeft" align="right" valign="top">size_type&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtexte.html#ae8511739fb7e8c52a4c300676d6b30e0">nb_caracteres</a> () const</td></tr>
-<tr class="memdesc:ae8511739fb7e8c52a4c300676d6b30e0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retourne le nombre de caractères du texte.  <a href="#ae8511739fb7e8c52a4c300676d6b30e0">Plus de détails...</a><br /></td></tr>
-<tr class="separator:ae8511739fb7e8c52a4c300676d6b30e0"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a954c4a3a28faa5a13bd5002a112eef86"><td class="memItemLeft" align="right" valign="top">size_type&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtexte.html#a954c4a3a28faa5a13bd5002a112eef86">nb_mots</a> () const</td></tr>
-<tr class="memdesc:a954c4a3a28faa5a13bd5002a112eef86"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retourne le nombre de mots du texte.  <a href="#a954c4a3a28faa5a13bd5002a112eef86">Plus de détails...</a><br /></td></tr>
-<tr class="separator:a954c4a3a28faa5a13bd5002a112eef86"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac094147ada894bfde38c68b631724750"><td class="memItemLeft" align="right" valign="top">size_type&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtexte.html#ac094147ada894bfde38c68b631724750">nb_lignes</a> () const</td></tr>
-<tr class="memdesc:ac094147ada894bfde38c68b631724750"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retourne le nombre de lignes du texte.  <a href="#ac094147ada894bfde38c68b631724750">Plus de détails...</a><br /></td></tr>
-<tr class="separator:ac094147ada894bfde38c68b631724750"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ade806accef90cf9d30b823c5be3e5f0b"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtexte.html#ade806accef90cf9d30b823c5be3e5f0b">get_nb_lignes_avec_information</a> () const </td></tr>
+<tr class="memdesc:ade806accef90cf9d30b823c5be3e5f0b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retourne le nombre de lignes dui texte avec les informations (configuration et taille).  <a href="#ade806accef90cf9d30b823c5be3e5f0b">Plus de détails...</a><br/></td></tr>
+<tr class="separator:ade806accef90cf9d30b823c5be3e5f0b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab04c894506ff1faeaed9d4c73cd415f0"><td class="memItemLeft" align="right" valign="top">size_type&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtexte.html#ab04c894506ff1faeaed9d4c73cd415f0">nb_caracteres</a> () const </td></tr>
+<tr class="memdesc:ab04c894506ff1faeaed9d4c73cd415f0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retourne le nombre de caractères du texte.  <a href="#ab04c894506ff1faeaed9d4c73cd415f0">Plus de détails...</a><br/></td></tr>
+<tr class="separator:ab04c894506ff1faeaed9d4c73cd415f0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a739191215f853717aaf52a1666011e6d"><td class="memItemLeft" align="right" valign="top">size_type&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtexte.html#a739191215f853717aaf52a1666011e6d">nb_mots</a> () const </td></tr>
+<tr class="memdesc:a739191215f853717aaf52a1666011e6d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retourne le nombre de mots du texte.  <a href="#a739191215f853717aaf52a1666011e6d">Plus de détails...</a><br/></td></tr>
+<tr class="separator:a739191215f853717aaf52a1666011e6d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2a18e98d6efd4265582dc7e2809106a2"><td class="memItemLeft" align="right" valign="top">size_type&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtexte.html#a2a18e98d6efd4265582dc7e2809106a2">nb_lignes</a> () const </td></tr>
+<tr class="memdesc:a2a18e98d6efd4265582dc7e2809106a2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retourne le nombre de lignes du texte.  <a href="#a2a18e98d6efd4265582dc7e2809106a2">Plus de détails...</a><br/></td></tr>
+<tr class="separator:a2a18e98d6efd4265582dc7e2809106a2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
 Attributs privés</h2></td></tr>
-<tr class="memitem:a2b3e003013d64a37b2b65e15e8ab5707"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classconfiguration.html">configuration</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtexte.html#a2b3e003013d64a37b2b65e15e8ab5707">m_configuration</a></td></tr>
-<tr class="memdesc:a2b3e003013d64a37b2b65e15e8ab5707"><td class="mdescLeft">&#160;</td><td class="mdescRight">La configuration des paramètres induisant ce texte.  <a href="#a2b3e003013d64a37b2b65e15e8ab5707">Plus de détails...</a><br /></td></tr>
+<tr class="memitem:a2b3e003013d64a37b2b65e15e8ab5707"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a2b3e003013d64a37b2b65e15e8ab5707"></a>
+<a class="el" href="classconfiguration.html">configuration</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtexte.html#a2b3e003013d64a37b2b65e15e8ab5707">m_configuration</a></td></tr>
+<tr class="memdesc:a2b3e003013d64a37b2b65e15e8ab5707"><td class="mdescLeft">&#160;</td><td class="mdescRight">La configuration des paramètres induisant ce texte. <br/></td></tr>
 <tr class="separator:a2b3e003013d64a37b2b65e15e8ab5707"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a21656dd0eb1604ac69c7e8184b2293ab"><td class="memItemLeft" align="right" valign="top">QString&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtexte.html#a21656dd0eb1604ac69c7e8184b2293ab">m_string_configuration</a></td></tr>
-<tr class="memdesc:a21656dd0eb1604ac69c7e8184b2293ab"><td class="mdescLeft">&#160;</td><td class="mdescRight">La configuration des paramètres induisant ce texte sous forme QString.  <a href="#a21656dd0eb1604ac69c7e8184b2293ab">Plus de détails...</a><br /></td></tr>
+<tr class="memitem:a21656dd0eb1604ac69c7e8184b2293ab"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a21656dd0eb1604ac69c7e8184b2293ab"></a>
+QString&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtexte.html#a21656dd0eb1604ac69c7e8184b2293ab">m_string_configuration</a></td></tr>
+<tr class="memdesc:a21656dd0eb1604ac69c7e8184b2293ab"><td class="mdescLeft">&#160;</td><td class="mdescRight">La configuration des paramètres induisant ce texte sous forme QString. <br/></td></tr>
 <tr class="separator:a21656dd0eb1604ac69c7e8184b2293ab"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a37d42a1cd77bd69a89a0789c39f3454f"><td class="memItemLeft" align="right" valign="top">QString&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtexte.html#a37d42a1cd77bd69a89a0789c39f3454f">m_separateur_ligne</a></td></tr>
-<tr class="memdesc:a37d42a1cd77bd69a89a0789c39f3454f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Le séparateur de ligne.  <a href="#a37d42a1cd77bd69a89a0789c39f3454f">Plus de détails...</a><br /></td></tr>
+<tr class="memitem:a37d42a1cd77bd69a89a0789c39f3454f"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a37d42a1cd77bd69a89a0789c39f3454f"></a>
+QString&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtexte.html#a37d42a1cd77bd69a89a0789c39f3454f">m_separateur_ligne</a></td></tr>
+<tr class="memdesc:a37d42a1cd77bd69a89a0789c39f3454f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Le séparateur de ligne. <br/></td></tr>
 <tr class="separator:a37d42a1cd77bd69a89a0789c39f3454f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab9573dd23b6960e5270ed7f02d3ff518"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtexte.html#ab9573dd23b6960e5270ed7f02d3ff518">m_configuration_visible</a></td></tr>
-<tr class="memdesc:ab9573dd23b6960e5270ed7f02d3ff518"><td class="mdescLeft">&#160;</td><td class="mdescRight">Booléen indiquant si la configuration est visible.  <a href="#ab9573dd23b6960e5270ed7f02d3ff518">Plus de détails...</a><br /></td></tr>
+<tr class="memitem:ab9573dd23b6960e5270ed7f02d3ff518"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ab9573dd23b6960e5270ed7f02d3ff518"></a>
+bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtexte.html#ab9573dd23b6960e5270ed7f02d3ff518">m_configuration_visible</a></td></tr>
+<tr class="memdesc:ab9573dd23b6960e5270ed7f02d3ff518"><td class="mdescLeft">&#160;</td><td class="mdescRight">Booléen indiquant si la configuration est visible. <br/></td></tr>
 <tr class="separator:ab9573dd23b6960e5270ed7f02d3ff518"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a31d605f7acfb2e7b6caa4ec699b5b9af"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtexte.html#a31d605f7acfb2e7b6caa4ec699b5b9af">m_nb_lignes_configuration</a></td></tr>
-<tr class="memdesc:a31d605f7acfb2e7b6caa4ec699b5b9af"><td class="mdescLeft">&#160;</td><td class="mdescRight">Le nombre de ligne de la configuration.  <a href="#a31d605f7acfb2e7b6caa4ec699b5b9af">Plus de détails...</a><br /></td></tr>
+<tr class="memitem:a31d605f7acfb2e7b6caa4ec699b5b9af"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a31d605f7acfb2e7b6caa4ec699b5b9af"></a>
+int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtexte.html#a31d605f7acfb2e7b6caa4ec699b5b9af">m_nb_lignes_configuration</a></td></tr>
+<tr class="memdesc:a31d605f7acfb2e7b6caa4ec699b5b9af"><td class="mdescLeft">&#160;</td><td class="mdescRight">Le nombre de ligne de la configuration. <br/></td></tr>
 <tr class="separator:a31d605f7acfb2e7b6caa4ec699b5b9af"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad3eca9016c3f52f83282cbc5e14134db"><td class="memItemLeft" align="right" valign="top">size_type&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtexte.html#ad3eca9016c3f52f83282cbc5e14134db">m_nb_caracteres</a></td></tr>
-<tr class="memdesc:ad3eca9016c3f52f83282cbc5e14134db"><td class="mdescLeft">&#160;</td><td class="mdescRight">Le nombre de caractères du texte.  <a href="#ad3eca9016c3f52f83282cbc5e14134db">Plus de détails...</a><br /></td></tr>
+<tr class="memitem:ad3eca9016c3f52f83282cbc5e14134db"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ad3eca9016c3f52f83282cbc5e14134db"></a>
+size_type&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtexte.html#ad3eca9016c3f52f83282cbc5e14134db">m_nb_caracteres</a></td></tr>
+<tr class="memdesc:ad3eca9016c3f52f83282cbc5e14134db"><td class="mdescLeft">&#160;</td><td class="mdescRight">Le nombre de caractères du texte. <br/></td></tr>
 <tr class="separator:ad3eca9016c3f52f83282cbc5e14134db"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af9fd6d72cc8127bc1e20578a68b4e09b"><td class="memItemLeft" align="right" valign="top">size_type&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtexte.html#af9fd6d72cc8127bc1e20578a68b4e09b">m_nb_mots</a></td></tr>
-<tr class="memdesc:af9fd6d72cc8127bc1e20578a68b4e09b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Le nombre de mots du texte.  <a href="#af9fd6d72cc8127bc1e20578a68b4e09b">Plus de détails...</a><br /></td></tr>
+<tr class="memitem:af9fd6d72cc8127bc1e20578a68b4e09b"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="af9fd6d72cc8127bc1e20578a68b4e09b"></a>
+size_type&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtexte.html#af9fd6d72cc8127bc1e20578a68b4e09b">m_nb_mots</a></td></tr>
+<tr class="memdesc:af9fd6d72cc8127bc1e20578a68b4e09b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Le nombre de mots du texte. <br/></td></tr>
 <tr class="separator:af9fd6d72cc8127bc1e20578a68b4e09b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Description détaillée</h2>
 <div class="textblock"><p>Classe décrivant un texte, i.e. un tableau de ligne. </p>
 <dl class="section author"><dt>Auteur</dt><dd>Sébastien Angibaud </dd></dl>
 
-<p class="definition">Définition à la ligne <a class="el" href="texte_8h_source.html#l00019">19</a> du fichier <a class="el" href="texte_8h_source.html">texte.h</a>.</p>
+<p>Définition à la ligne <a class="el" href="texte_8h_source.html#l00019">19</a> du fichier <a class="el" href="texte_8h_source.html">texte.h</a>.</p>
 </div><h2 class="groupheader">Documentation des constructeurs et destructeur</h2>
-<a id="a76efdbc60519c5abe8437c2a6d9926c0"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a76efdbc60519c5abe8437c2a6d9926c0">&#9670;&nbsp;</a></span>texte() <span class="overload">[1/3]</span></h2>
-
+<a class="anchor" id="a76efdbc60519c5abe8437c2a6d9926c0"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -193,13 +222,11 @@ Attributs privés</h2></td></tr>
 <p>Constructeur par défaut de la classe texte. </p>
 <hr/>
  
-<p class="definition">Définition à la ligne <a class="el" href="texte_8cpp_source.html#l00015">15</a> du fichier <a class="el" href="texte_8cpp_source.html">texte.cpp</a>.</p>
+<p>Définition à la ligne <a class="el" href="texte_8cpp_source.html#l00015">15</a> du fichier <a class="el" href="texte_8cpp_source.html">texte.cpp</a>.</p>
 
 </div>
 </div>
-<a id="a0fb6c8b80669bfff019ae233776337d5"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a0fb6c8b80669bfff019ae233776337d5">&#9670;&nbsp;</a></span>texte() <span class="overload">[2/3]</span></h2>
-
+<a class="anchor" id="a24934ffcfb4d46b409593c2e16de1603"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -233,20 +260,20 @@ Attributs privés</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Définition à la ligne <a class="el" href="texte_8cpp_source.html#l00026">26</a> du fichier <a class="el" href="texte_8cpp_source.html">texte.cpp</a>.</p>
-<div class="dynheader">
+<p>Définition à la ligne <a class="el" href="texte_8cpp_source.html#l00026">26</a> du fichier <a class="el" href="texte_8cpp_source.html">texte.cpp</a>.</p>
+
+<p><div class="dynheader">
 Voici le graphe d'appel pour cette fonction :</div>
 <div class="dyncontent">
-<div class="center"><img src="classtexte_a0fb6c8b80669bfff019ae233776337d5_cgraph.png" border="0" usemap="#classtexte_a0fb6c8b80669bfff019ae233776337d5_cgraph" alt=""/></div>
-<map name="classtexte_a0fb6c8b80669bfff019ae233776337d5_cgraph" id="classtexte_a0fb6c8b80669bfff019ae233776337d5_cgraph">
-</map>
+<div class="center"><img src="classtexte_a24934ffcfb4d46b409593c2e16de1603_cgraph.png" border="0" usemap="#classtexte_a24934ffcfb4d46b409593c2e16de1603_cgraph" alt=""/></div>
+<map name="classtexte_a24934ffcfb4d46b409593c2e16de1603_cgraph" id="classtexte_a24934ffcfb4d46b409593c2e16de1603_cgraph">
+<area shape="rect" id="node2" href="classtexte.html#a1b779eb2037a80bf72c0d51056136ee5" title="Met à jour la configuration au format QString lors de l&#39;ajout d&#39;une configuration donnée..." alt="" coords="142,5,279,46"/></map>
 </div>
+</p>
 
 </div>
 </div>
-<a id="aa804e0976ae8e641499ef68c2124164f"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aa804e0976ae8e641499ef68c2124164f">&#9670;&nbsp;</a></span>texte() <span class="overload">[3/3]</span></h2>
-
+<a class="anchor" id="ab19d17064977b6893e13bf31548218f4"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -280,20 +307,20 @@ Voici le graphe d'appel pour cette fonction :</div>
   </dd>
 </dl>
 
-<p class="definition">Définition à la ligne <a class="el" href="texte_8cpp_source.html#l00038">38</a> du fichier <a class="el" href="texte_8cpp_source.html">texte.cpp</a>.</p>
-<div class="dynheader">
+<p>Définition à la ligne <a class="el" href="texte_8cpp_source.html#l00038">38</a> du fichier <a class="el" href="texte_8cpp_source.html">texte.cpp</a>.</p>
+
+<p><div class="dynheader">
 Voici le graphe d'appel pour cette fonction :</div>
 <div class="dyncontent">
-<div class="center"><img src="classtexte_aa804e0976ae8e641499ef68c2124164f_cgraph.png" border="0" usemap="#classtexte_aa804e0976ae8e641499ef68c2124164f_cgraph" alt=""/></div>
-<map name="classtexte_aa804e0976ae8e641499ef68c2124164f_cgraph" id="classtexte_aa804e0976ae8e641499ef68c2124164f_cgraph">
-</map>
+<div class="center"><img src="classtexte_ab19d17064977b6893e13bf31548218f4_cgraph.png" border="0" usemap="#classtexte_ab19d17064977b6893e13bf31548218f4_cgraph" alt=""/></div>
+<map name="classtexte_ab19d17064977b6893e13bf31548218f4_cgraph" id="classtexte_ab19d17064977b6893e13bf31548218f4_cgraph">
+<area shape="rect" id="node2" href="classtexte.html#abb3d9763a37659b12552379cb4e0dc8c" title="Ajoute une ligne donnée en fin de texte. " alt="" coords="142,56,274,83"/><area shape="rect" id="node3" href="classligne.html#aaac5ddde199a1b6ab8643ad357b499af" title="Retourne le nombre de caractères de la ligne. " alt="" coords="327,5,465,32"/><area shape="rect" id="node4" href="classligne.html#af2ae6c2a8588cee920e5904b1afd586d" title="Retourne le nombre de mots de la ligne. " alt="" coords="343,56,449,83"/><area shape="rect" id="node5" href="classligne.html#ad3f6d09a6c032e2de9e6db727a57af66" title="Convertit et retourne la ligne au format QString avec l&#39;ajout de séparateur. " alt="" coords="323,107,469,133"/></map>
 </div>
+</p>
 
 </div>
 </div>
-<a id="a344af8f134b06ddcb076b341caa3ed30"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a344af8f134b06ddcb076b341caa3ed30">&#9670;&nbsp;</a></span>~texte()</h2>
-
+<a class="anchor" id="a344af8f134b06ddcb076b341caa3ed30"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -309,14 +336,12 @@ Voici le graphe d'appel pour cette fonction :</div>
 <p>Destructeur de la classe texte. </p>
 <hr/>
  
-<p class="definition">Définition à la ligne <a class="el" href="texte_8cpp_source.html#l00052">52</a> du fichier <a class="el" href="texte_8cpp_source.html">texte.cpp</a>.</p>
+<p>Définition à la ligne <a class="el" href="texte_8cpp_source.html#l00052">52</a> du fichier <a class="el" href="texte_8cpp_source.html">texte.cpp</a>.</p>
 
 </div>
 </div>
 <h2 class="groupheader">Documentation des fonctions membres</h2>
-<a id="a2a87e62b08ada4a3f1c6c2108b1a6ff3"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a2a87e62b08ada4a3f1c6c2108b1a6ff3">&#9670;&nbsp;</a></span>ajouter_configuration()</h2>
-
+<a class="anchor" id="a2a87e62b08ada4a3f1c6c2108b1a6ff3"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -339,21 +364,20 @@ Voici le graphe d'appel pour cette fonction :</div>
   </dd>
 </dl>
 
-<p class="definition">Définition à la ligne <a class="el" href="texte_8cpp_source.html#l00166">166</a> du fichier <a class="el" href="texte_8cpp_source.html">texte.cpp</a>.</p>
-<div class="dynheader">
+<p>Définition à la ligne <a class="el" href="texte_8cpp_source.html#l00166">166</a> du fichier <a class="el" href="texte_8cpp_source.html">texte.cpp</a>.</p>
+
+<p><div class="dynheader">
 Voici le graphe d'appel pour cette fonction :</div>
 <div class="dyncontent">
 <div class="center"><img src="classtexte_a2a87e62b08ada4a3f1c6c2108b1a6ff3_cgraph.png" border="0" usemap="#classtexte_a2a87e62b08ada4a3f1c6c2108b1a6ff3_cgraph" alt=""/></div>
 <map name="classtexte_a2a87e62b08ada4a3f1c6c2108b1a6ff3_cgraph" id="classtexte_a2a87e62b08ada4a3f1c6c2108b1a6ff3_cgraph">
-<area shape="rect" id="node2" href="classtexte.html#a1b779eb2037a80bf72c0d51056136ee5" title="Met à jour la configuration au format QString lors de l&#39;ajout d&#39;une configuration donnée..." alt="" coords="233,5,370,46"/>
-</map>
+<area shape="rect" id="node2" href="classtexte.html#a1b779eb2037a80bf72c0d51056136ee5" title="Met à jour la configuration au format QString lors de l&#39;ajout d&#39;une configuration donnée..." alt="" coords="233,5,370,46"/></map>
 </div>
+</p>
 
 </div>
 </div>
-<a id="abb3d9763a37659b12552379cb4e0dc8c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#abb3d9763a37659b12552379cb4e0dc8c">&#9670;&nbsp;</a></span>ajouter_ligne()</h2>
-
+<a class="anchor" id="abb3d9763a37659b12552379cb4e0dc8c"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -376,23 +400,20 @@ Voici le graphe d'appel pour cette fonction :</div>
   </dd>
 </dl>
 
-<p class="definition">Définition à la ligne <a class="el" href="texte_8cpp_source.html#l00061">61</a> du fichier <a class="el" href="texte_8cpp_source.html">texte.cpp</a>.</p>
-<div class="dynheader">
+<p>Définition à la ligne <a class="el" href="texte_8cpp_source.html#l00061">61</a> du fichier <a class="el" href="texte_8cpp_source.html">texte.cpp</a>.</p>
+
+<p><div class="dynheader">
 Voici le graphe d'appel pour cette fonction :</div>
 <div class="dyncontent">
 <div class="center"><img src="classtexte_abb3d9763a37659b12552379cb4e0dc8c_cgraph.png" border="0" usemap="#classtexte_abb3d9763a37659b12552379cb4e0dc8c_cgraph" alt=""/></div>
 <map name="classtexte_abb3d9763a37659b12552379cb4e0dc8c_cgraph" id="classtexte_abb3d9763a37659b12552379cb4e0dc8c_cgraph">
-<area shape="rect" id="node2" href="classligne.html#aaac5ddde199a1b6ab8643ad357b499af" title="Retourne le nombre de caractères de la ligne. " alt="" coords="191,5,329,32"/>
-<area shape="rect" id="node3" href="classligne.html#af2ae6c2a8588cee920e5904b1afd586d" title="Retourne le nombre de mots de la ligne. " alt="" coords="207,56,313,83"/>
-<area shape="rect" id="node4" href="classligne.html#ad3f6d09a6c032e2de9e6db727a57af66" title="Convertit et retourne la ligne au format QString avec l&#39;ajout de séparateur. " alt="" coords="187,107,333,133"/>
-</map>
+<area shape="rect" id="node2" href="classligne.html#aaac5ddde199a1b6ab8643ad357b499af" title="Retourne le nombre de caractères de la ligne. " alt="" coords="191,5,329,32"/><area shape="rect" id="node3" href="classligne.html#af2ae6c2a8588cee920e5904b1afd586d" title="Retourne le nombre de mots de la ligne. " alt="" coords="207,56,313,83"/><area shape="rect" id="node4" href="classligne.html#ad3f6d09a6c032e2de9e6db727a57af66" title="Convertit et retourne la ligne au format QString avec l&#39;ajout de séparateur. " alt="" coords="187,107,333,133"/></map>
 </div>
+</p>
 
 </div>
 </div>
-<a id="a1b779eb2037a80bf72c0d51056136ee5"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a1b779eb2037a80bf72c0d51056136ee5">&#9670;&nbsp;</a></span>ajouter_string_configuration()</h2>
-
+<a class="anchor" id="a1b779eb2037a80bf72c0d51056136ee5"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -415,13 +436,11 @@ Voici le graphe d'appel pour cette fonction :</div>
   </dd>
 </dl>
 
-<p class="definition">Définition à la ligne <a class="el" href="texte_8cpp_source.html#l00147">147</a> du fichier <a class="el" href="texte_8cpp_source.html">texte.cpp</a>.</p>
+<p>Définition à la ligne <a class="el" href="texte_8cpp_source.html#l00147">147</a> du fichier <a class="el" href="texte_8cpp_source.html">texte.cpp</a>.</p>
 
 </div>
 </div>
-<a id="a297670c9aab6ca2bc3a8cdf5b1da5051"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a297670c9aab6ca2bc3a8cdf5b1da5051">&#9670;&nbsp;</a></span>get_configuration()</h2>
-
+<a class="anchor" id="ad60fd7c9f5d4364380c70e972d06f05c"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -438,13 +457,11 @@ Voici le graphe d'appel pour cette fonction :</div>
 <hr/>
  <dl class="section return"><dt>Renvoie</dt><dd>La configuration du texte. </dd></dl>
 
-<p class="definition">Définition à la ligne <a class="el" href="texte_8cpp_source.html#l00178">178</a> du fichier <a class="el" href="texte_8cpp_source.html">texte.cpp</a>.</p>
+<p>Définition à la ligne <a class="el" href="texte_8cpp_source.html#l00178">178</a> du fichier <a class="el" href="texte_8cpp_source.html">texte.cpp</a>.</p>
 
 </div>
 </div>
-<a id="aeb51b7f7841725e561d7150037b37e67"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aeb51b7f7841725e561d7150037b37e67">&#9670;&nbsp;</a></span>get_configuration_visible()</h2>
-
+<a class="anchor" id="a6991dd762a6992df1c1274187730ed4b"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -461,13 +478,11 @@ Voici le graphe d'appel pour cette fonction :</div>
 <hr/>
  <dl class="section return"><dt>Renvoie</dt><dd><b>True</b> si la configuration est visible, <b>False</b> sinon. </dd></dl>
 
-<p class="definition">Définition à la ligne <a class="el" href="texte_8cpp_source.html#l00187">187</a> du fichier <a class="el" href="texte_8cpp_source.html">texte.cpp</a>.</p>
+<p>Définition à la ligne <a class="el" href="texte_8cpp_source.html#l00187">187</a> du fichier <a class="el" href="texte_8cpp_source.html">texte.cpp</a>.</p>
 
 </div>
 </div>
-<a id="adfac38f4dc66e91e773490c14f0d8689"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#adfac38f4dc66e91e773490c14f0d8689">&#9670;&nbsp;</a></span>get_nb_lignes_avec_information()</h2>
-
+<a class="anchor" id="ade806accef90cf9d30b823c5be3e5f0b"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -484,13 +499,11 @@ Voici le graphe d'appel pour cette fonction :</div>
 <hr/>
  <dl class="section return"><dt>Renvoie</dt><dd>Le nombre de lignes du texte avec les informations. </dd></dl>
 
-<p class="definition">Définition à la ligne <a class="el" href="texte_8cpp_source.html#l00204">204</a> du fichier <a class="el" href="texte_8cpp_source.html">texte.cpp</a>.</p>
+<p>Définition à la ligne <a class="el" href="texte_8cpp_source.html#l00204">204</a> du fichier <a class="el" href="texte_8cpp_source.html">texte.cpp</a>.</p>
 
 </div>
 </div>
-<a id="a5d8b028b3bb76a59689aeca2f5a9d660"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a5d8b028b3bb76a59689aeca2f5a9d660">&#9670;&nbsp;</a></span>get_string_configuration()</h2>
-
+<a class="anchor" id="a390b0b5b896139c08ba2947e2f00bc18"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -507,13 +520,11 @@ Voici le graphe d'appel pour cette fonction :</div>
 <hr/>
  <dl class="section return"><dt>Renvoie</dt><dd>La configuration des paramètres au format QString. </dd></dl>
 
-<p class="definition">Définition à la ligne <a class="el" href="texte_8cpp_source.html#l00106">106</a> du fichier <a class="el" href="texte_8cpp_source.html">texte.cpp</a>.</p>
+<p>Définition à la ligne <a class="el" href="texte_8cpp_source.html#l00106">106</a> du fichier <a class="el" href="texte_8cpp_source.html">texte.cpp</a>.</p>
 
 </div>
 </div>
-<a id="ae971342a9740882455cbf571eb5b3f39"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae971342a9740882455cbf571eb5b3f39">&#9670;&nbsp;</a></span>get_string_information_taille()</h2>
-
+<a class="anchor" id="ace1bb739ade673e761e5beabe12179c4"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -530,20 +541,20 @@ Voici le graphe d'appel pour cette fonction :</div>
 <hr/>
  <dl class="section return"><dt>Renvoie</dt><dd>Les informations de taille au format QString. </dd></dl>
 
-<p class="definition">Définition à la ligne <a class="el" href="texte_8cpp_source.html#l00122">122</a> du fichier <a class="el" href="texte_8cpp_source.html">texte.cpp</a>.</p>
-<div class="dynheader">
+<p>Définition à la ligne <a class="el" href="texte_8cpp_source.html#l00122">122</a> du fichier <a class="el" href="texte_8cpp_source.html">texte.cpp</a>.</p>
+
+<p><div class="dynheader">
 Voici le graphe d'appel pour cette fonction :</div>
 <div class="dyncontent">
-<div class="center"><img src="classtexte_ae971342a9740882455cbf571eb5b3f39_cgraph.png" border="0" usemap="#classtexte_ae971342a9740882455cbf571eb5b3f39_cgraph" alt=""/></div>
-<map name="classtexte_ae971342a9740882455cbf571eb5b3f39_cgraph" id="classtexte_ae971342a9740882455cbf571eb5b3f39_cgraph">
-</map>
+<div class="center"><img src="classtexte_ace1bb739ade673e761e5beabe12179c4_cgraph.png" border="0" usemap="#classtexte_ace1bb739ade673e761e5beabe12179c4_cgraph" alt=""/></div>
+<map name="classtexte_ace1bb739ade673e761e5beabe12179c4_cgraph" id="classtexte_ace1bb739ade673e761e5beabe12179c4_cgraph">
+<area shape="rect" id="node2" href="classtexte.html#a2a18e98d6efd4265582dc7e2809106a2" title="Retourne le nombre de lignes du texte. " alt="" coords="253,5,368,32"/><area shape="rect" id="node3" href="classtexte.html#a739191215f853717aaf52a1666011e6d" title="Retourne le nombre de mots du texte. " alt="" coords="256,56,365,83"/><area shape="rect" id="node4" href="classtexte.html#ab04c894506ff1faeaed9d4c73cd415f0" title="Retourne le nombre de caractères du texte. " alt="" coords="240,107,381,133"/></map>
 </div>
+</p>
 
 </div>
 </div>
-<a id="a3a3defd19103c120f383b4c7490a1868"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a3a3defd19103c120f383b4c7490a1868">&#9670;&nbsp;</a></span>get_string_separation()</h2>
-
+<a class="anchor" id="a58c8a67b25121fb80813d8a423864bf7"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -560,13 +571,11 @@ Voici le graphe d'appel pour cette fonction :</div>
 <hr/>
  <dl class="section return"><dt>Renvoie</dt><dd>Une ligne de séparation au format QString. </dd></dl>
 
-<p class="definition">Définition à la ligne <a class="el" href="texte_8cpp_source.html#l00133">133</a> du fichier <a class="el" href="texte_8cpp_source.html">texte.cpp</a>.</p>
+<p>Définition à la ligne <a class="el" href="texte_8cpp_source.html#l00133">133</a> du fichier <a class="el" href="texte_8cpp_source.html">texte.cpp</a>.</p>
 
 </div>
 </div>
-<a id="a3f637b43fef652f3e06c8efb49fe828d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a3f637b43fef652f3e06c8efb49fe828d">&#9670;&nbsp;</a></span>inverser_configuration_visibilite()</h2>
-
+<a class="anchor" id="a3f637b43fef652f3e06c8efb49fe828d"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -582,13 +591,11 @@ Voici le graphe d'appel pour cette fonction :</div>
 <p>Inverse l'état de visibilité de la configuration. </p>
 <hr/>
  
-<p class="definition">Définition à la ligne <a class="el" href="texte_8cpp_source.html#l00195">195</a> du fichier <a class="el" href="texte_8cpp_source.html">texte.cpp</a>.</p>
+<p>Définition à la ligne <a class="el" href="texte_8cpp_source.html#l00195">195</a> du fichier <a class="el" href="texte_8cpp_source.html">texte.cpp</a>.</p>
 
 </div>
 </div>
-<a id="ae8511739fb7e8c52a4c300676d6b30e0"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae8511739fb7e8c52a4c300676d6b30e0">&#9670;&nbsp;</a></span>nb_caracteres()</h2>
-
+<a class="anchor" id="ab04c894506ff1faeaed9d4c73cd415f0"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -605,13 +612,11 @@ Voici le graphe d'appel pour cette fonction :</div>
 <hr/>
  <dl class="section return"><dt>Renvoie</dt><dd>Le nombre de caractères du texte. </dd></dl>
 
-<p class="definition">Définition à la ligne <a class="el" href="texte_8cpp_source.html#l00223">223</a> du fichier <a class="el" href="texte_8cpp_source.html">texte.cpp</a>.</p>
+<p>Définition à la ligne <a class="el" href="texte_8cpp_source.html#l00223">223</a> du fichier <a class="el" href="texte_8cpp_source.html">texte.cpp</a>.</p>
 
 </div>
 </div>
-<a id="ac094147ada894bfde38c68b631724750"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ac094147ada894bfde38c68b631724750">&#9670;&nbsp;</a></span>nb_lignes()</h2>
-
+<a class="anchor" id="a2a18e98d6efd4265582dc7e2809106a2"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -628,13 +633,11 @@ Voici le graphe d'appel pour cette fonction :</div>
 <hr/>
  <dl class="section return"><dt>Renvoie</dt><dd>Le nombre de lignes du texte. </dd></dl>
 
-<p class="definition">Définition à la ligne <a class="el" href="texte_8cpp_source.html#l00241">241</a> du fichier <a class="el" href="texte_8cpp_source.html">texte.cpp</a>.</p>
+<p>Définition à la ligne <a class="el" href="texte_8cpp_source.html#l00241">241</a> du fichier <a class="el" href="texte_8cpp_source.html">texte.cpp</a>.</p>
 
 </div>
 </div>
-<a id="a954c4a3a28faa5a13bd5002a112eef86"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a954c4a3a28faa5a13bd5002a112eef86">&#9670;&nbsp;</a></span>nb_mots()</h2>
-
+<a class="anchor" id="a739191215f853717aaf52a1666011e6d"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -651,13 +654,11 @@ Voici le graphe d'appel pour cette fonction :</div>
 <hr/>
  <dl class="section return"><dt>Renvoie</dt><dd>Le nombre de mots du texte. </dd></dl>
 
-<p class="definition">Définition à la ligne <a class="el" href="texte_8cpp_source.html#l00232">232</a> du fichier <a class="el" href="texte_8cpp_source.html">texte.cpp</a>.</p>
+<p>Définition à la ligne <a class="el" href="texte_8cpp_source.html#l00232">232</a> du fichier <a class="el" href="texte_8cpp_source.html">texte.cpp</a>.</p>
 
 </div>
 </div>
-<a id="a0734254110460b5493c01b3923da7d13"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a0734254110460b5493c01b3923da7d13">&#9670;&nbsp;</a></span>to_string()</h2>
-
+<a class="anchor" id="af5c9ca5662612af4dcd3c2a92581ba05"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -674,13 +675,11 @@ Voici le graphe d'appel pour cette fonction :</div>
 <hr/>
  <dl class="section return"><dt>Renvoie</dt><dd>Le texte au format QString. </dd></dl>
 
-<p class="definition">Définition à la ligne <a class="el" href="texte_8cpp_source.html#l00075">75</a> du fichier <a class="el" href="texte_8cpp_source.html">texte.cpp</a>.</p>
+<p>Définition à la ligne <a class="el" href="texte_8cpp_source.html#l00075">75</a> du fichier <a class="el" href="texte_8cpp_source.html">texte.cpp</a>.</p>
 
 </div>
 </div>
-<a id="a9c669914e39b9bd4075a6840ac923087"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a9c669914e39b9bd4075a6840ac923087">&#9670;&nbsp;</a></span>to_string_lisible()</h2>
-
+<a class="anchor" id="a199d73842cb743e47fdd71afc7bbe1d0"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -697,190 +696,7 @@ Voici le graphe d'appel pour cette fonction :</div>
 <hr/>
  <dl class="section return"><dt>Renvoie</dt><dd>Le texte au format QString. </dd></dl>
 
-<p class="definition">Définition à la ligne <a class="el" href="texte_8cpp_source.html#l00089">89</a> du fichier <a class="el" href="texte_8cpp_source.html">texte.cpp</a>.</p>
-
-</div>
-</div>
-<h2 class="groupheader">Documentation des données membres</h2>
-<a id="a2b3e003013d64a37b2b65e15e8ab5707"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a2b3e003013d64a37b2b65e15e8ab5707">&#9670;&nbsp;</a></span>m_configuration</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="classconfiguration.html">configuration</a> texte::m_configuration</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">private</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>La configuration des paramètres induisant ce texte. </p>
-
-<p class="definition">Définition à la ligne <a class="el" href="texte_8h_source.html#l00048">48</a> du fichier <a class="el" href="texte_8h_source.html">texte.h</a>.</p>
-
-</div>
-</div>
-<a id="ab9573dd23b6960e5270ed7f02d3ff518"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ab9573dd23b6960e5270ed7f02d3ff518">&#9670;&nbsp;</a></span>m_configuration_visible</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">bool texte::m_configuration_visible</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">private</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Booléen indiquant si la configuration est visible. </p>
-
-<p class="definition">Définition à la ligne <a class="el" href="texte_8h_source.html#l00057">57</a> du fichier <a class="el" href="texte_8h_source.html">texte.h</a>.</p>
-
-</div>
-</div>
-<a id="ad3eca9016c3f52f83282cbc5e14134db"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ad3eca9016c3f52f83282cbc5e14134db">&#9670;&nbsp;</a></span>m_nb_caracteres</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">size_type texte::m_nb_caracteres</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">private</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Le nombre de caractères du texte. </p>
-
-<p class="definition">Définition à la ligne <a class="el" href="texte_8h_source.html#l00063">63</a> du fichier <a class="el" href="texte_8h_source.html">texte.h</a>.</p>
-
-</div>
-</div>
-<a id="a31d605f7acfb2e7b6caa4ec699b5b9af"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a31d605f7acfb2e7b6caa4ec699b5b9af">&#9670;&nbsp;</a></span>m_nb_lignes_configuration</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">int texte::m_nb_lignes_configuration</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">private</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Le nombre de ligne de la configuration. </p>
-
-<p class="definition">Définition à la ligne <a class="el" href="texte_8h_source.html#l00060">60</a> du fichier <a class="el" href="texte_8h_source.html">texte.h</a>.</p>
-
-</div>
-</div>
-<a id="af9fd6d72cc8127bc1e20578a68b4e09b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#af9fd6d72cc8127bc1e20578a68b4e09b">&#9670;&nbsp;</a></span>m_nb_mots</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">size_type texte::m_nb_mots</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">private</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Le nombre de mots du texte. </p>
-
-<p class="definition">Définition à la ligne <a class="el" href="texte_8h_source.html#l00066">66</a> du fichier <a class="el" href="texte_8h_source.html">texte.h</a>.</p>
-
-</div>
-</div>
-<a id="a37d42a1cd77bd69a89a0789c39f3454f"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a37d42a1cd77bd69a89a0789c39f3454f">&#9670;&nbsp;</a></span>m_separateur_ligne</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">QString texte::m_separateur_ligne</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">private</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Le séparateur de ligne. </p>
-
-<p class="definition">Définition à la ligne <a class="el" href="texte_8h_source.html#l00054">54</a> du fichier <a class="el" href="texte_8h_source.html">texte.h</a>.</p>
-
-</div>
-</div>
-<a id="a21656dd0eb1604ac69c7e8184b2293ab"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a21656dd0eb1604ac69c7e8184b2293ab">&#9670;&nbsp;</a></span>m_string_configuration</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">QString texte::m_string_configuration</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">private</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>La configuration des paramètres induisant ce texte sous forme QString. </p>
-
-<p class="definition">Définition à la ligne <a class="el" href="texte_8h_source.html#l00051">51</a> du fichier <a class="el" href="texte_8h_source.html">texte.h</a>.</p>
+<p>Définition à la ligne <a class="el" href="texte_8cpp_source.html#l00089">89</a> du fichier <a class="el" href="texte_8cpp_source.html">texte.cpp</a>.</p>
 
 </div>
 </div>
@@ -891,9 +707,9 @@ Voici le graphe d'appel pour cette fonction :</div>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Généré le Jeudi 9 Février 2017 15:11:11 pour Emgine par &#160;<a href="http://www.doxygen.org/index.html">
+Généré le Vendredi 10 Février 2017 15:45:29 pour Emgine par &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
-</a> 1.8.13
+</a> 1.8.6
 </small></address>
 </body>
 </html>

@@ -1,8 +1,8 @@
 <map id="base_fonction::algo_LIPL_iteration_premier_mot_par_ligne" name="base_fonction::algo_LIPL_iteration_premier_mot_par_ligne">
 <area shape="rect" id="node2" href="$classcompilateur.html#aa900bb70cdaffb36d7c4fb34ddad2a05" title="Accesseur du widget de la vue des logs. " alt="" coords="225,5,399,32"/>
 <area shape="rect" id="node3" href="$classlogs__compilation__widget.html#a51fcc25d77ca9beafc2721d9c84f07a7" title="Ajoute un log à la liste des logs. " alt="" coords="230,57,394,98"/>
-<area shape="rect" id="node7" href="$classbase__parametre.html#a091ac3f7f7229a65c9f79390bb3dac6f" title="base_parametre::get_nom" alt="" coords="225,123,399,149"/>
-<area shape="rect" id="node8" href="$classbase__parametre.html#a1486b7faa1e0d6c33d4ad53ea30d2828" title="base_parametre::configuration\l_visible" alt="" coords="213,174,411,215"/>
+<area shape="rect" id="node7" href="$classbase__parametre.html#a091ac3f7f7229a65c9f79390bb3dac6f" title="Accesseur du nom du paramètre. " alt="" coords="225,123,399,149"/>
+<area shape="rect" id="node8" href="$classbase__parametre.html#a1486b7faa1e0d6c33d4ad53ea30d2828" title="Indique si le paramètre est visible dans la configuration. " alt="" coords="213,174,411,215"/>
 <area shape="rect" id="node9" href="$classcompilateur.html#accedd70b3a5d0cec2ce83fee43a7f160" title="Ajoute une configuration à un couple (fonction, parametre). " alt="" coords="244,239,380,281"/>
 <area shape="rect" id="node10" href="$classcompilateur.html#a3a044cc8ed2205d842ed8adadf090179" title="Efface la configuration d&#39;un couple (fonction/parametre). " alt="" coords="247,305,377,346"/>
 <area shape="rect" id="node4" href="$classlog__widget__item.html#a50885aa7f8b31392370fe1dafe982a62" title="Accesseur du log associé. " alt="" coords="459,5,626,32"/>

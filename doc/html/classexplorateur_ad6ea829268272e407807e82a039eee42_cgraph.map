@@ -1,12 +1,12 @@
 <map id="explorateur::ajouter_menu_ajout_fonction" name="explorateur::ajouter_menu_ajout_fonction">
-<area shape="rect" id="node2" href="$classobjet__selectionnable.html#abed9a58bb39d15353db880fbd0808714" title="objet_selectionnable\l::est_conteneur" alt="" coords="601,37,741,79"/>
-<area shape="rect" id="node3" href="$classobjet__selectionnable.html#a1cf41e42861e0b033d2704802905e81a" title="objet_selectionnable\l::est_verrouille_avec\l_parent" alt="" coords="403,273,546,329"/>
-<area shape="rect" id="node5" href="$classobjet__selectionnable.html#ab5d7e0b9f000ba34d9d60b36590f1fcf" title="objet_selectionnable\l::est_fonction" alt="" coords="206,368,346,409"/>
-<area shape="rect" id="node6" href="$classobjet__selectionnable.html#a57341a9bf3dbc66f4ad4414183b0d27c" title="objet_selectionnable\l::parents_verrouilles" alt="" coords="206,251,346,292"/>
-<area shape="rect" id="node7" href="$classexplorateur.html#a9f87ebe9efe7486d6e781556238feb4e" title="explorateur::on_ajout\l_source" alt="" coords="205,55,347,96"/>
-<area shape="rect" id="node10" href="$classexplorateur.html#a513ccd6238459ae6982973a5b671a63b" title="explorateur::on_ajout\l_fonction_conversion" alt="" coords="203,120,349,161"/>
-<area shape="rect" id="node11" href="$classexplorateur.html#aad600593e3982f73bd876a32cc4b8381" title="explorateur::on_ajout\l_sortie" alt="" coords="205,185,347,227"/>
-<area shape="rect" id="node4" href="$classobjet__selectionnable.html#a8b9cf156597fe8cc1b8f9408e1bfee8c" title="objet_selectionnable\l::est_verrouille" alt="" coords="601,280,741,321"/>
+<area shape="rect" id="node2" href="$classobjet__selectionnable.html#abed9a58bb39d15353db880fbd0808714" title="Indique si l&#39;objet est un conteneur. " alt="" coords="601,37,741,79"/>
+<area shape="rect" id="node3" href="$classobjet__selectionnable.html#a1cf41e42861e0b033d2704802905e81a" title="Indique si l&#39;objet est verrouillé en considérant également ses parents. " alt="" coords="403,273,546,329"/>
+<area shape="rect" id="node5" href="$classobjet__selectionnable.html#ab5d7e0b9f000ba34d9d60b36590f1fcf" title="Indique si l&#39;objet est une fonction. " alt="" coords="206,368,346,409"/>
+<area shape="rect" id="node6" href="$classobjet__selectionnable.html#a57341a9bf3dbc66f4ad4414183b0d27c" title="Indique si le paret de l&#39;objet est verrouillé. " alt="" coords="206,251,346,292"/>
+<area shape="rect" id="node7" href="$classexplorateur.html#a9f87ebe9efe7486d6e781556238feb4e" title="Fonction appelée lors d&#39;une demande d&#39;ajout de fonction source. " alt="" coords="205,55,347,96"/>
+<area shape="rect" id="node10" href="$classexplorateur.html#a513ccd6238459ae6982973a5b671a63b" title="Fonction appelée lors d&#39;une demande d&#39;ajout de fonction de conversion. " alt="" coords="203,120,349,161"/>
+<area shape="rect" id="node11" href="$classexplorateur.html#aad600593e3982f73bd876a32cc4b8381" title="Fonction appelée lors d&#39;une demande d&#39;ajout de fonction de sortie. " alt="" coords="205,185,347,227"/>
+<area shape="rect" id="node4" href="$classobjet__selectionnable.html#a8b9cf156597fe8cc1b8f9408e1bfee8c" title="Indique si l&#39;objet est vérrouillé, i.e. non éditable. " alt="" coords="601,280,741,321"/>
 <area shape="rect" id="node8" href="$classbase__noeud.html#ae78124477ea5148f16c2da42ac766f4c" title="Retourne l&#39;objet sélectionnable associé au noeud. " alt="" coords="398,145,551,171"/>
-<area shape="rect" id="node9" href="$classobjet__selectionnable.html#ab809d020155b7fec48ff3adbe15c9b65" title="objet_selectionnable\l::get_conteneur" alt="" coords="405,79,545,120"/>
+<area shape="rect" id="node9" href="$classobjet__selectionnable.html#ab809d020155b7fec48ff3adbe15c9b65" title="Retourne le fonctions_conteneur le plus proche : l&#39;objet lui&#45;même s&#39;il est un conteneur, ou le conteneur parent sinon. " alt="" coords="405,79,545,120"/>
 </map>

@@ -1,14 +1,14 @@
 <map id="fenetre_principale::ajouter_fonction" name="fenetre_principale::ajouter_fonction">
-<area shape="rect" id="node2" href="$classbase__fonction.html#a84175c05bf61ea02e2ce607187bcf966" title="base_fonction::initialisation\l_par_defaut" alt="" coords="179,121,357,162"/>
-<area shape="rect" id="node3" href="$classfonctions__conteneur.html#a5498a158c4d4f16fc63e54809ce381d5" title="fonctions_conteneur\l::ajouter_fonction" alt="" coords="199,186,337,227"/>
-<area shape="rect" id="node12" href="$classobjet__selectionnable.html#a645da22be6e3f8747086da238e788fb9" title="objet_selectionnable\l::selectionner" alt="" coords="198,306,338,347"/>
-<area shape="rect" id="node4" href="$classbase__fonction.html#aa487a07ab1961bfbdf04ddd3c72b4d3c" title="base_fonction::set\l_conteneur" alt="" coords="422,62,551,103"/>
-<area shape="rect" id="node5" href="$classobjet__selectionnable.html#abed9a58bb39d15353db880fbd0808714" title="objet_selectionnable\l::est_conteneur" alt="" coords="417,127,557,169"/>
-<area shape="rect" id="node6" href="$classfonctions__conteneur.html#a138f2393529381205980123dff37d99e" title="fonctions_conteneur\l::on_supprimer_fonction" alt="" coords="406,245,567,286"/>
-<area shape="rect" id="node8" href="$classobjet__selectionnable.html#ab48a75e720955aebe27f720dfaa5e78e" title="objet_selectionnable\l::get_projet" alt="" coords="806,186,946,227"/>
-<area shape="rect" id="node10" href="$classobjet__selectionnable.html#a9f76b8e89231a79c3fc840af874bd868" title="objet_selectionnable\l::modifier" alt="" coords="806,275,946,317"/>
-<area shape="rect" id="node11" href="$classobjet__selectionnable.html#aaa39f8be3dfaeb095cc12a217b234f9b" title="objet_selectionnable\l::est_dans_projet" alt="" coords="617,29,757,70"/>
-<area shape="rect" id="node7" href="$classfonctions__conteneur.html#a807b51ba64dd85bb844c44cfe2d0f116" title="fonctions_conteneur\l::supprimer_fonction" alt="" coords="617,245,757,286"/>
-<area shape="rect" id="node9" href="$classobjet__selectionnable.html#a97e33c61983d5c7811e8bacff8f114c4" title="objet_selectionnable\l::est_projet" alt="" coords="995,186,1135,227"/>
-<area shape="rect" id="node13" href="$classobjet__selectionnable.html#a555085da89b30b07349064bb54a26138" title="objet_selectionnable\l::deselectionner" alt="" coords="417,362,557,403"/>
+<area shape="rect" id="node2" href="$classbase__fonction.html#a84175c05bf61ea02e2ce607187bcf966" title="Initialise par défaut la fonction. " alt="" coords="179,121,357,162"/>
+<area shape="rect" id="node3" href="$classfonctions__conteneur.html#a5498a158c4d4f16fc63e54809ce381d5" title="Ajoute une fonction donnée dans le conteneur. " alt="" coords="199,186,337,227"/>
+<area shape="rect" id="node12" href="$classobjet__selectionnable.html#a645da22be6e3f8747086da238e788fb9" title="Sélectionne l&#39;objet. " alt="" coords="198,306,338,347"/>
+<area shape="rect" id="node4" href="$classbase__fonction.html#aa487a07ab1961bfbdf04ddd3c72b4d3c" title="Initialise le conteneur de la fonction. " alt="" coords="422,62,551,103"/>
+<area shape="rect" id="node5" href="$classobjet__selectionnable.html#abed9a58bb39d15353db880fbd0808714" title="Indique si l&#39;objet est un conteneur. " alt="" coords="417,127,557,169"/>
+<area shape="rect" id="node6" href="$classfonctions__conteneur.html#a138f2393529381205980123dff37d99e" title="Fonction appelée lors d&#39;une demande de suppression d&#39;une fonction donnée. " alt="" coords="406,245,567,286"/>
+<area shape="rect" id="node8" href="$classobjet__selectionnable.html#ab48a75e720955aebe27f720dfaa5e78e" title="Retourne le projet contenant l&#39;objet sélectionnable. " alt="" coords="806,186,946,227"/>
+<area shape="rect" id="node10" href="$classobjet__selectionnable.html#a9f76b8e89231a79c3fc840af874bd868" title="Modifie l&#39;objet. " alt="" coords="806,275,946,317"/>
+<area shape="rect" id="node11" href="$classobjet__selectionnable.html#aaa39f8be3dfaeb095cc12a217b234f9b" title="Indique si l&#39;objet est dans un projet. " alt="" coords="617,29,757,70"/>
+<area shape="rect" id="node7" href="$classfonctions__conteneur.html#a807b51ba64dd85bb844c44cfe2d0f116" title="Supprime une fonction donnée. " alt="" coords="617,245,757,286"/>
+<area shape="rect" id="node9" href="$classobjet__selectionnable.html#a97e33c61983d5c7811e8bacff8f114c4" title="Indique si l&#39;objet est un projet. " alt="" coords="995,186,1135,227"/>
+<area shape="rect" id="node13" href="$classobjet__selectionnable.html#a555085da89b30b07349064bb54a26138" title="Désélectionne l&#39;objet sélectionné. " alt="" coords="417,362,557,403"/>
 </map>

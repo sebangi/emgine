@@ -6,6 +6,8 @@
  * \author Sébastien Angibaud
  */
 
+#include "entete/fonction/define_fonction.h"
+
 #include <QMainWindow>
 #include <QPushButton>
 #include <QStyle>
@@ -26,7 +28,6 @@ class objet_selectionnable;
 class projet;
 class texte;
 class vue_fonctions;
-enum type_fonction;
 
 /*!
  *  \addtogroup Ui

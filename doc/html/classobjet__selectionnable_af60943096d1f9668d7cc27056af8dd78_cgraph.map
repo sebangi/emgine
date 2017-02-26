@@ -1,0 +1,5 @@
+<map id="objet_selectionnable::creer_copie" name="objet_selectionnable::creer_copie">
+<area shape="rect" id="node2" href="$classobjet__selectionnable.html#abed9a58bb39d15353db880fbd0808714" title="Indique si l&#39;objet est un conteneur. " alt="" coords="385,8,525,49"/>
+<area shape="rect" id="node3" href="$classobjet__selectionnable.html#ab809d020155b7fec48ff3adbe15c9b65" title="Retourne le fonctions_conteneur le plus proche : l&#39;objet lui&#45;même s&#39;il est un conteneur, ou le conteneur parent sinon. " alt="" coords="195,49,335,91"/>
+<area shape="rect" id="node4" href="$classfonctions__conteneur.html#a199dde0697eb91a9e54c1dfecb536a88" title="Sauvegarde le fonctions_conteneur dans un flux donné. " alt="" coords="196,115,335,156"/>
+</map>

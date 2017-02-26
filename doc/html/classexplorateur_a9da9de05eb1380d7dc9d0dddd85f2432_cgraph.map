@@ -1,32 +1,32 @@
 <map id="explorateur::ajouter_fonction" name="explorateur::ajouter_fonction">
-<area shape="rect" id="node2" href="$classbase__fonction.html#ac3cbb44e17f6e200998baa91798ff413" title="base_fonction::get\l_conteneur" alt="" coords="225,46,354,87"/>
-<area shape="rect" id="node3" href="$classexplorateur.html#a887540b504bdc698ba2b8736fe0e9fdc" title="explorateur::ajouter\l_selectionnable" alt="" coords="467,37,600,78"/>
-<area shape="rect" id="node9" href="$classbase__fonction.html#aa42a2214daf8e49a79b627f62ab9105e" title="base_fonction::get\l_position" alt="" coords="225,331,354,373"/>
-<area shape="rect" id="node11" href="$classbase__fonction.html#aa6a1b06544f57e26311eba48b08eaf54" title="base_fonction::parametres\l_begin" alt="" coords="201,397,377,438"/>
-<area shape="rect" id="node12" href="$classbase__fonction.html#a39f01a1372ee04c2620602c530431506" title="base_fonction::parametres_end" alt="" coords="187,463,391,489"/>
-<area shape="rect" id="node13" href="$classexplorateur.html#a4f9742e14126da0d20dd6161c005bcd2" title="explorateur::ajouter\l_parametre" alt="" coords="223,214,356,255"/>
-<area shape="rect" id="node18" href="$classobjet__selectionnable.html#ae58408e8c4421e9c33bc488381e8c0a4" title="objet_selectionnable\l::est_etendu" alt="" coords="463,363,603,405"/>
-<area shape="rect" id="node19" href="$classexplorateur.html#a1c0d1a2f970f2b4d9560f33f74030f7a" title="explorateur::mettre\l_a_jour_activation" alt="" coords="685,535,816,577"/>
-<area shape="rect" id="node23" href="$classobjet__selectionnable.html#a9f9e2ccc04e3b2a55d7b51b85366488f" title="objet_selectionnable\l::est_active" alt="" coords="219,663,359,705"/>
-<area shape="rect" id="node24" href="$classexplorateur.html#a838a8a6442ebd91a5c242ea02c0fe3e2" title="explorateur::connecter\l_fonction" alt="" coords="214,598,365,639"/>
-<area shape="rect" id="node4" href="$classexplorateur.html#ad22d29aa9fc32953c4b2b77c56d189db" title="explorateur::connecter\l_selectionnable" alt="" coords="675,37,826,78"/>
-<area shape="rect" id="node5" href="$classexplorateur.html#a0fce137b4ac1ce06dcb7bc9f6a561882" title="explorateur::on_externe\l_objet_selectionne" alt="" coords="891,5,1050,46"/>
-<area shape="rect" id="node8" href="$classexplorateur.html#a0c03c6386f018765f8392b95b46c19b0" title="explorateur::on_externe\l_objet_deselectionne" alt="" coords="891,70,1050,111"/>
-<area shape="rect" id="node6" href="$classobjet__selectionnable.html#ab809d020155b7fec48ff3adbe15c9b65" title="objet_selectionnable\l::get_conteneur" alt="" coords="1115,38,1255,79"/>
-<area shape="rect" id="node7" href="$classobjet__selectionnable.html#abed9a58bb39d15353db880fbd0808714" title="objet_selectionnable\l::est_conteneur" alt="" coords="1305,38,1445,79"/>
-<area shape="rect" id="node10" href="$classfonctions__conteneur.html#a61f2cd0bf2ee27462f470e36a2f43869" title="fonctions_conteneur\l::get_position" alt="" coords="464,429,603,470"/>
-<area shape="rect" id="node14" href="$classbase__parametre.html#adfbae22169cb11d6348906ca12cba66f" title="base_parametre::get\l_fonction_parent" alt="" coords="463,167,604,209"/>
-<area shape="rect" id="node15" href="$classexplorateur.html#a7f6b58995b31a6b09758e6af0c5988a0" title="explorateur::on_externe\l_creation_fonction" alt="" coords="454,102,613,143"/>
-<area shape="rect" id="node16" href="$classfonctions__conteneur.html#aa1db33c3a0bf76b354e77b4a4324357a" title="fonctions_conteneur\l::fonctions_begin" alt="" coords="464,233,603,274"/>
-<area shape="rect" id="node17" href="$classfonctions__conteneur.html#a165ee65380980b58b521a62810cd7e27" title="fonctions_conteneur\l::fonctions_end" alt="" coords="464,298,603,339"/>
+<area shape="rect" id="node2" href="$classbase__fonction.html#ac3cbb44e17f6e200998baa91798ff413" title="Accesseur sur le conteneur de la fonction. " alt="" coords="225,46,354,87"/>
+<area shape="rect" id="node3" href="$classexplorateur.html#a887540b504bdc698ba2b8736fe0e9fdc" title="Ajoute un objet sélectionnable à l&#39;explorateur. " alt="" coords="467,37,600,78"/>
+<area shape="rect" id="node9" href="$classbase__fonction.html#aa42a2214daf8e49a79b627f62ab9105e" title="Retourne la position d&#39;une fonction dans son conteneur. " alt="" coords="225,331,354,373"/>
+<area shape="rect" id="node11" href="$classbase__fonction.html#aa6a1b06544f57e26311eba48b08eaf54" title="Retourne l&#39;itérateur sur le début de la liste des paramètres. " alt="" coords="201,397,377,438"/>
+<area shape="rect" id="node12" href="$classbase__fonction.html#a39f01a1372ee04c2620602c530431506" title="Retourne l&#39;itérateur sur la fin des paramètres. " alt="" coords="187,463,391,489"/>
+<area shape="rect" id="node13" href="$classexplorateur.html#a4f9742e14126da0d20dd6161c005bcd2" title="Ajoute un paramètre à l&#39;explorateur. " alt="" coords="223,214,356,255"/>
+<area shape="rect" id="node18" href="$classobjet__selectionnable.html#ae58408e8c4421e9c33bc488381e8c0a4" title="Indique si l&#39;objet est étendu. " alt="" coords="463,363,603,405"/>
+<area shape="rect" id="node19" href="$classexplorateur.html#a1c0d1a2f970f2b4d9560f33f74030f7a" title="Met à jour l&#39;activation d&#39;un noeud. " alt="" coords="685,535,816,577"/>
+<area shape="rect" id="node23" href="$classobjet__selectionnable.html#a9f9e2ccc04e3b2a55d7b51b85366488f" title="Retourne l&#39;état d&#39;activation de l&#39;objet. " alt="" coords="219,663,359,705"/>
+<area shape="rect" id="node24" href="$classexplorateur.html#a838a8a6442ebd91a5c242ea02c0fe3e2" title="Ajoute les connects pour un fonction donnée. " alt="" coords="214,598,365,639"/>
+<area shape="rect" id="node4" href="$classexplorateur.html#ad22d29aa9fc32953c4b2b77c56d189db" title="Ajoute les connects pour un objet donné. " alt="" coords="675,37,826,78"/>
+<area shape="rect" id="node5" href="$classexplorateur.html#a0fce137b4ac1ce06dcb7bc9f6a561882" title="Fonction appelée lorsqu&#39;un objet est sélectionné. " alt="" coords="891,5,1050,46"/>
+<area shape="rect" id="node8" href="$classexplorateur.html#a0c03c6386f018765f8392b95b46c19b0" title="Fonction appelée lorsqu&#39;un objet est désélectionné. " alt="" coords="891,70,1050,111"/>
+<area shape="rect" id="node6" href="$classobjet__selectionnable.html#ab809d020155b7fec48ff3adbe15c9b65" title="Retourne le fonctions_conteneur le plus proche : l&#39;objet lui&#45;même s&#39;il est un conteneur, ou le conteneur parent sinon. " alt="" coords="1115,38,1255,79"/>
+<area shape="rect" id="node7" href="$classobjet__selectionnable.html#abed9a58bb39d15353db880fbd0808714" title="Indique si l&#39;objet est un conteneur. " alt="" coords="1305,38,1445,79"/>
+<area shape="rect" id="node10" href="$classfonctions__conteneur.html#a61f2cd0bf2ee27462f470e36a2f43869" title="Retourne la position d&#39;une fonction donnée. " alt="" coords="464,429,603,470"/>
+<area shape="rect" id="node14" href="$classbase__parametre.html#adfbae22169cb11d6348906ca12cba66f" title="Accesseur de la fonction parente. " alt="" coords="463,167,604,209"/>
+<area shape="rect" id="node15" href="$classexplorateur.html#a7f6b58995b31a6b09758e6af0c5988a0" title="Fonction appelée lorsqu&#39;un fonction est créée. " alt="" coords="454,102,613,143"/>
+<area shape="rect" id="node16" href="$classfonctions__conteneur.html#aa1db33c3a0bf76b354e77b4a4324357a" title="Accesseur de l&#39;itérateur de début de liste des fonctions. " alt="" coords="464,233,603,274"/>
+<area shape="rect" id="node17" href="$classfonctions__conteneur.html#a165ee65380980b58b521a62810cd7e27" title="Accesseur de l&#39;itérateur de fin de liste des fonctions. " alt="" coords="464,298,603,339"/>
 <area shape="rect" id="node20" href="$classbase__noeud.html#afb0d91325a08bb6e7e0234036035e574" title="Retourne l&#39;état d&#39;expansion sauvegardé avant le compactage automatique. " alt="" coords="894,477,1047,518"/>
 <area shape="rect" id="node21" href="$classbase__noeud.html#a5fe905edcc9ff83f21a5d324c8a21bda" title="Sauvegarde l&#39;état d&#39;expansion. " alt="" coords="875,543,1066,569"/>
 <area shape="rect" id="node22" href="$classbase__noeud.html#a12165cb731bfc08c958ccabad752d092" title="Met à jour le style du noeud. " alt="" coords="902,594,1039,635"/>
-<area shape="rect" id="node25" href="$classexplorateur.html#ae43b4a7ba4f0643465b3e2092b674d08" title="explorateur::on_externe\l_supprimer_fonction" alt="" coords="454,630,613,671"/>
-<area shape="rect" id="node26" href="$classexplorateur.html#a1384795a69acb9eaabee919bf04568e1" title="explorateur::on_externe\l_activation_fonction_change" alt="" coords="440,565,627,606"/>
-<area shape="rect" id="node27" href="$classexplorateur.html#afce2e984617f7198974bcd4db9c4175a" title="explorateur::on_externe\l_verrouillage_change" alt="" coords="454,695,613,737"/>
-<area shape="rect" id="node30" href="$classexplorateur.html#a5098ff7776e4773ff3386a9bac9d9307" title="explorateur::on_externe\l_etendu_change" alt="" coords="454,761,613,802"/>
-<area shape="rect" id="node28" href="$classexplorateur.html#aa8f6a55c7d9b6e0ef699eb49af4cc2b7" title="explorateur::mettre\l_a_jour_verrouillage" alt="" coords="682,695,819,737"/>
+<area shape="rect" id="node25" href="$classexplorateur.html#ae43b4a7ba4f0643465b3e2092b674d08" title="Fonction appelée lorsqu&#39;une fonction est détruite. " alt="" coords="454,630,613,671"/>
+<area shape="rect" id="node26" href="$classexplorateur.html#a1384795a69acb9eaabee919bf04568e1" title="Fonction appelée lorsque l&#39;état d&#39;activation d&#39;une fonction change. " alt="" coords="440,565,627,606"/>
+<area shape="rect" id="node27" href="$classexplorateur.html#afce2e984617f7198974bcd4db9c4175a" title="Fonction appelée lorsque le vérouillage d&#39;un objet change. " alt="" coords="454,695,613,737"/>
+<area shape="rect" id="node30" href="$classexplorateur.html#a5098ff7776e4773ff3386a9bac9d9307" title="Fonction appelée lorsque l&#39;état d&#39;expansion d&#39;une fonction change. " alt="" coords="454,761,613,802"/>
+<area shape="rect" id="node28" href="$classexplorateur.html#aa8f6a55c7d9b6e0ef699eb49af4cc2b7" title="Met à jour le verouillage d&#39;un noeud. " alt="" coords="682,695,819,737"/>
 <area shape="rect" id="node29" href="$classbase__noeud.html#ace8a7076d9e5a5d6644d801ac53f2f93" title="Fonction virtuelle mettant à jour l&#39;icone. " alt="" coords="899,695,1042,737"/>
-<area shape="rect" id="node31" href="$classexplorateur.html#a09836e70d0641f3b692eeb070110f912" title="explorateur::mettre\l_a_jour_etendu" alt="" coords="685,761,816,802"/>
+<area shape="rect" id="node31" href="$classexplorateur.html#a09836e70d0641f3b692eeb070110f912" title="Met à jour l&#39;état d&#39;expansion d&#39;un noeud. " alt="" coords="685,761,816,802"/>
 </map>

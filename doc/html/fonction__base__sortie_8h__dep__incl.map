@@ -1,8 +1,8 @@
 <map id="entete/fonction/fonction_sortie/fonction_base_sortie.h" name="entete/fonction/fonction_sortie/fonction_base_sortie.h">
-<area shape="rect" id="node2" href="$fonction__sortie__texte_8h.html" title="entete/fonction/fonction\l_sortie/fonction_sortie\l_texte.h" alt="" coords="293,96,451,152"/>
-<area shape="rect" id="node7" href="$fonction__base__sortie_8cpp.html" title="src/fonction/fonction\l_sortie/fonction_base\l_sortie.cpp" alt="" coords="476,96,623,152"/>
-<area shape="rect" id="node3" href="$fenetre__principale_8cpp.html" title="Implémentation de la classe fenetre_principale. " alt="" coords="5,223,176,249"/>
-<area shape="rect" id="node4" href="$bibliotheque__fonctions_8cpp.html" title="src/fonction/bibliotheque\l_fonctions.cpp" alt="" coords="200,215,363,257"/>
-<area shape="rect" id="node5" href="$fonction__sortie__texte_8cpp.html" title="src/fonction/fonction\l_sortie/fonction_sortie\l_texte.cpp" alt="" coords="387,208,537,264"/>
-<area shape="rect" id="node6" href="$fonction__sortie__texte__widget_8cpp.html" title="src/fonction_widget\l/fonction_sortie_widget\l/fonction_sortie_texte\l_widget.cpp" alt="" coords="562,201,717,271"/>
+<area shape="rect" id="node2" href="$fonction__sortie__texte_8h.html" title="Fichier de déclaration de la classe fonction_sortie_texte. " alt="" coords="293,96,451,152"/>
+<area shape="rect" id="node7" href="$fonction__base__sortie_8cpp.html" title="Fichier d&#39;implémentation de la classe fonction_base_sortie. " alt="" coords="476,96,623,152"/>
+<area shape="rect" id="node3" href="$fenetre__principale_8cpp.html" title="Fichier d&#39;implémentation de la classe fenetre_principale. " alt="" coords="5,223,176,249"/>
+<area shape="rect" id="node4" href="$bibliotheque__fonctions_8cpp.html" title="Fichier d&#39;implémentation de la classe bibliotheque_fonction. " alt="" coords="200,215,363,257"/>
+<area shape="rect" id="node5" href="$fonction__sortie__texte_8cpp.html" title="Fichier d&#39;implémentation de la classe fonction_sortie_texte. " alt="" coords="387,208,537,264"/>
+<area shape="rect" id="node6" href="$fonction__sortie__texte__widget_8cpp_source.html" title="src/fonction_widget\l/fonction_sortie_widget\l/fonction_sortie_texte\l_widget.cpp" alt="" coords="562,201,717,271"/>
 </map>

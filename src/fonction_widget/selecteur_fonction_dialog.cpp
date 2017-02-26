@@ -1,15 +1,26 @@
-#include "entete/fonction_widget/selecteur_fonction_dialog.h"
-#include "entete/define.h"
-#include <QDialogButtonBox>
-#include <QVBoxLayout>
-#include <QHBoxLayout>
-#include <QGridLayout>
-#include <QPushButton>
-#include <QApplication>
-#include <QFontMetrics>
-#include <QStyle>
-#include <iostream>
+/** \file selecteur_fonction_dialog.cpp
+ * \brief Fichier d'implémentation de la classe selecteur_fonction_dialog.
+ * \author Sébastien Angibaud
+ */
 
+#include "entete/fonction_widget/selecteur_fonction_dialog.h"
+
+#include "entete/define.h"
+
+#include <QApplication>
+#include <QDialogButtonBox>
+#include <QFontMetrics>
+#include <QGridLayout>
+#include <QHBoxLayout>
+#include <QPushButton>
+#include <QStyle>
+#include <QVBoxLayout>
+
+/** --------------------------------------------------------------------------------------
+ * \brief Constructeur de la classe selecteur_fonction_dialog.
+ * \param type Le type de fonction à créer.
+ * \param parent Un pointeur sur le widget parent.
+ */
 selecteur_fonction_dialog::selecteur_fonction_dialog(type_fonction type, QWidget *parent)
     : QDialog(parent), m_fonction(NULL), m_nb_colonnes(1)
 {
@@ -18,8 +29,8 @@ selecteur_fonction_dialog::selecteur_fonction_dialog(type_fonction type, QWidget
     QHBoxLayout *recherche_layout = new QHBoxLayout;
     m_recherche = new QLineEdit();
     m_recherche->setClearButtonEnabled(true);
-    connect(m_recherche, SIGNAL (returnPressed()),this, SLOT (chercher()));
-    connect(m_recherche, SIGNAL (textChanged(const QString &)),this, SLOT (chercher(const QString &)));
+    connect(m_recherche, SIGNAL (returnPressed()),this, SLOT (on_chercher()));
+    connect(m_recherche, SIGNAL (textChanged(const QString &)),this, SLOT (on_chercher(const QString &)));
     m_recherche->setFocusPolicy(Qt::StrongFocus);
 
     recherche_layout->addWidget(m_recherche);
@@ -31,10 +42,10 @@ selecteur_fonction_dialog::selecteur_fonction_dialog(type_fonction type, QWidget
     mainLayout->addLayout(recherche_layout);
     mainLayout->addLayout(m_grid_layout);
 
-    m_buttonBox = new QDialogButtonBox(QDialogButtonBox::Cancel);
-    connect(m_buttonBox, SIGNAL(accepted()), this, SLOT(accept()));
-    connect(m_buttonBox, SIGNAL(rejected()), this, SLOT(reject()));
-    mainLayout->addWidget(m_buttonBox);
+    m_cancel_button = new QDialogButtonBox(QDialogButtonBox::Cancel);
+    connect(m_cancel_button, SIGNAL(accepted()), this, SLOT(accept()));
+    connect(m_cancel_button, SIGNAL(rejected()), this, SLOT(reject()));
+    mainLayout->addWidget(m_cancel_button);
     setLayout(mainLayout);
 
     if ( type == type_fonction::fonction_source )
@@ -52,11 +63,19 @@ selecteur_fonction_dialog::selecteur_fonction_dialog(type_fonction type, QWidget
     }
 }
 
+/** --------------------------------------------------------------------------------------
+ * \brief Accessur de la fonction créée.
+ * \return Un pointeur sur la fonction créée.
+ */
 base_fonction *selecteur_fonction_dialog::get_fonction() const
 {
     return m_fonction;
 }
 
+/** --------------------------------------------------------------------------------------
+ * \brief Initialise les choix.
+ * \param type Le type de fonction à créer.
+ */
 void selecteur_fonction_dialog::init_choix(type_fonction type)
 {
     int debut = debut_fonction_conversion;
@@ -77,10 +96,14 @@ void selecteur_fonction_dialog::init_choix(type_fonction type)
         ajouter_choix((type_id_fonction)nom);
 }
 
-void selecteur_fonction_dialog::ajouter_choix(type_id_fonction nom)
+/** --------------------------------------------------------------------------------------
+ * \brief Ajoute un choix.
+ * \param id L'identifiant de la fonction à ajouter dans les choix.
+ */
+void selecteur_fonction_dialog::ajouter_choix(type_id_fonction id)
 {
-    bouton_choix_fonction * bouton = new bouton_choix_fonction(nom);
-    connect(bouton, SIGNAL (released()),this, SLOT (choisir()));
+    bouton_choix_fonction * bouton = new bouton_choix_fonction(id);
+    connect(bouton, SIGNAL (released()),this, SLOT (on_choix()));
 
     int ligne = m_boutons.size() / 2 ;
     int colonne = m_boutons.size() % 2 ;
@@ -89,7 +112,10 @@ void selecteur_fonction_dialog::ajouter_choix(type_id_fonction nom)
     m_grid_layout->addWidget(bouton, ligne, colonne);
 }
 
-void selecteur_fonction_dialog::choisir()
+/** --------------------------------------------------------------------------------------
+ * \brief Fonction appelée lorsqu'un choix est effectué.
+ */
+void selecteur_fonction_dialog::on_choix()
 {
     QWidget *buttonWidget = qobject_cast<QWidget*>(sender());
     if (!buttonWidget)
@@ -111,6 +137,9 @@ void selecteur_fonction_dialog::choisir()
     done( QDialog::Accepted );
 }
 
+/** --------------------------------------------------------------------------------------
+ * \brief Rend visible uniquement les fonctions de le recherche.
+ */
 void selecteur_fonction_dialog::chercher()
 {
     for ( QList< bouton_choix_fonction * >::iterator it = m_boutons.begin(); it != m_boutons.end(); ++it )
@@ -120,11 +149,18 @@ void selecteur_fonction_dialog::chercher()
     adjustSize();
 }
 
-void selecteur_fonction_dialog::chercher(const QString &)
+/** --------------------------------------------------------------------------------------
+ * \brief Fonction appelée lors d'une demande de recherche.
+ */
+void selecteur_fonction_dialog::on_chercher(const QString &)
 {
     chercher();
 }
 
+/** --------------------------------------------------------------------------------------
+ * \brief Calcule le nombre de colonnes de choix en fonction de leur nombre.
+ * \param type Le type de fonction à créer.
+ */
 void selecteur_fonction_dialog::calcul_nb_colonnes(type_fonction type)
 {
     int nb_fonctions = 0;

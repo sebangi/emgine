@@ -1,10 +1,10 @@
 <map id="fonction_cesar::callback_param_2" name="fonction_cesar::callback_param_2">
 <area shape="rect" id="node2" href="$classbase__fonction.html#acd1952a5fbdbf240c596a53591948260" title="Algorithme d&#39;exécution selon un parametre donné dans le cas : premier mot, itération de chaque ligne..." alt="" coords="217,137,389,193"/>
-<area shape="rect" id="node12" href="$classbase__fonction.html#a50bef05f4bcb9522d6dbbd82694e1783" title="base_fonction::execution\l_specifique" alt="" coords="219,217,386,258"/>
+<area shape="rect" id="node12" href="$classbase__fonction.html#a50bef05f4bcb9522d6dbbd82694e1783" title="Fonction appelée lors de l&#39;exécution spécifique d&#39;une fonction. " alt="" coords="219,217,386,258"/>
 <area shape="rect" id="node3" href="$classcompilateur.html#aa900bb70cdaffb36d7c4fb34ddad2a05" title="Accesseur du widget de la vue des logs. " alt="" coords="449,5,623,32"/>
 <area shape="rect" id="node4" href="$classlogs__compilation__widget.html#a51fcc25d77ca9beafc2721d9c84f07a7" title="Ajoute un log à la liste des logs. " alt="" coords="454,57,618,98"/>
-<area shape="rect" id="node8" href="$classbase__parametre.html#a091ac3f7f7229a65c9f79390bb3dac6f" title="base_parametre::get_nom" alt="" coords="449,123,623,149"/>
-<area shape="rect" id="node9" href="$classbase__parametre.html#a1486b7faa1e0d6c33d4ad53ea30d2828" title="base_parametre::configuration\l_visible" alt="" coords="437,174,635,215"/>
+<area shape="rect" id="node8" href="$classbase__parametre.html#a091ac3f7f7229a65c9f79390bb3dac6f" title="Accesseur du nom du paramètre. " alt="" coords="449,123,623,149"/>
+<area shape="rect" id="node9" href="$classbase__parametre.html#a1486b7faa1e0d6c33d4ad53ea30d2828" title="Indique si le paramètre est visible dans la configuration. " alt="" coords="437,174,635,215"/>
 <area shape="rect" id="node10" href="$classcompilateur.html#accedd70b3a5d0cec2ce83fee43a7f160" title="Ajoute une configuration à un couple (fonction, parametre). " alt="" coords="468,239,604,281"/>
 <area shape="rect" id="node11" href="$classcompilateur.html#a3a044cc8ed2205d842ed8adadf090179" title="Efface la configuration d&#39;un couple (fonction/parametre). " alt="" coords="471,305,601,346"/>
 <area shape="rect" id="node5" href="$classlog__widget__item.html#a50885aa7f8b31392370fe1dafe982a62" title="Accesseur du log associé. " alt="" coords="683,5,850,32"/>

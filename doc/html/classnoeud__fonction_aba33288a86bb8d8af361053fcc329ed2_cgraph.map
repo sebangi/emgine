@@ -1,6 +1,6 @@
 <map id="noeud_fonction::noeud_fonction" name="noeud_fonction::noeud_fonction">
-<area shape="rect" id="node2" href="$classbase__fonction.html#acee6c2c0170e7a1bf8c0df49424ef2ba" title="Retourne le nom de la fonction. " alt="" coords="209,5,370,32"/>
+<area shape="rect" id="node2" href="$classbase__fonction.html#acee6c2c0170e7a1bf8c0df49424ef2ba" title="Accesseur du nom de la fonction. " alt="" coords="209,5,370,32"/>
 <area shape="rect" id="node3" href="$classnoeud__fonction.html#a8710e51af70c842c067e2b905091bc4e" title="Fonction mettant à jour l&#39;icone. " alt="" coords="216,57,363,98"/>
-<area shape="rect" id="node4" href="$classobjet__selectionnable.html#a1cf41e42861e0b033d2704802905e81a" title="objet_selectionnable\l::est_verrouille_avec\l_parent" alt="" coords="419,49,562,105"/>
-<area shape="rect" id="node5" href="$classobjet__selectionnable.html#a8b9cf156597fe8cc1b8f9408e1bfee8c" title="objet_selectionnable\l::est_verrouille" alt="" coords="611,57,751,98"/>
+<area shape="rect" id="node4" href="$classobjet__selectionnable.html#a1cf41e42861e0b033d2704802905e81a" title="Indique si l&#39;objet est verrouillé en considérant également ses parents. " alt="" coords="419,49,562,105"/>
+<area shape="rect" id="node5" href="$classobjet__selectionnable.html#a8b9cf156597fe8cc1b8f9408e1bfee8c" title="Indique si l&#39;objet est vérrouillé, i.e. non éditable. " alt="" coords="611,57,751,98"/>
 </map>

@@ -1,8 +1,8 @@
 <map id="fonction_source_texte::fonction_source_texte" name="fonction_source_texte::fonction_source_texte">
-<area shape="rect" id="node2" href="$classbase__fonction.html#a4d7a7d067af71e0c5e9ec7d6188ac9d1" title="base_fonction::set_id" alt="" coords="227,12,373,39"/>
-<area shape="rect" id="node4" href="$classbase__fonction.html#a51c4b5f512a0ae9b12c5fe55806f57d8" title="base_fonction::augmenter\l_max_niveau_visibilite" alt="" coords="214,63,386,105"/>
-<area shape="rect" id="node5" href="$classbase__fonction.html#aac434731c9e5d95398d3baae6c74d447" title="base_fonction::set\l_niveau_visibilite" alt="" coords="235,129,365,170"/>
-<area shape="rect" id="node6" href="$classbase__fonction.html#a5ef0d28f9dba16d8fa2be040c7a2d7f4" title="base_fonction::ajouter\l_parametre" alt="" coords="225,194,375,235"/>
-<area shape="rect" id="node3" href="$classbibliotheque__fonctions.html#ac8c035960c49cdf0fe7437b82739154e" title="bibliotheque_fonctions\l::get_nom" alt="" coords="439,5,590,46"/>
-<area shape="rect" id="node7" href="$classbase__parametre.html#a5e241bb14cb089f1fedb5509218be625" title="base_parametre::set_id" alt="" coords="435,201,594,228"/>
+<area shape="rect" id="node2" href="$classbase__fonction.html#a4d7a7d067af71e0c5e9ec7d6188ac9d1" title="Initialise l&#39;identifiant de la fonction. " alt="" coords="227,12,373,39"/>
+<area shape="rect" id="node4" href="$classbase__fonction.html#a51c4b5f512a0ae9b12c5fe55806f57d8" title="Augmente le niveau maximum de visibilité de la fonction. " alt="" coords="214,63,386,105"/>
+<area shape="rect" id="node5" href="$classbase__fonction.html#aac434731c9e5d95398d3baae6c74d447" title="Initialise le niveau de visibilité de la fonction. " alt="" coords="235,129,365,170"/>
+<area shape="rect" id="node6" href="$classbase__fonction.html#a5ef0d28f9dba16d8fa2be040c7a2d7f4" title="Ajoute un paramètre à la fonction. " alt="" coords="225,194,375,235"/>
+<area shape="rect" id="node3" href="$classbibliotheque__fonctions.html#ac8c035960c49cdf0fe7437b82739154e" title="Retourne le nom pour un type de fonction donné. " alt="" coords="439,5,590,46"/>
+<area shape="rect" id="node7" href="$classbase__parametre.html#af2c6906b2dde9351168cada04b0f0037" title="Initialise l&#39;identifiant du paramètre. " alt="" coords="435,201,594,228"/>
 </map>

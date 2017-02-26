@@ -1,5 +1,5 @@
 <map id="objet_selectionnable::get_projet_courant" name="objet_selectionnable::get_projet_courant">
-<area shape="rect" id="node2" href="$classobjet__selectionnable.html#a97e33c61983d5c7811e8bacff8f114c4" title="objet_selectionnable\l::est_projet" alt="" coords="195,5,335,46"/>
-<area shape="rect" id="node3" href="$classobjet__selectionnable.html#afdc2163828d829f786887b60e11e4717" title="objet_selectionnable\l::get_projet_courant" alt="" coords="195,70,335,111"/>
-<area shape="rect" id="node4" href="$classobjet__selectionnable.html#ad3c9ec08e1036a463b6b82176d52364d" title="objet_selectionnable\l::existe_selection" alt="" coords="385,70,525,111"/>
+<area shape="rect" id="node2" href="$classobjet__selectionnable.html#a97e33c61983d5c7811e8bacff8f114c4" title="Indique si l&#39;objet est un projet. " alt="" coords="195,5,335,46"/>
+<area shape="rect" id="node3" href="$classobjet__selectionnable.html#afdc2163828d829f786887b60e11e4717" title="Retourne le projet de la sélection courante. " alt="" coords="195,70,335,111"/>
+<area shape="rect" id="node4" href="$classobjet__selectionnable.html#ad3c9ec08e1036a463b6b82176d52364d" title="Indique s&#39;il existe un objet sélectionné. " alt="" coords="385,70,525,111"/>
 </map>

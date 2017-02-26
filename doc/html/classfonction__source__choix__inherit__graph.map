@@ -1,5 +1,5 @@
 <map id="fonction_source_choix" name="fonction_source_choix">
-<area shape="rect" id="node2" href="$classfonction__base__source.html" title="fonction_base_source" alt="" coords="7,229,155,256"/>
+<area shape="rect" id="node2" href="$classfonction__base__source.html" title="Classe commune à toutes les fonctions de type sortie. " alt="" coords="7,229,155,256"/>
 <area shape="rect" id="node3" href="$classbase__fonction.html" title="Classe décrivant une fonction de conversion d&#39;un texte. " alt="" coords="30,155,132,181"/>
-<area shape="rect" id="node4" href="$classobjet__selectionnable.html" title="objet_selectionnable" alt="" coords="11,80,151,107"/>
+<area shape="rect" id="node4" href="$classobjet__selectionnable.html" title="Classe décrivant un objet sélectionnable dans l&#39;explorateur. " alt="" coords="11,80,151,107"/>
 </map>

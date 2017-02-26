@@ -1,8 +1,8 @@
 <map id="entete/fonction/fonction_source/fonction_source_texte.h" name="entete/fonction/fonction_source/fonction_source_texte.h">
-<area shape="rect" id="node2" href="$fenetre__principale_8cpp.html" title="Implémentation de la classe fenetre_principale. " alt="" coords="5,132,176,159"/>
-<area shape="rect" id="node3" href="$bibliotheque__fonctions_8cpp.html" title="src/fonction/bibliotheque\l_fonctions.cpp" alt="" coords="200,125,363,166"/>
-<area shape="rect" id="node4" href="$fonction__source__texte_8cpp.html" title="src/fonction/fonction\l_source/fonction_source\l_texte.cpp" alt="" coords="387,117,551,173"/>
-<area shape="rect" id="node5" href="$base__fonction__widget__avec__text__edit_8cpp.html" title="src/fonction_widget\l/base_fonction_widget\l_avec_text_edit.cpp" alt="" coords="576,117,728,173"/>
-<area shape="rect" id="node6" href="$fonction__source__texte__widget_8cpp.html" title="src/fonction_widget\l/fonction_source_widget\l/fonction_source_texte\l_widget.cpp" alt="" coords="752,110,915,181"/>
-<area shape="rect" id="node7" href="$base__parametre_8cpp.html" title="src/projet/base_parametre.cpp" alt="" coords="939,132,1137,159"/>
+<area shape="rect" id="node2" href="$fenetre__principale_8cpp.html" title="Fichier d&#39;implémentation de la classe fenetre_principale. " alt="" coords="5,132,176,159"/>
+<area shape="rect" id="node3" href="$bibliotheque__fonctions_8cpp.html" title="Fichier d&#39;implémentation de la classe bibliotheque_fonction. " alt="" coords="200,125,363,166"/>
+<area shape="rect" id="node4" href="$fonction__source__texte_8cpp.html" title="Fichier d&#39;implémentation de la classe fonction_source_texte. " alt="" coords="387,117,551,173"/>
+<area shape="rect" id="node5" href="$base__fonction__widget__avec__text__edit_8cpp_source.html" title="src/fonction_widget\l/base_fonction_widget\l_avec_text_edit.cpp" alt="" coords="576,117,728,173"/>
+<area shape="rect" id="node6" href="$fonction__source__texte__widget_8cpp_source.html" title="src/fonction_widget\l/fonction_source_widget\l/fonction_source_texte\l_widget.cpp" alt="" coords="752,110,915,181"/>
+<area shape="rect" id="node7" href="$base__parametre_8cpp.html" title="Fichier d&#39;implémentation de la classe base_parametre. " alt="" coords="939,132,1137,159"/>
 </map>

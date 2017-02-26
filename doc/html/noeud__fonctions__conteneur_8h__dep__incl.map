@@ -1,9 +1,9 @@
 <map id="entete/explorateur/noeud_fonctions_conteneur.h" name="entete/explorateur/noeud_fonctions_conteneur.h">
-<area shape="rect" id="node2" href="$noeud__projet_8h.html" title="entete/explorateur\l/noeud_projet.h" alt="" coords="471,97,597,138"/>
+<area shape="rect" id="node2" href="$noeud__projet_8h.html" title="Fichier de déclaration de la classe noeud_projet. " alt="" coords="471,97,597,138"/>
 <area shape="rect" id="node8" href="$noeud__fonctions__conteneur_8cpp.html" title="Fichier d&#39;implémentation de la class noeud_fonctions_conteneur. " alt="" coords="623,97,793,138"/>
 <area shape="rect" id="node3" href="$compilateur_8cpp.html" title="Fichier d&#39;implémentation de la classe compilateur. " alt="" coords="5,195,211,221"/>
 <area shape="rect" id="node4" href="$explorateur_8cpp.html" title="Fichier d&#39;implémentation de la classe explorateur. " alt="" coords="235,195,436,221"/>
 <area shape="rect" id="node5" href="$noeud__projet_8cpp.html" title="Fichier d&#39;implémentation de la classe noeud_projet. " alt="" coords="461,187,608,229"/>
-<area shape="rect" id="node6" href="$fenetre__principale_8cpp.html" title="Implémentation de la classe fenetre_principale. " alt="" coords="632,195,803,221"/>
-<area shape="rect" id="node7" href="$projet_8cpp.html" title="src/projet/projet.cpp" alt="" coords="827,195,964,221"/>
+<area shape="rect" id="node6" href="$fenetre__principale_8cpp.html" title="Fichier d&#39;implémentation de la classe fenetre_principale. " alt="" coords="632,195,803,221"/>
+<area shape="rect" id="node7" href="$projet_8cpp.html" title="Fichier d&#39;implémentation de la classe projet. " alt="" coords="827,195,964,221"/>
 </map>

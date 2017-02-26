@@ -3,15 +3,16 @@
 <head>
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
-<meta name="generator" content="Doxygen 1.8.13"/>
-<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<meta name="generator" content="Doxygen 1.8.6"/>
 <title>Emgine:  Fichier source de entete/explorateur/noeud_projet.h</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+  $(document).ready(function() { searchBox.OnSelectItem(0); });
+</script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
@@ -20,7 +21,7 @@
 <table cellspacing="0" cellpadding="0">
  <tbody>
  <tr style="height: 56px;">
-  <td id="projectalign" style="padding-left: 0.5em;">
+  <td style="padding-left: 0.5em;">
    <div id="projectname">Emgine
    </div>
   </td>
@@ -29,25 +30,47 @@
 </table>
 </div>
 <!-- end header part -->
-<!-- Généré par Doxygen 1.8.13 -->
+<!-- Généré par Doxygen 1.8.6 -->
 <script type="text/javascript">
 var searchBox = new SearchBox("searchBox", "search",false,'Recherche');
 </script>
-<script type="text/javascript" src="menudata.js"></script>
-<script type="text/javascript" src="menu.js"></script>
-<script type="text/javascript">
-$(function() {
-  initMenu('',true,false,'search.php','Recherche');
-  $(document).ready(function() { init_search(); });
-});
-</script>
-<div id="main-nav"></div>
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>Page&#160;principale</span></a></li>
+      <li><a href="pages.html"><span>Pages&#160;associées</span></a></li>
+      <li><a href="modules.html"><span>Modules</span></a></li>
+      <li><a href="annotated.html"><span>Classes</span></a></li>
+      <li class="current"><a href="files.html"><span>Fichiers</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="Recherche" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
+          </span>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="files.html"><span>Liste&#160;des&#160;fichiers</span></a></li>
+      <li><a href="globals.html"><span>Membres&#160;de&#160;fichier</span></a></li>
+    </ul>
+  </div>
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-</div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>Tout</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Fichiers</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Fonctions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Définitions de type</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Énumérations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Valeurs énumérées</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Groupes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&#160;</span>Pages</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -66,24 +89,43 @@ $(function() {
 <div class="title">noeud_projet.h</div>  </div>
 </div><!--header-->
 <div class="contents">
-<a href="noeud__projet_8h.html">Aller à la documentation de ce fichier.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#ifndef NOEUD_PROJET_H</span></div><div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor">#define NOEUD_PROJET_H</span></div><div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;</div><div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="noeud__fonctions__conteneur_8h.html">entete/explorateur/noeud_fonctions_conteneur.h</a>&quot;</span></div><div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;</div><div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="keyword">class </span><a class="code" href="classcompilateur.html">compilateur</a>;</div><div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="keyword">class </span><a class="code" href="classprojet.html">projet</a>;</div><div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;</div><div class="line"><a name="l00019"></a><span class="lineno"><a class="line" href="classnoeud__projet.html">   19</a></span>&#160;<span class="keyword">class </span><a class="code" href="classnoeud__projet.html">noeud_projet</a> : <span class="keyword">public</span> <a class="code" href="classnoeud__fonctions__conteneur.html">noeud_fonctions_conteneur</a></div><div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;{</div><div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;     <span class="keyword">public</span>:</div><div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;        <a class="code" href="classnoeud__projet.html#a77f0321eb5d6378dbd9c27f10cfc0ba3">noeud_projet</a>( <a class="code" href="classprojet.html">projet</a>* p );</div><div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;        <a class="code" href="classnoeud__projet.html#a5784e6afa6750604e93f29182b3e5caf">~noeud_projet</a>();</div><div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;</div><div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;        <a class="code" href="classprojet.html">projet</a>* <a class="code" href="classnoeud__projet.html#a5c1c53d3688658e66ce01bd62790e165">get_projet</a>() <span class="keyword">const</span>;</div><div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;        QString <a class="code" href="classnoeud__projet.html#aec4b69a41d757499a781ba504666f60b">get_nom</a>() <span class="keyword">const</span>;</div><div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="classnoeud__projet.html#adc7f5d549fdf1a0855c334c1ba99a317">executer</a>( <a class="code" href="classcompilateur.html">compilateur</a> &amp; compil );</div><div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="classnoeud__projet.html#a679e260848faf5f4686dfe6748bb7483">charger</a>();</div><div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="classnoeud__projet.html#a2db95e8cc9a1db3c1c100df50ff4b1fd">mise_a_jour_icone</a>();</div><div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;};</div><div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;</div><div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;<span class="preprocessor">#endif // NOEUD_PROJET_H</span></div><div class="ttc" id="classnoeud__projet_html_a77f0321eb5d6378dbd9c27f10cfc0ba3"><div class="ttname"><a href="classnoeud__projet.html#a77f0321eb5d6378dbd9c27f10cfc0ba3">noeud_projet::noeud_projet</a></div><div class="ttdeci">noeud_projet(projet *p)</div><div class="ttdoc">Constructeur de la classe noeud_projet. </div><div class="ttdef"><b>Definition:</b> <a href="noeud__projet_8cpp_source.html#l00022">noeud_projet.cpp:22</a></div></div>
-<div class="ttc" id="classnoeud__projet_html_adc7f5d549fdf1a0855c334c1ba99a317"><div class="ttname"><a href="classnoeud__projet.html#adc7f5d549fdf1a0855c334c1ba99a317">noeud_projet::executer</a></div><div class="ttdeci">void executer(compilateur &amp;compil)</div></div>
-<div class="ttc" id="classcompilateur_html"><div class="ttname"><a href="classcompilateur.html">compilateur</a></div><div class="ttdoc">Classe décrivant un compilateur. Le compilateur a pour rôle d&amp;#39;exécuter un projet. ...</div><div class="ttdef"><b>Definition:</b> <a href="compilateur_8h_source.html#l00030">compilateur.h:30</a></div></div>
-<div class="ttc" id="classnoeud__projet_html_a5c1c53d3688658e66ce01bd62790e165"><div class="ttname"><a href="classnoeud__projet.html#a5c1c53d3688658e66ce01bd62790e165">noeud_projet::get_projet</a></div><div class="ttdeci">projet * get_projet() const</div><div class="ttdoc">Retourne le projet associé au noeud. </div><div class="ttdef"><b>Definition:</b> <a href="noeud__projet_8cpp_source.html#l00042">noeud_projet.cpp:42</a></div></div>
+<a href="noeud__projet_8h.html">Aller à la documentation de ce fichier.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#ifndef NOEUD_PROJET_H</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#define NOEUD_PROJET_H</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="preprocessor"></span></div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="noeud__fonctions__conteneur_8h.html">entete/explorateur/noeud_fonctions_conteneur.h</a>&quot;</span></div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;</div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="keyword">class </span><a class="code" href="classcompilateur.html">compilateur</a>;</div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="keyword">class </span><a class="code" href="classprojet.html">projet</a>;</div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;</div>
+<div class="line"><a name="l00019"></a><span class="lineno"><a class="line" href="classnoeud__projet.html">   19</a></span>&#160;<span class="keyword">class </span><a class="code" href="classnoeud__projet.html">noeud_projet</a> : <span class="keyword">public</span> <a class="code" href="classnoeud__fonctions__conteneur.html">noeud_fonctions_conteneur</a></div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;{</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;     <span class="keyword">public</span>:</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;        <a class="code" href="classnoeud__projet.html#a77f0321eb5d6378dbd9c27f10cfc0ba3">noeud_projet</a>( <a class="code" href="classprojet.html">projet</a>* p );</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;        <a class="code" href="classnoeud__projet.html#a5784e6afa6750604e93f29182b3e5caf">~noeud_projet</a>();</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;        <a class="code" href="classprojet.html">projet</a>* <a class="code" href="classnoeud__projet.html#a92998353daadafa7224e86a70154990e">get_projet</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;        QString get_nom() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;        <span class="keywordtype">void</span> executer( <a class="code" href="classcompilateur.html">compilateur</a> &amp; compil );</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;        <span class="keywordtype">void</span> charger();</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="classnoeud__projet.html#a2db95e8cc9a1db3c1c100df50ff4b1fd">mise_a_jour_icone</a>();</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;};</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;<span class="preprocessor">#endif // NOEUD_PROJET_H</span></div>
+<div class="ttc" id="classnoeud__projet_html_a77f0321eb5d6378dbd9c27f10cfc0ba3"><div class="ttname"><a href="classnoeud__projet.html#a77f0321eb5d6378dbd9c27f10cfc0ba3">noeud_projet::noeud_projet</a></div><div class="ttdeci">noeud_projet(projet *p)</div><div class="ttdoc">Constructeur de la classe noeud_projet. </div><div class="ttdef"><b>Definition:</b> <a href="noeud__projet_8cpp_source.html#l00022">noeud_projet.cpp:22</a></div></div>
+<div class="ttc" id="classcompilateur_html"><div class="ttname"><a href="classcompilateur.html">compilateur</a></div><div class="ttdoc">Classe décrivant un compilateur. Le compilateur a pour rôle d&#39;exécuter un projet. ...</div><div class="ttdef"><b>Definition:</b> <a href="compilateur_8h_source.html#l00030">compilateur.h:30</a></div></div>
 <div class="ttc" id="classnoeud__projet_html_a5784e6afa6750604e93f29182b3e5caf"><div class="ttname"><a href="classnoeud__projet.html#a5784e6afa6750604e93f29182b3e5caf">noeud_projet::~noeud_projet</a></div><div class="ttdeci">~noeud_projet()</div><div class="ttdoc">Destructeur de la classe noeud_projet. </div><div class="ttdef"><b>Definition:</b> <a href="noeud__projet_8cpp_source.html#l00034">noeud_projet.cpp:34</a></div></div>
 <div class="ttc" id="classnoeud__fonctions__conteneur_html"><div class="ttname"><a href="classnoeud__fonctions__conteneur.html">noeud_fonctions_conteneur</a></div><div class="ttdoc">Classe décrivant un noeud associé à un fonctions_conteneur. </div><div class="ttdef"><b>Definition:</b> <a href="noeud__fonctions__conteneur_8h_source.html#l00019">noeud_fonctions_conteneur.h:19</a></div></div>
 <div class="ttc" id="classnoeud__projet_html"><div class="ttname"><a href="classnoeud__projet.html">noeud_projet</a></div><div class="ttdoc">Classe décrivant un noeud associé à un projet. </div><div class="ttdef"><b>Definition:</b> <a href="noeud__projet_8h_source.html#l00019">noeud_projet.h:19</a></div></div>
-<div class="ttc" id="classprojet_html"><div class="ttname"><a href="classprojet.html">projet</a></div><div class="ttdoc">Classe décrivant un projet. </div><div class="ttdef"><b>Definition:</b> <a href="projet_8h_source.html#l00019">projet.h:19</a></div></div>
-<div class="ttc" id="classnoeud__projet_html_a2db95e8cc9a1db3c1c100df50ff4b1fd"><div class="ttname"><a href="classnoeud__projet.html#a2db95e8cc9a1db3c1c100df50ff4b1fd">noeud_projet::mise_a_jour_icone</a></div><div class="ttdeci">void mise_a_jour_icone()</div><div class="ttdoc">Fonction mettant à jour l&amp;#39;icône. </div><div class="ttdef"><b>Definition:</b> <a href="noeud__projet_8cpp_source.html#l00050">noeud_projet.cpp:50</a></div></div>
+<div class="ttc" id="classprojet_html"><div class="ttname"><a href="classprojet.html">projet</a></div><div class="ttdoc">Classe décrivant un projet. </div><div class="ttdef"><b>Definition:</b> <a href="projet_8h_source.html#l00026">projet.h:26</a></div></div>
+<div class="ttc" id="classnoeud__projet_html_a2db95e8cc9a1db3c1c100df50ff4b1fd"><div class="ttname"><a href="classnoeud__projet.html#a2db95e8cc9a1db3c1c100df50ff4b1fd">noeud_projet::mise_a_jour_icone</a></div><div class="ttdeci">void mise_a_jour_icone()</div><div class="ttdoc">Fonction mettant à jour l&#39;icône. </div><div class="ttdef"><b>Definition:</b> <a href="noeud__projet_8cpp_source.html#l00050">noeud_projet.cpp:50</a></div></div>
 <div class="ttc" id="noeud__fonctions__conteneur_8h_html"><div class="ttname"><a href="noeud__fonctions__conteneur_8h.html">noeud_fonctions_conteneur.h</a></div><div class="ttdoc">Fichier de déclaration de la classe noeud_fonctions_conteneur. </div></div>
-<div class="ttc" id="classnoeud__projet_html_aec4b69a41d757499a781ba504666f60b"><div class="ttname"><a href="classnoeud__projet.html#aec4b69a41d757499a781ba504666f60b">noeud_projet::get_nom</a></div><div class="ttdeci">QString get_nom() const</div></div>
-<div class="ttc" id="classnoeud__projet_html_a679e260848faf5f4686dfe6748bb7483"><div class="ttname"><a href="classnoeud__projet.html#a679e260848faf5f4686dfe6748bb7483">noeud_projet::charger</a></div><div class="ttdeci">void charger()</div></div>
+<div class="ttc" id="classnoeud__projet_html_a92998353daadafa7224e86a70154990e"><div class="ttname"><a href="classnoeud__projet.html#a92998353daadafa7224e86a70154990e">noeud_projet::get_projet</a></div><div class="ttdeci">projet * get_projet() const </div><div class="ttdoc">Retourne le projet associé au noeud. </div><div class="ttdef"><b>Definition:</b> <a href="noeud__projet_8cpp_source.html#l00042">noeud_projet.cpp:42</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Généré le Jeudi 9 Février 2017 15:10:45 pour Emgine par &#160;<a href="http://www.doxygen.org/index.html">
+Généré le Vendredi 10 Février 2017 15:45:28 pour Emgine par &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
-</a> 1.8.13
+</a> 1.8.6
 </small></address>
 </body>
 </html>

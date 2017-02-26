@@ -1,15 +1,15 @@
 <map id="base_fonction::charger" name="base_fonction::charger">
-<area shape="rect" id="node2" href="$classbase__fonction.html#aac434731c9e5d95398d3baae6c74d447" title="base_fonction::set\l_niveau_visibilite" alt="" coords="431,5,561,46"/>
-<area shape="rect" id="node3" href="$classbase__fonction.html#a58252a04c7afea216c29d13132b0d6a2" title="base_fonction::set\l_est_active" alt="" coords="225,118,354,159"/>
-<area shape="rect" id="node8" href="$classbase__fonction.html#aecefb6e946e43e9d6dc835165ac7e265" title="Retourne le type de la fonction. " alt="" coords="209,215,370,241"/>
-<area shape="rect" id="node9" href="$classobjet__selectionnable.html#a8f3ce3c0cf4e85da9115b7517f9e0e2d" title="objet_selectionnable\l::charger" alt="" coords="219,266,359,307"/>
-<area shape="rect" id="node13" href="$classbase__fonction.html#a96c37e73c9822d7e9b483ce5fa37bd16" title="base_fonction::charger\l_parametres" alt="" coords="212,333,367,374"/>
-<area shape="rect" id="node4" href="$classbase__fonction.html#a58bf7761b1416f494d035ca415d28dcd" title="base_fonction::get\l_niveau_visibilite" alt="" coords="431,70,561,111"/>
-<area shape="rect" id="node5" href="$classobjet__selectionnable.html#acb1bf63e061079a402c929ce346b0b22" title="objet_selectionnable\l::set_est_active" alt="" coords="426,135,566,177"/>
-<area shape="rect" id="node6" href="$classobjet__selectionnable.html#a9f76b8e89231a79c3fc840af874bd868" title="objet_selectionnable\l::modifier" alt="" coords="622,234,762,275"/>
-<area shape="rect" id="node7" href="$classobjet__selectionnable.html#a97e33c61983d5c7811e8bacff8f114c4" title="objet_selectionnable\l::est_projet" alt="" coords="811,234,951,275"/>
-<area shape="rect" id="node10" href="$classobjet__selectionnable.html#ae58408e8c4421e9c33bc488381e8c0a4" title="objet_selectionnable\l::est_etendu" alt="" coords="426,201,566,242"/>
-<area shape="rect" id="node11" href="$classobjet__selectionnable.html#aafef1c588ce9d5f7956c321799986b9b" title="objet_selectionnable\l::set_est_etendu" alt="" coords="426,266,566,307"/>
-<area shape="rect" id="node12" href="$classobjet__selectionnable.html#a5d39343f43293805a0b60e8520687d87" title="objet_selectionnable\l::set_verrouille" alt="" coords="426,331,566,373"/>
-<area shape="rect" id="node14" href="$classbase__fonction.html#a46971e37a472f45a8031be6e8aec15f2" title="base_fonction::charger\l_parametre" alt="" coords="419,397,573,438"/>
+<area shape="rect" id="node2" href="$classbase__fonction.html#aac434731c9e5d95398d3baae6c74d447" title="Initialise le niveau de visibilité de la fonction. " alt="" coords="431,5,561,46"/>
+<area shape="rect" id="node3" href="$classbase__fonction.html#a58252a04c7afea216c29d13132b0d6a2" title="Initialise l&#39;activation de la fonction. " alt="" coords="225,118,354,159"/>
+<area shape="rect" id="node8" href="$classbase__fonction.html#aecefb6e946e43e9d6dc835165ac7e265" title="Accesseur du type de la fonction. " alt="" coords="209,215,370,241"/>
+<area shape="rect" id="node9" href="$classobjet__selectionnable.html#a8f3ce3c0cf4e85da9115b7517f9e0e2d" title="Charge l&#39;objet à partir d&#39;une source xml donnée. " alt="" coords="219,266,359,307"/>
+<area shape="rect" id="node13" href="$classbase__fonction.html#a96c37e73c9822d7e9b483ce5fa37bd16" title="Charge les paramètres à partir d&#39;une source xml donnée. " alt="" coords="212,333,367,374"/>
+<area shape="rect" id="node4" href="$classbase__fonction.html#a58bf7761b1416f494d035ca415d28dcd" title="Accesseur du niveau de visibilité de la fonction. " alt="" coords="431,70,561,111"/>
+<area shape="rect" id="node5" href="$classobjet__selectionnable.html#acb1bf63e061079a402c929ce346b0b22" title="Initialise l&#39;état d&#39;activation de l&#39;objet. " alt="" coords="426,135,566,177"/>
+<area shape="rect" id="node6" href="$classobjet__selectionnable.html#a9f76b8e89231a79c3fc840af874bd868" title="Modifie l&#39;objet. " alt="" coords="622,234,762,275"/>
+<area shape="rect" id="node7" href="$classobjet__selectionnable.html#a97e33c61983d5c7811e8bacff8f114c4" title="Indique si l&#39;objet est un projet. " alt="" coords="811,234,951,275"/>
+<area shape="rect" id="node10" href="$classobjet__selectionnable.html#ae58408e8c4421e9c33bc488381e8c0a4" title="Indique si l&#39;objet est étendu. " alt="" coords="426,201,566,242"/>
+<area shape="rect" id="node11" href="$classobjet__selectionnable.html#aafef1c588ce9d5f7956c321799986b9b" title="Initialise l&#39;état étendu de l&#39;objet. " alt="" coords="426,266,566,307"/>
+<area shape="rect" id="node12" href="$classobjet__selectionnable.html#a5d39343f43293805a0b60e8520687d87" title="Initialise l&#39;état de verrouillage de l&#39;objet. " alt="" coords="426,331,566,373"/>
+<area shape="rect" id="node14" href="$classbase__fonction.html#a46971e37a472f45a8031be6e8aec15f2" title="Charge un paramètre à partir d&#39;une source xml donnée. " alt="" coords="419,397,573,438"/>
 </map>

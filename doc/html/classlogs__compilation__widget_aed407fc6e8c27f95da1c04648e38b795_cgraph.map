@@ -4,6 +4,6 @@
 <area shape="rect" id="node4" href="$classlogs__compilation__widget.html#a762d235701b30ea56c58cfe728376b41" title="Fonction appelée lors d&#39;une demande d&#39;effacement des logs. " alt="" coords="441,70,605,111"/>
 <area shape="rect" id="node6" href="$classlogs__compilation__widget.html#a7309ca28f4c69b1ee2971b65ebf29bc6" title="Fonction appelée lors d&#39;un click sur un item de la liste. " alt="" coords="441,135,605,177"/>
 <area shape="rect" id="node5" href="$classlogs__compilation__widget.html#ab85d6c314f810a0974383bfb40e71717" title="Efface l&#39;ensemble des logs. " alt="" coords="654,70,818,111"/>
-<area shape="rect" id="node7" href="$classobjet__selectionnable.html#a645da22be6e3f8747086da238e788fb9" title="objet_selectionnable\l::selectionner" alt="" coords="666,135,806,177"/>
-<area shape="rect" id="node8" href="$classobjet__selectionnable.html#a555085da89b30b07349064bb54a26138" title="objet_selectionnable\l::deselectionner" alt="" coords="867,135,1007,177"/>
+<area shape="rect" id="node7" href="$classobjet__selectionnable.html#a645da22be6e3f8747086da238e788fb9" title="Sélectionne l&#39;objet. " alt="" coords="666,135,806,177"/>
+<area shape="rect" id="node8" href="$classobjet__selectionnable.html#a555085da89b30b07349064bb54a26138" title="Désélectionne l&#39;objet sélectionné. " alt="" coords="867,135,1007,177"/>
 </map>

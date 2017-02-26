@@ -1,21 +1,35 @@
+/** \file vue_fonctions.cpp
+ * \brief Fichier d'implémentation de la classe vue_fonctions.
+ * \author Sébastien Angibaud
+ */
+
 #include "entete/fonction_widget/vue_fonctions.h"
 
-#include "entete/projet/base_fonction.h"
 #include "entete/fonction_widget/base_fonction_widget.h"
+#include "entete/projet/base_fonction.h"
 #include "entete/projet/projet.h"
 
-#include <QtGui>
 #include <QApplication>
 #include <QHeaderView>
-#include <iostream>
 #include <QScrollBar>
+#include <QtGui>
 
+#include <iostream>
+
+/** --------------------------------------------------------------------------------------
+ * \brief Constructeur de la classe vue_fonctions.
+ * \param parent Un pointeur sur le widgte parent.
+ */
 vue_fonctions::vue_fonctions(QWidget *parent)
     : QTableWidget(parent), m_conteneur_courant(NULL), m_bloquer_selection(false)
 {
     init();
 }
 
+/** --------------------------------------------------------------------------------------
+ * \brief Ajoute un projet disponible à la vue.
+ * \param p Un pointeur sur le projet à ajouter.
+ */
 void vue_fonctions::ajouter_projet(projet *p)
 {
     if ( p != NULL )
@@ -30,6 +44,9 @@ void vue_fonctions::ajouter_projet(projet *p)
     }
 }
 
+/** --------------------------------------------------------------------------------------
+ * \brief Initialise la vue.
+ */
 void vue_fonctions::init()
 {
     setObjectName("vue_fonctions");
@@ -64,6 +81,10 @@ void vue_fonctions::init()
     connect(horizontalHeader(),SIGNAL(sectionClicked(int)), this,SLOT(on_hheaderclicked(int)));
 }
 
+/** --------------------------------------------------------------------------------------
+ * \brief Ajoute une fonction disponible à la vue.
+ * \param f Un pointeur sur la fonction à ajouter.
+ */
 void vue_fonctions::ajouter_fonction(base_fonction *f)
 {
     if ( f != NULL )
@@ -78,6 +99,10 @@ void vue_fonctions::ajouter_fonction(base_fonction *f)
     }
 }
 
+/** --------------------------------------------------------------------------------------
+ * \brief Ajoute un paramètre disponible à la vue.
+ * \param p Un pointeur sur le paramètre à ajouter.
+ */
 void vue_fonctions::ajouter_parametre(base_parametre* p)
 {
     if ( p != NULL )
@@ -93,7 +118,7 @@ void vue_fonctions::ajouter_parametre(base_parametre* p)
 }
 
 /** --------------------------------------------------------------------------------------
- \brief On crée la vue.
+ * \brief Crée la vue à partir du conteneur courant.
 */
 void vue_fonctions::creer_vue_conteneur()
 {
@@ -123,18 +148,19 @@ void vue_fonctions::creer_vue_conteneur()
 }
 
 /** --------------------------------------------------------------------------------------
- \brief Ajoute la vue de la fonction.
+ * \brief Ajoute la vue d'une fonction donnée.
+ * \param f Un pointeur sur la fonction à ajouter.
 */
-void vue_fonctions::ajouter_vue_fonction(base_fonction* fonction)
+void vue_fonctions::ajouter_vue_fonction(base_fonction* f)
 {
-    base_fonction_widget * widget = fonction->generer_fonction_widget();
+    base_fonction_widget * widget = f->generer_fonction_widget();
 
     connect( widget, SIGNAL(signal_bfw_size_change()),
              this, SLOT(on_externe_fonction_widget_size_change()));
     connect( widget, SIGNAL(signal_bfw_demande_creation_projet(const texte &)),
                             this, SLOT(on_externe_demande_creation_projet(const texte &)));
 
-    int position = fonction->get_position();
+    int position = f->get_position();
     insertRow(position);
 
     setCellWidget(position, 1, (QWidget*)widget);
@@ -146,9 +172,9 @@ void vue_fonctions::ajouter_vue_fonction(base_fonction* fonction)
     QPushButton * image = new QPushButton();
     image->setObjectName("NomParametre");
     QIcon icon1;
-    if ( fonction->get_type() == type_fonction::fonction_source )
+    if ( f->get_type() == type_fonction::fonction_source )
         icon1.addFile(QString::fromUtf8("icons/selection_source.png"), QSize(), QIcon::Normal, QIcon::Off);
-    else if ( fonction->get_type() == type_fonction::fonction_conversion )
+    else if ( f->get_type() == type_fonction::fonction_conversion )
         icon1.addFile(QString::fromUtf8("icons/selection_conversion.png"), QSize(), QIcon::Normal, QIcon::Off);
     else
         icon1.addFile(QString::fromUtf8("icons/selection_sortie.png"), QSize(), QIcon::Normal, QIcon::Off);
@@ -160,12 +186,20 @@ void vue_fonctions::ajouter_vue_fonction(base_fonction* fonction)
     image->setEnabled(false);
 }
 
+/** --------------------------------------------------------------------------------------
+ * \brief Ajoute un objet sélectionnable à la vue.
+ * \param obj Un pointeur sur l'objet à ajouter.
+ */
 void vue_fonctions::ajouter_selectionnable(objet_selectionnable *obj)
 {
     m_selectionnables.insert(obj);
     connecter_selectionnable(obj);
 }
 
+/** --------------------------------------------------------------------------------------
+ * \brief Ajoute les connections pour un objet sélectionnable donné.
+ * \param obj Un pointeur sur l'objet à connecter.
+ */
 void vue_fonctions::connecter_selectionnable( objet_selectionnable *obj )
 {
     connect( obj, SIGNAL(signal_os_selectionne(objet_selectionnable*)),
@@ -175,6 +209,10 @@ void vue_fonctions::connecter_selectionnable( objet_selectionnable *obj )
              this, SLOT(on_externe_objet_deselectionne(objet_selectionnable*)));
 }
 
+/** --------------------------------------------------------------------------------------
+ * \brief Retire les connections pour un objet sélectionnable donné.
+ * \param obj Un pointeur sur l'objet à déconnecter.
+ */
 void vue_fonctions::deconnecter_selectionnable( objet_selectionnable *obj )
 {
     disconnect( obj, SIGNAL(signal_os_selectionne(objet_selectionnable*)),
@@ -184,6 +222,10 @@ void vue_fonctions::deconnecter_selectionnable( objet_selectionnable *obj )
                 this, SLOT(on_externe_objet_deselectionne(objet_selectionnable*)));
 }
 
+/** --------------------------------------------------------------------------------------
+ * \brief Ajoute les connections pour un projet donné.
+ * \param p Un pointeur sur le projet à connecter.
+ */
 void vue_fonctions::connecter_projet( projet *p )
 {
     connect( (fonctions_conteneur*)p, SIGNAL(signal_fc_creation_fonction(base_fonction*)),
@@ -199,6 +241,10 @@ void vue_fonctions::connecter_projet( projet *p )
              this, SLOT(on_externe_destruction_projet(projet *)));
 }
 
+/** --------------------------------------------------------------------------------------
+ * \brief Retire les connections pour un projet donné.
+ * \param p Un pointeur sur le projet à déconnecter.
+ */
 void vue_fonctions::deconnecter_projet( projet *p )
 {
     disconnect( (fonctions_conteneur*)p, SIGNAL(signal_fc_creation_fonction(base_fonction*)),
@@ -214,6 +260,10 @@ void vue_fonctions::deconnecter_projet( projet *p )
                 this, SLOT(on_externe_destruction_projet(projet *)));
 }
 
+/** --------------------------------------------------------------------------------------
+ * \brief Retire les connections pour un objet sélectionnable donné.
+ * \param obj Un pointeur sur l'objet à connecter.
+ */
 void vue_fonctions::deconnecter(objet_selectionnable* obj)
 {
     // déconnection de base de l'objet
@@ -239,6 +289,9 @@ void vue_fonctions::deconnecter(objet_selectionnable* obj)
         m_selectionnables.erase(it);
 }
 
+/** --------------------------------------------------------------------------------------
+ * \brief Ajuste la taille de chaque ligne du widget.
+ */
 void vue_fonctions::adjust_size_vue_fonction()
 {
     for ( int i = 0; i < rowCount(); ++i )
@@ -250,6 +303,10 @@ void vue_fonctions::adjust_size_vue_fonction()
     setVerticalScrollBarPolicy(Qt::ScrollBarAlwaysOn);
 }
 
+/** --------------------------------------------------------------------------------------
+ * \brief Fonction appelée lorsqu'une fonction est supprimée.
+ * \param f Un pointeur sur la fonction supprimée.
+ */
 void vue_fonctions::on_externe_supprimer_fonction(base_fonction *f)
 {
     bool trouve = false;
@@ -275,6 +332,10 @@ void vue_fonctions::on_externe_supprimer_fonction(base_fonction *f)
     deconnecter((objet_selectionnable*)f);
 }
 
+/** --------------------------------------------------------------------------------------
+ * \brief Fonction appelée lorsque l'état de vérrouillage d'un objet change.
+ * \param obj Un pointeur sur l'objet modifié.
+ */
 void vue_fonctions::on_externe_verrouillage_change(objet_selectionnable *obj)
 {
     if( m_conteneur_courant == obj )
@@ -282,12 +343,20 @@ void vue_fonctions::on_externe_verrouillage_change(objet_selectionnable *obj)
             ((base_fonction_widget*)cellWidget(i,1))->mettre_a_jour_verrouillage();
 }
 
+/** --------------------------------------------------------------------------------------
+ * \brief Fonction appelée lorsque le nom d'un projet change.
+ * \param p Un pointeur sur le projet modifié.
+ */
 void vue_fonctions::on_externe_nom_projet_change(projet *p)
 {
     if( m_conteneur_courant == p )
         horizontalHeaderItem(1)->setText( m_conteneur_courant->get_titre() );
 }
 
+/** --------------------------------------------------------------------------------------
+ * \brief Fonction appelée lorsqu'un projet est supprimé.
+ * \param p Un pointeur sur le projet supprimé.
+ */
 void vue_fonctions::on_externe_destruction_projet(projet *p)
 {
     if( m_conteneur_courant == p )
@@ -297,6 +366,10 @@ void vue_fonctions::on_externe_destruction_projet(projet *p)
     }
 }
 
+/** --------------------------------------------------------------------------------------
+ * \brief Fonction appelée lorsqu'un objet sélectionnable est sélectionné.
+ * \param obj Un pointeur sur l'objet sélectionné.
+ */
 void vue_fonctions::on_externe_objet_selectionne(objet_selectionnable *obj)
 {
     if ( obj->get_conteneur() != m_conteneur_courant )
@@ -326,6 +399,10 @@ void vue_fonctions::on_externe_objet_selectionne(objet_selectionnable *obj)
     }
 }
 
+/** --------------------------------------------------------------------------------------
+ * \brief Fonction appelée lorsqu'un objet est désélectionné.
+ * \param obj Un pointeur sur l'objet désélectionné.
+ */
 void vue_fonctions::on_externe_objet_deselectionne(objet_selectionnable *obj)
 {
     if ( obj->get_conteneur() != m_conteneur_courant )
@@ -340,6 +417,10 @@ void vue_fonctions::on_externe_objet_deselectionne(objet_selectionnable *obj)
     }
 }
 
+/** --------------------------------------------------------------------------------------
+ * \brief Fonction appelée lorsqu'une fonction est créée.
+ * \param f Un pointeur sur la fonction créée.
+ */
 void vue_fonctions::on_externe_creation_fonction(base_fonction* f)
 {
     ajouter_fonction(f);
@@ -349,8 +430,10 @@ void vue_fonctions::on_externe_creation_fonction(base_fonction* f)
 }
 
 /** --------------------------------------------------------------------------------------
- \brief La sélection de la vue_fonction change.
-*/
+ * \brief Fonction appelée lorsque la sélection change.
+ * \param last_index L'index de l'ancienne sélection.
+ * \param new_index L'index de la nouvelle sélection.
+ */
 void vue_fonctions::on_vue_fonction_selectionChanged(const QItemSelection &last_index, const QItemSelection & new_index)
 {
     if ( ! m_bloquer_selection )
@@ -362,16 +445,27 @@ void vue_fonctions::on_vue_fonction_selectionChanged(const QItemSelection &last_
     }
 }
 
+/** --------------------------------------------------------------------------------------
+ * \brief Fonction appelée lorsque la taille d'un widget fils change.
+ */
 void vue_fonctions::on_externe_fonction_widget_size_change()
 {
     adjust_size_vue_fonction();
 }
 
+/** --------------------------------------------------------------------------------------
+ * \brief Fonction appelée lors d'une demande de création de projet.
+ * \param t Le texte source du projet à créer.
+ */
 void vue_fonctions::on_externe_demande_creation_projet(const texte & t)
 {
     emit signal_vf_demande_creation_projet(t);
 }
 
+/** --------------------------------------------------------------------------------------
+ * \brief Fonction appelée lors d'un clic sur l'entête horizontale.
+ * \param colonne L'indice de la colonne clické.
+ */
 void vue_fonctions::on_hheaderclicked(int colonne)
 {
     if ( colonne == 1 )
@@ -383,5 +477,3 @@ void vue_fonctions::on_hheaderclicked(int colonne)
         }
     }
 }
-
-

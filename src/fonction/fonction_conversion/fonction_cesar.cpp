@@ -18,7 +18,7 @@
 
 #include <iostream>
 
-/*! --------------------------------------------------------------------------------------
+/** --------------------------------------------------------------------------------------
  \brief Constructeur de la classe fonction_cesar.
  \param conteneur Pointeur sur le conteneur de la fonction.
 */

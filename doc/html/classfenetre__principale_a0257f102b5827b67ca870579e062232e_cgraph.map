@@ -1,4 +1,3 @@
 <map id="fenetre_principale::ajouter_fonction" name="fenetre_principale::ajouter_fonction">
-<area shape="rect" id="node2" href="$classselecteur__fonction__dialog.html#a7971b10182a4fbb0a556940b7af9770a" title="selecteur_fonction\l_dialog::get_fonction" alt="" coords="179,5,322,46"/>
-<area shape="rect" id="node3" href="$classbase__fonction.html#aa487a07ab1961bfbdf04ddd3c72b4d3c" title="base_fonction::set\l_conteneur" alt="" coords="186,70,315,111"/>
+<area shape="rect" id="node2" href="$classbase__fonction.html#aa487a07ab1961bfbdf04ddd3c72b4d3c" title="Initialise le conteneur de la fonction. " alt="" coords="179,5,309,46"/>
 </map>

@@ -1,6 +1,6 @@
 <map id="fonctions_conteneur" name="fonctions_conteneur">
 <area shape="rect" id="node4" href="$classbase__parametre.html" title="Classe décrivant un parametre d&#39;une fonction. " alt="" coords="7,229,121,256"/>
 <area shape="rect" id="node6" href="$classprojet.html" title="Classe décrivant un projet. " alt="" coords="146,229,200,256"/>
-<area shape="rect" id="node2" href="$classobjet__selectionnable.html" title="objet_selectionnable" alt="" coords="49,80,188,107"/>
+<area shape="rect" id="node2" href="$classobjet__selectionnable.html" title="Classe décrivant un objet sélectionnable dans l&#39;explorateur. " alt="" coords="49,80,188,107"/>
 <area shape="rect" id="node5" href="$classparametre__choix.html" title="Classe décrivant un parametre de type choix. " alt="" coords="5,304,123,331"/>
 </map>

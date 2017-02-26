@@ -1,13 +1,23 @@
 #ifndef OBJET_SELECTIONNABLE_H
 #define OBJET_SELECTIONNABLE_H
 
+/** \file objet_selectionnable.h
+ * \brief Fichier de déclaration de la classe objet_selectionnable.
+ * \author Sébastien Angibaud
+ */
+
 #include <QObject>
-#include <QXmlStreamWriter>
 #include <QXmlStreamReader>
+#include <QXmlStreamWriter>
 
 class fonctions_conteneur;
 class projet;
 
+/**
+ * \class objet_selectionnable
+ * \brief Classe décrivant un objet sélectionnable dans l'explorateur.
+ * \author Sébastien Angibaud
+ */
 class objet_selectionnable : public QObject
 {
         Q_OBJECT
@@ -60,19 +70,44 @@ class objet_selectionnable : public QObject
         static projet * get_projet_courant(objet_selectionnable * obj);
 
     signals:
-        void signal_os_selectionne(objet_selectionnable*);
-        void signal_os_deselectionne(objet_selectionnable*);
-        void signal_os_destruction_selectionnable(objet_selectionnable*);
-        void signal_verrouillage_change(objet_selectionnable * f);
+        /** --------------------------------------------------------------------------------------
+         * \brief Signal informant qu'un objet est sélectionné.
+         * \param obj Un pointeur sur l'objet sélectionné.
+         */
+        void signal_os_selectionne(objet_selectionnable* obj);
+
+        /** --------------------------------------------------------------------------------------
+         * \brief Signal informant qu'un objet est désélectionné.
+         * \param obj Un pointeur sur l'objet désélectionné.
+         */
+        void signal_os_deselectionne(objet_selectionnable* obj);
+
+        /** --------------------------------------------------------------------------------------
+         * \brief Signal informant de la destruction d'un objet.
+         * \param obj Un pointeur sur l'objet détruit.
+         */
+        void signal_os_destruction_selectionnable(objet_selectionnable* obj);
+
+        /** --------------------------------------------------------------------------------------
+         * \brief Signal informant que le verrouillage d'un objet est modifié.
+         * \param obj Un pointeur sur l'objet modifié.
+         */
+        void signal_verrouillage_change(objet_selectionnable * obj);
 
     protected:
-        // L'objet actuellement sélectionné
+        /** \brief L'objet actuellement sélectionné. */
         static objet_selectionnable* s_objet_courant;
 
+        /** \brief Un pointeur sur l'objet parent. */
         objet_selectionnable* m_objet_parent;
 
+        /** \brief Indique si l'objet est actif. */
         bool m_est_active;
+
+        /** \brief Indique si l'objet est étendu, i.e. ses enfants sont visibles. */
         bool m_est_etendu;
+
+        /** \brief Indique si l'objet est verrouillé, i.e. est non modifiable. */
         bool m_verrouille;
 };
 

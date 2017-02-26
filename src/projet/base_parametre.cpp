@@ -223,7 +223,7 @@ void base_parametre::set_id(const type_id_parametre &id)
 /** --------------------------------------------------------------------------------------
   \brief Teste si le paramètre est valide.
   \param vue_logs Un pointeur sur le widget de vue des logs.
-  \return \b True si la fonction est valide, \b False sinon.
+  \return \b True si le paramètre est valide, \b False sinon.
 */
 bool base_parametre::est_valide(logs_compilation_widget * vue_logs)
 {

@@ -1,5 +1,5 @@
 <map id="explorateur::on_enregistrer_sous" name="explorateur::on_enregistrer_sous">
 <area shape="rect" id="node2" href="$classbase__noeud.html#ae78124477ea5148f16c2da42ac766f4c" title="Retourne l&#39;objet sélectionnable associé au noeud. " alt="" coords="265,5,418,32"/>
-<area shape="rect" id="node3" href="$classobjet__selectionnable.html#ab48a75e720955aebe27f720dfaa5e78e" title="objet_selectionnable\l::get_projet" alt="" coords="271,81,411,122"/>
-<area shape="rect" id="node4" href="$classobjet__selectionnable.html#a97e33c61983d5c7811e8bacff8f114c4" title="objet_selectionnable\l::est_projet" alt="" coords="467,81,607,122"/>
+<area shape="rect" id="node3" href="$classobjet__selectionnable.html#ab48a75e720955aebe27f720dfaa5e78e" title="Retourne le projet contenant l&#39;objet sélectionnable. " alt="" coords="271,81,411,122"/>
+<area shape="rect" id="node4" href="$classobjet__selectionnable.html#a97e33c61983d5c7811e8bacff8f114c4" title="Indique si l&#39;objet est un projet. " alt="" coords="467,81,607,122"/>
 </map>

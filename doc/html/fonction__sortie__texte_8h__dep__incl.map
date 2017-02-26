@@ -1,6 +1,6 @@
 <map id="entete/fonction/fonction_sortie/fonction_sortie_texte.h" name="entete/fonction/fonction_sortie/fonction_sortie_texte.h">
-<area shape="rect" id="node2" href="$fenetre__principale_8cpp.html" title="Implémentation de la classe fenetre_principale. " alt="" coords="5,132,176,159"/>
-<area shape="rect" id="node3" href="$bibliotheque__fonctions_8cpp.html" title="src/fonction/bibliotheque\l_fonctions.cpp" alt="" coords="200,125,363,166"/>
-<area shape="rect" id="node4" href="$fonction__sortie__texte_8cpp.html" title="src/fonction/fonction\l_sortie/fonction_sortie\l_texte.cpp" alt="" coords="387,117,537,173"/>
-<area shape="rect" id="node5" href="$fonction__sortie__texte__widget_8cpp.html" title="src/fonction_widget\l/fonction_sortie_widget\l/fonction_sortie_texte\l_widget.cpp" alt="" coords="562,110,717,181"/>
+<area shape="rect" id="node2" href="$fenetre__principale_8cpp.html" title="Fichier d&#39;implémentation de la classe fenetre_principale. " alt="" coords="5,132,176,159"/>
+<area shape="rect" id="node3" href="$bibliotheque__fonctions_8cpp.html" title="Fichier d&#39;implémentation de la classe bibliotheque_fonction. " alt="" coords="200,125,363,166"/>
+<area shape="rect" id="node4" href="$fonction__sortie__texte_8cpp.html" title="Fichier d&#39;implémentation de la classe fonction_sortie_texte. " alt="" coords="387,117,537,173"/>
+<area shape="rect" id="node5" href="$fonction__sortie__texte__widget_8cpp_source.html" title="src/fonction_widget\l/fonction_sortie_widget\l/fonction_sortie_texte\l_widget.cpp" alt="" coords="562,110,717,181"/>
 </map>

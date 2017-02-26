@@ -1,11 +1,11 @@
 <map id="fonction_base_source" name="fonction_base_source">
-<area shape="rect" id="node5" href="$classfonction__source__booleen.html" title="fonction_source_booleen" alt="" coords="675,5,842,32"/>
-<area shape="rect" id="node6" href="$classfonction__source__caractere.html" title="fonction_source_caractere" alt="" coords="671,56,846,83"/>
-<area shape="rect" id="node7" href="$classfonction__source__choix.html" title="fonction_source_choix" alt="" coords="683,107,835,133"/>
-<area shape="rect" id="node8" href="$classfonction__source__entier.html" title="fonction_source_entier" alt="" coords="682,157,835,184"/>
-<area shape="rect" id="node9" href="$classfonction__source__fichier__texte.html" title="fonction_source_fichier\l_texte" alt="" coords="681,209,837,250"/>
-<area shape="rect" id="node10" href="$classfonction__source__permutation.html" title="fonction_source_permutation" alt="" coords="664,275,853,301"/>
-<area shape="rect" id="node11" href="$classfonction__source__texte.html" title="fonction_source_texte" alt="" coords="683,325,834,352"/>
+<area shape="rect" id="node5" href="$classfonction__source__booleen.html" title="Classe décrivant une fonction source de type booléen (Oui ou Non). " alt="" coords="675,5,842,32"/>
+<area shape="rect" id="node6" href="$classfonction__source__caractere.html" title="Classe décrivant une fonction source de type caractères. " alt="" coords="671,56,846,83"/>
+<area shape="rect" id="node7" href="$classfonction__source__choix.html" title="Classe décrivant une fonction source de type choix. " alt="" coords="683,107,835,133"/>
+<area shape="rect" id="node8" href="$classfonction__source__entier.html" title="Classe décrivant une fonction source de type entier. " alt="" coords="682,157,835,184"/>
+<area shape="rect" id="node9" href="$classfonction__source__fichier__texte.html" title="Classe décrivant une fonction source de type fichier textuel. " alt="" coords="681,209,837,250"/>
+<area shape="rect" id="node10" href="$classfonction__source__permutation.html" title="Classe décrivant une fonction source générant toutes les permutations d&#39;une liste d&#39;éléments fournis..." alt="" coords="664,275,853,301"/>
+<area shape="rect" id="node11" href="$classfonction__source__texte.html" title="Classe décrivant une fonction source de type texte. " alt="" coords="683,325,834,352"/>
 <area shape="rect" id="node2" href="$classbase__fonction.html" title="Classe décrivant une fonction de conversion d&#39;un texte. " alt="" coords="315,157,418,184"/>
-<area shape="rect" id="node3" href="$classobjet__selectionnable.html" title="objet_selectionnable" alt="" coords="126,157,266,184"/>
+<area shape="rect" id="node3" href="$classobjet__selectionnable.html" title="Classe décrivant un objet sélectionnable dans l&#39;explorateur. " alt="" coords="126,157,266,184"/>
 </map>

@@ -1,7 +1,7 @@
 <map id="fonction_sortie_texte" name="fonction_sortie_texte">
-<area shape="rect" id="node2" href="$classfonction__base__sortie.html" title="fonction_base_sortie" alt="" coords="113,344,255,371"/>
-<area shape="rect" id="node3" href="$classbase__fonction.html" title="Classe décrivant une fonction de conversion d&#39;un texte. " alt="" coords="95,253,197,280"/>
-<area shape="rect" id="node4" href="$classobjet__selectionnable.html" title="objet_selectionnable" alt="" coords="5,84,144,111"/>
-<area shape="rect" id="node6" href="$classfonctions__conteneur.html" title="fonctions_conteneur" alt="" coords="77,163,216,189"/>
-<area shape="rect" id="node7" href="$classtextes.html" title="Classe décrivant un ensemble de textes. " alt="" coords="275,253,332,280"/>
+<area shape="rect" id="node2" href="$classfonction__base__sortie.html" title="Classe commune à toutes les fonctions de type sortie. " alt="" coords="5,331,147,357"/>
+<area shape="rect" id="node3" href="$classbase__fonction.html" title="Classe décrivant une fonction de conversion d&#39;un texte. " alt="" coords="17,253,119,280"/>
+<area shape="rect" id="node4" href="$classobjet__selectionnable.html" title="Classe décrivant un objet sélectionnable dans l&#39;explorateur. " alt="" coords="11,84,151,111"/>
+<area shape="rect" id="node6" href="$classfonctions__conteneur.html" title="Classe décrivant un conteneur de fonctions. " alt="" coords="84,163,223,189"/>
+<area shape="rect" id="node7" href="$classtextes.html" title="Classe décrivant un ensemble de textes. " alt="" coords="180,331,237,357"/>
 </map>

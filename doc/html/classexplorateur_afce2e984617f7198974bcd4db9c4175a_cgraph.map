@@ -1,4 +1,4 @@
 <map id="explorateur::on_externe_verrouillage_change" name="explorateur::on_externe_verrouillage_change">
-<area shape="rect" id="node2" href="$classexplorateur.html#aa8f6a55c7d9b6e0ef699eb49af4cc2b7" title="explorateur::mettre\l_a_jour_verrouillage" alt="" coords="214,5,351,46"/>
+<area shape="rect" id="node2" href="$classexplorateur.html#aa8f6a55c7d9b6e0ef699eb49af4cc2b7" title="Met à jour le verouillage d&#39;un noeud. " alt="" coords="214,5,351,46"/>
 <area shape="rect" id="node3" href="$classbase__noeud.html#ace8a7076d9e5a5d6644d801ac53f2f93" title="Fonction virtuelle mettant à jour l&#39;icone. " alt="" coords="401,5,543,46"/>
 </map>

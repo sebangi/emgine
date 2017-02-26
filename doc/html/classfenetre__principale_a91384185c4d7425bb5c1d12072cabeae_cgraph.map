@@ -1,3 +1,3 @@
 <map id="fenetre_principale::mettre_a_jour_bouton_execution" name="fenetre_principale::mettre_a_jour_bouton_execution">
-<area shape="rect" id="node2" href="$classprojet.html#a29fc0b26b1f163ca1754e2ea390e6eaf" title="projet::est_executable" alt="" coords="209,19,359,45"/>
+<area shape="rect" id="node2" href="$classprojet.html#a29fc0b26b1f163ca1754e2ea390e6eaf" title="Indique si le projet est exécutable. " alt="" coords="209,19,359,45"/>
 </map>

@@ -1,6 +1,6 @@
 <map id="entete/fonction/fonction_source/fonction_source_choix.h" name="entete/fonction/fonction_source/fonction_source_choix.h">
-<area shape="rect" id="node2" href="$bibliotheque__fonctions_8cpp.html" title="src/fonction/bibliotheque\l_fonctions.cpp" alt="" coords="5,125,168,166"/>
-<area shape="rect" id="node3" href="$fonction__source__choix_8cpp.html" title="src/fonction/fonction\l_source/fonction_source\l_choix.cpp" alt="" coords="193,117,356,173"/>
-<area shape="rect" id="node4" href="$fonction__source__choix__widget_8cpp.html" title="src/fonction_widget\l/fonction_source_widget\l/fonction_source_choix\l_widget.cpp" alt="" coords="381,110,544,181"/>
-<area shape="rect" id="node5" href="$base__parametre_8cpp.html" title="src/projet/base_parametre.cpp" alt="" coords="569,132,767,159"/>
+<area shape="rect" id="node2" href="$bibliotheque__fonctions_8cpp.html" title="Fichier d&#39;implémentation de la classe bibliotheque_fonction. " alt="" coords="5,125,168,166"/>
+<area shape="rect" id="node3" href="$fonction__source__choix_8cpp.html" title="Fichier d&#39;implémentationde la classe fonction_source_choix. " alt="" coords="193,117,356,173"/>
+<area shape="rect" id="node4" href="$fonction__source__choix__widget_8cpp_source.html" title="src/fonction_widget\l/fonction_source_widget\l/fonction_source_choix\l_widget.cpp" alt="" coords="381,110,544,181"/>
+<area shape="rect" id="node5" href="$base__parametre_8cpp.html" title="Fichier d&#39;implémentation de la classe base_parametre. " alt="" coords="569,132,767,159"/>
 </map>

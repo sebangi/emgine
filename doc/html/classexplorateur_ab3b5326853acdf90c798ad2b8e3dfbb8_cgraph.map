@@ -1,7 +1,7 @@
 <map id="explorateur::on_copier" name="explorateur::on_copier">
-<area shape="rect" id="node2" href="$classexplorateur.html#a3826d13d8738c168bc558eb31da80c27" title="explorateur::creer\l_copie" alt="" coords="221,49,344,90"/>
-<area shape="rect" id="node6" href="$classbase__noeud.html#ae78124477ea5148f16c2da42ac766f4c" title="Retourne l&#39;objet sélectionnable associé au noeud. " alt="" coords="206,115,359,141"/>
-<area shape="rect" id="node3" href="$classobjet__selectionnable.html#abed9a58bb39d15353db880fbd0808714" title="objet_selectionnable\l::est_conteneur" alt="" coords="598,7,738,49"/>
-<area shape="rect" id="node4" href="$classobjet__selectionnable.html#ab809d020155b7fec48ff3adbe15c9b65" title="objet_selectionnable\l::get_conteneur" alt="" coords="409,49,549,90"/>
-<area shape="rect" id="node5" href="$classfonctions__conteneur.html#a199dde0697eb91a9e54c1dfecb536a88" title="fonctions_conteneur\l::sauvegarder" alt="" coords="409,114,548,155"/>
+<area shape="rect" id="node2" href="$classbase__noeud.html#ae78124477ea5148f16c2da42ac766f4c" title="Retourne l&#39;objet sélectionnable associé au noeud. " alt="" coords="206,5,359,32"/>
+<area shape="rect" id="node3" href="$classobjet__selectionnable.html#af60943096d1f9668d7cc27056af8dd78" title="Crée une copie de l&#39;objet au format QString. " alt="" coords="213,57,353,98"/>
+<area shape="rect" id="node4" href="$classobjet__selectionnable.html#abed9a58bb39d15353db880fbd0808714" title="Indique si l&#39;objet est un conteneur. " alt="" coords="598,15,738,57"/>
+<area shape="rect" id="node5" href="$classobjet__selectionnable.html#ab809d020155b7fec48ff3adbe15c9b65" title="Retourne le fonctions_conteneur le plus proche : l&#39;objet lui&#45;même s&#39;il est un conteneur, ou le conteneur parent sinon. " alt="" coords="409,57,549,98"/>
+<area shape="rect" id="node6" href="$classfonctions__conteneur.html#a199dde0697eb91a9e54c1dfecb536a88" title="Sauvegarde le fonctions_conteneur dans un flux donné. " alt="" coords="409,122,548,163"/>
 </map>

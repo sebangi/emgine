@@ -6,6 +6,8 @@
  * \author Sébastien Angibaud
  */
 
+#include "entete/fonction/define_fonction.h"
+
 #include <QTreeWidget>
 
 #include <map>
@@ -18,8 +20,6 @@ class fonctions_conteneur;
 class noeud_projet;
 class objet_selectionnable;
 class projet;
-
-enum type_fonction;
 
 /**
  * \class explorateur
@@ -76,12 +76,44 @@ class explorateur : public QTreeWidget
         void ajouter_menu_verrouillage(QMenu & menu, objet_selectionnable * obj );
 
     signals:
-        void signal_e_demande_ajout_fonction(fonctions_conteneur *, objet_selectionnable*, type_fonction);
-        void signal_e_objet_selectionne(objet_selectionnable*);
-        void signal_e_objet_deselectionne(objet_selectionnable*);
-        void signal_e_enregistrer_projet(projet *);
-        void signal_e_enregistrer_projet_sous(projet *);
-        void signal_e_dupliquer_projet(projet *);
+        /** --------------------------------------------------------------------------------------
+         * \brief Signal informant d'une demande d'ajout de fonction.
+         * \param conteneur Un pointeur sur le conteneur receveur.
+         * \param obj Un pointeur sur l'objet de référence après lequel placer la fonction.
+         * \param type Le type de fonction demandée.
+         */
+        void signal_e_demande_ajout_fonction
+        (fonctions_conteneur * conteneur, objet_selectionnable* obj_ref, type_fonction type);
+
+        /** --------------------------------------------------------------------------------------
+         * \brief Signal informant qu'un objet est sélectionné.
+         * \param obj Un pointeur sur l'objet sélectionné.
+         */
+        void signal_e_objet_selectionne(objet_selectionnable* obj);
+
+        /** --------------------------------------------------------------------------------------
+         * \brief Signal informant qu'un objet est désélectionné.
+         * \param obj Un pointeur sur l'objet désélectionné.
+         */
+        void signal_e_objet_deselectionne(objet_selectionnable* obj);
+
+        /** --------------------------------------------------------------------------------------
+         * \brief Signal informant d'une demande d'enregistrement d'un projet.
+         * \param p Un pointeur sur le projet à considérer.
+         */
+        void signal_e_enregistrer_projet(projet * p);
+
+        /** --------------------------------------------------------------------------------------
+         * \brief Signal informant d'une demande d'enregistrement sous d'un projet.
+         * \param p Un pointeur sur le projet à considérer.
+         */
+        void signal_e_enregistrer_projet_sous(projet * p);
+
+        /** --------------------------------------------------------------------------------------
+         * \brief Signal informant d'une demande de duplication d'un projet.
+         * \param p Un pointeur sur le projet à considérer.
+         */
+        void signal_e_dupliquer_projet(projet *p);
 
     private slots:
         void on_externe_supprimer_fonction(base_fonction * f);

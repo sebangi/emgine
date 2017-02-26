@@ -1,4 +1,4 @@
 <map id="projet" name="projet">
-<area shape="rect" id="node2" href="$classfonctions__conteneur.html" title="fonctions_conteneur" alt="" coords="5,163,144,189"/>
-<area shape="rect" id="node3" href="$classobjet__selectionnable.html" title="objet_selectionnable" alt="" coords="5,84,144,111"/>
+<area shape="rect" id="node2" href="$classfonctions__conteneur.html" title="Classe décrivant un conteneur de fonctions. " alt="" coords="5,163,144,189"/>
+<area shape="rect" id="node3" href="$classobjet__selectionnable.html" title="Classe décrivant un objet sélectionnable dans l&#39;explorateur. " alt="" coords="5,84,144,111"/>
 </map>

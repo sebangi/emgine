@@ -1,4 +1,4 @@
 <map id="explorateur::on_externe_objet_deselectionne" name="explorateur::on_externe_objet_deselectionne">
-<area shape="rect" id="node2" href="$classobjet__selectionnable.html#ab809d020155b7fec48ff3adbe15c9b65" title="objet_selectionnable\l::get_conteneur" alt="" coords="214,29,354,70"/>
-<area shape="rect" id="node3" href="$classobjet__selectionnable.html#abed9a58bb39d15353db880fbd0808714" title="objet_selectionnable\l::est_conteneur" alt="" coords="403,29,543,70"/>
+<area shape="rect" id="node2" href="$classobjet__selectionnable.html#ab809d020155b7fec48ff3adbe15c9b65" title="Retourne le fonctions_conteneur le plus proche : l&#39;objet lui&#45;même s&#39;il est un conteneur, ou le conteneur parent sinon. " alt="" coords="214,29,354,70"/>
+<area shape="rect" id="node3" href="$classobjet__selectionnable.html#abed9a58bb39d15353db880fbd0808714" title="Indique si l&#39;objet est un conteneur. " alt="" coords="403,29,543,70"/>
 </map>

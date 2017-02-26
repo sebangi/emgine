@@ -23,9 +23,6 @@ class noeud_projet : public noeud_fonctions_conteneur
         ~noeud_projet();
 
         projet* get_projet() const;
-        QString get_nom() const;
-        void executer( compilateur & compil );
-        void charger();
         void mise_a_jour_icone();
 };
 

@@ -1,5 +1,5 @@
 <map id="entete/fonction/fonction_source/fonction_source_fichier_texte.h" name="entete/fonction/fonction_source/fonction_source_fichier_texte.h">
-<area shape="rect" id="node2" href="$bibliotheque__fonctions_8cpp.html" title="src/fonction/bibliotheque\l_fonctions.cpp" alt="" coords="5,125,168,166"/>
-<area shape="rect" id="node3" href="$fonction__source__fichier__texte_8cpp.html" title="src/fonction/fonction\l_source/fonction_source\l_fichier_texte.cpp" alt="" coords="193,117,356,173"/>
-<area shape="rect" id="node4" href="$fonction__source__fichier__texte__widget_8cpp.html" title="src/fonction_widget\l/fonction_source_widget\l/fonction_source_fichier\l_texte_widget.cpp" alt="" coords="381,110,544,181"/>
+<area shape="rect" id="node2" href="$bibliotheque__fonctions_8cpp.html" title="Fichier d&#39;implémentation de la classe bibliotheque_fonction. " alt="" coords="5,125,168,166"/>
+<area shape="rect" id="node3" href="$fonction__source__fichier__texte_8cpp.html" title="Fichier d&#39;implémentation de la classe fonction_source_fichier_texte. " alt="" coords="193,117,356,173"/>
+<area shape="rect" id="node4" href="$fonction__source__fichier__texte__widget_8cpp_source.html" title="src/fonction_widget\l/fonction_source_widget\l/fonction_source_fichier\l_texte_widget.cpp" alt="" coords="381,110,544,181"/>
 </map>

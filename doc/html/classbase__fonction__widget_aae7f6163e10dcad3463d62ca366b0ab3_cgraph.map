@@ -1,4 +1,4 @@
 <map id="base_fonction_widget::update_visibilite_bouton" name="base_fonction_widget::update_visibilite_bouton">
-<area shape="rect" id="node2" href="$classbase__fonction.html#a58bf7761b1416f494d035ca415d28dcd" title="base_fonction::get\l_niveau_visibilite" alt="" coords="237,5,366,46"/>
-<area shape="rect" id="node3" href="$classbase__fonction.html#a03d8376d2bf2e060849862cb7c71a658" title="base_fonction::get\l_max_niveau_visibilite" alt="" coords="225,70,378,111"/>
+<area shape="rect" id="node2" href="$classbase__fonction.html#a58bf7761b1416f494d035ca415d28dcd" title="Accesseur du niveau de visibilité de la fonction. " alt="" coords="237,5,366,46"/>
+<area shape="rect" id="node3" href="$classbase__fonction.html#a03d8376d2bf2e060849862cb7c71a658" title="Accesseur du niveau maximum de visibilité de la fonction. " alt="" coords="225,70,378,111"/>
 </map>

@@ -1,6 +1,6 @@
 <map id="entete/parametre/parametre_choix.h" name="entete/parametre/parametre_choix.h">
-<area shape="rect" id="node2" href="$fonction__cesar_8cpp.html" title="src/fonction/fonction\l_conversion/fonction\l_cesar.cpp" alt="" coords="5,104,147,160"/>
-<area shape="rect" id="node3" href="$fonction__source__choix_8cpp.html" title="src/fonction/fonction\l_source/fonction_source\l_choix.cpp" alt="" coords="171,104,335,160"/>
-<area shape="rect" id="node4" href="$fonction__source__choix__widget_8cpp.html" title="src/fonction_widget\l/fonction_source_widget\l/fonction_source_choix\l_widget.cpp" alt="" coords="360,97,523,167"/>
-<area shape="rect" id="node5" href="$parametre__choix_8cpp.html" title="src/parametre/parametre\l_choix.cpp" alt="" coords="547,111,711,153"/>
+<area shape="rect" id="node2" href="$fonction__cesar_8cpp.html" title="Fichier d&#39;implémentation de la classe fonction_cesar. " alt="" coords="5,104,147,160"/>
+<area shape="rect" id="node3" href="$fonction__source__choix_8cpp.html" title="Fichier d&#39;implémentationde la classe fonction_source_choix. " alt="" coords="171,104,335,160"/>
+<area shape="rect" id="node4" href="$fonction__source__choix__widget_8cpp_source.html" title="src/fonction_widget\l/fonction_source_widget\l/fonction_source_choix\l_widget.cpp" alt="" coords="360,97,523,167"/>
+<area shape="rect" id="node5" href="$parametre__choix_8cpp.html" title="Fichier d&#39;implémentation de la classe parametre_choix. " alt="" coords="547,111,711,153"/>
 </map>

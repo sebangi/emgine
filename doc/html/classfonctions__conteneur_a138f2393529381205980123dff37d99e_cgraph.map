@@ -1,6 +1,6 @@
 <map id="fonctions_conteneur::on_supprimer_fonction" name="fonctions_conteneur::on_supprimer_fonction">
-<area shape="rect" id="node2" href="$classfonctions__conteneur.html#a807b51ba64dd85bb844c44cfe2d0f116" title="fonctions_conteneur\l::supprimer_fonction" alt="" coords="217,74,357,115"/>
-<area shape="rect" id="node3" href="$classobjet__selectionnable.html#ab48a75e720955aebe27f720dfaa5e78e" title="objet_selectionnable\l::get_projet" alt="" coords="406,29,546,70"/>
-<area shape="rect" id="node5" href="$classobjet__selectionnable.html#a9f76b8e89231a79c3fc840af874bd868" title="objet_selectionnable\l::modifier" alt="" coords="406,118,546,159"/>
-<area shape="rect" id="node4" href="$classobjet__selectionnable.html#a97e33c61983d5c7811e8bacff8f114c4" title="objet_selectionnable\l::est_projet" alt="" coords="595,74,735,115"/>
+<area shape="rect" id="node2" href="$classfonctions__conteneur.html#a807b51ba64dd85bb844c44cfe2d0f116" title="Supprime une fonction donnée. " alt="" coords="217,74,357,115"/>
+<area shape="rect" id="node3" href="$classobjet__selectionnable.html#ab48a75e720955aebe27f720dfaa5e78e" title="Retourne le projet contenant l&#39;objet sélectionnable. " alt="" coords="406,29,546,70"/>
+<area shape="rect" id="node5" href="$classobjet__selectionnable.html#a9f76b8e89231a79c3fc840af874bd868" title="Modifie l&#39;objet. " alt="" coords="406,118,546,159"/>
+<area shape="rect" id="node4" href="$classobjet__selectionnable.html#a97e33c61983d5c7811e8bacff8f114c4" title="Indique si l&#39;objet est un projet. " alt="" coords="595,74,735,115"/>
 </map>

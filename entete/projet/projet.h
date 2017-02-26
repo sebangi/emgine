@@ -1,21 +1,28 @@
 #ifndef PROJET_H
 #define PROJET_H
 
+/** \file projet.h
+ * \brief Fichier de déclaration de la classe projet.
+ * \author Sébastien Angibaud
+ */
+
 #include "fonctions_conteneur.h"
-#include <QString>
+
 #include <QList>
+#include <QString>
 #include <QXmlStreamWriter>
 
-class noeud_projet;
-class base_noeud;
 class base_fonction;
+class base_noeud;
 class base_parametre;
 class logs_compilation_widget;
+class noeud_projet;
 
 /**
- \brief Classe décrivant un projet.
- \author Sébastien Angibaud
-*/
+ * \class projet
+ * \brief Classe décrivant un projet.
+ * \author Sébastien Angibaud
+ */
 class projet : public fonctions_conteneur
 {
         Q_OBJECT
@@ -26,28 +33,27 @@ class projet : public fonctions_conteneur
 
         void sauvegarder( QXmlStreamWriter & stream, bool sauvegarde_reelle = true );
         void charger(QXmlStreamReader & xml);
+        void executer();
+        void fermer();
 
         QString get_nom() const;
         QString get_titre() const;
         QString get_nom_fichier() const;
         QString get_dossier() const;
         QString get_description() const;
-        bool est_nouveau() const;
-
-        bool est_projet() const;
 
         void set_nom(const QString &nom);
         void set_nom_fichier(const QString &nom_fichier);
+        void set_est_modifie(bool est_modifie);
+        void set_executable( bool executable );
 
+        bool est_nouveau() const;
+        bool est_projet() const;
         bool est_valide(logs_compilation_widget * vue_logs);
         bool est_modifie() const;
-        void set_est_modifie(bool est_modifie);        
         bool est_enregistrable() const;
-        void set_executable( bool executable );
-        void executer();
-        bool est_executable() const;        
+        bool est_executable() const;
         bool est_verrouille() const;
-        void fermer();
 
     signals:
         void signal_p_projet_etat_modification_change( projet *, bool);
@@ -63,15 +69,28 @@ class projet : public fonctions_conteneur
         void charger_parametre(QXmlStreamReader & xml, base_fonction* f);
 
     private:
+        /** \brief Le nom du projet. */
         QString m_nom;
+
+        /** \brief Le nom du fichier du projet. */
         QString m_nom_fichier;
+
+        /** \brief Booléen indiquant si le projet est nouveau, i.e. non enregistré. */
         bool m_nouveau;
+
+        /** \brief Booléen indiquant si le projet a été modifié depuis la dernière sauvegarde. */
         bool m_est_modifie;
+
+        /** \brief Booléen indiquant si le projet est exécutable. */
         bool m_est_executable;
+
+        /** \brief La description du projet. */
         QString m_description;
 
+        /** \brief Booléen indiquant si le projet est verrouillé automatiquement par le système. */
         bool m_verrouille_par_systeme;
 
+        /** \brief Le nombre de projets actuel. */
         static unsigned int s_nb_projets;
 }; // end projet
 

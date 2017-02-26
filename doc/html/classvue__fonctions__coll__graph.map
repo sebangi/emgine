@@ -1,4 +1,4 @@
 <map id="vue_fonctions" name="vue_fonctions">
-<area shape="rect" id="node3" href="$classfonctions__conteneur.html" title="fonctions_conteneur" alt="" coords="135,163,273,189"/>
-<area shape="rect" id="node4" href="$classobjet__selectionnable.html" title="objet_selectionnable" alt="" coords="134,84,273,111"/>
+<area shape="rect" id="node3" href="$classfonctions__conteneur.html" title="Classe décrivant un conteneur de fonctions. " alt="" coords="135,163,273,189"/>
+<area shape="rect" id="node4" href="$classobjet__selectionnable.html" title="Classe décrivant un objet sélectionnable dans l&#39;explorateur. " alt="" coords="134,84,273,111"/>
 </map>

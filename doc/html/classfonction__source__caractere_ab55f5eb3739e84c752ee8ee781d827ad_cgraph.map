@@ -1,5 +1,5 @@
 <map id="fonction_source_caractere::fonction_source_caractere" name="fonction_source_caractere::fonction_source_caractere">
-<area shape="rect" id="node2" href="$classbase__fonction.html#a4d7a7d067af71e0c5e9ec7d6188ac9d1" title="base_fonction::set_id" alt="" coords="251,12,397,39"/>
-<area shape="rect" id="node4" href="$classbase__fonction.html#a51c4b5f512a0ae9b12c5fe55806f57d8" title="base_fonction::augmenter\l_max_niveau_visibilite" alt="" coords="238,63,410,105"/>
-<area shape="rect" id="node3" href="$classbibliotheque__fonctions.html#ac8c035960c49cdf0fe7437b82739154e" title="bibliotheque_fonctions\l::get_nom" alt="" coords="459,5,610,46"/>
+<area shape="rect" id="node2" href="$classbase__fonction.html#a4d7a7d067af71e0c5e9ec7d6188ac9d1" title="Initialise l&#39;identifiant de la fonction. " alt="" coords="251,12,397,39"/>
+<area shape="rect" id="node4" href="$classbase__fonction.html#a51c4b5f512a0ae9b12c5fe55806f57d8" title="Augmente le niveau maximum de visibilité de la fonction. " alt="" coords="238,63,410,105"/>
+<area shape="rect" id="node3" href="$classbibliotheque__fonctions.html#ac8c035960c49cdf0fe7437b82739154e" title="Retourne le nom pour un type de fonction donné. " alt="" coords="459,5,610,46"/>
 </map>

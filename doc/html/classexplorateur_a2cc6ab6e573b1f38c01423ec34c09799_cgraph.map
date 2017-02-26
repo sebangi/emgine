@@ -1,51 +1,51 @@
 <map id="explorateur::explorateur" name="explorateur::explorateur">
-<area shape="rect" id="node2" href="$classexplorateur.html#a3d2739f24d09d974a0476312ccf25d70" title="explorateur::on_customContext\lMenuRequested" alt="" coords="214,398,418,439"/>
-<area shape="rect" id="node46" href="$classexplorateur.html#ad7fc5084bbb92aa975b35f1206109e97" title="Evénément click sur un item de l&#39;explorateur de projets. " alt="" coords="224,464,408,491"/>
-<area shape="rect" id="node47" href="$classexplorateur.html#a1e619080cad519a4d1457ac37d3f1b96" title="Evénément double click sur un item de l&#39;explorateur de projets. " alt="" coords="225,515,407,557"/>
-<area shape="rect" id="node48" href="$classexplorateur.html#a09e8b1fb500dc869706d6bec7f1ca87c" title="explorateur::on_itemExpanded" alt="" coords="217,581,415,608"/>
-<area shape="rect" id="node49" href="$classexplorateur.html#a3676cbdc434af17e3b809956f4131df8" title="explorateur::on_itemCollapsed" alt="" coords="217,632,415,659"/>
-<area shape="rect" id="node50" href="$classexplorateur.html#ab52d921d78737c5dc7aca6461da1c013" title="Changement de sélection l&#39;explorateur de projets. " alt="" coords="225,683,407,725"/>
-<area shape="rect" id="node3" href="$classexplorateur.html#ac20e3b48c088e8129cf64a526399382d" title="explorateur::set_noeud\l_context" alt="" coords="467,5,621,46"/>
-<area shape="rect" id="node4" href="$classexplorateur.html#a1a6dcc45820d3bdecd51d7a6f6a223d7" title="explorateur::get_noeud\l_context" alt="" coords="467,70,621,111"/>
+<area shape="rect" id="node2" href="$classexplorateur.html#a3d2739f24d09d974a0476312ccf25d70" title="Fonction appelée lors d&#39;une demande d&#39;ouverture de menu. " alt="" coords="214,398,418,439"/>
+<area shape="rect" id="node46" href="$classexplorateur.html#ad7fc5084bbb92aa975b35f1206109e97" title="Fonction appelée lors d&#39;un click sur un noeud de l&#39;explorateur. " alt="" coords="224,464,408,491"/>
+<area shape="rect" id="node47" href="$classexplorateur.html#a1e619080cad519a4d1457ac37d3f1b96" title="Fonction appelée lors d&#39;un double click sur un noeud de l&#39;explorateur. " alt="" coords="225,515,407,557"/>
+<area shape="rect" id="node48" href="$classexplorateur.html#a09e8b1fb500dc869706d6bec7f1ca87c" title="Fonction appelée lorsqu&#39;un noeud de l&#39;explorateur est étendu. " alt="" coords="217,581,415,608"/>
+<area shape="rect" id="node49" href="$classexplorateur.html#a3676cbdc434af17e3b809956f4131df8" title="Fonction appelée lorsqu&#39;un noeud de l&#39;explorateur n&#39;est plus étendu. " alt="" coords="217,632,415,659"/>
+<area shape="rect" id="node50" href="$classexplorateur.html#ab52d921d78737c5dc7aca6461da1c013" title="Fonction appelée lors d&#39;un changement de sélection dans l&#39;explorateur. " alt="" coords="225,683,407,725"/>
+<area shape="rect" id="node3" href="$classexplorateur.html#ac20e3b48c088e8129cf64a526399382d" title="Initialiser le noeud_context, i.e le noeud pour lequel le menu a été créé (par un click droit)..." alt="" coords="467,5,621,46"/>
+<area shape="rect" id="node4" href="$classexplorateur.html#a1a6dcc45820d3bdecd51d7a6f6a223d7" title="Accesseur du noeud_context, i.e le noeud pour lequel le menu a été créé (par un click droit)..." alt="" coords="467,70,621,111"/>
 <area shape="rect" id="node5" href="$classbase__noeud.html#ae78124477ea5148f16c2da42ac766f4c" title="Retourne l&#39;objet sélectionnable associé au noeud. " alt="" coords="1155,883,1309,909"/>
-<area shape="rect" id="node6" href="$classobjet__selectionnable.html#a97e33c61983d5c7811e8bacff8f114c4" title="objet_selectionnable\l::est_projet" alt="" coords="1358,293,1498,334"/>
-<area shape="rect" id="node7" href="$classexplorateur.html#a536fbe6ced34b9038fb0b7be3350aa7c" title="explorateur::ajouter\l_menu_projet" alt="" coords="477,722,611,763"/>
-<area shape="rect" id="node24" href="$classobjet__selectionnable.html#abed9a58bb39d15353db880fbd0808714" title="objet_selectionnable\l::est_conteneur" alt="" coords="1547,817,1687,858"/>
-<area shape="rect" id="node38" href="$classexplorateur.html#a5ff081a48876618de38b6a7ed352fabc" title="explorateur::ajouter\l_menu_conteneur" alt="" coords="477,834,611,875"/>
-<area shape="rect" id="node39" href="$classexplorateur.html#ab9a6478e4447b6257b1d44a058ce873d" title="explorateur::ajouter\l_menu_fonction" alt="" coords="477,1149,611,1190"/>
-<area shape="rect" id="node8" href="$classexplorateur.html#a605b2ce839fb7f8c314e69a0c0239e27" title="explorateur::ajouter\l_menu_enregistrement" alt="" coords="681,438,836,479"/>
-<area shape="rect" id="node16" href="$classexplorateur.html#a959592d5ad501ab3272a898720cc8984" title="explorateur::ajouter\l_menu_verrouillage" alt="" coords="691,1101,826,1142"/>
-<area shape="rect" id="node23" href="$classexplorateur.html#ad6ea829268272e407807e82a039eee42" title="explorateur::ajouter\l_menu_ajout_fonction" alt="" coords="684,1198,833,1239"/>
-<area shape="rect" id="node29" href="$classexplorateur.html#a57e9b7f934e2a1e699d816d144fb2338" title="explorateur::ajouter\l_menu_copier_coller" alt="" coords="688,834,829,875"/>
-<area shape="rect" id="node36" href="$classexplorateur.html#a3003b185d8bbe1c1b87daad6fba7f6a0" title="explorateur::ajouter\l_menu_supprimer_projet" alt="" coords="677,361,841,402"/>
-<area shape="rect" id="node9" href="$classobjet__selectionnable.html#ab48a75e720955aebe27f720dfaa5e78e" title="objet_selectionnable\l::get_projet" alt="" coords="1162,381,1302,422"/>
-<area shape="rect" id="node10" href="$classprojet.html#a93d1671ebf1548df8908020a306b0ff1" title="projet::est_enregistrable" alt="" coords="921,237,1082,264"/>
-<area shape="rect" id="node13" href="$classexplorateur.html#a73040f7ee6da27e4396e15c7df7ace5c" title="explorateur::on_enregistrer" alt="" coords="913,405,1089,432"/>
-<area shape="rect" id="node14" href="$classexplorateur.html#aa6321767a6f4a8afaf43f1ea952528df" title="explorateur::on_enregistrer_sous" alt="" coords="896,456,1107,483"/>
-<area shape="rect" id="node15" href="$classexplorateur.html#a897a29fae3bb3df4c5129ea820774334" title="explorateur::on_dupliquer\l_projet" alt="" coords="918,507,1085,549"/>
-<area shape="rect" id="node11" href="$classprojet.html#a6f3595b0a0025ddf250561ebbfb3726b" title="projet::est_nouveau" alt="" coords="1164,237,1300,264"/>
-<area shape="rect" id="node12" href="$classprojet.html#aed2138f12de82e59a3c88341abc8240e" title="projet::est_modifie" alt="" coords="1167,288,1297,315"/>
-<area shape="rect" id="node17" href="$classobjet__selectionnable.html#a1cf41e42861e0b033d2704802905e81a" title="objet_selectionnable\l::est_verrouille_avec\l_parent" alt="" coords="1161,1439,1303,1495"/>
-<area shape="rect" id="node19" href="$classobjet__selectionnable.html#ab5d7e0b9f000ba34d9d60b36590f1fcf" title="objet_selectionnable\l::est_fonction" alt="" coords="931,1035,1071,1077"/>
-<area shape="rect" id="node20" href="$classexplorateur.html#add77f5981057fc14b9bbac37c251a467" title="explorateur::on_verrouiller\l_selectionnable" alt="" coords="916,918,1087,959"/>
-<area shape="rect" id="node22" href="$classobjet__selectionnable.html#a57341a9bf3dbc66f4ad4414183b0d27c" title="objet_selectionnable\l::parents_verrouilles" alt="" coords="931,1362,1071,1403"/>
-<area shape="rect" id="node18" href="$classobjet__selectionnable.html#a8b9cf156597fe8cc1b8f9408e1bfee8c" title="objet_selectionnable\l::est_verrouille" alt="" coords="1358,1446,1498,1487"/>
-<area shape="rect" id="node21" href="$classobjet__selectionnable.html#a028ac895965858e0e8e8e2cc25e8323c" title="objet_selectionnable\l::inverser_verrouillage" alt="" coords="1157,934,1307,975"/>
-<area shape="rect" id="node25" href="$classexplorateur.html#a9f87ebe9efe7486d6e781556238feb4e" title="explorateur::on_ajout\l_source" alt="" coords="930,1297,1073,1338"/>
-<area shape="rect" id="node27" href="$classexplorateur.html#a513ccd6238459ae6982973a5b671a63b" title="explorateur::on_ajout\l_fonction_conversion" alt="" coords="929,1101,1074,1142"/>
-<area shape="rect" id="node28" href="$classexplorateur.html#aad600593e3982f73bd876a32cc4b8381" title="explorateur::on_ajout\l_sortie" alt="" coords="930,1231,1073,1273"/>
-<area shape="rect" id="node26" href="$classobjet__selectionnable.html#ab809d020155b7fec48ff3adbe15c9b65" title="objet_selectionnable\l::get_conteneur" alt="" coords="1358,946,1498,987"/>
-<area shape="rect" id="node30" href="$classexplorateur.html#ab3b5326853acdf90c798ad2b8e3dfbb8" title="explorateur::on_copier" alt="" coords="926,816,1077,843"/>
-<area shape="rect" id="node32" href="$classexplorateur.html#ab3eaff6725b5b3bfcded294beed49449" title="explorateur::on_couper" alt="" coords="924,867,1079,893"/>
-<area shape="rect" id="node33" href="$classobjet__selectionnable.html#ab2b3d6e89c6a33d83d79bafd6e36a671" title="objet_selectionnable\l::a_ancetre" alt="" coords="931,699,1071,741"/>
-<area shape="rect" id="node34" href="$classexplorateur.html#a5394562c6a7168f624d9ee1f7a2736fa" title="explorateur::on_coller" alt="" coords="928,573,1075,600"/>
-<area shape="rect" id="node31" href="$classexplorateur.html#a3826d13d8738c168bc558eb31da80c27" title="explorateur::creer\l_copie" alt="" coords="1171,817,1293,858"/>
-<area shape="rect" id="node35" href="$classexplorateur.html#a3ed6f16c0e32b2eb1750e59feacb52b0" title="explorateur::faire\l_couper" alt="" coords="1173,699,1291,741"/>
-<area shape="rect" id="node37" href="$classexplorateur.html#af384b08871362ec45d8554e4fffa1e0d" title="explorateur::on_fermer\l_projet" alt="" coords="925,339,1077,381"/>
-<area shape="rect" id="node40" href="$classexplorateur.html#ac3864397d861ebd1634c55ce84ad58bd" title="explorateur::ajouter\l_menu_activation" alt="" coords="692,1690,825,1731"/>
-<area shape="rect" id="node44" href="$classexplorateur.html#a705d6d775dbf271ac3f6ea7bb1cf6422" title="explorateur::ajouter\l_menu_supprimer_fonction" alt="" coords="669,1522,848,1563"/>
-<area shape="rect" id="node41" href="$classobjet__selectionnable.html#a9f9e2ccc04e3b2a55d7b51b85366488f" title="objet_selectionnable\l::est_active" alt="" coords="931,1749,1071,1790"/>
-<area shape="rect" id="node42" href="$classexplorateur.html#a71d8c413f548ef02da9bd592710ff356" title="explorateur::on_activer\l_fonction" alt="" coords="924,1166,1079,1207"/>
-<area shape="rect" id="node43" href="$classobjet__selectionnable.html#a76587773c723728d21583bb87e995daa" title="objet_selectionnable\l::parents_actifs" alt="" coords="931,1814,1071,1855"/>
-<area shape="rect" id="node45" href="$classexplorateur.html#a33c04d3c07d1d2698bc9b73c1a82c3a1" title="Le bouton fermer est activé. " alt="" coords="915,1631,1087,1673"/>
+<area shape="rect" id="node6" href="$classobjet__selectionnable.html#a97e33c61983d5c7811e8bacff8f114c4" title="Indique si l&#39;objet est un projet. " alt="" coords="1358,293,1498,334"/>
+<area shape="rect" id="node7" href="$classexplorateur.html#a536fbe6ced34b9038fb0b7be3350aa7c" title="Ajoute dans un menu donné les actions d&#39;un projet. " alt="" coords="477,722,611,763"/>
+<area shape="rect" id="node24" href="$classobjet__selectionnable.html#abed9a58bb39d15353db880fbd0808714" title="Indique si l&#39;objet est un conteneur. " alt="" coords="1547,817,1687,858"/>
+<area shape="rect" id="node38" href="$classexplorateur.html#a5ff081a48876618de38b6a7ed352fabc" title="Ajoute dans un menu donné les actions d&#39;un conteneur. " alt="" coords="477,834,611,875"/>
+<area shape="rect" id="node39" href="$classexplorateur.html#ab9a6478e4447b6257b1d44a058ce873d" title="Ajoute dans un menu donné les actions d&#39;une fonction. " alt="" coords="477,1149,611,1190"/>
+<area shape="rect" id="node8" href="$classexplorateur.html#a605b2ce839fb7f8c314e69a0c0239e27" title="Ajoute dans un menu donné les actions d&#39;enregistrement d&#39;un projet. " alt="" coords="681,438,836,479"/>
+<area shape="rect" id="node16" href="$classexplorateur.html#a959592d5ad501ab3272a898720cc8984" title="Ajoute dans un menu donné l&#39;action de verrouillage. " alt="" coords="691,1101,826,1142"/>
+<area shape="rect" id="node23" href="$classexplorateur.html#ad6ea829268272e407807e82a039eee42" title="Ajoute dans un menu donné les actions d&#39;ajout de fonctions. " alt="" coords="684,1198,833,1239"/>
+<area shape="rect" id="node29" href="$classexplorateur.html#a57e9b7f934e2a1e699d816d144fb2338" title="Ajoute dans un menu donné les actions de copier/couper/coller. " alt="" coords="688,834,829,875"/>
+<area shape="rect" id="node36" href="$classexplorateur.html#a3003b185d8bbe1c1b87daad6fba7f6a0" title="Ajoute dans un menu donné l&#39;action de supression d&#39;un projet. " alt="" coords="677,361,841,402"/>
+<area shape="rect" id="node9" href="$classobjet__selectionnable.html#ab48a75e720955aebe27f720dfaa5e78e" title="Retourne le projet contenant l&#39;objet sélectionnable. " alt="" coords="1162,381,1302,422"/>
+<area shape="rect" id="node10" href="$classprojet.html#a93d1671ebf1548df8908020a306b0ff1" title="Indique si le projet est enregistrable. " alt="" coords="921,237,1082,264"/>
+<area shape="rect" id="node13" href="$classexplorateur.html#a73040f7ee6da27e4396e15c7df7ace5c" title="Fonction appelée lors d&#39;une demande d&#39;enregistrement. " alt="" coords="913,405,1089,432"/>
+<area shape="rect" id="node14" href="$classexplorateur.html#aa6321767a6f4a8afaf43f1ea952528df" title="Fonction appelée lors d&#39;une demande d&#39;enregistrement sous. " alt="" coords="896,456,1107,483"/>
+<area shape="rect" id="node15" href="$classexplorateur.html#a897a29fae3bb3df4c5129ea820774334" title="Fonction appelée lors d&#39;une demande de duplication. " alt="" coords="918,507,1085,549"/>
+<area shape="rect" id="node11" href="$classprojet.html#a6f3595b0a0025ddf250561ebbfb3726b" title="Indique si le projet est nouveau. " alt="" coords="1164,237,1300,264"/>
+<area shape="rect" id="node12" href="$classprojet.html#aed2138f12de82e59a3c88341abc8240e" title="Indique si le projet a été modifié depuis la dernière sauvegarde. " alt="" coords="1167,288,1297,315"/>
+<area shape="rect" id="node17" href="$classobjet__selectionnable.html#a1cf41e42861e0b033d2704802905e81a" title="Indique si l&#39;objet est verrouillé en considérant également ses parents. " alt="" coords="1161,1439,1303,1495"/>
+<area shape="rect" id="node19" href="$classobjet__selectionnable.html#ab5d7e0b9f000ba34d9d60b36590f1fcf" title="Indique si l&#39;objet est une fonction. " alt="" coords="931,1035,1071,1077"/>
+<area shape="rect" id="node20" href="$classexplorateur.html#add77f5981057fc14b9bbac37c251a467" title="Fonction appelée lors d&#39;une demande de verrouillage d&#39;un objet. " alt="" coords="916,918,1087,959"/>
+<area shape="rect" id="node22" href="$classobjet__selectionnable.html#a57341a9bf3dbc66f4ad4414183b0d27c" title="Indique si le paret de l&#39;objet est verrouillé. " alt="" coords="931,1362,1071,1403"/>
+<area shape="rect" id="node18" href="$classobjet__selectionnable.html#a8b9cf156597fe8cc1b8f9408e1bfee8c" title="Indique si l&#39;objet est vérrouillé, i.e. non éditable. " alt="" coords="1358,1446,1498,1487"/>
+<area shape="rect" id="node21" href="$classobjet__selectionnable.html#a028ac895965858e0e8e8e2cc25e8323c" title="Inverse l&#39;état de verrouillage. " alt="" coords="1157,934,1307,975"/>
+<area shape="rect" id="node25" href="$classexplorateur.html#a9f87ebe9efe7486d6e781556238feb4e" title="Fonction appelée lors d&#39;une demande d&#39;ajout de fonction source. " alt="" coords="930,1297,1073,1338"/>
+<area shape="rect" id="node27" href="$classexplorateur.html#a513ccd6238459ae6982973a5b671a63b" title="Fonction appelée lors d&#39;une demande d&#39;ajout de fonction de conversion. " alt="" coords="929,1101,1074,1142"/>
+<area shape="rect" id="node28" href="$classexplorateur.html#aad600593e3982f73bd876a32cc4b8381" title="Fonction appelée lors d&#39;une demande d&#39;ajout de fonction de sortie. " alt="" coords="930,1231,1073,1273"/>
+<area shape="rect" id="node26" href="$classobjet__selectionnable.html#ab809d020155b7fec48ff3adbe15c9b65" title="Retourne le fonctions_conteneur le plus proche : l&#39;objet lui&#45;même s&#39;il est un conteneur, ou le conteneur parent sinon. " alt="" coords="1358,946,1498,987"/>
+<area shape="rect" id="node30" href="$classexplorateur.html#ab3b5326853acdf90c798ad2b8e3dfbb8" title="Fonction appelée lors d&#39;une demande de copie. " alt="" coords="926,816,1077,843"/>
+<area shape="rect" id="node32" href="$classexplorateur.html#ab3eaff6725b5b3bfcded294beed49449" title="Fonction appelée lors d&#39;une demande de coupé. " alt="" coords="924,867,1079,893"/>
+<area shape="rect" id="node33" href="$classobjet__selectionnable.html#ab2b3d6e89c6a33d83d79bafd6e36a671" title="Indique si l&#39;objet a comme ancêtre un objet donné. " alt="" coords="931,699,1071,741"/>
+<area shape="rect" id="node34" href="$classexplorateur.html#a5394562c6a7168f624d9ee1f7a2736fa" title="Fonction appelée lors d&#39;une demande de collé. " alt="" coords="928,573,1075,600"/>
+<area shape="rect" id="node31" href="$classobjet__selectionnable.html#af60943096d1f9668d7cc27056af8dd78" title="Crée une copie de l&#39;objet au format QString. " alt="" coords="1162,817,1302,858"/>
+<area shape="rect" id="node35" href="$classexplorateur.html#a3ed6f16c0e32b2eb1750e59feacb52b0" title="Applique le couper. " alt="" coords="1173,699,1291,741"/>
+<area shape="rect" id="node37" href="$classexplorateur.html#af384b08871362ec45d8554e4fffa1e0d" title="Fonction appelée lors d&#39;une demande de fermeture de projet. " alt="" coords="925,339,1077,381"/>
+<area shape="rect" id="node40" href="$classexplorateur.html#ac3864397d861ebd1634c55ce84ad58bd" title="Ajoute dans un menu donné l&#39;action d&#39;activation. " alt="" coords="692,1690,825,1731"/>
+<area shape="rect" id="node44" href="$classexplorateur.html#a705d6d775dbf271ac3f6ea7bb1cf6422" title="Ajoute dans un menu donné l&#39;action de suppression d&#39;une fonction. " alt="" coords="669,1522,848,1563"/>
+<area shape="rect" id="node41" href="$classobjet__selectionnable.html#a9f9e2ccc04e3b2a55d7b51b85366488f" title="Retourne l&#39;état d&#39;activation de l&#39;objet. " alt="" coords="931,1749,1071,1790"/>
+<area shape="rect" id="node42" href="$classexplorateur.html#a71d8c413f548ef02da9bd592710ff356" title="Fonction appelée lors d&#39;une demande de changement d&#39;activation d&#39;une fonction. " alt="" coords="924,1166,1079,1207"/>
+<area shape="rect" id="node43" href="$classobjet__selectionnable.html#a76587773c723728d21583bb87e995daa" title="Retourne l&#39;état d&#39;activation de l&#39;objet parent. " alt="" coords="931,1814,1071,1855"/>
+<area shape="rect" id="node45" href="$classexplorateur.html#a33c04d3c07d1d2698bc9b73c1a82c3a1" title="Fonction appelée lors d&#39;une demande de suppression de fonction. " alt="" coords="915,1631,1087,1673"/>
 </map>

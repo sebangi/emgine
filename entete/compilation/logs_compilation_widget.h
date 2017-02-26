@@ -31,7 +31,6 @@ class logs_compilation_widget : public QWidget
     private:
         void clear();
         void init_widgets();
-        void update_vue_bouton();
 
     private slots:
         void on_cacher_switch();

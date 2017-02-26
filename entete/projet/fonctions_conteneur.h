@@ -1,25 +1,42 @@
 #ifndef FONCTIONS_CONTENEUR_H
 #define FONCTIONS_CONTENEUR_H
 
-#include <QList>
+/** \file fonctions_conteneur.h
+ * \brief Fichier de déclaration de la classe fonctions_conteneur.
+ * \author Sébastien Angibaud
+ */
+
 #include "entete/projet/objet_selectionnable.h"
-#include <QXmlStreamWriter>
+
+#include <QList>
 #include <QXmlStreamReader>
+#include <QXmlStreamWriter>
 
 class base_fonction;
 
+/**
+ * \class fonctions_conteneur
+ * \brief Classe décrivant un conteneur de fonctions.
+ * \author Sébastien Angibaud
+ */
 class fonctions_conteneur : public objet_selectionnable
 {
         Q_OBJECT
 
     public:
+        /** \brief Type pour stocker une liste de fonctions. */
         typedef QList<base_fonction *> type_fonctions;
+
+        /** \brief Type itérateur sur une liste de fonctions. */
         typedef type_fonctions::iterator fonctions_iterateur;
+
+        /** \brief Type itérateur constant sur une liste de fonctions. */
         typedef type_fonctions::const_iterator fonctions_const_iterateur;
 
     public:
         fonctions_conteneur(objet_selectionnable * parent);
         ~fonctions_conteneur();
+
         void ajouter_fonction(base_fonction * f, objet_selectionnable * obj_ref);
         void supprimer_fonction(base_fonction * f);
 
@@ -30,7 +47,6 @@ class fonctions_conteneur : public objet_selectionnable
 
         virtual QString get_titre() const = 0;
         int get_position(base_fonction* f);
-
         bool est_conteneur() const;
         objet_selectionnable * charger_fonction( QXmlStreamReader & xml, objet_selectionnable * obj_ref );
         void charger_fonctions( QXmlStreamReader & xml, objet_selectionnable * obj_ref );
@@ -42,12 +58,17 @@ class fonctions_conteneur : public objet_selectionnable
         const base_fonction * premiere_fonction_active() const;
 
     signals:
-         void signal_fc_creation_fonction(base_fonction*);
+        /** --------------------------------------------------------------------------------------
+         * \brief Signal informant de la création d'une fonction.
+         * \param f Un pointeur sur la fonction créée.
+         */
+         void signal_fc_creation_fonction(base_fonction* f);
 
     private slots:
         void on_supprimer_fonction(base_fonction *f);
 
     protected:
+        /** \brief La liste des fonctions du conteneur. */
         type_fonctions m_fonctions;
 };
 

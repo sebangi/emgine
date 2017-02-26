@@ -3,15 +3,16 @@
 <head>
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
-<meta name="generator" content="Doxygen 1.8.13"/>
-<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<meta name="generator" content="Doxygen 1.8.6"/>
 <title>Emgine:  Fichier source de entete/fonction/fonction_source/fonction_base_source.h</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+  $(document).ready(function() { searchBox.OnSelectItem(0); });
+</script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
@@ -20,7 +21,7 @@
 <table cellspacing="0" cellpadding="0">
  <tbody>
  <tr style="height: 56px;">
-  <td id="projectalign" style="padding-left: 0.5em;">
+  <td style="padding-left: 0.5em;">
    <div id="projectname">Emgine
    </div>
   </td>
@@ -29,25 +30,47 @@
 </table>
 </div>
 <!-- end header part -->
-<!-- Généré par Doxygen 1.8.13 -->
+<!-- Généré par Doxygen 1.8.6 -->
 <script type="text/javascript">
 var searchBox = new SearchBox("searchBox", "search",false,'Recherche');
 </script>
-<script type="text/javascript" src="menudata.js"></script>
-<script type="text/javascript" src="menu.js"></script>
-<script type="text/javascript">
-$(function() {
-  initMenu('',true,false,'search.php','Recherche');
-  $(document).ready(function() { init_search(); });
-});
-</script>
-<div id="main-nav"></div>
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>Page&#160;principale</span></a></li>
+      <li><a href="pages.html"><span>Pages&#160;associées</span></a></li>
+      <li><a href="modules.html"><span>Modules</span></a></li>
+      <li><a href="annotated.html"><span>Classes</span></a></li>
+      <li class="current"><a href="files.html"><span>Fichiers</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="Recherche" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
+          </span>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="files.html"><span>Liste&#160;des&#160;fichiers</span></a></li>
+      <li><a href="globals.html"><span>Membres&#160;de&#160;fichier</span></a></li>
+    </ul>
+  </div>
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-</div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>Tout</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Fichiers</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Fonctions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Définitions de type</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Énumérations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Valeurs énumérées</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Groupes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&#160;</span>Pages</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -66,20 +89,39 @@ $(function() {
 <div class="title">fonction_base_source.h</div>  </div>
 </div><!--header-->
 <div class="contents">
-<a href="fonction__base__source_8h.html">Aller à la documentation de ce fichier.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#ifndef FONCTION_BASE_SOURCE_H</span></div><div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor">#define FONCTION_BASE_SOURCE_H</span></div><div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;</div><div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="base__fonction_8h.html">entete/projet/base_fonction.h</a>&quot;</span></div><div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;</div><div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="keyword">class </span><a class="code" href="classfonctions__conteneur.html">fonctions_conteneur</a>;</div><div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;</div><div class="line"><a name="l00018"></a><span class="lineno"><a class="line" href="classfonction__base__source.html">   18</a></span>&#160;<span class="keyword">class </span><a class="code" href="classfonction__base__source.html">fonction_base_source</a> : <span class="keyword">public</span> <a class="code" href="classbase__fonction.html">base_fonction</a></div><div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;{</div><div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;    <span class="keyword">public</span>:</div><div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;        <a class="code" href="classfonction__base__source.html#a9a4b8d4aee82caa216bb6750e159e55f">fonction_base_source</a>(<a class="code" href="classfonctions__conteneur.html">fonctions_conteneur</a> * conteneur);</div><div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;        <a class="code" href="classfonction__base__source.html#aa5aeff3efdb0bbfd0a1129697db08e2b">~fonction_base_source</a>();        </div><div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;</div><div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;        <span class="keyword">virtual</span> QString <a class="code" href="classfonction__base__source.html#a8e9c0d71eace960b03bea11c6f0a20d6">get_string_valeur</a>() <span class="keyword">const</span> = 0;</div><div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;</div><div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;        <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="classfonction__base__source.html#aabb338f513c7e0298a8a7c7b8ae995be">set_string_valeur</a>(<span class="keyword">const</span> QString &amp; valeur) = 0;</div><div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;};</div><div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;</div><div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;<span class="preprocessor">#endif // FONCTION_BASE_SOURCE_H</span></div><div class="ttc" id="classfonction__base__source_html"><div class="ttname"><a href="classfonction__base__source.html">fonction_base_source</a></div><div class="ttdoc">Classe commune à toutes les fonctions de type sortie. </div><div class="ttdef"><b>Definition:</b> <a href="fonction__base__source_8h_source.html#l00018">fonction_base_source.h:18</a></div></div>
-<div class="ttc" id="classfonction__base__source_html_aabb338f513c7e0298a8a7c7b8ae995be"><div class="ttname"><a href="classfonction__base__source.html#aabb338f513c7e0298a8a7c7b8ae995be">fonction_base_source::set_string_valeur</a></div><div class="ttdeci">virtual void set_string_valeur(const QString &amp;valeur)=0</div><div class="ttdoc">Fonction virtuelle pure d&amp;#39;initlisation de la valeur de la fonction au format QString. </div></div>
-<div class="ttc" id="classbase__fonction_html"><div class="ttname"><a href="classbase__fonction.html">base_fonction</a></div><div class="ttdoc">Classe décrivant une fonction de conversion d&amp;#39;un texte. </div><div class="ttdef"><b>Definition:</b> <a href="base__fonction_8h_source.html#l00033">base_fonction.h:33</a></div></div>
+<a href="fonction__base__source_8h.html">Aller à la documentation de ce fichier.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#ifndef FONCTION_BASE_SOURCE_H</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#define FONCTION_BASE_SOURCE_H</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="preprocessor"></span></div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="base__fonction_8h.html">entete/projet/base_fonction.h</a>&quot;</span></div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;</div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="keyword">class </span><a class="code" href="classfonctions__conteneur.html">fonctions_conteneur</a>;</div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;</div>
+<div class="line"><a name="l00018"></a><span class="lineno"><a class="line" href="classfonction__base__source.html">   18</a></span>&#160;<span class="keyword">class </span><a class="code" href="classfonction__base__source.html">fonction_base_source</a> : <span class="keyword">public</span> <a class="code" href="classbase__fonction.html">base_fonction</a></div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;{</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;    <span class="keyword">public</span>:</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;        <a class="code" href="classfonction__base__source.html#a9a4b8d4aee82caa216bb6750e159e55f">fonction_base_source</a>(<a class="code" href="classfonctions__conteneur.html">fonctions_conteneur</a> * conteneur);</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;        <a class="code" href="classfonction__base__source.html#aa5aeff3efdb0bbfd0a1129697db08e2b">~fonction_base_source</a>();        </div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;        <span class="keyword">virtual</span> QString <a class="code" href="classfonction__base__source.html#a8e9c0d71eace960b03bea11c6f0a20d6">get_string_valeur</a>() <span class="keyword">const</span> = 0;</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;        <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="classfonction__base__source.html#aabb338f513c7e0298a8a7c7b8ae995be">set_string_valeur</a>(<span class="keyword">const</span> QString &amp; valeur) = 0;</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;};</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;<span class="preprocessor">#endif // FONCTION_BASE_SOURCE_H</span></div>
+<div class="ttc" id="classfonction__base__source_html"><div class="ttname"><a href="classfonction__base__source.html">fonction_base_source</a></div><div class="ttdoc">Classe commune à toutes les fonctions de type sortie. </div><div class="ttdef"><b>Definition:</b> <a href="fonction__base__source_8h_source.html#l00018">fonction_base_source.h:18</a></div></div>
+<div class="ttc" id="classfonction__base__source_html_aabb338f513c7e0298a8a7c7b8ae995be"><div class="ttname"><a href="classfonction__base__source.html#aabb338f513c7e0298a8a7c7b8ae995be">fonction_base_source::set_string_valeur</a></div><div class="ttdeci">virtual void set_string_valeur(const QString &amp;valeur)=0</div><div class="ttdoc">Fonction virtuelle pure d&#39;initlisation de la valeur de la fonction au format QString. </div></div>
+<div class="ttc" id="classbase__fonction_html"><div class="ttname"><a href="classbase__fonction.html">base_fonction</a></div><div class="ttdoc">Classe décrivant une fonction de conversion d&#39;un texte. </div><div class="ttdef"><b>Definition:</b> <a href="base__fonction_8h_source.html#l00033">base_fonction.h:33</a></div></div>
 <div class="ttc" id="classfonction__base__source_html_a9a4b8d4aee82caa216bb6750e159e55f"><div class="ttname"><a href="classfonction__base__source.html#a9a4b8d4aee82caa216bb6750e159e55f">fonction_base_source::fonction_base_source</a></div><div class="ttdeci">fonction_base_source(fonctions_conteneur *conteneur)</div><div class="ttdoc">Constructeur de la classe fonction_base_source. </div><div class="ttdef"><b>Definition:</b> <a href="fonction__base__source_8cpp_source.html#l00017">fonction_base_source.cpp:17</a></div></div>
 <div class="ttc" id="classfonction__base__source_html_aa5aeff3efdb0bbfd0a1129697db08e2b"><div class="ttname"><a href="classfonction__base__source.html#aa5aeff3efdb0bbfd0a1129697db08e2b">fonction_base_source::~fonction_base_source</a></div><div class="ttdeci">~fonction_base_source()</div><div class="ttdoc">Destructeur de la classe fonction_base_source. </div><div class="ttdef"><b>Definition:</b> <a href="fonction__base__source_8cpp_source.html#l00026">fonction_base_source.cpp:26</a></div></div>
-<div class="ttc" id="classfonction__base__source_html_a8e9c0d71eace960b03bea11c6f0a20d6"><div class="ttname"><a href="classfonction__base__source.html#a8e9c0d71eace960b03bea11c6f0a20d6">fonction_base_source::get_string_valeur</a></div><div class="ttdeci">virtual QString get_string_valeur() const =0</div><div class="ttdoc">Fonction virtuelle pure d&amp;#39;accès à la valeur de la fonction au format QString. </div></div>
+<div class="ttc" id="classfonction__base__source_html_a8e9c0d71eace960b03bea11c6f0a20d6"><div class="ttname"><a href="classfonction__base__source.html#a8e9c0d71eace960b03bea11c6f0a20d6">fonction_base_source::get_string_valeur</a></div><div class="ttdeci">virtual QString get_string_valeur() const =0</div><div class="ttdoc">Fonction virtuelle pure d&#39;accès à la valeur de la fonction au format QString. </div></div>
 <div class="ttc" id="base__fonction_8h_html"><div class="ttname"><a href="base__fonction_8h.html">base_fonction.h</a></div><div class="ttdoc">Déclaration de la classe base_fonction. </div></div>
-<div class="ttc" id="classfonctions__conteneur_html"><div class="ttname"><a href="classfonctions__conteneur.html">fonctions_conteneur</a></div><div class="ttdef"><b>Definition:</b> <a href="fonctions__conteneur_8h_source.html#l00011">fonctions_conteneur.h:11</a></div></div>
+<div class="ttc" id="classfonctions__conteneur_html"><div class="ttname"><a href="classfonctions__conteneur.html">fonctions_conteneur</a></div><div class="ttdoc">Classe décrivant un conteneur de fonctions. </div><div class="ttdef"><b>Definition:</b> <a href="fonctions__conteneur_8h_source.html#l00022">fonctions_conteneur.h:22</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Généré le Jeudi 9 Février 2017 15:10:45 pour Emgine par &#160;<a href="http://www.doxygen.org/index.html">
+Généré le Vendredi 10 Février 2017 15:45:28 pour Emgine par &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
-</a> 1.8.13
+</a> 1.8.6
 </small></address>
 </body>
 </html>

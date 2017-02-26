@@ -1,12 +1,22 @@
 #ifndef BASE_PARAMETRE_WIDGET_H
 #define BASE_PARAMETRE_WIDGET_H
 
+/** \file base_parametre_widget.cpp
+ * \brief Fichier de déclaration de la classe base_parametre_widget.
+ * \author Sébastien Angibaud
+ */
+
+#include <QMouseEvent>
 #include <QPushButton>
 #include <QWidget>
-#include <QMouseEvent>
 
 class base_parametre;
 
+/**
+ * \class base_parametre_widget
+ * \brief Classe décrivant un widget de base affichant un paramètre.
+ * \author Sébastien Angibaud
+ */
 class base_parametre_widget : public QWidget
 {
     Q_OBJECT
@@ -14,6 +24,7 @@ class base_parametre_widget : public QWidget
     public:
         base_parametre_widget( base_parametre* param, QWidget *parent = 0 );
         ~base_parametre_widget();
+
         void paintEvent(QPaintEvent *);
         void informer_verrouillage_change();
 
@@ -34,8 +45,13 @@ class base_parametre_widget : public QWidget
         void mouseReleaseEvent( QMouseEvent * e );
 
     private:
+        /** \brief Un pointeur sur le paramètre à afficher. */
         base_parametre* m_parametre;
+
+        /** \brief Un pointeur sur le bouton gérant la configuration du paramètre. */
         QPushButton *m_configuration_bouton;
+
+        /** \brief Un pointeur sur le bouton d'aide du paramètre. */
         QPushButton *m_aide_bouton;
 };
 

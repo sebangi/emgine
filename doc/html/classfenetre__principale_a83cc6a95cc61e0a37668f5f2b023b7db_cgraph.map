@@ -1,51 +1,51 @@
 <map id="fenetre_principale::init_widgets" name="fenetre_principale::init_widgets">
-<area shape="rect" id="node2" href="$classfenetre__principale.html#ae47493f20c2c9fa06ca2c769a3e84385" title="Fonction appelée lorsque le bouton ajouter_fonction_source est activé. " alt="" coords="401,29,543,85"/>
-<area shape="rect" id="node9" href="$classfenetre__principale.html#a1b24b555b5667d30268c63863c0ab125" title="Fonction appelée lorsque le bouton ajouter_fonction_conversion est activé. " alt="" coords="401,140,543,196"/>
-<area shape="rect" id="node11" href="$classfenetre__principale.html#af3ab2cbc45aa7e1831b24a8e5c94d423" title="Fonction appelée lorsque le bouton ajouter_fonction_sortie est activé. " alt="" coords="194,275,337,331"/>
-<area shape="rect" id="node13" href="$classfenetre__principale.html#a996d82fe40208395b83e32035ff81369" title="Fonction appelée lorsque le bouton ajouter_nouveau_projet est activé. " alt="" coords="179,370,352,411"/>
-<area shape="rect" id="node39" href="$classfenetre__principale.html#a59ac4b187a775040c20edeaae0ee0c72" title="Fonction appelée lorsque le bouton sauvegarder_projet est activé. " alt="" coords="1166,554,1351,595"/>
-<area shape="rect" id="node40" href="$classfenetre__principale.html#abfa501fd3ad51ee1b9aa937d3693fcf3" title="Fonction appelée lorsque le bouton sauvegarder_projet_sous est activé. " alt="" coords="966,540,1117,596"/>
-<area shape="rect" id="node44" href="$classfenetre__principale.html#a039da339c2af0c8d2e7f5ccdf01b1efd" title="Fonction appelée lorsque le bouton ouvrir_projet est activé. " alt="" coords="187,435,343,477"/>
-<area shape="rect" id="node48" href="$classfenetre__principale.html#aba0b906c46a478aab7e71abd51cf6a6a" title="Fonction appelée lorsque le bouton executer est activé. " alt="" coords="601,647,735,689"/>
-<area shape="rect" id="node3" href="$classfenetre__principale.html#a37fea3c3c147a79b3d6524b076f0eddb" title="Ajoute une source au projet courant. " alt="" coords="1197,17,1321,58"/>
-<area shape="rect" id="node4" href="$classobjet__selectionnable.html#ad3c9ec08e1036a463b6b82176d52364d" title="objet_selectionnable\l::existe_selection" alt="" coords="1610,354,1750,395"/>
-<area shape="rect" id="node5" href="$classfenetre__principale.html#a0257f102b5827b67ca870579e062232e" title="Ajoute une fonction dans un conteneur donné. " alt="" coords="1415,51,1539,93"/>
-<area shape="rect" id="node8" href="$classobjet__selectionnable.html#ae6be76843c7b502410ec8d2c1fff88a3" title="objet_selectionnable\l::get_selection" alt="" coords="1407,219,1547,261"/>
-<area shape="rect" id="node6" href="$classselecteur__fonction__dialog.html#a7971b10182a4fbb0a556940b7af9770a" title="selecteur_fonction\l_dialog::get_fonction" alt="" coords="1609,19,1751,61"/>
-<area shape="rect" id="node7" href="$classbase__fonction.html#aa487a07ab1961bfbdf04ddd3c72b4d3c" title="base_fonction::set\l_conteneur" alt="" coords="1615,85,1745,126"/>
-<area shape="rect" id="node10" href="$classfenetre__principale.html#a293eba9375bed6685f70ca228705f272" title="Ajoute une fonction de conversion au projet courant. " alt="" coords="1189,82,1328,123"/>
-<area shape="rect" id="node12" href="$classfenetre__principale.html#a0b7b8e85f386cf7bd698cdd9606b3dcb" title="Ajoute une sortie au projet courant. " alt="" coords="1197,147,1321,189"/>
-<area shape="rect" id="node14" href="$classfenetre__principale.html#a36f89a276a3e7c84f23e953a1d1ed4c2" title="Ajoute un nouveau projet donné. " alt="" coords="793,435,917,477"/>
-<area shape="rect" id="node15" href="$classexplorateur.html#a187e3de9d541231a4e42cc18dd164c01" title="explorateur::ajouter\l_projet" alt="" coords="1192,1038,1325,1079"/>
-<area shape="rect" id="node22" href="$classvue__fonctions.html#ac4069084e2d6cbc37f12f6c83519b1b0" title="vue_fonctions::ajouter\l_projet" alt="" coords="966,1158,1117,1199"/>
-<area shape="rect" id="node27" href="$classfenetre__principale.html#a8a3a74f711670339243baf7c08d7ca05" title="Ajoute les connections pour un projet donné. " alt="" coords="978,379,1105,421"/>
-<area shape="rect" id="node37" href="$classobjet__selectionnable.html#a645da22be6e3f8747086da238e788fb9" title="objet_selectionnable\l::selectionner" alt="" coords="971,1223,1111,1265"/>
-<area shape="rect" id="node16" href="$classexplorateur.html#a887540b504bdc698ba2b8736fe0e9fdc" title="explorateur::ajouter\l_selectionnable" alt="" coords="1613,930,1747,971"/>
-<area shape="rect" id="node17" href="$classexplorateur.html#a2a297d8a36310f5b657c06e13cff0b06" title="explorateur::connecter\l_projet" alt="" coords="1402,1097,1553,1138"/>
-<area shape="rect" id="node18" href="$classfonctions__conteneur.html#aa1db33c3a0bf76b354e77b4a4324357a" title="fonctions_conteneur\l::fonctions_begin" alt="" coords="1408,1162,1547,1203"/>
-<area shape="rect" id="node19" href="$classfonctions__conteneur.html#a165ee65380980b58b521a62810cd7e27" title="fonctions_conteneur\l::fonctions_end" alt="" coords="1408,1227,1547,1269"/>
-<area shape="rect" id="node20" href="$classexplorateur.html#a9da9de05eb1380d7dc9d0dddd85f2432" title="explorateur::ajouter\l_fonction" alt="" coords="1411,979,1544,1021"/>
-<area shape="rect" id="node21" href="$classobjet__selectionnable.html#ae58408e8c4421e9c33bc488381e8c0a4" title="objet_selectionnable\l::est_etendu" alt="" coords="1610,1017,1750,1058"/>
-<area shape="rect" id="node23" href="$classvue__fonctions.html#a77d4c5f3bb2ec3a1160c1d05c23b8bb0" title="vue_fonctions::ajouter\l_selectionnable" alt="" coords="1402,1309,1553,1350"/>
-<area shape="rect" id="node24" href="$classvue__fonctions.html#a7a1bbb16655ef76c7ed9fe1eadc085fa" title="vue_fonctions::connecter\l_projet" alt="" coords="1175,1391,1343,1433"/>
-<area shape="rect" id="node25" href="$classvue__fonctions.html#a5a635af08c44943e09830be4d8f6d041" title="vue_fonctions::ajouter\l_fonction" alt="" coords="1183,1326,1334,1367"/>
-<area shape="rect" id="node26" href="$classvue__fonctions.html#a43f442e02fedae787e0027e5c766cab4" title="On crée la vue. " alt="" coords="1189,1158,1329,1199"/>
-<area shape="rect" id="node28" href="$classfenetre__principale.html#aa3031f71451237710b8e71ffc9df4f23" title="Fonction appelée lorsque l&#39;état de modification d&#39;un projet change. " alt="" coords="1170,292,1347,348"/>
-<area shape="rect" id="node30" href="$classfenetre__principale.html#aac51e3e43a291658385b410ad158f24d" title="Fonction appelée lorsque l&#39;état d&#39;exécutabitlité d&#39;un projet change. " alt="" coords="1188,372,1329,428"/>
-<area shape="rect" id="node31" href="$classfenetre__principale.html#a6a720767a355118833f47fdf265f134b" title="Fonction appelée lorsqu&#39;il y a un changement de verrouillage d&#39;un objet. " alt="" coords="1175,212,1342,268"/>
-<area shape="rect" id="node32" href="$classfenetre__principale.html#aed193870fa2381dc3add068169629d7b" title="Fonction appelée lorsqu&#39;il y a une demande externe de fermeture d&#39;un projet. " alt="" coords="1181,721,1337,777"/>
-<area shape="rect" id="node29" href="$classobjet__selectionnable.html#afdc2163828d829f786887b60e11e4717" title="objet_selectionnable\l::get_projet_courant" alt="" coords="1407,441,1547,482"/>
-<area shape="rect" id="node33" href="$classfenetre__principale.html#a31a75b71153c61bb51cc1226eed99cfa" title="Enregistre un projet donné avec un nom de fichier spécifié. " alt="" coords="1402,710,1553,751"/>
-<area shape="rect" id="node34" href="$classprojet.html#ad8800652d03f73eaad197af702d3d133" title="projet::set_nom_fichier" alt="" coords="1603,868,1757,895"/>
-<area shape="rect" id="node36" href="$classprojet.html#a83aaa7aa7215729f319047a1f74d0a31" title="projet::sauvegarder" alt="" coords="1613,717,1747,744"/>
-<area shape="rect" id="node35" href="$classprojet.html#a3020254e65eb57b4c36bf7990021ad2b" title="projet::set_nom" alt="" coords="1805,868,1917,895"/>
-<area shape="rect" id="node38" href="$classobjet__selectionnable.html#a555085da89b30b07349064bb54a26138" title="objet_selectionnable\l::deselectionner" alt="" coords="1189,1457,1329,1498"/>
-<area shape="rect" id="node41" href="$classfenetre__principale.html#adaef8393373145bd29e7c168b518ede4" title="Enregistre un projet donné sous. " alt="" coords="1165,801,1352,842"/>
-<area shape="rect" id="node42" href="$classprojet.html#a45627f0408d5e108eb3f5ffa769024d2" title="projet::get_nom_fichier" alt="" coords="1400,776,1555,803"/>
-<area shape="rect" id="node43" href="$classprojet.html#aa44b3d76899e78d5259dec6fdf5e6855" title="projet::get_dossier" alt="" coords="1413,827,1542,853"/>
-<area shape="rect" id="node45" href="$classfenetre__principale.html#a29c30ebdff8babde6262e546b23dbcc6" title="Ouvre un projet. " alt="" coords="410,435,534,477"/>
-<area shape="rect" id="node46" href="$classexplorateur.html#a114e3e9d1a1ad829897e25870c8d2aba" title="explorateur::get_projet\l_selon_nom_fichier" alt="" coords="593,979,743,1021"/>
-<area shape="rect" id="node47" href="$classfenetre__principale.html#a719b7500e3608be49652e8ddd8d97af0" title="Crée un projet à partir d&#39;une source xml. " alt="" coords="606,435,730,477"/>
-<area shape="rect" id="node49" href="$classfenetre__principale.html#aecfd9b9b6bd3ee7d5157485986c98b86" title="Execute un projet donné. " alt="" coords="793,1223,917,1265"/>
-<area shape="rect" id="node50" href="$classcompilateur.html#a847c4296256de3cae0436b68bf9e6931" title="Compile un projet donné. " alt="" coords="968,1289,1115,1316"/>
+<area shape="rect" id="node2" href="$classfenetre__principale.html#ae47493f20c2c9fa06ca2c769a3e84385" title="Fonction appelée lorsque le bouton ajouter_fonction_source est activé. " alt="" coords="401,256,543,312"/>
+<area shape="rect" id="node8" href="$classfenetre__principale.html#a1b24b555b5667d30268c63863c0ab125" title="Fonction appelée lorsque le bouton ajouter_fonction_conversion est activé. " alt="" coords="401,151,543,207"/>
+<area shape="rect" id="node10" href="$classfenetre__principale.html#af3ab2cbc45aa7e1831b24a8e5c94d423" title="Fonction appelée lorsque le bouton ajouter_fonction_sortie est activé. " alt="" coords="194,151,337,207"/>
+<area shape="rect" id="node12" href="$classfenetre__principale.html#a996d82fe40208395b83e32035ff81369" title="Fonction appelée lorsque le bouton ajouter_nouveau_projet est activé. " alt="" coords="179,669,352,710"/>
+<area shape="rect" id="node35" href="$classfenetre__principale.html#a59ac4b187a775040c20edeaae0ee0c72" title="Fonction appelée lorsque le bouton sauvegarder_projet est activé. " alt="" coords="1171,437,1357,478"/>
+<area shape="rect" id="node36" href="$classfenetre__principale.html#abfa501fd3ad51ee1b9aa937d3693fcf3" title="Fonction appelée lorsque le bouton sauvegarder_projet_sous est activé. " alt="" coords="971,364,1122,420"/>
+<area shape="rect" id="node40" href="$classfenetre__principale.html#a039da339c2af0c8d2e7f5ccdf01b1efd" title="Fonction appelée lorsque le bouton ouvrir_projet est activé. " alt="" coords="187,1138,343,1179"/>
+<area shape="rect" id="node45" href="$classfenetre__principale.html#aba0b906c46a478aab7e71abd51cf6a6a" title="Fonction appelée lorsque le bouton executer est activé. " alt="" coords="603,771,738,813"/>
+<area shape="rect" id="node3" href="$classfenetre__principale.html#a37fea3c3c147a79b3d6524b076f0eddb" title="Ajoute une source au projet courant. " alt="" coords="1202,175,1326,217"/>
+<area shape="rect" id="node4" href="$classobjet__selectionnable.html#ad3c9ec08e1036a463b6b82176d52364d" title="Indique s&#39;il existe un objet sélectionné. " alt="" coords="1615,398,1755,439"/>
+<area shape="rect" id="node5" href="$classfenetre__principale.html#a0257f102b5827b67ca870579e062232e" title="Ajoute une fonction dans un conteneur donné. " alt="" coords="1421,45,1545,86"/>
+<area shape="rect" id="node7" href="$classobjet__selectionnable.html#ae6be76843c7b502410ec8d2c1fff88a3" title="Retourne l&#39;objet sélectionné. " alt="" coords="1413,213,1553,254"/>
+<area shape="rect" id="node6" href="$classbase__fonction.html#aa487a07ab1961bfbdf04ddd3c72b4d3c" title="Initialise le conteneur de la fonction. " alt="" coords="1621,45,1750,86"/>
+<area shape="rect" id="node9" href="$classfenetre__principale.html#a293eba9375bed6685f70ca228705f272" title="Ajoute une fonction de conversion au projet courant. " alt="" coords="1195,110,1333,151"/>
+<area shape="rect" id="node11" href="$classfenetre__principale.html#a0b7b8e85f386cf7bd698cdd9606b3dcb" title="Ajoute une sortie au projet courant. " alt="" coords="1202,45,1326,86"/>
+<area shape="rect" id="node13" href="$classfenetre__principale.html#a36f89a276a3e7c84f23e953a1d1ed4c2" title="Ajoute un nouveau projet donné. " alt="" coords="798,1003,922,1045"/>
+<area shape="rect" id="node14" href="$classexplorateur.html#a187e3de9d541231a4e42cc18dd164c01" title="Ajoute un projet dans l&#39;explorateur. " alt="" coords="980,1003,1113,1045"/>
+<area shape="rect" id="node21" href="$classfenetre__principale.html#a8a3a74f711670339243baf7c08d7ca05" title="Ajoute les connections pour un projet donné. " alt="" coords="983,691,1110,733"/>
+<area shape="rect" id="node33" href="$classobjet__selectionnable.html#a645da22be6e3f8747086da238e788fb9" title="Sélectionne l&#39;objet. " alt="" coords="977,1259,1117,1301"/>
+<area shape="rect" id="node15" href="$classexplorateur.html#a887540b504bdc698ba2b8736fe0e9fdc" title="Ajoute un objet sélectionnable à l&#39;explorateur. " alt="" coords="1416,1130,1549,1171"/>
+<area shape="rect" id="node16" href="$classexplorateur.html#a2a297d8a36310f5b657c06e13cff0b06" title="Ajoute les connects pour un projet donné. " alt="" coords="1189,843,1339,885"/>
+<area shape="rect" id="node17" href="$classfonctions__conteneur.html#aa1db33c3a0bf76b354e77b4a4324357a" title="Accesseur de l&#39;itérateur de début de liste des fonctions. " alt="" coords="1195,909,1333,950"/>
+<area shape="rect" id="node18" href="$classfonctions__conteneur.html#a165ee65380980b58b521a62810cd7e27" title="Accesseur de l&#39;itérateur de fin de liste des fonctions. " alt="" coords="1195,974,1333,1015"/>
+<area shape="rect" id="node19" href="$classexplorateur.html#a9da9de05eb1380d7dc9d0dddd85f2432" title="Ajoute une fonction à l&#39;explorateur. " alt="" coords="1197,1091,1331,1133"/>
+<area shape="rect" id="node20" href="$classobjet__selectionnable.html#ae58408e8c4421e9c33bc488381e8c0a4" title="Indique si l&#39;objet est étendu. " alt="" coords="1413,1043,1553,1085"/>
+<area shape="rect" id="node22" href="$classfenetre__principale.html#aa3031f71451237710b8e71ffc9df4f23" title="Fonction appelée lorsque l&#39;état de modification d&#39;un projet change. " alt="" coords="1175,684,1353,740"/>
+<area shape="rect" id="node24" href="$classfenetre__principale.html#aac51e3e43a291658385b410ad158f24d" title="Fonction appelée lorsque l&#39;état d&#39;exécutabitlité d&#39;un projet change. " alt="" coords="1193,764,1335,820"/>
+<area shape="rect" id="node25" href="$classfenetre__principale.html#a6a720767a355118833f47fdf265f134b" title="Fonction appelée lorsqu&#39;il y a un changement de verrouillage d&#39;un objet. " alt="" coords="1181,292,1347,348"/>
+<area shape="rect" id="node26" href="$classfenetre__principale.html#aed193870fa2381dc3add068169629d7b" title="Fonction appelée lorsqu&#39;il y a une demande externe de fermeture d&#39;un projet. " alt="" coords="1186,553,1342,609"/>
+<area shape="rect" id="node23" href="$classobjet__selectionnable.html#afdc2163828d829f786887b60e11e4717" title="Retourne le projet de la sélection courante. " alt="" coords="1413,610,1553,651"/>
+<area shape="rect" id="node27" href="$classfenetre__principale.html#a31a75b71153c61bb51cc1226eed99cfa" title="Enregistre un projet donné avec un nom de fichier spécifié. " alt="" coords="1407,541,1558,582"/>
+<area shape="rect" id="node28" href="$classprojet.html#ad8800652d03f73eaad197af702d3d133" title="Initialise le nom du fchier. " alt="" coords="1608,1072,1763,1099"/>
+<area shape="rect" id="node30" href="$classprojet.html#a83aaa7aa7215729f319047a1f74d0a31" title="Sauvegarde le projet dans un flux donné. " alt="" coords="1619,548,1752,575"/>
+<area shape="rect" id="node29" href="$classprojet.html#a3020254e65eb57b4c36bf7990021ad2b" title="Initialise le nom du projet. " alt="" coords="1825,1072,1937,1099"/>
+<area shape="rect" id="node31" href="$classobjet__selectionnable.html#adb99710921bdf74dfe35ee9d75b995a3" title="Sauvegarde l&#39;objet sélectionnable dans un flux donné. " alt="" coords="1811,573,1951,614"/>
+<area shape="rect" id="node32" href="$classfonctions__conteneur.html#a199dde0697eb91a9e54c1dfecb536a88" title="Sauvegarde le fonctions_conteneur dans un flux donné. " alt="" coords="1812,507,1951,549"/>
+<area shape="rect" id="node34" href="$classobjet__selectionnable.html#a555085da89b30b07349064bb54a26138" title="Désélectionne l&#39;objet sélectionné. " alt="" coords="1194,1259,1334,1301"/>
+<area shape="rect" id="node37" href="$classfenetre__principale.html#adaef8393373145bd29e7c168b518ede4" title="Enregistre un projet donné sous. " alt="" coords="1171,371,1357,413"/>
+<area shape="rect" id="node38" href="$classprojet.html#a45627f0408d5e108eb3f5ffa769024d2" title="Retourne le nom du fichier du projet. " alt="" coords="1405,380,1560,407"/>
+<area shape="rect" id="node39" href="$classprojet.html#aa44b3d76899e78d5259dec6fdf5e6855" title="Retourne le dossier du projet. " alt="" coords="1418,431,1547,457"/>
+<area shape="rect" id="node41" href="$classfenetre__principale.html#a29c30ebdff8babde6262e546b23dbcc6" title="Ouvre un projet. " alt="" coords="410,1285,534,1326"/>
+<area shape="rect" id="node42" href="$classfenetre__principale.html#a8ec58b76590249df5755dcdef995d8b3" title="Retourne un projet d&#39;un nom de fichier donné. " alt="" coords="592,1309,749,1365"/>
+<area shape="rect" id="node43" href="$classfenetre__principale.html#a719b7500e3608be49652e8ddd8d97af0" title="Crée un projet à partir d&#39;une source xml. " alt="" coords="609,1389,733,1430"/>
+<area shape="rect" id="node44" href="$classprojet.html#a68c7ce13d982519c05ec13a7bbdff382" title="Charge le projet à partir d&#39;une source xml donnée. " alt="" coords="807,1396,913,1423"/>
+<area shape="rect" id="node46" href="$classfenetre__principale.html#aecfd9b9b6bd3ee7d5157485986c98b86" title="Execute un projet donné. " alt="" coords="798,1310,922,1351"/>
+<area shape="rect" id="node47" href="$classcompilateur.html#a847c4296256de3cae0436b68bf9e6931" title="Compile un projet donné. " alt="" coords="973,1364,1120,1391"/>
+<area shape="rect" id="node48" href="$classlogs__compilation__widget.html#af8865694dbb81f634a00c9a01ba59878" title="Marque tous logs comme étant ancien. " alt="" coords="1178,1325,1350,1366"/>
+<area shape="rect" id="node49" href="$classlogs__compilation__widget.html#a51fcc25d77ca9beafc2721d9c84f07a7" title="Ajoute un log à la liste des logs. " alt="" coords="1182,1390,1346,1431"/>
+<area shape="rect" id="node50" href="$classprojet.html#ac996cee2807e20a7fce9a1047701af1a" title="Accesseur du nom du projet. " alt="" coords="1208,1456,1320,1483"/>
 </map>

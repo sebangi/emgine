@@ -1,7 +1,7 @@
 <map id="explorateur::ajouter_menu_supprimer_projet" name="explorateur::ajouter_menu_supprimer_projet">
-<area shape="rect" id="node2" href="$classexplorateur.html#af384b08871362ec45d8554e4fffa1e0d" title="explorateur::on_fermer\l_projet" alt="" coords="219,81,371,122"/>
+<area shape="rect" id="node2" href="$classexplorateur.html#af384b08871362ec45d8554e4fffa1e0d" title="Fonction appelée lors d&#39;une demande de fermeture de projet. " alt="" coords="219,81,371,122"/>
 <area shape="rect" id="node3" href="$classbase__noeud.html#ae78124477ea5148f16c2da42ac766f4c" title="Retourne l&#39;objet sélectionnable associé au noeud. " alt="" coords="419,5,573,32"/>
-<area shape="rect" id="node4" href="$classobjet__selectionnable.html#ab48a75e720955aebe27f720dfaa5e78e" title="objet_selectionnable\l::get_projet" alt="" coords="426,81,566,122"/>
-<area shape="rect" id="node6" href="$classprojet.html#adbb06eb069730cd0c973881af783b967" title="projet::fermer" alt="" coords="447,147,545,173"/>
-<area shape="rect" id="node5" href="$classobjet__selectionnable.html#a97e33c61983d5c7811e8bacff8f114c4" title="objet_selectionnable\l::est_projet" alt="" coords="622,81,762,122"/>
+<area shape="rect" id="node4" href="$classobjet__selectionnable.html#ab48a75e720955aebe27f720dfaa5e78e" title="Retourne le projet contenant l&#39;objet sélectionnable. " alt="" coords="426,81,566,122"/>
+<area shape="rect" id="node6" href="$classprojet.html#adbb06eb069730cd0c973881af783b967" title="Ferme le projet. " alt="" coords="447,147,545,173"/>
+<area shape="rect" id="node5" href="$classobjet__selectionnable.html#a97e33c61983d5c7811e8bacff8f114c4" title="Indique si l&#39;objet est un projet. " alt="" coords="622,81,762,122"/>
 </map>

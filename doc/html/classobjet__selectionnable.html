@@ -3,15 +3,16 @@
 <head>
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
-<meta name="generator" content="Doxygen 1.8.13"/>
-<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<meta name="generator" content="Doxygen 1.8.6"/>
 <title>Emgine: Référence de la classe objet_selectionnable</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+  $(document).ready(function() { searchBox.OnSelectItem(0); });
+</script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
@@ -20,7 +21,7 @@
 <table cellspacing="0" cellpadding="0">
  <tbody>
  <tr style="height: 56px;">
-  <td id="projectalign" style="padding-left: 0.5em;">
+  <td style="padding-left: 0.5em;">
    <div id="projectname">Emgine
    </div>
   </td>
@@ -29,25 +30,49 @@
 </table>
 </div>
 <!-- end header part -->
-<!-- Généré par Doxygen 1.8.13 -->
+<!-- Généré par Doxygen 1.8.6 -->
 <script type="text/javascript">
 var searchBox = new SearchBox("searchBox", "search",false,'Recherche');
 </script>
-<script type="text/javascript" src="menudata.js"></script>
-<script type="text/javascript" src="menu.js"></script>
-<script type="text/javascript">
-$(function() {
-  initMenu('',true,false,'search.php','Recherche');
-  $(document).ready(function() { init_search(); });
-});
-</script>
-<div id="main-nav"></div>
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>Page&#160;principale</span></a></li>
+      <li><a href="pages.html"><span>Pages&#160;associées</span></a></li>
+      <li><a href="modules.html"><span>Modules</span></a></li>
+      <li class="current"><a href="annotated.html"><span>Classes</span></a></li>
+      <li><a href="files.html"><span>Fichiers</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="Recherche" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
+          </span>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="annotated.html"><span>Liste&#160;des&#160;classes</span></a></li>
+      <li><a href="classes.html"><span>Index&#160;des&#160;classes</span></a></li>
+      <li><a href="inherits.html"><span>Hiérarchie&#160;des&#160;classes</span></a></li>
+      <li><a href="functions.html"><span>Membres&#160;de&#160;classe</span></a></li>
+    </ul>
+  </div>
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-</div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>Tout</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Fichiers</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Fonctions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Définitions de type</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Énumérations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Valeurs énumérées</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Groupes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&#160;</span>Pages</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -72,29 +97,16 @@ $(function() {
 </div><!--header-->
 <div class="contents">
 
+<p>Classe décrivant un objet sélectionnable dans l'explorateur.  
+ <a href="classobjet__selectionnable.html#details">Plus de détails...</a></p>
+
 <p><code>#include &lt;<a class="el" href="objet__selectionnable_8h_source.html">objet_selectionnable.h</a>&gt;</code></p>
 <div class="dynheader">
 Graphe d'héritage de objet_selectionnable:</div>
 <div class="dyncontent">
 <div class="center"><img src="classobjet__selectionnable__inherit__graph.png" border="0" usemap="#objet__selectionnable_inherit__map" alt="Inheritance graph"/></div>
 <map name="objet__selectionnable_inherit__map" id="objet__selectionnable_inherit__map">
-<area shape="rect" id="node3" href="classbase__fonction.html" title="Classe décrivant une fonction de conversion d&#39;un texte. " alt="" coords="333,233,435,260"/>
-<area shape="rect" id="node15" href="classfonctions__conteneur.html" title="fonctions_conteneur" alt="" coords="315,368,453,395"/>
-<area shape="rect" id="node4" href="classfonction__base__sortie.html" title="fonction_base_sortie" alt="" coords="505,81,647,108"/>
-<area shape="rect" id="node6" href="classfonction__base__source.html" title="fonction_base_source" alt="" coords="501,208,651,235"/>
-<area shape="rect" id="node14" href="classfonction__cesar.html" title="Classe décrivant une fonction permettant de réaliser un décalage de césar. " alt="" coords="523,259,629,285"/>
-<area shape="rect" id="node5" href="classfonction__sortie__texte.html" title="fonction_sortie_texte" alt="" coords="722,5,865,32"/>
-<area shape="rect" id="node7" href="classfonction__source__booleen.html" title="fonction_source_booleen" alt="" coords="710,56,877,83"/>
-<area shape="rect" id="node8" href="classfonction__source__caractere.html" title="fonction_source_caractere" alt="" coords="706,107,881,133"/>
-<area shape="rect" id="node9" href="classfonction__source__choix.html" title="fonction_source_choix" alt="" coords="717,157,869,184"/>
-<area shape="rect" id="node10" href="classfonction__source__entier.html" title="fonction_source_entier" alt="" coords="717,208,870,235"/>
-<area shape="rect" id="node11" href="classfonction__source__fichier__texte.html" title="fonction_source_fichier\l_texte" alt="" coords="715,259,871,301"/>
-<area shape="rect" id="node12" href="classfonction__source__permutation.html" title="fonction_source_permutation" alt="" coords="699,325,888,352"/>
-<area shape="rect" id="node13" href="classfonction__source__texte.html" title="fonction_source_texte" alt="" coords="718,376,869,403"/>
-<area shape="rect" id="node16" href="classbase__parametre.html" title="Classe décrivant un parametre d&#39;une fonction. " alt="" coords="519,368,633,395"/>
-<area shape="rect" id="node18" href="classprojet.html" title="Classe décrivant un projet. " alt="" coords="549,419,603,445"/>
-<area shape="rect" id="node17" href="classparametre__choix.html" title="Classe décrivant un parametre de type choix. " alt="" coords="734,427,853,453"/>
-</map>
+<area shape="rect" id="node3" href="classbase__fonction.html" title="Classe décrivant une fonction de conversion d&#39;un texte. " alt="" coords="333,233,435,260"/><area shape="rect" id="node15" href="classfonctions__conteneur.html" title="Classe décrivant un conteneur de fonctions. " alt="" coords="315,368,453,395"/><area shape="rect" id="node4" href="classfonction__base__sortie.html" title="Classe commune à toutes les fonctions de type sortie. " alt="" coords="505,81,647,108"/><area shape="rect" id="node6" href="classfonction__base__source.html" title="Classe commune à toutes les fonctions de type sortie. " alt="" coords="501,208,651,235"/><area shape="rect" id="node14" href="classfonction__cesar.html" title="Classe décrivant une fonction permettant de réaliser un décalage de césar. " alt="" coords="523,259,629,285"/><area shape="rect" id="node5" href="classfonction__sortie__texte.html" title="fonction_sortie_texte" alt="" coords="722,5,865,32"/><area shape="rect" id="node7" href="classfonction__source__booleen.html" title="Classe décrivant une fonction source de type booléen (Oui ou Non). " alt="" coords="710,56,877,83"/><area shape="rect" id="node8" href="classfonction__source__caractere.html" title="Classe décrivant une fonction source de type caractères. " alt="" coords="706,107,881,133"/><area shape="rect" id="node9" href="classfonction__source__choix.html" title="Classe décrivant une fonction source de type choix. " alt="" coords="717,157,869,184"/><area shape="rect" id="node10" href="classfonction__source__entier.html" title="Classe décrivant une fonction source de type entier. " alt="" coords="717,208,870,235"/><area shape="rect" id="node11" href="classfonction__source__fichier__texte.html" title="Classe décrivant une fonction source de type fichier textuel. " alt="" coords="715,259,871,301"/><area shape="rect" id="node12" href="classfonction__source__permutation.html" title="Classe décrivant une fonction source générant toutes les permutations d&#39;une liste d&#39;éléments fournis..." alt="" coords="699,325,888,352"/><area shape="rect" id="node13" href="classfonction__source__texte.html" title="Classe décrivant une fonction source de type texte. " alt="" coords="718,376,869,403"/><area shape="rect" id="node16" href="classbase__parametre.html" title="Classe décrivant un parametre d&#39;une fonction. " alt="" coords="519,368,633,395"/><area shape="rect" id="node18" href="classprojet.html" title="Classe décrivant un projet. " alt="" coords="549,419,603,445"/><area shape="rect" id="node17" href="classparametre__choix.html" title="Classe décrivant un parametre de type choix. " alt="" coords="734,427,853,453"/></map>
 <center><span class="legend">[<a href="graph_legend.html">légende</a>]</span></center></div>
 <div class="dynheader">
 Graphe de collaboration de objet_selectionnable:</div>
@@ -104,122 +116,169 @@ Graphe de collaboration de objet_selectionnable:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="signals"></a>
 Signaux</h2></td></tr>
-<tr class="memitem:a3c288bfdd00e94dfb082fc7d55e1d411"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classobjet__selectionnable.html#a3c288bfdd00e94dfb082fc7d55e1d411">signal_os_selectionne</a> (<a class="el" href="classobjet__selectionnable.html">objet_selectionnable</a> *)</td></tr>
-<tr class="separator:a3c288bfdd00e94dfb082fc7d55e1d411"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9b592ea610dfcffc63bd4eb3ca3d2633"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classobjet__selectionnable.html#a9b592ea610dfcffc63bd4eb3ca3d2633">signal_os_deselectionne</a> (<a class="el" href="classobjet__selectionnable.html">objet_selectionnable</a> *)</td></tr>
-<tr class="separator:a9b592ea610dfcffc63bd4eb3ca3d2633"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac59cb48c83f3f5e994a0929b11e8aa22"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classobjet__selectionnable.html#ac59cb48c83f3f5e994a0929b11e8aa22">signal_os_destruction_selectionnable</a> (<a class="el" href="classobjet__selectionnable.html">objet_selectionnable</a> *)</td></tr>
-<tr class="separator:ac59cb48c83f3f5e994a0929b11e8aa22"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8d490913018c0df790d83537b2169955"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classobjet__selectionnable.html#a8d490913018c0df790d83537b2169955">signal_verrouillage_change</a> (<a class="el" href="classobjet__selectionnable.html">objet_selectionnable</a> *f)</td></tr>
-<tr class="separator:a8d490913018c0df790d83537b2169955"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9e37f711a645ced3c8da230e426a4eb6"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classobjet__selectionnable.html#a9e37f711a645ced3c8da230e426a4eb6">signal_os_selectionne</a> (<a class="el" href="classobjet__selectionnable.html">objet_selectionnable</a> *obj)</td></tr>
+<tr class="memdesc:a9e37f711a645ced3c8da230e426a4eb6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Signal informant qu'un objet est sélectionné.  <a href="#a9e37f711a645ced3c8da230e426a4eb6">Plus de détails...</a><br/></td></tr>
+<tr class="separator:a9e37f711a645ced3c8da230e426a4eb6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a61af4b5ffeb8de0fbbd6daf6c56dfb4b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classobjet__selectionnable.html#a61af4b5ffeb8de0fbbd6daf6c56dfb4b">signal_os_deselectionne</a> (<a class="el" href="classobjet__selectionnable.html">objet_selectionnable</a> *obj)</td></tr>
+<tr class="memdesc:a61af4b5ffeb8de0fbbd6daf6c56dfb4b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Signal informant qu'un objet est désélectionné.  <a href="#a61af4b5ffeb8de0fbbd6daf6c56dfb4b">Plus de détails...</a><br/></td></tr>
+<tr class="separator:a61af4b5ffeb8de0fbbd6daf6c56dfb4b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a666f0dac3844ccc553b1d69244b2afac"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classobjet__selectionnable.html#a666f0dac3844ccc553b1d69244b2afac">signal_os_destruction_selectionnable</a> (<a class="el" href="classobjet__selectionnable.html">objet_selectionnable</a> *obj)</td></tr>
+<tr class="memdesc:a666f0dac3844ccc553b1d69244b2afac"><td class="mdescLeft">&#160;</td><td class="mdescRight">Signal informant de la destruction d'un objet.  <a href="#a666f0dac3844ccc553b1d69244b2afac">Plus de détails...</a><br/></td></tr>
+<tr class="separator:a666f0dac3844ccc553b1d69244b2afac"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7487be927fa6dd18b858adbcb3b181bd"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classobjet__selectionnable.html#a7487be927fa6dd18b858adbcb3b181bd">signal_verrouillage_change</a> (<a class="el" href="classobjet__selectionnable.html">objet_selectionnable</a> *obj)</td></tr>
+<tr class="memdesc:a7487be927fa6dd18b858adbcb3b181bd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Signal informant que le verrouillage d'un objet est modifié.  <a href="#a7487be927fa6dd18b858adbcb3b181bd">Plus de détails...</a><br/></td></tr>
+<tr class="separator:a7487be927fa6dd18b858adbcb3b181bd"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Fonctions membres publiques</h2></td></tr>
 <tr class="memitem:af68427cda8defcbcf0d21de69730a4f6"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classobjet__selectionnable.html#af68427cda8defcbcf0d21de69730a4f6">objet_selectionnable</a> (<a class="el" href="classobjet__selectionnable.html">objet_selectionnable</a> *parent=NULL)</td></tr>
+<tr class="memdesc:af68427cda8defcbcf0d21de69730a4f6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructeur de la classe <a class="el" href="classobjet__selectionnable.html" title="Classe décrivant un objet sélectionnable dans l&#39;explorateur. ">objet_selectionnable</a>.  <a href="#af68427cda8defcbcf0d21de69730a4f6">Plus de détails...</a><br/></td></tr>
 <tr class="separator:af68427cda8defcbcf0d21de69730a4f6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2c7f03948af9a366ecc00b792603526e"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classobjet__selectionnable.html#a2c7f03948af9a366ecc00b792603526e">~objet_selectionnable</a> ()</td></tr>
+<tr class="memdesc:a2c7f03948af9a366ecc00b792603526e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Destructeur de la classe <a class="el" href="classobjet__selectionnable.html" title="Classe décrivant un objet sélectionnable dans l&#39;explorateur. ">objet_selectionnable</a>.  <a href="#a2c7f03948af9a366ecc00b792603526e">Plus de détails...</a><br/></td></tr>
 <tr class="separator:a2c7f03948af9a366ecc00b792603526e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a645da22be6e3f8747086da238e788fb9"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classobjet__selectionnable.html#a645da22be6e3f8747086da238e788fb9">selectionner</a> ()</td></tr>
+<tr class="memdesc:a645da22be6e3f8747086da238e788fb9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sélectionne l'objet.  <a href="#a645da22be6e3f8747086da238e788fb9">Plus de détails...</a><br/></td></tr>
 <tr class="separator:a645da22be6e3f8747086da238e788fb9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab809d020155b7fec48ff3adbe15c9b65"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classfonctions__conteneur.html">fonctions_conteneur</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classobjet__selectionnable.html#ab809d020155b7fec48ff3adbe15c9b65">get_conteneur</a> ()</td></tr>
+<tr class="memdesc:ab809d020155b7fec48ff3adbe15c9b65"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retourne le <a class="el" href="classfonctions__conteneur.html" title="Classe décrivant un conteneur de fonctions. ">fonctions_conteneur</a> le plus proche : l'objet lui-même s'il est un conteneur, ou le conteneur parent sinon.  <a href="#ab809d020155b7fec48ff3adbe15c9b65">Plus de détails...</a><br/></td></tr>
 <tr class="separator:ab809d020155b7fec48ff3adbe15c9b65"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa3741b4fc28232cb05e346f5a3a5ea56"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="classfonctions__conteneur.html">fonctions_conteneur</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classobjet__selectionnable.html#aa3741b4fc28232cb05e346f5a3a5ea56">get_conteneur</a> () const</td></tr>
-<tr class="separator:aa3741b4fc28232cb05e346f5a3a5ea56"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa80aeba62e29922d6d7289a836228dfc"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="classfonctions__conteneur.html">fonctions_conteneur</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classobjet__selectionnable.html#aa80aeba62e29922d6d7289a836228dfc">get_conteneur</a> () const </td></tr>
+<tr class="memdesc:aa80aeba62e29922d6d7289a836228dfc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retourne le <a class="el" href="classfonctions__conteneur.html" title="Classe décrivant un conteneur de fonctions. ">fonctions_conteneur</a> <b>constant</b> le plus proche : l'objet lui-même s'il est un conteneur, ou le conteneur parent sinon.  <a href="#aa80aeba62e29922d6d7289a836228dfc">Plus de détails...</a><br/></td></tr>
+<tr class="separator:aa80aeba62e29922d6d7289a836228dfc"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6f00a6275b09a11fb43316144e2d4b86"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classfonctions__conteneur.html">fonctions_conteneur</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classobjet__selectionnable.html#a6f00a6275b09a11fb43316144e2d4b86">get_conteneur_precedant</a> ()</td></tr>
+<tr class="memdesc:a6f00a6275b09a11fb43316144e2d4b86"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retourne le <a class="el" href="classfonctions__conteneur.html" title="Classe décrivant un conteneur de fonctions. ">fonctions_conteneur</a> parent.  <a href="#a6f00a6275b09a11fb43316144e2d4b86">Plus de détails...</a><br/></td></tr>
 <tr class="separator:a6f00a6275b09a11fb43316144e2d4b86"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab48a75e720955aebe27f720dfaa5e78e"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classprojet.html">projet</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classobjet__selectionnable.html#ab48a75e720955aebe27f720dfaa5e78e">get_projet</a> ()</td></tr>
+<tr class="memdesc:ab48a75e720955aebe27f720dfaa5e78e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retourne le projet contenant l'objet sélectionnable.  <a href="#ab48a75e720955aebe27f720dfaa5e78e">Plus de détails...</a><br/></td></tr>
 <tr class="separator:ab48a75e720955aebe27f720dfaa5e78e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aab2318fe95dbe865acf0f021e8acaf2d"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classobjet__selectionnable.html#aab2318fe95dbe865acf0f021e8acaf2d">est_dans_projet</a> () const</td></tr>
-<tr class="separator:aab2318fe95dbe865acf0f021e8acaf2d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2c6b5b342b5f3a9f48893f793f935e0f"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classobjet__selectionnable.html#a2c6b5b342b5f3a9f48893f793f935e0f">est_conteneur</a> () const</td></tr>
-<tr class="separator:a2c6b5b342b5f3a9f48893f793f935e0f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a49ea1a29523e46f099896477a2b43eaa"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classobjet__selectionnable.html#a49ea1a29523e46f099896477a2b43eaa">est_projet</a> () const</td></tr>
-<tr class="separator:a49ea1a29523e46f099896477a2b43eaa"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8a235fc5211fbec0347ebe2342e99fa5"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classobjet__selectionnable.html#a8a235fc5211fbec0347ebe2342e99fa5">est_fonction</a> () const</td></tr>
-<tr class="separator:a8a235fc5211fbec0347ebe2342e99fa5"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2d06c9e229e16a40d0649fb02d4de235"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classobjet__selectionnable.html#a2d06c9e229e16a40d0649fb02d4de235">est_parametre</a> () const</td></tr>
-<tr class="separator:a2d06c9e229e16a40d0649fb02d4de235"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9a0bf43723dd1656224cec9f3c42bba0"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classobjet__selectionnable.html#a9a0bf43723dd1656224cec9f3c42bba0">est_active</a> () const</td></tr>
-<tr class="separator:a9a0bf43723dd1656224cec9f3c42bba0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aaa39f8be3dfaeb095cc12a217b234f9b"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classobjet__selectionnable.html#aaa39f8be3dfaeb095cc12a217b234f9b">est_dans_projet</a> () const </td></tr>
+<tr class="memdesc:aaa39f8be3dfaeb095cc12a217b234f9b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Indique si l'objet est dans un projet.  <a href="#aaa39f8be3dfaeb095cc12a217b234f9b">Plus de détails...</a><br/></td></tr>
+<tr class="separator:aaa39f8be3dfaeb095cc12a217b234f9b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abed9a58bb39d15353db880fbd0808714"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classobjet__selectionnable.html#abed9a58bb39d15353db880fbd0808714">est_conteneur</a> () const </td></tr>
+<tr class="memdesc:abed9a58bb39d15353db880fbd0808714"><td class="mdescLeft">&#160;</td><td class="mdescRight">Indique si l'objet est un conteneur.  <a href="#abed9a58bb39d15353db880fbd0808714">Plus de détails...</a><br/></td></tr>
+<tr class="separator:abed9a58bb39d15353db880fbd0808714"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a97e33c61983d5c7811e8bacff8f114c4"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classobjet__selectionnable.html#a97e33c61983d5c7811e8bacff8f114c4">est_projet</a> () const </td></tr>
+<tr class="memdesc:a97e33c61983d5c7811e8bacff8f114c4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Indique si l'objet est un projet.  <a href="#a97e33c61983d5c7811e8bacff8f114c4">Plus de détails...</a><br/></td></tr>
+<tr class="separator:a97e33c61983d5c7811e8bacff8f114c4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab5d7e0b9f000ba34d9d60b36590f1fcf"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classobjet__selectionnable.html#ab5d7e0b9f000ba34d9d60b36590f1fcf">est_fonction</a> () const </td></tr>
+<tr class="memdesc:ab5d7e0b9f000ba34d9d60b36590f1fcf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Indique si l'objet est une fonction.  <a href="#ab5d7e0b9f000ba34d9d60b36590f1fcf">Plus de détails...</a><br/></td></tr>
+<tr class="separator:ab5d7e0b9f000ba34d9d60b36590f1fcf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a928feb3830d6c538a4a15c1d76da3dfd"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classobjet__selectionnable.html#a928feb3830d6c538a4a15c1d76da3dfd">est_parametre</a> () const </td></tr>
+<tr class="memdesc:a928feb3830d6c538a4a15c1d76da3dfd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Indique si l'objet est un paramètre.  <a href="#a928feb3830d6c538a4a15c1d76da3dfd">Plus de détails...</a><br/></td></tr>
+<tr class="separator:a928feb3830d6c538a4a15c1d76da3dfd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9f9e2ccc04e3b2a55d7b51b85366488f"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classobjet__selectionnable.html#a9f9e2ccc04e3b2a55d7b51b85366488f">est_active</a> () const </td></tr>
+<tr class="memdesc:a9f9e2ccc04e3b2a55d7b51b85366488f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retourne l'état d'activation de l'objet.  <a href="#a9f9e2ccc04e3b2a55d7b51b85366488f">Plus de détails...</a><br/></td></tr>
+<tr class="separator:a9f9e2ccc04e3b2a55d7b51b85366488f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:acb1bf63e061079a402c929ce346b0b22"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classobjet__selectionnable.html#acb1bf63e061079a402c929ce346b0b22">set_est_active</a> (bool active)</td></tr>
+<tr class="memdesc:acb1bf63e061079a402c929ce346b0b22"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initialise l'état d'activation de l'objet.  <a href="#acb1bf63e061079a402c929ce346b0b22">Plus de détails...</a><br/></td></tr>
 <tr class="separator:acb1bf63e061079a402c929ce346b0b22"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab86bf8b056ebc44909fb899dc6834422"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classobjet__selectionnable.html#ab86bf8b056ebc44909fb899dc6834422">est_active_avec_parent</a> () const</td></tr>
-<tr class="separator:ab86bf8b056ebc44909fb899dc6834422"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a65b1afceca6ba5882edb9b7707d851f8"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classobjet__selectionnable.html#a65b1afceca6ba5882edb9b7707d851f8">parents_actifs</a> () const</td></tr>
-<tr class="separator:a65b1afceca6ba5882edb9b7707d851f8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aed181014e7fe90bc341d0b0341cd7c31"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classobjet__selectionnable.html#aed181014e7fe90bc341d0b0341cd7c31">a_ancetre</a> (<a class="el" href="classobjet__selectionnable.html">objet_selectionnable</a> *obj) const</td></tr>
-<tr class="separator:aed181014e7fe90bc341d0b0341cd7c31"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae9c29950b9e5b582338ac659ecc3e3d6"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classobjet__selectionnable.html#ae9c29950b9e5b582338ac659ecc3e3d6">est_verrouille</a> () const</td></tr>
-<tr class="separator:ae9c29950b9e5b582338ac659ecc3e3d6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ada0d1bda8b5fdc1f81979720d40fb840"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classobjet__selectionnable.html#ada0d1bda8b5fdc1f81979720d40fb840">est_active_avec_parent</a> () const </td></tr>
+<tr class="memdesc:ada0d1bda8b5fdc1f81979720d40fb840"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retourne l'état d'activation de l'objet en considérant également les objets parents.  <a href="#ada0d1bda8b5fdc1f81979720d40fb840">Plus de détails...</a><br/></td></tr>
+<tr class="separator:ada0d1bda8b5fdc1f81979720d40fb840"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a76587773c723728d21583bb87e995daa"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classobjet__selectionnable.html#a76587773c723728d21583bb87e995daa">parents_actifs</a> () const </td></tr>
+<tr class="memdesc:a76587773c723728d21583bb87e995daa"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retourne l'état d'activation de l'objet parent.  <a href="#a76587773c723728d21583bb87e995daa">Plus de détails...</a><br/></td></tr>
+<tr class="separator:a76587773c723728d21583bb87e995daa"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab2b3d6e89c6a33d83d79bafd6e36a671"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classobjet__selectionnable.html#ab2b3d6e89c6a33d83d79bafd6e36a671">a_ancetre</a> (<a class="el" href="classobjet__selectionnable.html">objet_selectionnable</a> *obj) const </td></tr>
+<tr class="memdesc:ab2b3d6e89c6a33d83d79bafd6e36a671"><td class="mdescLeft">&#160;</td><td class="mdescRight">Indique si l'objet a comme ancêtre un objet donné.  <a href="#ab2b3d6e89c6a33d83d79bafd6e36a671">Plus de détails...</a><br/></td></tr>
+<tr class="separator:ab2b3d6e89c6a33d83d79bafd6e36a671"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8b9cf156597fe8cc1b8f9408e1bfee8c"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classobjet__selectionnable.html#a8b9cf156597fe8cc1b8f9408e1bfee8c">est_verrouille</a> () const </td></tr>
+<tr class="memdesc:a8b9cf156597fe8cc1b8f9408e1bfee8c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Indique si l'objet est vérrouillé, i.e. non éditable.  <a href="#a8b9cf156597fe8cc1b8f9408e1bfee8c">Plus de détails...</a><br/></td></tr>
+<tr class="separator:a8b9cf156597fe8cc1b8f9408e1bfee8c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5d39343f43293805a0b60e8520687d87"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classobjet__selectionnable.html#a5d39343f43293805a0b60e8520687d87">set_verrouille</a> (bool verrouille)</td></tr>
+<tr class="memdesc:a5d39343f43293805a0b60e8520687d87"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initialise l'état de verrouillage de l'objet.  <a href="#a5d39343f43293805a0b60e8520687d87">Plus de détails...</a><br/></td></tr>
 <tr class="separator:a5d39343f43293805a0b60e8520687d87"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a028ac895965858e0e8e8e2cc25e8323c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classobjet__selectionnable.html#a028ac895965858e0e8e8e2cc25e8323c">inverser_verrouillage</a> ()</td></tr>
+<tr class="memdesc:a028ac895965858e0e8e8e2cc25e8323c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Inverse l'état de verrouillage.  <a href="#a028ac895965858e0e8e8e2cc25e8323c">Plus de détails...</a><br/></td></tr>
 <tr class="separator:a028ac895965858e0e8e8e2cc25e8323c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a001c4584a6430689f478544ec560fb7e"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classobjet__selectionnable.html#a001c4584a6430689f478544ec560fb7e">est_verrouille_avec_parent</a> () const</td></tr>
-<tr class="separator:a001c4584a6430689f478544ec560fb7e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad9357af8b3471529814165378c6ce13d"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classobjet__selectionnable.html#ad9357af8b3471529814165378c6ce13d">parents_verrouilles</a> () const</td></tr>
-<tr class="separator:ad9357af8b3471529814165378c6ce13d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af1e714963d861a9895ff590531396707"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classobjet__selectionnable.html#af1e714963d861a9895ff590531396707">est_etendu</a> () const</td></tr>
-<tr class="separator:af1e714963d861a9895ff590531396707"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aafef1c588ce9d5f7956c321799986b9b"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classobjet__selectionnable.html#aafef1c588ce9d5f7956c321799986b9b">set_est_etendu</a> (bool <a class="el" href="classobjet__selectionnable.html#af1e714963d861a9895ff590531396707">est_etendu</a>)</td></tr>
+<tr class="memitem:a1cf41e42861e0b033d2704802905e81a"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classobjet__selectionnable.html#a1cf41e42861e0b033d2704802905e81a">est_verrouille_avec_parent</a> () const </td></tr>
+<tr class="memdesc:a1cf41e42861e0b033d2704802905e81a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Indique si l'objet est verrouillé en considérant également ses parents.  <a href="#a1cf41e42861e0b033d2704802905e81a">Plus de détails...</a><br/></td></tr>
+<tr class="separator:a1cf41e42861e0b033d2704802905e81a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a57341a9bf3dbc66f4ad4414183b0d27c"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classobjet__selectionnable.html#a57341a9bf3dbc66f4ad4414183b0d27c">parents_verrouilles</a> () const </td></tr>
+<tr class="memdesc:a57341a9bf3dbc66f4ad4414183b0d27c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Indique si le paret de l'objet est verrouillé.  <a href="#a57341a9bf3dbc66f4ad4414183b0d27c">Plus de détails...</a><br/></td></tr>
+<tr class="separator:a57341a9bf3dbc66f4ad4414183b0d27c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae58408e8c4421e9c33bc488381e8c0a4"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classobjet__selectionnable.html#ae58408e8c4421e9c33bc488381e8c0a4">est_etendu</a> () const </td></tr>
+<tr class="memdesc:ae58408e8c4421e9c33bc488381e8c0a4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Indique si l'objet est étendu.  <a href="#ae58408e8c4421e9c33bc488381e8c0a4">Plus de détails...</a><br/></td></tr>
+<tr class="separator:ae58408e8c4421e9c33bc488381e8c0a4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aafef1c588ce9d5f7956c321799986b9b"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classobjet__selectionnable.html#aafef1c588ce9d5f7956c321799986b9b">set_est_etendu</a> (bool <a class="el" href="classobjet__selectionnable.html#ae58408e8c4421e9c33bc488381e8c0a4">est_etendu</a>)</td></tr>
+<tr class="memdesc:aafef1c588ce9d5f7956c321799986b9b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initialise l'état étendu de l'objet.  <a href="#aafef1c588ce9d5f7956c321799986b9b">Plus de détails...</a><br/></td></tr>
 <tr class="separator:aafef1c588ce9d5f7956c321799986b9b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9f76b8e89231a79c3fc840af874bd868"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classobjet__selectionnable.html#a9f76b8e89231a79c3fc840af874bd868">modifier</a> (bool change_executable=true)</td></tr>
+<tr class="memdesc:a9f76b8e89231a79c3fc840af874bd868"><td class="mdescLeft">&#160;</td><td class="mdescRight">Modifie l'objet.  <a href="#a9f76b8e89231a79c3fc840af874bd868">Plus de détails...</a><br/></td></tr>
 <tr class="separator:a9f76b8e89231a79c3fc840af874bd868"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af4f1e02d8ede68cfb073770ed85e4899"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classobjet__selectionnable.html#af4f1e02d8ede68cfb073770ed85e4899">sauvegarder</a> (QXmlStreamWriter &amp;stream) const</td></tr>
-<tr class="memdesc:af4f1e02d8ede68cfb073770ed85e4899"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sauvegarde l'objet sélectionnable dans un flux donné.  <a href="#af4f1e02d8ede68cfb073770ed85e4899">Plus de détails...</a><br /></td></tr>
-<tr class="separator:af4f1e02d8ede68cfb073770ed85e4899"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9841178873971cf9b7384d661d3eb21a"><td class="memItemLeft" align="right" valign="top">QString&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classobjet__selectionnable.html#a9841178873971cf9b7384d661d3eb21a">creer_copie</a> () const</td></tr>
-<tr class="memdesc:a9841178873971cf9b7384d661d3eb21a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Crée une copie de l'objet au format QString.  <a href="#a9841178873971cf9b7384d661d3eb21a">Plus de détails...</a><br /></td></tr>
-<tr class="separator:a9841178873971cf9b7384d661d3eb21a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adb99710921bdf74dfe35ee9d75b995a3"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classobjet__selectionnable.html#adb99710921bdf74dfe35ee9d75b995a3">sauvegarder</a> (QXmlStreamWriter &amp;stream) const </td></tr>
+<tr class="memdesc:adb99710921bdf74dfe35ee9d75b995a3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sauvegarde l'objet sélectionnable dans un flux donné.  <a href="#adb99710921bdf74dfe35ee9d75b995a3">Plus de détails...</a><br/></td></tr>
+<tr class="separator:adb99710921bdf74dfe35ee9d75b995a3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af60943096d1f9668d7cc27056af8dd78"><td class="memItemLeft" align="right" valign="top">QString&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classobjet__selectionnable.html#af60943096d1f9668d7cc27056af8dd78">creer_copie</a> () const </td></tr>
+<tr class="memdesc:af60943096d1f9668d7cc27056af8dd78"><td class="mdescLeft">&#160;</td><td class="mdescRight">Crée une copie de l'objet au format QString.  <a href="#af60943096d1f9668d7cc27056af8dd78">Plus de détails...</a><br/></td></tr>
+<tr class="separator:af60943096d1f9668d7cc27056af8dd78"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-methods"></a>
 Fonctions membres publiques statiques</h2></td></tr>
 <tr class="memitem:ae6be76843c7b502410ec8d2c1fff88a3"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classobjet__selectionnable.html">objet_selectionnable</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classobjet__selectionnable.html#ae6be76843c7b502410ec8d2c1fff88a3">get_selection</a> ()</td></tr>
+<tr class="memdesc:ae6be76843c7b502410ec8d2c1fff88a3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retourne l'objet sélectionné.  <a href="#ae6be76843c7b502410ec8d2c1fff88a3">Plus de détails...</a><br/></td></tr>
 <tr class="separator:ae6be76843c7b502410ec8d2c1fff88a3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aeac1931a7976c17cd05e456d128ccba3"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classfonctions__conteneur.html">fonctions_conteneur</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classobjet__selectionnable.html#aeac1931a7976c17cd05e456d128ccba3">get_conteneur_courant</a> ()</td></tr>
+<tr class="memdesc:aeac1931a7976c17cd05e456d128ccba3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retourne le conteneur de la sélection courante.  <a href="#aeac1931a7976c17cd05e456d128ccba3">Plus de détails...</a><br/></td></tr>
 <tr class="separator:aeac1931a7976c17cd05e456d128ccba3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:afdc2163828d829f786887b60e11e4717"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classprojet.html">projet</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classobjet__selectionnable.html#afdc2163828d829f786887b60e11e4717">get_projet_courant</a> ()</td></tr>
+<tr class="memdesc:afdc2163828d829f786887b60e11e4717"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retourne le projet de la sélection courante.  <a href="#afdc2163828d829f786887b60e11e4717">Plus de détails...</a><br/></td></tr>
 <tr class="separator:afdc2163828d829f786887b60e11e4717"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad3c9ec08e1036a463b6b82176d52364d"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classobjet__selectionnable.html#ad3c9ec08e1036a463b6b82176d52364d">existe_selection</a> ()</td></tr>
+<tr class="memdesc:ad3c9ec08e1036a463b6b82176d52364d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Indique s'il existe un objet sélectionné.  <a href="#ad3c9ec08e1036a463b6b82176d52364d">Plus de détails...</a><br/></td></tr>
 <tr class="separator:ad3c9ec08e1036a463b6b82176d52364d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab2fb752b9ba998ed26975936d1d5beaa"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classobjet__selectionnable.html#ab2fb752b9ba998ed26975936d1d5beaa">forcer_deselection</a> ()</td></tr>
+<tr class="memdesc:ab2fb752b9ba998ed26975936d1d5beaa"><td class="mdescLeft">&#160;</td><td class="mdescRight">Désélectionne l'objet sélectionné.  <a href="#ab2fb752b9ba998ed26975936d1d5beaa">Plus de détails...</a><br/></td></tr>
 <tr class="separator:ab2fb752b9ba998ed26975936d1d5beaa"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-methods"></a>
 Fonctions membres protégées</h2></td></tr>
 <tr class="memitem:a555085da89b30b07349064bb54a26138"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classobjet__selectionnable.html#a555085da89b30b07349064bb54a26138">deselectionner</a> ()</td></tr>
+<tr class="memdesc:a555085da89b30b07349064bb54a26138"><td class="mdescLeft">&#160;</td><td class="mdescRight">Désélectionne l'objet sélectionné.  <a href="#a555085da89b30b07349064bb54a26138">Plus de détails...</a><br/></td></tr>
 <tr class="separator:a555085da89b30b07349064bb54a26138"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8f3ce3c0cf4e85da9115b7517f9e0e2d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classobjet__selectionnable.html#a8f3ce3c0cf4e85da9115b7517f9e0e2d">charger</a> (QXmlStreamReader &amp;xml)</td></tr>
+<tr class="memdesc:a8f3ce3c0cf4e85da9115b7517f9e0e2d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Charge l'objet à partir d'une source xml donnée.  <a href="#a8f3ce3c0cf4e85da9115b7517f9e0e2d">Plus de détails...</a><br/></td></tr>
 <tr class="separator:a8f3ce3c0cf4e85da9115b7517f9e0e2d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-attribs"></a>
 Attributs protégés</h2></td></tr>
-<tr class="memitem:ab345c9277c7192ea5b01e2796ec099dc"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classobjet__selectionnable.html">objet_selectionnable</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classobjet__selectionnable.html#ab345c9277c7192ea5b01e2796ec099dc">m_objet_parent</a></td></tr>
+<tr class="memitem:ab345c9277c7192ea5b01e2796ec099dc"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ab345c9277c7192ea5b01e2796ec099dc"></a>
+<a class="el" href="classobjet__selectionnable.html">objet_selectionnable</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classobjet__selectionnable.html#ab345c9277c7192ea5b01e2796ec099dc">m_objet_parent</a></td></tr>
+<tr class="memdesc:ab345c9277c7192ea5b01e2796ec099dc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Un pointeur sur l'objet parent. <br/></td></tr>
 <tr class="separator:ab345c9277c7192ea5b01e2796ec099dc"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:afb0e6eeeac420371f55aac0e455e1a84"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classobjet__selectionnable.html#afb0e6eeeac420371f55aac0e455e1a84">m_est_active</a></td></tr>
+<tr class="memitem:afb0e6eeeac420371f55aac0e455e1a84"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="afb0e6eeeac420371f55aac0e455e1a84"></a>
+bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classobjet__selectionnable.html#afb0e6eeeac420371f55aac0e455e1a84">m_est_active</a></td></tr>
+<tr class="memdesc:afb0e6eeeac420371f55aac0e455e1a84"><td class="mdescLeft">&#160;</td><td class="mdescRight">Indique si l'objet est actif. <br/></td></tr>
 <tr class="separator:afb0e6eeeac420371f55aac0e455e1a84"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2b200ce9a6ff0feab9b77d63f5d072bd"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classobjet__selectionnable.html#a2b200ce9a6ff0feab9b77d63f5d072bd">m_est_etendu</a></td></tr>
+<tr class="memitem:a2b200ce9a6ff0feab9b77d63f5d072bd"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a2b200ce9a6ff0feab9b77d63f5d072bd"></a>
+bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classobjet__selectionnable.html#a2b200ce9a6ff0feab9b77d63f5d072bd">m_est_etendu</a></td></tr>
+<tr class="memdesc:a2b200ce9a6ff0feab9b77d63f5d072bd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Indique si l'objet est étendu, i.e. ses enfants sont visibles. <br/></td></tr>
 <tr class="separator:a2b200ce9a6ff0feab9b77d63f5d072bd"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:acc586244b54a6c7cdd49cef6b44fd156"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classobjet__selectionnable.html#acc586244b54a6c7cdd49cef6b44fd156">m_verrouille</a></td></tr>
+<tr class="memitem:acc586244b54a6c7cdd49cef6b44fd156"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="acc586244b54a6c7cdd49cef6b44fd156"></a>
+bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classobjet__selectionnable.html#acc586244b54a6c7cdd49cef6b44fd156">m_verrouille</a></td></tr>
+<tr class="memdesc:acc586244b54a6c7cdd49cef6b44fd156"><td class="mdescLeft">&#160;</td><td class="mdescRight">Indique si l'objet est verrouillé, i.e. est non modifiable. <br/></td></tr>
 <tr class="separator:acc586244b54a6c7cdd49cef6b44fd156"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-static-attribs"></a>
 Attributs protégés statiques</h2></td></tr>
-<tr class="memitem:a4fdc91751c9dc77565b2b0cab50a726a"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classobjet__selectionnable.html">objet_selectionnable</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classobjet__selectionnable.html#a4fdc91751c9dc77565b2b0cab50a726a">s_objet_courant</a> = NULL</td></tr>
+<tr class="memitem:a4fdc91751c9dc77565b2b0cab50a726a"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a4fdc91751c9dc77565b2b0cab50a726a"></a>
+static <a class="el" href="classobjet__selectionnable.html">objet_selectionnable</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classobjet__selectionnable.html#a4fdc91751c9dc77565b2b0cab50a726a">s_objet_courant</a> = NULL</td></tr>
+<tr class="memdesc:a4fdc91751c9dc77565b2b0cab50a726a"><td class="mdescLeft">&#160;</td><td class="mdescRight">L'objet actuellement sélectionné. <br/></td></tr>
 <tr class="separator:a4fdc91751c9dc77565b2b0cab50a726a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-static-methods"></a>
 Fonctions membres privées statiques</h2></td></tr>
 <tr class="memitem:abcae7d026add7c8eb8df630c95a87cb2"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classprojet.html">projet</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classobjet__selectionnable.html#abcae7d026add7c8eb8df630c95a87cb2">get_projet_courant</a> (<a class="el" href="classobjet__selectionnable.html">objet_selectionnable</a> *obj)</td></tr>
+<tr class="memdesc:abcae7d026add7c8eb8df630c95a87cb2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retourne le projet d'e la sélection courante'un objet donné.  <a href="#abcae7d026add7c8eb8df630c95a87cb2">Plus de détails...</a><br/></td></tr>
 <tr class="separator:abcae7d026add7c8eb8df630c95a87cb2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Description détaillée</h2>
-<div class="textblock">
-<p class="definition">Définition à la ligne <a class="el" href="objet__selectionnable_8h_source.html#l00011">11</a> du fichier <a class="el" href="objet__selectionnable_8h_source.html">objet_selectionnable.h</a>.</p>
-</div><h2 class="groupheader">Documentation des constructeurs et destructeur</h2>
-<a id="af68427cda8defcbcf0d21de69730a4f6"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#af68427cda8defcbcf0d21de69730a4f6">&#9670;&nbsp;</a></span>objet_selectionnable()</h2>
+<div class="textblock"><p>Classe décrivant un objet sélectionnable dans l'explorateur. </p>
+<dl class="section author"><dt>Auteur</dt><dd>Sébastien Angibaud </dd></dl>
 
+<p>Définition à la ligne <a class="el" href="objet__selectionnable_8h_source.html#l00021">21</a> du fichier <a class="el" href="objet__selectionnable_8h_source.html">objet_selectionnable.h</a>.</p>
+</div><h2 class="groupheader">Documentation des constructeurs et destructeur</h2>
+<a class="anchor" id="af68427cda8defcbcf0d21de69730a4f6"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -233,13 +292,20 @@ Fonctions membres privées statiques</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Définition à la ligne <a class="el" href="objet__selectionnable_8cpp_source.html#l00010">10</a> du fichier <a class="el" href="objet__selectionnable_8cpp_source.html">objet_selectionnable.cpp</a>.</p>
+<p>Constructeur de la classe <a class="el" href="classobjet__selectionnable.html" title="Classe décrivant un objet sélectionnable dans l&#39;explorateur. ">objet_selectionnable</a>. </p>
+<hr/>
+ <dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">parent</td><td>Un pointeur sur l'objet parent. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Définition à la ligne <a class="el" href="objet__selectionnable_8cpp_source.html#l00020">20</a> du fichier <a class="el" href="objet__selectionnable_8cpp_source.html">objet_selectionnable.cpp</a>.</p>
 
 </div>
 </div>
-<a id="a2c7f03948af9a366ecc00b792603526e"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a2c7f03948af9a366ecc00b792603526e">&#9670;&nbsp;</a></span>~objet_selectionnable()</h2>
-
+<a class="anchor" id="a2c7f03948af9a366ecc00b792603526e"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -252,14 +318,15 @@ Fonctions membres privées statiques</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Définition à la ligne <a class="el" href="objet__selectionnable_8cpp_source.html#l00016">16</a> du fichier <a class="el" href="objet__selectionnable_8cpp_source.html">objet_selectionnable.cpp</a>.</p>
+<p>Destructeur de la classe <a class="el" href="classobjet__selectionnable.html" title="Classe décrivant un objet sélectionnable dans l&#39;explorateur. ">objet_selectionnable</a>. </p>
+<hr/>
+ 
+<p>Définition à la ligne <a class="el" href="objet__selectionnable_8cpp_source.html#l00029">29</a> du fichier <a class="el" href="objet__selectionnable_8cpp_source.html">objet_selectionnable.cpp</a>.</p>
 
 </div>
 </div>
 <h2 class="groupheader">Documentation des fonctions membres</h2>
-<a id="aed181014e7fe90bc341d0b0341cd7c31"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aed181014e7fe90bc341d0b0341cd7c31">&#9670;&nbsp;</a></span>a_ancetre()</h2>
-
+<a class="anchor" id="ab2b3d6e89c6a33d83d79bafd6e36a671"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -273,20 +340,28 @@ Fonctions membres privées statiques</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Définition à la ligne <a class="el" href="objet__selectionnable_8cpp_source.html#l00134">134</a> du fichier <a class="el" href="objet__selectionnable_8cpp_source.html">objet_selectionnable.cpp</a>.</p>
-<div class="dynheader">
+<p>Indique si l'objet a comme ancêtre un objet donné. </p>
+<hr/>
+ <dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">obj</td><td>Un pointeur sur l'objet recherché. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Renvoie</dt><dd><b>True</b> si l'objet recherché est un ancètre, <b>False</b> sinon. </dd></dl>
+
+<p>Définition à la ligne <a class="el" href="objet__selectionnable_8cpp_source.html#l00207">207</a> du fichier <a class="el" href="objet__selectionnable_8cpp_source.html">objet_selectionnable.cpp</a>.</p>
+
+<p><div class="dynheader">
 Voici le graphe d'appel pour cette fonction :</div>
 <div class="dyncontent">
-<div class="center"><img src="classobjet__selectionnable_aed181014e7fe90bc341d0b0341cd7c31_cgraph.png" border="0" usemap="#classobjet__selectionnable_aed181014e7fe90bc341d0b0341cd7c31_cgraph" alt=""/></div>
-<map name="classobjet__selectionnable_aed181014e7fe90bc341d0b0341cd7c31_cgraph" id="classobjet__selectionnable_aed181014e7fe90bc341d0b0341cd7c31_cgraph">
-</map>
+<div class="center"><img src="classobjet__selectionnable_ab2b3d6e89c6a33d83d79bafd6e36a671_cgraph.png" border="0" usemap="#classobjet__selectionnable_ab2b3d6e89c6a33d83d79bafd6e36a671_cgraph" alt=""/></div>
 </div>
+</p>
 
 </div>
 </div>
-<a id="a8f3ce3c0cf4e85da9115b7517f9e0e2d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a8f3ce3c0cf4e85da9115b7517f9e0e2d">&#9670;&nbsp;</a></span>charger()</h2>
-
+<a class="anchor" id="a8f3ce3c0cf4e85da9115b7517f9e0e2d"></a>
 <div class="memitem">
 <div class="memproto">
 <table class="mlabels">
@@ -308,25 +383,29 @@ Voici le graphe d'appel pour cette fonction :</div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Définition à la ligne <a class="el" href="objet__selectionnable_8cpp_source.html#l00295">295</a> du fichier <a class="el" href="objet__selectionnable_8cpp_source.html">objet_selectionnable.cpp</a>.</p>
-<div class="dynheader">
+<p>Charge l'objet à partir d'une source xml donnée. </p>
+<hr/>
+ <dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">xml</td><td>Le flux xml d'entrée à lire. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Définition à la ligne <a class="el" href="objet__selectionnable_8cpp_source.html#l00429">429</a> du fichier <a class="el" href="objet__selectionnable_8cpp_source.html">objet_selectionnable.cpp</a>.</p>
+
+<p><div class="dynheader">
 Voici le graphe d'appel pour cette fonction :</div>
 <div class="dyncontent">
 <div class="center"><img src="classobjet__selectionnable_a8f3ce3c0cf4e85da9115b7517f9e0e2d_cgraph.png" border="0" usemap="#classobjet__selectionnable_a8f3ce3c0cf4e85da9115b7517f9e0e2d_cgraph" alt=""/></div>
 <map name="classobjet__selectionnable_a8f3ce3c0cf4e85da9115b7517f9e0e2d_cgraph" id="classobjet__selectionnable_a8f3ce3c0cf4e85da9115b7517f9e0e2d_cgraph">
-<area shape="rect" id="node2" href="classobjet__selectionnable.html#ae58408e8c4421e9c33bc488381e8c0a4" title="objet_selectionnable\l::est_etendu" alt="" coords="195,5,335,46"/>
-<area shape="rect" id="node3" href="classobjet__selectionnable.html#aafef1c588ce9d5f7956c321799986b9b" title="objet_selectionnable\l::set_est_etendu" alt="" coords="195,70,335,111"/>
-<area shape="rect" id="node4" href="classobjet__selectionnable.html#a5d39343f43293805a0b60e8520687d87" title="objet_selectionnable\l::set_verrouille" alt="" coords="195,135,335,177"/>
-<area shape="rect" id="node5" href="classobjet__selectionnable.html#a9f76b8e89231a79c3fc840af874bd868" title="objet_selectionnable\l::modifier" alt="" coords="385,135,525,177"/>
-<area shape="rect" id="node6" href="classobjet__selectionnable.html#a97e33c61983d5c7811e8bacff8f114c4" title="objet_selectionnable\l::est_projet" alt="" coords="574,135,714,177"/>
-</map>
+<area shape="rect" id="node2" href="classobjet__selectionnable.html#ae58408e8c4421e9c33bc488381e8c0a4" title="Indique si l&#39;objet est étendu. " alt="" coords="195,5,335,46"/><area shape="rect" id="node3" href="classobjet__selectionnable.html#aafef1c588ce9d5f7956c321799986b9b" title="Initialise l&#39;état étendu de l&#39;objet. " alt="" coords="195,70,335,111"/><area shape="rect" id="node4" href="classobjet__selectionnable.html#a5d39343f43293805a0b60e8520687d87" title="Initialise l&#39;état de verrouillage de l&#39;objet. " alt="" coords="195,135,335,177"/><area shape="rect" id="node5" href="classobjet__selectionnable.html#a9f76b8e89231a79c3fc840af874bd868" title="Modifie l&#39;objet. " alt="" coords="385,135,525,177"/><area shape="rect" id="node6" href="classobjet__selectionnable.html#a97e33c61983d5c7811e8bacff8f114c4" title="Indique si l&#39;objet est un projet. " alt="" coords="574,135,714,177"/></map>
 </div>
+</p>
 
 </div>
 </div>
-<a id="a9841178873971cf9b7384d661d3eb21a"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a9841178873971cf9b7384d661d3eb21a">&#9670;&nbsp;</a></span>creer_copie()</h2>
-
+<a class="anchor" id="af60943096d1f9668d7cc27056af8dd78"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -342,20 +421,20 @@ Voici le graphe d'appel pour cette fonction :</div>
 <p>Crée une copie de l'objet au format QString. </p>
 <hr/>
  
-<p class="definition">Définition à la ligne <a class="el" href="objet__selectionnable_8cpp_source.html#l00276">276</a> du fichier <a class="el" href="objet__selectionnable_8cpp_source.html">objet_selectionnable.cpp</a>.</p>
-<div class="dynheader">
+<p>Définition à la ligne <a class="el" href="objet__selectionnable_8cpp_source.html#l00407">407</a> du fichier <a class="el" href="objet__selectionnable_8cpp_source.html">objet_selectionnable.cpp</a>.</p>
+
+<p><div class="dynheader">
 Voici le graphe d'appel pour cette fonction :</div>
 <div class="dyncontent">
-<div class="center"><img src="classobjet__selectionnable_a9841178873971cf9b7384d661d3eb21a_cgraph.png" border="0" usemap="#classobjet__selectionnable_a9841178873971cf9b7384d661d3eb21a_cgraph" alt=""/></div>
-<map name="classobjet__selectionnable_a9841178873971cf9b7384d661d3eb21a_cgraph" id="classobjet__selectionnable_a9841178873971cf9b7384d661d3eb21a_cgraph">
-</map>
+<div class="center"><img src="classobjet__selectionnable_af60943096d1f9668d7cc27056af8dd78_cgraph.png" border="0" usemap="#classobjet__selectionnable_af60943096d1f9668d7cc27056af8dd78_cgraph" alt=""/></div>
+<map name="classobjet__selectionnable_af60943096d1f9668d7cc27056af8dd78_cgraph" id="classobjet__selectionnable_af60943096d1f9668d7cc27056af8dd78_cgraph">
+<area shape="rect" id="node2" href="classobjet__selectionnable.html#abed9a58bb39d15353db880fbd0808714" title="Indique si l&#39;objet est un conteneur. " alt="" coords="385,8,525,49"/><area shape="rect" id="node3" href="classobjet__selectionnable.html#ab809d020155b7fec48ff3adbe15c9b65" title="Retourne le fonctions_conteneur le plus proche : l&#39;objet lui&#45;même s&#39;il est un conteneur, ou le conteneur parent sinon. " alt="" coords="195,49,335,91"/><area shape="rect" id="node4" href="classfonctions__conteneur.html#a199dde0697eb91a9e54c1dfecb536a88" title="Sauvegarde le fonctions_conteneur dans un flux donné. " alt="" coords="196,115,335,156"/></map>
 </div>
+</p>
 
 </div>
 </div>
-<a id="a555085da89b30b07349064bb54a26138"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a555085da89b30b07349064bb54a26138">&#9670;&nbsp;</a></span>deselectionner()</h2>
-
+<a class="anchor" id="a555085da89b30b07349064bb54a26138"></a>
 <div class="memitem">
 <div class="memproto">
 <table class="mlabels">
@@ -376,13 +455,14 @@ Voici le graphe d'appel pour cette fonction :</div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Définition à la ligne <a class="el" href="objet__selectionnable_8cpp_source.html#l00217">217</a> du fichier <a class="el" href="objet__selectionnable_8cpp_source.html">objet_selectionnable.cpp</a>.</p>
+<p>Désélectionne l'objet sélectionné. </p>
+<hr/>
+ 
+<p>Définition à la ligne <a class="el" href="objet__selectionnable_8cpp_source.html#l00331">331</a> du fichier <a class="el" href="objet__selectionnable_8cpp_source.html">objet_selectionnable.cpp</a>.</p>
 
 </div>
 </div>
-<a id="a9a0bf43723dd1656224cec9f3c42bba0"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a9a0bf43723dd1656224cec9f3c42bba0">&#9670;&nbsp;</a></span>est_active()</h2>
-
+<a class="anchor" id="a9f9e2ccc04e3b2a55d7b51b85366488f"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -395,13 +475,15 @@ Voici le graphe d'appel pour cette fonction :</div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Définition à la ligne <a class="el" href="objet__selectionnable_8cpp_source.html#l00113">113</a> du fichier <a class="el" href="objet__selectionnable_8cpp_source.html">objet_selectionnable.cpp</a>.</p>
+<p>Retourne l'état d'activation de l'objet. </p>
+<hr/>
+ <dl class="section return"><dt>Renvoie</dt><dd><b>True</b> si l'objet est actif, <b>False</b> sinon. </dd></dl>
+
+<p>Définition à la ligne <a class="el" href="objet__selectionnable_8cpp_source.html#l00173">173</a> du fichier <a class="el" href="objet__selectionnable_8cpp_source.html">objet_selectionnable.cpp</a>.</p>
 
 </div>
 </div>
-<a id="ab86bf8b056ebc44909fb899dc6834422"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ab86bf8b056ebc44909fb899dc6834422">&#9670;&nbsp;</a></span>est_active_avec_parent()</h2>
-
+<a class="anchor" id="ada0d1bda8b5fdc1f81979720d40fb840"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -414,20 +496,24 @@ Voici le graphe d'appel pour cette fonction :</div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Définition à la ligne <a class="el" href="objet__selectionnable_8cpp_source.html#l00118">118</a> du fichier <a class="el" href="objet__selectionnable_8cpp_source.html">objet_selectionnable.cpp</a>.</p>
-<div class="dynheader">
+<p>Retourne l'état d'activation de l'objet en considérant également les objets parents. </p>
+<hr/>
+ <dl class="section return"><dt>Renvoie</dt><dd><b>True</b> si l'objet est actif avec ses objets parents, <b>False</b> sinon.. </dd></dl>
+
+<p>Définition à la ligne <a class="el" href="objet__selectionnable_8cpp_source.html#l00182">182</a> du fichier <a class="el" href="objet__selectionnable_8cpp_source.html">objet_selectionnable.cpp</a>.</p>
+
+<p><div class="dynheader">
 Voici le graphe d'appel pour cette fonction :</div>
 <div class="dyncontent">
-<div class="center"><img src="classobjet__selectionnable_ab86bf8b056ebc44909fb899dc6834422_cgraph.png" border="0" usemap="#classobjet__selectionnable_ab86bf8b056ebc44909fb899dc6834422_cgraph" alt=""/></div>
-<map name="classobjet__selectionnable_ab86bf8b056ebc44909fb899dc6834422_cgraph" id="classobjet__selectionnable_ab86bf8b056ebc44909fb899dc6834422_cgraph">
-</map>
+<div class="center"><img src="classobjet__selectionnable_ada0d1bda8b5fdc1f81979720d40fb840_cgraph.png" border="0" usemap="#classobjet__selectionnable_ada0d1bda8b5fdc1f81979720d40fb840_cgraph" alt=""/></div>
+<map name="classobjet__selectionnable_ada0d1bda8b5fdc1f81979720d40fb840_cgraph" id="classobjet__selectionnable_ada0d1bda8b5fdc1f81979720d40fb840_cgraph">
+<area shape="rect" id="node2" href="classobjet__selectionnable.html#a9f9e2ccc04e3b2a55d7b51b85366488f" title="Retourne l&#39;état d&#39;activation de l&#39;objet. " alt="" coords="222,29,362,70"/></map>
 </div>
+</p>
 
 </div>
 </div>
-<a id="a2c6b5b342b5f3a9f48893f793f935e0f"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a2c6b5b342b5f3a9f48893f793f935e0f">&#9670;&nbsp;</a></span>est_conteneur()</h2>
-
+<a class="anchor" id="abed9a58bb39d15353db880fbd0808714"></a>
 <div class="memitem">
 <div class="memproto">
 <table class="mlabels">
@@ -448,15 +534,17 @@ Voici le graphe d'appel pour cette fonction :</div>
 </table>
 </div><div class="memdoc">
 
-<p>Réimplémentée dans <a class="el" href="classfonctions__conteneur.html#af36a6eddb2a14856485fee7b3da6244a">fonctions_conteneur</a>.</p>
+<p>Indique si l'objet est un conteneur. </p>
+<hr/>
+ <dl class="section return"><dt>Renvoie</dt><dd><b>False</b>. </dd></dl>
 
-<p class="definition">Définition à la ligne <a class="el" href="objet__selectionnable_8cpp_source.html#l00087">87</a> du fichier <a class="el" href="objet__selectionnable_8cpp_source.html">objet_selectionnable.cpp</a>.</p>
+<p>Réimplémentée dans <a class="el" href="classfonctions__conteneur.html#adeb212d1b2b09ec309d005839a732570">fonctions_conteneur</a>.</p>
+
+<p>Définition à la ligne <a class="el" href="objet__selectionnable_8cpp_source.html#l00127">127</a> du fichier <a class="el" href="objet__selectionnable_8cpp_source.html">objet_selectionnable.cpp</a>.</p>
 
 </div>
 </div>
-<a id="aab2318fe95dbe865acf0f021e8acaf2d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aab2318fe95dbe865acf0f021e8acaf2d">&#9670;&nbsp;</a></span>est_dans_projet()</h2>
-
+<a class="anchor" id="aaa39f8be3dfaeb095cc12a217b234f9b"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -469,20 +557,24 @@ Voici le graphe d'appel pour cette fonction :</div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Définition à la ligne <a class="el" href="objet__selectionnable_8cpp_source.html#l00076">76</a> du fichier <a class="el" href="objet__selectionnable_8cpp_source.html">objet_selectionnable.cpp</a>.</p>
-<div class="dynheader">
+<p>Indique si l'objet est dans un projet. </p>
+<hr/>
+ <dl class="section return"><dt>Renvoie</dt><dd><b>True</b> si l'objet est dans un projet, <b>False</b> sinon. </dd></dl>
+
+<p>Définition à la ligne <a class="el" href="objet__selectionnable_8cpp_source.html#l00112">112</a> du fichier <a class="el" href="objet__selectionnable_8cpp_source.html">objet_selectionnable.cpp</a>.</p>
+
+<p><div class="dynheader">
 Voici le graphe d'appel pour cette fonction :</div>
 <div class="dyncontent">
-<div class="center"><img src="classobjet__selectionnable_aab2318fe95dbe865acf0f021e8acaf2d_cgraph.png" border="0" usemap="#classobjet__selectionnable_aab2318fe95dbe865acf0f021e8acaf2d_cgraph" alt=""/></div>
-<map name="classobjet__selectionnable_aab2318fe95dbe865acf0f021e8acaf2d_cgraph" id="classobjet__selectionnable_aab2318fe95dbe865acf0f021e8acaf2d_cgraph">
-</map>
+<div class="center"><img src="classobjet__selectionnable_aaa39f8be3dfaeb095cc12a217b234f9b_cgraph.png" border="0" usemap="#classobjet__selectionnable_aaa39f8be3dfaeb095cc12a217b234f9b_cgraph" alt=""/></div>
+<map name="classobjet__selectionnable_aaa39f8be3dfaeb095cc12a217b234f9b_cgraph" id="classobjet__selectionnable_aaa39f8be3dfaeb095cc12a217b234f9b_cgraph">
+<area shape="rect" id="node2" href="classobjet__selectionnable.html#a97e33c61983d5c7811e8bacff8f114c4" title="Indique si l&#39;objet est un projet. " alt="" coords="195,29,335,70"/></map>
 </div>
+</p>
 
 </div>
 </div>
-<a id="af1e714963d861a9895ff590531396707"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#af1e714963d861a9895ff590531396707">&#9670;&nbsp;</a></span>est_etendu()</h2>
-
+<a class="anchor" id="ae58408e8c4421e9c33bc488381e8c0a4"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -495,13 +587,15 @@ Voici le graphe d'appel pour cette fonction :</div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Définition à la ligne <a class="el" href="objet__selectionnable_8cpp_source.html#l00255">255</a> du fichier <a class="el" href="objet__selectionnable_8cpp_source.html">objet_selectionnable.cpp</a>.</p>
+<p>Indique si l'objet est étendu. </p>
+<hr/>
+ <dl class="section return"><dt>Renvoie</dt><dd><b>True</b> si l'objet est étendu, <b>False</b> sinon. </dd></dl>
+
+<p>Définition à la ligne <a class="el" href="objet__selectionnable_8cpp_source.html#l00386">386</a> du fichier <a class="el" href="objet__selectionnable_8cpp_source.html">objet_selectionnable.cpp</a>.</p>
 
 </div>
 </div>
-<a id="a8a235fc5211fbec0347ebe2342e99fa5"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a8a235fc5211fbec0347ebe2342e99fa5">&#9670;&nbsp;</a></span>est_fonction()</h2>
-
+<a class="anchor" id="ab5d7e0b9f000ba34d9d60b36590f1fcf"></a>
 <div class="memitem">
 <div class="memproto">
 <table class="mlabels">
@@ -522,15 +616,17 @@ Voici le graphe d'appel pour cette fonction :</div>
 </table>
 </div><div class="memdoc">
 
-<p>Réimplémentée dans <a class="el" href="classbase__fonction.html#a7551500c65e14ac0b748f4737312c019">base_fonction</a>.</p>
+<p>Indique si l'objet est une fonction. </p>
+<hr/>
+ <dl class="section return"><dt>Renvoie</dt><dd><b>False</b>. </dd></dl>
 
-<p class="definition">Définition à la ligne <a class="el" href="objet__selectionnable_8cpp_source.html#l00097">97</a> du fichier <a class="el" href="objet__selectionnable_8cpp_source.html">objet_selectionnable.cpp</a>.</p>
+<p>Réimplémentée dans <a class="el" href="classbase__fonction.html#a55d532980bd6da14b7c1a8608f68046f">base_fonction</a>.</p>
+
+<p>Définition à la ligne <a class="el" href="objet__selectionnable_8cpp_source.html#l00145">145</a> du fichier <a class="el" href="objet__selectionnable_8cpp_source.html">objet_selectionnable.cpp</a>.</p>
 
 </div>
 </div>
-<a id="a2d06c9e229e16a40d0649fb02d4de235"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a2d06c9e229e16a40d0649fb02d4de235">&#9670;&nbsp;</a></span>est_parametre()</h2>
-
+<a class="anchor" id="a928feb3830d6c538a4a15c1d76da3dfd"></a>
 <div class="memitem">
 <div class="memproto">
 <table class="mlabels">
@@ -551,15 +647,17 @@ Voici le graphe d'appel pour cette fonction :</div>
 </table>
 </div><div class="memdoc">
 
-<p>Réimplémentée dans <a class="el" href="classbase__parametre.html#a8b567ca747ee4e94cc03c179b17b8680">base_parametre</a>.</p>
+<p>Indique si l'objet est un paramètre. </p>
+<hr/>
+ <dl class="section return"><dt>Renvoie</dt><dd><b>False</b>. </dd></dl>
 
-<p class="definition">Définition à la ligne <a class="el" href="objet__selectionnable_8cpp_source.html#l00102">102</a> du fichier <a class="el" href="objet__selectionnable_8cpp_source.html">objet_selectionnable.cpp</a>.</p>
+<p>Réimplémentée dans <a class="el" href="classbase__parametre.html#a5e8cb0e47779687edc3af33865655542">base_parametre</a>.</p>
+
+<p>Définition à la ligne <a class="el" href="objet__selectionnable_8cpp_source.html#l00154">154</a> du fichier <a class="el" href="objet__selectionnable_8cpp_source.html">objet_selectionnable.cpp</a>.</p>
 
 </div>
 </div>
-<a id="a49ea1a29523e46f099896477a2b43eaa"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a49ea1a29523e46f099896477a2b43eaa">&#9670;&nbsp;</a></span>est_projet()</h2>
-
+<a class="anchor" id="a97e33c61983d5c7811e8bacff8f114c4"></a>
 <div class="memitem">
 <div class="memproto">
 <table class="mlabels">
@@ -580,15 +678,17 @@ Voici le graphe d'appel pour cette fonction :</div>
 </table>
 </div><div class="memdoc">
 
-<p>Réimplémentée dans <a class="el" href="classprojet.html#a0b36ebb589fbe72066e5e28531260d5d">projet</a>.</p>
+<p>Indique si l'objet est un projet. </p>
+<hr/>
+ <dl class="section return"><dt>Renvoie</dt><dd><b>False</b>. </dd></dl>
 
-<p class="definition">Définition à la ligne <a class="el" href="objet__selectionnable_8cpp_source.html#l00092">92</a> du fichier <a class="el" href="objet__selectionnable_8cpp_source.html">objet_selectionnable.cpp</a>.</p>
+<p>Réimplémentée dans <a class="el" href="classprojet.html#a5557faf14a39afadc1e5050119a376dd">projet</a>.</p>
+
+<p>Définition à la ligne <a class="el" href="objet__selectionnable_8cpp_source.html#l00136">136</a> du fichier <a class="el" href="objet__selectionnable_8cpp_source.html">objet_selectionnable.cpp</a>.</p>
 
 </div>
 </div>
-<a id="ae9c29950b9e5b582338ac659ecc3e3d6"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae9c29950b9e5b582338ac659ecc3e3d6">&#9670;&nbsp;</a></span>est_verrouille()</h2>
-
+<a class="anchor" id="a8b9cf156597fe8cc1b8f9408e1bfee8c"></a>
 <div class="memitem">
 <div class="memproto">
 <table class="mlabels">
@@ -609,15 +709,17 @@ Voici le graphe d'appel pour cette fonction :</div>
 </table>
 </div><div class="memdoc">
 
-<p>Réimplémentée dans <a class="el" href="classprojet.html#a4c123fbd399c0fdb801ea25370377e75">projet</a>.</p>
+<p>Indique si l'objet est vérrouillé, i.e. non éditable. </p>
+<hr/>
+ <dl class="section return"><dt>Renvoie</dt><dd><b>True</b> si l'objet est vérrouillé, <b>False</b> sinon. </dd></dl>
 
-<p class="definition">Définition à la ligne <a class="el" href="objet__selectionnable_8cpp_source.html#l00144">144</a> du fichier <a class="el" href="objet__selectionnable_8cpp_source.html">objet_selectionnable.cpp</a>.</p>
+<p>Réimplémentée dans <a class="el" href="classprojet.html#a58fb1543e6a9aa52c35c4c996e14c21f">projet</a>.</p>
+
+<p>Définition à la ligne <a class="el" href="objet__selectionnable_8cpp_source.html#l00221">221</a> du fichier <a class="el" href="objet__selectionnable_8cpp_source.html">objet_selectionnable.cpp</a>.</p>
 
 </div>
 </div>
-<a id="a001c4584a6430689f478544ec560fb7e"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a001c4584a6430689f478544ec560fb7e">&#9670;&nbsp;</a></span>est_verrouille_avec_parent()</h2>
-
+<a class="anchor" id="a1cf41e42861e0b033d2704802905e81a"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -630,20 +732,24 @@ Voici le graphe d'appel pour cette fonction :</div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Définition à la ligne <a class="el" href="objet__selectionnable_8cpp_source.html#l00162">162</a> du fichier <a class="el" href="objet__selectionnable_8cpp_source.html">objet_selectionnable.cpp</a>.</p>
-<div class="dynheader">
+<p>Indique si l'objet est verrouillé en considérant également ses parents. </p>
+<hr/>
+ <dl class="section return"><dt>Renvoie</dt><dd><b>True</b> si l'objet est vérrouillé avec ses parents, <b>False</b> sinon. </dd></dl>
+
+<p>Définition à la ligne <a class="el" href="objet__selectionnable_8cpp_source.html#l00250">250</a> du fichier <a class="el" href="objet__selectionnable_8cpp_source.html">objet_selectionnable.cpp</a>.</p>
+
+<p><div class="dynheader">
 Voici le graphe d'appel pour cette fonction :</div>
 <div class="dyncontent">
-<div class="center"><img src="classobjet__selectionnable_a001c4584a6430689f478544ec560fb7e_cgraph.png" border="0" usemap="#classobjet__selectionnable_a001c4584a6430689f478544ec560fb7e_cgraph" alt=""/></div>
-<map name="classobjet__selectionnable_a001c4584a6430689f478544ec560fb7e_cgraph" id="classobjet__selectionnable_a001c4584a6430689f478544ec560fb7e_cgraph">
-</map>
+<div class="center"><img src="classobjet__selectionnable_a1cf41e42861e0b033d2704802905e81a_cgraph.png" border="0" usemap="#classobjet__selectionnable_a1cf41e42861e0b033d2704802905e81a_cgraph" alt=""/></div>
+<map name="classobjet__selectionnable_a1cf41e42861e0b033d2704802905e81a_cgraph" id="classobjet__selectionnable_a1cf41e42861e0b033d2704802905e81a_cgraph">
+<area shape="rect" id="node2" href="classobjet__selectionnable.html#a8b9cf156597fe8cc1b8f9408e1bfee8c" title="Indique si l&#39;objet est vérrouillé, i.e. non éditable. " alt="" coords="198,37,338,78"/></map>
 </div>
+</p>
 
 </div>
 </div>
-<a id="ad3c9ec08e1036a463b6b82176d52364d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ad3c9ec08e1036a463b6b82176d52364d">&#9670;&nbsp;</a></span>existe_selection()</h2>
-
+<a class="anchor" id="ad3c9ec08e1036a463b6b82176d52364d"></a>
 <div class="memitem">
 <div class="memproto">
 <table class="mlabels">
@@ -664,13 +770,15 @@ Voici le graphe d'appel pour cette fonction :</div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Définition à la ligne <a class="el" href="objet__selectionnable_8cpp_source.html#l00206">206</a> du fichier <a class="el" href="objet__selectionnable_8cpp_source.html">objet_selectionnable.cpp</a>.</p>
+<p>Indique s'il existe un objet sélectionné. </p>
+<hr/>
+ <dl class="section return"><dt>Renvoie</dt><dd><b>True</b> si un objet est sélectionné, <b>False</b> sinon. </dd></dl>
+
+<p>Définition à la ligne <a class="el" href="objet__selectionnable_8cpp_source.html#l00314">314</a> du fichier <a class="el" href="objet__selectionnable_8cpp_source.html">objet_selectionnable.cpp</a>.</p>
 
 </div>
 </div>
-<a id="ab2fb752b9ba998ed26975936d1d5beaa"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ab2fb752b9ba998ed26975936d1d5beaa">&#9670;&nbsp;</a></span>forcer_deselection()</h2>
-
+<a class="anchor" id="ab2fb752b9ba998ed26975936d1d5beaa"></a>
 <div class="memitem">
 <div class="memproto">
 <table class="mlabels">
@@ -691,21 +799,23 @@ Voici le graphe d'appel pour cette fonction :</div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Définition à la ligne <a class="el" href="objet__selectionnable_8cpp_source.html#l00211">211</a> du fichier <a class="el" href="objet__selectionnable_8cpp_source.html">objet_selectionnable.cpp</a>.</p>
-<div class="dynheader">
+<p>Désélectionne l'objet sélectionné. </p>
+<hr/>
+ 
+<p>Définition à la ligne <a class="el" href="objet__selectionnable_8cpp_source.html#l00322">322</a> du fichier <a class="el" href="objet__selectionnable_8cpp_source.html">objet_selectionnable.cpp</a>.</p>
+
+<p><div class="dynheader">
 Voici le graphe d'appel pour cette fonction :</div>
 <div class="dyncontent">
 <div class="center"><img src="classobjet__selectionnable_ab2fb752b9ba998ed26975936d1d5beaa_cgraph.png" border="0" usemap="#classobjet__selectionnable_ab2fb752b9ba998ed26975936d1d5beaa_cgraph" alt=""/></div>
 <map name="classobjet__selectionnable_ab2fb752b9ba998ed26975936d1d5beaa_cgraph" id="classobjet__selectionnable_ab2fb752b9ba998ed26975936d1d5beaa_cgraph">
-<area shape="rect" id="node2" href="classobjet__selectionnable.html#a555085da89b30b07349064bb54a26138" title="objet_selectionnable\l::deselectionner" alt="" coords="195,5,335,46"/>
-</map>
+<area shape="rect" id="node2" href="classobjet__selectionnable.html#a555085da89b30b07349064bb54a26138" title="Désélectionne l&#39;objet sélectionné. " alt="" coords="195,5,335,46"/></map>
 </div>
+</p>
 
 </div>
 </div>
-<a id="ab809d020155b7fec48ff3adbe15c9b65"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ab809d020155b7fec48ff3adbe15c9b65">&#9670;&nbsp;</a></span>get_conteneur() <span class="overload">[1/2]</span></h2>
-
+<a class="anchor" id="ab809d020155b7fec48ff3adbe15c9b65"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -718,21 +828,24 @@ Voici le graphe d'appel pour cette fonction :</div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Définition à la ligne <a class="el" href="objet__selectionnable_8cpp_source.html#l00038">38</a> du fichier <a class="el" href="objet__selectionnable_8cpp_source.html">objet_selectionnable.cpp</a>.</p>
-<div class="dynheader">
+<p>Retourne le <a class="el" href="classfonctions__conteneur.html" title="Classe décrivant un conteneur de fonctions. ">fonctions_conteneur</a> le plus proche : l'objet lui-même s'il est un conteneur, ou le conteneur parent sinon. </p>
+<hr/>
+ <dl class="section return"><dt>Renvoie</dt><dd>Un pointeur sur le <a class="el" href="classfonctions__conteneur.html" title="Classe décrivant un conteneur de fonctions. ">fonctions_conteneur</a> le plus proche. </dd></dl>
+
+<p>Définition à la ligne <a class="el" href="objet__selectionnable_8cpp_source.html#l00058">58</a> du fichier <a class="el" href="objet__selectionnable_8cpp_source.html">objet_selectionnable.cpp</a>.</p>
+
+<p><div class="dynheader">
 Voici le graphe d'appel pour cette fonction :</div>
 <div class="dyncontent">
 <div class="center"><img src="classobjet__selectionnable_ab809d020155b7fec48ff3adbe15c9b65_cgraph.png" border="0" usemap="#classobjet__selectionnable_ab809d020155b7fec48ff3adbe15c9b65_cgraph" alt=""/></div>
 <map name="classobjet__selectionnable_ab809d020155b7fec48ff3adbe15c9b65_cgraph" id="classobjet__selectionnable_ab809d020155b7fec48ff3adbe15c9b65_cgraph">
-<area shape="rect" id="node2" href="classobjet__selectionnable.html#abed9a58bb39d15353db880fbd0808714" title="objet_selectionnable\l::est_conteneur" alt="" coords="195,29,335,70"/>
-</map>
+<area shape="rect" id="node2" href="classobjet__selectionnable.html#abed9a58bb39d15353db880fbd0808714" title="Indique si l&#39;objet est un conteneur. " alt="" coords="195,29,335,70"/></map>
 </div>
+</p>
 
 </div>
 </div>
-<a id="aa3741b4fc28232cb05e346f5a3a5ea56"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aa3741b4fc28232cb05e346f5a3a5ea56">&#9670;&nbsp;</a></span>get_conteneur() <span class="overload">[2/2]</span></h2>
-
+<a class="anchor" id="aa80aeba62e29922d6d7289a836228dfc"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -745,20 +858,24 @@ Voici le graphe d'appel pour cette fonction :</div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Définition à la ligne <a class="el" href="objet__selectionnable_8cpp_source.html#l00056">56</a> du fichier <a class="el" href="objet__selectionnable_8cpp_source.html">objet_selectionnable.cpp</a>.</p>
-<div class="dynheader">
+<p>Retourne le <a class="el" href="classfonctions__conteneur.html" title="Classe décrivant un conteneur de fonctions. ">fonctions_conteneur</a> <b>constant</b> le plus proche : l'objet lui-même s'il est un conteneur, ou le conteneur parent sinon. </p>
+<hr/>
+ <dl class="section return"><dt>Renvoie</dt><dd>Un pointeur sur le <a class="el" href="classfonctions__conteneur.html" title="Classe décrivant un conteneur de fonctions. ">fonctions_conteneur</a> le plus proche. </dd></dl>
+
+<p>Définition à la ligne <a class="el" href="objet__selectionnable_8cpp_source.html#l00084">84</a> du fichier <a class="el" href="objet__selectionnable_8cpp_source.html">objet_selectionnable.cpp</a>.</p>
+
+<p><div class="dynheader">
 Voici le graphe d'appel pour cette fonction :</div>
 <div class="dyncontent">
-<div class="center"><img src="classobjet__selectionnable_aa3741b4fc28232cb05e346f5a3a5ea56_cgraph.png" border="0" usemap="#classobjet__selectionnable_aa3741b4fc28232cb05e346f5a3a5ea56_cgraph" alt=""/></div>
-<map name="classobjet__selectionnable_aa3741b4fc28232cb05e346f5a3a5ea56_cgraph" id="classobjet__selectionnable_aa3741b4fc28232cb05e346f5a3a5ea56_cgraph">
-</map>
+<div class="center"><img src="classobjet__selectionnable_aa80aeba62e29922d6d7289a836228dfc_cgraph.png" border="0" usemap="#classobjet__selectionnable_aa80aeba62e29922d6d7289a836228dfc_cgraph" alt=""/></div>
+<map name="classobjet__selectionnable_aa80aeba62e29922d6d7289a836228dfc_cgraph" id="classobjet__selectionnable_aa80aeba62e29922d6d7289a836228dfc_cgraph">
+<area shape="rect" id="node2" href="classobjet__selectionnable.html#abed9a58bb39d15353db880fbd0808714" title="Indique si l&#39;objet est un conteneur. " alt="" coords="385,5,525,46"/><area shape="rect" id="node3" href="classobjet__selectionnable.html#ab809d020155b7fec48ff3adbe15c9b65" title="Retourne le fonctions_conteneur le plus proche : l&#39;objet lui&#45;même s&#39;il est un conteneur, ou le conteneur parent sinon. " alt="" coords="195,46,335,87"/></map>
 </div>
+</p>
 
 </div>
 </div>
-<a id="aeac1931a7976c17cd05e456d128ccba3"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aeac1931a7976c17cd05e456d128ccba3">&#9670;&nbsp;</a></span>get_conteneur_courant()</h2>
-
+<a class="anchor" id="aeac1931a7976c17cd05e456d128ccba3"></a>
 <div class="memitem">
 <div class="memproto">
 <table class="mlabels">
@@ -779,22 +896,24 @@ Voici le graphe d'appel pour cette fonction :</div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Définition à la ligne <a class="el" href="objet__selectionnable_8cpp_source.html#l00183">183</a> du fichier <a class="el" href="objet__selectionnable_8cpp_source.html">objet_selectionnable.cpp</a>.</p>
-<div class="dynheader">
+<p>Retourne le conteneur de la sélection courante. </p>
+<hr/>
+ <dl class="section return"><dt>Renvoie</dt><dd>Un pointeur sur le conteneur de la sélection courante. On renvoie la valeur <b>NULL</b> s'il n'y a pas de sélection. </dd></dl>
+
+<p>Définition à la ligne <a class="el" href="objet__selectionnable_8cpp_source.html#l00283">283</a> du fichier <a class="el" href="objet__selectionnable_8cpp_source.html">objet_selectionnable.cpp</a>.</p>
+
+<p><div class="dynheader">
 Voici le graphe d'appel pour cette fonction :</div>
 <div class="dyncontent">
 <div class="center"><img src="classobjet__selectionnable_aeac1931a7976c17cd05e456d128ccba3_cgraph.png" border="0" usemap="#classobjet__selectionnable_aeac1931a7976c17cd05e456d128ccba3_cgraph" alt=""/></div>
 <map name="classobjet__selectionnable_aeac1931a7976c17cd05e456d128ccba3_cgraph" id="classobjet__selectionnable_aeac1931a7976c17cd05e456d128ccba3_cgraph">
-<area shape="rect" id="node2" href="classobjet__selectionnable.html#ad3c9ec08e1036a463b6b82176d52364d" title="objet_selectionnable\l::existe_selection" alt="" coords="217,5,357,46"/>
-<area shape="rect" id="node3" href="classobjet__selectionnable.html#abed9a58bb39d15353db880fbd0808714" title="objet_selectionnable\l::est_conteneur" alt="" coords="217,70,357,111"/>
-</map>
+<area shape="rect" id="node2" href="classobjet__selectionnable.html#ad3c9ec08e1036a463b6b82176d52364d" title="Indique s&#39;il existe un objet sélectionné. " alt="" coords="217,5,357,46"/><area shape="rect" id="node3" href="classobjet__selectionnable.html#abed9a58bb39d15353db880fbd0808714" title="Indique si l&#39;objet est un conteneur. " alt="" coords="217,70,357,111"/></map>
 </div>
+</p>
 
 </div>
 </div>
-<a id="a6f00a6275b09a11fb43316144e2d4b86"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a6f00a6275b09a11fb43316144e2d4b86">&#9670;&nbsp;</a></span>get_conteneur_precedant()</h2>
-
+<a class="anchor" id="a6f00a6275b09a11fb43316144e2d4b86"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -807,22 +926,24 @@ Voici le graphe d'appel pour cette fonction :</div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Définition à la ligne <a class="el" href="objet__selectionnable_8cpp_source.html#l00048">48</a> du fichier <a class="el" href="objet__selectionnable_8cpp_source.html">objet_selectionnable.cpp</a>.</p>
-<div class="dynheader">
+<p>Retourne le <a class="el" href="classfonctions__conteneur.html" title="Classe décrivant un conteneur de fonctions. ">fonctions_conteneur</a> parent. </p>
+<hr/>
+ <dl class="section return"><dt>Renvoie</dt><dd>Le <a class="el" href="classfonctions__conteneur.html" title="Classe décrivant un conteneur de fonctions. ">fonctions_conteneur</a> parent. </dd></dl>
+
+<p>Définition à la ligne <a class="el" href="objet__selectionnable_8cpp_source.html#l00072">72</a> du fichier <a class="el" href="objet__selectionnable_8cpp_source.html">objet_selectionnable.cpp</a>.</p>
+
+<p><div class="dynheader">
 Voici le graphe d'appel pour cette fonction :</div>
 <div class="dyncontent">
 <div class="center"><img src="classobjet__selectionnable_a6f00a6275b09a11fb43316144e2d4b86_cgraph.png" border="0" usemap="#classobjet__selectionnable_a6f00a6275b09a11fb43316144e2d4b86_cgraph" alt=""/></div>
 <map name="classobjet__selectionnable_a6f00a6275b09a11fb43316144e2d4b86_cgraph" id="classobjet__selectionnable_a6f00a6275b09a11fb43316144e2d4b86_cgraph">
-<area shape="rect" id="node2" href="classobjet__selectionnable.html#ab809d020155b7fec48ff3adbe15c9b65" title="objet_selectionnable\l::get_conteneur" alt="" coords="230,29,370,70"/>
-<area shape="rect" id="node3" href="classobjet__selectionnable.html#abed9a58bb39d15353db880fbd0808714" title="objet_selectionnable\l::est_conteneur" alt="" coords="419,29,559,70"/>
-</map>
+<area shape="rect" id="node2" href="classobjet__selectionnable.html#ab809d020155b7fec48ff3adbe15c9b65" title="Retourne le fonctions_conteneur le plus proche : l&#39;objet lui&#45;même s&#39;il est un conteneur, ou le conteneur parent sinon. " alt="" coords="230,29,370,70"/><area shape="rect" id="node3" href="classobjet__selectionnable.html#abed9a58bb39d15353db880fbd0808714" title="Indique si l&#39;objet est un conteneur. " alt="" coords="419,29,559,70"/></map>
 </div>
+</p>
 
 </div>
 </div>
-<a id="ab48a75e720955aebe27f720dfaa5e78e"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ab48a75e720955aebe27f720dfaa5e78e">&#9670;&nbsp;</a></span>get_projet()</h2>
-
+<a class="anchor" id="ab48a75e720955aebe27f720dfaa5e78e"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -835,21 +956,24 @@ Voici le graphe d'appel pour cette fonction :</div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Définition à la ligne <a class="el" href="objet__selectionnable_8cpp_source.html#l00066">66</a> du fichier <a class="el" href="objet__selectionnable_8cpp_source.html">objet_selectionnable.cpp</a>.</p>
-<div class="dynheader">
+<p>Retourne le projet contenant l'objet sélectionnable. </p>
+<hr/>
+ <dl class="section return"><dt>Renvoie</dt><dd>Un pointeur sur le projet. On retourne la valeur <b>NULL</b> si l'objet n'est pas dans un projet. </dd></dl>
+
+<p>Définition à la ligne <a class="el" href="objet__selectionnable_8cpp_source.html#l00098">98</a> du fichier <a class="el" href="objet__selectionnable_8cpp_source.html">objet_selectionnable.cpp</a>.</p>
+
+<p><div class="dynheader">
 Voici le graphe d'appel pour cette fonction :</div>
 <div class="dyncontent">
 <div class="center"><img src="classobjet__selectionnable_ab48a75e720955aebe27f720dfaa5e78e_cgraph.png" border="0" usemap="#classobjet__selectionnable_ab48a75e720955aebe27f720dfaa5e78e_cgraph" alt=""/></div>
 <map name="classobjet__selectionnable_ab48a75e720955aebe27f720dfaa5e78e_cgraph" id="classobjet__selectionnable_ab48a75e720955aebe27f720dfaa5e78e_cgraph">
-<area shape="rect" id="node2" href="classobjet__selectionnable.html#a97e33c61983d5c7811e8bacff8f114c4" title="objet_selectionnable\l::est_projet" alt="" coords="195,29,335,70"/>
-</map>
+<area shape="rect" id="node2" href="classobjet__selectionnable.html#a97e33c61983d5c7811e8bacff8f114c4" title="Indique si l&#39;objet est un projet. " alt="" coords="195,29,335,70"/></map>
 </div>
+</p>
 
 </div>
 </div>
-<a id="afdc2163828d829f786887b60e11e4717"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#afdc2163828d829f786887b60e11e4717">&#9670;&nbsp;</a></span>get_projet_courant() <span class="overload">[1/2]</span></h2>
-
+<a class="anchor" id="afdc2163828d829f786887b60e11e4717"></a>
 <div class="memitem">
 <div class="memproto">
 <table class="mlabels">
@@ -870,21 +994,24 @@ Voici le graphe d'appel pour cette fonction :</div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Définition à la ligne <a class="el" href="objet__selectionnable_8cpp_source.html#l00196">196</a> du fichier <a class="el" href="objet__selectionnable_8cpp_source.html">objet_selectionnable.cpp</a>.</p>
-<div class="dynheader">
+<p>Retourne le projet de la sélection courante. </p>
+<hr/>
+ <dl class="section return"><dt>Renvoie</dt><dd>Un pointeur sur le projet de la sélection courante. On renvoie la valeur <b>NULL</b> s'il n'y a pas de sélection. </dd></dl>
+
+<p>Définition à la ligne <a class="el" href="objet__selectionnable_8cpp_source.html#l00300">300</a> du fichier <a class="el" href="objet__selectionnable_8cpp_source.html">objet_selectionnable.cpp</a>.</p>
+
+<p><div class="dynheader">
 Voici le graphe d'appel pour cette fonction :</div>
 <div class="dyncontent">
 <div class="center"><img src="classobjet__selectionnable_afdc2163828d829f786887b60e11e4717_cgraph.png" border="0" usemap="#classobjet__selectionnable_afdc2163828d829f786887b60e11e4717_cgraph" alt=""/></div>
 <map name="classobjet__selectionnable_afdc2163828d829f786887b60e11e4717_cgraph" id="classobjet__selectionnable_afdc2163828d829f786887b60e11e4717_cgraph">
-<area shape="rect" id="node2" href="classobjet__selectionnable.html#ad3c9ec08e1036a463b6b82176d52364d" title="objet_selectionnable\l::existe_selection" alt="" coords="195,5,335,46"/>
-</map>
+<area shape="rect" id="node2" href="classobjet__selectionnable.html#ad3c9ec08e1036a463b6b82176d52364d" title="Indique s&#39;il existe un objet sélectionné. " alt="" coords="195,5,335,46"/></map>
 </div>
+</p>
 
 </div>
 </div>
-<a id="abcae7d026add7c8eb8df630c95a87cb2"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#abcae7d026add7c8eb8df630c95a87cb2">&#9670;&nbsp;</a></span>get_projet_courant() <span class="overload">[2/2]</span></h2>
-
+<a class="anchor" id="abcae7d026add7c8eb8df630c95a87cb2"></a>
 <div class="memitem">
 <div class="memproto">
 <table class="mlabels">
@@ -906,23 +1033,30 @@ Voici le graphe d'appel pour cette fonction :</div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Définition à la ligne <a class="el" href="objet__selectionnable_8cpp_source.html#l00226">226</a> du fichier <a class="el" href="objet__selectionnable_8cpp_source.html">objet_selectionnable.cpp</a>.</p>
-<div class="dynheader">
+<p>Retourne le projet d'e la sélection courante'un objet donné. </p>
+<hr/>
+ <dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">obj</td><td>Un pointeur sur l'objet à considérer. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Renvoie</dt><dd>Un pointeur sur le projet de la sélection courante. On renvoie la valeur <b>NULL</b> s'il n'y a pas de sélection. </dd></dl>
+
+<p>Définition à la ligne <a class="el" href="objet__selectionnable_8cpp_source.html#l00345">345</a> du fichier <a class="el" href="objet__selectionnable_8cpp_source.html">objet_selectionnable.cpp</a>.</p>
+
+<p><div class="dynheader">
 Voici le graphe d'appel pour cette fonction :</div>
 <div class="dyncontent">
 <div class="center"><img src="classobjet__selectionnable_abcae7d026add7c8eb8df630c95a87cb2_cgraph.png" border="0" usemap="#classobjet__selectionnable_abcae7d026add7c8eb8df630c95a87cb2_cgraph" alt=""/></div>
 <map name="classobjet__selectionnable_abcae7d026add7c8eb8df630c95a87cb2_cgraph" id="classobjet__selectionnable_abcae7d026add7c8eb8df630c95a87cb2_cgraph">
-<area shape="rect" id="node2" href="classobjet__selectionnable.html#a97e33c61983d5c7811e8bacff8f114c4" title="objet_selectionnable\l::est_projet" alt="" coords="195,5,335,46"/>
-<area shape="rect" id="node3" href="classobjet__selectionnable.html#afdc2163828d829f786887b60e11e4717" title="objet_selectionnable\l::get_projet_courant" alt="" coords="195,70,335,111"/>
-<area shape="rect" id="node4" href="classobjet__selectionnable.html#ad3c9ec08e1036a463b6b82176d52364d" title="objet_selectionnable\l::existe_selection" alt="" coords="385,70,525,111"/>
-</map>
+<area shape="rect" id="node2" href="classobjet__selectionnable.html#a97e33c61983d5c7811e8bacff8f114c4" title="Indique si l&#39;objet est un projet. " alt="" coords="195,5,335,46"/><area shape="rect" id="node3" href="classobjet__selectionnable.html#afdc2163828d829f786887b60e11e4717" title="Retourne le projet de la sélection courante. " alt="" coords="195,70,335,111"/><area shape="rect" id="node4" href="classobjet__selectionnable.html#ad3c9ec08e1036a463b6b82176d52364d" title="Indique s&#39;il existe un objet sélectionné. " alt="" coords="385,70,525,111"/></map>
 </div>
+</p>
 
 </div>
 </div>
-<a id="ae6be76843c7b502410ec8d2c1fff88a3"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae6be76843c7b502410ec8d2c1fff88a3">&#9670;&nbsp;</a></span>get_selection()</h2>
-
+<a class="anchor" id="ae6be76843c7b502410ec8d2c1fff88a3"></a>
 <div class="memitem">
 <div class="memproto">
 <table class="mlabels">
@@ -943,13 +1077,15 @@ Voici le graphe d'appel pour cette fonction :</div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Définition à la ligne <a class="el" href="objet__selectionnable_8cpp_source.html#l00178">178</a> du fichier <a class="el" href="objet__selectionnable_8cpp_source.html">objet_selectionnable.cpp</a>.</p>
+<p>Retourne l'objet sélectionné. </p>
+<hr/>
+ <dl class="section return"><dt>Renvoie</dt><dd>Un pointeur sur l'objet sélectionné. </dd></dl>
+
+<p>Définition à la ligne <a class="el" href="objet__selectionnable_8cpp_source.html#l00274">274</a> du fichier <a class="el" href="objet__selectionnable_8cpp_source.html">objet_selectionnable.cpp</a>.</p>
 
 </div>
 </div>
-<a id="a028ac895965858e0e8e8e2cc25e8323c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a028ac895965858e0e8e8e2cc25e8323c">&#9670;&nbsp;</a></span>inverser_verrouillage()</h2>
-
+<a class="anchor" id="a028ac895965858e0e8e8e2cc25e8323c"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -962,23 +1098,23 @@ Voici le graphe d'appel pour cette fonction :</div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Définition à la ligne <a class="el" href="objet__selectionnable_8cpp_source.html#l00157">157</a> du fichier <a class="el" href="objet__selectionnable_8cpp_source.html">objet_selectionnable.cpp</a>.</p>
-<div class="dynheader">
+<p>Inverse l'état de verrouillage. </p>
+<hr/>
+ 
+<p>Définition à la ligne <a class="el" href="objet__selectionnable_8cpp_source.html#l00241">241</a> du fichier <a class="el" href="objet__selectionnable_8cpp_source.html">objet_selectionnable.cpp</a>.</p>
+
+<p><div class="dynheader">
 Voici le graphe d'appel pour cette fonction :</div>
 <div class="dyncontent">
 <div class="center"><img src="classobjet__selectionnable_a028ac895965858e0e8e8e2cc25e8323c_cgraph.png" border="0" usemap="#classobjet__selectionnable_a028ac895965858e0e8e8e2cc25e8323c_cgraph" alt=""/></div>
 <map name="classobjet__selectionnable_a028ac895965858e0e8e8e2cc25e8323c_cgraph" id="classobjet__selectionnable_a028ac895965858e0e8e8e2cc25e8323c_cgraph">
-<area shape="rect" id="node2" href="classobjet__selectionnable.html#a5d39343f43293805a0b60e8520687d87" title="objet_selectionnable\l::set_verrouille" alt="" coords="203,29,343,70"/>
-<area shape="rect" id="node3" href="classobjet__selectionnable.html#a9f76b8e89231a79c3fc840af874bd868" title="objet_selectionnable\l::modifier" alt="" coords="393,29,533,70"/>
-<area shape="rect" id="node4" href="classobjet__selectionnable.html#a97e33c61983d5c7811e8bacff8f114c4" title="objet_selectionnable\l::est_projet" alt="" coords="582,29,722,70"/>
-</map>
+<area shape="rect" id="node2" href="classobjet__selectionnable.html#a5d39343f43293805a0b60e8520687d87" title="Initialise l&#39;état de verrouillage de l&#39;objet. " alt="" coords="203,29,343,70"/><area shape="rect" id="node3" href="classobjet__selectionnable.html#a9f76b8e89231a79c3fc840af874bd868" title="Modifie l&#39;objet. " alt="" coords="393,29,533,70"/><area shape="rect" id="node4" href="classobjet__selectionnable.html#a97e33c61983d5c7811e8bacff8f114c4" title="Indique si l&#39;objet est un projet. " alt="" coords="582,29,722,70"/></map>
 </div>
+</p>
 
 </div>
 </div>
-<a id="a9f76b8e89231a79c3fc840af874bd868"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a9f76b8e89231a79c3fc840af874bd868">&#9670;&nbsp;</a></span>modifier()</h2>
-
+<a class="anchor" id="a9f76b8e89231a79c3fc840af874bd868"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -992,21 +1128,29 @@ Voici le graphe d'appel pour cette fonction :</div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Définition à la ligne <a class="el" href="objet__selectionnable_8cpp_source.html#l00241">241</a> du fichier <a class="el" href="objet__selectionnable_8cpp_source.html">objet_selectionnable.cpp</a>.</p>
-<div class="dynheader">
+<p>Modifie l'objet. </p>
+<hr/>
+ <dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">change_executable</td><td>Booléen indiquant s'il faut changer l'état d'exécutabilité du projet. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Définition à la ligne <a class="el" href="objet__selectionnable_8cpp_source.html#l00368">368</a> du fichier <a class="el" href="objet__selectionnable_8cpp_source.html">objet_selectionnable.cpp</a>.</p>
+
+<p><div class="dynheader">
 Voici le graphe d'appel pour cette fonction :</div>
 <div class="dyncontent">
 <div class="center"><img src="classobjet__selectionnable_a9f76b8e89231a79c3fc840af874bd868_cgraph.png" border="0" usemap="#classobjet__selectionnable_a9f76b8e89231a79c3fc840af874bd868_cgraph" alt=""/></div>
 <map name="classobjet__selectionnable_a9f76b8e89231a79c3fc840af874bd868_cgraph" id="classobjet__selectionnable_a9f76b8e89231a79c3fc840af874bd868_cgraph">
-<area shape="rect" id="node2" href="classobjet__selectionnable.html#a97e33c61983d5c7811e8bacff8f114c4" title="objet_selectionnable\l::est_projet" alt="" coords="195,29,335,70"/>
-</map>
+<area shape="rect" id="node2" href="classobjet__selectionnable.html#a97e33c61983d5c7811e8bacff8f114c4" title="Indique si l&#39;objet est un projet. " alt="" coords="195,29,335,70"/></map>
 </div>
+</p>
 
 </div>
 </div>
-<a id="a65b1afceca6ba5882edb9b7707d851f8"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a65b1afceca6ba5882edb9b7707d851f8">&#9670;&nbsp;</a></span>parents_actifs()</h2>
-
+<a class="anchor" id="a76587773c723728d21583bb87e995daa"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -1019,20 +1163,24 @@ Voici le graphe d'appel pour cette fonction :</div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Définition à la ligne <a class="el" href="objet__selectionnable_8cpp_source.html#l00126">126</a> du fichier <a class="el" href="objet__selectionnable_8cpp_source.html">objet_selectionnable.cpp</a>.</p>
-<div class="dynheader">
+<p>Retourne l'état d'activation de l'objet parent. </p>
+<hr/>
+ <dl class="section return"><dt>Renvoie</dt><dd><b>True</b> si l'objet parent est actif, <b>False</b> sinon.. </dd></dl>
+
+<p>Définition à la ligne <a class="el" href="objet__selectionnable_8cpp_source.html#l00194">194</a> du fichier <a class="el" href="objet__selectionnable_8cpp_source.html">objet_selectionnable.cpp</a>.</p>
+
+<p><div class="dynheader">
 Voici le graphe d'appel pour cette fonction :</div>
 <div class="dyncontent">
-<div class="center"><img src="classobjet__selectionnable_a65b1afceca6ba5882edb9b7707d851f8_cgraph.png" border="0" usemap="#classobjet__selectionnable_a65b1afceca6ba5882edb9b7707d851f8_cgraph" alt=""/></div>
-<map name="classobjet__selectionnable_a65b1afceca6ba5882edb9b7707d851f8_cgraph" id="classobjet__selectionnable_a65b1afceca6ba5882edb9b7707d851f8_cgraph">
-</map>
+<div class="center"><img src="classobjet__selectionnable_a76587773c723728d21583bb87e995daa_cgraph.png" border="0" usemap="#classobjet__selectionnable_a76587773c723728d21583bb87e995daa_cgraph" alt=""/></div>
+<map name="classobjet__selectionnable_a76587773c723728d21583bb87e995daa_cgraph" id="classobjet__selectionnable_a76587773c723728d21583bb87e995daa_cgraph">
+<area shape="rect" id="node2" href="classobjet__selectionnable.html#ada0d1bda8b5fdc1f81979720d40fb840" title="Retourne l&#39;état d&#39;activation de l&#39;objet en considérant également les objets parents. " alt="" coords="195,29,363,70"/><area shape="rect" id="node3" href="classobjet__selectionnable.html#a9f9e2ccc04e3b2a55d7b51b85366488f" title="Retourne l&#39;état d&#39;activation de l&#39;objet. " alt="" coords="411,29,551,70"/></map>
 </div>
+</p>
 
 </div>
 </div>
-<a id="ad9357af8b3471529814165378c6ce13d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ad9357af8b3471529814165378c6ce13d">&#9670;&nbsp;</a></span>parents_verrouilles()</h2>
-
+<a class="anchor" id="a57341a9bf3dbc66f4ad4414183b0d27c"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -1045,20 +1193,24 @@ Voici le graphe d'appel pour cette fonction :</div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Définition à la ligne <a class="el" href="objet__selectionnable_8cpp_source.html#l00170">170</a> du fichier <a class="el" href="objet__selectionnable_8cpp_source.html">objet_selectionnable.cpp</a>.</p>
-<div class="dynheader">
+<p>Indique si le paret de l'objet est verrouillé. </p>
+<hr/>
+ <dl class="section return"><dt>Renvoie</dt><dd><b>True</b> si l'objet parent est vérrouillé, <b>False</b> sinon. </dd></dl>
+
+<p>Définition à la ligne <a class="el" href="objet__selectionnable_8cpp_source.html#l00262">262</a> du fichier <a class="el" href="objet__selectionnable_8cpp_source.html">objet_selectionnable.cpp</a>.</p>
+
+<p><div class="dynheader">
 Voici le graphe d'appel pour cette fonction :</div>
 <div class="dyncontent">
-<div class="center"><img src="classobjet__selectionnable_ad9357af8b3471529814165378c6ce13d_cgraph.png" border="0" usemap="#classobjet__selectionnable_ad9357af8b3471529814165378c6ce13d_cgraph" alt=""/></div>
-<map name="classobjet__selectionnable_ad9357af8b3471529814165378c6ce13d_cgraph" id="classobjet__selectionnable_ad9357af8b3471529814165378c6ce13d_cgraph">
-</map>
+<div class="center"><img src="classobjet__selectionnable_a57341a9bf3dbc66f4ad4414183b0d27c_cgraph.png" border="0" usemap="#classobjet__selectionnable_a57341a9bf3dbc66f4ad4414183b0d27c_cgraph" alt=""/></div>
+<map name="classobjet__selectionnable_a57341a9bf3dbc66f4ad4414183b0d27c_cgraph" id="classobjet__selectionnable_a57341a9bf3dbc66f4ad4414183b0d27c_cgraph">
+<area shape="rect" id="node2" href="classobjet__selectionnable.html#a1cf41e42861e0b033d2704802905e81a" title="Indique si l&#39;objet est verrouillé en considérant également ses parents. " alt="" coords="195,29,338,85"/><area shape="rect" id="node3" href="classobjet__selectionnable.html#a8b9cf156597fe8cc1b8f9408e1bfee8c" title="Indique si l&#39;objet est vérrouillé, i.e. non éditable. " alt="" coords="387,37,527,78"/></map>
 </div>
+</p>
 
 </div>
 </div>
-<a id="af4f1e02d8ede68cfb073770ed85e4899"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#af4f1e02d8ede68cfb073770ed85e4899">&#9670;&nbsp;</a></span>sauvegarder()</h2>
-
+<a class="anchor" id="adb99710921bdf74dfe35ee9d75b995a3"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -1081,13 +1233,11 @@ Voici le graphe d'appel pour cette fonction :</div>
   </dd>
 </dl>
 
-<p class="definition">Définition à la ligne <a class="el" href="objet__selectionnable_8cpp_source.html#l00264">264</a> du fichier <a class="el" href="objet__selectionnable_8cpp_source.html">objet_selectionnable.cpp</a>.</p>
+<p>Définition à la ligne <a class="el" href="objet__selectionnable_8cpp_source.html#l00395">395</a> du fichier <a class="el" href="objet__selectionnable_8cpp_source.html">objet_selectionnable.cpp</a>.</p>
 
 </div>
 </div>
-<a id="a645da22be6e3f8747086da238e788fb9"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a645da22be6e3f8747086da238e788fb9">&#9670;&nbsp;</a></span>selectionner()</h2>
-
+<a class="anchor" id="a645da22be6e3f8747086da238e788fb9"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -1100,21 +1250,23 @@ Voici le graphe d'appel pour cette fonction :</div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Définition à la ligne <a class="el" href="objet__selectionnable_8cpp_source.html#l00021">21</a> du fichier <a class="el" href="objet__selectionnable_8cpp_source.html">objet_selectionnable.cpp</a>.</p>
-<div class="dynheader">
+<p>Sélectionne l'objet. </p>
+<hr/>
+ 
+<p>Définition à la ligne <a class="el" href="objet__selectionnable_8cpp_source.html#l00037">37</a> du fichier <a class="el" href="objet__selectionnable_8cpp_source.html">objet_selectionnable.cpp</a>.</p>
+
+<p><div class="dynheader">
 Voici le graphe d'appel pour cette fonction :</div>
 <div class="dyncontent">
 <div class="center"><img src="classobjet__selectionnable_a645da22be6e3f8747086da238e788fb9_cgraph.png" border="0" usemap="#classobjet__selectionnable_a645da22be6e3f8747086da238e788fb9_cgraph" alt=""/></div>
 <map name="classobjet__selectionnable_a645da22be6e3f8747086da238e788fb9_cgraph" id="classobjet__selectionnable_a645da22be6e3f8747086da238e788fb9_cgraph">
-<area shape="rect" id="node2" href="classobjet__selectionnable.html#a555085da89b30b07349064bb54a26138" title="objet_selectionnable\l::deselectionner" alt="" coords="195,5,335,46"/>
-</map>
+<area shape="rect" id="node2" href="classobjet__selectionnable.html#a555085da89b30b07349064bb54a26138" title="Désélectionne l&#39;objet sélectionné. " alt="" coords="195,5,335,46"/></map>
 </div>
+</p>
 
 </div>
 </div>
-<a id="acb1bf63e061079a402c929ce346b0b22"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#acb1bf63e061079a402c929ce346b0b22">&#9670;&nbsp;</a></span>set_est_active()</h2>
-
+<a class="anchor" id="acb1bf63e061079a402c929ce346b0b22"></a>
 <div class="memitem">
 <div class="memproto">
 <table class="mlabels">
@@ -1136,24 +1288,31 @@ Voici le graphe d'appel pour cette fonction :</div>
 </table>
 </div><div class="memdoc">
 
+<p>Initialise l'état d'activation de l'objet. </p>
+<hr/>
+ <dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">active</td><td>Le nouvel état d'activation. </td></tr>
+  </table>
+  </dd>
+</dl>
+
 <p>Réimplémentée dans <a class="el" href="classbase__fonction.html#a58252a04c7afea216c29d13132b0d6a2">base_fonction</a>.</p>
 
-<p class="definition">Définition à la ligne <a class="el" href="objet__selectionnable_8cpp_source.html#l00107">107</a> du fichier <a class="el" href="objet__selectionnable_8cpp_source.html">objet_selectionnable.cpp</a>.</p>
-<div class="dynheader">
+<p>Définition à la ligne <a class="el" href="objet__selectionnable_8cpp_source.html#l00163">163</a> du fichier <a class="el" href="objet__selectionnable_8cpp_source.html">objet_selectionnable.cpp</a>.</p>
+
+<p><div class="dynheader">
 Voici le graphe d'appel pour cette fonction :</div>
 <div class="dyncontent">
 <div class="center"><img src="classobjet__selectionnable_acb1bf63e061079a402c929ce346b0b22_cgraph.png" border="0" usemap="#classobjet__selectionnable_acb1bf63e061079a402c929ce346b0b22_cgraph" alt=""/></div>
 <map name="classobjet__selectionnable_acb1bf63e061079a402c929ce346b0b22_cgraph" id="classobjet__selectionnable_acb1bf63e061079a402c929ce346b0b22_cgraph">
-<area shape="rect" id="node2" href="classobjet__selectionnable.html#a9f76b8e89231a79c3fc840af874bd868" title="objet_selectionnable\l::modifier" alt="" coords="195,29,335,70"/>
-<area shape="rect" id="node3" href="classobjet__selectionnable.html#a97e33c61983d5c7811e8bacff8f114c4" title="objet_selectionnable\l::est_projet" alt="" coords="385,29,525,70"/>
-</map>
+<area shape="rect" id="node2" href="classobjet__selectionnable.html#a9f76b8e89231a79c3fc840af874bd868" title="Modifie l&#39;objet. " alt="" coords="195,29,335,70"/><area shape="rect" id="node3" href="classobjet__selectionnable.html#a97e33c61983d5c7811e8bacff8f114c4" title="Indique si l&#39;objet est un projet. " alt="" coords="385,29,525,70"/></map>
 </div>
+</p>
 
 </div>
 </div>
-<a id="aafef1c588ce9d5f7956c321799986b9b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aafef1c588ce9d5f7956c321799986b9b">&#9670;&nbsp;</a></span>set_est_etendu()</h2>
-
+<a class="anchor" id="aafef1c588ce9d5f7956c321799986b9b"></a>
 <div class="memitem">
 <div class="memproto">
 <table class="mlabels">
@@ -1164,7 +1323,7 @@ Voici le graphe d'appel pour cette fonction :</div>
           <td class="memname">void objet_selectionnable::set_est_etendu </td>
           <td>(</td>
           <td class="paramtype">bool&#160;</td>
-          <td class="paramname"><em>est_etendu</em></td><td>)</td>
+          <td class="paramname"><em>est_entendu</em></td><td>)</td>
           <td></td>
         </tr>
       </table>
@@ -1175,15 +1334,22 @@ Voici le graphe d'appel pour cette fonction :</div>
 </table>
 </div><div class="memdoc">
 
+<p>Initialise l'état étendu de l'objet. </p>
+<hr/>
+ <dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">est_etendu</td><td>Le nouvel état. </td></tr>
+  </table>
+  </dd>
+</dl>
+
 <p>Réimplémentée dans <a class="el" href="classbase__fonction.html#a9b3028a0f6132203dca22bf0977d39f7">base_fonction</a>.</p>
 
-<p class="definition">Définition à la ligne <a class="el" href="objet__selectionnable_8cpp_source.html#l00236">236</a> du fichier <a class="el" href="objet__selectionnable_8cpp_source.html">objet_selectionnable.cpp</a>.</p>
+<p>Définition à la ligne <a class="el" href="objet__selectionnable_8cpp_source.html#l00359">359</a> du fichier <a class="el" href="objet__selectionnable_8cpp_source.html">objet_selectionnable.cpp</a>.</p>
 
 </div>
 </div>
-<a id="a5d39343f43293805a0b60e8520687d87"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a5d39343f43293805a0b60e8520687d87">&#9670;&nbsp;</a></span>set_verrouille()</h2>
-
+<a class="anchor" id="a5d39343f43293805a0b60e8520687d87"></a>
 <div class="memitem">
 <div class="memproto">
 <table class="mlabels">
@@ -1205,22 +1371,29 @@ Voici le graphe d'appel pour cette fonction :</div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Définition à la ligne <a class="el" href="objet__selectionnable_8cpp_source.html#l00149">149</a> du fichier <a class="el" href="objet__selectionnable_8cpp_source.html">objet_selectionnable.cpp</a>.</p>
-<div class="dynheader">
+<p>Initialise l'état de verrouillage de l'objet. </p>
+<hr/>
+ <dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">verrouille</td><td>Le nouvel état de verrouillage. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Définition à la ligne <a class="el" href="objet__selectionnable_8cpp_source.html#l00230">230</a> du fichier <a class="el" href="objet__selectionnable_8cpp_source.html">objet_selectionnable.cpp</a>.</p>
+
+<p><div class="dynheader">
 Voici le graphe d'appel pour cette fonction :</div>
 <div class="dyncontent">
 <div class="center"><img src="classobjet__selectionnable_a5d39343f43293805a0b60e8520687d87_cgraph.png" border="0" usemap="#classobjet__selectionnable_a5d39343f43293805a0b60e8520687d87_cgraph" alt=""/></div>
 <map name="classobjet__selectionnable_a5d39343f43293805a0b60e8520687d87_cgraph" id="classobjet__selectionnable_a5d39343f43293805a0b60e8520687d87_cgraph">
-<area shape="rect" id="node2" href="classobjet__selectionnable.html#a9f76b8e89231a79c3fc840af874bd868" title="objet_selectionnable\l::modifier" alt="" coords="195,29,335,70"/>
-<area shape="rect" id="node3" href="classobjet__selectionnable.html#a97e33c61983d5c7811e8bacff8f114c4" title="objet_selectionnable\l::est_projet" alt="" coords="385,29,525,70"/>
-</map>
+<area shape="rect" id="node2" href="classobjet__selectionnable.html#a9f76b8e89231a79c3fc840af874bd868" title="Modifie l&#39;objet. " alt="" coords="195,29,335,70"/><area shape="rect" id="node3" href="classobjet__selectionnable.html#a97e33c61983d5c7811e8bacff8f114c4" title="Indique si l&#39;objet est un projet. " alt="" coords="385,29,525,70"/></map>
 </div>
+</p>
 
 </div>
 </div>
-<a id="a9b592ea610dfcffc63bd4eb3ca3d2633"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a9b592ea610dfcffc63bd4eb3ca3d2633">&#9670;&nbsp;</a></span>signal_os_deselectionne</h2>
-
+<a class="anchor" id="a61af4b5ffeb8de0fbbd6daf6c56dfb4b"></a>
 <div class="memitem">
 <div class="memproto">
 <table class="mlabels">
@@ -1231,7 +1404,7 @@ Voici le graphe d'appel pour cette fonction :</div>
           <td class="memname">void objet_selectionnable::signal_os_deselectionne </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="classobjet__selectionnable.html">objet_selectionnable</a> *&#160;</td>
-          <td class="paramname"></td><td>)</td>
+          <td class="paramname"><em>obj</em></td><td>)</td>
           <td></td>
         </tr>
       </table>
@@ -1242,11 +1415,18 @@ Voici le graphe d'appel pour cette fonction :</div>
 </table>
 </div><div class="memdoc">
 
-</div>
-</div>
-<a id="ac59cb48c83f3f5e994a0929b11e8aa22"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ac59cb48c83f3f5e994a0929b11e8aa22">&#9670;&nbsp;</a></span>signal_os_destruction_selectionnable</h2>
+<p>Signal informant qu'un objet est désélectionné. </p>
+<hr/>
+ <dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">obj</td><td>Un pointeur sur l'objet désélectionné. </td></tr>
+  </table>
+  </dd>
+</dl>
 
+</div>
+</div>
+<a class="anchor" id="a666f0dac3844ccc553b1d69244b2afac"></a>
 <div class="memitem">
 <div class="memproto">
 <table class="mlabels">
@@ -1257,7 +1437,7 @@ Voici le graphe d'appel pour cette fonction :</div>
           <td class="memname">void objet_selectionnable::signal_os_destruction_selectionnable </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="classobjet__selectionnable.html">objet_selectionnable</a> *&#160;</td>
-          <td class="paramname"></td><td>)</td>
+          <td class="paramname"><em>obj</em></td><td>)</td>
           <td></td>
         </tr>
       </table>
@@ -1268,11 +1448,18 @@ Voici le graphe d'appel pour cette fonction :</div>
 </table>
 </div><div class="memdoc">
 
-</div>
-</div>
-<a id="a3c288bfdd00e94dfb082fc7d55e1d411"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a3c288bfdd00e94dfb082fc7d55e1d411">&#9670;&nbsp;</a></span>signal_os_selectionne</h2>
+<p>Signal informant de la destruction d'un objet. </p>
+<hr/>
+ <dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">obj</td><td>Un pointeur sur l'objet détruit. </td></tr>
+  </table>
+  </dd>
+</dl>
 
+</div>
+</div>
+<a class="anchor" id="a9e37f711a645ced3c8da230e426a4eb6"></a>
 <div class="memitem">
 <div class="memproto">
 <table class="mlabels">
@@ -1283,7 +1470,7 @@ Voici le graphe d'appel pour cette fonction :</div>
           <td class="memname">void objet_selectionnable::signal_os_selectionne </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="classobjet__selectionnable.html">objet_selectionnable</a> *&#160;</td>
-          <td class="paramname"></td><td>)</td>
+          <td class="paramname"><em>obj</em></td><td>)</td>
           <td></td>
         </tr>
       </table>
@@ -1294,11 +1481,18 @@ Voici le graphe d'appel pour cette fonction :</div>
 </table>
 </div><div class="memdoc">
 
-</div>
-</div>
-<a id="a8d490913018c0df790d83537b2169955"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a8d490913018c0df790d83537b2169955">&#9670;&nbsp;</a></span>signal_verrouillage_change</h2>
+<p>Signal informant qu'un objet est sélectionné. </p>
+<hr/>
+ <dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">obj</td><td>Un pointeur sur l'objet sélectionné. </td></tr>
+  </table>
+  </dd>
+</dl>
 
+</div>
+</div>
+<a class="anchor" id="a7487be927fa6dd18b858adbcb3b181bd"></a>
 <div class="memitem">
 <div class="memproto">
 <table class="mlabels">
@@ -1309,7 +1503,7 @@ Voici le graphe d'appel pour cette fonction :</div>
           <td class="memname">void objet_selectionnable::signal_verrouillage_change </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="classobjet__selectionnable.html">objet_selectionnable</a> *&#160;</td>
-          <td class="paramname"><em>f</em></td><td>)</td>
+          <td class="paramname"><em>obj</em></td><td>)</td>
           <td></td>
         </tr>
       </table>
@@ -1320,126 +1514,14 @@ Voici le graphe d'appel pour cette fonction :</div>
 </table>
 </div><div class="memdoc">
 
-</div>
-</div>
-<h2 class="groupheader">Documentation des données membres</h2>
-<a id="afb0e6eeeac420371f55aac0e455e1a84"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#afb0e6eeeac420371f55aac0e455e1a84">&#9670;&nbsp;</a></span>m_est_active</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">bool objet_selectionnable::m_est_active</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p class="definition">Définition à la ligne <a class="el" href="objet__selectionnable_8h_source.html#l00074">74</a> du fichier <a class="el" href="objet__selectionnable_8h_source.html">objet_selectionnable.h</a>.</p>
-
-</div>
-</div>
-<a id="a2b200ce9a6ff0feab9b77d63f5d072bd"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a2b200ce9a6ff0feab9b77d63f5d072bd">&#9670;&nbsp;</a></span>m_est_etendu</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">bool objet_selectionnable::m_est_etendu</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p class="definition">Définition à la ligne <a class="el" href="objet__selectionnable_8h_source.html#l00075">75</a> du fichier <a class="el" href="objet__selectionnable_8h_source.html">objet_selectionnable.h</a>.</p>
-
-</div>
-</div>
-<a id="ab345c9277c7192ea5b01e2796ec099dc"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ab345c9277c7192ea5b01e2796ec099dc">&#9670;&nbsp;</a></span>m_objet_parent</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="classobjet__selectionnable.html">objet_selectionnable</a>* objet_selectionnable::m_objet_parent</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p class="definition">Définition à la ligne <a class="el" href="objet__selectionnable_8h_source.html#l00072">72</a> du fichier <a class="el" href="objet__selectionnable_8h_source.html">objet_selectionnable.h</a>.</p>
-
-</div>
-</div>
-<a id="acc586244b54a6c7cdd49cef6b44fd156"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#acc586244b54a6c7cdd49cef6b44fd156">&#9670;&nbsp;</a></span>m_verrouille</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">bool objet_selectionnable::m_verrouille</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p class="definition">Définition à la ligne <a class="el" href="objet__selectionnable_8h_source.html#l00076">76</a> du fichier <a class="el" href="objet__selectionnable_8h_source.html">objet_selectionnable.h</a>.</p>
-
-</div>
-</div>
-<a id="a4fdc91751c9dc77565b2b0cab50a726a"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a4fdc91751c9dc77565b2b0cab50a726a">&#9670;&nbsp;</a></span>s_objet_courant</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="classobjet__selectionnable.html">objet_selectionnable</a> * objet_selectionnable::s_objet_courant = NULL</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">protected</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p class="definition">Définition à la ligne <a class="el" href="objet__selectionnable_8h_source.html#l00070">70</a> du fichier <a class="el" href="objet__selectionnable_8h_source.html">objet_selectionnable.h</a>.</p>
+<p>Signal informant que le verrouillage d'un objet est modifié. </p>
+<hr/>
+ <dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">obj</td><td>Un pointeur sur l'objet modifié. </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -1450,9 +1532,9 @@ Voici le graphe d'appel pour cette fonction :</div>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Généré le Jeudi 9 Février 2017 15:11:10 pour Emgine par &#160;<a href="http://www.doxygen.org/index.html">
+Généré le Vendredi 10 Février 2017 15:45:29 pour Emgine par &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
-</a> 1.8.13
+</a> 1.8.6
 </small></address>
 </body>
 </html>

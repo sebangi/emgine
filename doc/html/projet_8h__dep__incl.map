@@ -4,11 +4,11 @@
 <area shape="rect" id="node4" href="$base__noeud_8cpp.html" title="Fichier d&#39;implémentation de la class base_noeud. " alt="" coords="391,95,531,137"/>
 <area shape="rect" id="node5" href="$explorateur_8cpp.html" title="Fichier d&#39;implémentation de la classe explorateur. " alt="" coords="555,103,756,129"/>
 <area shape="rect" id="node6" href="$noeud__projet_8cpp.html" title="Fichier d&#39;implémentation de la classe noeud_projet. " alt="" coords="781,95,928,137"/>
-<area shape="rect" id="node7" href="$fenetre__principale_8cpp.html" title="Implémentation de la classe fenetre_principale. " alt="" coords="952,103,1123,129"/>
-<area shape="rect" id="node8" href="$fonction__sortie__texte__widget_8cpp.html" title="src/fonction_widget\l/fonction_sortie_widget\l/fonction_sortie_texte\l_widget.cpp" alt="" coords="1147,81,1303,151"/>
-<area shape="rect" id="node9" href="$fonction__source__fichier__texte__widget_8cpp.html" title="src/fonction_widget\l/fonction_source_widget\l/fonction_source_fichier\l_texte_widget.cpp" alt="" coords="1328,81,1491,151"/>
-<area shape="rect" id="node10" href="$vue__fonctions_8cpp.html" title="src/fonction_widget\l/vue_fonctions.cpp" alt="" coords="1515,95,1649,137"/>
-<area shape="rect" id="node11" href="$fonctions__conteneur_8cpp.html" title="src/projet/fonctions\l_conteneur.cpp" alt="" coords="1675,95,1808,137"/>
-<area shape="rect" id="node12" href="$objet__selectionnable_8cpp.html" title="src/projet/objet_selectionnable.cpp" alt="" coords="1833,103,2055,129"/>
-<area shape="rect" id="node13" href="$projet_8cpp.html" title="src/projet/projet.cpp" alt="" coords="2079,103,2216,129"/>
+<area shape="rect" id="node7" href="$fenetre__principale_8cpp.html" title="Fichier d&#39;implémentation de la classe fenetre_principale. " alt="" coords="952,103,1123,129"/>
+<area shape="rect" id="node8" href="$fonction__sortie__texte__widget_8cpp_source.html" title="src/fonction_widget\l/fonction_sortie_widget\l/fonction_sortie_texte\l_widget.cpp" alt="" coords="1147,81,1303,151"/>
+<area shape="rect" id="node9" href="$fonction__source__fichier__texte__widget_8cpp_source.html" title="src/fonction_widget\l/fonction_source_widget\l/fonction_source_fichier\l_texte_widget.cpp" alt="" coords="1328,81,1491,151"/>
+<area shape="rect" id="node10" href="$vue__fonctions_8cpp_source.html" title="src/fonction_widget\l/vue_fonctions.cpp" alt="" coords="1515,95,1649,137"/>
+<area shape="rect" id="node11" href="$fonctions__conteneur_8cpp.html" title="Fichier d&#39;implémentation de la classe fonctions_conteneur. " alt="" coords="1675,95,1808,137"/>
+<area shape="rect" id="node12" href="$objet__selectionnable_8cpp.html" title="Fichier d&#39;implémentation de la classe objet_selectionnable. " alt="" coords="1833,103,2055,129"/>
+<area shape="rect" id="node13" href="$projet_8cpp.html" title="Fichier d&#39;implémentation de la classe projet. " alt="" coords="2079,103,2216,129"/>
 </map>

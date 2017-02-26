@@ -1,17 +1,28 @@
 #ifndef SELECTEUR_FONCTION_DIALOG_H
 #define SELECTEUR_FONCTION_DIALOG_H
 
-#include "entete/projet/base_fonction.h"
-#include "entete/fonction_widget/bouton_choix_fonction.h"
+/** \file selecteur_fonction_dialog.h
+ * \brief Fichier de déclaration de la classe selecteur_fonction_dialog.
+ * \author Sébastien Angibaud
+ */
+
 #include "entete/define.h"
+#include "entete/fonction_widget/bouton_choix_fonction.h"
+#include "entete/projet/base_fonction.h"
+
 #include <QDialog>
 #include <QLineEdit>
 #include <QPushButton>
 
+class base_fonction;
 class QDialogButtonBox;
 class QGridLayout;
-class base_fonction;
 
+/**
+ * \class selecteur_fonction_dialog
+ * \brief Classe décrivant une fenêtre de dialog permettant de sélectionner une fonction, puis de l'instancier.
+ * \author Sébastien Angibaud
+ */
 class selecteur_fonction_dialog : public QDialog
 {
         Q_OBJECT
@@ -23,21 +34,31 @@ class selecteur_fonction_dialog : public QDialog
 
     private:
         void init_choix(type_fonction type);
-        void ajouter_choix(type_id_fonction nom);
+        void ajouter_choix(type_id_fonction id);
 
     private slots:
-        void choisir();
+        void on_choix();
         void chercher();
-        void chercher(const QString &);
+        void on_chercher(const QString &);
         void calcul_nb_colonnes(type_fonction type);
 
     private:
-        QDialogButtonBox *m_buttonBox;
+        /** \brief Le bouton d'annulation. */
+        QDialogButtonBox *m_cancel_button;
+
+        /** \brief Le layout comprenant l'ensemble des choix. */
         QGridLayout *m_grid_layout;
+
+        /** \brief Un pointeur sur la fonction créée. */
         base_fonction * m_fonction;
+
+        /** \brief Le widget de recherche. */
         QLineEdit * m_recherche;
+
+        /** \brief Le nombre de colonnes de choix. */
         int m_nb_colonnes;
 
+        /** \brief La liste des boutons de choix. */
         QList< bouton_choix_fonction * > m_boutons;
 };
 

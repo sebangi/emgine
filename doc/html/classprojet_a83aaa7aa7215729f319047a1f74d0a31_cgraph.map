@@ -1,4 +1,4 @@
 <map id="projet::sauvegarder" name="projet::sauvegarder">
-<area shape="rect" id="node2" href="$classobjet__selectionnable.html#adb99710921bdf74dfe35ee9d75b995a3" title="objet_selectionnable\l::sauvegarder" alt="" coords="187,5,327,46"/>
-<area shape="rect" id="node3" href="$classfonctions__conteneur.html#a199dde0697eb91a9e54c1dfecb536a88" title="fonctions_conteneur\l::sauvegarder" alt="" coords="188,70,327,111"/>
+<area shape="rect" id="node2" href="$classobjet__selectionnable.html#adb99710921bdf74dfe35ee9d75b995a3" title="Sauvegarde l&#39;objet sélectionnable dans un flux donné. " alt="" coords="187,5,327,46"/>
+<area shape="rect" id="node3" href="$classfonctions__conteneur.html#a199dde0697eb91a9e54c1dfecb536a88" title="Sauvegarde le fonctions_conteneur dans un flux donné. " alt="" coords="188,70,327,111"/>
 </map>

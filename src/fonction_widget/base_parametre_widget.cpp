@@ -1,31 +1,50 @@
+/** \file base_parametre_widget
+ * \brief Fichier d'implémentation de la classe base_parametre_widget.
+ * \author Sébastien Angibaud
+ */
+
 #include "entete/fonction_widget/base_parametre_widget.h"
-#include <QHBoxLayout>
-#include <QLabel>
-#include <QStyle>
-#include <QStyleOption>
-#include <QPainter>
-#include <QApplication>
-#include <QMessageBox>
-#include "entete/projet/base_parametre.h"
-#include "entete/projet/base_fonction.h"
-#include "entete/fenetre_principale.h"
+
 #include "entete/explorateur/explorateur.h"
 #include "entete/explorateur/noeud_parametre.h"
+#include "entete/fenetre_principale.h"
 #include "entete/fonction_widget/parametre_aide_message_box.h"
-#include <iostream>
+#include "entete/projet/base_fonction.h"
+#include "entete/projet/base_parametre.h"
+
+#include <QApplication>
+#include <QHBoxLayout>
+#include <QLabel>
+#include <QMessageBox>
+#include <QPainter>
+#include <QStyle>
+#include <QStyleOption>
+
 #include <math.h>
 
+/** --------------------------------------------------------------------------------------
+ * \brief Constructeur de la classe base_parametre_widget.
+ * \param param Un pointeur sur le paramètre à afficher.
+ * \param parent Un pointeur sur le widget parent.
+ */
 base_parametre_widget::base_parametre_widget(base_parametre* param, QWidget* parent)
     : QWidget(parent), m_parametre(param)
 {
     init();
 }
 
+/** --------------------------------------------------------------------------------------
+ * \brief Destructeur de la classe base_parametre_widget.
+ */
 base_parametre_widget::~base_parametre_widget()
 {
 }
 
-void base_parametre_widget::paintEvent(QPaintEvent *)
+/** --------------------------------------------------------------------------------------
+ * \brief Surcharge de l'événement paintEvent.
+ * \param e Un pointeur sur l'événement.
+ */
+void base_parametre_widget::paintEvent(QPaintEvent * e)
 {
     QStyleOption opt;
     opt.init(this);
@@ -33,11 +52,17 @@ void base_parametre_widget::paintEvent(QPaintEvent *)
     style()->drawPrimitive(QStyle::PE_Widget, &opt, &p, this);
 }
 
+/** --------------------------------------------------------------------------------------
+ * \brief Fonction appelé lorsque le verrouillage du paramètre change.
+ */
 void base_parametre_widget::informer_verrouillage_change()
 {
     mettre_a_jour_configuration();
 }
 
+/** --------------------------------------------------------------------------------------
+ * \brief Initialise le widget.
+ */
 void base_parametre_widget::init()
 {
     QHBoxLayout * main_layout = new QHBoxLayout();
@@ -77,7 +102,7 @@ void base_parametre_widget::init()
 }
 
 /** --------------------------------------------------------------------------------------
- \brief Mettre à jour la visualisation de la configuration.
+ * \brief Met à jour la visualisation de la configuration.
 */
 void base_parametre_widget::mettre_a_jour_configuration()
 {
@@ -92,7 +117,7 @@ void base_parametre_widget::mettre_a_jour_configuration()
 }
 
 /** --------------------------------------------------------------------------------------
- \brief Mise à jour du nom de l'objet.
+ * \brief Met à jour du nom de l'objet.
 */
 void base_parametre_widget::update_object_name()
 {
@@ -102,6 +127,9 @@ void base_parametre_widget::update_object_name()
     style()->polish(this);
 }
 
+/** --------------------------------------------------------------------------------------
+ * \brief Affiche l'aide du paramètre associé.
+ */
 void base_parametre_widget::aide()
 {
     parametre_aide_message_box msgBox(this, m_parametre);
@@ -109,6 +137,10 @@ void base_parametre_widget::aide()
     msgBox.exec();
 }
 
+/** --------------------------------------------------------------------------------------
+ * \brief Calcule et retourne la valeur du paramètre associé au format raccourci.
+ * \return La valeur courte du paramètre associé.
+ */
 QString base_parametre_widget::calcul_valeur_courte() const
 {
     QString s = m_parametre->get_valeur_courte();
@@ -123,6 +155,11 @@ QString base_parametre_widget::calcul_valeur_courte() const
     return s;
 }
 
+/** --------------------------------------------------------------------------------------
+ * \brief Surcharge de l'événement event.
+ * \param e Un pointeur sur l'événement.
+ * \return Un booléen indiquant sur l'événement a été traité.
+ */
 bool base_parametre_widget::event(QEvent* e)
 {
     bool action = true;
@@ -143,23 +180,37 @@ bool base_parametre_widget::event(QEvent* e)
     return QWidget::event(e); // Or whatever parent class you have.
 }
 
+/** --------------------------------------------------------------------------------------
+ * \brief Fonction appelée lors d'une demande d'affichage de l'aide.
+ */
 void base_parametre_widget::on_aide()
 {
     aide();
 }
 
+/** --------------------------------------------------------------------------------------
+ * \brief Fonction appelée lors d'une demande d'inversion de configuration.
+ */
 void base_parametre_widget::on_inverser_configuration()
 {
     m_parametre->inverser_configuration_visibilite();
     mettre_a_jour_configuration();
 }
 
+/** --------------------------------------------------------------------------------------
+ * \brief Surcharge de l'événement mouseDoubleClickEvent.
+ * \param e Un pointeur sur l'événement.
+ */
 void base_parametre_widget::mouseDoubleClickEvent( QMouseEvent * e )
 {
     if ( e->button() == Qt::LeftButton )
         m_parametre->selectionner();
 }
 
+/** --------------------------------------------------------------------------------------
+ * \brief Surcharge de l'événement mouseReleaseEvent.
+ * \param e Un pointeur sur l'événement.
+ */
 void base_parametre_widget::mouseReleaseEvent( QMouseEvent * e )
 {
     if ( e->button() == Qt::LeftButton )

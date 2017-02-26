@@ -22,7 +22,6 @@ class noeud_fonction : public base_noeud
         ~noeud_fonction();
 
         base_fonction* get_fonction() const;
-        void mettre_a_jour_style(bool actif);
         void mise_a_jour_icone();
 };
 

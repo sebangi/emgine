@@ -1,7 +1,6 @@
 <map id="fenetre_principale::ajouter_source" name="fenetre_principale::ajouter_source">
-<area shape="rect" id="node2" href="$classobjet__selectionnable.html#ad3c9ec08e1036a463b6b82176d52364d" title="objet_selectionnable\l::existe_selection" alt="" coords="179,5,319,46"/>
+<area shape="rect" id="node2" href="$classobjet__selectionnable.html#ad3c9ec08e1036a463b6b82176d52364d" title="Indique s&#39;il existe un objet sélectionné. " alt="" coords="179,5,319,46"/>
 <area shape="rect" id="node3" href="$classfenetre__principale.html#a0257f102b5827b67ca870579e062232e" title="Ajoute une fonction dans un conteneur donné. " alt="" coords="187,70,311,111"/>
-<area shape="rect" id="node6" href="$classobjet__selectionnable.html#ae6be76843c7b502410ec8d2c1fff88a3" title="objet_selectionnable\l::get_selection" alt="" coords="179,135,319,177"/>
-<area shape="rect" id="node4" href="$classselecteur__fonction__dialog.html#a7971b10182a4fbb0a556940b7af9770a" title="selecteur_fonction\l_dialog::get_fonction" alt="" coords="369,38,511,79"/>
-<area shape="rect" id="node5" href="$classbase__fonction.html#aa487a07ab1961bfbdf04ddd3c72b4d3c" title="base_fonction::set\l_conteneur" alt="" coords="375,103,505,145"/>
+<area shape="rect" id="node5" href="$classobjet__selectionnable.html#ae6be76843c7b502410ec8d2c1fff88a3" title="Retourne l&#39;objet sélectionné. " alt="" coords="179,135,319,177"/>
+<area shape="rect" id="node4" href="$classbase__fonction.html#aa487a07ab1961bfbdf04ddd3c72b4d3c" title="Initialise le conteneur de la fonction. " alt="" coords="369,70,498,111"/>
 </map>

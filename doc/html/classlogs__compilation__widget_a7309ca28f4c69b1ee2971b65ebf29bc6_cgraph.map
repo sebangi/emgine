@@ -1,4 +1,4 @@
 <map id="logs_compilation_widget::onLogClicked" name="logs_compilation_widget::onLogClicked">
-<area shape="rect" id="node2" href="$classobjet__selectionnable.html#a645da22be6e3f8747086da238e788fb9" title="objet_selectionnable\l::selectionner" alt="" coords="219,5,359,46"/>
-<area shape="rect" id="node3" href="$classobjet__selectionnable.html#a555085da89b30b07349064bb54a26138" title="objet_selectionnable\l::deselectionner" alt="" coords="409,5,549,46"/>
+<area shape="rect" id="node2" href="$classobjet__selectionnable.html#a645da22be6e3f8747086da238e788fb9" title="Sélectionne l&#39;objet. " alt="" coords="219,5,359,46"/>
+<area shape="rect" id="node3" href="$classobjet__selectionnable.html#a555085da89b30b07349064bb54a26138" title="Désélectionne l&#39;objet sélectionné. " alt="" coords="409,5,549,46"/>
 </map>

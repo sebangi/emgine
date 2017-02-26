@@ -1,4 +1,9 @@
 <map id="entete/projet" name="entete/projet">
 <area shape="rect" id="node1" href="dir_4d70d51309c71454fccdb5ab7a56e2b3.html" title="projet" alt="" coords="27,52,99,100"/>
+<area shape="rect" id="node2" href="dir_4832fa68ea590285dd7ec4a85118439c.html" title="element" alt="" coords="27,244,99,292"/>
+<area shape="rect" id="edge1-headlabel" href="dir_000013_000002.html" title="3" alt="" coords="60,217,68,232"/>
+<area shape="rect" id="node3" href="dir_2a17f3b6bd0d472023dbd77d40fac0ed.html" title="fonction" alt="" coords="64,148,136,196"/>
+<area shape="rect" id="edge2-headlabel" href="dir_000013_000004.html" title="4" alt="" coords="88,121,96,135"/>
+<area shape="rect" id="edge3-headlabel" href="dir_000004_000002.html" title="2" alt="" coords="82,223,90,238"/>
 <area shape="rect" id="clust1" href="dir_2db5f1c5034b754c69755a32007f81b7.html" title="entete" alt="" coords="16,16,109,111"/>
 </map>

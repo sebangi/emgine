@@ -1,9 +1,6 @@
 <map id="vue_fonctions::ajouter_vue_fonction" name="vue_fonctions::ajouter_vue_fonction">
-<area shape="rect" id="node2" href="$classbase__fonction.html#ad5c8ce64c897fba9cc84bf4dae60ee9a" title="base_fonction::generer\l_fonction_widget" alt="" coords="228,5,383,46"/>
-<area shape="rect" id="node3" href="$classvue__fonctions.html#aead9d73dffeef24ed7ba17edcda415f3" title="vue_fonctions::on_externe\l_fonction_widget_size_change" alt="" coords="205,70,405,111"/>
-<area shape="rect" id="node5" href="$classvue__fonctions.html#ae54ea51dbad2688ef17e17bd03c6a955" title="vue_fonctions::on_externe\l_demande_creation_projet" alt="" coords="218,135,393,177"/>
-<area shape="rect" id="node6" href="$classbase__fonction.html#aa42a2214daf8e49a79b627f62ab9105e" title="base_fonction::get\l_position" alt="" coords="241,201,370,242"/>
-<area shape="rect" id="node8" href="$classbase__fonction.html#aecefb6e946e43e9d6dc835165ac7e265" title="Retourne le type de la fonction. " alt="" coords="225,267,386,293"/>
-<area shape="rect" id="node4" href="$classvue__fonctions.html#a782d0cc63a33af720f8c44958d595425" title="vue_fonctions::adjust\l_size_vue_fonction" alt="" coords="453,70,600,111"/>
-<area shape="rect" id="node7" href="$classfonctions__conteneur.html#a61f2cd0bf2ee27462f470e36a2f43869" title="fonctions_conteneur\l::get_position" alt="" coords="457,201,596,242"/>
+<area shape="rect" id="node2" href="$classbase__fonction.html#ad5c8ce64c897fba9cc84bf4dae60ee9a" title="Construit et retourne le widget associé à cette fonction. " alt="" coords="209,5,364,46"/>
+<area shape="rect" id="node3" href="$classbase__fonction.html#aa42a2214daf8e49a79b627f62ab9105e" title="Retourne la position d&#39;une fonction dans son conteneur. " alt="" coords="222,70,351,111"/>
+<area shape="rect" id="node5" href="$classbase__fonction.html#aecefb6e946e43e9d6dc835165ac7e265" title="Accesseur du type de la fonction. " alt="" coords="206,136,367,163"/>
+<area shape="rect" id="node4" href="$classfonctions__conteneur.html#a61f2cd0bf2ee27462f470e36a2f43869" title="Retourne la position d&#39;une fonction donnée. " alt="" coords="416,70,555,111"/>
 </map>

@@ -1,18 +1,18 @@
 <map id="explorateur::deconnecter_fonction" name="explorateur::deconnecter_fonction">
-<area shape="rect" id="node2" href="$classexplorateur.html#ae43b4a7ba4f0643465b3e2092b674d08" title="explorateur::on_externe\l_supprimer_fonction" alt="" coords="233,25,391,66"/>
-<area shape="rect" id="node3" href="$classexplorateur.html#a1384795a69acb9eaabee919bf04568e1" title="explorateur::on_externe\l_activation_fonction_change" alt="" coords="219,90,405,131"/>
-<area shape="rect" id="node8" href="$classexplorateur.html#afce2e984617f7198974bcd4db9c4175a" title="explorateur::on_externe\l_verrouillage_change" alt="" coords="233,155,391,197"/>
-<area shape="rect" id="node11" href="$classexplorateur.html#a5098ff7776e4773ff3386a9bac9d9307" title="explorateur::on_externe\l_etendu_change" alt="" coords="233,221,391,262"/>
-<area shape="rect" id="node13" href="$classexplorateur.html#aeb433337c59b580a9e33350164e71e22" title="explorateur::deconnecter\l_selectionnable" alt="" coords="229,286,395,327"/>
-<area shape="rect" id="node4" href="$classexplorateur.html#a1c0d1a2f970f2b4d9560f33f74030f7a" title="explorateur::mettre\l_a_jour_activation" alt="" coords="468,82,599,123"/>
+<area shape="rect" id="node2" href="$classexplorateur.html#ae43b4a7ba4f0643465b3e2092b674d08" title="Fonction appelée lorsqu&#39;une fonction est détruite. " alt="" coords="233,25,391,66"/>
+<area shape="rect" id="node3" href="$classexplorateur.html#a1384795a69acb9eaabee919bf04568e1" title="Fonction appelée lorsque l&#39;état d&#39;activation d&#39;une fonction change. " alt="" coords="219,90,405,131"/>
+<area shape="rect" id="node8" href="$classexplorateur.html#afce2e984617f7198974bcd4db9c4175a" title="Fonction appelée lorsque le vérouillage d&#39;un objet change. " alt="" coords="233,155,391,197"/>
+<area shape="rect" id="node11" href="$classexplorateur.html#a5098ff7776e4773ff3386a9bac9d9307" title="Fonction appelée lorsque l&#39;état d&#39;expansion d&#39;une fonction change. " alt="" coords="233,221,391,262"/>
+<area shape="rect" id="node13" href="$classexplorateur.html#aeb433337c59b580a9e33350164e71e22" title="Retire les connects pour un objet donné. " alt="" coords="229,286,395,327"/>
+<area shape="rect" id="node4" href="$classexplorateur.html#a1c0d1a2f970f2b4d9560f33f74030f7a" title="Met à jour l&#39;activation d&#39;un noeud. " alt="" coords="468,82,599,123"/>
 <area shape="rect" id="node5" href="$classbase__noeud.html#afb0d91325a08bb6e7e0234036035e574" title="Retourne l&#39;état d&#39;expansion sauvegardé avant le compactage automatique. " alt="" coords="681,5,834,46"/>
 <area shape="rect" id="node6" href="$classbase__noeud.html#a5fe905edcc9ff83f21a5d324c8a21bda" title="Sauvegarde l&#39;état d&#39;expansion. " alt="" coords="662,71,853,97"/>
 <area shape="rect" id="node7" href="$classbase__noeud.html#a12165cb731bfc08c958ccabad752d092" title="Met à jour le style du noeud. " alt="" coords="689,122,826,163"/>
-<area shape="rect" id="node9" href="$classexplorateur.html#aa8f6a55c7d9b6e0ef699eb49af4cc2b7" title="explorateur::mettre\l_a_jour_verrouillage" alt="" coords="465,155,602,197"/>
+<area shape="rect" id="node9" href="$classexplorateur.html#aa8f6a55c7d9b6e0ef699eb49af4cc2b7" title="Met à jour le verouillage d&#39;un noeud. " alt="" coords="465,155,602,197"/>
 <area shape="rect" id="node10" href="$classbase__noeud.html#ace8a7076d9e5a5d6644d801ac53f2f93" title="Fonction virtuelle mettant à jour l&#39;icone. " alt="" coords="686,187,829,229"/>
-<area shape="rect" id="node12" href="$classexplorateur.html#a09836e70d0641f3b692eeb070110f912" title="explorateur::mettre\l_a_jour_etendu" alt="" coords="468,221,599,262"/>
-<area shape="rect" id="node14" href="$classexplorateur.html#a0fce137b4ac1ce06dcb7bc9f6a561882" title="explorateur::on_externe\l_objet_selectionne" alt="" coords="454,286,613,327"/>
-<area shape="rect" id="node17" href="$classexplorateur.html#a0c03c6386f018765f8392b95b46c19b0" title="explorateur::on_externe\l_objet_deselectionne" alt="" coords="454,351,613,393"/>
-<area shape="rect" id="node15" href="$classobjet__selectionnable.html#ab809d020155b7fec48ff3adbe15c9b65" title="objet_selectionnable\l::get_conteneur" alt="" coords="687,305,827,346"/>
-<area shape="rect" id="node16" href="$classobjet__selectionnable.html#abed9a58bb39d15353db880fbd0808714" title="objet_selectionnable\l::est_conteneur" alt="" coords="902,305,1042,346"/>
+<area shape="rect" id="node12" href="$classexplorateur.html#a09836e70d0641f3b692eeb070110f912" title="Met à jour l&#39;état d&#39;expansion d&#39;un noeud. " alt="" coords="468,221,599,262"/>
+<area shape="rect" id="node14" href="$classexplorateur.html#a0fce137b4ac1ce06dcb7bc9f6a561882" title="Fonction appelée lorsqu&#39;un objet est sélectionné. " alt="" coords="454,286,613,327"/>
+<area shape="rect" id="node17" href="$classexplorateur.html#a0c03c6386f018765f8392b95b46c19b0" title="Fonction appelée lorsqu&#39;un objet est désélectionné. " alt="" coords="454,351,613,393"/>
+<area shape="rect" id="node15" href="$classobjet__selectionnable.html#ab809d020155b7fec48ff3adbe15c9b65" title="Retourne le fonctions_conteneur le plus proche : l&#39;objet lui&#45;même s&#39;il est un conteneur, ou le conteneur parent sinon. " alt="" coords="687,305,827,346"/>
+<area shape="rect" id="node16" href="$classobjet__selectionnable.html#abed9a58bb39d15353db880fbd0808714" title="Indique si l&#39;objet est un conteneur. " alt="" coords="902,305,1042,346"/>
 </map>

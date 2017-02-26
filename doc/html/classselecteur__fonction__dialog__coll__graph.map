@@ -1,5 +1,5 @@
 <map id="selecteur_fonction_dialog" name="selecteur_fonction_dialog">
 <area shape="rect" id="node3" href="$classbase__fonction.html" title="Classe décrivant une fonction de conversion d&#39;un texte. " alt="" coords="99,253,201,280"/>
-<area shape="rect" id="node4" href="$classobjet__selectionnable.html" title="objet_selectionnable" alt="" coords="59,84,199,111"/>
-<area shape="rect" id="node6" href="$classfonctions__conteneur.html" title="fonctions_conteneur" alt="" coords="151,163,289,189"/>
+<area shape="rect" id="node4" href="$classobjet__selectionnable.html" title="Classe décrivant un objet sélectionnable dans l&#39;explorateur. " alt="" coords="59,84,199,111"/>
+<area shape="rect" id="node6" href="$classfonctions__conteneur.html" title="Classe décrivant un conteneur de fonctions. " alt="" coords="151,163,289,189"/>
 </map>

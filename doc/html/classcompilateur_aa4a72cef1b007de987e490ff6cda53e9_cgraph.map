@@ -1,5 +1,5 @@
 <map id="compilateur::est_valide" name="compilateur::est_valide">
-<area shape="rect" id="node2" href="$classprojet.html#ac29c91d7cfa7f3bd873c50fd180631ca" title="projet::est_valide" alt="" coords="211,64,333,91"/>
+<area shape="rect" id="node2" href="$classprojet.html#ac29c91d7cfa7f3bd873c50fd180631ca" title="Teste si le projet est valide. " alt="" coords="211,64,333,91"/>
 <area shape="rect" id="node3" href="$classlogs__compilation__widget.html#a51fcc25d77ca9beafc2721d9c84f07a7" title="Ajoute un log à la liste des logs. " alt="" coords="382,57,546,98"/>
 <area shape="rect" id="node4" href="$classlog__widget__item.html#a50885aa7f8b31392370fe1dafe982a62" title="Accesseur du log associé. " alt="" coords="595,5,762,32"/>
 <area shape="rect" id="node5" href="$classlog__compilation.html#a33648aa43d6eac93335fbf032c581f67" title="Accesseur de l&#39;objet associé. " alt="" coords="609,57,748,98"/>

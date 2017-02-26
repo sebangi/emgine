@@ -1,7 +1,7 @@
 <map id="parametre_choix" name="parametre_choix">
 <area shape="rect" id="node2" href="$classbase__parametre.html" title="Classe décrivant un parametre d&#39;une fonction. " alt="" coords="79,344,193,371"/>
-<area shape="rect" id="node3" href="$classfonctions__conteneur.html" title="fonctions_conteneur" alt="" coords="5,163,144,189"/>
+<area shape="rect" id="node3" href="$classfonctions__conteneur.html" title="Classe décrivant un conteneur de fonctions. " alt="" coords="5,163,144,189"/>
 <area shape="rect" id="node8" href="$classbase__fonction.html" title="Classe décrivant une fonction de conversion d&#39;un texte. " alt="" coords="85,253,187,280"/>
-<area shape="rect" id="node4" href="$classobjet__selectionnable.html" title="objet_selectionnable" alt="" coords="77,84,216,111"/>
+<area shape="rect" id="node4" href="$classobjet__selectionnable.html" title="Classe décrivant un objet sélectionnable dans l&#39;explorateur. " alt="" coords="77,84,216,111"/>
 <area shape="rect" id="node6" href="$classtextes.html" title="Classe décrivant un ensemble de textes. " alt="" coords="256,253,313,280"/>
 </map>

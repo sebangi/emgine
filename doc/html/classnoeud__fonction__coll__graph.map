@@ -1,4 +1,4 @@
 <map id="noeud_fonction" name="noeud_fonction">
 <area shape="rect" id="node2" href="$classbase__noeud.html" title="Classe décrivant un noeud quelconque de l&#39;explorateur. " alt="" coords="71,176,163,203"/>
-<area shape="rect" id="node4" href="$classobjet__selectionnable.html" title="objet_selectionnable" alt="" coords="155,84,295,111"/>
+<area shape="rect" id="node4" href="$classobjet__selectionnable.html" title="Classe décrivant un objet sélectionnable dans l&#39;explorateur. " alt="" coords="155,84,295,111"/>
 </map>

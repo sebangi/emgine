@@ -1,9 +1,9 @@
 <map id="explorateur::ajouter_menu_activation" name="explorateur::ajouter_menu_activation">
-<area shape="rect" id="node2" href="$classobjet__selectionnable.html#a9f9e2ccc04e3b2a55d7b51b85366488f" title="objet_selectionnable\l::est_active" alt="" coords="606,53,746,94"/>
-<area shape="rect" id="node3" href="$classexplorateur.html#a71d8c413f548ef02da9bd592710ff356" title="explorateur::on_activer\l_fonction" alt="" coords="187,45,341,86"/>
-<area shape="rect" id="node5" href="$classobjet__selectionnable.html#a76587773c723728d21583bb87e995daa" title="objet_selectionnable\l::parents_actifs" alt="" coords="194,110,334,151"/>
-<area shape="rect" id="node7" href="$classobjet__selectionnable.html#a1cf41e42861e0b033d2704802905e81a" title="objet_selectionnable\l::est_verrouille_avec\l_parent" alt="" coords="193,200,335,256"/>
+<area shape="rect" id="node2" href="$classobjet__selectionnable.html#a9f9e2ccc04e3b2a55d7b51b85366488f" title="Retourne l&#39;état d&#39;activation de l&#39;objet. " alt="" coords="606,53,746,94"/>
+<area shape="rect" id="node3" href="$classexplorateur.html#a71d8c413f548ef02da9bd592710ff356" title="Fonction appelée lors d&#39;une demande de changement d&#39;activation d&#39;une fonction. " alt="" coords="187,45,341,86"/>
+<area shape="rect" id="node5" href="$classobjet__selectionnable.html#a76587773c723728d21583bb87e995daa" title="Retourne l&#39;état d&#39;activation de l&#39;objet parent. " alt="" coords="194,110,334,151"/>
+<area shape="rect" id="node7" href="$classobjet__selectionnable.html#a1cf41e42861e0b033d2704802905e81a" title="Indique si l&#39;objet est verrouillé en considérant également ses parents. " alt="" coords="193,200,335,256"/>
 <area shape="rect" id="node4" href="$classbase__noeud.html#ae78124477ea5148f16c2da42ac766f4c" title="Retourne l&#39;objet sélectionnable associé au noeud. " alt="" coords="397,44,550,71"/>
-<area shape="rect" id="node6" href="$classobjet__selectionnable.html#ada0d1bda8b5fdc1f81979720d40fb840" title="objet_selectionnable\l::est_active_avec_parent" alt="" coords="389,119,557,161"/>
-<area shape="rect" id="node8" href="$classobjet__selectionnable.html#a8b9cf156597fe8cc1b8f9408e1bfee8c" title="objet_selectionnable\l::est_verrouille" alt="" coords="403,207,543,249"/>
+<area shape="rect" id="node6" href="$classobjet__selectionnable.html#ada0d1bda8b5fdc1f81979720d40fb840" title="Retourne l&#39;état d&#39;activation de l&#39;objet en considérant également les objets parents. " alt="" coords="389,119,557,161"/>
+<area shape="rect" id="node8" href="$classobjet__selectionnable.html#a8b9cf156597fe8cc1b8f9408e1bfee8c" title="Indique si l&#39;objet est vérrouillé, i.e. non éditable. " alt="" coords="403,207,543,249"/>
 </map>

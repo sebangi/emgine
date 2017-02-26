@@ -1,20 +1,31 @@
 #ifndef VUE_FONCTIONS_H
 #define VUE_FONCTIONS_H
 
+/** \file vue_fonctions.h
+ * \brief Fichier de déclaration de la classe vue_fonctions.
+ * \author Sébastien Angibaud
+ */
+
 #include <QTableWidget>
 
 class base_fonction;
 class base_parametre;
-class projet;
-class objet_selectionnable;
 class fonctions_conteneur;
+class objet_selectionnable;
+class projet;
 class texte;
 
+/**
+ * \class vue_fonctions
+ * \brief Classe décrivant le widget affichant les fonctions.
+ * \author Sébastien Angibaud
+ */
 class vue_fonctions : public QTableWidget
 {
         Q_OBJECT
 
     private:
+        /** \brief Type stockant un ensemble d'objets sélectionnables. */
         typedef QSet< objet_selectionnable* > liste_selectionnable;
 
     public:
@@ -27,7 +38,7 @@ class vue_fonctions : public QTableWidget
         void ajouter_fonction(base_fonction *f);
         void ajouter_parametre(base_parametre *f);
         void creer_vue_conteneur();
-        void ajouter_vue_fonction(base_fonction* fonction);
+        void ajouter_vue_fonction(base_fonction* f);
         void ajouter_selectionnable(objet_selectionnable *obj);
         void connecter_selectionnable(objet_selectionnable *obj);
         void deconnecter_selectionnable(objet_selectionnable *obj);
@@ -53,8 +64,13 @@ class vue_fonctions : public QTableWidget
         void on_hheaderclicked( int colonne );
 
     private:
+        /** \brief La liste des objets sélectionnables. */
         liste_selectionnable m_selectionnables;
+
+        /** \brief Un pointeur sur le conteneur courant. */
         fonctions_conteneur * m_conteneur_courant;
+
+        /** \brief Booléen indiquant que la sélection est bloquée; ceci afin d'éviter un plantage dû à des appels récursifs en boucle. */
         bool m_bloquer_selection;
 };
 
