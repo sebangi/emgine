@@ -1,15 +1,30 @@
+/**
+ * \file fonction_source_booleen_widget.cpp
+ * \brief Fichier d'implémentation de la classe fonction_source_booleen_widget.
+ * \author Sébastien Angibaud
+ */
+
 #include "entete/fonction_widget/fonction_source_widget/fonction_source_booleen_widget.h"
+
 #include "entete/fonction/fonction_source/fonction_source_booleen.h"
-#include <iostream>
+
 #include <QHBoxLayout>
 #include <QLabel>
 
+/** --------------------------------------------------------------------------------------
+ * \brief Constructeur de la classe fonction_source_booleen_widget.
+ * \param fonction Un pointeur sur la fonction associée.
+ * \param parent Un pointeur sur le widget parent.
+ */
 fonction_source_booleen_widget::fonction_source_booleen_widget(base_fonction *fonction, QWidget *parent)
     : base_fonction_widget(fonction, parent)
 {
     init();
 }
 
+/** --------------------------------------------------------------------------------------
+ * \brief Initialise le widget.
+ */
 void fonction_source_booleen_widget::init()
 {
     QHBoxLayout * lay = new QHBoxLayout();
@@ -39,6 +54,10 @@ void fonction_source_booleen_widget::init()
     m_specialisation_layout->addLayout(lay);
 }
 
+/** --------------------------------------------------------------------------------------
+ * \brief Fonction appelée lorsque l'état du bouton à cocher OUI est modifié.
+ * \param checkState L'état du bouton.
+ */
 void fonction_source_booleen_widget::on_oui_stateChanged(int checkState)
 {
     ((fonction_source_booleen*)m_fonction)->set_valeur( checkState );
@@ -46,6 +65,10 @@ void fonction_source_booleen_widget::on_oui_stateChanged(int checkState)
     m_fonction->modifier();
 }
 
+/** --------------------------------------------------------------------------------------
+ * \brief Fonction appelée lorsque l'état du bouton à cocher NON est modifié.
+ * \param checkState L'état du bouton.
+ */
 void fonction_source_booleen_widget::on_non_stateChanged(int checkState)
 {
     ((fonction_source_booleen*)m_fonction)->set_valeur( ! checkState );
@@ -53,6 +76,9 @@ void fonction_source_booleen_widget::on_non_stateChanged(int checkState)
     m_fonction->modifier();
 }
 
+/** --------------------------------------------------------------------------------------
+ * \brief Fonction appelée lorsque l'état de verrouillage de la fonction associée change.
+ */
 void fonction_source_booleen_widget::informer_verrouillage_change()
 {
     if ( m_fonction != NULL )

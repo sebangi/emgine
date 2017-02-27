@@ -1,16 +1,31 @@
+/**
+ * \file fonction_source_choix_widget.cpp
+ * \brief Fichier d'implémentation de la classe fonction_source_choix_widget.
+ * \author Sébastien Angibaud
+ */
+
 #include "entete/fonction_widget/fonction_source_widget/fonction_source_choix_widget.h"
+
 #include "entete/fonction/fonction_source/fonction_source_choix.h"
 #include "entete/parametre/parametre_choix.h"
-#include <iostream>
+
 #include <QHBoxLayout>
 #include <QListWidgetItem>
 
+/** --------------------------------------------------------------------------------------
+ * \brief Constructeur de la classe fonction_source_choix_widget.
+ * \param fonction Un pointeur sur la fonction associée.
+ * \param parent Un pointeur sur le widget parent.
+ */
 fonction_source_choix_widget::fonction_source_choix_widget(base_fonction *fonction, QWidget *parent)
     : base_fonction_widget(fonction, parent), m_verrou_boucle_signaux(false)
 {
     init();
 }
 
+/** --------------------------------------------------------------------------------------
+ * \brief Initialise le composant.
+ */
 void fonction_source_choix_widget::init()
 {
     QHBoxLayout * lay = new QHBoxLayout();
@@ -30,6 +45,9 @@ void fonction_source_choix_widget::init()
     informer_verrouillage_change();
 }
 
+/** --------------------------------------------------------------------------------------
+ * \brief Construit la liste de choix.
+ */
 void fonction_source_choix_widget::construire_liste()
 {
     m_liste->clear();
@@ -56,6 +74,9 @@ void fonction_source_choix_widget::construire_liste()
     }
 }
 
+/** --------------------------------------------------------------------------------------
+ * \brief Fonction appelée lorsque l'état de verrouillage de la focntion associée change.
+ */
 void fonction_source_choix_widget::informer_verrouillage_change()
 {
     if ( m_fonction != NULL )
@@ -64,6 +85,10 @@ void fonction_source_choix_widget::informer_verrouillage_change()
         m_liste->setEnabled(false);
 }
 
+/** --------------------------------------------------------------------------------------
+ * \brief Fonction appelée lorsque la choix sélectionné change.
+ * \param item Un pointeur sur l'item sélectionné.
+ */
 void fonction_source_choix_widget::on_itemChanged(QListWidgetItem *item)
 {
     if ( ! m_verrou_boucle_signaux )

@@ -1,10 +1,15 @@
+/** \file fonction_sortie_texte_widget.cpp
+ * \brief Fichier d'implémentation de la classe fonction_sortie_texte_widget.
+ * \author Sébastien Angibaud
+ */
+
 #include "entete/fonction_widget/fonction_sortie_widget/fonction_sortie_texte_widget.h"
-#include "entete/fonction_widget/fonction_sortie_widget/texte_widget_item.h"
-#include "entete/fonction_widget/fonction_sortie_widget/liste_texte_widget.h"
+
 #include "entete/fonction/fonction_sortie/fonction_sortie_texte.h"
+#include "entete/fonction_widget/fonction_sortie_widget/liste_texte_widget.h"
+#include "entete/fonction_widget/fonction_sortie_widget/texte_widget_item.h"
 #include "entete/projet/projet.h"
 
-#include <iostream>
 #include <QHBoxLayout>
 #include <QMenu>
 #include <QApplication>
@@ -13,12 +18,20 @@
 #include <QTextStream>
 #include <QMessageBox>
 
+/** --------------------------------------------------------------------------------------
+ * \brief Constructeur de la classe fonction_sortie_texte_widget.
+ * \param fonction Un pointeur sur la fonction associée.
+ * \param parent Un pointeur sur le widget parent.
+ */
 fonction_sortie_texte_widget::fonction_sortie_texte_widget(base_fonction *fonction, QWidget *parent)
     : base_fonction_widget(fonction, parent), m_textes( ((fonction_sortie_texte*)fonction)->get_textes())
 {
     init();
 }
 
+/** --------------------------------------------------------------------------------------
+ * \brief Fonction appelée lorsque la liste de textes à afficher est modifiée.
+ */
 void fonction_sortie_texte_widget::on_externe_fst_textes_modifie()
 {
     m_textes = ((fonction_sortie_texte*)m_fonction)->get_textes();
@@ -29,6 +42,9 @@ void fonction_sortie_texte_widget::on_externe_fst_textes_modifie()
     signal_bfw_size_change();
 }
 
+/** --------------------------------------------------------------------------------------
+ * \brief Affiche les textes.
+ */
 void fonction_sortie_texte_widget::creer_liste_texte()
 {
     m_liste_texte->clear();
@@ -42,6 +58,9 @@ void fonction_sortie_texte_widget::creer_liste_texte()
     }
 }
 
+/** --------------------------------------------------------------------------------------
+ * \brief Initialise le widget.
+ */
 void fonction_sortie_texte_widget::init()
 {
     QVBoxLayout* layout = new QVBoxLayout();
@@ -64,18 +83,27 @@ void fonction_sortie_texte_widget::init()
     connect((fonction_sortie_texte*)m_fonction, SIGNAL(signal_fst_textes_modifie()), this, SLOT(on_externe_fst_textes_modifie()));
 }
 
+/** --------------------------------------------------------------------------------------
+ * \brief Fonction appelée lors d'un clique sur un item.
+ * \param item L'item cliqué.
+ */
 void fonction_sortie_texte_widget::onTexteDoubleClicked(QListWidgetItem* item)
 {
+    // Attention en cas de modificiation de codage de cette fonction :
+    // si on utilise la fonction get_configuration() et si la fonction a été détruite depuis
+
     ((texte_widget_item*)item)->get_texte().inverser_configuration_visibilite();
     ((texte_widget_item*)item)->update();
 
     m_liste_texte->updateGeometry();
     signal_bfw_size_change();
 
-    // Attention si on utilise la fonction get_configuration() si la fonction a été détruite depuis
-    // std::cout << ((texte_widget_item*)item)->get_texte().get_string_configuration().toStdString() << std::endl;
 }
 
+/** --------------------------------------------------------------------------------------
+ * \brief Fonction appelée lors d'une demande d'ouverture de menu.
+ * \param pos La position cliqué.
+ */
 void fonction_sortie_texte_widget::showContextMenu(const QPoint& pos)
 {
     QStyle* style = QApplication::style();
@@ -98,6 +126,9 @@ void fonction_sortie_texte_widget::showContextMenu(const QPoint& pos)
     menu.exec(globalPos);
 }
 
+/** --------------------------------------------------------------------------------------
+ * \brief Crée un projet avec pour texte source le texte actuellement sélectionné.
+ */
 void fonction_sortie_texte_widget::creer_projet()
 {
     texte_widget_item *item = (texte_widget_item *)m_liste_texte->takeItem(m_liste_texte->currentRow());
@@ -105,6 +136,9 @@ void fonction_sortie_texte_widget::creer_projet()
     emit signal_bfw_demande_creation_projet( item->get_texte() );
 }
 
+/** --------------------------------------------------------------------------------------
+ * \brief Sauvegarde le texte actuellement sélectionné dans un fichier.
+ */
 void fonction_sortie_texte_widget::sauvegarder_texte()
 {
     QString dir = "mes_projets";

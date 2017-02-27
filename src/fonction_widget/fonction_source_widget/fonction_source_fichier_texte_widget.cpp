@@ -1,22 +1,35 @@
+/** \file fonction_source_fichier_texte_widget.cpp
+ * \brief Fichier d'implémentation de la classe fonction_source_fichier_texte_widget.
+ * \author Sébastien Angibaud
+ */
+
 #include "entete/fonction_widget/fonction_source_widget/fonction_source_fichier_texte_widget.h"
 
 #include "entete/fonction/fonction_source/fonction_source_fichier_texte.h"
 #include "entete/projet/projet.h"
-#include <iostream>
-#include <QHBoxLayout>
+
+#include <QApplication>
 #include <QFile>
 #include <QFileDialog>
-#include <QTextStream>
-#include <QStyle>
-#include <QApplication>
+#include <QHBoxLayout>
 #include <QMessageBox>
+#include <QStyle>
+#include <QTextStream>
 
+/** --------------------------------------------------------------------------------------
+ * \brief Constructeur de la classe fonction_source_fichier_texte_widget.
+ * \param fonction Un pointeur sur la fonction associée.
+ * \param parent Un pointeur sur le widget parent.
+ */
 fonction_source_fichier_texte_widget::fonction_source_fichier_texte_widget(base_fonction *fonction, QWidget *parent)
     : base_fonction_widget_avec_text_edit(fonction, parent), m_modifie(false), m_choisi(false), m_charge(false)
 {
     init();
 }
 
+/** --------------------------------------------------------------------------------------
+ * \brief Initialise le composant.
+ */
 void fonction_source_fichier_texte_widget::init()
 {
     QStyle* style = QApplication::style();
@@ -62,6 +75,9 @@ void fonction_source_fichier_texte_widget::init()
     m_text_edit->setVisible(false);
 }
 
+/** --------------------------------------------------------------------------------------
+ * \brief Met à jour l'ensemble des boutons.
+ */
 void fonction_source_fichier_texte_widget::update_boutons()
 {
     if ( m_fonction != NULL )
@@ -90,11 +106,17 @@ void fonction_source_fichier_texte_widget::update_boutons()
     style()->polish(m_sauvegarder_bouton);
 }
 
+/** --------------------------------------------------------------------------------------
+ * \brief Fonction appelée lorsque l'état de verrouillage de la fonction associée change.
+ */
 void fonction_source_fichier_texte_widget::informer_verrouillage_change()
 {
     update_boutons();
 }
 
+/** --------------------------------------------------------------------------------------
+ * \brief Choisi un nom de fichier.
+ */
 void fonction_source_fichier_texte_widget::choisir_nom_fichier()
 {
     QString dir = "mes_projets";
@@ -120,6 +142,9 @@ void fonction_source_fichier_texte_widget::choisir_nom_fichier()
     m_fonction->modifier();
 }
 
+/** --------------------------------------------------------------------------------------
+ * \brief Charge le fichier.
+ */
 void fonction_source_fichier_texte_widget::charger_fichier()
 {
     QFile file(((fonction_source_fichier_texte*)m_fonction)->get_nom_fichier());
@@ -136,6 +161,9 @@ void fonction_source_fichier_texte_widget::charger_fichier()
     update_boutons();
 }
 
+/** --------------------------------------------------------------------------------------
+ * \brief Sauvegarde le texte dans le fichier.
+ */
 void fonction_source_fichier_texte_widget::sauvegarder_fichier()
 {
     QFile file(((fonction_source_fichier_texte*)m_fonction)->get_nom_fichier());
@@ -154,28 +182,44 @@ void fonction_source_fichier_texte_widget::sauvegarder_fichier()
     update_boutons();
 }
 
+/** --------------------------------------------------------------------------------------
+ * \brief Fonction appelée lorsque le texte change.
+ */
 void fonction_source_fichier_texte_widget::on_nouveau_texte()
 {
     m_modifie = true;
     update_boutons();
 }
 
+/** --------------------------------------------------------------------------------------
+ * \brief Fonction retournant la valeur de la fonction associée.
+ * \return La valeur de la fonction associée au format QString.
+ */
 QString fonction_source_fichier_texte_widget::chercher_valeur() const
 {
     // return ((fonction_source_fichier_texte*)m_fonction)->get_valeur();
     return QString();
 }
 
+/** --------------------------------------------------------------------------------------
+ * \brief Fonction appelée lors d'une demande de choix de nom de fichier.
+ */
 void fonction_source_fichier_texte_widget::on_choisir_click()
 {
     choisir_nom_fichier();
 }
 
+/** --------------------------------------------------------------------------------------
+ * \brief Fonction appelée lors d'une demande de chargement du fichier.
+ */
 void fonction_source_fichier_texte_widget::on_charger_click()
 {
     charger_fichier();
 }
 
+/** --------------------------------------------------------------------------------------
+ * \brief Fonction appelée lors d'une demande de sauvegarde du texte.
+ */
 void fonction_source_fichier_texte_widget::on_sauvegarder_click()
 {
     sauvegarder_fichier();

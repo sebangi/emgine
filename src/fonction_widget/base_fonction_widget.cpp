@@ -1,17 +1,29 @@
+/**
+ * \file base_fonction_widget.cpp
+ * \brief Fichier d'implémentation de la classe base_fonction_widget.
+ * \author Sébastien Angibaud
+ */
+
 #include "entete/fonction_widget/base_fonction_widget.h"
-#include <QVBoxLayout>
-#include <QSpacerItem>
+
+#include "entete/fenetre_principale.h"
+#include "entete/fonction_widget/base_parametre_widget.h"
+#include "entete/projet/base_fonction.h"
+
+#include <QApplication>
 #include <QLabel>
+#include <QMessageBox>
+#include <QPainter>
+#include <QSpacerItem>
 #include <QStyle>
 #include <QStyleOption>
-#include <QPainter>
-#include <QApplication>
-#include <QMessageBox>
-#include "entete/projet/base_fonction.h"
-#include "entete/fonction_widget/base_parametre_widget.h"
-#include "entete/fenetre_principale.h"
-#include <iostream>
+#include <QVBoxLayout>
 
+/** --------------------------------------------------------------------------------------
+ * \brief Constructeur de la classe base_fonction_widget.
+ * \param focntion Un pointeur sur la fonction associée au composant.
+ * \param parent Un pointeur sur le widget parent.
+ */
 base_fonction_widget::base_fonction_widget(base_fonction* fonction, QWidget* parent)
     : QWidget(parent), m_fonction(fonction)
 {
@@ -19,11 +31,18 @@ base_fonction_widget::base_fonction_widget(base_fonction* fonction, QWidget* par
     connecter_fonction();
 }
 
+/** --------------------------------------------------------------------------------------
+ * \brief Destructeur de la classe base_fonction_widget.
+ */
 base_fonction_widget::~base_fonction_widget()
 {
 }
 
-void base_fonction_widget::paintEvent(QPaintEvent *)
+/** --------------------------------------------------------------------------------------
+ * \brief Surcharge de la fonction paintEvent.
+ * \param e L'événement survenu.
+ */
+void base_fonction_widget::paintEvent(QPaintEvent * e)
 {
     QStyleOption opt;
     opt.init(this);
@@ -31,11 +50,18 @@ void base_fonction_widget::paintEvent(QPaintEvent *)
     style()->drawPrimitive(QStyle::PE_Widget, &opt, &p, this);
 }
 
+/** --------------------------------------------------------------------------------------
+ * \brief Accesseur de la fonction associée au widget.
+ * \return Un pointeur sur la fonction associée au widget.
+ */
 base_fonction *base_fonction_widget::get_fonction()
 {
     return m_fonction;
 }
 
+/** --------------------------------------------------------------------------------------
+ * \brief Met à jour le widget en fonction de l'état de verrouillage actuel.
+ */
 void base_fonction_widget::mettre_a_jour_verrouillage()
 {
     update_verrouillage_bouton();
@@ -49,6 +75,9 @@ void base_fonction_widget::mettre_a_jour_verrouillage()
     informer_verrouillage_change();
 }
 
+/** --------------------------------------------------------------------------------------
+ * \brief Initialise le widget.
+ */
 void base_fonction_widget::init()
 {
     QStyle* style = QApplication::style();
@@ -60,12 +89,12 @@ void base_fonction_widget::init()
     QToolBar * toolbar = new QToolBar();
     toolbar->setMovable(false);
 
-    m_parametre_bouton = new QPushButton();
-    m_parametre_bouton->setObjectName("BoutonFonctionWidget");
-    m_parametre_bouton->setIconSize(QSize(24,24));
-    m_parametre_bouton->setFixedHeight(32);
-    connect(m_parametre_bouton, SIGNAL(released()), this, SLOT(on_parametre_switch()));
-    toolbar->addWidget(m_parametre_bouton);
+    m_visibilite_bouton = new QPushButton();
+    m_visibilite_bouton->setObjectName("BoutonFonctionWidget");
+    m_visibilite_bouton->setIconSize(QSize(24,24));
+    m_visibilite_bouton->setFixedHeight(32);
+    connect(m_visibilite_bouton, SIGNAL(released()), this, SLOT(on_visibilite_change()));
+    toolbar->addWidget(m_visibilite_bouton);
 
     m_actif_bouton = new QPushButton();
     m_actif_bouton->setObjectName("BoutonFonctionWidget");
@@ -148,8 +177,8 @@ void base_fonction_widget::init()
 }
 
 /** --------------------------------------------------------------------------------------
- \brief Mise à jour du bouton d'activation.
-*/
+ * \brief Met à jour le bouton d'activation.
+ */
 void base_fonction_widget::update_actif_bouton()
 {
     QIcon icon1;
@@ -181,6 +210,9 @@ void base_fonction_widget::update_actif_bouton()
     m_actif_bouton->setIcon( icon1 );
 }
 
+/** --------------------------------------------------------------------------------------
+ * \brief Met à jour le bouton de fermeture.
+ */
 void base_fonction_widget::update_close_bouton()
 {
     m_fermer_bouton->setEnabled( ! m_fonction->est_verrouille_avec_parent() );
@@ -188,8 +220,8 @@ void base_fonction_widget::update_close_bouton()
 
 
 /** --------------------------------------------------------------------------------------
- \brief Mise à jour du bouton de verrouillage.
-*/
+ * \brief Met à jour le bouton de verrouillage.
+ */
 void base_fonction_widget::update_verrouillage_bouton()
 {
     QIcon icon1;
@@ -214,10 +246,9 @@ void base_fonction_widget::update_verrouillage_bouton()
     m_verrouillage_bouton->setIcon( icon1 );
 }
 
-
 /** --------------------------------------------------------------------------------------
- \brief Mise à jour du bouton d'activation.
-*/
+ * \brief Met à jour le bouton de visibilité.
+ */
 void base_fonction_widget::update_visibilite_bouton()
 {
     QIcon icon1;
@@ -239,13 +270,12 @@ void base_fonction_widget::update_visibilite_bouton()
     else
         icon1.addFile(QString::fromUtf8("icons/fleche_bas.png"), QSize(), QIcon::Normal, QIcon::Off);
 
-    m_parametre_bouton->setIcon( icon1 );
+    m_visibilite_bouton->setIcon( icon1 );
 }
 
-
 /** --------------------------------------------------------------------------------------
- \brief Mise à jour de la visibilité.
-*/
+ * \brief Met à jour le widget en fonction du niveau de visibilité de la fonction associée.
+ */
 void base_fonction_widget::update_visibilite()
 {
     QSize save_size = size();
@@ -269,8 +299,8 @@ void base_fonction_widget::update_visibilite()
 }
 
 /** --------------------------------------------------------------------------------------
- \brief Mise à jour du nom de l'objet.
-*/
+ * \brief Met à jour les noms des objets.
+ */
 void base_fonction_widget::update_object_name()
 {
     if ( m_fonction != NULL )
@@ -316,6 +346,9 @@ void base_fonction_widget::update_object_name()
     }
 }
 
+/** --------------------------------------------------------------------------------------
+ * \brief Affiche l'aide de la fonction associée.
+ */
 void base_fonction_widget::aide()
 {
     if ( m_fonction != NULL )
@@ -328,8 +361,8 @@ void base_fonction_widget::aide()
 }
 
 /** --------------------------------------------------------------------------------------
- \brief Le bouton d'inversion d'activation est activé.
-*/
+ * \brief Fonction appelée lors d'une demande d'inversion d'activation.
+ */
 void base_fonction_widget::on_inverser_activation()
 {
     if ( m_fonction != NULL )
@@ -337,8 +370,8 @@ void base_fonction_widget::on_inverser_activation()
 }
 
 /** --------------------------------------------------------------------------------------
- \brief Le bouton de verrouillage d'activation est activé.
-*/
+ * \brief Fonction appelée lors d'une demande d'inversion de verrouillage.
+ */
 void base_fonction_widget::on_inverser_verrouillage()
 {
     if ( m_fonction != NULL )
@@ -346,8 +379,9 @@ void base_fonction_widget::on_inverser_verrouillage()
 }
 
 /** --------------------------------------------------------------------------------------
- \brief L'activation de la fonction est modifié.
-*/
+ * \brief Fonction appelée lors d'un changement d'activation de la fonction associée.
+ * \param f Un pointeur sur la fonction associée.
+ */
 void base_fonction_widget::on_externe_activation_fonction_change(base_fonction * f)
 {
     update_actif_bouton();
@@ -355,13 +389,18 @@ void base_fonction_widget::on_externe_activation_fonction_change(base_fonction *
 }
 
 /** --------------------------------------------------------------------------------------
- \brief Le verrouillage de la fonction est modifié.
-*/
+ * \brief Fonction appelée lors d'un changement de verrouillage de l'objet associé.
+ * \param obj Un pointeur sur l'objet associé.
+ */
 void base_fonction_widget::on_externe_verrouillage_change(objet_selectionnable * obj)
 {
     mettre_a_jour_verrouillage();
 }
 
+/** --------------------------------------------------------------------------------------
+ * \brief Fonction appelée lors d'un changement de niveau de visibilité de la fonction associée.
+ * \param f Un pointeur sur la fonction associée.
+ */
 void base_fonction_widget::on_externe_niveau_visibilite_change(base_fonction* f)
 {
     update_visibilite_bouton();
@@ -370,8 +409,8 @@ void base_fonction_widget::on_externe_niveau_visibilite_change(base_fonction* f)
 }
 
 /** --------------------------------------------------------------------------------------
- \brief Le bouton fermer est activé.
-*/
+ * \brief Fonction appelée lors d'une demande de fermeture de la fonction.
+ */
 void base_fonction_widget::on_fermer()
 {
     if ( m_fonction != NULL )
@@ -399,17 +438,26 @@ void base_fonction_widget::on_fermer()
     }
 }
 
-void base_fonction_widget::on_parametre_switch()
+/** --------------------------------------------------------------------------------------
+ * \brief Fonction appelée lors d'une demande de changement de niveau de visibilité.
+ */
+void base_fonction_widget::on_visibilite_change()
 {
     if ( m_fonction != NULL )
         m_fonction->change_niveau_visibilite();
 }
 
+/** --------------------------------------------------------------------------------------
+ * \brief Fonction appelée lors d'une demande d'affichage de l'aide.
+ */
 void base_fonction_widget::on_aide()
 {
     aide();
 }
 
+/** --------------------------------------------------------------------------------------
+ * \brief Ajoute les connections pour la fonction associée.
+ */
 void base_fonction_widget::connecter_fonction()
 {
     if ( m_fonction != NULL )
@@ -426,7 +474,7 @@ void base_fonction_widget::connecter_fonction()
 }
 
 /** --------------------------------------------------------------------------------------
- \brief Déconnecter la fonction.
+ * \brief Retire les connections de la fonction associée.
 */
 void base_fonction_widget::deconnecter_fonction()
 {
@@ -443,7 +491,9 @@ void base_fonction_widget::deconnecter_fonction()
     }
 }
 
-
+/** --------------------------------------------------------------------------------------
+ * \brief Fonction appelée lors d'un changement de verrouillage.
+ */
 void base_fonction_widget::informer_verrouillage_change()
 {
 }

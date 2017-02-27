@@ -1,17 +1,29 @@
 #ifndef FONCTION_SORTIE_TEXTE_WIDGET_H
 #define FONCTION_SORTIE_TEXTE_WIDGET_H
 
-#include "entete/fonction_widget/base_fonction_widget.h"
+/** \file fonction_sortie_texte_widget.h
+ * \brief Fichier de déclaration de la classe fonction_sortie_texte_widget.
+ * \author Sébastien Angibaud
+ */
+
 #include "entete/element/textes.h"
+#include "entete/fonction_widget/base_fonction_widget.h"
+
 #include <QListWidgetItem>
 
 class liste_texte_widget;
 
+/**
+ * \class fonction_sortie_texte_widget
+ * \brief Classe décrivant un widget affichant une fonction de type sortie_texte.
+ * \author Sébastien Angibaud
+ */
 class fonction_sortie_texte_widget : public base_fonction_widget
 {
         Q_OBJECT
 
     private:
+        /** \brief Le type de la classe parente. */
         typedef base_fonction_widget super;
 
     public:
@@ -29,7 +41,10 @@ class fonction_sortie_texte_widget : public base_fonction_widget
         void init();
 
     private:
+        /** \brief La référence de la liste de textes à afficher. */
         textes & m_textes;
+
+        /** \brief Un pointeur sur le widget affichant la liste de textes. */
         liste_texte_widget* m_liste_texte;
 };
 
