@@ -5,9 +5,14 @@
 **
 ** WARNING! All changes made in this file will be lost when recompiling UI file!
 ********************************************************************************/
-
 #ifndef UI_FENETRE_PRINCIPALE_H
 #define UI_FENETRE_PRINCIPALE_H
+
+/** 
+ * \file entete/ui_fenetre_principale.h
+ * \brief Fichier de déclaration de la classe Ui_fenetre_principale.
+ * \author Sébastien Angibaud
+ */
 
 #include <QtCore/QVariant>
 #include <QtWidgets/QAction>
@@ -24,6 +29,11 @@
 
 QT_BEGIN_NAMESPACE
 
+/**
+  * \class Ui_fenetre_principale
+  * \brief Classe représentant la fenètre principale du projet Emgine.
+  * \author Sébastien Angibaud
+ */
 class Ui_fenetre_principale
 {
 public:

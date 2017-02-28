@@ -1,7 +1,7 @@
 #ifndef BASE_PARAMETRE_WIDGET_H
 #define BASE_PARAMETRE_WIDGET_H
 
-/** \file base_parametre_widget.cpp
+/** \file base_parametre_widget.h
  * \brief Fichier de déclaration de la classe base_parametre_widget.
  * \author Sébastien Angibaud
  */

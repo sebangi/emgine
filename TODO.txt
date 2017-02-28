@@ -4,7 +4,6 @@ ETAPE 1 : FONCTIONNALITES DE BASES
 * FINI
 
 ETAPE 2 : VERSION 0.1
-* documentation Doxygen
 * Tagger sous git la version 0.1
 
 ETAPE 3 : NON PRIORITAIRE

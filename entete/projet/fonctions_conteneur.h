@@ -45,7 +45,12 @@ class fonctions_conteneur : public objet_selectionnable
         fonctions_const_iterateur fonctions_const_begin() const;
         fonctions_const_iterateur fonctions_const_end() const;
 
+        /** --------------------------------------------------------------------------------------
+         * \brief Fonction virtuelle retournant le titre du conteneur.
+         * \return Le titre du conteneur au format QString.
+         */
         virtual QString get_titre() const = 0;
+
         int get_position(base_fonction* f);
         bool est_conteneur() const;
         objet_selectionnable * charger_fonction( QXmlStreamReader & xml, objet_selectionnable * obj_ref );

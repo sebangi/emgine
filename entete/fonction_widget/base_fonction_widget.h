@@ -59,7 +59,15 @@ class base_fonction_widget : public QWidget, public QTableWidgetItem
         virtual void informer_verrouillage_change();
 
     signals:
+        /** --------------------------------------------------------------------------------------
+         * \brief Signal informant d'un changement de taille du widget.
+         */
         void signal_bfw_size_change();
+
+        /** --------------------------------------------------------------------------------------
+         * \brief Signal informant d'une demande de création de projet avec un texte source donné.
+         * \param t La référence du texte source.
+         */
         void signal_bfw_demande_creation_projet(const texte & t);
 
    private slots:

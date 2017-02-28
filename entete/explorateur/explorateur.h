@@ -1,7 +1,8 @@
 #ifndef EXPLORATEUR_H
 #define EXPLORATEUR_H
 
-/** \file explorateur.h
+/**
+ * \file explorateur.h
  * \brief Fichier de déclaration de la classe explorateur.
  * \author Sébastien Angibaud
  */
@@ -49,7 +50,6 @@ class explorateur : public QTreeWidget
         void mettre_a_jour_activation( base_noeud* n, bool actif, bool change_expansion );
         void mettre_a_jour_verrouillage( base_noeud* n, bool verrouillage );
         void mettre_a_jour_etendu( base_noeud* n, bool etendu );
-        void creer_copie( const objet_selectionnable* obj, QString & copie );
         void faire_coller( objet_selectionnable* conteneur, QString & copie, objet_selectionnable * obj_ref );
         void faire_couper( objet_selectionnable* obj );
         bool controler_drag_drop(base_noeud * n_a_couper, base_noeud * n_conteneur, bool shift);
@@ -79,7 +79,7 @@ class explorateur : public QTreeWidget
         /** --------------------------------------------------------------------------------------
          * \brief Signal informant d'une demande d'ajout de fonction.
          * \param conteneur Un pointeur sur le conteneur receveur.
-         * \param obj Un pointeur sur l'objet de référence après lequel placer la fonction.
+         * \param obj_ref Un pointeur sur l'objet de référence après lequel placer la fonction.
          * \param type Le type de fonction demandée.
          */
         void signal_e_demande_ajout_fonction

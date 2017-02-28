@@ -48,12 +48,10 @@ var menudata={children:[
 {text:"v",url:"functions_func_v.html#index_v"},
 {text:"~",url:"functions_func_0x7e.html#index_0x7e"}]},
 {text:"Variables",url:"functions_vars.html",children:[
-{text:"c",url:"functions_vars.html#index_c"},
 {text:"i",url:"functions_vars.html#index_i"},
 {text:"l",url:"functions_vars.html#index_l"},
 {text:"m",url:"functions_vars.html#index_m"},
-{text:"s",url:"functions_vars.html#index_s"},
-{text:"v",url:"functions_vars.html#index_v"}]},
+{text:"s",url:"functions_vars.html#index_s"}]},
 {text:"Définitions de type",url:"functions_type.html"},
 {text:"Énumérations",url:"functions_enum.html"},
 {text:"Valeurs énumérées",url:"functions_eval.html"}]}]},

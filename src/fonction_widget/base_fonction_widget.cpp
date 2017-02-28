@@ -21,7 +21,7 @@
 
 /** --------------------------------------------------------------------------------------
  * \brief Constructeur de la classe base_fonction_widget.
- * \param focntion Un pointeur sur la fonction associée au composant.
+ * \param fonction Un pointeur sur la fonction associée au composant.
  * \param parent Un pointeur sur le widget parent.
  */
 base_fonction_widget::base_fonction_widget(base_fonction* fonction, QWidget* parent)

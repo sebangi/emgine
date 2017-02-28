@@ -1,7 +1,8 @@
 #ifndef CONFIGURATION_H
 #define CONFIGURATION_H
 
-/** \file configuration.h
+/**
+ * \file configuration.h
  * \brief Fichier de déclaration de la classe configuration.
  * \author Sébastien Angibaud
  */
@@ -14,6 +15,7 @@
 
 class base_fonction;
 
+/** \brief Type représentant une clé de configuration, i.e. une paire (fonction/id_parametre). */
 typedef std::pair< base_fonction *, type_id_parametre > type_cle_configuration;
 
 

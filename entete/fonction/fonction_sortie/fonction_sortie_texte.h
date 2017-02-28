@@ -9,7 +9,7 @@
 #include "entete/fonction/fonction_sortie/fonction_base_sortie.h"
 
 /**
- * \class fonction_texte_sortie
+ * \class fonction_sortie_texte
  * \brief Classe décrivant une fonction de sortie affichant simplement les textes.
  * \author Sébastien Angibaud
  */
@@ -28,6 +28,9 @@ class fonction_sortie_texte : public fonction_base_sortie
         void set_textes(const textes &textes);
 
     signals:
+        /** --------------------------------------------------------------------------------------
+         * \brief Signal informant d'une modification du texte.
+         */
         void signal_fst_textes_modifie();
 
     private:

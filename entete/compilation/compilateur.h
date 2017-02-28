@@ -1,7 +1,8 @@
 #ifndef COMPILATEUR_H
 #define COMPILATEUR_H
 
-/** \file compilateur.h
+/**
+ * \file compilateur.h
  * \brief Fichier de déclaration de la classe compilateur.
  * \author Sébastien Angibaud
  */

@@ -3,16 +3,15 @@
 <head>
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
-<meta name="generator" content="Doxygen 1.8.6"/>
+<meta name="generator" content="Doxygen 1.8.13"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
 <title>Emgine: Référence de la classe noeud_projet</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
-<script type="text/javascript">
-  $(document).ready(function() { searchBox.OnSelectItem(0); });
-</script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
@@ -21,7 +20,7 @@
 <table cellspacing="0" cellpadding="0">
  <tbody>
  <tr style="height: 56px;">
-  <td style="padding-left: 0.5em;">
+  <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">Emgine
    </div>
   </td>
@@ -30,49 +29,25 @@
 </table>
 </div>
 <!-- end header part -->
-<!-- Généré par Doxygen 1.8.6 -->
+<!-- Généré par Doxygen 1.8.13 -->
 <script type="text/javascript">
 var searchBox = new SearchBox("searchBox", "search",false,'Recherche');
 </script>
-  <div id="navrow1" class="tabs">
-    <ul class="tablist">
-      <li><a href="index.html"><span>Page&#160;principale</span></a></li>
-      <li><a href="pages.html"><span>Pages&#160;associées</span></a></li>
-      <li><a href="modules.html"><span>Modules</span></a></li>
-      <li class="current"><a href="annotated.html"><span>Classes</span></a></li>
-      <li><a href="files.html"><span>Fichiers</span></a></li>
-      <li>
-        <div id="MSearchBox" class="MSearchBoxInactive">
-        <span class="left">
-          <img id="MSearchSelect" src="search/mag_sel.png"
-               onmouseover="return searchBox.OnSearchSelectShow()"
-               onmouseout="return searchBox.OnSearchSelectHide()"
-               alt=""/>
-          <input type="text" id="MSearchField" value="Recherche" accesskey="S"
-               onfocus="searchBox.OnSearchFieldFocus(true)" 
-               onblur="searchBox.OnSearchFieldFocus(false)" 
-               onkeyup="searchBox.OnSearchFieldChange(event)"/>
-          </span><span class="right">
-            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
-          </span>
-        </div>
-      </li>
-    </ul>
-  </div>
-  <div id="navrow2" class="tabs2">
-    <ul class="tablist">
-      <li><a href="annotated.html"><span>Liste&#160;des&#160;classes</span></a></li>
-      <li><a href="classes.html"><span>Index&#160;des&#160;classes</span></a></li>
-      <li><a href="inherits.html"><span>Hiérarchie&#160;des&#160;classes</span></a></li>
-      <li><a href="functions.html"><span>Membres&#160;de&#160;classe</span></a></li>
-    </ul>
-  </div>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+$(function() {
+  initMenu('',true,false,'search.php','Recherche');
+  $(document).ready(function() { init_search(); });
+});
+</script>
+<div id="main-nav"></div>
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>Tout</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Fichiers</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Fonctions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Définitions de type</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Énumérations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Valeurs énumérées</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Groupes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&#160;</span>Pages</a></div>
+</div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -100,64 +75,60 @@ Graphe d'héritage de noeud_projet:</div>
 <div class="dyncontent">
 <div class="center"><img src="classnoeud__projet__inherit__graph.png" border="0" usemap="#noeud__projet_inherit__map" alt="Inheritance graph"/></div>
 <map name="noeud__projet_inherit__map" id="noeud__projet_inherit__map">
-<area shape="rect" id="node2" href="classnoeud__fonctions__conteneur.html" title="Classe décrivant un noeud associé à un fonctions_conteneur. " alt="" coords="5,155,187,181"/><area shape="rect" id="node3" href="classbase__noeud.html" title="Classe décrivant un noeud quelconque de l&#39;explorateur. " alt="" coords="50,80,141,107"/></map>
+<area shape="rect" id="node2" href="classnoeud__fonctions__conteneur.html" title="Classe décrivant un noeud associé à un fonctions_conteneur. " alt="" coords="5,155,187,181"/>
+<area shape="rect" id="node3" href="classbase__noeud.html" title="Classe décrivant un noeud quelconque de l&#39;explorateur. " alt="" coords="50,80,141,107"/>
+</map>
 <center><span class="legend">[<a href="graph_legend.html">légende</a>]</span></center></div>
 <div class="dynheader">
 Graphe de collaboration de noeud_projet:</div>
 <div class="dyncontent">
 <div class="center"><img src="classnoeud__projet__coll__graph.png" border="0" usemap="#noeud__projet_coll__map" alt="Collaboration graph"/></div>
 <map name="noeud__projet_coll__map" id="noeud__projet_coll__map">
-<area shape="rect" id="node2" href="classnoeud__fonctions__conteneur.html" title="Classe décrivant un noeud associé à un fonctions_conteneur. " alt="" coords="27,253,208,280"/><area shape="rect" id="node3" href="classbase__noeud.html" title="Classe décrivant un noeud quelconque de l&#39;explorateur. " alt="" coords="71,176,163,203"/><area shape="rect" id="node5" href="classobjet__selectionnable.html" title="Classe décrivant un objet sélectionnable dans l&#39;explorateur. " alt="" coords="155,84,295,111"/></map>
+<area shape="rect" id="node2" href="classnoeud__fonctions__conteneur.html" title="Classe décrivant un noeud associé à un fonctions_conteneur. " alt="" coords="27,253,208,280"/>
+<area shape="rect" id="node3" href="classbase__noeud.html" title="Classe décrivant un noeud quelconque de l&#39;explorateur. " alt="" coords="71,176,163,203"/>
+<area shape="rect" id="node5" href="classobjet__selectionnable.html" title="Classe décrivant un objet sélectionnable dans l&#39;explorateur. " alt="" coords="155,84,295,111"/>
+</map>
 <center><span class="legend">[<a href="graph_legend.html">légende</a>]</span></center></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Fonctions membres publiques</h2></td></tr>
 <tr class="memitem:a77f0321eb5d6378dbd9c27f10cfc0ba3"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classnoeud__projet.html#a77f0321eb5d6378dbd9c27f10cfc0ba3">noeud_projet</a> (<a class="el" href="classprojet.html">projet</a> *p)</td></tr>
-<tr class="memdesc:a77f0321eb5d6378dbd9c27f10cfc0ba3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructeur de la classe <a class="el" href="classnoeud__projet.html" title="Classe décrivant un noeud associé à un projet. ">noeud_projet</a>.  <a href="#a77f0321eb5d6378dbd9c27f10cfc0ba3">Plus de détails...</a><br/></td></tr>
+<tr class="memdesc:a77f0321eb5d6378dbd9c27f10cfc0ba3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructeur de la classe <a class="el" href="classnoeud__projet.html" title="Classe décrivant un noeud associé à un projet. ">noeud_projet</a>.  <a href="#a77f0321eb5d6378dbd9c27f10cfc0ba3">Plus de détails...</a><br /></td></tr>
 <tr class="separator:a77f0321eb5d6378dbd9c27f10cfc0ba3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5784e6afa6750604e93f29182b3e5caf"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classnoeud__projet.html#a5784e6afa6750604e93f29182b3e5caf">~noeud_projet</a> ()</td></tr>
-<tr class="memdesc:a5784e6afa6750604e93f29182b3e5caf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Destructeur de la classe <a class="el" href="classnoeud__projet.html" title="Classe décrivant un noeud associé à un projet. ">noeud_projet</a>.  <a href="#a5784e6afa6750604e93f29182b3e5caf">Plus de détails...</a><br/></td></tr>
+<tr class="memdesc:a5784e6afa6750604e93f29182b3e5caf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Destructeur de la classe <a class="el" href="classnoeud__projet.html" title="Classe décrivant un noeud associé à un projet. ">noeud_projet</a>.  <a href="#a5784e6afa6750604e93f29182b3e5caf">Plus de détails...</a><br /></td></tr>
 <tr class="separator:a5784e6afa6750604e93f29182b3e5caf"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a92998353daadafa7224e86a70154990e"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classprojet.html">projet</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classnoeud__projet.html#a92998353daadafa7224e86a70154990e">get_projet</a> () const </td></tr>
-<tr class="memdesc:a92998353daadafa7224e86a70154990e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retourne le projet associé au noeud.  <a href="#a92998353daadafa7224e86a70154990e">Plus de détails...</a><br/></td></tr>
-<tr class="separator:a92998353daadafa7224e86a70154990e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac4f2b02fc316ffb5c8fcd607cf9432b1"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ac4f2b02fc316ffb5c8fcd607cf9432b1"></a>
-QString&#160;</td><td class="memItemRight" valign="bottom"><b>get_nom</b> () const </td></tr>
-<tr class="separator:ac4f2b02fc316ffb5c8fcd607cf9432b1"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:adc7f5d549fdf1a0855c334c1ba99a317"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="adc7f5d549fdf1a0855c334c1ba99a317"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>executer</b> (<a class="el" href="classcompilateur.html">compilateur</a> &amp;compil)</td></tr>
-<tr class="separator:adc7f5d549fdf1a0855c334c1ba99a317"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a679e260848faf5f4686dfe6748bb7483"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a679e260848faf5f4686dfe6748bb7483"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>charger</b> ()</td></tr>
-<tr class="separator:a679e260848faf5f4686dfe6748bb7483"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5c1c53d3688658e66ce01bd62790e165"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classprojet.html">projet</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classnoeud__projet.html#a5c1c53d3688658e66ce01bd62790e165">get_projet</a> () const</td></tr>
+<tr class="memdesc:a5c1c53d3688658e66ce01bd62790e165"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retourne le projet associé au noeud.  <a href="#a5c1c53d3688658e66ce01bd62790e165">Plus de détails...</a><br /></td></tr>
+<tr class="separator:a5c1c53d3688658e66ce01bd62790e165"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2db95e8cc9a1db3c1c100df50ff4b1fd"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classnoeud__projet.html#a2db95e8cc9a1db3c1c100df50ff4b1fd">mise_a_jour_icone</a> ()</td></tr>
-<tr class="memdesc:a2db95e8cc9a1db3c1c100df50ff4b1fd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fonction mettant à jour l'icône.  <a href="#a2db95e8cc9a1db3c1c100df50ff4b1fd">Plus de détails...</a><br/></td></tr>
+<tr class="memdesc:a2db95e8cc9a1db3c1c100df50ff4b1fd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fonction mettant à jour l'icône.  <a href="#a2db95e8cc9a1db3c1c100df50ff4b1fd">Plus de détails...</a><br /></td></tr>
 <tr class="separator:a2db95e8cc9a1db3c1c100df50ff4b1fd"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_methods_classnoeud__fonctions__conteneur"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_classnoeud__fonctions__conteneur')"><img src="closed.png" alt="-"/>&#160;Fonctions membres publiques hérités de <a class="el" href="classnoeud__fonctions__conteneur.html">noeud_fonctions_conteneur</a></td></tr>
 <tr class="memitem:a2a572bd61984ba0ad2cd07233a40713b inherit pub_methods_classnoeud__fonctions__conteneur"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classnoeud__fonctions__conteneur.html#a2a572bd61984ba0ad2cd07233a40713b">noeud_fonctions_conteneur</a> (<a class="el" href="classfonctions__conteneur.html">fonctions_conteneur</a> *conteneur, <a class="el" href="classbase__noeud.html#a5b77eba8eaa6aa32f4e5d820a84ded61">type_noeud</a> type)</td></tr>
-<tr class="memdesc:a2a572bd61984ba0ad2cd07233a40713b inherit pub_methods_classnoeud__fonctions__conteneur"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructeur de la classe <a class="el" href="classnoeud__fonctions__conteneur.html" title="Classe décrivant un noeud associé à un fonctions_conteneur. ">noeud_fonctions_conteneur</a>.  <a href="#a2a572bd61984ba0ad2cd07233a40713b">Plus de détails...</a><br/></td></tr>
+<tr class="memdesc:a2a572bd61984ba0ad2cd07233a40713b inherit pub_methods_classnoeud__fonctions__conteneur"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructeur de la classe <a class="el" href="classnoeud__fonctions__conteneur.html" title="Classe décrivant un noeud associé à un fonctions_conteneur. ">noeud_fonctions_conteneur</a>.  <a href="classnoeud__fonctions__conteneur.html#a2a572bd61984ba0ad2cd07233a40713b">Plus de détails...</a><br /></td></tr>
 <tr class="separator:a2a572bd61984ba0ad2cd07233a40713b inherit pub_methods_classnoeud__fonctions__conteneur"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0c5de40d0e65aff510594c96dc920033 inherit pub_methods_classnoeud__fonctions__conteneur"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classnoeud__fonctions__conteneur.html#a0c5de40d0e65aff510594c96dc920033">~noeud_fonctions_conteneur</a> ()</td></tr>
-<tr class="memdesc:a0c5de40d0e65aff510594c96dc920033 inherit pub_methods_classnoeud__fonctions__conteneur"><td class="mdescLeft">&#160;</td><td class="mdescRight">Le destructeur de la classe <a class="el" href="classnoeud__fonctions__conteneur.html" title="Classe décrivant un noeud associé à un fonctions_conteneur. ">noeud_fonctions_conteneur</a>.  <a href="#a0c5de40d0e65aff510594c96dc920033">Plus de détails...</a><br/></td></tr>
+<tr class="memdesc:a0c5de40d0e65aff510594c96dc920033 inherit pub_methods_classnoeud__fonctions__conteneur"><td class="mdescLeft">&#160;</td><td class="mdescRight">Le destructeur de la classe <a class="el" href="classnoeud__fonctions__conteneur.html" title="Classe décrivant un noeud associé à un fonctions_conteneur. ">noeud_fonctions_conteneur</a>.  <a href="classnoeud__fonctions__conteneur.html#a0c5de40d0e65aff510594c96dc920033">Plus de détails...</a><br /></td></tr>
 <tr class="separator:a0c5de40d0e65aff510594c96dc920033 inherit pub_methods_classnoeud__fonctions__conteneur"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_methods_classbase__noeud"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_classbase__noeud')"><img src="closed.png" alt="-"/>&#160;Fonctions membres publiques hérités de <a class="el" href="classbase__noeud.html">base_noeud</a></td></tr>
 <tr class="memitem:ac1ff8d19de3a701eec02917a8da3c916 inherit pub_methods_classbase__noeud"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classbase__noeud.html#ac1ff8d19de3a701eec02917a8da3c916">base_noeud</a> (<a class="el" href="classobjet__selectionnable.html">objet_selectionnable</a> *obj, <a class="el" href="classbase__noeud.html#a5b77eba8eaa6aa32f4e5d820a84ded61">type_noeud</a> type)</td></tr>
-<tr class="memdesc:ac1ff8d19de3a701eec02917a8da3c916 inherit pub_methods_classbase__noeud"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructeur de la classe <a class="el" href="classbase__noeud.html" title="Classe décrivant un noeud quelconque de l&#39;explorateur. ">base_noeud</a>.  <a href="#ac1ff8d19de3a701eec02917a8da3c916">Plus de détails...</a><br/></td></tr>
+<tr class="memdesc:ac1ff8d19de3a701eec02917a8da3c916 inherit pub_methods_classbase__noeud"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructeur de la classe <a class="el" href="classbase__noeud.html" title="Classe décrivant un noeud quelconque de l&#39;explorateur. ">base_noeud</a>.  <a href="classbase__noeud.html#ac1ff8d19de3a701eec02917a8da3c916">Plus de détails...</a><br /></td></tr>
 <tr class="separator:ac1ff8d19de3a701eec02917a8da3c916 inherit pub_methods_classbase__noeud"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a15afae5b064afa045a8fea545f33b58e inherit pub_methods_classbase__noeud"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classbase__noeud.html#a15afae5b064afa045a8fea545f33b58e">~base_noeud</a> ()</td></tr>
-<tr class="memdesc:a15afae5b064afa045a8fea545f33b58e inherit pub_methods_classbase__noeud"><td class="mdescLeft">&#160;</td><td class="mdescRight">Destructeur de la classe <a class="el" href="classbase__noeud.html" title="Classe décrivant un noeud quelconque de l&#39;explorateur. ">base_noeud</a>.  <a href="#a15afae5b064afa045a8fea545f33b58e">Plus de détails...</a><br/></td></tr>
+<tr class="memdesc:a15afae5b064afa045a8fea545f33b58e inherit pub_methods_classbase__noeud"><td class="mdescLeft">&#160;</td><td class="mdescRight">Destructeur de la classe <a class="el" href="classbase__noeud.html" title="Classe décrivant un noeud quelconque de l&#39;explorateur. ">base_noeud</a>.  <a href="classbase__noeud.html#a15afae5b064afa045a8fea545f33b58e">Plus de détails...</a><br /></td></tr>
 <tr class="separator:a15afae5b064afa045a8fea545f33b58e inherit pub_methods_classbase__noeud"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae78124477ea5148f16c2da42ac766f4c inherit pub_methods_classbase__noeud"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classobjet__selectionnable.html">objet_selectionnable</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classbase__noeud.html#ae78124477ea5148f16c2da42ac766f4c">get_objet</a> () const </td></tr>
-<tr class="memdesc:ae78124477ea5148f16c2da42ac766f4c inherit pub_methods_classbase__noeud"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retourne l'objet sélectionnable associé au noeud.  <a href="#ae78124477ea5148f16c2da42ac766f4c">Plus de détails...</a><br/></td></tr>
-<tr class="separator:ae78124477ea5148f16c2da42ac766f4c inherit pub_methods_classbase__noeud"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a762c999077b247ebf1d8c6dd83313ffd inherit pub_methods_classbase__noeud"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classobjet__selectionnable.html">objet_selectionnable</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classbase__noeud.html#a762c999077b247ebf1d8c6dd83313ffd">get_objet</a> () const</td></tr>
+<tr class="memdesc:a762c999077b247ebf1d8c6dd83313ffd inherit pub_methods_classbase__noeud"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retourne l'objet sélectionnable associé au noeud.  <a href="classbase__noeud.html#a762c999077b247ebf1d8c6dd83313ffd">Plus de détails...</a><br /></td></tr>
+<tr class="separator:a762c999077b247ebf1d8c6dd83313ffd inherit pub_methods_classbase__noeud"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a12165cb731bfc08c958ccabad752d092 inherit pub_methods_classbase__noeud"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classbase__noeud.html#a12165cb731bfc08c958ccabad752d092">mettre_a_jour_style</a> (bool actif)</td></tr>
-<tr class="memdesc:a12165cb731bfc08c958ccabad752d092 inherit pub_methods_classbase__noeud"><td class="mdescLeft">&#160;</td><td class="mdescRight">Met à jour le style du noeud.  <a href="#a12165cb731bfc08c958ccabad752d092">Plus de détails...</a><br/></td></tr>
+<tr class="memdesc:a12165cb731bfc08c958ccabad752d092 inherit pub_methods_classbase__noeud"><td class="mdescLeft">&#160;</td><td class="mdescRight">Met à jour le style du noeud.  <a href="classbase__noeud.html#a12165cb731bfc08c958ccabad752d092">Plus de détails...</a><br /></td></tr>
 <tr class="separator:a12165cb731bfc08c958ccabad752d092 inherit pub_methods_classbase__noeud"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:afb0d91325a08bb6e7e0234036035e574 inherit pub_methods_classbase__noeud"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classbase__noeud.html#afb0d91325a08bb6e7e0234036035e574">get_save_expanded</a> () const </td></tr>
-<tr class="memdesc:afb0d91325a08bb6e7e0234036035e574 inherit pub_methods_classbase__noeud"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retourne l'état d'expansion sauvegardé avant le compactage automatique.  <a href="#afb0d91325a08bb6e7e0234036035e574">Plus de détails...</a><br/></td></tr>
-<tr class="separator:afb0d91325a08bb6e7e0234036035e574 inherit pub_methods_classbase__noeud"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a32dabd19461a1e4db86b6e1c79bf9cbc inherit pub_methods_classbase__noeud"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classbase__noeud.html#a32dabd19461a1e4db86b6e1c79bf9cbc">get_save_expanded</a> () const</td></tr>
+<tr class="memdesc:a32dabd19461a1e4db86b6e1c79bf9cbc inherit pub_methods_classbase__noeud"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retourne l'état d'expansion sauvegardé avant le compactage automatique.  <a href="classbase__noeud.html#a32dabd19461a1e4db86b6e1c79bf9cbc">Plus de détails...</a><br /></td></tr>
+<tr class="separator:a32dabd19461a1e4db86b6e1c79bf9cbc inherit pub_methods_classbase__noeud"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5fe905edcc9ff83f21a5d324c8a21bda inherit pub_methods_classbase__noeud"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classbase__noeud.html#a5fe905edcc9ff83f21a5d324c8a21bda">save_expanded</a> ()</td></tr>
-<tr class="memdesc:a5fe905edcc9ff83f21a5d324c8a21bda inherit pub_methods_classbase__noeud"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sauvegarde l'état d'expansion.  <a href="#a5fe905edcc9ff83f21a5d324c8a21bda">Plus de détails...</a><br/></td></tr>
+<tr class="memdesc:a5fe905edcc9ff83f21a5d324c8a21bda inherit pub_methods_classbase__noeud"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sauvegarde l'état d'expansion.  <a href="classbase__noeud.html#a5fe905edcc9ff83f21a5d324c8a21bda">Plus de détails...</a><br /></td></tr>
 <tr class="separator:a5fe905edcc9ff83f21a5d324c8a21bda inherit pub_methods_classbase__noeud"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="inherited"></a>
@@ -166,26 +137,28 @@ Membres hérités additionnels</h2></td></tr>
 <tr class="memitem:a5b77eba8eaa6aa32f4e5d820a84ded61 inherit pub_types_classbase__noeud"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classbase__noeud.html#a5b77eba8eaa6aa32f4e5d820a84ded61">type_noeud</a> { <a class="el" href="classbase__noeud.html#a5b77eba8eaa6aa32f4e5d820a84ded61af635270c1a6e6c2c5045b82a07ce3f73">TYPE_NOEUD_PROJET</a> = QTreeWidgetItem::UserType, 
 <a class="el" href="classbase__noeud.html#a5b77eba8eaa6aa32f4e5d820a84ded61a673ffb877215e8974f83bc5b40f13afa">TYPE_NOEUD_PARAMETRE</a>, 
 <a class="el" href="classbase__noeud.html#a5b77eba8eaa6aa32f4e5d820a84ded61a6fee1ae6f20f05801ca89c47eb68866d">TYPE_NOEUD_FONCTION</a>
- }</td></tr>
-<tr class="memdesc:a5b77eba8eaa6aa32f4e5d820a84ded61"><td class="mdescLeft">&#160;</td><td class="mdescRight">Enumération représentant les différents types de noeud de l'explorateur.  <a href="classbase__noeud.html#a5b77eba8eaa6aa32f4e5d820a84ded61">Plus de détails...</a><br/></td></tr>
+ }<tr class="memdesc:a5b77eba8eaa6aa32f4e5d820a84ded61"><td class="mdescLeft">&#160;</td><td class="mdescRight">Enumération représentant les différents types de noeud de l'explorateur.  <a href="classbase__noeud.html#a5b77eba8eaa6aa32f4e5d820a84ded61">Plus de détails...</a><br /></td></tr>
+</td></tr>
 <tr class="separator:a5b77eba8eaa6aa32f4e5d820a84ded61 inherit pub_types_classbase__noeud"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pro_attribs_classbase__noeud"><td colspan="2" onclick="javascript:toggleInherit('pro_attribs_classbase__noeud')"><img src="closed.png" alt="-"/>&#160;Attributs protégés hérités de <a class="el" href="classbase__noeud.html">base_noeud</a></td></tr>
-<tr class="memitem:aca3d2aa6d514c236b59f5bbdfede9c48 inherit pro_attribs_classbase__noeud"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aca3d2aa6d514c236b59f5bbdfede9c48"></a>
+<tr class="memitem:aca3d2aa6d514c236b59f5bbdfede9c48 inherit pro_attribs_classbase__noeud"><td class="memItemLeft" align="right" valign="top"><a id="aca3d2aa6d514c236b59f5bbdfede9c48"></a>
 <a class="el" href="classobjet__selectionnable.html">objet_selectionnable</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classbase__noeud.html#aca3d2aa6d514c236b59f5bbdfede9c48">m_objet</a></td></tr>
-<tr class="memdesc:aca3d2aa6d514c236b59f5bbdfede9c48 inherit pro_attribs_classbase__noeud"><td class="mdescLeft">&#160;</td><td class="mdescRight">L'objet sélectionnable associé au noeud. <br/></td></tr>
+<tr class="memdesc:aca3d2aa6d514c236b59f5bbdfede9c48 inherit pro_attribs_classbase__noeud"><td class="mdescLeft">&#160;</td><td class="mdescRight">L'objet sélectionnable associé au noeud. <br /></td></tr>
 <tr class="separator:aca3d2aa6d514c236b59f5bbdfede9c48 inherit pro_attribs_classbase__noeud"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:afe99db4530e71421ab8c669cc6af4ecc inherit pro_attribs_classbase__noeud"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="afe99db4530e71421ab8c669cc6af4ecc"></a>
+<tr class="memitem:afe99db4530e71421ab8c669cc6af4ecc inherit pro_attribs_classbase__noeud"><td class="memItemLeft" align="right" valign="top"><a id="afe99db4530e71421ab8c669cc6af4ecc"></a>
 bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classbase__noeud.html#afe99db4530e71421ab8c669cc6af4ecc">m_save_expanded</a></td></tr>
-<tr class="memdesc:afe99db4530e71421ab8c669cc6af4ecc inherit pro_attribs_classbase__noeud"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sauvegarde de l'état d'expansion du noeud avant compactage automatique. <br/></td></tr>
+<tr class="memdesc:afe99db4530e71421ab8c669cc6af4ecc inherit pro_attribs_classbase__noeud"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sauvegarde de l'état d'expansion du noeud avant compactage automatique. <br /></td></tr>
 <tr class="separator:afe99db4530e71421ab8c669cc6af4ecc inherit pro_attribs_classbase__noeud"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Description détaillée</h2>
 <div class="textblock"><p>Classe décrivant un noeud associé à un projet. </p>
 <dl class="section author"><dt>Auteur</dt><dd>Sébastien Angibaud </dd></dl>
 
-<p>Définition à la ligne <a class="el" href="noeud__projet_8h_source.html#l00019">19</a> du fichier <a class="el" href="noeud__projet_8h_source.html">noeud_projet.h</a>.</p>
+<p class="definition">Définition à la ligne <a class="el" href="noeud__projet_8h_source.html#l00019">19</a> du fichier <a class="el" href="noeud__projet_8h_source.html">noeud_projet.h</a>.</p>
 </div><h2 class="groupheader">Documentation des constructeurs et destructeur</h2>
-<a class="anchor" id="a77f0321eb5d6378dbd9c27f10cfc0ba3"></a>
+<a id="a77f0321eb5d6378dbd9c27f10cfc0ba3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a77f0321eb5d6378dbd9c27f10cfc0ba3">&#9670;&nbsp;</a></span>noeud_projet()</h2>
+
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -208,20 +181,23 @@ bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
   </dd>
 </dl>
 
-<p>Définition à la ligne <a class="el" href="noeud__projet_8cpp_source.html#l00022">22</a> du fichier <a class="el" href="noeud__projet_8cpp_source.html">noeud_projet.cpp</a>.</p>
-
-<p><div class="dynheader">
+<p class="definition">Définition à la ligne <a class="el" href="noeud__projet_8cpp_source.html#l00022">22</a> du fichier <a class="el" href="noeud__projet_8cpp_source.html">noeud_projet.cpp</a>.</p>
+<div class="dynheader">
 Voici le graphe d'appel pour cette fonction :</div>
 <div class="dyncontent">
 <div class="center"><img src="classnoeud__projet_a77f0321eb5d6378dbd9c27f10cfc0ba3_cgraph.png" border="0" usemap="#classnoeud__projet_a77f0321eb5d6378dbd9c27f10cfc0ba3_cgraph" alt=""/></div>
 <map name="classnoeud__projet_a77f0321eb5d6378dbd9c27f10cfc0ba3_cgraph" id="classnoeud__projet_a77f0321eb5d6378dbd9c27f10cfc0ba3_cgraph">
-<area shape="rect" id="node2" href="classprojet.html#ac996cee2807e20a7fce9a1047701af1a" title="Accesseur du nom du projet. " alt="" coords="203,5,315,32"/><area shape="rect" id="node3" href="classnoeud__projet.html#a2db95e8cc9a1db3c1c100df50ff4b1fd" title="Fonction mettant à jour l&#39;icône. " alt="" coords="193,57,325,98"/><area shape="rect" id="node4" href="classobjet__selectionnable.html#a8b9cf156597fe8cc1b8f9408e1bfee8c" title="Indique si l&#39;objet est vérrouillé, i.e. non éditable. " alt="" coords="374,57,514,98"/></map>
+<area shape="rect" id="node2" href="classprojet.html#ac996cee2807e20a7fce9a1047701af1a" title="Accesseur du nom du projet. " alt="" coords="203,5,315,32"/>
+<area shape="rect" id="node3" href="classnoeud__projet.html#a2db95e8cc9a1db3c1c100df50ff4b1fd" title="Fonction mettant à jour l&#39;icône. " alt="" coords="193,57,325,98"/>
+<area shape="rect" id="node4" href="classobjet__selectionnable.html#a8b9cf156597fe8cc1b8f9408e1bfee8c" title="Indique si l&#39;objet est vérrouillé, i.e. non éditable. " alt="" coords="374,57,514,98"/>
+</map>
 </div>
-</p>
 
 </div>
 </div>
-<a class="anchor" id="a5784e6afa6750604e93f29182b3e5caf"></a>
+<a id="a5784e6afa6750604e93f29182b3e5caf"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5784e6afa6750604e93f29182b3e5caf">&#9670;&nbsp;</a></span>~noeud_projet()</h2>
+
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -237,12 +213,14 @@ Voici le graphe d'appel pour cette fonction :</div>
 <p>Destructeur de la classe <a class="el" href="classnoeud__projet.html" title="Classe décrivant un noeud associé à un projet. ">noeud_projet</a>. </p>
 <hr/>
  
-<p>Définition à la ligne <a class="el" href="noeud__projet_8cpp_source.html#l00034">34</a> du fichier <a class="el" href="noeud__projet_8cpp_source.html">noeud_projet.cpp</a>.</p>
+<p class="definition">Définition à la ligne <a class="el" href="noeud__projet_8cpp_source.html#l00034">34</a> du fichier <a class="el" href="noeud__projet_8cpp_source.html">noeud_projet.cpp</a>.</p>
 
 </div>
 </div>
 <h2 class="groupheader">Documentation des fonctions membres</h2>
-<a class="anchor" id="a92998353daadafa7224e86a70154990e"></a>
+<a id="a5c1c53d3688658e66ce01bd62790e165"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5c1c53d3688658e66ce01bd62790e165">&#9670;&nbsp;</a></span>get_projet()</h2>
+
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -259,11 +237,13 @@ Voici le graphe d'appel pour cette fonction :</div>
 <hr/>
  <dl class="section return"><dt>Renvoie</dt><dd>Un pointeur sur le projet associé au noeud. </dd></dl>
 
-<p>Définition à la ligne <a class="el" href="noeud__projet_8cpp_source.html#l00042">42</a> du fichier <a class="el" href="noeud__projet_8cpp_source.html">noeud_projet.cpp</a>.</p>
+<p class="definition">Définition à la ligne <a class="el" href="noeud__projet_8cpp_source.html#l00042">42</a> du fichier <a class="el" href="noeud__projet_8cpp_source.html">noeud_projet.cpp</a>.</p>
 
 </div>
 </div>
-<a class="anchor" id="a2db95e8cc9a1db3c1c100df50ff4b1fd"></a>
+<a id="a2db95e8cc9a1db3c1c100df50ff4b1fd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2db95e8cc9a1db3c1c100df50ff4b1fd">&#9670;&nbsp;</a></span>mise_a_jour_icone()</h2>
+
 <div class="memitem">
 <div class="memproto">
 <table class="mlabels">
@@ -289,16 +269,15 @@ Voici le graphe d'appel pour cette fonction :</div>
  
 <p>Réimplémentée à partir de <a class="el" href="classbase__noeud.html#ace8a7076d9e5a5d6644d801ac53f2f93">base_noeud</a>.</p>
 
-<p>Définition à la ligne <a class="el" href="noeud__projet_8cpp_source.html#l00050">50</a> du fichier <a class="el" href="noeud__projet_8cpp_source.html">noeud_projet.cpp</a>.</p>
-
-<p><div class="dynheader">
+<p class="definition">Définition à la ligne <a class="el" href="noeud__projet_8cpp_source.html#l00050">50</a> du fichier <a class="el" href="noeud__projet_8cpp_source.html">noeud_projet.cpp</a>.</p>
+<div class="dynheader">
 Voici le graphe d'appel pour cette fonction :</div>
 <div class="dyncontent">
 <div class="center"><img src="classnoeud__projet_a2db95e8cc9a1db3c1c100df50ff4b1fd_cgraph.png" border="0" usemap="#classnoeud__projet_a2db95e8cc9a1db3c1c100df50ff4b1fd_cgraph" alt=""/></div>
 <map name="classnoeud__projet_a2db95e8cc9a1db3c1c100df50ff4b1fd_cgraph" id="classnoeud__projet_a2db95e8cc9a1db3c1c100df50ff4b1fd_cgraph">
-<area shape="rect" id="node2" href="classobjet__selectionnable.html#a8b9cf156597fe8cc1b8f9408e1bfee8c" title="Indique si l&#39;objet est vérrouillé, i.e. non éditable. " alt="" coords="187,5,327,46"/></map>
+<area shape="rect" id="node2" href="classobjet__selectionnable.html#a8b9cf156597fe8cc1b8f9408e1bfee8c" title="Indique si l&#39;objet est vérrouillé, i.e. non éditable. " alt="" coords="187,5,327,46"/>
+</map>
 </div>
-</p>
 
 </div>
 </div>
@@ -309,9 +288,9 @@ Voici le graphe d'appel pour cette fonction :</div>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Généré le Vendredi 10 Février 2017 15:45:29 pour Emgine par &#160;<a href="http://www.doxygen.org/index.html">
+Généré le Mardi 28 Février 2017 10:28:28 pour Emgine par &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
-</a> 1.8.6
+</a> 1.8.13
 </small></address>
 </body>
 </html>

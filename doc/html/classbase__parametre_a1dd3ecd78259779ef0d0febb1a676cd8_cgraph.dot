@@ -5,9 +5,9 @@ digraph "base_parametre::get_valeur_courte"
   rankdir="LR";
   Node59 [label="base_parametre::get\l_valeur_courte",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black"];
   Node59 -> Node60 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
-  Node60 [label="fonctions_conteneur\l::get_nb_fonctions_actives",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classfonctions__conteneur.html#aa0372e0e6818c6a71721f1a5350aa1ed"];
+  Node60 [label="fonctions_conteneur\l::get_nb_fonctions_actives",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classfonctions__conteneur.html#aa0372e0e6818c6a71721f1a5350aa1ed",tooltip="Retourne le nombre de fonctions actives du conteneur. "];
   Node59 -> Node61 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
-  Node61 [label="fonctions_conteneur\l::premiere_fonction\l_active",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classfonctions__conteneur.html#a346cf6e2574fe487ef7eaaebf603f2db"];
+  Node61 [label="fonctions_conteneur\l::premiere_fonction\l_active",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classfonctions__conteneur.html#a346cf6e2574fe487ef7eaaebf603f2db",tooltip="Retourne la première fonction active du conteneur. "];
   Node59 -> Node62 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
   Node62 [label="base_fonction::get\l_valeur_courte",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classbase__fonction.html#aa0ad813556f7c6b4ec8e35a34ced4436",tooltip="Méthode virtuelle pure retournant la valeur de la fonction en version raccourci. "];
 }

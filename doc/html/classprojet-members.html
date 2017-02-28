@@ -3,16 +3,15 @@
 <head>
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
-<meta name="generator" content="Doxygen 1.8.6"/>
+<meta name="generator" content="Doxygen 1.8.13"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
 <title>Emgine: Liste des membres</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
-<script type="text/javascript">
-  $(document).ready(function() { searchBox.OnSelectItem(0); });
-</script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
@@ -21,7 +20,7 @@
 <table cellspacing="0" cellpadding="0">
  <tbody>
  <tr style="height: 56px;">
-  <td style="padding-left: 0.5em;">
+  <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">Emgine
    </div>
   </td>
@@ -30,49 +29,25 @@
 </table>
 </div>
 <!-- end header part -->
-<!-- Généré par Doxygen 1.8.6 -->
+<!-- Généré par Doxygen 1.8.13 -->
 <script type="text/javascript">
 var searchBox = new SearchBox("searchBox", "search",false,'Recherche');
 </script>
-  <div id="navrow1" class="tabs">
-    <ul class="tablist">
-      <li><a href="index.html"><span>Page&#160;principale</span></a></li>
-      <li><a href="pages.html"><span>Pages&#160;associées</span></a></li>
-      <li><a href="modules.html"><span>Modules</span></a></li>
-      <li class="current"><a href="annotated.html"><span>Classes</span></a></li>
-      <li><a href="files.html"><span>Fichiers</span></a></li>
-      <li>
-        <div id="MSearchBox" class="MSearchBoxInactive">
-        <span class="left">
-          <img id="MSearchSelect" src="search/mag_sel.png"
-               onmouseover="return searchBox.OnSearchSelectShow()"
-               onmouseout="return searchBox.OnSearchSelectHide()"
-               alt=""/>
-          <input type="text" id="MSearchField" value="Recherche" accesskey="S"
-               onfocus="searchBox.OnSearchFieldFocus(true)" 
-               onblur="searchBox.OnSearchFieldFocus(false)" 
-               onkeyup="searchBox.OnSearchFieldChange(event)"/>
-          </span><span class="right">
-            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
-          </span>
-        </div>
-      </li>
-    </ul>
-  </div>
-  <div id="navrow2" class="tabs2">
-    <ul class="tablist">
-      <li><a href="annotated.html"><span>Liste&#160;des&#160;classes</span></a></li>
-      <li><a href="classes.html"><span>Index&#160;des&#160;classes</span></a></li>
-      <li><a href="inherits.html"><span>Hiérarchie&#160;des&#160;classes</span></a></li>
-      <li><a href="functions.html"><span>Membres&#160;de&#160;classe</span></a></li>
-    </ul>
-  </div>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+$(function() {
+  initMenu('',true,false,'search.php','Recherche');
+  $(document).ready(function() { init_search(); });
+});
+</script>
+<div id="main-nav"></div>
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>Tout</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Fichiers</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Fonctions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Définitions de type</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Énumérations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Valeurs énumérées</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Groupes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&#160;</span>Pages</a></div>
+</div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -90,58 +65,56 @@ var searchBox = new SearchBox("searchBox", "search",false,'Recherche');
 
 <p>Liste complète des membres de <a class="el" href="classprojet.html">projet</a>, y compris les membres hérités :</p>
 <table class="directory">
-  <tr class="even"><td class="entry"><a class="el" href="classobjet__selectionnable.html#ab2b3d6e89c6a33d83d79bafd6e36a671">a_ancetre</a>(objet_selectionnable *obj) const </td><td class="entry"><a class="el" href="classobjet__selectionnable.html">objet_selectionnable</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="classobjet__selectionnable.html#aed181014e7fe90bc341d0b0341cd7c31">a_ancetre</a>(objet_selectionnable *obj) const</td><td class="entry"><a class="el" href="classobjet__selectionnable.html">objet_selectionnable</a></td><td class="entry"></td></tr>
   <tr><td class="entry"><a class="el" href="classfonctions__conteneur.html#a5498a158c4d4f16fc63e54809ce381d5">ajouter_fonction</a>(base_fonction *f, objet_selectionnable *obj_ref)</td><td class="entry"><a class="el" href="classfonctions__conteneur.html">fonctions_conteneur</a></td><td class="entry"></td></tr>
   <tr class="even"><td class="entry"><a class="el" href="classprojet.html#a68c7ce13d982519c05ec13a7bbdff382">charger</a>(QXmlStreamReader &amp;xml)</td><td class="entry"><a class="el" href="classprojet.html">projet</a></td><td class="entry"></td></tr>
   <tr><td class="entry"><a class="el" href="classprojet.html#a53f140621fa770b3f15366596df41a0e">charger_description</a>(QXmlStreamReader &amp;xml)</td><td class="entry"><a class="el" href="classprojet.html">projet</a></td><td class="entry"><span class="mlabel">private</span></td></tr>
   <tr class="even"><td class="entry"><a class="el" href="classfonctions__conteneur.html#a2e241972228c75c5550287bd0fa6501e">charger_fonction</a>(QXmlStreamReader &amp;xml, objet_selectionnable *obj_ref)</td><td class="entry"><a class="el" href="classfonctions__conteneur.html">fonctions_conteneur</a></td><td class="entry"></td></tr>
   <tr><td class="entry"><a class="el" href="classfonctions__conteneur.html#aeb43e1fd3929d565f33b34db7ce8c583">charger_fonctions</a>(QXmlStreamReader &amp;xml, objet_selectionnable *obj_ref)</td><td class="entry"><a class="el" href="classfonctions__conteneur.html">fonctions_conteneur</a></td><td class="entry"></td></tr>
   <tr class="even"><td class="entry"><a class="el" href="classprojet.html#aa86c79657eb857625d912f51eef422c8">charger_nom</a>(QXmlStreamReader &amp;xml)</td><td class="entry"><a class="el" href="classprojet.html">projet</a></td><td class="entry"><span class="mlabel">private</span></td></tr>
-  <tr bgcolor="#f0f0f0"><td class="entry"><b>charger_parametre</b>(QXmlStreamReader &amp;xml, base_fonction *f) (défini dans <a class="el" href="classprojet.html">projet</a>)</td><td class="entry"><a class="el" href="classprojet.html">projet</a></td><td class="entry"><span class="mlabel">private</span></td></tr>
-  <tr bgcolor="#f0f0f0" class="even"><td class="entry"><b>charger_parametres</b>(QXmlStreamReader &amp;xml, base_fonction *f) (défini dans <a class="el" href="classprojet.html">projet</a>)</td><td class="entry"><a class="el" href="classprojet.html">projet</a></td><td class="entry"><span class="mlabel">private</span></td></tr>
   <tr><td class="entry"><a class="el" href="classfonctions__conteneur.html#aa648c8850d0e453e173c920f4f94d571">clear_fonctions</a>()</td><td class="entry"><a class="el" href="classfonctions__conteneur.html">fonctions_conteneur</a></td><td class="entry"><span class="mlabel">protected</span></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="classobjet__selectionnable.html#af60943096d1f9668d7cc27056af8dd78">creer_copie</a>() const </td><td class="entry"><a class="el" href="classobjet__selectionnable.html">objet_selectionnable</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="classobjet__selectionnable.html#a9841178873971cf9b7384d661d3eb21a">creer_copie</a>() const</td><td class="entry"><a class="el" href="classobjet__selectionnable.html">objet_selectionnable</a></td><td class="entry"></td></tr>
   <tr><td class="entry"><a class="el" href="classobjet__selectionnable.html#a555085da89b30b07349064bb54a26138">deselectionner</a>()</td><td class="entry"><a class="el" href="classobjet__selectionnable.html">objet_selectionnable</a></td><td class="entry"><span class="mlabel">protected</span></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="classobjet__selectionnable.html#a9f9e2ccc04e3b2a55d7b51b85366488f">est_active</a>() const </td><td class="entry"><a class="el" href="classobjet__selectionnable.html">objet_selectionnable</a></td><td class="entry"></td></tr>
-  <tr><td class="entry"><a class="el" href="classobjet__selectionnable.html#ada0d1bda8b5fdc1f81979720d40fb840">est_active_avec_parent</a>() const </td><td class="entry"><a class="el" href="classobjet__selectionnable.html">objet_selectionnable</a></td><td class="entry"></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="classfonctions__conteneur.html#adeb212d1b2b09ec309d005839a732570">est_conteneur</a>() const </td><td class="entry"><a class="el" href="classfonctions__conteneur.html">fonctions_conteneur</a></td><td class="entry"><span class="mlabel">virtual</span></td></tr>
-  <tr><td class="entry"><a class="el" href="classobjet__selectionnable.html#aaa39f8be3dfaeb095cc12a217b234f9b">est_dans_projet</a>() const </td><td class="entry"><a class="el" href="classobjet__selectionnable.html">objet_selectionnable</a></td><td class="entry"></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="classprojet.html#a93d1671ebf1548df8908020a306b0ff1">est_enregistrable</a>() const </td><td class="entry"><a class="el" href="classprojet.html">projet</a></td><td class="entry"></td></tr>
-  <tr><td class="entry"><a class="el" href="classobjet__selectionnable.html#ae58408e8c4421e9c33bc488381e8c0a4">est_etendu</a>() const </td><td class="entry"><a class="el" href="classobjet__selectionnable.html">objet_selectionnable</a></td><td class="entry"></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="classprojet.html#a29fc0b26b1f163ca1754e2ea390e6eaf">est_executable</a>() const </td><td class="entry"><a class="el" href="classprojet.html">projet</a></td><td class="entry"></td></tr>
-  <tr><td class="entry"><a class="el" href="classobjet__selectionnable.html#ab5d7e0b9f000ba34d9d60b36590f1fcf">est_fonction</a>() const </td><td class="entry"><a class="el" href="classobjet__selectionnable.html">objet_selectionnable</a></td><td class="entry"><span class="mlabel">virtual</span></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="classprojet.html#aed2138f12de82e59a3c88341abc8240e">est_modifie</a>() const </td><td class="entry"><a class="el" href="classprojet.html">projet</a></td><td class="entry"></td></tr>
-  <tr><td class="entry"><a class="el" href="classprojet.html#a6f3595b0a0025ddf250561ebbfb3726b">est_nouveau</a>() const </td><td class="entry"><a class="el" href="classprojet.html">projet</a></td><td class="entry"></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="classobjet__selectionnable.html#a928feb3830d6c538a4a15c1d76da3dfd">est_parametre</a>() const </td><td class="entry"><a class="el" href="classobjet__selectionnable.html">objet_selectionnable</a></td><td class="entry"><span class="mlabel">virtual</span></td></tr>
-  <tr><td class="entry"><a class="el" href="classprojet.html#a5557faf14a39afadc1e5050119a376dd">est_projet</a>() const </td><td class="entry"><a class="el" href="classprojet.html">projet</a></td><td class="entry"><span class="mlabel">virtual</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="classobjet__selectionnable.html#a9a0bf43723dd1656224cec9f3c42bba0">est_active</a>() const</td><td class="entry"><a class="el" href="classobjet__selectionnable.html">objet_selectionnable</a></td><td class="entry"></td></tr>
+  <tr><td class="entry"><a class="el" href="classobjet__selectionnable.html#ab86bf8b056ebc44909fb899dc6834422">est_active_avec_parent</a>() const</td><td class="entry"><a class="el" href="classobjet__selectionnable.html">objet_selectionnable</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="classfonctions__conteneur.html#af36a6eddb2a14856485fee7b3da6244a">est_conteneur</a>() const</td><td class="entry"><a class="el" href="classfonctions__conteneur.html">fonctions_conteneur</a></td><td class="entry"><span class="mlabel">virtual</span></td></tr>
+  <tr><td class="entry"><a class="el" href="classobjet__selectionnable.html#aab2318fe95dbe865acf0f021e8acaf2d">est_dans_projet</a>() const</td><td class="entry"><a class="el" href="classobjet__selectionnable.html">objet_selectionnable</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="classprojet.html#af3ec26f8d89ead3d91a5f6098b83e242">est_enregistrable</a>() const</td><td class="entry"><a class="el" href="classprojet.html">projet</a></td><td class="entry"></td></tr>
+  <tr><td class="entry"><a class="el" href="classobjet__selectionnable.html#af1e714963d861a9895ff590531396707">est_etendu</a>() const</td><td class="entry"><a class="el" href="classobjet__selectionnable.html">objet_selectionnable</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="classprojet.html#a081efee84cbb41edcdf706e19789565b">est_executable</a>() const</td><td class="entry"><a class="el" href="classprojet.html">projet</a></td><td class="entry"></td></tr>
+  <tr><td class="entry"><a class="el" href="classobjet__selectionnable.html#a8a235fc5211fbec0347ebe2342e99fa5">est_fonction</a>() const</td><td class="entry"><a class="el" href="classobjet__selectionnable.html">objet_selectionnable</a></td><td class="entry"><span class="mlabel">virtual</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="classprojet.html#a3ce849f59d754f05de9cf9b4ec06c46f">est_modifie</a>() const</td><td class="entry"><a class="el" href="classprojet.html">projet</a></td><td class="entry"></td></tr>
+  <tr><td class="entry"><a class="el" href="classprojet.html#a5ec26ee61a91af62a268bb85263d6a30">est_nouveau</a>() const</td><td class="entry"><a class="el" href="classprojet.html">projet</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="classobjet__selectionnable.html#a2d06c9e229e16a40d0649fb02d4de235">est_parametre</a>() const</td><td class="entry"><a class="el" href="classobjet__selectionnable.html">objet_selectionnable</a></td><td class="entry"><span class="mlabel">virtual</span></td></tr>
+  <tr><td class="entry"><a class="el" href="classprojet.html#a0b36ebb589fbe72066e5e28531260d5d">est_projet</a>() const</td><td class="entry"><a class="el" href="classprojet.html">projet</a></td><td class="entry"><span class="mlabel">virtual</span></td></tr>
   <tr class="even"><td class="entry"><a class="el" href="classprojet.html#ac29c91d7cfa7f3bd873c50fd180631ca">est_valide</a>(logs_compilation_widget *vue_logs)</td><td class="entry"><a class="el" href="classprojet.html">projet</a></td><td class="entry"></td></tr>
-  <tr><td class="entry"><a class="el" href="classprojet.html#a58fb1543e6a9aa52c35c4c996e14c21f">est_verrouille</a>() const </td><td class="entry"><a class="el" href="classprojet.html">projet</a></td><td class="entry"><span class="mlabel">virtual</span></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="classobjet__selectionnable.html#a1cf41e42861e0b033d2704802905e81a">est_verrouille_avec_parent</a>() const </td><td class="entry"><a class="el" href="classobjet__selectionnable.html">objet_selectionnable</a></td><td class="entry"></td></tr>
+  <tr><td class="entry"><a class="el" href="classprojet.html#a4c123fbd399c0fdb801ea25370377e75">est_verrouille</a>() const</td><td class="entry"><a class="el" href="classprojet.html">projet</a></td><td class="entry"><span class="mlabel">virtual</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="classobjet__selectionnable.html#a001c4584a6430689f478544ec560fb7e">est_verrouille_avec_parent</a>() const</td><td class="entry"><a class="el" href="classobjet__selectionnable.html">objet_selectionnable</a></td><td class="entry"></td></tr>
   <tr><td class="entry"><a class="el" href="classprojet.html#a911d33fdf6ee03d513a576ad154a2ffc">executer</a>()</td><td class="entry"><a class="el" href="classprojet.html">projet</a></td><td class="entry"></td></tr>
   <tr class="even"><td class="entry"><a class="el" href="classobjet__selectionnable.html#ad3c9ec08e1036a463b6b82176d52364d">existe_selection</a>()</td><td class="entry"><a class="el" href="classobjet__selectionnable.html">objet_selectionnable</a></td><td class="entry"><span class="mlabel">static</span></td></tr>
   <tr><td class="entry"><a class="el" href="classprojet.html#adbb06eb069730cd0c973881af783b967">fermer</a>()</td><td class="entry"><a class="el" href="classprojet.html">projet</a></td><td class="entry"></td></tr>
   <tr class="even"><td class="entry"><a class="el" href="classfonctions__conteneur.html#aa1db33c3a0bf76b354e77b4a4324357a">fonctions_begin</a>()</td><td class="entry"><a class="el" href="classfonctions__conteneur.html">fonctions_conteneur</a></td><td class="entry"></td></tr>
-  <tr><td class="entry"><a class="el" href="classfonctions__conteneur.html#a0e66abe2fb75854bdf225621ee4f7fb4">fonctions_const_begin</a>() const </td><td class="entry"><a class="el" href="classfonctions__conteneur.html">fonctions_conteneur</a></td><td class="entry"></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="classfonctions__conteneur.html#ad9d7f30426cbfab3d39505bb94b1f0d5">fonctions_const_end</a>() const </td><td class="entry"><a class="el" href="classfonctions__conteneur.html">fonctions_conteneur</a></td><td class="entry"></td></tr>
+  <tr><td class="entry"><a class="el" href="classfonctions__conteneur.html#a644a9b41a4edf55ab2c26d18453406a4">fonctions_const_begin</a>() const</td><td class="entry"><a class="el" href="classfonctions__conteneur.html">fonctions_conteneur</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="classfonctions__conteneur.html#a16bb282bc668c02c0cf9a37864f99b44">fonctions_const_end</a>() const</td><td class="entry"><a class="el" href="classfonctions__conteneur.html">fonctions_conteneur</a></td><td class="entry"></td></tr>
   <tr><td class="entry"><a class="el" href="classfonctions__conteneur.html#abc69be8ea089b7f3370998c14a3bbf09">fonctions_const_iterateur</a> typedef</td><td class="entry"><a class="el" href="classfonctions__conteneur.html">fonctions_conteneur</a></td><td class="entry"></td></tr>
   <tr class="even"><td class="entry"><a class="el" href="classfonctions__conteneur.html#ab3b8dde523b703584d0c2504c63d6c45">fonctions_conteneur</a>(objet_selectionnable *parent)</td><td class="entry"><a class="el" href="classfonctions__conteneur.html">fonctions_conteneur</a></td><td class="entry"></td></tr>
   <tr><td class="entry"><a class="el" href="classfonctions__conteneur.html#a165ee65380980b58b521a62810cd7e27">fonctions_end</a>()</td><td class="entry"><a class="el" href="classfonctions__conteneur.html">fonctions_conteneur</a></td><td class="entry"></td></tr>
   <tr class="even"><td class="entry"><a class="el" href="classfonctions__conteneur.html#af69a1efeb888ab26251ecce96c4bf5e9">fonctions_iterateur</a> typedef</td><td class="entry"><a class="el" href="classfonctions__conteneur.html">fonctions_conteneur</a></td><td class="entry"></td></tr>
   <tr><td class="entry"><a class="el" href="classobjet__selectionnable.html#ab2fb752b9ba998ed26975936d1d5beaa">forcer_deselection</a>()</td><td class="entry"><a class="el" href="classobjet__selectionnable.html">objet_selectionnable</a></td><td class="entry"><span class="mlabel">static</span></td></tr>
   <tr class="even"><td class="entry"><a class="el" href="classobjet__selectionnable.html#ab809d020155b7fec48ff3adbe15c9b65">get_conteneur</a>()</td><td class="entry"><a class="el" href="classobjet__selectionnable.html">objet_selectionnable</a></td><td class="entry"></td></tr>
-  <tr><td class="entry"><a class="el" href="classobjet__selectionnable.html#aa80aeba62e29922d6d7289a836228dfc">get_conteneur</a>() const </td><td class="entry"><a class="el" href="classobjet__selectionnable.html">objet_selectionnable</a></td><td class="entry"></td></tr>
+  <tr><td class="entry"><a class="el" href="classobjet__selectionnable.html#aa3741b4fc28232cb05e346f5a3a5ea56">get_conteneur</a>() const</td><td class="entry"><a class="el" href="classobjet__selectionnable.html">objet_selectionnable</a></td><td class="entry"></td></tr>
   <tr class="even"><td class="entry"><a class="el" href="classobjet__selectionnable.html#aeac1931a7976c17cd05e456d128ccba3">get_conteneur_courant</a>()</td><td class="entry"><a class="el" href="classobjet__selectionnable.html">objet_selectionnable</a></td><td class="entry"><span class="mlabel">static</span></td></tr>
   <tr><td class="entry"><a class="el" href="classobjet__selectionnable.html#a6f00a6275b09a11fb43316144e2d4b86">get_conteneur_precedant</a>()</td><td class="entry"><a class="el" href="classobjet__selectionnable.html">objet_selectionnable</a></td><td class="entry"></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="classprojet.html#a40753d33e5e9cfec0ccc6ed1bcbcc7df">get_description</a>() const </td><td class="entry"><a class="el" href="classprojet.html">projet</a></td><td class="entry"></td></tr>
-  <tr><td class="entry"><a class="el" href="classprojet.html#aa44b3d76899e78d5259dec6fdf5e6855">get_dossier</a>() const </td><td class="entry"><a class="el" href="classprojet.html">projet</a></td><td class="entry"></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="classfonctions__conteneur.html#a1e40d824eca4c76fe0b1f6e56550c62d">get_nb_fonctions_actives</a>() const </td><td class="entry"><a class="el" href="classfonctions__conteneur.html">fonctions_conteneur</a></td><td class="entry"><span class="mlabel">protected</span></td></tr>
-  <tr><td class="entry"><a class="el" href="classprojet.html#ac996cee2807e20a7fce9a1047701af1a">get_nom</a>() const </td><td class="entry"><a class="el" href="classprojet.html">projet</a></td><td class="entry"></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="classprojet.html#a45627f0408d5e108eb3f5ffa769024d2">get_nom_fichier</a>() const </td><td class="entry"><a class="el" href="classprojet.html">projet</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="classprojet.html#a847421a36d9a67f31cc8549ac39fb48c">get_description</a>() const</td><td class="entry"><a class="el" href="classprojet.html">projet</a></td><td class="entry"></td></tr>
+  <tr><td class="entry"><a class="el" href="classprojet.html#a090c95e58831875cf4e81928c1d75b7e">get_dossier</a>() const</td><td class="entry"><a class="el" href="classprojet.html">projet</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="classfonctions__conteneur.html#aa0372e0e6818c6a71721f1a5350aa1ed">get_nb_fonctions_actives</a>() const</td><td class="entry"><a class="el" href="classfonctions__conteneur.html">fonctions_conteneur</a></td><td class="entry"><span class="mlabel">protected</span></td></tr>
+  <tr><td class="entry"><a class="el" href="classprojet.html#aa787fbd9f79b128d3ef24d144be917ff">get_nom</a>() const</td><td class="entry"><a class="el" href="classprojet.html">projet</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="classprojet.html#ab67c8da12f04d10144f42b4541dcacbc">get_nom_fichier</a>() const</td><td class="entry"><a class="el" href="classprojet.html">projet</a></td><td class="entry"></td></tr>
   <tr><td class="entry"><a class="el" href="classfonctions__conteneur.html#a61f2cd0bf2ee27462f470e36a2f43869">get_position</a>(base_fonction *f)</td><td class="entry"><a class="el" href="classfonctions__conteneur.html">fonctions_conteneur</a></td><td class="entry"></td></tr>
   <tr class="even"><td class="entry"><a class="el" href="classobjet__selectionnable.html#ab48a75e720955aebe27f720dfaa5e78e">get_projet</a>()</td><td class="entry"><a class="el" href="classobjet__selectionnable.html">objet_selectionnable</a></td><td class="entry"></td></tr>
   <tr><td class="entry"><a class="el" href="classobjet__selectionnable.html#afdc2163828d829f786887b60e11e4717">get_projet_courant</a>()</td><td class="entry"><a class="el" href="classobjet__selectionnable.html">objet_selectionnable</a></td><td class="entry"><span class="mlabel">static</span></td></tr>
   <tr class="even"><td class="entry"><a class="el" href="classobjet__selectionnable.html#ae6be76843c7b502410ec8d2c1fff88a3">get_selection</a>()</td><td class="entry"><a class="el" href="classobjet__selectionnable.html">objet_selectionnable</a></td><td class="entry"><span class="mlabel">static</span></td></tr>
-  <tr><td class="entry"><a class="el" href="classprojet.html#a081c8333619f61c208fbd04d5819fca7">get_titre</a>() const </td><td class="entry"><a class="el" href="classprojet.html">projet</a></td><td class="entry"><span class="mlabel">virtual</span></td></tr>
+  <tr><td class="entry"><a class="el" href="classprojet.html#a280b39525329192ef3afa86df07f9741">get_titre</a>() const</td><td class="entry"><a class="el" href="classprojet.html">projet</a></td><td class="entry"><span class="mlabel">virtual</span></td></tr>
   <tr class="even"><td class="entry"><a class="el" href="classobjet__selectionnable.html#a028ac895965858e0e8e8e2cc25e8323c">inverser_verrouillage</a>()</td><td class="entry"><a class="el" href="classobjet__selectionnable.html">objet_selectionnable</a></td><td class="entry"></td></tr>
   <tr><td class="entry"><a class="el" href="classprojet.html#a011c8d7874287822650d94c6f44f73c0">m_description</a></td><td class="entry"><a class="el" href="classprojet.html">projet</a></td><td class="entry"><span class="mlabel">private</span></td></tr>
   <tr class="even"><td class="entry"><a class="el" href="classobjet__selectionnable.html#afb0e6eeeac420371f55aac0e455e1a84">m_est_active</a></td><td class="entry"><a class="el" href="classobjet__selectionnable.html">objet_selectionnable</a></td><td class="entry"><span class="mlabel">protected</span></td></tr>
@@ -157,14 +130,14 @@ var searchBox = new SearchBox("searchBox", "search",false,'Recherche');
   <tr class="even"><td class="entry"><a class="el" href="classprojet.html#a78ebe9ba954cb3297525c916cd80177c">m_verrouille_par_systeme</a></td><td class="entry"><a class="el" href="classprojet.html">projet</a></td><td class="entry"><span class="mlabel">private</span></td></tr>
   <tr><td class="entry"><a class="el" href="classobjet__selectionnable.html#a9f76b8e89231a79c3fc840af874bd868">modifier</a>(bool change_executable=true)</td><td class="entry"><a class="el" href="classobjet__selectionnable.html">objet_selectionnable</a></td><td class="entry"></td></tr>
   <tr class="even"><td class="entry"><a class="el" href="classobjet__selectionnable.html#af68427cda8defcbcf0d21de69730a4f6">objet_selectionnable</a>(objet_selectionnable *parent=NULL)</td><td class="entry"><a class="el" href="classobjet__selectionnable.html">objet_selectionnable</a></td><td class="entry"></td></tr>
-  <tr><td class="entry"><a class="el" href="classobjet__selectionnable.html#a76587773c723728d21583bb87e995daa">parents_actifs</a>() const </td><td class="entry"><a class="el" href="classobjet__selectionnable.html">objet_selectionnable</a></td><td class="entry"></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="classobjet__selectionnable.html#a57341a9bf3dbc66f4ad4414183b0d27c">parents_verrouilles</a>() const </td><td class="entry"><a class="el" href="classobjet__selectionnable.html">objet_selectionnable</a></td><td class="entry"></td></tr>
-  <tr><td class="entry"><a class="el" href="classfonctions__conteneur.html#a6c8f53c6a83be7f543817d2624f16356">premiere_fonction_active</a>() const </td><td class="entry"><a class="el" href="classfonctions__conteneur.html">fonctions_conteneur</a></td><td class="entry"><span class="mlabel">protected</span></td></tr>
+  <tr><td class="entry"><a class="el" href="classobjet__selectionnable.html#a65b1afceca6ba5882edb9b7707d851f8">parents_actifs</a>() const</td><td class="entry"><a class="el" href="classobjet__selectionnable.html">objet_selectionnable</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="classobjet__selectionnable.html#ad9357af8b3471529814165378c6ce13d">parents_verrouilles</a>() const</td><td class="entry"><a class="el" href="classobjet__selectionnable.html">objet_selectionnable</a></td><td class="entry"></td></tr>
+  <tr><td class="entry"><a class="el" href="classfonctions__conteneur.html#a346cf6e2574fe487ef7eaaebf603f2db">premiere_fonction_active</a>() const</td><td class="entry"><a class="el" href="classfonctions__conteneur.html">fonctions_conteneur</a></td><td class="entry"><span class="mlabel">protected</span></td></tr>
   <tr class="even"><td class="entry"><a class="el" href="classprojet.html#aae613f8f9ae171d2977e4ab1029e3885">projet</a>()</td><td class="entry"><a class="el" href="classprojet.html">projet</a></td><td class="entry"></td></tr>
   <tr><td class="entry"><a class="el" href="classprojet.html#aad80cef8f255c11d0ed805f2334eccc7">s_nb_projets</a></td><td class="entry"><a class="el" href="classprojet.html">projet</a></td><td class="entry"><span class="mlabel">private</span><span class="mlabel">static</span></td></tr>
   <tr class="even"><td class="entry"><a class="el" href="classobjet__selectionnable.html#a4fdc91751c9dc77565b2b0cab50a726a">s_objet_courant</a></td><td class="entry"><a class="el" href="classobjet__selectionnable.html">objet_selectionnable</a></td><td class="entry"><span class="mlabel">protected</span><span class="mlabel">static</span></td></tr>
   <tr><td class="entry"><a class="el" href="classprojet.html#a83aaa7aa7215729f319047a1f74d0a31">sauvegarder</a>(QXmlStreamWriter &amp;stream, bool sauvegarde_reelle=true)</td><td class="entry"><a class="el" href="classprojet.html">projet</a></td><td class="entry"></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="classfonctions__conteneur.html#a199dde0697eb91a9e54c1dfecb536a88">fonctions_conteneur::sauvegarder</a>(QXmlStreamWriter &amp;stream) const </td><td class="entry"><a class="el" href="classfonctions__conteneur.html">fonctions_conteneur</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="classfonctions__conteneur.html#a45ec80993babd844410c429794357871">fonctions_conteneur::sauvegarder</a>(QXmlStreamWriter &amp;stream) const</td><td class="entry"><a class="el" href="classfonctions__conteneur.html">fonctions_conteneur</a></td><td class="entry"></td></tr>
   <tr><td class="entry"><a class="el" href="classobjet__selectionnable.html#a645da22be6e3f8747086da238e788fb9">selectionner</a>()</td><td class="entry"><a class="el" href="classobjet__selectionnable.html">objet_selectionnable</a></td><td class="entry"></td></tr>
   <tr class="even"><td class="entry"><a class="el" href="classobjet__selectionnable.html#acb1bf63e061079a402c929ce346b0b22">set_est_active</a>(bool active)</td><td class="entry"><a class="el" href="classobjet__selectionnable.html">objet_selectionnable</a></td><td class="entry"><span class="mlabel">virtual</span></td></tr>
   <tr><td class="entry"><a class="el" href="classobjet__selectionnable.html#aafef1c588ce9d5f7956c321799986b9b">set_est_etendu</a>(bool est_etendu)</td><td class="entry"><a class="el" href="classobjet__selectionnable.html">objet_selectionnable</a></td><td class="entry"><span class="mlabel">virtual</span></td></tr>
@@ -173,15 +146,15 @@ var searchBox = new SearchBox("searchBox", "search",false,'Recherche');
   <tr class="even"><td class="entry"><a class="el" href="classprojet.html#a3020254e65eb57b4c36bf7990021ad2b">set_nom</a>(const QString &amp;nom)</td><td class="entry"><a class="el" href="classprojet.html">projet</a></td><td class="entry"></td></tr>
   <tr><td class="entry"><a class="el" href="classprojet.html#ad8800652d03f73eaad197af702d3d133">set_nom_fichier</a>(const QString &amp;nom_fichier)</td><td class="entry"><a class="el" href="classprojet.html">projet</a></td><td class="entry"></td></tr>
   <tr class="even"><td class="entry"><a class="el" href="classobjet__selectionnable.html#a5d39343f43293805a0b60e8520687d87">set_verrouille</a>(bool verrouille)</td><td class="entry"><a class="el" href="classobjet__selectionnable.html">objet_selectionnable</a></td><td class="entry"><span class="mlabel">virtual</span></td></tr>
-  <tr bgcolor="#f0f0f0"><td class="entry"><b>signal_fc_creation_fonction</b>(base_fonction *) (défini dans <a class="el" href="classfonctions__conteneur.html">fonctions_conteneur</a>)</td><td class="entry"><a class="el" href="classfonctions__conteneur.html">fonctions_conteneur</a></td><td class="entry"><span class="mlabel">signal</span></td></tr>
+  <tr><td class="entry"><a class="el" href="classfonctions__conteneur.html#a3ca007df35b414e2b26ab0ae57d2cc45">signal_fc_creation_fonction</a>(base_fonction *f)</td><td class="entry"><a class="el" href="classfonctions__conteneur.html">fonctions_conteneur</a></td><td class="entry"><span class="mlabel">signal</span></td></tr>
   <tr class="even"><td class="entry"><a class="el" href="classobjet__selectionnable.html#a61af4b5ffeb8de0fbbd6daf6c56dfb4b">signal_os_deselectionne</a>(objet_selectionnable *obj)</td><td class="entry"><a class="el" href="classobjet__selectionnable.html">objet_selectionnable</a></td><td class="entry"><span class="mlabel">signal</span></td></tr>
   <tr><td class="entry"><a class="el" href="classobjet__selectionnable.html#a666f0dac3844ccc553b1d69244b2afac">signal_os_destruction_selectionnable</a>(objet_selectionnable *obj)</td><td class="entry"><a class="el" href="classobjet__selectionnable.html">objet_selectionnable</a></td><td class="entry"><span class="mlabel">signal</span></td></tr>
   <tr class="even"><td class="entry"><a class="el" href="classobjet__selectionnable.html#a9e37f711a645ced3c8da230e426a4eb6">signal_os_selectionne</a>(objet_selectionnable *obj)</td><td class="entry"><a class="el" href="classobjet__selectionnable.html">objet_selectionnable</a></td><td class="entry"><span class="mlabel">signal</span></td></tr>
-  <tr bgcolor="#f0f0f0"><td class="entry"><b>signal_p_destruction_projet</b>(projet *) (défini dans <a class="el" href="classprojet.html">projet</a>)</td><td class="entry"><a class="el" href="classprojet.html">projet</a></td><td class="entry"><span class="mlabel">signal</span></td></tr>
-  <tr bgcolor="#f0f0f0" class="even"><td class="entry"><b>signal_p_fermeture_projet</b>(projet *) (défini dans <a class="el" href="classprojet.html">projet</a>)</td><td class="entry"><a class="el" href="classprojet.html">projet</a></td><td class="entry"><span class="mlabel">signal</span></td></tr>
-  <tr bgcolor="#f0f0f0"><td class="entry"><b>signal_p_nom_projet_change</b>(projet *) (défini dans <a class="el" href="classprojet.html">projet</a>)</td><td class="entry"><a class="el" href="classprojet.html">projet</a></td><td class="entry"><span class="mlabel">signal</span></td></tr>
-  <tr bgcolor="#f0f0f0" class="even"><td class="entry"><b>signal_p_projet_etat_modification_change</b>(projet *, bool) (défini dans <a class="el" href="classprojet.html">projet</a>)</td><td class="entry"><a class="el" href="classprojet.html">projet</a></td><td class="entry"><span class="mlabel">signal</span></td></tr>
-  <tr bgcolor="#f0f0f0"><td class="entry"><b>signal_p_projet_executable_change</b>(projet *) (défini dans <a class="el" href="classprojet.html">projet</a>)</td><td class="entry"><a class="el" href="classprojet.html">projet</a></td><td class="entry"><span class="mlabel">signal</span></td></tr>
+  <tr><td class="entry"><a class="el" href="classprojet.html#a3771e6ea75bd417f59039c0bf0950f5c">signal_p_destruction_projet</a>(projet *p)</td><td class="entry"><a class="el" href="classprojet.html">projet</a></td><td class="entry"><span class="mlabel">signal</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="classprojet.html#a3f09479151460059b1139e93787c679c">signal_p_fermeture_projet</a>(projet *p)</td><td class="entry"><a class="el" href="classprojet.html">projet</a></td><td class="entry"><span class="mlabel">signal</span></td></tr>
+  <tr><td class="entry"><a class="el" href="classprojet.html#a7d00237edd6da8e536daa528612bc505">signal_p_nom_projet_change</a>(projet *p)</td><td class="entry"><a class="el" href="classprojet.html">projet</a></td><td class="entry"><span class="mlabel">signal</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="classprojet.html#afe1dfcf6f0db842c1f7ce3b3df4afcf8">signal_p_projet_etat_modification_change</a>(projet *p, bool etat)</td><td class="entry"><a class="el" href="classprojet.html">projet</a></td><td class="entry"><span class="mlabel">signal</span></td></tr>
+  <tr><td class="entry"><a class="el" href="classprojet.html#ab3257592c0fb1e6a2982181a2b81d077">signal_p_projet_executable_change</a>(projet *p)</td><td class="entry"><a class="el" href="classprojet.html">projet</a></td><td class="entry"><span class="mlabel">signal</span></td></tr>
   <tr class="even"><td class="entry"><a class="el" href="classobjet__selectionnable.html#a7487be927fa6dd18b858adbcb3b181bd">signal_verrouillage_change</a>(objet_selectionnable *obj)</td><td class="entry"><a class="el" href="classobjet__selectionnable.html">objet_selectionnable</a></td><td class="entry"><span class="mlabel">signal</span></td></tr>
   <tr><td class="entry"><a class="el" href="classfonctions__conteneur.html#a807b51ba64dd85bb844c44cfe2d0f116">supprimer_fonction</a>(base_fonction *f)</td><td class="entry"><a class="el" href="classfonctions__conteneur.html">fonctions_conteneur</a></td><td class="entry"></td></tr>
   <tr class="even"><td class="entry"><a class="el" href="classfonctions__conteneur.html#af28c537e8b22badf4ab754c003de72c3">type_fonctions</a> typedef</td><td class="entry"><a class="el" href="classfonctions__conteneur.html">fonctions_conteneur</a></td><td class="entry"></td></tr>
@@ -191,9 +164,9 @@ var searchBox = new SearchBox("searchBox", "search",false,'Recherche');
 </table></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Généré le Vendredi 10 Février 2017 15:45:29 pour Emgine par &#160;<a href="http://www.doxygen.org/index.html">
+Généré le Mardi 28 Février 2017 10:28:29 pour Emgine par &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
-</a> 1.8.6
+</a> 1.8.13
 </small></address>
 </body>
 </html>

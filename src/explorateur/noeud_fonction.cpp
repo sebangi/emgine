@@ -1,5 +1,10 @@
 #include "entete/explorateur/noeud_fonction.h"
 
+/** \file noeud_fonction.cpp
+ * \brief Fichier d'implémentation de la classe noeud_fonction.
+ * \author Sébastien Angibaud
+ */
+
 #include "entete/compilation/logs_compilation_widget.h"
 #include "entete/fenetre_principale.h"
 #include "entete/fonction/fonction_source/fonction_base_source.h"

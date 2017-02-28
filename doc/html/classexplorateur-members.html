@@ -3,16 +3,15 @@
 <head>
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
-<meta name="generator" content="Doxygen 1.8.6"/>
+<meta name="generator" content="Doxygen 1.8.13"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
 <title>Emgine: Liste des membres</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
-<script type="text/javascript">
-  $(document).ready(function() { searchBox.OnSelectItem(0); });
-</script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
@@ -21,7 +20,7 @@
 <table cellspacing="0" cellpadding="0">
  <tbody>
  <tr style="height: 56px;">
-  <td style="padding-left: 0.5em;">
+  <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">Emgine
    </div>
   </td>
@@ -30,49 +29,25 @@
 </table>
 </div>
 <!-- end header part -->
-<!-- Généré par Doxygen 1.8.6 -->
+<!-- Généré par Doxygen 1.8.13 -->
 <script type="text/javascript">
 var searchBox = new SearchBox("searchBox", "search",false,'Recherche');
 </script>
-  <div id="navrow1" class="tabs">
-    <ul class="tablist">
-      <li><a href="index.html"><span>Page&#160;principale</span></a></li>
-      <li><a href="pages.html"><span>Pages&#160;associées</span></a></li>
-      <li><a href="modules.html"><span>Modules</span></a></li>
-      <li class="current"><a href="annotated.html"><span>Classes</span></a></li>
-      <li><a href="files.html"><span>Fichiers</span></a></li>
-      <li>
-        <div id="MSearchBox" class="MSearchBoxInactive">
-        <span class="left">
-          <img id="MSearchSelect" src="search/mag_sel.png"
-               onmouseover="return searchBox.OnSearchSelectShow()"
-               onmouseout="return searchBox.OnSearchSelectHide()"
-               alt=""/>
-          <input type="text" id="MSearchField" value="Recherche" accesskey="S"
-               onfocus="searchBox.OnSearchFieldFocus(true)" 
-               onblur="searchBox.OnSearchFieldFocus(false)" 
-               onkeyup="searchBox.OnSearchFieldChange(event)"/>
-          </span><span class="right">
-            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
-          </span>
-        </div>
-      </li>
-    </ul>
-  </div>
-  <div id="navrow2" class="tabs2">
-    <ul class="tablist">
-      <li><a href="annotated.html"><span>Liste&#160;des&#160;classes</span></a></li>
-      <li><a href="classes.html"><span>Index&#160;des&#160;classes</span></a></li>
-      <li><a href="inherits.html"><span>Hiérarchie&#160;des&#160;classes</span></a></li>
-      <li><a href="functions.html"><span>Membres&#160;de&#160;classe</span></a></li>
-    </ul>
-  </div>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+$(function() {
+  initMenu('',true,false,'search.php','Recherche');
+  $(document).ready(function() { init_search(); });
+});
+</script>
+<div id="main-nav"></div>
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>Tout</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Fichiers</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Fonctions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Définitions de type</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Énumérations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Valeurs énumérées</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Groupes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&#160;</span>Pages</a></div>
+</div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -108,67 +83,66 @@ var searchBox = new SearchBox("searchBox", "search",false,'Recherche');
   <tr><td class="entry"><a class="el" href="classexplorateur.html#a2a297d8a36310f5b657c06e13cff0b06">connecter_projet</a>(projet *p)</td><td class="entry"><a class="el" href="classexplorateur.html">explorateur</a></td><td class="entry"><span class="mlabel">private</span></td></tr>
   <tr class="even"><td class="entry"><a class="el" href="classexplorateur.html#ad22d29aa9fc32953c4b2b77c56d189db">connecter_selectionnable</a>(objet_selectionnable *f)</td><td class="entry"><a class="el" href="classexplorateur.html">explorateur</a></td><td class="entry"><span class="mlabel">private</span></td></tr>
   <tr><td class="entry"><a class="el" href="classexplorateur.html#ab0c249763cc9518debbbe1b3fd91085c">controler_drag_drop</a>(base_noeud *n_a_couper, base_noeud *n_conteneur, bool shift)</td><td class="entry"><a class="el" href="classexplorateur.html">explorateur</a></td><td class="entry"><span class="mlabel">private</span></td></tr>
-  <tr bgcolor="#f0f0f0" class="even"><td class="entry"><b>creer_copie</b>(const objet_selectionnable *obj, QString &amp;copie) (défini dans <a class="el" href="classexplorateur.html">explorateur</a>)</td><td class="entry"><a class="el" href="classexplorateur.html">explorateur</a></td><td class="entry"><span class="mlabel">private</span></td></tr>
-  <tr><td class="entry"><a class="el" href="classexplorateur.html#a53b3d2e162b12a00b331290b6f65306e">deconnecter_fonction</a>(base_fonction *f)</td><td class="entry"><a class="el" href="classexplorateur.html">explorateur</a></td><td class="entry"><span class="mlabel">private</span></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="classexplorateur.html#add5e78ffd26db6db6f978a931b5dae8f">deconnecter_projet</a>(projet *p)</td><td class="entry"><a class="el" href="classexplorateur.html">explorateur</a></td><td class="entry"><span class="mlabel">private</span></td></tr>
-  <tr><td class="entry"><a class="el" href="classexplorateur.html#aeb433337c59b580a9e33350164e71e22">deconnecter_selectionnable</a>(objet_selectionnable *f)</td><td class="entry"><a class="el" href="classexplorateur.html">explorateur</a></td><td class="entry"><span class="mlabel">private</span></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="classexplorateur.html#a558423674cf84614de3e60ba81dfe523">dragMoveEvent</a>(QDragMoveEvent *e)</td><td class="entry"><a class="el" href="classexplorateur.html">explorateur</a></td><td class="entry"><span class="mlabel">private</span></td></tr>
-  <tr><td class="entry"><a class="el" href="classexplorateur.html#a26268908722d8ea1ea0cf32b6d709b8b">dropEvent</a>(QDropEvent *event)</td><td class="entry"><a class="el" href="classexplorateur.html">explorateur</a></td><td class="entry"><span class="mlabel">private</span></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="classexplorateur.html#a2cc6ab6e573b1f38c01423ec34c09799">explorateur</a>(QWidget *parent=0)</td><td class="entry"><a class="el" href="classexplorateur.html">explorateur</a></td><td class="entry"></td></tr>
-  <tr><td class="entry"><a class="el" href="classexplorateur.html#aacc4e1d3c87901d284230bdd1bbb4c26">faire_coller</a>(objet_selectionnable *conteneur, QString &amp;copie, objet_selectionnable *obj_ref)</td><td class="entry"><a class="el" href="classexplorateur.html">explorateur</a></td><td class="entry"><span class="mlabel">private</span></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="classexplorateur.html#a3ed6f16c0e32b2eb1750e59feacb52b0">faire_couper</a>(objet_selectionnable *obj)</td><td class="entry"><a class="el" href="classexplorateur.html">explorateur</a></td><td class="entry"><span class="mlabel">private</span></td></tr>
-  <tr><td class="entry"><a class="el" href="classexplorateur.html#a61a8cc7515dbd3365ae0429ea6411c2c">faire_drop</a>(base_noeud *n_a_couper, base_noeud *n_conteneur, bool shift)</td><td class="entry"><a class="el" href="classexplorateur.html">explorateur</a></td><td class="entry"><span class="mlabel">private</span></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="classexplorateur.html#a1a6dcc45820d3bdecd51d7a6f6a223d7">get_noeud_context</a>() const </td><td class="entry"><a class="el" href="classexplorateur.html">explorateur</a></td><td class="entry"><span class="mlabel">private</span></td></tr>
-  <tr><td class="entry"><a class="el" href="classexplorateur.html#a33d40037428bb5c6adc648971d12f36e">m_a_copier</a></td><td class="entry"><a class="el" href="classexplorateur.html">explorateur</a></td><td class="entry"><span class="mlabel">private</span></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="classexplorateur.html#a3f8a03ece66ae49ff5b763aa34f9ee80">m_noeud_context</a></td><td class="entry"><a class="el" href="classexplorateur.html">explorateur</a></td><td class="entry"><span class="mlabel">private</span></td></tr>
-  <tr><td class="entry"><a class="el" href="classexplorateur.html#a9658908a53dbe751f95d0cd820903b5f">m_objet_a_couper</a></td><td class="entry"><a class="el" href="classexplorateur.html">explorateur</a></td><td class="entry"><span class="mlabel">private</span></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="classexplorateur.html#a187ff3f2e19ff3fd3ff38337d3f9a665">m_selectionnables</a></td><td class="entry"><a class="el" href="classexplorateur.html">explorateur</a></td><td class="entry"><span class="mlabel">private</span></td></tr>
-  <tr><td class="entry"><a class="el" href="classexplorateur.html#ac5dae2d4eb652c162c69ef2baadfd0df">map_selectionnable</a> typedef</td><td class="entry"><a class="el" href="classexplorateur.html">explorateur</a></td><td class="entry"><span class="mlabel">private</span></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="classexplorateur.html#a1c0d1a2f970f2b4d9560f33f74030f7a">mettre_a_jour_activation</a>(base_noeud *n, bool actif, bool change_expansion)</td><td class="entry"><a class="el" href="classexplorateur.html">explorateur</a></td><td class="entry"><span class="mlabel">private</span></td></tr>
-  <tr><td class="entry"><a class="el" href="classexplorateur.html#a09836e70d0641f3b692eeb070110f912">mettre_a_jour_etendu</a>(base_noeud *n, bool etendu)</td><td class="entry"><a class="el" href="classexplorateur.html">explorateur</a></td><td class="entry"><span class="mlabel">private</span></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="classexplorateur.html#aa8f6a55c7d9b6e0ef699eb49af4cc2b7">mettre_a_jour_verrouillage</a>(base_noeud *n, bool verrouillage)</td><td class="entry"><a class="el" href="classexplorateur.html">explorateur</a></td><td class="entry"><span class="mlabel">private</span></td></tr>
-  <tr><td class="entry"><a class="el" href="classexplorateur.html#a71d8c413f548ef02da9bd592710ff356">on_activer_fonction</a>()</td><td class="entry"><a class="el" href="classexplorateur.html">explorateur</a></td><td class="entry"><span class="mlabel">private</span><span class="mlabel">slot</span></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="classexplorateur.html#a513ccd6238459ae6982973a5b671a63b">on_ajout_fonction_conversion</a>()</td><td class="entry"><a class="el" href="classexplorateur.html">explorateur</a></td><td class="entry"><span class="mlabel">private</span><span class="mlabel">slot</span></td></tr>
-  <tr><td class="entry"><a class="el" href="classexplorateur.html#aad600593e3982f73bd876a32cc4b8381">on_ajout_sortie</a>()</td><td class="entry"><a class="el" href="classexplorateur.html">explorateur</a></td><td class="entry"><span class="mlabel">private</span><span class="mlabel">slot</span></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="classexplorateur.html#a9f87ebe9efe7486d6e781556238feb4e">on_ajout_source</a>()</td><td class="entry"><a class="el" href="classexplorateur.html">explorateur</a></td><td class="entry"><span class="mlabel">private</span><span class="mlabel">slot</span></td></tr>
-  <tr><td class="entry"><a class="el" href="classexplorateur.html#a5394562c6a7168f624d9ee1f7a2736fa">on_coller</a>()</td><td class="entry"><a class="el" href="classexplorateur.html">explorateur</a></td><td class="entry"><span class="mlabel">private</span><span class="mlabel">slot</span></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="classexplorateur.html#ab3b5326853acdf90c798ad2b8e3dfbb8">on_copier</a>()</td><td class="entry"><a class="el" href="classexplorateur.html">explorateur</a></td><td class="entry"><span class="mlabel">private</span><span class="mlabel">slot</span></td></tr>
-  <tr><td class="entry"><a class="el" href="classexplorateur.html#ab3eaff6725b5b3bfcded294beed49449">on_couper</a>()</td><td class="entry"><a class="el" href="classexplorateur.html">explorateur</a></td><td class="entry"><span class="mlabel">private</span><span class="mlabel">slot</span></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="classexplorateur.html#ab52d921d78737c5dc7aca6461da1c013">on_currentItemChanged</a>(QTreeWidgetItem *item)</td><td class="entry"><a class="el" href="classexplorateur.html">explorateur</a></td><td class="entry"><span class="mlabel">private</span><span class="mlabel">slot</span></td></tr>
-  <tr><td class="entry"><a class="el" href="classexplorateur.html#a3d2739f24d09d974a0476312ccf25d70">on_customContextMenuRequested</a>(const QPoint &amp;pos)</td><td class="entry"><a class="el" href="classexplorateur.html">explorateur</a></td><td class="entry"><span class="mlabel">private</span><span class="mlabel">slot</span></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="classexplorateur.html#a897a29fae3bb3df4c5129ea820774334">on_dupliquer_projet</a>()</td><td class="entry"><a class="el" href="classexplorateur.html">explorateur</a></td><td class="entry"><span class="mlabel">private</span><span class="mlabel">slot</span></td></tr>
-  <tr><td class="entry"><a class="el" href="classexplorateur.html#a73040f7ee6da27e4396e15c7df7ace5c">on_enregistrer</a>()</td><td class="entry"><a class="el" href="classexplorateur.html">explorateur</a></td><td class="entry"><span class="mlabel">private</span><span class="mlabel">slot</span></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="classexplorateur.html#aa6321767a6f4a8afaf43f1ea952528df">on_enregistrer_sous</a>()</td><td class="entry"><a class="el" href="classexplorateur.html">explorateur</a></td><td class="entry"><span class="mlabel">private</span><span class="mlabel">slot</span></td></tr>
-  <tr><td class="entry"><a class="el" href="classexplorateur.html#a1384795a69acb9eaabee919bf04568e1">on_externe_activation_fonction_change</a>(base_fonction *f)</td><td class="entry"><a class="el" href="classexplorateur.html">explorateur</a></td><td class="entry"><span class="mlabel">private</span><span class="mlabel">slot</span></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="classexplorateur.html#a7f6b58995b31a6b09758e6af0c5988a0">on_externe_creation_fonction</a>(base_fonction *f)</td><td class="entry"><a class="el" href="classexplorateur.html">explorateur</a></td><td class="entry"><span class="mlabel">private</span><span class="mlabel">slot</span></td></tr>
-  <tr><td class="entry"><a class="el" href="classexplorateur.html#ad7dd8e9faf432a50a821f76ff8c13e39">on_externe_destruction_projet</a>(projet *p)</td><td class="entry"><a class="el" href="classexplorateur.html">explorateur</a></td><td class="entry"><span class="mlabel">private</span><span class="mlabel">slot</span></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="classexplorateur.html#a5098ff7776e4773ff3386a9bac9d9307">on_externe_etendu_change</a>(base_fonction *f)</td><td class="entry"><a class="el" href="classexplorateur.html">explorateur</a></td><td class="entry"><span class="mlabel">private</span><span class="mlabel">slot</span></td></tr>
-  <tr><td class="entry"><a class="el" href="classexplorateur.html#a9f74457a3d08f73b28f5c4eaaf01acc9">on_externe_nom_projet_change</a>(projet *p)</td><td class="entry"><a class="el" href="classexplorateur.html">explorateur</a></td><td class="entry"><span class="mlabel">private</span><span class="mlabel">slot</span></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="classexplorateur.html#a0c03c6386f018765f8392b95b46c19b0">on_externe_objet_deselectionne</a>(objet_selectionnable *obj)</td><td class="entry"><a class="el" href="classexplorateur.html">explorateur</a></td><td class="entry"><span class="mlabel">private</span><span class="mlabel">slot</span></td></tr>
-  <tr><td class="entry"><a class="el" href="classexplorateur.html#a0fce137b4ac1ce06dcb7bc9f6a561882">on_externe_objet_selectionne</a>(objet_selectionnable *obj)</td><td class="entry"><a class="el" href="classexplorateur.html">explorateur</a></td><td class="entry"><span class="mlabel">private</span><span class="mlabel">slot</span></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="classexplorateur.html#ae43b4a7ba4f0643465b3e2092b674d08">on_externe_supprimer_fonction</a>(base_fonction *f)</td><td class="entry"><a class="el" href="classexplorateur.html">explorateur</a></td><td class="entry"><span class="mlabel">private</span><span class="mlabel">slot</span></td></tr>
-  <tr><td class="entry"><a class="el" href="classexplorateur.html#afce2e984617f7198974bcd4db9c4175a">on_externe_verrouillage_change</a>(objet_selectionnable *obj)</td><td class="entry"><a class="el" href="classexplorateur.html">explorateur</a></td><td class="entry"><span class="mlabel">private</span><span class="mlabel">slot</span></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="classexplorateur.html#af384b08871362ec45d8554e4fffa1e0d">on_fermer_projet</a>()</td><td class="entry"><a class="el" href="classexplorateur.html">explorateur</a></td><td class="entry"><span class="mlabel">private</span><span class="mlabel">slot</span></td></tr>
-  <tr><td class="entry"><a class="el" href="classexplorateur.html#ad7fc5084bbb92aa975b35f1206109e97">on_itemClicked</a>(QTreeWidgetItem *item, int column)</td><td class="entry"><a class="el" href="classexplorateur.html">explorateur</a></td><td class="entry"><span class="mlabel">private</span><span class="mlabel">slot</span></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="classexplorateur.html#a3676cbdc434af17e3b809956f4131df8">on_itemCollapsed</a>(QTreeWidgetItem *item)</td><td class="entry"><a class="el" href="classexplorateur.html">explorateur</a></td><td class="entry"><span class="mlabel">private</span><span class="mlabel">slot</span></td></tr>
-  <tr><td class="entry"><a class="el" href="classexplorateur.html#a1e619080cad519a4d1457ac37d3f1b96">on_itemDoubleClicked</a>(QTreeWidgetItem *item, int column)</td><td class="entry"><a class="el" href="classexplorateur.html">explorateur</a></td><td class="entry"><span class="mlabel">private</span><span class="mlabel">slot</span></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="classexplorateur.html#a09e8b1fb500dc869706d6bec7f1ca87c">on_itemExpanded</a>(QTreeWidgetItem *item)</td><td class="entry"><a class="el" href="classexplorateur.html">explorateur</a></td><td class="entry"><span class="mlabel">private</span><span class="mlabel">slot</span></td></tr>
-  <tr><td class="entry"><a class="el" href="classexplorateur.html#a33c04d3c07d1d2698bc9b73c1a82c3a1">on_supprimer_fonction</a>()</td><td class="entry"><a class="el" href="classexplorateur.html">explorateur</a></td><td class="entry"><span class="mlabel">private</span><span class="mlabel">slot</span></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="classexplorateur.html#add77f5981057fc14b9bbac37c251a467">on_verrouiller_selectionnable</a>()</td><td class="entry"><a class="el" href="classexplorateur.html">explorateur</a></td><td class="entry"><span class="mlabel">private</span><span class="mlabel">slot</span></td></tr>
-  <tr><td class="entry"><a class="el" href="classexplorateur.html#ac20e3b48c088e8129cf64a526399382d">set_noeud_context</a>(base_noeud *noeud_context)</td><td class="entry"><a class="el" href="classexplorateur.html">explorateur</a></td><td class="entry"><span class="mlabel">private</span></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="classexplorateur.html#a0f0643ef85c99ff49ba27115f72ef4de">signal_e_demande_ajout_fonction</a>(fonctions_conteneur *conteneur, objet_selectionnable *obj_ref, type_fonction type)</td><td class="entry"><a class="el" href="classexplorateur.html">explorateur</a></td><td class="entry"><span class="mlabel">signal</span></td></tr>
-  <tr><td class="entry"><a class="el" href="classexplorateur.html#a7ce69879a8c990585e1211a5fdbe3a2d">signal_e_dupliquer_projet</a>(projet *p)</td><td class="entry"><a class="el" href="classexplorateur.html">explorateur</a></td><td class="entry"><span class="mlabel">signal</span></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="classexplorateur.html#a7f7b2a1619b55738f69ce4299b271d0b">signal_e_enregistrer_projet</a>(projet *p)</td><td class="entry"><a class="el" href="classexplorateur.html">explorateur</a></td><td class="entry"><span class="mlabel">signal</span></td></tr>
-  <tr><td class="entry"><a class="el" href="classexplorateur.html#a9390de439e2f455f05b3c8512b9da8a6">signal_e_enregistrer_projet_sous</a>(projet *p)</td><td class="entry"><a class="el" href="classexplorateur.html">explorateur</a></td><td class="entry"><span class="mlabel">signal</span></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="classexplorateur.html#a66b70e45132ecdb2be0cc29f0a21db0a">signal_e_objet_deselectionne</a>(objet_selectionnable *obj)</td><td class="entry"><a class="el" href="classexplorateur.html">explorateur</a></td><td class="entry"><span class="mlabel">signal</span></td></tr>
-  <tr><td class="entry"><a class="el" href="classexplorateur.html#a37f25fe19406593af4db4fcc6ba7b39f">signal_e_objet_selectionne</a>(objet_selectionnable *obj)</td><td class="entry"><a class="el" href="classexplorateur.html">explorateur</a></td><td class="entry"><span class="mlabel">signal</span></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="classexplorateur.html#ad173f1256a645ec05e2384bac73018a1">~explorateur</a>()</td><td class="entry"><a class="el" href="classexplorateur.html">explorateur</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="classexplorateur.html#a53b3d2e162b12a00b331290b6f65306e">deconnecter_fonction</a>(base_fonction *f)</td><td class="entry"><a class="el" href="classexplorateur.html">explorateur</a></td><td class="entry"><span class="mlabel">private</span></td></tr>
+  <tr><td class="entry"><a class="el" href="classexplorateur.html#add5e78ffd26db6db6f978a931b5dae8f">deconnecter_projet</a>(projet *p)</td><td class="entry"><a class="el" href="classexplorateur.html">explorateur</a></td><td class="entry"><span class="mlabel">private</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="classexplorateur.html#aeb433337c59b580a9e33350164e71e22">deconnecter_selectionnable</a>(objet_selectionnable *f)</td><td class="entry"><a class="el" href="classexplorateur.html">explorateur</a></td><td class="entry"><span class="mlabel">private</span></td></tr>
+  <tr><td class="entry"><a class="el" href="classexplorateur.html#a558423674cf84614de3e60ba81dfe523">dragMoveEvent</a>(QDragMoveEvent *e)</td><td class="entry"><a class="el" href="classexplorateur.html">explorateur</a></td><td class="entry"><span class="mlabel">private</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="classexplorateur.html#a26268908722d8ea1ea0cf32b6d709b8b">dropEvent</a>(QDropEvent *event)</td><td class="entry"><a class="el" href="classexplorateur.html">explorateur</a></td><td class="entry"><span class="mlabel">private</span></td></tr>
+  <tr><td class="entry"><a class="el" href="classexplorateur.html#a2cc6ab6e573b1f38c01423ec34c09799">explorateur</a>(QWidget *parent=0)</td><td class="entry"><a class="el" href="classexplorateur.html">explorateur</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="classexplorateur.html#aacc4e1d3c87901d284230bdd1bbb4c26">faire_coller</a>(objet_selectionnable *conteneur, QString &amp;copie, objet_selectionnable *obj_ref)</td><td class="entry"><a class="el" href="classexplorateur.html">explorateur</a></td><td class="entry"><span class="mlabel">private</span></td></tr>
+  <tr><td class="entry"><a class="el" href="classexplorateur.html#a3ed6f16c0e32b2eb1750e59feacb52b0">faire_couper</a>(objet_selectionnable *obj)</td><td class="entry"><a class="el" href="classexplorateur.html">explorateur</a></td><td class="entry"><span class="mlabel">private</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="classexplorateur.html#a61a8cc7515dbd3365ae0429ea6411c2c">faire_drop</a>(base_noeud *n_a_couper, base_noeud *n_conteneur, bool shift)</td><td class="entry"><a class="el" href="classexplorateur.html">explorateur</a></td><td class="entry"><span class="mlabel">private</span></td></tr>
+  <tr><td class="entry"><a class="el" href="classexplorateur.html#ab12f6e68a9e165a3266ca7beda7df210">get_noeud_context</a>() const</td><td class="entry"><a class="el" href="classexplorateur.html">explorateur</a></td><td class="entry"><span class="mlabel">private</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="classexplorateur.html#a33d40037428bb5c6adc648971d12f36e">m_a_copier</a></td><td class="entry"><a class="el" href="classexplorateur.html">explorateur</a></td><td class="entry"><span class="mlabel">private</span></td></tr>
+  <tr><td class="entry"><a class="el" href="classexplorateur.html#a3f8a03ece66ae49ff5b763aa34f9ee80">m_noeud_context</a></td><td class="entry"><a class="el" href="classexplorateur.html">explorateur</a></td><td class="entry"><span class="mlabel">private</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="classexplorateur.html#a9658908a53dbe751f95d0cd820903b5f">m_objet_a_couper</a></td><td class="entry"><a class="el" href="classexplorateur.html">explorateur</a></td><td class="entry"><span class="mlabel">private</span></td></tr>
+  <tr><td class="entry"><a class="el" href="classexplorateur.html#a187ff3f2e19ff3fd3ff38337d3f9a665">m_selectionnables</a></td><td class="entry"><a class="el" href="classexplorateur.html">explorateur</a></td><td class="entry"><span class="mlabel">private</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="classexplorateur.html#ac5dae2d4eb652c162c69ef2baadfd0df">map_selectionnable</a> typedef</td><td class="entry"><a class="el" href="classexplorateur.html">explorateur</a></td><td class="entry"><span class="mlabel">private</span></td></tr>
+  <tr><td class="entry"><a class="el" href="classexplorateur.html#a1c0d1a2f970f2b4d9560f33f74030f7a">mettre_a_jour_activation</a>(base_noeud *n, bool actif, bool change_expansion)</td><td class="entry"><a class="el" href="classexplorateur.html">explorateur</a></td><td class="entry"><span class="mlabel">private</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="classexplorateur.html#a09836e70d0641f3b692eeb070110f912">mettre_a_jour_etendu</a>(base_noeud *n, bool etendu)</td><td class="entry"><a class="el" href="classexplorateur.html">explorateur</a></td><td class="entry"><span class="mlabel">private</span></td></tr>
+  <tr><td class="entry"><a class="el" href="classexplorateur.html#aa8f6a55c7d9b6e0ef699eb49af4cc2b7">mettre_a_jour_verrouillage</a>(base_noeud *n, bool verrouillage)</td><td class="entry"><a class="el" href="classexplorateur.html">explorateur</a></td><td class="entry"><span class="mlabel">private</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="classexplorateur.html#a71d8c413f548ef02da9bd592710ff356">on_activer_fonction</a>()</td><td class="entry"><a class="el" href="classexplorateur.html">explorateur</a></td><td class="entry"><span class="mlabel">private</span><span class="mlabel">slot</span></td></tr>
+  <tr><td class="entry"><a class="el" href="classexplorateur.html#a513ccd6238459ae6982973a5b671a63b">on_ajout_fonction_conversion</a>()</td><td class="entry"><a class="el" href="classexplorateur.html">explorateur</a></td><td class="entry"><span class="mlabel">private</span><span class="mlabel">slot</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="classexplorateur.html#aad600593e3982f73bd876a32cc4b8381">on_ajout_sortie</a>()</td><td class="entry"><a class="el" href="classexplorateur.html">explorateur</a></td><td class="entry"><span class="mlabel">private</span><span class="mlabel">slot</span></td></tr>
+  <tr><td class="entry"><a class="el" href="classexplorateur.html#a9f87ebe9efe7486d6e781556238feb4e">on_ajout_source</a>()</td><td class="entry"><a class="el" href="classexplorateur.html">explorateur</a></td><td class="entry"><span class="mlabel">private</span><span class="mlabel">slot</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="classexplorateur.html#a5394562c6a7168f624d9ee1f7a2736fa">on_coller</a>()</td><td class="entry"><a class="el" href="classexplorateur.html">explorateur</a></td><td class="entry"><span class="mlabel">private</span><span class="mlabel">slot</span></td></tr>
+  <tr><td class="entry"><a class="el" href="classexplorateur.html#ab3b5326853acdf90c798ad2b8e3dfbb8">on_copier</a>()</td><td class="entry"><a class="el" href="classexplorateur.html">explorateur</a></td><td class="entry"><span class="mlabel">private</span><span class="mlabel">slot</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="classexplorateur.html#ab3eaff6725b5b3bfcded294beed49449">on_couper</a>()</td><td class="entry"><a class="el" href="classexplorateur.html">explorateur</a></td><td class="entry"><span class="mlabel">private</span><span class="mlabel">slot</span></td></tr>
+  <tr><td class="entry"><a class="el" href="classexplorateur.html#ab52d921d78737c5dc7aca6461da1c013">on_currentItemChanged</a>(QTreeWidgetItem *item)</td><td class="entry"><a class="el" href="classexplorateur.html">explorateur</a></td><td class="entry"><span class="mlabel">private</span><span class="mlabel">slot</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="classexplorateur.html#a3d2739f24d09d974a0476312ccf25d70">on_customContextMenuRequested</a>(const QPoint &amp;pos)</td><td class="entry"><a class="el" href="classexplorateur.html">explorateur</a></td><td class="entry"><span class="mlabel">private</span><span class="mlabel">slot</span></td></tr>
+  <tr><td class="entry"><a class="el" href="classexplorateur.html#a897a29fae3bb3df4c5129ea820774334">on_dupliquer_projet</a>()</td><td class="entry"><a class="el" href="classexplorateur.html">explorateur</a></td><td class="entry"><span class="mlabel">private</span><span class="mlabel">slot</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="classexplorateur.html#a73040f7ee6da27e4396e15c7df7ace5c">on_enregistrer</a>()</td><td class="entry"><a class="el" href="classexplorateur.html">explorateur</a></td><td class="entry"><span class="mlabel">private</span><span class="mlabel">slot</span></td></tr>
+  <tr><td class="entry"><a class="el" href="classexplorateur.html#aa6321767a6f4a8afaf43f1ea952528df">on_enregistrer_sous</a>()</td><td class="entry"><a class="el" href="classexplorateur.html">explorateur</a></td><td class="entry"><span class="mlabel">private</span><span class="mlabel">slot</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="classexplorateur.html#a1384795a69acb9eaabee919bf04568e1">on_externe_activation_fonction_change</a>(base_fonction *f)</td><td class="entry"><a class="el" href="classexplorateur.html">explorateur</a></td><td class="entry"><span class="mlabel">private</span><span class="mlabel">slot</span></td></tr>
+  <tr><td class="entry"><a class="el" href="classexplorateur.html#a7f6b58995b31a6b09758e6af0c5988a0">on_externe_creation_fonction</a>(base_fonction *f)</td><td class="entry"><a class="el" href="classexplorateur.html">explorateur</a></td><td class="entry"><span class="mlabel">private</span><span class="mlabel">slot</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="classexplorateur.html#ad7dd8e9faf432a50a821f76ff8c13e39">on_externe_destruction_projet</a>(projet *p)</td><td class="entry"><a class="el" href="classexplorateur.html">explorateur</a></td><td class="entry"><span class="mlabel">private</span><span class="mlabel">slot</span></td></tr>
+  <tr><td class="entry"><a class="el" href="classexplorateur.html#a5098ff7776e4773ff3386a9bac9d9307">on_externe_etendu_change</a>(base_fonction *f)</td><td class="entry"><a class="el" href="classexplorateur.html">explorateur</a></td><td class="entry"><span class="mlabel">private</span><span class="mlabel">slot</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="classexplorateur.html#a9f74457a3d08f73b28f5c4eaaf01acc9">on_externe_nom_projet_change</a>(projet *p)</td><td class="entry"><a class="el" href="classexplorateur.html">explorateur</a></td><td class="entry"><span class="mlabel">private</span><span class="mlabel">slot</span></td></tr>
+  <tr><td class="entry"><a class="el" href="classexplorateur.html#a0c03c6386f018765f8392b95b46c19b0">on_externe_objet_deselectionne</a>(objet_selectionnable *obj)</td><td class="entry"><a class="el" href="classexplorateur.html">explorateur</a></td><td class="entry"><span class="mlabel">private</span><span class="mlabel">slot</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="classexplorateur.html#a0fce137b4ac1ce06dcb7bc9f6a561882">on_externe_objet_selectionne</a>(objet_selectionnable *obj)</td><td class="entry"><a class="el" href="classexplorateur.html">explorateur</a></td><td class="entry"><span class="mlabel">private</span><span class="mlabel">slot</span></td></tr>
+  <tr><td class="entry"><a class="el" href="classexplorateur.html#ae43b4a7ba4f0643465b3e2092b674d08">on_externe_supprimer_fonction</a>(base_fonction *f)</td><td class="entry"><a class="el" href="classexplorateur.html">explorateur</a></td><td class="entry"><span class="mlabel">private</span><span class="mlabel">slot</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="classexplorateur.html#afce2e984617f7198974bcd4db9c4175a">on_externe_verrouillage_change</a>(objet_selectionnable *obj)</td><td class="entry"><a class="el" href="classexplorateur.html">explorateur</a></td><td class="entry"><span class="mlabel">private</span><span class="mlabel">slot</span></td></tr>
+  <tr><td class="entry"><a class="el" href="classexplorateur.html#af384b08871362ec45d8554e4fffa1e0d">on_fermer_projet</a>()</td><td class="entry"><a class="el" href="classexplorateur.html">explorateur</a></td><td class="entry"><span class="mlabel">private</span><span class="mlabel">slot</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="classexplorateur.html#ad7fc5084bbb92aa975b35f1206109e97">on_itemClicked</a>(QTreeWidgetItem *item, int column)</td><td class="entry"><a class="el" href="classexplorateur.html">explorateur</a></td><td class="entry"><span class="mlabel">private</span><span class="mlabel">slot</span></td></tr>
+  <tr><td class="entry"><a class="el" href="classexplorateur.html#a3676cbdc434af17e3b809956f4131df8">on_itemCollapsed</a>(QTreeWidgetItem *item)</td><td class="entry"><a class="el" href="classexplorateur.html">explorateur</a></td><td class="entry"><span class="mlabel">private</span><span class="mlabel">slot</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="classexplorateur.html#a1e619080cad519a4d1457ac37d3f1b96">on_itemDoubleClicked</a>(QTreeWidgetItem *item, int column)</td><td class="entry"><a class="el" href="classexplorateur.html">explorateur</a></td><td class="entry"><span class="mlabel">private</span><span class="mlabel">slot</span></td></tr>
+  <tr><td class="entry"><a class="el" href="classexplorateur.html#a09e8b1fb500dc869706d6bec7f1ca87c">on_itemExpanded</a>(QTreeWidgetItem *item)</td><td class="entry"><a class="el" href="classexplorateur.html">explorateur</a></td><td class="entry"><span class="mlabel">private</span><span class="mlabel">slot</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="classexplorateur.html#a33c04d3c07d1d2698bc9b73c1a82c3a1">on_supprimer_fonction</a>()</td><td class="entry"><a class="el" href="classexplorateur.html">explorateur</a></td><td class="entry"><span class="mlabel">private</span><span class="mlabel">slot</span></td></tr>
+  <tr><td class="entry"><a class="el" href="classexplorateur.html#add77f5981057fc14b9bbac37c251a467">on_verrouiller_selectionnable</a>()</td><td class="entry"><a class="el" href="classexplorateur.html">explorateur</a></td><td class="entry"><span class="mlabel">private</span><span class="mlabel">slot</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="classexplorateur.html#ac20e3b48c088e8129cf64a526399382d">set_noeud_context</a>(base_noeud *noeud_context)</td><td class="entry"><a class="el" href="classexplorateur.html">explorateur</a></td><td class="entry"><span class="mlabel">private</span></td></tr>
+  <tr><td class="entry"><a class="el" href="classexplorateur.html#a0f0643ef85c99ff49ba27115f72ef4de">signal_e_demande_ajout_fonction</a>(fonctions_conteneur *conteneur, objet_selectionnable *obj_ref, type_fonction type)</td><td class="entry"><a class="el" href="classexplorateur.html">explorateur</a></td><td class="entry"><span class="mlabel">signal</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="classexplorateur.html#a7ce69879a8c990585e1211a5fdbe3a2d">signal_e_dupliquer_projet</a>(projet *p)</td><td class="entry"><a class="el" href="classexplorateur.html">explorateur</a></td><td class="entry"><span class="mlabel">signal</span></td></tr>
+  <tr><td class="entry"><a class="el" href="classexplorateur.html#a7f7b2a1619b55738f69ce4299b271d0b">signal_e_enregistrer_projet</a>(projet *p)</td><td class="entry"><a class="el" href="classexplorateur.html">explorateur</a></td><td class="entry"><span class="mlabel">signal</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="classexplorateur.html#a9390de439e2f455f05b3c8512b9da8a6">signal_e_enregistrer_projet_sous</a>(projet *p)</td><td class="entry"><a class="el" href="classexplorateur.html">explorateur</a></td><td class="entry"><span class="mlabel">signal</span></td></tr>
+  <tr><td class="entry"><a class="el" href="classexplorateur.html#a66b70e45132ecdb2be0cc29f0a21db0a">signal_e_objet_deselectionne</a>(objet_selectionnable *obj)</td><td class="entry"><a class="el" href="classexplorateur.html">explorateur</a></td><td class="entry"><span class="mlabel">signal</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="classexplorateur.html#a37f25fe19406593af4db4fcc6ba7b39f">signal_e_objet_selectionne</a>(objet_selectionnable *obj)</td><td class="entry"><a class="el" href="classexplorateur.html">explorateur</a></td><td class="entry"><span class="mlabel">signal</span></td></tr>
+  <tr><td class="entry"><a class="el" href="classexplorateur.html#ad173f1256a645ec05e2384bac73018a1">~explorateur</a>()</td><td class="entry"><a class="el" href="classexplorateur.html">explorateur</a></td><td class="entry"></td></tr>
 </table></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Généré le Vendredi 10 Février 2017 15:45:29 pour Emgine par &#160;<a href="http://www.doxygen.org/index.html">
+Généré le Mardi 28 Février 2017 10:28:23 pour Emgine par &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
-</a> 1.8.6
+</a> 1.8.13
 </small></address>
 </body>
 </html>

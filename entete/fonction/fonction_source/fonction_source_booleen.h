@@ -31,6 +31,7 @@ class fonction_source_booleen : public fonction_base_source
         bool est_valide(logs_compilation_widget * vue_logs);
 
     private:
+        /** \brief La valeur de la fonction. */
         bool m_valeur;
 };
 

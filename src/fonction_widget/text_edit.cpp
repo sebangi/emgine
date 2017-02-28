@@ -1,5 +1,5 @@
-/** \file texte_edit.cpp
- * \brief Fichier d'implémentation de la classe texte_edit.
+/** \file text_edit.cpp
+ * \brief Fichier d'implémentation de la classe text_edit.
  * \author Sébastien Angibaud
  */
 

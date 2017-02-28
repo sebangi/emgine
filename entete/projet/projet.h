@@ -56,17 +56,40 @@ class projet : public fonctions_conteneur
         bool est_verrouille() const;
 
     signals:
-        void signal_p_projet_etat_modification_change( projet *, bool);
-        void signal_p_nom_projet_change( projet * );
-        void signal_p_projet_executable_change( projet * );
-        void signal_p_fermeture_projet( projet * );
-        void signal_p_destruction_projet( projet * );
+        /** --------------------------------------------------------------------------------------
+         * \brief Signal informant d'un changement d'état de modification du projet.
+         * \param p Un pointeur sur le projet modifié.
+         * \param etat Le nouvel état de modification du projet.
+         */
+        void signal_p_projet_etat_modification_change( projet * p, bool etat);
+
+        /** --------------------------------------------------------------------------------------
+         * \brief Signal informant d'un changement de nom du projet.
+         * \param p Un pointeur sur le projet considéré.
+         */
+        void signal_p_nom_projet_change( projet * p);
+
+        /** --------------------------------------------------------------------------------------
+         * \brief Signal informant d'un changement d'état d'exécutabilité du projet.
+         * \param p Un pointeur sur le projet considéré.
+         */
+        void signal_p_projet_executable_change( projet * p);
+
+        /** --------------------------------------------------------------------------------------
+         * \brief Signal informant d'une demande de fermeture du projet.
+         * \param p Un pointeur sur le projet considéré.
+         */
+        void signal_p_fermeture_projet( projet * p);
+
+        /** --------------------------------------------------------------------------------------
+         * \brief Signal informant de la destruction du projet.
+         * \param p Un pointeur sur le projet détruit.
+         */
+        void signal_p_destruction_projet( projet * p);
 
     private:
         void charger_nom(QXmlStreamReader & xml);
         void charger_description(QXmlStreamReader & xml);
-        void charger_parametres(QXmlStreamReader & xml, base_fonction* f);
-        void charger_parametre(QXmlStreamReader & xml, base_fonction* f);
 
     private:
         /** \brief Le nom du projet. */

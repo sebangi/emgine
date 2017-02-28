@@ -2,7 +2,7 @@
 #define BASE_ELEMENT_H
 
 /** \file base_element.h
- * \brief Fichier de déclaration de la classe bae_element.
+ * \brief Fichier de déclaration de la classe base_element.
  * \author Sébastien Angibaud
  */
 

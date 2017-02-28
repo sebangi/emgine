@@ -3,16 +3,15 @@
 <head>
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
-<meta name="generator" content="Doxygen 1.8.6"/>
+<meta name="generator" content="Doxygen 1.8.13"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
 <title>Emgine:  Fichier source de entete/explorateur/base_noeud.h</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
-<script type="text/javascript">
-  $(document).ready(function() { searchBox.OnSelectItem(0); });
-</script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
@@ -21,7 +20,7 @@
 <table cellspacing="0" cellpadding="0">
  <tbody>
  <tr style="height: 56px;">
-  <td style="padding-left: 0.5em;">
+  <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">Emgine
    </div>
   </td>
@@ -30,47 +29,25 @@
 </table>
 </div>
 <!-- end header part -->
-<!-- Généré par Doxygen 1.8.6 -->
+<!-- Généré par Doxygen 1.8.13 -->
 <script type="text/javascript">
 var searchBox = new SearchBox("searchBox", "search",false,'Recherche');
 </script>
-  <div id="navrow1" class="tabs">
-    <ul class="tablist">
-      <li><a href="index.html"><span>Page&#160;principale</span></a></li>
-      <li><a href="pages.html"><span>Pages&#160;associées</span></a></li>
-      <li><a href="modules.html"><span>Modules</span></a></li>
-      <li><a href="annotated.html"><span>Classes</span></a></li>
-      <li class="current"><a href="files.html"><span>Fichiers</span></a></li>
-      <li>
-        <div id="MSearchBox" class="MSearchBoxInactive">
-        <span class="left">
-          <img id="MSearchSelect" src="search/mag_sel.png"
-               onmouseover="return searchBox.OnSearchSelectShow()"
-               onmouseout="return searchBox.OnSearchSelectHide()"
-               alt=""/>
-          <input type="text" id="MSearchField" value="Recherche" accesskey="S"
-               onfocus="searchBox.OnSearchFieldFocus(true)" 
-               onblur="searchBox.OnSearchFieldFocus(false)" 
-               onkeyup="searchBox.OnSearchFieldChange(event)"/>
-          </span><span class="right">
-            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
-          </span>
-        </div>
-      </li>
-    </ul>
-  </div>
-  <div id="navrow2" class="tabs2">
-    <ul class="tablist">
-      <li><a href="files.html"><span>Liste&#160;des&#160;fichiers</span></a></li>
-      <li><a href="globals.html"><span>Membres&#160;de&#160;fichier</span></a></li>
-    </ul>
-  </div>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+$(function() {
+  initMenu('',true,false,'search.php','Recherche');
+  $(document).ready(function() { init_search(); });
+});
+</script>
+<div id="main-nav"></div>
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>Tout</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Fichiers</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Fonctions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Définitions de type</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Énumérations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Valeurs énumérées</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Groupes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&#160;</span>Pages</a></div>
+</div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -89,63 +66,27 @@ var searchBox = new SearchBox("searchBox", "search",false,'Recherche');
 <div class="title">base_noeud.h</div>  </div>
 </div><!--header-->
 <div class="contents">
-<a href="base__noeud_8h.html">Aller à la documentation de ce fichier.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#ifndef BASE_NOEUD_H</span></div>
-<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#define BASE_NOEUD_H</span></div>
-<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="preprocessor"></span></div>
-<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#include &lt;QObject&gt;</span></div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="preprocessor">#include &lt;QTreeWidgetItem&gt;</span></div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;</div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="keyword">class </span><a class="code" href="classobjet__selectionnable.html">objet_selectionnable</a>;</div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;</div>
-<div class="line"><a name="l00019"></a><span class="lineno"><a class="line" href="classbase__noeud.html">   19</a></span>&#160;<span class="keyword">class </span><a class="code" href="classbase__noeud.html">base_noeud</a> : <span class="keyword">public</span> QTreeWidgetItem</div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;{</div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;    <span class="keyword">public</span>:</div>
-<div class="line"><a name="l00026"></a><span class="lineno"><a class="line" href="classbase__noeud.html#a5b77eba8eaa6aa32f4e5d820a84ded61">   26</a></span>&#160;        <span class="keyword">enum</span> <a class="code" href="classbase__noeud.html#a5b77eba8eaa6aa32f4e5d820a84ded61">type_noeud</a>{</div>
-<div class="line"><a name="l00028"></a><span class="lineno"><a class="line" href="classbase__noeud.html#a5b77eba8eaa6aa32f4e5d820a84ded61af635270c1a6e6c2c5045b82a07ce3f73">   28</a></span>&#160;            <a class="code" href="classbase__noeud.html#a5b77eba8eaa6aa32f4e5d820a84ded61af635270c1a6e6c2c5045b82a07ce3f73">TYPE_NOEUD_PROJET</a> = QTreeWidgetItem::UserType,</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;</div>
-<div class="line"><a name="l00031"></a><span class="lineno"><a class="line" href="classbase__noeud.html#a5b77eba8eaa6aa32f4e5d820a84ded61a673ffb877215e8974f83bc5b40f13afa">   31</a></span>&#160;            <a class="code" href="classbase__noeud.html#a5b77eba8eaa6aa32f4e5d820a84ded61a673ffb877215e8974f83bc5b40f13afa">TYPE_NOEUD_PARAMETRE</a>,</div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;</div>
-<div class="line"><a name="l00034"></a><span class="lineno"><a class="line" href="classbase__noeud.html#a5b77eba8eaa6aa32f4e5d820a84ded61a6fee1ae6f20f05801ca89c47eb68866d">   34</a></span>&#160;            <a class="code" href="classbase__noeud.html#a5b77eba8eaa6aa32f4e5d820a84ded61a6fee1ae6f20f05801ca89c47eb68866d">TYPE_NOEUD_FONCTION</a></div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;        };</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;</div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    <span class="keyword">public</span>:</div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;        <a class="code" href="classbase__noeud.html#ac1ff8d19de3a701eec02917a8da3c916">base_noeud</a>( <a class="code" href="classobjet__selectionnable.html">objet_selectionnable</a> * obj, <a class="code" href="classbase__noeud.html#a5b77eba8eaa6aa32f4e5d820a84ded61">type_noeud</a> type );</div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;        <a class="code" href="classbase__noeud.html#a15afae5b064afa045a8fea545f33b58e">~base_noeud</a>();</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;        <a class="code" href="classobjet__selectionnable.html">objet_selectionnable</a> *<a class="code" href="classbase__noeud.html#ae78124477ea5148f16c2da42ac766f4c">get_objet</a>() <span class="keyword">const</span>;</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="classbase__noeud.html#a12165cb731bfc08c958ccabad752d092">mettre_a_jour_style</a>(<span class="keywordtype">bool</span> actif);</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;        <span class="keywordtype">bool</span> <a class="code" href="classbase__noeud.html#afb0d91325a08bb6e7e0234036035e574">get_save_expanded</a>() <span class="keyword">const</span>;</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="classbase__noeud.html#a5fe905edcc9ff83f21a5d324c8a21bda">save_expanded</a>();</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;        <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="classbase__noeud.html#ace8a7076d9e5a5d6644d801ac53f2f93">mise_a_jour_icone</a>();</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    <span class="keyword">protected</span>:</div>
-<div class="line"><a name="l00049"></a><span class="lineno"><a class="line" href="classbase__noeud.html#aca3d2aa6d514c236b59f5bbdfede9c48">   49</a></span>&#160;        <a class="code" href="classobjet__selectionnable.html">objet_selectionnable</a> * <a class="code" href="classbase__noeud.html#aca3d2aa6d514c236b59f5bbdfede9c48">m_objet</a>;</div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;</div>
-<div class="line"><a name="l00052"></a><span class="lineno"><a class="line" href="classbase__noeud.html#afe99db4530e71421ab8c669cc6af4ecc">   52</a></span>&#160;        <span class="keywordtype">bool</span> <a class="code" href="classbase__noeud.html#afe99db4530e71421ab8c669cc6af4ecc">m_save_expanded</a>;</div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;};</div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;</div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;<span class="preprocessor">#endif // BASE_NOEUD_H</span></div>
-<div class="ttc" id="classbase__noeud_html_a5b77eba8eaa6aa32f4e5d820a84ded61af635270c1a6e6c2c5045b82a07ce3f73"><div class="ttname"><a href="classbase__noeud.html#a5b77eba8eaa6aa32f4e5d820a84ded61af635270c1a6e6c2c5045b82a07ce3f73">base_noeud::TYPE_NOEUD_PROJET</a></div><div class="ttdoc">Type de noeud pour les projets. </div><div class="ttdef"><b>Definition:</b> <a href="base__noeud_8h_source.html#l00028">base_noeud.h:28</a></div></div>
+<a href="base__noeud_8h.html">Aller à la documentation de ce fichier.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#ifndef BASE_NOEUD_H</span></div><div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor">#define BASE_NOEUD_H</span></div><div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;</div><div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#include &lt;QObject&gt;</span></div><div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="preprocessor">#include &lt;QTreeWidgetItem&gt;</span></div><div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;</div><div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="keyword">class </span><a class="code" href="classobjet__selectionnable.html">objet_selectionnable</a>;</div><div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;</div><div class="line"><a name="l00019"></a><span class="lineno"><a class="line" href="classbase__noeud.html">   19</a></span>&#160;<span class="keyword">class </span><a class="code" href="classbase__noeud.html">base_noeud</a> : <span class="keyword">public</span> QTreeWidgetItem</div><div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;{</div><div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;    <span class="keyword">public</span>:</div><div class="line"><a name="l00026"></a><span class="lineno"><a class="line" href="classbase__noeud.html#a5b77eba8eaa6aa32f4e5d820a84ded61">   26</a></span>&#160;        <span class="keyword">enum</span> <a class="code" href="classbase__noeud.html#a5b77eba8eaa6aa32f4e5d820a84ded61">type_noeud</a>{</div><div class="line"><a name="l00028"></a><span class="lineno"><a class="line" href="classbase__noeud.html#a5b77eba8eaa6aa32f4e5d820a84ded61af635270c1a6e6c2c5045b82a07ce3f73">   28</a></span>&#160;            <a class="code" href="classbase__noeud.html#a5b77eba8eaa6aa32f4e5d820a84ded61af635270c1a6e6c2c5045b82a07ce3f73">TYPE_NOEUD_PROJET</a> = QTreeWidgetItem::UserType,</div><div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;</div><div class="line"><a name="l00031"></a><span class="lineno"><a class="line" href="classbase__noeud.html#a5b77eba8eaa6aa32f4e5d820a84ded61a673ffb877215e8974f83bc5b40f13afa">   31</a></span>&#160;            <a class="code" href="classbase__noeud.html#a5b77eba8eaa6aa32f4e5d820a84ded61a673ffb877215e8974f83bc5b40f13afa">TYPE_NOEUD_PARAMETRE</a>,</div><div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;</div><div class="line"><a name="l00034"></a><span class="lineno"><a class="line" href="classbase__noeud.html#a5b77eba8eaa6aa32f4e5d820a84ded61a6fee1ae6f20f05801ca89c47eb68866d">   34</a></span>&#160;            <a class="code" href="classbase__noeud.html#a5b77eba8eaa6aa32f4e5d820a84ded61a6fee1ae6f20f05801ca89c47eb68866d">TYPE_NOEUD_FONCTION</a></div><div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;        };</div><div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;</div><div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    <span class="keyword">public</span>:</div><div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;        <a class="code" href="classbase__noeud.html#ac1ff8d19de3a701eec02917a8da3c916">base_noeud</a>( <a class="code" href="classobjet__selectionnable.html">objet_selectionnable</a> * obj, <a class="code" href="classbase__noeud.html#a5b77eba8eaa6aa32f4e5d820a84ded61">type_noeud</a> type );</div><div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;        <a class="code" href="classbase__noeud.html#a15afae5b064afa045a8fea545f33b58e">~base_noeud</a>();</div><div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;</div><div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;        <a class="code" href="classobjet__selectionnable.html">objet_selectionnable</a> *<a class="code" href="classbase__noeud.html#a762c999077b247ebf1d8c6dd83313ffd">get_objet</a>() <span class="keyword">const</span>;</div><div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="classbase__noeud.html#a12165cb731bfc08c958ccabad752d092">mettre_a_jour_style</a>(<span class="keywordtype">bool</span> actif);</div><div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;        <span class="keywordtype">bool</span> <a class="code" href="classbase__noeud.html#a32dabd19461a1e4db86b6e1c79bf9cbc">get_save_expanded</a>() <span class="keyword">const</span>;</div><div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="classbase__noeud.html#a5fe905edcc9ff83f21a5d324c8a21bda">save_expanded</a>();</div><div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;        <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="classbase__noeud.html#ace8a7076d9e5a5d6644d801ac53f2f93">mise_a_jour_icone</a>();</div><div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;</div><div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    <span class="keyword">protected</span>:</div><div class="line"><a name="l00049"></a><span class="lineno"><a class="line" href="classbase__noeud.html#aca3d2aa6d514c236b59f5bbdfede9c48">   49</a></span>&#160;        <a class="code" href="classobjet__selectionnable.html">objet_selectionnable</a> * <a class="code" href="classbase__noeud.html#aca3d2aa6d514c236b59f5bbdfede9c48">m_objet</a>;</div><div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;</div><div class="line"><a name="l00052"></a><span class="lineno"><a class="line" href="classbase__noeud.html#afe99db4530e71421ab8c669cc6af4ecc">   52</a></span>&#160;        <span class="keywordtype">bool</span> <a class="code" href="classbase__noeud.html#afe99db4530e71421ab8c669cc6af4ecc">m_save_expanded</a>;</div><div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;};</div><div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;</div><div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;<span class="preprocessor">#endif // BASE_NOEUD_H</span></div><div class="ttc" id="classbase__noeud_html_a5b77eba8eaa6aa32f4e5d820a84ded61af635270c1a6e6c2c5045b82a07ce3f73"><div class="ttname"><a href="classbase__noeud.html#a5b77eba8eaa6aa32f4e5d820a84ded61af635270c1a6e6c2c5045b82a07ce3f73">base_noeud::TYPE_NOEUD_PROJET</a></div><div class="ttdoc">Type de noeud pour les projets. </div><div class="ttdef"><b>Definition:</b> <a href="base__noeud_8h_source.html#l00028">base_noeud.h:28</a></div></div>
 <div class="ttc" id="classbase__noeud_html_a5b77eba8eaa6aa32f4e5d820a84ded61a673ffb877215e8974f83bc5b40f13afa"><div class="ttname"><a href="classbase__noeud.html#a5b77eba8eaa6aa32f4e5d820a84ded61a673ffb877215e8974f83bc5b40f13afa">base_noeud::TYPE_NOEUD_PARAMETRE</a></div><div class="ttdoc">Type de noeud pour les paramètres. </div><div class="ttdef"><b>Definition:</b> <a href="base__noeud_8h_source.html#l00031">base_noeud.h:31</a></div></div>
 <div class="ttc" id="classbase__noeud_html_ac1ff8d19de3a701eec02917a8da3c916"><div class="ttname"><a href="classbase__noeud.html#ac1ff8d19de3a701eec02917a8da3c916">base_noeud::base_noeud</a></div><div class="ttdeci">base_noeud(objet_selectionnable *obj, type_noeud type)</div><div class="ttdoc">Constructeur de la classe base_noeud. </div><div class="ttdef"><b>Definition:</b> <a href="base__noeud_8cpp_source.html#l00018">base_noeud.cpp:18</a></div></div>
-<div class="ttc" id="classbase__noeud_html"><div class="ttname"><a href="classbase__noeud.html">base_noeud</a></div><div class="ttdoc">Classe décrivant un noeud quelconque de l&#39;explorateur. </div><div class="ttdef"><b>Definition:</b> <a href="base__noeud_8h_source.html#l00019">base_noeud.h:19</a></div></div>
-<div class="ttc" id="classbase__noeud_html_a5b77eba8eaa6aa32f4e5d820a84ded61"><div class="ttname"><a href="classbase__noeud.html#a5b77eba8eaa6aa32f4e5d820a84ded61">base_noeud::type_noeud</a></div><div class="ttdeci">type_noeud</div><div class="ttdoc">Enumération représentant les différents types de noeud de l&#39;explorateur. </div><div class="ttdef"><b>Definition:</b> <a href="base__noeud_8h_source.html#l00026">base_noeud.h:26</a></div></div>
-<div class="ttc" id="classobjet__selectionnable_html"><div class="ttname"><a href="classobjet__selectionnable.html">objet_selectionnable</a></div><div class="ttdoc">Classe décrivant un objet sélectionnable dans l&#39;explorateur. </div><div class="ttdef"><b>Definition:</b> <a href="objet__selectionnable_8h_source.html#l00021">objet_selectionnable.h:21</a></div></div>
+<div class="ttc" id="classbase__noeud_html_a762c999077b247ebf1d8c6dd83313ffd"><div class="ttname"><a href="classbase__noeud.html#a762c999077b247ebf1d8c6dd83313ffd">base_noeud::get_objet</a></div><div class="ttdeci">objet_selectionnable * get_objet() const</div><div class="ttdoc">Retourne l&amp;#39;objet sélectionnable associé au noeud. </div><div class="ttdef"><b>Definition:</b> <a href="base__noeud_8cpp_source.html#l00035">base_noeud.cpp:35</a></div></div>
+<div class="ttc" id="classbase__noeud_html"><div class="ttname"><a href="classbase__noeud.html">base_noeud</a></div><div class="ttdoc">Classe décrivant un noeud quelconque de l&amp;#39;explorateur. </div><div class="ttdef"><b>Definition:</b> <a href="base__noeud_8h_source.html#l00019">base_noeud.h:19</a></div></div>
+<div class="ttc" id="classbase__noeud_html_a5b77eba8eaa6aa32f4e5d820a84ded61"><div class="ttname"><a href="classbase__noeud.html#a5b77eba8eaa6aa32f4e5d820a84ded61">base_noeud::type_noeud</a></div><div class="ttdeci">type_noeud</div><div class="ttdoc">Enumération représentant les différents types de noeud de l&amp;#39;explorateur. </div><div class="ttdef"><b>Definition:</b> <a href="base__noeud_8h_source.html#l00026">base_noeud.h:26</a></div></div>
+<div class="ttc" id="classobjet__selectionnable_html"><div class="ttname"><a href="classobjet__selectionnable.html">objet_selectionnable</a></div><div class="ttdoc">Classe décrivant un objet sélectionnable dans l&amp;#39;explorateur. </div><div class="ttdef"><b>Definition:</b> <a href="objet__selectionnable_8h_source.html#l00021">objet_selectionnable.h:21</a></div></div>
 <div class="ttc" id="classbase__noeud_html_a5b77eba8eaa6aa32f4e5d820a84ded61a6fee1ae6f20f05801ca89c47eb68866d"><div class="ttname"><a href="classbase__noeud.html#a5b77eba8eaa6aa32f4e5d820a84ded61a6fee1ae6f20f05801ca89c47eb68866d">base_noeud::TYPE_NOEUD_FONCTION</a></div><div class="ttdoc">Type de noeud pour les fonctions. </div><div class="ttdef"><b>Definition:</b> <a href="base__noeud_8h_source.html#l00034">base_noeud.h:34</a></div></div>
-<div class="ttc" id="classbase__noeud_html_ace8a7076d9e5a5d6644d801ac53f2f93"><div class="ttname"><a href="classbase__noeud.html#ace8a7076d9e5a5d6644d801ac53f2f93">base_noeud::mise_a_jour_icone</a></div><div class="ttdeci">virtual void mise_a_jour_icone()</div><div class="ttdoc">Fonction virtuelle mettant à jour l&#39;icone. </div><div class="ttdef"><b>Definition:</b> <a href="base__noeud_8cpp_source.html#l00071">base_noeud.cpp:71</a></div></div>
-<div class="ttc" id="classbase__noeud_html_a5fe905edcc9ff83f21a5d324c8a21bda"><div class="ttname"><a href="classbase__noeud.html#a5fe905edcc9ff83f21a5d324c8a21bda">base_noeud::save_expanded</a></div><div class="ttdeci">void save_expanded()</div><div class="ttdoc">Sauvegarde l&#39;état d&#39;expansion. </div><div class="ttdef"><b>Definition:</b> <a href="base__noeud_8cpp_source.html#l00063">base_noeud.cpp:63</a></div></div>
-<div class="ttc" id="classbase__noeud_html_ae78124477ea5148f16c2da42ac766f4c"><div class="ttname"><a href="classbase__noeud.html#ae78124477ea5148f16c2da42ac766f4c">base_noeud::get_objet</a></div><div class="ttdeci">objet_selectionnable * get_objet() const </div><div class="ttdoc">Retourne l&#39;objet sélectionnable associé au noeud. </div><div class="ttdef"><b>Definition:</b> <a href="base__noeud_8cpp_source.html#l00035">base_noeud.cpp:35</a></div></div>
+<div class="ttc" id="classbase__noeud_html_a32dabd19461a1e4db86b6e1c79bf9cbc"><div class="ttname"><a href="classbase__noeud.html#a32dabd19461a1e4db86b6e1c79bf9cbc">base_noeud::get_save_expanded</a></div><div class="ttdeci">bool get_save_expanded() const</div><div class="ttdoc">Retourne l&amp;#39;état d&amp;#39;expansion sauvegardé avant le compactage automatique. </div><div class="ttdef"><b>Definition:</b> <a href="base__noeud_8cpp_source.html#l00055">base_noeud.cpp:55</a></div></div>
+<div class="ttc" id="classbase__noeud_html_ace8a7076d9e5a5d6644d801ac53f2f93"><div class="ttname"><a href="classbase__noeud.html#ace8a7076d9e5a5d6644d801ac53f2f93">base_noeud::mise_a_jour_icone</a></div><div class="ttdeci">virtual void mise_a_jour_icone()</div><div class="ttdoc">Fonction virtuelle mettant à jour l&amp;#39;icone. </div><div class="ttdef"><b>Definition:</b> <a href="base__noeud_8cpp_source.html#l00071">base_noeud.cpp:71</a></div></div>
+<div class="ttc" id="classbase__noeud_html_a5fe905edcc9ff83f21a5d324c8a21bda"><div class="ttname"><a href="classbase__noeud.html#a5fe905edcc9ff83f21a5d324c8a21bda">base_noeud::save_expanded</a></div><div class="ttdeci">void save_expanded()</div><div class="ttdoc">Sauvegarde l&amp;#39;état d&amp;#39;expansion. </div><div class="ttdef"><b>Definition:</b> <a href="base__noeud_8cpp_source.html#l00063">base_noeud.cpp:63</a></div></div>
 <div class="ttc" id="classbase__noeud_html_a12165cb731bfc08c958ccabad752d092"><div class="ttname"><a href="classbase__noeud.html#a12165cb731bfc08c958ccabad752d092">base_noeud::mettre_a_jour_style</a></div><div class="ttdeci">void mettre_a_jour_style(bool actif)</div><div class="ttdoc">Met à jour le style du noeud. </div><div class="ttdef"><b>Definition:</b> <a href="base__noeud_8cpp_source.html#l00044">base_noeud.cpp:44</a></div></div>
 <div class="ttc" id="classbase__noeud_html_a15afae5b064afa045a8fea545f33b58e"><div class="ttname"><a href="classbase__noeud.html#a15afae5b064afa045a8fea545f33b58e">base_noeud::~base_noeud</a></div><div class="ttdeci">~base_noeud()</div><div class="ttdoc">Destructeur de la classe base_noeud. </div><div class="ttdef"><b>Definition:</b> <a href="base__noeud_8cpp_source.html#l00027">base_noeud.cpp:27</a></div></div>
-<div class="ttc" id="classbase__noeud_html_aca3d2aa6d514c236b59f5bbdfede9c48"><div class="ttname"><a href="classbase__noeud.html#aca3d2aa6d514c236b59f5bbdfede9c48">base_noeud::m_objet</a></div><div class="ttdeci">objet_selectionnable * m_objet</div><div class="ttdoc">L&#39;objet sélectionnable associé au noeud. </div><div class="ttdef"><b>Definition:</b> <a href="base__noeud_8h_source.html#l00049">base_noeud.h:49</a></div></div>
-<div class="ttc" id="classbase__noeud_html_afb0d91325a08bb6e7e0234036035e574"><div class="ttname"><a href="classbase__noeud.html#afb0d91325a08bb6e7e0234036035e574">base_noeud::get_save_expanded</a></div><div class="ttdeci">bool get_save_expanded() const </div><div class="ttdoc">Retourne l&#39;état d&#39;expansion sauvegardé avant le compactage automatique. </div><div class="ttdef"><b>Definition:</b> <a href="base__noeud_8cpp_source.html#l00055">base_noeud.cpp:55</a></div></div>
-<div class="ttc" id="classbase__noeud_html_afe99db4530e71421ab8c669cc6af4ecc"><div class="ttname"><a href="classbase__noeud.html#afe99db4530e71421ab8c669cc6af4ecc">base_noeud::m_save_expanded</a></div><div class="ttdeci">bool m_save_expanded</div><div class="ttdoc">Sauvegarde de l&#39;état d&#39;expansion du noeud avant compactage automatique. </div><div class="ttdef"><b>Definition:</b> <a href="base__noeud_8h_source.html#l00052">base_noeud.h:52</a></div></div>
+<div class="ttc" id="classbase__noeud_html_aca3d2aa6d514c236b59f5bbdfede9c48"><div class="ttname"><a href="classbase__noeud.html#aca3d2aa6d514c236b59f5bbdfede9c48">base_noeud::m_objet</a></div><div class="ttdeci">objet_selectionnable * m_objet</div><div class="ttdoc">L&amp;#39;objet sélectionnable associé au noeud. </div><div class="ttdef"><b>Definition:</b> <a href="base__noeud_8h_source.html#l00049">base_noeud.h:49</a></div></div>
+<div class="ttc" id="classbase__noeud_html_afe99db4530e71421ab8c669cc6af4ecc"><div class="ttname"><a href="classbase__noeud.html#afe99db4530e71421ab8c669cc6af4ecc">base_noeud::m_save_expanded</a></div><div class="ttdeci">bool m_save_expanded</div><div class="ttdoc">Sauvegarde de l&amp;#39;état d&amp;#39;expansion du noeud avant compactage automatique. </div><div class="ttdef"><b>Definition:</b> <a href="base__noeud_8h_source.html#l00052">base_noeud.h:52</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Généré le Vendredi 10 Février 2017 15:45:28 pour Emgine par &#160;<a href="http://www.doxygen.org/index.html">
+Généré le Mardi 28 Février 2017 10:28:08 pour Emgine par &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
-</a> 1.8.6
+</a> 1.8.13
 </small></address>
 </body>
 </html>

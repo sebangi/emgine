@@ -47,6 +47,7 @@ public:
         centralLayout = new QVBoxLayout();
         centralLayout->setSpacing(0);
         centralLayout->setObjectName(QStringLiteral("centralLayout"));
+        centralLayout->setContentsMargins(0, 0, 0, 0);
 
         verticalLayout_2->addLayout(centralLayout);
 

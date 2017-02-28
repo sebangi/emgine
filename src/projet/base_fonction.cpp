@@ -291,7 +291,7 @@ int base_fonction::get_max_niveau_visibilite() const
 
 /** --------------------------------------------------------------------------------------
  * \brief Initialise le niveau de visibilité de la fonction.
- * \param niveau_visibilité Le nouveau niveau de visibilité de la fonction.
+ * \param niveau_visibilite Le nouveau niveau de visibilité de la fonction.
  */
 void base_fonction::set_niveau_visibilite(int niveau_visibilite)
 {

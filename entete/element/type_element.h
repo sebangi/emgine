@@ -1,7 +1,12 @@
 #ifndef TYPE_ELEMENT_H
 #define TYPE_ELEMENT_H
 
-/** \enum type_fonction
+/** \file type_element.h
+ * \brief Fichier de déclaration du type type_element.
+ * \author Sébastien Angibaud
+ */
+
+/** \enum type_element
  *  \author Sébastien Angibaud
  *  \brief Enumération représentant les différents types d'élément.
  */

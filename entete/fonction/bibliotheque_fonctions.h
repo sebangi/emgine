@@ -2,7 +2,7 @@
 #define BIBLIOTHEQUE_FONCTION_H
 
 /** \file bibliotheque_fonctions.h
- * \brief Fichier de déclaration de la classe bibliotheque_fonction.
+ * \brief Fichier de déclaration de la classe bibliotheque_fonctions.
  * \author Sébastien Angibaud
  */
 
@@ -16,7 +16,7 @@
 class base_fonction;
 
 /**
- * \class bibliotheque_fonction
+ * \class bibliotheque_fonctions
  * \brief Classe répertoriant l'ensemble des fonctions disponibles.
  * \author Sébastien Angibaud
  */

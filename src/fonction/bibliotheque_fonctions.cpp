@@ -1,5 +1,5 @@
 /** \file bibliotheque_fonctions.cpp
- * \brief Fichier d'implémentation de la classe bibliotheque_fonction.
+ * \brief Fichier d'implémentation de la classe bibliotheque_fonctions.
  * \author Sébastien Angibaud
  */
 

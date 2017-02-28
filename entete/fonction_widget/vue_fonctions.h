@@ -48,6 +48,10 @@ class vue_fonctions : public QTableWidget
         void adjust_size_vue_fonction();
 
     signals:
+        /** --------------------------------------------------------------------------------------
+         * \brief Signal informant d'une demande de création de projet avec un texte source donné.
+         * \param t La référence du texte source.
+         */
         void signal_vf_demande_creation_projet(const texte & t);
 
     private slots:

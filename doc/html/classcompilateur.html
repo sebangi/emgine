@@ -3,16 +3,15 @@
 <head>
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
-<meta name="generator" content="Doxygen 1.8.6"/>
+<meta name="generator" content="Doxygen 1.8.13"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
 <title>Emgine: Référence de la classe compilateur</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
-<script type="text/javascript">
-  $(document).ready(function() { searchBox.OnSelectItem(0); });
-</script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
@@ -21,7 +20,7 @@
 <table cellspacing="0" cellpadding="0">
  <tbody>
  <tr style="height: 56px;">
-  <td style="padding-left: 0.5em;">
+  <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">Emgine
    </div>
   </td>
@@ -30,49 +29,25 @@
 </table>
 </div>
 <!-- end header part -->
-<!-- Généré par Doxygen 1.8.6 -->
+<!-- Généré par Doxygen 1.8.13 -->
 <script type="text/javascript">
 var searchBox = new SearchBox("searchBox", "search",false,'Recherche');
 </script>
-  <div id="navrow1" class="tabs">
-    <ul class="tablist">
-      <li><a href="index.html"><span>Page&#160;principale</span></a></li>
-      <li><a href="pages.html"><span>Pages&#160;associées</span></a></li>
-      <li><a href="modules.html"><span>Modules</span></a></li>
-      <li class="current"><a href="annotated.html"><span>Classes</span></a></li>
-      <li><a href="files.html"><span>Fichiers</span></a></li>
-      <li>
-        <div id="MSearchBox" class="MSearchBoxInactive">
-        <span class="left">
-          <img id="MSearchSelect" src="search/mag_sel.png"
-               onmouseover="return searchBox.OnSearchSelectShow()"
-               onmouseout="return searchBox.OnSearchSelectHide()"
-               alt=""/>
-          <input type="text" id="MSearchField" value="Recherche" accesskey="S"
-               onfocus="searchBox.OnSearchFieldFocus(true)" 
-               onblur="searchBox.OnSearchFieldFocus(false)" 
-               onkeyup="searchBox.OnSearchFieldChange(event)"/>
-          </span><span class="right">
-            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
-          </span>
-        </div>
-      </li>
-    </ul>
-  </div>
-  <div id="navrow2" class="tabs2">
-    <ul class="tablist">
-      <li><a href="annotated.html"><span>Liste&#160;des&#160;classes</span></a></li>
-      <li><a href="classes.html"><span>Index&#160;des&#160;classes</span></a></li>
-      <li><a href="inherits.html"><span>Hiérarchie&#160;des&#160;classes</span></a></li>
-      <li><a href="functions.html"><span>Membres&#160;de&#160;classe</span></a></li>
-    </ul>
-  </div>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+$(function() {
+  initMenu('',true,false,'search.php','Recherche');
+  $(document).ready(function() { init_search(); });
+});
+</script>
+<div id="main-nav"></div>
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>Tout</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Fichiers</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Fonctions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Définitions de type</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Énumérations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Valeurs énumérées</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Groupes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&#160;</span>Pages</a></div>
+</div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -102,77 +77,81 @@ Graphe de collaboration de compilateur:</div>
 <div class="dyncontent">
 <div class="center"><img src="classcompilateur__coll__graph.png" border="0" usemap="#compilateur_coll__map" alt="Collaboration graph"/></div>
 <map name="compilateur_coll__map" id="compilateur_coll__map">
-<area shape="rect" id="node2" href="classconfiguration.html" title="Classe décrivant un configuration lors d&#39;une exécution. Pour un texte donné, une configuration corres..." alt="" coords="40,99,136,125"/><area shape="rect" id="node4" href="classlogs__compilation__widget.html" title="Classe décrivant le widget affichant l&#39;ensemble des logs. " alt="" coords="161,99,324,125"/></map>
+<area shape="rect" id="node2" href="classconfiguration.html" title="Classe décrivant un configuration lors d&#39;une exécution. Pour un texte donné, une configuration corres..." alt="" coords="40,99,136,125"/>
+<area shape="rect" id="node4" href="classlogs__compilation__widget.html" title="Classe décrivant le widget affichant l&#39;ensemble des logs. " alt="" coords="161,99,324,125"/>
+</map>
 <center><span class="legend">[<a href="graph_legend.html">légende</a>]</span></center></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Fonctions membres publiques</h2></td></tr>
-<tr class="memitem:ab5bb51e36c11cc13dc09c0db790ddeaa"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcompilateur.html#ab5bb51e36c11cc13dc09c0db790ddeaa">compilateur</a> (<a class="el" href="classlogs__compilation__widget.html">logs_compilation_widget</a> *<a class="el" href="classcompilateur.html#aa900bb70cdaffb36d7c4fb34ddad2a05">get_vue_logs</a>)</td></tr>
-<tr class="memdesc:ab5bb51e36c11cc13dc09c0db790ddeaa"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructeur de la classe compilateur.  <a href="#ab5bb51e36c11cc13dc09c0db790ddeaa">Plus de détails...</a><br/></td></tr>
+<tr class="memitem:ab5bb51e36c11cc13dc09c0db790ddeaa"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcompilateur.html#ab5bb51e36c11cc13dc09c0db790ddeaa">compilateur</a> (<a class="el" href="classlogs__compilation__widget.html">logs_compilation_widget</a> *<a class="el" href="classcompilateur.html#a082b5dae21b0b539a159e180164a5f7c">get_vue_logs</a>)</td></tr>
+<tr class="memdesc:ab5bb51e36c11cc13dc09c0db790ddeaa"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructeur de la classe compilateur.  <a href="#ab5bb51e36c11cc13dc09c0db790ddeaa">Plus de détails...</a><br /></td></tr>
 <tr class="separator:ab5bb51e36c11cc13dc09c0db790ddeaa"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a847c4296256de3cae0436b68bf9e6931"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcompilateur.html#a847c4296256de3cae0436b68bf9e6931">compiler</a> (<a class="el" href="classprojet.html">projet</a> *p)</td></tr>
-<tr class="memdesc:a847c4296256de3cae0436b68bf9e6931"><td class="mdescLeft">&#160;</td><td class="mdescRight">Compile un projet donné.  <a href="#a847c4296256de3cae0436b68bf9e6931">Plus de détails...</a><br/></td></tr>
+<tr class="memdesc:a847c4296256de3cae0436b68bf9e6931"><td class="mdescLeft">&#160;</td><td class="mdescRight">Compile un projet donné.  <a href="#a847c4296256de3cae0436b68bf9e6931">Plus de détails...</a><br /></td></tr>
 <tr class="separator:a847c4296256de3cae0436b68bf9e6931"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa900bb70cdaffb36d7c4fb34ddad2a05"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classlogs__compilation__widget.html">logs_compilation_widget</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcompilateur.html#aa900bb70cdaffb36d7c4fb34ddad2a05">get_vue_logs</a> () const </td></tr>
-<tr class="memdesc:aa900bb70cdaffb36d7c4fb34ddad2a05"><td class="mdescLeft">&#160;</td><td class="mdescRight">Accesseur du widget de la vue des logs.  <a href="#aa900bb70cdaffb36d7c4fb34ddad2a05">Plus de détails...</a><br/></td></tr>
-<tr class="separator:aa900bb70cdaffb36d7c4fb34ddad2a05"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a082b5dae21b0b539a159e180164a5f7c"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classlogs__compilation__widget.html">logs_compilation_widget</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcompilateur.html#a082b5dae21b0b539a159e180164a5f7c">get_vue_logs</a> () const</td></tr>
+<tr class="memdesc:a082b5dae21b0b539a159e180164a5f7c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Accesseur du widget de la vue des logs.  <a href="#a082b5dae21b0b539a159e180164a5f7c">Plus de détails...</a><br /></td></tr>
+<tr class="separator:a082b5dae21b0b539a159e180164a5f7c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:accedd70b3a5d0cec2ce83fee43a7f160"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcompilateur.html#accedd70b3a5d0cec2ce83fee43a7f160">ajouter_configuration</a> (<a class="el" href="classbase__fonction.html">base_fonction</a> *f, <a class="el" href="define__parametre_8h.html#a621f68a7400bb79e0ffd7db8c7eca85c">type_id_parametre</a> param, const QString &amp;config)</td></tr>
-<tr class="memdesc:accedd70b3a5d0cec2ce83fee43a7f160"><td class="mdescLeft">&#160;</td><td class="mdescRight">Ajoute une configuration à un couple (fonction, parametre).  <a href="#accedd70b3a5d0cec2ce83fee43a7f160">Plus de détails...</a><br/></td></tr>
+<tr class="memdesc:accedd70b3a5d0cec2ce83fee43a7f160"><td class="mdescLeft">&#160;</td><td class="mdescRight">Ajoute une configuration à un couple (fonction, parametre).  <a href="#accedd70b3a5d0cec2ce83fee43a7f160">Plus de détails...</a><br /></td></tr>
 <tr class="separator:accedd70b3a5d0cec2ce83fee43a7f160"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3a044cc8ed2205d842ed8adadf090179"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcompilateur.html#a3a044cc8ed2205d842ed8adadf090179">retirer_configuration</a> (<a class="el" href="classbase__fonction.html">base_fonction</a> *f, <a class="el" href="define__parametre_8h.html#a621f68a7400bb79e0ffd7db8c7eca85c">type_id_parametre</a> param)</td></tr>
-<tr class="memdesc:a3a044cc8ed2205d842ed8adadf090179"><td class="mdescLeft">&#160;</td><td class="mdescRight">Efface la configuration d'un couple (fonction/parametre).  <a href="#a3a044cc8ed2205d842ed8adadf090179">Plus de détails...</a><br/></td></tr>
+<tr class="memdesc:a3a044cc8ed2205d842ed8adadf090179"><td class="mdescLeft">&#160;</td><td class="mdescRight">Efface la configuration d'un couple (fonction/parametre).  <a href="#a3a044cc8ed2205d842ed8adadf090179">Plus de détails...</a><br /></td></tr>
 <tr class="separator:a3a044cc8ed2205d842ed8adadf090179"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6a402d03fe3beebcb19695dc718a6f10"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classconfiguration.html">configuration</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcompilateur.html#a6a402d03fe3beebcb19695dc718a6f10">get_configuration</a> () const </td></tr>
-<tr class="memdesc:a6a402d03fe3beebcb19695dc718a6f10"><td class="mdescLeft">&#160;</td><td class="mdescRight">Accesseur de la configuration courante.  <a href="#a6a402d03fe3beebcb19695dc718a6f10">Plus de détails...</a><br/></td></tr>
-<tr class="separator:a6a402d03fe3beebcb19695dc718a6f10"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1b90b920c98f81b88171bda33967ffac"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classconfiguration.html">configuration</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcompilateur.html#a1b90b920c98f81b88171bda33967ffac">get_configuration</a> () const</td></tr>
+<tr class="memdesc:a1b90b920c98f81b88171bda33967ffac"><td class="mdescLeft">&#160;</td><td class="mdescRight">Accesseur de la configuration courante.  <a href="#a1b90b920c98f81b88171bda33967ffac">Plus de détails...</a><br /></td></tr>
+<tr class="separator:a1b90b920c98f81b88171bda33967ffac"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-methods"></a>
 Fonctions membres privées</h2></td></tr>
 <tr class="memitem:aa4a72cef1b007de987e490ff6cda53e9"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcompilateur.html#aa4a72cef1b007de987e490ff6cda53e9">est_valide</a> (<a class="el" href="classprojet.html">projet</a> *p)</td></tr>
-<tr class="memdesc:aa4a72cef1b007de987e490ff6cda53e9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Teste si un projet donné est valide.  <a href="#aa4a72cef1b007de987e490ff6cda53e9">Plus de détails...</a><br/></td></tr>
+<tr class="memdesc:aa4a72cef1b007de987e490ff6cda53e9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Teste si un projet donné est valide.  <a href="#aa4a72cef1b007de987e490ff6cda53e9">Plus de détails...</a><br /></td></tr>
 <tr class="separator:aa4a72cef1b007de987e490ff6cda53e9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aac14b2b0238183e11048e8ad659359ba"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcompilateur.html#aac14b2b0238183e11048e8ad659359ba">reset</a> ()</td></tr>
-<tr class="memdesc:aac14b2b0238183e11048e8ad659359ba"><td class="mdescLeft">&#160;</td><td class="mdescRight">Efface la compilation en cours.  <a href="#aac14b2b0238183e11048e8ad659359ba">Plus de détails...</a><br/></td></tr>
+<tr class="memdesc:aac14b2b0238183e11048e8ad659359ba"><td class="mdescLeft">&#160;</td><td class="mdescRight">Efface la compilation en cours.  <a href="#aac14b2b0238183e11048e8ad659359ba">Plus de détails...</a><br /></td></tr>
 <tr class="separator:aac14b2b0238183e11048e8ad659359ba"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ace8a2bf4b88d33bd17e8c850b0afe8f3"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcompilateur.html#ace8a2bf4b88d33bd17e8c850b0afe8f3">executer_projet</a> (<a class="el" href="classprojet.html">projet</a> *p)</td></tr>
-<tr class="memdesc:ace8a2bf4b88d33bd17e8c850b0afe8f3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Exécute un projet donné.  <a href="#ace8a2bf4b88d33bd17e8c850b0afe8f3">Plus de détails...</a><br/></td></tr>
+<tr class="memdesc:ace8a2bf4b88d33bd17e8c850b0afe8f3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Exécute un projet donné.  <a href="#ace8a2bf4b88d33bd17e8c850b0afe8f3">Plus de détails...</a><br /></td></tr>
 <tr class="separator:ace8a2bf4b88d33bd17e8c850b0afe8f3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aab9479c05c28d4b15dadb6926d426499"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcompilateur.html#aab9479c05c28d4b15dadb6926d426499">executer_fonction</a> (<a class="el" href="classbase__fonction.html">base_fonction</a> *f)</td></tr>
-<tr class="memdesc:aab9479c05c28d4b15dadb6926d426499"><td class="mdescLeft">&#160;</td><td class="mdescRight">Exécute une fonction donnée.  <a href="#aab9479c05c28d4b15dadb6926d426499">Plus de détails...</a><br/></td></tr>
+<tr class="memdesc:aab9479c05c28d4b15dadb6926d426499"><td class="mdescLeft">&#160;</td><td class="mdescRight">Exécute une fonction donnée.  <a href="#aab9479c05c28d4b15dadb6926d426499">Plus de détails...</a><br /></td></tr>
 <tr class="separator:aab9479c05c28d4b15dadb6926d426499"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a20fb0cd0d943e986ac0e44d8d1aa961b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcompilateur.html#a20fb0cd0d943e986ac0e44d8d1aa961b">executer_parametre</a> (<a class="el" href="classbase__parametre.html">base_parametre</a> *p)</td></tr>
-<tr class="memdesc:a20fb0cd0d943e986ac0e44d8d1aa961b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Exécute un paramètre donné.  <a href="#a20fb0cd0d943e986ac0e44d8d1aa961b">Plus de détails...</a><br/></td></tr>
+<tr class="memdesc:a20fb0cd0d943e986ac0e44d8d1aa961b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Exécute un paramètre donné.  <a href="#a20fb0cd0d943e986ac0e44d8d1aa961b">Plus de détails...</a><br /></td></tr>
 <tr class="separator:a20fb0cd0d943e986ac0e44d8d1aa961b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:acf132e6710b940f3dbb06dbc1b91fb60"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcompilateur.html#acf132e6710b940f3dbb06dbc1b91fb60">afficher_resultat</a> ()</td></tr>
-<tr class="memdesc:acf132e6710b940f3dbb06dbc1b91fb60"><td class="mdescLeft">&#160;</td><td class="mdescRight">Affiche le résultat.  <a href="#acf132e6710b940f3dbb06dbc1b91fb60">Plus de détails...</a><br/></td></tr>
+<tr class="memdesc:acf132e6710b940f3dbb06dbc1b91fb60"><td class="mdescLeft">&#160;</td><td class="mdescRight">Affiche le résultat.  <a href="#acf132e6710b940f3dbb06dbc1b91fb60">Plus de détails...</a><br /></td></tr>
 <tr class="separator:acf132e6710b940f3dbb06dbc1b91fb60"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
 Attributs privés</h2></td></tr>
-<tr class="memitem:a90bed5f56102e4498390d0db4030a652"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a90bed5f56102e4498390d0db4030a652"></a>
+<tr class="memitem:a90bed5f56102e4498390d0db4030a652"><td class="memItemLeft" align="right" valign="top"><a id="a90bed5f56102e4498390d0db4030a652"></a>
 bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcompilateur.html#a90bed5f56102e4498390d0db4030a652">m_en_cours</a></td></tr>
-<tr class="memdesc:a90bed5f56102e4498390d0db4030a652"><td class="mdescLeft">&#160;</td><td class="mdescRight">Booléen indiquant si la compilation est en cours. <br/></td></tr>
+<tr class="memdesc:a90bed5f56102e4498390d0db4030a652"><td class="mdescLeft">&#160;</td><td class="mdescRight">Booléen indiquant si la compilation est en cours. <br /></td></tr>
 <tr class="separator:a90bed5f56102e4498390d0db4030a652"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a35f8af133b9679a5c3a2acb2cee49949"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a35f8af133b9679a5c3a2acb2cee49949"></a>
+<tr class="memitem:a35f8af133b9679a5c3a2acb2cee49949"><td class="memItemLeft" align="right" valign="top"><a id="a35f8af133b9679a5c3a2acb2cee49949"></a>
 QStack&lt; <a class="el" href="classtextes.html">textes</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcompilateur.html#a35f8af133b9679a5c3a2acb2cee49949">m_pile_textes</a></td></tr>
-<tr class="memdesc:a35f8af133b9679a5c3a2acb2cee49949"><td class="mdescLeft">&#160;</td><td class="mdescRight">La pile de textes des paramètres. <br/></td></tr>
+<tr class="memdesc:a35f8af133b9679a5c3a2acb2cee49949"><td class="mdescLeft">&#160;</td><td class="mdescRight">La pile de textes des paramètres. <br /></td></tr>
 <tr class="separator:a35f8af133b9679a5c3a2acb2cee49949"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac4cab2d84ffa5b764773bc1675c72580"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ac4cab2d84ffa5b764773bc1675c72580"></a>
+<tr class="memitem:ac4cab2d84ffa5b764773bc1675c72580"><td class="memItemLeft" align="right" valign="top"><a id="ac4cab2d84ffa5b764773bc1675c72580"></a>
 <a class="el" href="classlogs__compilation__widget.html">logs_compilation_widget</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcompilateur.html#ac4cab2d84ffa5b764773bc1675c72580">m_vue_logs</a></td></tr>
-<tr class="memdesc:ac4cab2d84ffa5b764773bc1675c72580"><td class="mdescLeft">&#160;</td><td class="mdescRight">Un pointeur sur le widget de vue des logs de compilation. <br/></td></tr>
+<tr class="memdesc:ac4cab2d84ffa5b764773bc1675c72580"><td class="mdescLeft">&#160;</td><td class="mdescRight">Un pointeur sur le widget de vue des logs de compilation. <br /></td></tr>
 <tr class="separator:ac4cab2d84ffa5b764773bc1675c72580"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aed817791f876d6cde3e4683b21d20d7d"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aed817791f876d6cde3e4683b21d20d7d"></a>
+<tr class="memitem:aed817791f876d6cde3e4683b21d20d7d"><td class="memItemLeft" align="right" valign="top"><a id="aed817791f876d6cde3e4683b21d20d7d"></a>
 <a class="el" href="classconfiguration.html">configuration</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcompilateur.html#aed817791f876d6cde3e4683b21d20d7d">m_configuration</a></td></tr>
-<tr class="memdesc:aed817791f876d6cde3e4683b21d20d7d"><td class="mdescLeft">&#160;</td><td class="mdescRight">La configuration en cours. <br/></td></tr>
+<tr class="memdesc:aed817791f876d6cde3e4683b21d20d7d"><td class="mdescLeft">&#160;</td><td class="mdescRight">La configuration en cours. <br /></td></tr>
 <tr class="separator:aed817791f876d6cde3e4683b21d20d7d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Description détaillée</h2>
 <div class="textblock"><p>Classe décrivant un compilateur. Le compilateur a pour rôle d'exécuter un projet. </p>
 <dl class="section author"><dt>Auteur</dt><dd>Sébastien Angibaud </dd></dl>
 
-<p>Définition à la ligne <a class="el" href="compilateur_8h_source.html#l00030">30</a> du fichier <a class="el" href="compilateur_8h_source.html">compilateur.h</a>.</p>
+<p class="definition">Définition à la ligne <a class="el" href="compilateur_8h_source.html#l00031">31</a> du fichier <a class="el" href="compilateur_8h_source.html">compilateur.h</a>.</p>
 </div><h2 class="groupheader">Documentation des constructeurs et destructeur</h2>
-<a class="anchor" id="ab5bb51e36c11cc13dc09c0db790ddeaa"></a>
+<a id="ab5bb51e36c11cc13dc09c0db790ddeaa"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab5bb51e36c11cc13dc09c0db790ddeaa">&#9670;&nbsp;</a></span>compilateur()</h2>
+
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -195,12 +174,14 @@ QStack&lt; <a class="el" href="classtextes.html">textes</a> &gt;&#160;</td><td c
   </dd>
 </dl>
 
-<p>Définition à la ligne <a class="el" href="compilateur_8cpp_source.html#l00023">23</a> du fichier <a class="el" href="compilateur_8cpp_source.html">compilateur.cpp</a>.</p>
+<p class="definition">Définition à la ligne <a class="el" href="compilateur_8cpp_source.html#l00023">23</a> du fichier <a class="el" href="compilateur_8cpp_source.html">compilateur.cpp</a>.</p>
 
 </div>
 </div>
 <h2 class="groupheader">Documentation des fonctions membres</h2>
-<a class="anchor" id="acf132e6710b940f3dbb06dbc1b91fb60"></a>
+<a id="acf132e6710b940f3dbb06dbc1b91fb60"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acf132e6710b940f3dbb06dbc1b91fb60">&#9670;&nbsp;</a></span>afficher_resultat()</h2>
+
 <div class="memitem">
 <div class="memproto">
 <table class="mlabels">
@@ -224,20 +205,24 @@ QStack&lt; <a class="el" href="classtextes.html">textes</a> &gt;&#160;</td><td c
 <p>Affiche le résultat. </p>
 <hr/>
  
-<p>Définition à la ligne <a class="el" href="compilateur_8cpp_source.html#l00140">140</a> du fichier <a class="el" href="compilateur_8cpp_source.html">compilateur.cpp</a>.</p>
-
-<p><div class="dynheader">
+<p class="definition">Définition à la ligne <a class="el" href="compilateur_8cpp_source.html#l00140">140</a> du fichier <a class="el" href="compilateur_8cpp_source.html">compilateur.cpp</a>.</p>
+<div class="dynheader">
 Voici le graphe d'appel pour cette fonction :</div>
 <div class="dyncontent">
 <div class="center"><img src="classcompilateur_acf132e6710b940f3dbb06dbc1b91fb60_cgraph.png" border="0" usemap="#classcompilateur_acf132e6710b940f3dbb06dbc1b91fb60_cgraph" alt=""/></div>
 <map name="classcompilateur_acf132e6710b940f3dbb06dbc1b91fb60_cgraph" id="classcompilateur_acf132e6710b940f3dbb06dbc1b91fb60_cgraph">
-<area shape="rect" id="node2" href="classlogs__compilation__widget.html#a51fcc25d77ca9beafc2721d9c84f07a7" title="Ajoute un log à la liste des logs. " alt="" coords="195,57,359,98"/><area shape="rect" id="node3" href="classlog__widget__item.html#a50885aa7f8b31392370fe1dafe982a62" title="Accesseur du log associé. " alt="" coords="409,5,575,32"/><area shape="rect" id="node4" href="classlog__compilation.html#a33648aa43d6eac93335fbf032c581f67" title="Accesseur de l&#39;objet associé. " alt="" coords="423,57,561,98"/><area shape="rect" id="node5" href="classlogs__compilation__widget.html#aa1e59554cb81d84ad0cd4245b166b2df" title="Fonction appelée lors de la destruction d&#39;un objet sélectionnable. " alt="" coords="409,121,575,177"/></map>
+<area shape="rect" id="node2" href="classlogs__compilation__widget.html#a51fcc25d77ca9beafc2721d9c84f07a7" title="Ajoute un log à la liste des logs. " alt="" coords="195,57,359,98"/>
+<area shape="rect" id="node3" href="classlog__widget__item.html#a50885aa7f8b31392370fe1dafe982a62" title="Accesseur du log associé. " alt="" coords="409,5,575,32"/>
+<area shape="rect" id="node4" href="classlog__compilation.html#a33648aa43d6eac93335fbf032c581f67" title="Accesseur de l&#39;objet associé. " alt="" coords="423,57,561,98"/>
+<area shape="rect" id="node5" href="classlogs__compilation__widget.html#aa1e59554cb81d84ad0cd4245b166b2df" title="Fonction appelée lors de la destruction d&#39;un objet sélectionnable. " alt="" coords="409,121,575,177"/>
+</map>
 </div>
-</p>
 
 </div>
 </div>
-<a class="anchor" id="accedd70b3a5d0cec2ce83fee43a7f160"></a>
+<a id="accedd70b3a5d0cec2ce83fee43a7f160"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#accedd70b3a5d0cec2ce83fee43a7f160">&#9670;&nbsp;</a></span>ajouter_configuration()</h2>
+
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -278,11 +263,13 @@ Voici le graphe d'appel pour cette fonction :</div>
   </dd>
 </dl>
 
-<p>Définition à la ligne <a class="el" href="compilateur_8cpp_source.html#l00179">179</a> du fichier <a class="el" href="compilateur_8cpp_source.html">compilateur.cpp</a>.</p>
+<p class="definition">Définition à la ligne <a class="el" href="compilateur_8cpp_source.html#l00179">179</a> du fichier <a class="el" href="compilateur_8cpp_source.html">compilateur.cpp</a>.</p>
 
 </div>
 </div>
-<a class="anchor" id="a847c4296256de3cae0436b68bf9e6931"></a>
+<a id="a847c4296256de3cae0436b68bf9e6931"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a847c4296256de3cae0436b68bf9e6931">&#9670;&nbsp;</a></span>compiler()</h2>
+
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -305,20 +292,41 @@ Voici le graphe d'appel pour cette fonction :</div>
   </dd>
 </dl>
 
-<p>Définition à la ligne <a class="el" href="compilateur_8cpp_source.html#l00033">33</a> du fichier <a class="el" href="compilateur_8cpp_source.html">compilateur.cpp</a>.</p>
-
-<p><div class="dynheader">
+<p class="definition">Définition à la ligne <a class="el" href="compilateur_8cpp_source.html#l00033">33</a> du fichier <a class="el" href="compilateur_8cpp_source.html">compilateur.cpp</a>.</p>
+<div class="dynheader">
 Voici le graphe d'appel pour cette fonction :</div>
 <div class="dyncontent">
 <div class="center"><img src="classcompilateur_a847c4296256de3cae0436b68bf9e6931_cgraph.png" border="0" usemap="#classcompilateur_a847c4296256de3cae0436b68bf9e6931_cgraph" alt=""/></div>
 <map name="classcompilateur_a847c4296256de3cae0436b68bf9e6931_cgraph" id="classcompilateur_a847c4296256de3cae0436b68bf9e6931_cgraph">
-<area shape="rect" id="node2" href="classlogs__compilation__widget.html#af8865694dbb81f634a00c9a01ba59878" title="Marque tous logs comme étant ancien. " alt="" coords="201,5,373,46"/><area shape="rect" id="node3" href="classlogs__compilation__widget.html#a51fcc25d77ca9beafc2721d9c84f07a7" title="Ajoute un log à la liste des logs. " alt="" coords="637,151,801,193"/><area shape="rect" id="node7" href="classprojet.html#ac996cee2807e20a7fce9a1047701af1a" title="Accesseur du nom du projet. " alt="" coords="231,121,343,148"/><area shape="rect" id="node8" href="classcompilateur.html#aa4a72cef1b007de987e490ff6cda53e9" title="Teste si un projet donné est valide. " alt="" coords="209,172,365,199"/><area shape="rect" id="node10" href="classcompilateur.html#aac14b2b0238183e11048e8ad659359ba" title="Efface la compilation en cours. " alt="" coords="223,223,350,249"/><area shape="rect" id="node11" href="classcompilateur.html#ace8a2bf4b88d33bd17e8c850b0afe8f3" title="Exécute un projet donné. " alt="" coords="213,282,360,323"/><area shape="rect" id="node4" href="classlog__widget__item.html#a50885aa7f8b31392370fe1dafe982a62" title="Accesseur du log associé. " alt="" coords="870,100,1037,127"/><area shape="rect" id="node5" href="classlog__compilation.html#a33648aa43d6eac93335fbf032c581f67" title="Accesseur de l&#39;objet associé. " alt="" coords="884,151,1023,193"/><area shape="rect" id="node6" href="classlogs__compilation__widget.html#aa1e59554cb81d84ad0cd4245b166b2df" title="Fonction appelée lors de la destruction d&#39;un objet sélectionnable. " alt="" coords="871,216,1036,272"/><area shape="rect" id="node9" href="classprojet.html#ac29c91d7cfa7f3bd873c50fd180631ca" title="Teste si le projet est valide. " alt="" coords="434,121,555,148"/><area shape="rect" id="node12" href="classprojet.html#a911d33fdf6ee03d513a576ad154a2ffc" title="Exécute le projet. " alt="" coords="439,520,551,547"/><area shape="rect" id="node14" href="classfonctions__conteneur.html#aa1db33c3a0bf76b354e77b4a4324357a" title="Accesseur de l&#39;itérateur de début de liste des fonctions. " alt="" coords="884,570,1023,611"/><area shape="rect" id="node15" href="classfonctions__conteneur.html#a165ee65380980b58b521a62810cd7e27" title="Accesseur de l&#39;itérateur de fin de liste des fonctions. " alt="" coords="884,343,1023,385"/><area shape="rect" id="node16" href="classcompilateur.html#aab9479c05c28d4b15dadb6926d426499" title="Exécute une fonction donnée. " alt="" coords="421,429,568,470"/><area shape="rect" id="node22" href="classcompilateur.html#acf132e6710b940f3dbb06dbc1b91fb60" title="Affiche le résultat. " alt="" coords="425,223,565,265"/><area shape="rect" id="node13" href="classprojet.html#a13be1df158d8b52ff980939179dc0c82" title="Initialise l&#39;état d&#39;exécutabilité du projet. " alt="" coords="643,575,794,601"/><area shape="rect" id="node17" href="classbase__fonction.html#aa6a1b06544f57e26311eba48b08eaf54" title="Retourne l&#39;itérateur sur le début de la liste des paramètres. " alt="" coords="631,341,807,382"/><area shape="rect" id="node18" href="classbase__fonction.html#a39f01a1372ee04c2620602c530431506" title="Retourne l&#39;itérateur sur la fin des paramètres. " alt="" coords="617,407,821,433"/><area shape="rect" id="node19" href="classcompilateur.html#a20fb0cd0d943e986ac0e44d8d1aa961b" title="Exécute un paramètre donné. " alt="" coords="645,458,792,499"/><area shape="rect" id="node21" href="classbase__fonction.html#a40c0fb234af5ed3cdbf8a56b5e607c98" title="Méthode virtuelle pure qui exécute la fonction. " alt="" coords="638,524,799,551"/><area shape="rect" id="node20" href="classbase__parametre.html#a5a2f1cde20d86a4bdeda4e9f1da30ac3" title="Initialise les textes de sortie. " alt="" coords="883,458,1024,499"/></map>
+<area shape="rect" id="node2" href="classlogs__compilation__widget.html#af8865694dbb81f634a00c9a01ba59878" title="Marque tous logs comme étant ancien. " alt="" coords="201,5,373,46"/>
+<area shape="rect" id="node3" href="classlogs__compilation__widget.html#a51fcc25d77ca9beafc2721d9c84f07a7" title="Ajoute un log à la liste des logs. " alt="" coords="637,151,801,193"/>
+<area shape="rect" id="node7" href="classprojet.html#ac996cee2807e20a7fce9a1047701af1a" title="Accesseur du nom du projet. " alt="" coords="231,121,343,148"/>
+<area shape="rect" id="node8" href="classcompilateur.html#aa4a72cef1b007de987e490ff6cda53e9" title="Teste si un projet donné est valide. " alt="" coords="209,172,365,199"/>
+<area shape="rect" id="node10" href="classcompilateur.html#aac14b2b0238183e11048e8ad659359ba" title="Efface la compilation en cours. " alt="" coords="223,223,350,249"/>
+<area shape="rect" id="node11" href="classcompilateur.html#ace8a2bf4b88d33bd17e8c850b0afe8f3" title="Exécute un projet donné. " alt="" coords="213,282,360,323"/>
+<area shape="rect" id="node4" href="classlog__widget__item.html#a50885aa7f8b31392370fe1dafe982a62" title="Accesseur du log associé. " alt="" coords="870,100,1037,127"/>
+<area shape="rect" id="node5" href="classlog__compilation.html#a33648aa43d6eac93335fbf032c581f67" title="Accesseur de l&#39;objet associé. " alt="" coords="884,151,1023,193"/>
+<area shape="rect" id="node6" href="classlogs__compilation__widget.html#aa1e59554cb81d84ad0cd4245b166b2df" title="Fonction appelée lors de la destruction d&#39;un objet sélectionnable. " alt="" coords="871,216,1036,272"/>
+<area shape="rect" id="node9" href="classprojet.html#ac29c91d7cfa7f3bd873c50fd180631ca" title="Teste si le projet est valide. " alt="" coords="434,121,555,148"/>
+<area shape="rect" id="node12" href="classprojet.html#a911d33fdf6ee03d513a576ad154a2ffc" title="Exécute le projet. " alt="" coords="439,520,551,547"/>
+<area shape="rect" id="node14" href="classfonctions__conteneur.html#aa1db33c3a0bf76b354e77b4a4324357a" title="Accesseur de l&#39;itérateur de début de liste des fonctions. " alt="" coords="884,570,1023,611"/>
+<area shape="rect" id="node15" href="classfonctions__conteneur.html#a165ee65380980b58b521a62810cd7e27" title="Accesseur de l&#39;itérateur de fin de liste des fonctions. " alt="" coords="884,343,1023,385"/>
+<area shape="rect" id="node16" href="classcompilateur.html#aab9479c05c28d4b15dadb6926d426499" title="Exécute une fonction donnée. " alt="" coords="421,429,568,470"/>
+<area shape="rect" id="node22" href="classcompilateur.html#acf132e6710b940f3dbb06dbc1b91fb60" title="Affiche le résultat. " alt="" coords="425,223,565,265"/>
+<area shape="rect" id="node13" href="classprojet.html#a13be1df158d8b52ff980939179dc0c82" title="Initialise l&#39;état d&#39;exécutabilité du projet. " alt="" coords="643,575,794,601"/>
+<area shape="rect" id="node17" href="classbase__fonction.html#aa6a1b06544f57e26311eba48b08eaf54" title="Retourne l&#39;itérateur sur le début de la liste des paramètres. " alt="" coords="631,341,807,382"/>
+<area shape="rect" id="node18" href="classbase__fonction.html#a39f01a1372ee04c2620602c530431506" title="Retourne l&#39;itérateur sur la fin des paramètres. " alt="" coords="617,407,821,433"/>
+<area shape="rect" id="node19" href="classcompilateur.html#a20fb0cd0d943e986ac0e44d8d1aa961b" title="Exécute un paramètre donné. " alt="" coords="645,458,792,499"/>
+<area shape="rect" id="node21" href="classbase__fonction.html#a40c0fb234af5ed3cdbf8a56b5e607c98" title="Méthode virtuelle pure qui exécute la fonction. " alt="" coords="638,524,799,551"/>
+<area shape="rect" id="node20" href="classbase__parametre.html#a5a2f1cde20d86a4bdeda4e9f1da30ac3" title="Initialise les textes de sortie. " alt="" coords="883,458,1024,499"/>
+</map>
 </div>
-</p>
 
 </div>
 </div>
-<a class="anchor" id="aa4a72cef1b007de987e490ff6cda53e9"></a>
+<a id="aa4a72cef1b007de987e490ff6cda53e9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa4a72cef1b007de987e490ff6cda53e9">&#9670;&nbsp;</a></span>est_valide()</h2>
+
 <div class="memitem">
 <div class="memproto">
 <table class="mlabels">
@@ -350,20 +358,25 @@ Voici le graphe d'appel pour cette fonction :</div>
 </dl>
 <dl class="section return"><dt>Renvoie</dt><dd><b>True</b> si le projet est valide, <b>False</b> sinon. </dd></dl>
 
-<p>Définition à la ligne <a class="el" href="compilateur_8cpp_source.html#l00066">66</a> du fichier <a class="el" href="compilateur_8cpp_source.html">compilateur.cpp</a>.</p>
-
-<p><div class="dynheader">
+<p class="definition">Définition à la ligne <a class="el" href="compilateur_8cpp_source.html#l00066">66</a> du fichier <a class="el" href="compilateur_8cpp_source.html">compilateur.cpp</a>.</p>
+<div class="dynheader">
 Voici le graphe d'appel pour cette fonction :</div>
 <div class="dyncontent">
 <div class="center"><img src="classcompilateur_aa4a72cef1b007de987e490ff6cda53e9_cgraph.png" border="0" usemap="#classcompilateur_aa4a72cef1b007de987e490ff6cda53e9_cgraph" alt=""/></div>
 <map name="classcompilateur_aa4a72cef1b007de987e490ff6cda53e9_cgraph" id="classcompilateur_aa4a72cef1b007de987e490ff6cda53e9_cgraph">
-<area shape="rect" id="node2" href="classprojet.html#ac29c91d7cfa7f3bd873c50fd180631ca" title="Teste si le projet est valide. " alt="" coords="211,64,333,91"/><area shape="rect" id="node3" href="classlogs__compilation__widget.html#a51fcc25d77ca9beafc2721d9c84f07a7" title="Ajoute un log à la liste des logs. " alt="" coords="382,57,546,98"/><area shape="rect" id="node4" href="classlog__widget__item.html#a50885aa7f8b31392370fe1dafe982a62" title="Accesseur du log associé. " alt="" coords="595,5,762,32"/><area shape="rect" id="node5" href="classlog__compilation.html#a33648aa43d6eac93335fbf032c581f67" title="Accesseur de l&#39;objet associé. " alt="" coords="609,57,748,98"/><area shape="rect" id="node6" href="classlogs__compilation__widget.html#aa1e59554cb81d84ad0cd4245b166b2df" title="Fonction appelée lors de la destruction d&#39;un objet sélectionnable. " alt="" coords="596,121,761,177"/></map>
+<area shape="rect" id="node2" href="classprojet.html#ac29c91d7cfa7f3bd873c50fd180631ca" title="Teste si le projet est valide. " alt="" coords="211,64,333,91"/>
+<area shape="rect" id="node3" href="classlogs__compilation__widget.html#a51fcc25d77ca9beafc2721d9c84f07a7" title="Ajoute un log à la liste des logs. " alt="" coords="382,57,546,98"/>
+<area shape="rect" id="node4" href="classlog__widget__item.html#a50885aa7f8b31392370fe1dafe982a62" title="Accesseur du log associé. " alt="" coords="595,5,762,32"/>
+<area shape="rect" id="node5" href="classlog__compilation.html#a33648aa43d6eac93335fbf032c581f67" title="Accesseur de l&#39;objet associé. " alt="" coords="609,57,748,98"/>
+<area shape="rect" id="node6" href="classlogs__compilation__widget.html#aa1e59554cb81d84ad0cd4245b166b2df" title="Fonction appelée lors de la destruction d&#39;un objet sélectionnable. " alt="" coords="596,121,761,177"/>
+</map>
 </div>
-</p>
 
 </div>
 </div>
-<a class="anchor" id="aab9479c05c28d4b15dadb6926d426499"></a>
+<a id="aab9479c05c28d4b15dadb6926d426499"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aab9479c05c28d4b15dadb6926d426499">&#9670;&nbsp;</a></span>executer_fonction()</h2>
+
 <div class="memitem">
 <div class="memproto">
 <table class="mlabels">
@@ -394,20 +407,27 @@ Voici le graphe d'appel pour cette fonction :</div>
   </dd>
 </dl>
 
-<p>Définition à la ligne <a class="el" href="compilateur_8cpp_source.html#l00103">103</a> du fichier <a class="el" href="compilateur_8cpp_source.html">compilateur.cpp</a>.</p>
-
-<p><div class="dynheader">
+<p class="definition">Définition à la ligne <a class="el" href="compilateur_8cpp_source.html#l00103">103</a> du fichier <a class="el" href="compilateur_8cpp_source.html">compilateur.cpp</a>.</p>
+<div class="dynheader">
 Voici le graphe d'appel pour cette fonction :</div>
 <div class="dyncontent">
 <div class="center"><img src="classcompilateur_aab9479c05c28d4b15dadb6926d426499_cgraph.png" border="0" usemap="#classcompilateur_aab9479c05c28d4b15dadb6926d426499_cgraph" alt=""/></div>
 <map name="classcompilateur_aab9479c05c28d4b15dadb6926d426499_cgraph" id="classcompilateur_aab9479c05c28d4b15dadb6926d426499_cgraph">
-<area shape="rect" id="node2" href="classbase__fonction.html#aa6a1b06544f57e26311eba48b08eaf54" title="Retourne l&#39;itérateur sur le début de la liste des paramètres. " alt="" coords="215,5,391,46"/><area shape="rect" id="node3" href="classbase__fonction.html#a39f01a1372ee04c2620602c530431506" title="Retourne l&#39;itérateur sur la fin des paramètres. " alt="" coords="201,71,405,97"/><area shape="rect" id="node4" href="classcompilateur.html#a20fb0cd0d943e986ac0e44d8d1aa961b" title="Exécute un paramètre donné. " alt="" coords="229,122,376,163"/><area shape="rect" id="node8" href="classbase__fonction.html#a40c0fb234af5ed3cdbf8a56b5e607c98" title="Méthode virtuelle pure qui exécute la fonction. " alt="" coords="222,188,383,215"/><area shape="rect" id="node5" href="classfonctions__conteneur.html#aa1db33c3a0bf76b354e77b4a4324357a" title="Accesseur de l&#39;itérateur de début de liste des fonctions. " alt="" coords="455,57,593,98"/><area shape="rect" id="node6" href="classfonctions__conteneur.html#a165ee65380980b58b521a62810cd7e27" title="Accesseur de l&#39;itérateur de fin de liste des fonctions. " alt="" coords="455,122,593,163"/><area shape="rect" id="node7" href="classbase__parametre.html#a5a2f1cde20d86a4bdeda4e9f1da30ac3" title="Initialise les textes de sortie. " alt="" coords="453,187,595,229"/></map>
+<area shape="rect" id="node2" href="classbase__fonction.html#aa6a1b06544f57e26311eba48b08eaf54" title="Retourne l&#39;itérateur sur le début de la liste des paramètres. " alt="" coords="215,5,391,46"/>
+<area shape="rect" id="node3" href="classbase__fonction.html#a39f01a1372ee04c2620602c530431506" title="Retourne l&#39;itérateur sur la fin des paramètres. " alt="" coords="201,71,405,97"/>
+<area shape="rect" id="node4" href="classcompilateur.html#a20fb0cd0d943e986ac0e44d8d1aa961b" title="Exécute un paramètre donné. " alt="" coords="229,122,376,163"/>
+<area shape="rect" id="node8" href="classbase__fonction.html#a40c0fb234af5ed3cdbf8a56b5e607c98" title="Méthode virtuelle pure qui exécute la fonction. " alt="" coords="222,188,383,215"/>
+<area shape="rect" id="node5" href="classfonctions__conteneur.html#aa1db33c3a0bf76b354e77b4a4324357a" title="Accesseur de l&#39;itérateur de début de liste des fonctions. " alt="" coords="455,57,593,98"/>
+<area shape="rect" id="node6" href="classfonctions__conteneur.html#a165ee65380980b58b521a62810cd7e27" title="Accesseur de l&#39;itérateur de fin de liste des fonctions. " alt="" coords="455,122,593,163"/>
+<area shape="rect" id="node7" href="classbase__parametre.html#a5a2f1cde20d86a4bdeda4e9f1da30ac3" title="Initialise les textes de sortie. " alt="" coords="453,187,595,229"/>
+</map>
 </div>
-</p>
 
 </div>
 </div>
-<a class="anchor" id="a20fb0cd0d943e986ac0e44d8d1aa961b"></a>
+<a id="a20fb0cd0d943e986ac0e44d8d1aa961b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a20fb0cd0d943e986ac0e44d8d1aa961b">&#9670;&nbsp;</a></span>executer_parametre()</h2>
+
 <div class="memitem">
 <div class="memproto">
 <table class="mlabels">
@@ -438,20 +458,27 @@ Voici le graphe d'appel pour cette fonction :</div>
   </dd>
 </dl>
 
-<p>Définition à la ligne <a class="el" href="compilateur_8cpp_source.html#l00120">120</a> du fichier <a class="el" href="compilateur_8cpp_source.html">compilateur.cpp</a>.</p>
-
-<p><div class="dynheader">
+<p class="definition">Définition à la ligne <a class="el" href="compilateur_8cpp_source.html#l00120">120</a> du fichier <a class="el" href="compilateur_8cpp_source.html">compilateur.cpp</a>.</p>
+<div class="dynheader">
 Voici le graphe d'appel pour cette fonction :</div>
 <div class="dyncontent">
 <div class="center"><img src="classcompilateur_a20fb0cd0d943e986ac0e44d8d1aa961b_cgraph.png" border="0" usemap="#classcompilateur_a20fb0cd0d943e986ac0e44d8d1aa961b_cgraph" alt=""/></div>
 <map name="classcompilateur_a20fb0cd0d943e986ac0e44d8d1aa961b_cgraph" id="classcompilateur_a20fb0cd0d943e986ac0e44d8d1aa961b_cgraph">
-<area shape="rect" id="node2" href="classfonctions__conteneur.html#aa1db33c3a0bf76b354e77b4a4324357a" title="Accesseur de l&#39;itérateur de début de liste des fonctions. " alt="" coords="204,5,343,46"/><area shape="rect" id="node3" href="classfonctions__conteneur.html#a165ee65380980b58b521a62810cd7e27" title="Accesseur de l&#39;itérateur de fin de liste des fonctions. " alt="" coords="204,70,343,111"/><area shape="rect" id="node4" href="classcompilateur.html#aab9479c05c28d4b15dadb6926d426499" title="Exécute une fonction donnée. " alt="" coords="200,135,347,177"/><area shape="rect" id="node8" href="classbase__parametre.html#a5a2f1cde20d86a4bdeda4e9f1da30ac3" title="Initialise les textes de sortie. " alt="" coords="203,201,344,242"/><area shape="rect" id="node5" href="classbase__fonction.html#aa6a1b06544f57e26311eba48b08eaf54" title="Retourne l&#39;itérateur sur le début de la liste des paramètres. " alt="" coords="409,77,585,118"/><area shape="rect" id="node6" href="classbase__fonction.html#a39f01a1372ee04c2620602c530431506" title="Retourne l&#39;itérateur sur la fin des paramètres. " alt="" coords="395,143,599,169"/><area shape="rect" id="node7" href="classbase__fonction.html#a40c0fb234af5ed3cdbf8a56b5e607c98" title="Méthode virtuelle pure qui exécute la fonction. " alt="" coords="417,193,578,220"/></map>
+<area shape="rect" id="node2" href="classfonctions__conteneur.html#aa1db33c3a0bf76b354e77b4a4324357a" title="Accesseur de l&#39;itérateur de début de liste des fonctions. " alt="" coords="204,5,343,46"/>
+<area shape="rect" id="node3" href="classfonctions__conteneur.html#a165ee65380980b58b521a62810cd7e27" title="Accesseur de l&#39;itérateur de fin de liste des fonctions. " alt="" coords="204,70,343,111"/>
+<area shape="rect" id="node4" href="classcompilateur.html#aab9479c05c28d4b15dadb6926d426499" title="Exécute une fonction donnée. " alt="" coords="200,135,347,177"/>
+<area shape="rect" id="node8" href="classbase__parametre.html#a5a2f1cde20d86a4bdeda4e9f1da30ac3" title="Initialise les textes de sortie. " alt="" coords="203,201,344,242"/>
+<area shape="rect" id="node5" href="classbase__fonction.html#aa6a1b06544f57e26311eba48b08eaf54" title="Retourne l&#39;itérateur sur le début de la liste des paramètres. " alt="" coords="409,77,585,118"/>
+<area shape="rect" id="node6" href="classbase__fonction.html#a39f01a1372ee04c2620602c530431506" title="Retourne l&#39;itérateur sur la fin des paramètres. " alt="" coords="395,143,599,169"/>
+<area shape="rect" id="node7" href="classbase__fonction.html#a40c0fb234af5ed3cdbf8a56b5e607c98" title="Méthode virtuelle pure qui exécute la fonction. " alt="" coords="417,193,578,220"/>
+</map>
 </div>
-</p>
 
 </div>
 </div>
-<a class="anchor" id="ace8a2bf4b88d33bd17e8c850b0afe8f3"></a>
+<a id="ace8a2bf4b88d33bd17e8c850b0afe8f3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ace8a2bf4b88d33bd17e8c850b0afe8f3">&#9670;&nbsp;</a></span>executer_projet()</h2>
+
 <div class="memitem">
 <div class="memproto">
 <table class="mlabels">
@@ -482,20 +509,35 @@ Voici le graphe d'appel pour cette fonction :</div>
   </dd>
 </dl>
 
-<p>Définition à la ligne <a class="el" href="compilateur_8cpp_source.html#l00084">84</a> du fichier <a class="el" href="compilateur_8cpp_source.html">compilateur.cpp</a>.</p>
-
-<p><div class="dynheader">
+<p class="definition">Définition à la ligne <a class="el" href="compilateur_8cpp_source.html#l00084">84</a> du fichier <a class="el" href="compilateur_8cpp_source.html">compilateur.cpp</a>.</p>
+<div class="dynheader">
 Voici le graphe d'appel pour cette fonction :</div>
 <div class="dyncontent">
 <div class="center"><img src="classcompilateur_ace8a2bf4b88d33bd17e8c850b0afe8f3_cgraph.png" border="0" usemap="#classcompilateur_ace8a2bf4b88d33bd17e8c850b0afe8f3_cgraph" alt=""/></div>
 <map name="classcompilateur_ace8a2bf4b88d33bd17e8c850b0afe8f3_cgraph" id="classcompilateur_ace8a2bf4b88d33bd17e8c850b0afe8f3_cgraph">
-<area shape="rect" id="node2" href="classprojet.html#a911d33fdf6ee03d513a576ad154a2ffc" title="Exécute le projet. " alt="" coords="217,21,329,48"/><area shape="rect" id="node4" href="classlogs__compilation__widget.html#a51fcc25d77ca9beafc2721d9c84f07a7" title="Ajoute un log à la liste des logs. " alt="" coords="415,71,579,113"/><area shape="rect" id="node8" href="classfonctions__conteneur.html#aa1db33c3a0bf76b354e77b4a4324357a" title="Accesseur de l&#39;itérateur de début de liste des fonctions. " alt="" coords="663,201,801,242"/><area shape="rect" id="node9" href="classfonctions__conteneur.html#a165ee65380980b58b521a62810cd7e27" title="Accesseur de l&#39;itérateur de fin de liste des fonctions. " alt="" coords="663,266,801,307"/><area shape="rect" id="node10" href="classcompilateur.html#aab9479c05c28d4b15dadb6926d426499" title="Exécute une fonction donnée. " alt="" coords="200,327,347,369"/><area shape="rect" id="node16" href="classcompilateur.html#acf132e6710b940f3dbb06dbc1b91fb60" title="Affiche le résultat. " alt="" coords="203,127,343,169"/><area shape="rect" id="node3" href="classprojet.html#a13be1df158d8b52ff980939179dc0c82" title="Initialise l&#39;état d&#39;exécutabilité du projet. " alt="" coords="422,20,573,47"/><area shape="rect" id="node5" href="classlog__widget__item.html#a50885aa7f8b31392370fe1dafe982a62" title="Accesseur du log associé. " alt="" coords="649,5,815,32"/><area shape="rect" id="node6" href="classlog__compilation.html#a33648aa43d6eac93335fbf032c581f67" title="Accesseur de l&#39;objet associé. " alt="" coords="663,57,801,98"/><area shape="rect" id="node7" href="classlogs__compilation__widget.html#aa1e59554cb81d84ad0cd4245b166b2df" title="Fonction appelée lors de la destruction d&#39;un objet sélectionnable. " alt="" coords="649,121,815,177"/><area shape="rect" id="node11" href="classbase__fonction.html#aa6a1b06544f57e26311eba48b08eaf54" title="Retourne l&#39;itérateur sur le début de la liste des paramètres. " alt="" coords="409,361,585,402"/><area shape="rect" id="node12" href="classbase__fonction.html#a39f01a1372ee04c2620602c530431506" title="Retourne l&#39;itérateur sur la fin des paramètres. " alt="" coords="395,427,599,453"/><area shape="rect" id="node13" href="classcompilateur.html#a20fb0cd0d943e986ac0e44d8d1aa961b" title="Exécute un paramètre donné. " alt="" coords="424,295,571,337"/><area shape="rect" id="node15" href="classbase__fonction.html#a40c0fb234af5ed3cdbf8a56b5e607c98" title="Méthode virtuelle pure qui exécute la fonction. " alt="" coords="417,477,578,504"/><area shape="rect" id="node14" href="classbase__parametre.html#a5a2f1cde20d86a4bdeda4e9f1da30ac3" title="Initialise les textes de sortie. " alt="" coords="661,331,803,373"/></map>
+<area shape="rect" id="node2" href="classprojet.html#a911d33fdf6ee03d513a576ad154a2ffc" title="Exécute le projet. " alt="" coords="217,21,329,48"/>
+<area shape="rect" id="node4" href="classlogs__compilation__widget.html#a51fcc25d77ca9beafc2721d9c84f07a7" title="Ajoute un log à la liste des logs. " alt="" coords="415,71,579,113"/>
+<area shape="rect" id="node8" href="classfonctions__conteneur.html#aa1db33c3a0bf76b354e77b4a4324357a" title="Accesseur de l&#39;itérateur de début de liste des fonctions. " alt="" coords="663,201,801,242"/>
+<area shape="rect" id="node9" href="classfonctions__conteneur.html#a165ee65380980b58b521a62810cd7e27" title="Accesseur de l&#39;itérateur de fin de liste des fonctions. " alt="" coords="663,266,801,307"/>
+<area shape="rect" id="node10" href="classcompilateur.html#aab9479c05c28d4b15dadb6926d426499" title="Exécute une fonction donnée. " alt="" coords="200,327,347,369"/>
+<area shape="rect" id="node16" href="classcompilateur.html#acf132e6710b940f3dbb06dbc1b91fb60" title="Affiche le résultat. " alt="" coords="203,127,343,169"/>
+<area shape="rect" id="node3" href="classprojet.html#a13be1df158d8b52ff980939179dc0c82" title="Initialise l&#39;état d&#39;exécutabilité du projet. " alt="" coords="422,20,573,47"/>
+<area shape="rect" id="node5" href="classlog__widget__item.html#a50885aa7f8b31392370fe1dafe982a62" title="Accesseur du log associé. " alt="" coords="649,5,815,32"/>
+<area shape="rect" id="node6" href="classlog__compilation.html#a33648aa43d6eac93335fbf032c581f67" title="Accesseur de l&#39;objet associé. " alt="" coords="663,57,801,98"/>
+<area shape="rect" id="node7" href="classlogs__compilation__widget.html#aa1e59554cb81d84ad0cd4245b166b2df" title="Fonction appelée lors de la destruction d&#39;un objet sélectionnable. " alt="" coords="649,121,815,177"/>
+<area shape="rect" id="node11" href="classbase__fonction.html#aa6a1b06544f57e26311eba48b08eaf54" title="Retourne l&#39;itérateur sur le début de la liste des paramètres. " alt="" coords="409,361,585,402"/>
+<area shape="rect" id="node12" href="classbase__fonction.html#a39f01a1372ee04c2620602c530431506" title="Retourne l&#39;itérateur sur la fin des paramètres. " alt="" coords="395,427,599,453"/>
+<area shape="rect" id="node13" href="classcompilateur.html#a20fb0cd0d943e986ac0e44d8d1aa961b" title="Exécute un paramètre donné. " alt="" coords="424,295,571,337"/>
+<area shape="rect" id="node15" href="classbase__fonction.html#a40c0fb234af5ed3cdbf8a56b5e607c98" title="Méthode virtuelle pure qui exécute la fonction. " alt="" coords="417,477,578,504"/>
+<area shape="rect" id="node14" href="classbase__parametre.html#a5a2f1cde20d86a4bdeda4e9f1da30ac3" title="Initialise les textes de sortie. " alt="" coords="661,331,803,373"/>
+</map>
 </div>
-</p>
 
 </div>
 </div>
-<a class="anchor" id="a6a402d03fe3beebcb19695dc718a6f10"></a>
+<a id="a1b90b920c98f81b88171bda33967ffac"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1b90b920c98f81b88171bda33967ffac">&#9670;&nbsp;</a></span>get_configuration()</h2>
+
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -512,11 +554,13 @@ Voici le graphe d'appel pour cette fonction :</div>
 <hr/>
  <dl class="section return"><dt>Renvoie</dt><dd>La configuration courante. </dd></dl>
 
-<p>Définition à la ligne <a class="el" href="compilateur_8cpp_source.html#l00159">159</a> du fichier <a class="el" href="compilateur_8cpp_source.html">compilateur.cpp</a>.</p>
+<p class="definition">Définition à la ligne <a class="el" href="compilateur_8cpp_source.html#l00159">159</a> du fichier <a class="el" href="compilateur_8cpp_source.html">compilateur.cpp</a>.</p>
 
 </div>
 </div>
-<a class="anchor" id="aa900bb70cdaffb36d7c4fb34ddad2a05"></a>
+<a id="a082b5dae21b0b539a159e180164a5f7c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a082b5dae21b0b539a159e180164a5f7c">&#9670;&nbsp;</a></span>get_vue_logs()</h2>
+
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -533,11 +577,13 @@ Voici le graphe d'appel pour cette fonction :</div>
 <hr/>
  <dl class="section return"><dt>Renvoie</dt><dd>Un pointeur sur le widget de la vue des logs. </dd></dl>
 
-<p>Définition à la ligne <a class="el" href="compilateur_8cpp_source.html#l00168">168</a> du fichier <a class="el" href="compilateur_8cpp_source.html">compilateur.cpp</a>.</p>
+<p class="definition">Définition à la ligne <a class="el" href="compilateur_8cpp_source.html#l00168">168</a> du fichier <a class="el" href="compilateur_8cpp_source.html">compilateur.cpp</a>.</p>
 
 </div>
 </div>
-<a class="anchor" id="aac14b2b0238183e11048e8ad659359ba"></a>
+<a id="aac14b2b0238183e11048e8ad659359ba"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aac14b2b0238183e11048e8ad659359ba">&#9670;&nbsp;</a></span>reset()</h2>
+
 <div class="memitem">
 <div class="memproto">
 <table class="mlabels">
@@ -561,11 +607,13 @@ Voici le graphe d'appel pour cette fonction :</div>
 <p>Efface la compilation en cours. </p>
 <hr/>
  
-<p>Définition à la ligne <a class="el" href="compilateur_8cpp_source.html#l00074">74</a> du fichier <a class="el" href="compilateur_8cpp_source.html">compilateur.cpp</a>.</p>
+<p class="definition">Définition à la ligne <a class="el" href="compilateur_8cpp_source.html#l00074">74</a> du fichier <a class="el" href="compilateur_8cpp_source.html">compilateur.cpp</a>.</p>
 
 </div>
 </div>
-<a class="anchor" id="a3a044cc8ed2205d842ed8adadf090179"></a>
+<a id="a3a044cc8ed2205d842ed8adadf090179"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3a044cc8ed2205d842ed8adadf090179">&#9670;&nbsp;</a></span>retirer_configuration()</h2>
+
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -599,7 +647,7 @@ Voici le graphe d'appel pour cette fonction :</div>
   </dd>
 </dl>
 
-<p>Définition à la ligne <a class="el" href="compilateur_8cpp_source.html#l00189">189</a> du fichier <a class="el" href="compilateur_8cpp_source.html">compilateur.cpp</a>.</p>
+<p class="definition">Définition à la ligne <a class="el" href="compilateur_8cpp_source.html#l00189">189</a> du fichier <a class="el" href="compilateur_8cpp_source.html">compilateur.cpp</a>.</p>
 
 </div>
 </div>
@@ -610,9 +658,9 @@ Voici le graphe d'appel pour cette fonction :</div>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Généré le Vendredi 10 Février 2017 15:45:29 pour Emgine par &#160;<a href="http://www.doxygen.org/index.html">
+Généré le Mardi 28 Février 2017 10:28:21 pour Emgine par &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
-</a> 1.8.6
+</a> 1.8.13
 </small></address>
 </body>
 </html>

@@ -1,4 +1,4 @@
-/** \file base_parametre_widget
+/** \file base_parametre_widget.cpp
  * \brief Fichier d'implémentation de la classe base_parametre_widget.
  * \author Sébastien Angibaud
  */
