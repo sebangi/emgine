@@ -4,15 +4,14 @@ ETAPE 1 : FONCTIONNALITES DE BASES
 * FINI
 
 ETAPE 2 : VERSION 0.1
-* Tagger sous git la version 0.1
+* FINI
 
-ETAPE 3 : NON PRIORITAIRE
-* corriger les itérations sur source_texte et source_fichier_texte
+ETAPE 3 : AMELIORATION - DICTIONNAIRE - NOUVELLES FONCTIONS DE SORTIE
+* corriger les itérations sur source_texte et source_fichier_texte ??
 * connaitre le répertoir racine de l'application et travailler en relatif
 * gestion des dictionnaires
 * améliorer la mise en page de l'aide des paramètres
 * améliorer la mise en page de l'aide des fonctions
-* ajouter la fonction de source texte fichier (éditable et réenregistrable)
 * ajouter des fonctions de conversion
 * lancer l'exécution dans un thread et verrouiller le projet automatiquement durant l'exécution
 * afficher les exécutions différemment. S'inspirer des exécutions de Qt
