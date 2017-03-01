@@ -32,7 +32,7 @@ fonction_sortie_texte_widget::fonction_sortie_texte_widget(base_fonction *foncti
 /** --------------------------------------------------------------------------------------
  * \brief Fonction appelée lorsque la liste de textes à afficher est modifiée.
  */
-void fonction_sortie_texte_widget::on_externe_fst_textes_modifie()
+void fonction_sortie_texte_widget::on_externe_fbs_textes_modifie()
 {
     m_textes = ((fonction_sortie_texte*)m_fonction)->get_textes();
 
@@ -80,7 +80,7 @@ void fonction_sortie_texte_widget::init()
 
     m_specialisation_layout->addLayout(layout);
 
-    connect((fonction_sortie_texte*)m_fonction, SIGNAL(signal_fst_textes_modifie()), this, SLOT(on_externe_fst_textes_modifie()));
+    connect((fonction_base_sortie*)m_fonction, SIGNAL(signal_fbs_textes_modifie()), this, SLOT(on_externe_fbs_textes_modifie()));
 }
 
 /** --------------------------------------------------------------------------------------

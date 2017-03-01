@@ -17,9 +17,34 @@ class textes;
  */
 class fonction_base_sortie : public base_fonction
 {
+        Q_OBJECT
+
     public:
         fonction_base_sortie(fonctions_conteneur * conteneur);
         ~fonction_base_sortie();
+
+        void executer( compilateur & compil, const textes & textes_in, textes & textes_out );
+        textes & get_textes();
+        void set_textes(const textes &textes);
+
+    signals:
+        /** --------------------------------------------------------------------------------------
+         * \brief Signal informant d'une modification du texte.
+         */
+        void signal_fbs_textes_modifie();
+
+    protected:
+        /**
+         * \brief Méthode virtuelle pure qui exécute la fonction de sortie.
+         * \param compil Le compilateur utilisé.
+         * \param textes_in Le texte source en entrée.
+         * \param textes_out Le texte de sortie généré.
+        */
+        virtual void executer_sortie_specifique( compilateur & compil, const textes & textes_in, textes & textes_out ) = 0;
+
+    protected:
+        /** \brief Les textes de sortie. */
+        textes m_textes;
 };
 
 #endif // FONCTION_BASE_SORTIE_H

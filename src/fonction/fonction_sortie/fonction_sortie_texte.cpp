@@ -41,17 +41,14 @@ base_fonction_widget *fonction_sortie_texte::generer_fonction_widget()
 }
 
 /** --------------------------------------------------------------------------------------
- * \brief Execute la fonction.
+ * \brief Exécute la fonction.
  * \param compil Le compilateur utilisé.
  * \param textes_in Le texte source en entrée.
  * \param textes_out Le texte de sortie généré.
  */
-void fonction_sortie_texte::executer( compilateur &compil, const textes & textes_in, textes & textes_out )
+void fonction_sortie_texte::executer_sortie_specifique( compilateur &compil, const textes & textes_in, textes & textes_out )
 {
-    m_textes = textes_in;
-    textes_out = textes_in;
-
-    emit signal_fst_textes_modifie();
+    // rien à faire
 }
 
 /** --------------------------------------------------------------------------------------
@@ -72,24 +69,4 @@ QString fonction_sortie_texte::get_valeur_courte() const
 {
     return m_textes.to_string_lisible();
 }
-
-/** --------------------------------------------------------------------------------------
- * \brief Accesseurs des textes de sortie de la fonction.
- * \return Les textes de sortie.
- */
-textes & fonction_sortie_texte::get_textes()
-{
-    return m_textes;
-}
-
-/** --------------------------------------------------------------------------------------
- * \brief Initialise les textes de la fonction.
- * \param textes Les nouveaux textes de la fonction.
- */
-void fonction_sortie_texte::set_textes(const textes &textes)
-{
-    m_textes = textes;
-}
-
-
 

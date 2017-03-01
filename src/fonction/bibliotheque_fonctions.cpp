@@ -15,6 +15,7 @@
 #include "entete/fonction/fonction_source/fonction_source_texte.h"
 
 // include des fonctions de conversion
+#include "entete/fonction/fonction_sortie/fonction_sortie_frequence.h"
 #include "entete/fonction/fonction_sortie/fonction_sortie_texte.h"
 
 // include des fonctions de sortie
@@ -30,7 +31,8 @@ std::map<type_id_fonction, QString> bibliotheque_fonctions::s_fonctions_nom =
     { f_source_choix, "Choix" },
     { f_source_generateur_permutation, "Générateur de permutations" },
     { f_conversion_cesar, "Chiffrement par Code César" },
-    { f_sortie_texte, "Textes" }
+    { f_sortie_texte, "Textes" },
+    { f_sortie_frequence, "Fréquences des éléments" }
 };
 
 std::map<type_id_fonction, QString> bibliotheque_fonctions::s_fonctions_aide =
@@ -43,7 +45,8 @@ std::map<type_id_fonction, QString> bibliotheque_fonctions::s_fonctions_aide =
     { f_source_choix, "Source de type choix" },
     { f_source_generateur_permutation, "Générateur de permutations" },
     { f_conversion_cesar, "Outil pour décoder/encoder avec César.\nLe code César (ou chiffre de César) est un chiffrement par décalage parmi les plus simples et les plus connu, il utilise la substitution d'une lettre par une autre plus loin dans l'alphabet." },
-    { f_sortie_texte, "Sortie textuelle : la liste de tous les textes obtenus." }
+    { f_sortie_texte, "Sortie textuelle : la liste de tous les textes obtenus." },
+    { f_sortie_frequence, "Sortie affichant la fréquence des éléments." }
 };
 
 std::map<type_id_fonction, std::set<QString> > bibliotheque_fonctions::s_categories =
@@ -74,6 +77,9 @@ std::map<type_id_fonction, std::set<QString> > bibliotheque_fonctions::s_categor
     },
     { f_sortie_texte,
       { }
+    },
+    { f_sortie_frequence,
+      { }
     }
 };
 
@@ -96,8 +102,10 @@ base_fonction * bibliotheque_fonctions::get_fonction(type_id_fonction id)
 
             // CONVERSIONS
         case f_conversion_cesar : return new fonction_cesar(NULL);
+
             // SORTIES
         case f_sortie_texte : return new fonction_sortie_texte(NULL);
+        case f_sortie_frequence : return new fonction_sortie_frequence(NULL);
 
         default:
             return NULL;

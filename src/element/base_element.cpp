@@ -22,7 +22,7 @@ base_element::base_element(bool valeur)
     : m_type(type_element_booleen),
       m_booleen(valeur)
 {
-
+    m_string = to_string();
 }
 
 /** --------------------------------------------------------------------------------------
@@ -33,7 +33,7 @@ base_element::base_element(int valeur)
     : m_type(type_element_entier),
       m_entier(valeur)
 {
-
+    m_string = to_string();
 }
 
 /** --------------------------------------------------------------------------------------
@@ -44,7 +44,7 @@ base_element::base_element(QChar valeur)
     : m_type(type_element_caractere),
       m_caractere(valeur)
 {
-
+    m_string = to_string();
 }
 
 /** --------------------------------------------------------------------------------------
@@ -55,7 +55,7 @@ base_element::base_element(QCharRef valeur)
     : m_type(type_element_caractere),
       m_caractere(valeur)
 {
-
+    m_string = to_string();
 }
 
 /** --------------------------------------------------------------------------------------
@@ -149,6 +149,16 @@ QString base_element::to_string() const
  */
 bool base_element::operator <(const base_element& e) const
 {
-    return m_string < e.m_string;
+    return m_string.compare( e.m_string ) < 0;
+}
+
+/** --------------------------------------------------------------------------------------
+ * \brief Surcharge de l'opérateur d'égalité.
+ * \param e Le base_element avec qui se comparer.
+ * \return \b True si le base_element courant est égal au base_element donné, \b False sinon.
+ */
+bool base_element::operator==(const base_element &e) const
+{
+    return m_string.compare( e.m_string ) == 0;
 }
 

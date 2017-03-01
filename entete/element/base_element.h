@@ -31,7 +31,8 @@ class base_element
         QChar get_caractere() const;
         QString to_string() const;
 
-        bool operator <(const base_element& e) const;
+        bool operator<(const base_element& e) const;
+        bool operator==(const base_element& e) const;
 
     private:
         /** \brief Le type de l'élément. */

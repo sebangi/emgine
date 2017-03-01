@@ -38,6 +38,7 @@ SOURCES += \
         src/fonction/fonction_conversion/fonction_cesar.cpp \
         src/fonction/fonction_sortie/fonction_base_sortie.cpp \
         src/fonction/fonction_sortie/fonction_sortie_texte.cpp \
+        src/fonction/fonction_sortie/fonction_sortie_frequence.cpp \
         src/fonction/fonction_source/fonction_base_source.cpp \
         src/fonction/fonction_source/fonction_source_booleen.cpp \
         src/fonction/fonction_source/fonction_source_caractere.cpp \
@@ -47,6 +48,7 @@ SOURCES += \
         src/fonction_widget/base_parametre_widget.cpp \
         src/fonction_widget/bouton_choix_fonction.cpp \
         src/fonction_widget/fonction_sortie_widget/fonction_sortie_texte_widget.cpp \
+        src/fonction_widget/fonction_sortie_widget/fonction_sortie_frequence_widget.cpp \
         src/fonction_widget/fonction_source_widget/fonction_source_booleen_widget.cpp \
         src/fonction_widget/fonction_source_widget/fonction_source_caractere_widget.cpp \
         src/fonction_widget/fonction_source_widget/fonction_source_texte_widget.cpp \
@@ -64,12 +66,13 @@ SOURCES += \
         src/fonction_widget/base_fonction_widget_avec_text_edit.cpp \
         src/fonction_widget/fonction_sortie_widget/liste_texte_widget.cpp \
         src/fonction_widget/parametre_aide_message_box.cpp \
-    src/fonction/fonction_source/fonction_source_choix.cpp \
-    src/fonction_widget/fonction_source_widget/fonction_source_choix_widget.cpp \
-    src/fonction/fonction_source/fonction_source_permutation.cpp \
-    src/fonction_widget/text_edit.cpp \
-    src/fonction/fonction_source/fonction_source_fichier_texte.cpp \
-    src/fonction_widget/fonction_source_widget/fonction_source_fichier_texte_widget.cpp
+        src/fonction/fonction_source/fonction_source_choix.cpp \
+        src/fonction_widget/fonction_source_widget/fonction_source_choix_widget.cpp \
+        src/fonction/fonction_source/fonction_source_permutation.cpp \
+        src/fonction_widget/text_edit.cpp \
+        src/fonction/fonction_source/fonction_source_fichier_texte.cpp \
+        src/fonction_widget/fonction_source_widget/fonction_source_fichier_texte_widget.cpp \
+        src/fonction/fonction_sortie/frequence.cpp
 
 HEADERS  += \
         entete/compilation/compilateur.h \
@@ -95,6 +98,7 @@ HEADERS  += \
         entete/fonction/fonction_conversion/fonction_cesar.h \
         entete/fonction/fonction_sortie/fonction_base_sortie.h \
         entete/fonction/fonction_sortie/fonction_sortie_texte.h \
+        entete/fonction/fonction_sortie/fonction_sortie_frequence.h \
         entete/fonction/fonction_source/fonction_base_source.h \
         entete/fonction/fonction_source/fonction_source_booleen.h \
         entete/fonction/fonction_source/fonction_source_caractere.h \
@@ -104,6 +108,7 @@ HEADERS  += \
         entete/fonction_widget/base_parametre_widget.h \
         entete/fonction_widget/bouton_choix_fonction.h \
         entete/fonction_widget/fonction_sortie_widget/fonction_sortie_texte_widget.h \
+        entete/fonction_widget/fonction_sortie_widget/fonction_sortie_frequence_widget.h \
         entete/fonction_widget/fonction_source_widget/fonction_source_booleen_widget.h \
         entete/fonction_widget/fonction_source_widget/fonction_source_caractere_widget.h \
         entete/fonction_widget/fonction_source_widget/fonction_source_texte_widget.h \
@@ -122,13 +127,14 @@ HEADERS  += \
         entete/fonction_widget/base_fonction_widget_avec_text_edit.h \
         entete/fonction_widget/fonction_sortie_widget/liste_texte_widget.h \
         entete/fonction_widget/parametre_aide_message_box.h \
-    entete/fonction/fonction_source/fonction_source_choix.h \
-    entete/fonction_widget/fonction_source_widget/fonction_source_choix_widget.h \
-    entete/fonction/fonction_source/fonction_source_permutation.h \
-    entete/fonction/define_fonction.h \
-    entete/fonction/define_parametre.h \
-    entete/fonction/fonction_source/fonction_source_fichier_texte.h \
-    entete/fonction_widget/fonction_source_widget/fonction_source_fichier_texte_widget.h
+        entete/fonction/fonction_source/fonction_source_choix.h \
+        entete/fonction_widget/fonction_source_widget/fonction_source_choix_widget.h \
+        entete/fonction/fonction_source/fonction_source_permutation.h \
+        entete/fonction/define_fonction.h \
+        entete/fonction/define_parametre.h \
+        entete/fonction/fonction_source/fonction_source_fichier_texte.h \
+        entete/fonction_widget/fonction_source_widget/fonction_source_fichier_texte_widget.h \
+        entete/fonction/fonction_sortie/frequence.h
 
 FORMS    += \
     fenetre_principale.ui

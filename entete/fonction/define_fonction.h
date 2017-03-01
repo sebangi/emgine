@@ -83,6 +83,9 @@ enum type_id_fonction{
     /** \brief Fonction de sortie affichant simplement les textes. */
     f_sortie_texte = 2000,
 
+    /** \brief Fonction de sortie affichant la fréquence des éléments. */
+    f_sortie_frequence,
+
     /** \brief Fin des fonctions de sortie. */
     fin_fonction_sortie
 };
