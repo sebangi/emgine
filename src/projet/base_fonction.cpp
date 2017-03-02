@@ -481,7 +481,7 @@ void base_fonction::charger_parametre(QXmlStreamReader & xml)
  *  - un itérateur sur le premier mot de la ligne, i.e. un itérateur sur les caractères du premier mot.
  */
 void base_fonction::algo_PMIPL_iteration_premier_mot_par_ligne
-( type_id_parametre id_param, compilateur &compil, const textes & textes_in, textes & textes_out,
+( type_id_parametre id_param, compilateur &compil, textes & textes_in, textes & textes_out,
   pf_exec_callback callback )
 {
     const textes& t_param = get_textes_parametre(id_param);
@@ -555,7 +555,7 @@ void base_fonction::PMIPL_suivant(type_id_parametre id_param)
  *  - un itérateur sur la ligne, i.e. un itérateur sur les mots de la ligne.
  */
 void base_fonction::algo_LIPL_iteration_premier_mot_par_ligne
-( type_id_parametre id_param, compilateur &compil, const textes & textes_in, textes & textes_out,
+( type_id_parametre id_param, compilateur &compil, textes & textes_in, textes & textes_out,
   pf_exec_callback callback )
 {
     const textes& t_param = get_textes_parametre(id_param);
@@ -613,7 +613,7 @@ void base_fonction::LIPL_suivant(type_id_parametre id_param)
  * \param textes_in Le texte source en entrée.
  * \param textes_out Le texte de sortie généré.
  */
-void base_fonction::callback_param_1(compilateur &compil, const textes &textes_in, textes &textes_out)
+void base_fonction::callback_param_1(compilateur &compil, textes & textes_in, textes &textes_out)
 {
     std::cout << "base_fonction::callback_param_1" << std::endl;
     std::cout << "Erreur : on ne doit pas passer dans cette méthode virtuelle." << std::endl;
@@ -625,7 +625,7 @@ void base_fonction::callback_param_1(compilateur &compil, const textes &textes_i
  * \param textes_in Le texte source en entrée.
  * \param textes_out Le texte de sortie généré.
  */
-void base_fonction::callback_param_2(compilateur &compil, const textes &textes_in, textes &textes_out)
+void base_fonction::callback_param_2(compilateur &compil, textes & textes_in, textes &textes_out)
 {
     std::cout << "base_fonction::callback_param_2" << std::endl;
     std::cout << "Erreur : on ne doit pas passer dans cette méthode virtuelle." << std::endl;
@@ -637,7 +637,7 @@ void base_fonction::callback_param_2(compilateur &compil, const textes &textes_i
  * \param textes_in Le texte source en entrée.
  * \param textes_out Le texte de sortie généré.
  */
-void base_fonction::callback_param_3(compilateur &compil, const textes &textes_in, textes &textes_out)
+void base_fonction::callback_param_3(compilateur &compil, textes & textes_in, textes &textes_out)
 {
     std::cout << "base_fonction::callback_param_3" << std::endl;
     std::cout << "Erreur : on ne doit pas passer dans cette méthode virtuelle." << std::endl;
@@ -649,7 +649,7 @@ void base_fonction::callback_param_3(compilateur &compil, const textes &textes_i
  * \param textes_in Le texte source en entrée.
  * \param textes_out Le texte de sortie généré.
  */
-void base_fonction::callback_param_4(compilateur &compil, const textes &textes_in, textes &textes_out)
+void base_fonction::callback_param_4(compilateur &compil, textes & textes_in, textes &textes_out)
 {
     std::cout << "base_fonction::callback_param_4" << std::endl;
     std::cout << "Erreur : on ne doit pas passer dans cette méthode virtuelle." << std::endl;
@@ -661,7 +661,7 @@ void base_fonction::callback_param_4(compilateur &compil, const textes &textes_i
  * \param textes_in Le texte source en entrée.
  * \param textes_out Le texte de sortie généré.
  */
-void base_fonction::execution_specifique(compilateur &compil, const textes &textes_in, textes &textes_out)
+void base_fonction::execution_specifique(compilateur &compil, textes & textes_in, textes &textes_out)
 {
     std::cout << "base_fonction::execution_specifique" << std::endl;
     std::cout << "Erreur : on ne doit pas passer dans cette méthode virtuelle." << std::endl;

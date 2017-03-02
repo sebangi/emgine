@@ -20,7 +20,7 @@ class fonction_source_booleen : public fonction_base_source
         ~fonction_source_booleen();
 
         base_fonction_widget *generer_fonction_widget();
-        void executer( compilateur & compil, const textes & textes_in, textes & textes_out );
+        void executer( compilateur & compil, textes & textes_in, textes & textes_out );
         QString get_valeur_courte() const;
         bool get_valeur() const;
         void set_valeur(bool valeur);

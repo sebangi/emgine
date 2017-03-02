@@ -46,7 +46,7 @@ class base_fonction : public objet_selectionnable
 
     protected:
         /** \brief Type des fonctions d'exécution. */
-        typedef void ( base_fonction::*pf_exec_callback)( compilateur &, const textes &, textes & );
+        typedef void ( base_fonction::*pf_exec_callback)( compilateur &, textes &, textes & );
 
     public:
         base_fonction( fonctions_conteneur * parent, type_fonction type = type_fonction::fonction_conversion);
@@ -58,7 +58,7 @@ class base_fonction : public objet_selectionnable
          * \param textes_in Le texte source en entrée.
          * \param textes_out Le texte de sortie généré.
         */
-        virtual void executer( compilateur & compil, const textes & textes_in, textes & textes_out ) = 0;
+        virtual void executer( compilateur & compil, textes & textes_in, textes & textes_out ) = 0;
 
         /** --------------------------------------------------------------------------------------
          * \brief Méthode virtuelle pure retournant la valeur de la fonction en version raccourci.
@@ -142,22 +142,22 @@ class base_fonction : public objet_selectionnable
 
         // Algorithme d'exécution PMIPL
         void algo_PMIPL_iteration_premier_mot_par_ligne
-        ( type_id_parametre id_param, compilateur &compil, const textes & textes_in, textes & textes_out,
+        ( type_id_parametre id_param, compilateur &compil, textes & textes_in, textes & textes_out,
           pf_exec_callback callback );
         void PMIPL_suivant( type_id_parametre id_param );
 
         // Algorithme d'exécution LIPL
         void algo_LIPL_iteration_premier_mot_par_ligne
-        ( type_id_parametre id_param, compilateur &compil, const textes & textes_in, textes & textes_out,
+        ( type_id_parametre id_param, compilateur &compil, textes & textes_in, textes & textes_out,
           pf_exec_callback callback );
         void LIPL_suivant( type_id_parametre id_param );
 
     public:
-        virtual void callback_param_1( compilateur &compil, const textes & textes_in, textes & textes_out );
-        virtual void callback_param_2( compilateur &compil, const textes & textes_in, textes & textes_out );
-        virtual void callback_param_3( compilateur &compil, const textes & textes_in, textes & textes_out );
-        virtual void callback_param_4( compilateur &compil, const textes & textes_in, textes & textes_out );
-        virtual void execution_specifique( compilateur &compil, const textes & textes_in, textes & textes_out );
+        virtual void callback_param_1( compilateur &compil, textes & textes_in, textes & textes_out );
+        virtual void callback_param_2( compilateur &compil, textes & textes_in, textes & textes_out );
+        virtual void callback_param_3( compilateur &compil, textes & textes_in, textes & textes_out );
+        virtual void callback_param_4( compilateur &compil, textes & textes_in, textes & textes_out );
+        virtual void execution_specifique( compilateur &compil, textes & textes_in, textes & textes_out );
 
     protected:
         /** \brief Le nom de la fonction. */

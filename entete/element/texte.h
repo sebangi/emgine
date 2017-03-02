@@ -8,6 +8,7 @@
 
 #include "entete/compilation/configuration.h"
 #include "entete/element/ligne.h"
+#include "entete/element/frequence.h"
 
 #include <vector>
 
@@ -18,6 +19,10 @@
  */
 class texte : public std::vector< ligne >
 {
+    public:
+        /** \brief Type représentant un ensemble de fréquence d'un texte. */
+        typedef std::vector<frequence> type_frequences_texte;
+
     public:
         texte();
         texte(const configuration& config, const QString & separateur_ligne = "\n");
@@ -40,8 +45,15 @@ class texte : public std::vector< ligne >
         int get_nb_lignes_avec_information() const;
 
         size_type nb_caracteres() const;
+        size_type nb_caracteres_alphabet() const;
         size_type nb_mots() const;
         size_type nb_lignes() const;
+
+        void calculer_frequence( bool force_upper_case );
+        void calculer_indice_coincidence();
+
+        const type_frequences_texte & get_frequences() const;
+        double get_indice_coincidence() const;
 
     private:
         /** \brief La configuration des paramètres induisant ce texte. */
@@ -64,6 +76,12 @@ class texte : public std::vector< ligne >
 
         /** \brief Le nombre de mots du texte. */
         size_type m_nb_mots;
+
+        /** \brief Les fréquences des éléments du texte. */
+        type_frequences_texte m_frequences;
+
+        /** \brief L'indice de coincidence du texte. */
+        double m_indice_coincidence;
 };
 
 #endif // TEXTE_H

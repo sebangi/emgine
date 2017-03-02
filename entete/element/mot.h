@@ -24,6 +24,7 @@ class mot : public std::vector< base_element >
         QString to_string() const;
         QString to_string_lisible() const;
         size_type nb_caracteres() const;
+        size_type nb_caracteres_alphabet() const;
 
     private:
         /** \brief Le séparateur de caractères. */

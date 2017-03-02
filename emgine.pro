@@ -72,7 +72,9 @@ SOURCES += \
         src/fonction_widget/text_edit.cpp \
         src/fonction/fonction_source/fonction_source_fichier_texte.cpp \
         src/fonction_widget/fonction_source_widget/fonction_source_fichier_texte_widget.cpp \
-        src/fonction/fonction_sortie/frequence.cpp
+    src/fonction/fonction_sortie/fonction_sortie_indice_coincidence.cpp \
+    src/element/frequence.cpp \
+    src/fonction_widget/fonction_sortie_widget/fonction_sortie_indice_coincidence_widget.cpp
 
 HEADERS  += \
         entete/compilation/compilateur.h \
@@ -134,7 +136,9 @@ HEADERS  += \
         entete/fonction/define_parametre.h \
         entete/fonction/fonction_source/fonction_source_fichier_texte.h \
         entete/fonction_widget/fonction_source_widget/fonction_source_fichier_texte_widget.h \
-        entete/fonction/fonction_sortie/frequence.h
+    entete/fonction/fonction_sortie/fonction_sortie_indice_coincidence.h \
+    entete/element/frequence.h \
+    entete/fonction_widget/fonction_sortie_widget/fonction_sortie_indice_coincidence_widget.h
 
 FORMS    += \
     fenetre_principale.ui

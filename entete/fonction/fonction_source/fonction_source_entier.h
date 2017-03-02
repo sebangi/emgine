@@ -20,7 +20,7 @@ class fonction_source_entier : public fonction_base_source
         ~fonction_source_entier();
 
         QString get_valeur_courte() const;
-        void executer( compilateur & compil, const textes & textes_in, textes & textes_out );
+        void executer( compilateur & compil, textes & textes_in, textes & textes_out );
         int get_valeur() const;
         void set_valeur(int valeur);
         QString get_string_valeur() const;

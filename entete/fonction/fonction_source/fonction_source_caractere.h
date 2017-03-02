@@ -20,7 +20,7 @@ class fonction_source_caractere : public fonction_base_source
         ~fonction_source_caractere();
 
         base_fonction_widget *generer_fonction_widget();        
-        void executer( compilateur & compil, const textes & textes_in, textes & texte_sout );
+        void executer( compilateur & compil, textes & textes_in, textes & texte_sout );
         QString get_valeur_courte() const;
         QString get_valeur() const;
         void set_valeur(QString valeur);

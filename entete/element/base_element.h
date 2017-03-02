@@ -24,12 +24,14 @@ class base_element
         base_element( QChar valeur );
         base_element( QCharRef valeur );
         base_element( QString valeur );
+        base_element( QString valeur, bool sensible_a_la_casse );
 
         type_element get_type() const;
         bool get_booleen() const;
         int get_entier() const;
         QChar get_caractere() const;
         QString to_string() const;
+        bool est_lettre_alphabet() const;
 
         bool operator<(const base_element& e) const;
         bool operator==(const base_element& e) const;

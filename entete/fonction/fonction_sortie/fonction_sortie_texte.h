@@ -25,7 +25,7 @@ class fonction_sortie_texte : public fonction_base_sortie
         QString get_valeur_courte() const;
 
     protected:
-        void executer_sortie_specifique( compilateur & compil, const textes & textes_in, textes & textes_out );
+        void executer_sortie_specifique( compilateur & compil, textes & textes_in, textes & textes_out );
 
     private:
         bool est_valide(logs_compilation_widget * vue_logs);

@@ -69,6 +69,20 @@ base_element::base_element(QString valeur)
 }
 
 /** --------------------------------------------------------------------------------------
+ * \brief Constructeur de la class base_element.
+ * \param valeur La valeur de type QString de l'élément créé.
+ * \param force_upper_case Booléen indiquant s'il faut forcer le upper_case.
+ */
+base_element::base_element(QString valeur, bool force_upper_case)
+ : m_type(type_element_string)
+{
+    if ( force_upper_case )
+        m_string = valeur.toUpper();
+    else
+        m_string = valeur;
+}
+
+/** --------------------------------------------------------------------------------------
  * \brief Accesseur de l'attribut type.
  * \return Le type de l'élément.
  */
@@ -140,6 +154,19 @@ QString base_element::to_string() const
         default:
             return "";
     }
+}
+
+/** --------------------------------------------------------------------------------------
+ * \brief Teste si l'élément est une lettre de l'alphabet.
+ * \return \b True si l'élément est une lettre de l'alphabet, \b False sinon.
+ */
+bool base_element::est_lettre_alphabet() const
+{
+    QString s = to_string();
+    if ( s.size() != 1 )
+        return false;
+    else
+        return (s[0] >= 'A' && s[0] <= 'Z') || (s[0] >= 'a' && s[0] <= 'z');
 }
 
 /** --------------------------------------------------------------------------------------

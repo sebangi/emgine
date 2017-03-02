@@ -4,16 +4,15 @@
  * \author Sébastien Angibaud
  */
 
-#include "entete/fonction/fonction_sortie/frequence.h"
-
-#include "entete/element/base_element.h"
+#include "entete/element/frequence.h"
 
 /** --------------------------------------------------------------------------------------
  * \brief Constructeur de la classe frequence.
  * \param e L'élément compté.
+ * \param force_upper_case Booléen indiquant s'il faut forcer le upper_case.
  */
-frequence::frequence(base_element e)
-    : m_occurrence(1), m_element(e)
+frequence::frequence(base_element e, bool force_upper_case)
+    : m_occurrence(1), m_element(e.to_string(), force_upper_case)
 {
 
 }

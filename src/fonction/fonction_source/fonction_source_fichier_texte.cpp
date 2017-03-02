@@ -96,7 +96,7 @@ base_fonction_widget *fonction_source_fichier_texte::generer_fonction_widget()
  * \param textes_in Le texte source en entrée.
  * \param textes_out Le texte de sortie généré.
  */
-void fonction_source_fichier_texte::executer( compilateur &compil, const textes & textes_in, textes & textes_out )
+void fonction_source_fichier_texte::executer( compilateur &compil, textes & textes_in, textes & textes_out )
 {
     if ( m_nom_fichier.isEmpty() )
         return;
@@ -119,7 +119,7 @@ void fonction_source_fichier_texte::executer( compilateur &compil, const textes 
  * \param textes_in Le texte source en entrée.
  * \param textes_out Le texte de sortie généré.
  */
-void fonction_source_fichier_texte::callback_param_1( compilateur &compil, const textes & textes_in, textes & textes_out )
+void fonction_source_fichier_texte::callback_param_1( compilateur &compil, textes & textes_in, textes & textes_out )
 {
     algo_PMIPL_iteration_premier_mot_par_ligne
         ( PARAM_MOT_SEPARATEUR, compil, textes_in, textes_out, & base_fonction::callback_param_2 );
@@ -131,7 +131,7 @@ void fonction_source_fichier_texte::callback_param_1( compilateur &compil, const
  * \param textes_in Le texte source en entrée.
  * \param textes_out Le texte de sortie généré.
  */
-void fonction_source_fichier_texte::callback_param_2( compilateur &compil, const textes & textes_in, textes & textes_out )
+void fonction_source_fichier_texte::callback_param_2( compilateur &compil, textes & textes_in, textes & textes_out )
 {
     algo_PMIPL_iteration_premier_mot_par_ligne
         ( PARAM_CARACTERE_SEPARATEUR, compil, textes_in, textes_out, & base_fonction::execution_specifique );
@@ -143,7 +143,7 @@ void fonction_source_fichier_texte::callback_param_2( compilateur &compil, const
  * \param textes_in Le texte source en entrée.
  * \param textes_out Le texte de sortie généré.
  */
-void fonction_source_fichier_texte::execution_specifique( compilateur &compil, const textes & textes_in, textes & textes_out )
+void fonction_source_fichier_texte::execution_specifique( compilateur &compil, textes & textes_in, textes & textes_out )
 {
     QString t_caractere = m_map_PMIPL[PARAM_CARACTERE_SEPARATEUR].mot_courant->to_string();
     QString t_mot = m_map_PMIPL[PARAM_MOT_SEPARATEUR].mot_courant->to_string();

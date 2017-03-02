@@ -33,7 +33,7 @@ fonction_source_entier::~fonction_source_entier()
  * \param textes_in Le texte source en entrée.
  * \param textes_out Le texte de sortie généré.
  */
-void fonction_source_entier::executer( compilateur &compil, const textes & textes_in, textes & textes_out )
+void fonction_source_entier::executer( compilateur &compil, textes & textes_in, textes & textes_out )
 {
     base_element e(m_valeur);
     mot m;

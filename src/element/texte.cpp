@@ -226,6 +226,20 @@ std::vector<ligne>::size_type texte::nb_caracteres() const
 }
 
 /** --------------------------------------------------------------------------------------
+ * \brief Retourne le nombre de caractère alphabet du mot.
+ * \return Le nombre de caractères alphabet du mot.
+ */
+std::vector<ligne>::size_type texte::nb_caracteres_alphabet() const
+{
+    std::vector<ligne>::size_type nb = 0;
+
+    for ( int i = 0; i < size(); ++i )
+        nb += this->at(i).nb_caracteres_alphabet();
+
+    return nb;
+}
+
+/** --------------------------------------------------------------------------------------
  * \brief Retourne le nombre de mots du texte.
  * \return Le nombre de mots du texte.
  */
@@ -241,4 +255,66 @@ std::vector<ligne>::size_type texte::nb_mots() const
 std::vector<ligne>::size_type texte::nb_lignes() const
 {
     return size();
+}
+
+/** --------------------------------------------------------------------------------------
+ * \brief Calcule la fréquence des éléments.
+ * \param force_upper_case Booléen indiquant s'il faut forcer le upper_case.
+ */
+void texte::calculer_frequence( bool force_upper_case )
+{
+    m_frequences.clear();
+
+    for ( texte::const_iterator it_l = begin(); it_l !=  end(); ++it_l )
+        for ( ligne::const_iterator it_m = it_l->begin(); it_m != it_l->end(); ++it_m )
+            for ( mot::const_iterator it_c = it_m->begin(); it_c != it_m->end(); ++it_c )
+            {
+                bool trouve = false;
+                // TODO gérer le force_upper_case
+                base_element e( it_c->to_string(), force_upper_case);
+                for ( type_frequences_texte::iterator it = m_frequences.begin(); it != m_frequences.end() && ! trouve; ++it )
+                    if ( it->get_element() == e )
+                    {
+                        trouve = true;
+                        it->ajouter_occurrence();
+                    }
+                if ( ! trouve )
+                    m_frequences.push_back( frequence(*it_c, force_upper_case) );
+            }
+
+    std::sort(m_frequences.begin(), m_frequences.end());
+}
+
+/** --------------------------------------------------------------------------------------
+ * \brief Calcule l'indice de coincidence du texte.
+ */
+void texte::calculer_indice_coincidence()
+{
+    calculer_frequence( true );
+
+    m_indice_coincidence = 0;
+    double nb_lettres = nb_caracteres_alphabet();
+    double diviseur = nb_lettres * ( nb_lettres - 1 );
+
+    for ( type_frequences_texte::const_iterator it = m_frequences.begin(); it != m_frequences.end(); ++it )
+        if ( it->get_element().est_lettre_alphabet() )
+            m_indice_coincidence += ( it->get_occurrence() * ( it->get_occurrence() - 1 ) ) / diviseur;
+}
+
+/** --------------------------------------------------------------------------------------
+ * \brief Accesseur des fréquences des éléments du texte.
+ * \return La référence du tableau des fréquences des éléments.
+ */
+const texte::type_frequences_texte & texte::get_frequences() const
+{
+    return m_frequences;
+}
+
+/** --------------------------------------------------------------------------------------
+ * \brief Accesseur de l'indice de coincidence du texte.
+ * \return L'indice de coincidence du texte.
+ */
+double texte::get_indice_coincidence() const
+{
+    return m_indice_coincidence;
 }

@@ -66,3 +66,23 @@ void textes::ajouter_texte(const configuration& config, const texte &t)
     push_back(t);
     this->back().ajouter_configuration( config );
 }
+
+
+/** --------------------------------------------------------------------------------------
+ * \brief Calcule la fréquence des éléments.
+ * \param force_upper_case Booléen indiquant s'il faut forcer le upper_case.
+ */
+void textes::calculer_frequence( bool force_upper_case )
+{
+    for ( int i = 0; i != size(); ++i )
+        this->at(i).calculer_frequence(force_upper_case);
+}
+
+/** --------------------------------------------------------------------------------------
+ * \brief Calcule l'indice de coincidence des textes.
+ */
+void textes::calculer_indice_coincidence()
+{
+    for ( int i = 0; i != size(); ++i )
+        this->at(i).calculer_indice_coincidence();
+}

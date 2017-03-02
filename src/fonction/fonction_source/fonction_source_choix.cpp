@@ -57,7 +57,7 @@ base_fonction_widget *fonction_source_choix::generer_fonction_widget()
  * \param textes_in Le texte source en entrée.
  * \param textes_out Le texte de sortie généré.
  */
-void fonction_source_choix::executer( compilateur &compil, const textes & textes_in, textes & textes_out )
+void fonction_source_choix::executer( compilateur &compil, textes & textes_in, textes & textes_out )
 {
     texte t;
 

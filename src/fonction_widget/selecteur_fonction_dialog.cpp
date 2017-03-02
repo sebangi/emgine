@@ -29,7 +29,6 @@ selecteur_fonction_dialog::selecteur_fonction_dialog(type_fonction type, QWidget
     QHBoxLayout *recherche_layout = new QHBoxLayout;
     m_recherche = new QLineEdit();
     m_recherche->setClearButtonEnabled(true);
-    connect(m_recherche, SIGNAL (returnPressed()),this, SLOT (on_chercher()));
     connect(m_recherche, SIGNAL (textChanged(const QString &)),this, SLOT (on_chercher(const QString &)));
     m_recherche->setFocusPolicy(Qt::StrongFocus);
 

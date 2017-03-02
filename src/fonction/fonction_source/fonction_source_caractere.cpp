@@ -43,7 +43,7 @@ base_fonction_widget *fonction_source_caractere::generer_fonction_widget()
  * \param textes_in Le texte source en entrée.
  * \param textes_out Le texte de sortie généré.
  */
-void fonction_source_caractere::executer( compilateur &compil, const textes & textes_in, textes & textes_out )
+void fonction_source_caractere::executer( compilateur &compil, textes & textes_in, textes & textes_out )
 {
     mot m;
 

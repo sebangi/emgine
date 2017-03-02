@@ -27,15 +27,15 @@ class fonction_cesar : public base_fonction
         fonction_cesar(fonctions_conteneur * conteneur);
 
         void initialisation_par_defaut();
-        void executer( compilateur & compil, const textes & textes_in, textes & textes_out );
+        void executer( compilateur & compil, textes & textes_in, textes & textes_out );
         QString get_valeur_courte() const;
 
     private:
         bool est_valide(logs_compilation_widget * vue_logs);
         void construire_alphabet();
-        void callback_param_1( compilateur &compil, const textes & textes_in, textes & textes_out );
-        void callback_param_2( compilateur &compil, const textes & textes_in, textes & textes_out );
-        void execution_specifique( compilateur &compil, const textes & textes_in, textes & textes_out );
+        void callback_param_1( compilateur &compil, textes & textes_in, textes & textes_out );
+        void callback_param_2( compilateur &compil, textes & textes_in, textes & textes_out );
+        void execution_specifique( compilateur &compil, textes & textes_in, textes & textes_out );
 
     private:
         /** \brief Tableau associant à chaque élément sa position dans l'alphabet. */

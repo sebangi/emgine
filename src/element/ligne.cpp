@@ -80,6 +80,20 @@ std::vector<mot>::size_type ligne::nb_caracteres() const
 }
 
 /** --------------------------------------------------------------------------------------
+ * \brief Retourne le nombre de caractère alphabet du mot.
+ * \return Le nombre de caractères alphabet du mot.
+ */
+std::vector<mot>::size_type ligne::nb_caracteres_alphabet() const
+{
+    std::vector<mot>::size_type nb = 0;
+
+    for ( int i = 0; i < size(); ++i )
+        nb += this->at(i).nb_caracteres_alphabet();
+
+    return nb;
+}
+
+/** --------------------------------------------------------------------------------------
  * \brief Retourne le nombre de mots de la ligne.
  * \return Le nombre de mots de la ligne.
  */

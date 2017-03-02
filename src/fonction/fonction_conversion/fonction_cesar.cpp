@@ -113,7 +113,7 @@ void fonction_cesar::construire_alphabet()
  * \param textes_in Le texte source en entrée.
  * \param textes_out Le texte de sortie généré.
  */
-void fonction_cesar::executer( compilateur &compil, const textes & textes_in, textes & textes_out )
+void fonction_cesar::executer( compilateur &compil, textes & textes_in, textes & textes_out )
 {
     algo_LIPL_iteration_premier_mot_par_ligne
             ( PARAM_ALPHABET, compil, textes_in, textes_out, & base_fonction::callback_param_1 );
@@ -125,7 +125,7 @@ void fonction_cesar::executer( compilateur &compil, const textes & textes_in, te
  * \param textes_in Le texte source en entrée.
  * \param textes_out Le texte de sortie généré.
  */
-void fonction_cesar::callback_param_1( compilateur &compil, const textes & textes_in, textes & textes_out )
+void fonction_cesar::callback_param_1( compilateur &compil, textes & textes_in, textes & textes_out )
 {
     construire_alphabet();
 
@@ -139,7 +139,7 @@ void fonction_cesar::callback_param_1( compilateur &compil, const textes & texte
  * \param textes_in Le texte source en entrée.
  * \param textes_out Le texte de sortie généré.
  */
-void fonction_cesar::callback_param_2( compilateur &compil, const textes & textes_in, textes & textes_out )
+void fonction_cesar::callback_param_2( compilateur &compil, textes & textes_in, textes & textes_out )
 {
     algo_PMIPL_iteration_premier_mot_par_ligne
             ( PARAM_DECALAGE, compil, textes_in, textes_out, & base_fonction::execution_specifique );
@@ -151,7 +151,7 @@ void fonction_cesar::callback_param_2( compilateur &compil, const textes & texte
  * \param textes_in Le texte source en entrée.
  * \param textes_out Le texte de sortie généré.
  */
-void fonction_cesar::execution_specifique( compilateur &compil, const textes & textes_in, textes & textes_out )
+void fonction_cesar::execution_specifique( compilateur &compil, textes & textes_in, textes & textes_out )
 {
     for ( textes::const_iterator it_t = textes_in.begin(); it_t != textes_in.end(); ++it_t ) {
         texte t( it_t->get_configuration() );

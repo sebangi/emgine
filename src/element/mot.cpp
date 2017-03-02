@@ -65,3 +65,18 @@ std::vector<base_element>::size_type mot::nb_caracteres() const
 {
     return size();
 }
+
+/** --------------------------------------------------------------------------------------
+ * \brief Retourne le nombre de caractère alphabet du mot.
+ * \return Le nombre de caractères alphabet du mot.
+ */
+std::vector<base_element>::size_type mot::nb_caracteres_alphabet() const
+{
+    std::vector<base_element>::size_type nb = 0;
+
+    for ( int i = 0; i < size(); ++i )
+        if ( this->at(i).est_lettre_alphabet() )
+            nb++;
+
+    return nb;
+}

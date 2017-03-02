@@ -17,7 +17,7 @@
 class frequence
 {
     public:
-        frequence(base_element e);
+        frequence(base_element e, bool force_upper_case);
 
         bool operator<( const frequence& f ) const;
         base_element get_element() const;
@@ -33,3 +33,4 @@ class frequence
 };
 
 #endif // FREQUENCE_H
+

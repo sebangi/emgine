@@ -23,7 +23,7 @@ class fonction_base_sortie : public base_fonction
         fonction_base_sortie(fonctions_conteneur * conteneur);
         ~fonction_base_sortie();
 
-        void executer( compilateur & compil, const textes & textes_in, textes & textes_out );
+        void executer( compilateur & compil, textes & textes_in, textes & textes_out );
         textes & get_textes();
         void set_textes(const textes &textes);
 
@@ -40,7 +40,7 @@ class fonction_base_sortie : public base_fonction
          * \param textes_in Le texte source en entrée.
          * \param textes_out Le texte de sortie généré.
         */
-        virtual void executer_sortie_specifique( compilateur & compil, const textes & textes_in, textes & textes_out ) = 0;
+        virtual void executer_sortie_specifique( compilateur & compil, textes & textes_in, textes & textes_out ) = 0;
 
     protected:
         /** \brief Les textes de sortie. */

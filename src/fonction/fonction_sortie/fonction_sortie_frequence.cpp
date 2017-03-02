@@ -8,7 +8,6 @@
 #include "entete/compilation/compilateur.h"
 #include "entete/element/texte.h"
 #include "entete/element/type_element.h"
-#include "entete/fonction/fonction_sortie/frequence.h"
 #include "entete/fonction_widget/fonction_sortie_widget/fonction_sortie_frequence_widget.h"
 
 /** --------------------------------------------------------------------------------------
@@ -45,43 +44,23 @@ base_fonction_widget *fonction_sortie_frequence::generer_fonction_widget()
  * \param textes_in Le texte source en entrée.
  * \param textes_out Le texte de sortie généré.
  */
-void fonction_sortie_frequence::executer_sortie_specifique( compilateur &compil, const textes & textes_in, textes & textes_out )
+void fonction_sortie_frequence::executer_sortie_specifique( compilateur &compil, textes & textes_in, textes & textes_out )
 {
-    // calcul des fréquences
-    for ( textes::const_iterator it_t = textes_in.begin(); it_t != textes_in.end(); ++it_t )
+    m_frequences_textes.clear();
+    textes_in.calculer_frequence(false);
+
+    for ( textes::iterator it_texte = textes_in.begin(); it_texte != textes_in.end(); ++it_texte )
     {
-        type_frequences_texte frequences_texte;
-        int nb_elements = 0;
-
-        for ( texte::const_iterator it_l = it_t->begin(); it_l !=  it_t->end(); ++it_l )
-            for ( ligne::const_iterator it_m = it_l->begin(); it_m != it_l->end(); ++it_m )
-                for ( mot::const_iterator it_c = it_m->begin(); it_c != it_m->end(); ++it_c )
-                    {
-                        nb_elements++;
-                        bool trouve = false;
-                        for ( type_frequences_texte::iterator it = frequences_texte.begin(); it != frequences_texte.end() && ! trouve; ++it )
-                            if ( it->get_element() == *it_c )
-                            {
-                                trouve = true;
-                                it->ajouter_occurrence();
-                            }
-                        if ( ! trouve )
-                            frequences_texte.push_back( frequence(*it_c) );
-                    }
-
-        std::sort(frequences_texte.begin(), frequences_texte.end());
-        m_frequences.push_back( frequences_texte );
-
         texte t;
-        for ( type_frequences_texte::const_iterator it = frequences_texte.begin(); it != frequences_texte.end(); ++it )
+        for ( texte::type_frequences_texte::const_iterator it = it_texte->get_frequences().begin(); it != it_texte->get_frequences().end(); ++it )
         {
             ligne l;
             l.ajouter_mot( mot( it->get_element().to_string() ) );
             l.ajouter_mot( mot( QString::number( it->get_occurrence() ) ) );
-            l.ajouter_mot( mot( QString::number( it->get_occurrence() * 100.0 / nb_elements ) + "%" ) );
+            l.ajouter_mot( mot( QString::number( it->get_occurrence() * 100.0 / it_texte->nb_caracteres() ) + "%" ) );
             t.ajouter_ligne( l );
         }
-        m_frequences_textes.ajouter_texte( it_t->get_configuration(), t );
+        m_frequences_textes.ajouter_texte( it_texte->get_configuration(), t );
     }
 }
 

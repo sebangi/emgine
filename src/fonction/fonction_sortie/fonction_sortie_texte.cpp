@@ -46,7 +46,7 @@ base_fonction_widget *fonction_sortie_texte::generer_fonction_widget()
  * \param textes_in Le texte source en entrée.
  * \param textes_out Le texte de sortie généré.
  */
-void fonction_sortie_texte::executer_sortie_specifique( compilateur &compil, const textes & textes_in, textes & textes_out )
+void fonction_sortie_texte::executer_sortie_specifique( compilateur &compil, textes & textes_in, textes & textes_out )
 {
     // rien à faire
 }

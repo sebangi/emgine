@@ -32,7 +32,7 @@ fonction_base_sortie::~fonction_base_sortie()
  * \param textes_in Le texte source en entrée.
  * \param textes_out Le texte de sortie généré.
  */
-void fonction_base_sortie::executer( compilateur &compil, const textes & textes_in, textes & textes_out )
+void fonction_base_sortie::executer( compilateur &compil, textes & textes_in, textes & textes_out )
 {
     m_textes = textes_in;
     textes_out = textes_in;

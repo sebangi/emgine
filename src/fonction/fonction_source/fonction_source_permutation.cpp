@@ -66,7 +66,7 @@ base_fonction_widget *fonction_source_permutation::generer_fonction_widget()
  * \param textes_in Le texte source en entrée.
  * \param textes_out Le texte de sortie généré.
  */
-void fonction_source_permutation::executer( compilateur &compil, const textes & textes_in, textes & textes_out )
+void fonction_source_permutation::executer( compilateur &compil, textes & textes_in, textes & textes_out )
 {
     algo_LIPL_iteration_premier_mot_par_ligne
         ( PARAM_ELEMENTS, compil, textes_in, textes_out, & base_fonction::execution_specifique );
@@ -78,7 +78,7 @@ void fonction_source_permutation::executer( compilateur &compil, const textes & 
  * \param textes_in Le texte source en entrée.
  * \param textes_out Le texte de sortie généré.
  */
-void fonction_source_permutation::execution_specifique( compilateur &compil, const textes & textes_in, textes & textes_out )
+void fonction_source_permutation::execution_specifique( compilateur &compil, textes & textes_in, textes & textes_out )
 {
     texte t("", "\n" );
 

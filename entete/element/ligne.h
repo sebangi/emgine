@@ -31,6 +31,7 @@ class ligne : public std::vector< mot >
         QString to_string_lisible() const;
 
         size_type nb_caracteres() const;
+        size_type nb_caracteres_alphabet() const;
         size_type nb_mots() const;        
 
         bool operator<(const ligne & l) const;
