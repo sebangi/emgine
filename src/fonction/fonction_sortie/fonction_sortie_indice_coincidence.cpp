@@ -8,7 +8,7 @@
 #include "entete/compilation/compilateur.h"
 #include "entete/element/texte.h"
 #include "entete/element/type_element.h"
-#include "entete/fonction_widget/fonction_sortie_widget/fonction_sortie_indice_coincidence_widget.h"
+#include "entete/fonction_widget/fonction_sortie_widget/fonction_base_sortie_widget.h"
 
 #include <iostream>
 
@@ -37,7 +37,7 @@ fonction_sortie_indice_coincidence::~fonction_sortie_indice_coincidence()
  */
 base_fonction_widget *fonction_sortie_indice_coincidence::generer_fonction_widget()
 {
-    return new fonction_sortie_indice_coincidence_widget(this);
+    return new fonction_base_sortie_widget(this);
 }
 
 /** --------------------------------------------------------------------------------------
@@ -48,7 +48,7 @@ base_fonction_widget *fonction_sortie_indice_coincidence::generer_fonction_widge
  */
 void fonction_sortie_indice_coincidence::executer_sortie_specifique( compilateur &compil, textes & textes_in, textes & textes_out )
 {
-    m_indices_textes.clear();
+    m_textes_a_afficher.clear();
     textes_in.calculer_indice_coincidence();
 
     for ( textes::iterator it_texte = textes_in.begin(); it_texte != textes_in.end(); ++it_texte )
@@ -57,7 +57,7 @@ void fonction_sortie_indice_coincidence::executer_sortie_specifique( compilateur
         ligne l;
         l.ajouter_mot( mot( QString::number( it_texte->get_indice_coincidence() ) ) );
         t.ajouter_ligne( l );
-        m_indices_textes.ajouter_texte( it_texte->get_configuration(), t );
+        m_textes_a_afficher.ajouter_texte( it_texte->get_configuration(), t );
     }
 }
 
@@ -69,15 +69,6 @@ void fonction_sortie_indice_coincidence::executer_sortie_specifique( compilateur
 bool fonction_sortie_indice_coincidence::est_valide(logs_compilation_widget * vue_logs)
 {
     return true;
-}
-
-/** --------------------------------------------------------------------------------------
- * \brief Accesseurs des indices de coincidences.
- * \return Les indices de coincidence.
- */
-textes & fonction_sortie_indice_coincidence::get_indices_textes()
-{
-    return m_indices_textes;
 }
 
 /** --------------------------------------------------------------------------------------

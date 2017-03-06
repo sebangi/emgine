@@ -1,13 +1,14 @@
 /**
- * \file fonction_sortie_frequence_widget.cpp
- * \brief Fichier d'implémentation de la classe fonction_sortie_frequence_widget.
+ * \file fonction_base_sortie_widget.cpp
+ * \brief Fichier d'implémentation de la classe fonction_base_sortie_widget.
  * \author Sébastien Angibaud
  */
 
-#include "entete/fonction_widget/fonction_sortie_widget/fonction_sortie_frequence_widget.h"
+#include "entete/fonction_widget/fonction_sortie_widget/fonction_base_sortie_widget.h"
 
 #include "entete/fonction_widget/fonction_sortie_widget/liste_texte_widget.h"
 #include "entete/fonction_widget/fonction_sortie_widget/texte_widget_item.h"
+#include "entete/fonction/fonction_sortie/fonction_base_sortie.h"
 #include "entete/projet/projet.h"
 
 #include <QHBoxLayout>
@@ -19,12 +20,12 @@
 #include <QMessageBox>
 
 /** --------------------------------------------------------------------------------------
- * \brief Constructeur de la classe fonction_sortie_frequence_widget.
+ * \brief Constructeur de la classe fonction_base_sortie_widget.
  * \param fonction Un pointeur sur la fonction associée.
  * \param parent Un pointeur sur le widget parent.
  */
-fonction_sortie_frequence_widget::fonction_sortie_frequence_widget(base_fonction *fonction, QWidget *parent)
-    : base_fonction_widget(fonction, parent), m_frequences_textes( ((fonction_sortie_frequence*)fonction)->get_frequences_textes())
+fonction_base_sortie_widget::fonction_base_sortie_widget(base_fonction *fonction, QWidget *parent)
+    : base_fonction_widget(fonction, parent), m_textes_a_afficher( ((fonction_base_sortie*)fonction)->get_textes_a_afficher())
 {
     init();
 }
@@ -32,9 +33,9 @@ fonction_sortie_frequence_widget::fonction_sortie_frequence_widget(base_fonction
 /** --------------------------------------------------------------------------------------
  * \brief Fonction appelée lorsque la liste de textes à afficher est modifiée.
  */
-void fonction_sortie_frequence_widget::on_externe_fbs_textes_modifie()
+void fonction_base_sortie_widget::on_externe_fbs_textes_modifie()
 {
-    m_frequences_textes = ((fonction_sortie_frequence*)m_fonction)->get_frequences_textes();
+    m_textes_a_afficher = ((fonction_base_sortie*)m_fonction)->get_textes_a_afficher();
 
     creer_liste_texte();
 
@@ -45,12 +46,12 @@ void fonction_sortie_frequence_widget::on_externe_fbs_textes_modifie()
 /** --------------------------------------------------------------------------------------
  * \brief Affiche les textes.
  */
-void fonction_sortie_frequence_widget::creer_liste_texte()
+void fonction_base_sortie_widget::creer_liste_texte()
 {
     m_liste_texte->clear();
 
     int i = 1;
-    for ( textes::iterator it = m_frequences_textes.begin(); it != m_frequences_textes.end(); ++it )
+    for ( textes::iterator it = m_textes_a_afficher.begin(); it != m_textes_a_afficher.end(); ++it )
     {
         texte_widget_item* item = new texte_widget_item(*it, i);
         m_liste_texte->addItem( item );
@@ -61,7 +62,7 @@ void fonction_sortie_frequence_widget::creer_liste_texte()
 /** --------------------------------------------------------------------------------------
  * \brief Initialise le widget.
  */
-void fonction_sortie_frequence_widget::init()
+void fonction_base_sortie_widget::init()
 {
     QVBoxLayout* layout = new QVBoxLayout();
     layout->setSizeConstraint(QLayout::SetFixedSize);
@@ -74,19 +75,19 @@ void fonction_sortie_frequence_widget::init()
     connect( m_liste_texte, SIGNAL(itemDoubleClicked(QListWidgetItem*)),
              this, SLOT(onTexteDoubleClicked(QListWidgetItem*)));
 
-    m_frequences_textes = ((fonction_sortie_frequence*)m_fonction)->get_frequences_textes();
+    m_textes_a_afficher = ((fonction_base_sortie*)m_fonction)->get_textes_a_afficher();
     creer_liste_texte();
 
     m_specialisation_layout->addLayout(layout);
 
-    connect((fonction_sortie_frequence*)m_fonction, SIGNAL(signal_fbs_textes_modifie()), this, SLOT(on_externe_fbs_textes_modifie()));
+    connect((fonction_base_sortie*)m_fonction, SIGNAL(signal_fbs_textes_modifie()), this, SLOT(on_externe_fbs_textes_modifie()));
 }
 
 /** --------------------------------------------------------------------------------------
  * \brief Fonction appelée lors d'un clique sur un item.
  * \param item L'item cliqué.
  */
-void fonction_sortie_frequence_widget::onTexteDoubleClicked(QListWidgetItem* item)
+void fonction_base_sortie_widget::onTexteDoubleClicked(QListWidgetItem* item)
 {
     // Attention en cas de modificiation de codage de cette fonction :
     // si on utilise la fonction get_configuration() et si la fonction a été détruite depuis

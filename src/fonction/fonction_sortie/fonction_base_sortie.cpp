@@ -59,3 +59,12 @@ void fonction_base_sortie::set_textes(const textes &textes)
 {
     m_textes = textes;
 }
+
+/** --------------------------------------------------------------------------------------
+ * \brief Accesseurs des textes de sortie de la fonction.
+ * \return Les textes de sortie.
+ */
+textes & fonction_base_sortie::get_textes_a_afficher()
+{
+    return m_textes_a_afficher;
+}

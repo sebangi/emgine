@@ -24,17 +24,11 @@ class fonction_sortie_indice_coincidence : public fonction_base_sortie
         base_fonction_widget *generer_fonction_widget();
         QString get_valeur_courte() const;
 
-        textes & get_indices_textes();
-
     protected:
         void executer_sortie_specifique( compilateur & compil, textes & textes_in, textes & textes_out );
 
     private:
         bool est_valide(logs_compilation_widget * vue_logs);
-
-    private:
-        /** \brief Les indices de coincidence sous forme de textes. */
-        textes m_indices_textes;
 };
 
 #endif // FONCTION_SORTIE_INDICE_COINCIDENCE_H

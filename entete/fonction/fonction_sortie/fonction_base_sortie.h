@@ -27,6 +27,8 @@ class fonction_base_sortie : public base_fonction
         textes & get_textes();
         void set_textes(const textes &textes);
 
+        textes & get_textes_a_afficher();
+
     signals:
         /** --------------------------------------------------------------------------------------
          * \brief Signal informant d'une modification du texte.
@@ -45,6 +47,9 @@ class fonction_base_sortie : public base_fonction
     protected:
         /** \brief Les textes de sortie. */
         textes m_textes;
+
+        /** \brief Les textes à afficher. */
+        textes m_textes_a_afficher;
 };
 
 #endif // FONCTION_BASE_SORTIE_H

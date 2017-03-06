@@ -24,38 +24,8 @@
  * \param parent Un pointeur sur le widget parent.
  */
 fonction_sortie_texte_widget::fonction_sortie_texte_widget(base_fonction *fonction, QWidget *parent)
-    : base_fonction_widget(fonction, parent), m_textes( ((fonction_sortie_texte*)fonction)->get_textes())
+    : fonction_base_sortie_widget(fonction, parent)
 {
-    init();
-}
-
-/** --------------------------------------------------------------------------------------
- * \brief Fonction appelée lorsque la liste de textes à afficher est modifiée.
- */
-void fonction_sortie_texte_widget::on_externe_fbs_textes_modifie()
-{
-    m_textes = ((fonction_sortie_texte*)m_fonction)->get_textes();
-
-    creer_liste_texte();
-
-    m_liste_texte->updateGeometry();
-    signal_bfw_size_change();
-}
-
-/** --------------------------------------------------------------------------------------
- * \brief Affiche les textes.
- */
-void fonction_sortie_texte_widget::creer_liste_texte()
-{
-    m_liste_texte->clear();
-
-    int i = 1;
-    for ( textes::iterator it = m_textes.begin(); it != m_textes.end(); ++it )
-    {
-        texte_widget_item* item = new texte_widget_item(*it, i);
-        m_liste_texte->addItem( item );
-        ++i;
-    }
 }
 
 /** --------------------------------------------------------------------------------------
@@ -63,41 +33,9 @@ void fonction_sortie_texte_widget::creer_liste_texte()
  */
 void fonction_sortie_texte_widget::init()
 {
-    QVBoxLayout* layout = new QVBoxLayout();
-    layout->setSizeConstraint(QLayout::SetFixedSize);
-    layout->setMargin(0);
-    layout->setSpacing(0);
+    super::init();
 
-    m_liste_texte = new liste_texte_widget();
-
-    layout->addWidget(m_liste_texte);
-    connect( m_liste_texte, SIGNAL(itemDoubleClicked(QListWidgetItem*)),
-             this, SLOT(onTexteDoubleClicked(QListWidgetItem*)));
     connect(m_liste_texte, SIGNAL(customContextMenuRequested(QPoint)), this, SLOT(showContextMenu(QPoint)));
-
-    m_textes = ((fonction_sortie_texte*)m_fonction)->get_textes();
-    creer_liste_texte();
-
-    m_specialisation_layout->addLayout(layout);
-
-    connect((fonction_base_sortie*)m_fonction, SIGNAL(signal_fbs_textes_modifie()), this, SLOT(on_externe_fbs_textes_modifie()));
-}
-
-/** --------------------------------------------------------------------------------------
- * \brief Fonction appelée lors d'un clique sur un item.
- * \param item L'item cliqué.
- */
-void fonction_sortie_texte_widget::onTexteDoubleClicked(QListWidgetItem* item)
-{
-    // Attention en cas de modificiation de codage de cette fonction :
-    // si on utilise la fonction get_configuration() et si la fonction a été détruite depuis
-
-    ((texte_widget_item*)item)->get_texte().inverser_configuration_visibilite();
-    ((texte_widget_item*)item)->update();
-
-    m_liste_texte->updateGeometry();
-    signal_bfw_size_change();
-
 }
 
 /** --------------------------------------------------------------------------------------

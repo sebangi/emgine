@@ -26,17 +26,11 @@ class fonction_sortie_frequence : public fonction_base_sortie
         base_fonction_widget *generer_fonction_widget();
         QString get_valeur_courte() const;
 
-        textes & get_frequences_textes();
-
     protected:
         void executer_sortie_specifique( compilateur & compil, textes & textes_in, textes & textes_out );
 
     private:
         bool est_valide(logs_compilation_widget * vue_logs);
-
-    private:
-       /** \brief Les fréquences sous forme de textes. */
-       textes m_frequences_textes;
 };
 
 #endif // FONCTION_SORTIE_FREQUENCE_H

@@ -48,7 +48,7 @@ base_fonction_widget *fonction_sortie_texte::generer_fonction_widget()
  */
 void fonction_sortie_texte::executer_sortie_specifique( compilateur &compil, textes & textes_in, textes & textes_out )
 {
-    // rien à faire
+    m_textes_a_afficher = m_textes;
 }
 
 /** --------------------------------------------------------------------------------------

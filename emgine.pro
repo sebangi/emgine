@@ -48,7 +48,6 @@ SOURCES += \
         src/fonction_widget/base_parametre_widget.cpp \
         src/fonction_widget/bouton_choix_fonction.cpp \
         src/fonction_widget/fonction_sortie_widget/fonction_sortie_texte_widget.cpp \
-        src/fonction_widget/fonction_sortie_widget/fonction_sortie_frequence_widget.cpp \
         src/fonction_widget/fonction_source_widget/fonction_source_booleen_widget.cpp \
         src/fonction_widget/fonction_source_widget/fonction_source_caractere_widget.cpp \
         src/fonction_widget/fonction_source_widget/fonction_source_texte_widget.cpp \
@@ -74,7 +73,7 @@ SOURCES += \
         src/fonction_widget/fonction_source_widget/fonction_source_fichier_texte_widget.cpp \
     src/fonction/fonction_sortie/fonction_sortie_indice_coincidence.cpp \
     src/element/frequence.cpp \
-    src/fonction_widget/fonction_sortie_widget/fonction_sortie_indice_coincidence_widget.cpp
+    src/fonction_widget/fonction_sortie_widget/fonction_base_sortie_widget.cpp
 
 HEADERS  += \
         entete/compilation/compilateur.h \
@@ -110,7 +109,6 @@ HEADERS  += \
         entete/fonction_widget/base_parametre_widget.h \
         entete/fonction_widget/bouton_choix_fonction.h \
         entete/fonction_widget/fonction_sortie_widget/fonction_sortie_texte_widget.h \
-        entete/fonction_widget/fonction_sortie_widget/fonction_sortie_frequence_widget.h \
         entete/fonction_widget/fonction_source_widget/fonction_source_booleen_widget.h \
         entete/fonction_widget/fonction_source_widget/fonction_source_caractere_widget.h \
         entete/fonction_widget/fonction_source_widget/fonction_source_texte_widget.h \
@@ -138,7 +136,7 @@ HEADERS  += \
         entete/fonction_widget/fonction_source_widget/fonction_source_fichier_texte_widget.h \
     entete/fonction/fonction_sortie/fonction_sortie_indice_coincidence.h \
     entete/element/frequence.h \
-    entete/fonction_widget/fonction_sortie_widget/fonction_sortie_indice_coincidence_widget.h
+    entete/fonction_widget/fonction_sortie_widget/fonction_base_sortie_widget.h
 
 FORMS    += \
     fenetre_principale.ui
