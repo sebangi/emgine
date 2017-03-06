@@ -1,9 +1,11 @@
-/** \file base_element.cpp
+/**
+ * \file base_element.cpp
  * \brief Fichier d'implémentation de la classe base_element.
  * \author Sébastien Angibaud
  */
 
 #include "entete/element/base_element.h"
+#include <QRegExp>
 
 /** --------------------------------------------------------------------------------------
  * \brief Constructeur de la classe base_element.
@@ -74,7 +76,7 @@ base_element::base_element(QString valeur)
  * \param force_upper_case Booléen indiquant s'il faut forcer le upper_case.
  */
 base_element::base_element(QString valeur, bool force_upper_case)
- : m_type(type_element_string)
+    : m_type(type_element_string)
 {
     if ( force_upper_case )
         m_string = valeur.toUpper();
@@ -157,6 +159,15 @@ QString base_element::to_string() const
 }
 
 /** --------------------------------------------------------------------------------------
+ * \brief Teste si l'élément est vide.
+ * \return \b True si l'élément est vide, \b False sinon.
+ */
+bool base_element::est_vide() const
+{
+    return to_string().isEmpty();
+}
+
+/** --------------------------------------------------------------------------------------
  * \brief Teste si l'élément est une lettre de l'alphabet.
  * \return \b True si l'élément est une lettre de l'alphabet, \b False sinon.
  */
@@ -167,6 +178,30 @@ bool base_element::est_lettre_alphabet() const
         return false;
     else
         return (s[0] >= 'A' && s[0] <= 'Z') || (s[0] >= 'a' && s[0] <= 'z');
+}
+
+/** --------------------------------------------------------------------------------------
+ * \brief Formate l'élément, i.e mets en majuscule et retire les accents.
+ * \param retrait_ponctuation Booléen indiquant s'il faut retirer la ponctuation.
+ */
+void base_element::formater( bool retrait_ponctuation )
+{
+    QString s = to_string().toUpper();
+    s.replace( QRegExp( "[ÁÀÂÄ]") , "A" );
+    s.replace( QRegExp( "[ÉÈÊË]") , "E" );
+    s.replace( QRegExp( "[ÍÌÎÏ]") , "I" );
+    s.replace( QRegExp( "[ÓÒÔÖ]") , "O" );
+    s.replace( QRegExp( "[ÚÙÛÜ]") , "U" );
+    s.replace( QRegExp( "[Ç]") , "C" );
+
+    if ( retrait_ponctuation )
+    {
+        QString ponct = QRegExp::escape("«»,;:!?./§*%^¨$£&~\"#'{([|`_\\^@)]°=}+-");
+        s.remove( QRegExp( "[" + ponct + "]" ) );
+    }
+
+    m_string = s;
+    m_type = type_element_string;
 }
 
 /** --------------------------------------------------------------------------------------

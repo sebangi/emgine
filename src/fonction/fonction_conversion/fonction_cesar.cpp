@@ -12,11 +12,6 @@
 #include "entete/element/base_element.h"
 #include "entete/element/texte.h"
 #include "entete/element/type_element.h"
-#include "entete/explorateur/noeud_fonction.h"
-#include "entete/fenetre_principale.h"
-#include "entete/parametre/parametre_choix.h"
-
-#include <iostream>
 
 /** --------------------------------------------------------------------------------------
  \brief Constructeur de la classe fonction_cesar.

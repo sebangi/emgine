@@ -42,7 +42,10 @@ enum type_id_parametre{
     PARAM_ADDITIF,
 
     /** \brief Paramètre pour les éléments à considérer. */
-    PARAM_ELEMENTS
+    PARAM_ELEMENTS,
+
+    /** \brief Paramètre pour indiquer si la ponctuation est à retirer. */
+    PARAM_RETRAIT_PONCTUATION
 };
 
 #endif // DEFINE_PARAMETRE_H

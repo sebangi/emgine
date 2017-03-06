@@ -21,6 +21,7 @@
 
 // include des fonctions de sortie
 #include "entete/fonction/fonction_conversion/fonction_cesar.h"
+#include "entete/fonction/fonction_conversion/fonction_formatage.h"
 
 std::map<type_id_fonction, QString> bibliotheque_fonctions::s_fonctions_nom =
 {
@@ -32,6 +33,7 @@ std::map<type_id_fonction, QString> bibliotheque_fonctions::s_fonctions_nom =
     { f_source_choix, "Choix" },
     { f_source_generateur_permutation, "Générateur de permutations" },
     { f_conversion_cesar, "Chiffrement par Code César" },
+    { f_conversion_formatage, "Formatage du texte" },
     { f_sortie_texte, "Textes" },
     { f_sortie_frequence, "Fréquences des éléments" },
     { f_sortie_indice_coincidence, "Indice de coincidence" }
@@ -47,6 +49,7 @@ std::map<type_id_fonction, QString> bibliotheque_fonctions::s_fonctions_aide =
     { f_source_choix, "Source de type choix" },
     { f_source_generateur_permutation, "Générateur de permutations" },
     { f_conversion_cesar, "Outil pour décoder/encoder avec César.\nLe code César (ou chiffre de César) est un chiffrement par décalage parmi les plus simples et les plus connu, il utilise la substitution d'une lettre par une autre plus loin dans l'alphabet." },
+    { f_conversion_formatage, "Formate le texte, i.e. mise en majuscule et retrait des accents." },
     { f_sortie_texte, "Sortie textuelle : la liste de tous les textes obtenus." },
     { f_sortie_frequence, "Sortie affichant la fréquence des éléments." },
     { f_sortie_indice_coincidence, "Sortie affichant l'indice de coincidence.\nEn français, l'indice vaut environ 0,0778. Si l'indice de coincidence est grand (proche de 0.070), c'est à dire similaire à celui d'un message non chiffré, alors le message a probablement subit une substitution monoalphabetiquehref (une même lettre ne peut être remplacée que par une seule autre). Si l'indice de coincidence est faible (proche de 0.0385), c'est à dire similaire à une répartition aléatoire, alors le message a probablement subit un chiffrement polyalphabétique (une même lettre peut être remplacée par plusieurs autres). Plus l'indice est faible, plus le nombre d'alphabets utilisé est grand." }
@@ -76,6 +79,9 @@ std::map<type_id_fonction, std::set<QString> > bibliotheque_fonctions::s_categor
       { }
     },
     { f_conversion_cesar,
+      { }
+    },
+    { f_conversion_formatage,
       { }
     },
     { f_sortie_texte,
@@ -108,6 +114,7 @@ base_fonction * bibliotheque_fonctions::get_fonction(type_id_fonction id)
 
             // CONVERSIONS
         case f_conversion_cesar : return new fonction_cesar(NULL);
+        case f_conversion_formatage : return new fonction_formatage(NULL);
 
             // SORTIES
         case f_sortie_texte : return new fonction_sortie_texte(NULL);

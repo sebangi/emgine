@@ -31,7 +31,9 @@ class base_element
         int get_entier() const;
         QChar get_caractere() const;
         QString to_string() const;
+        bool est_vide() const;
         bool est_lettre_alphabet() const;
+        void formater( bool retrait_ponctuation );
 
         bool operator<(const base_element& e) const;
         bool operator==(const base_element& e) const;

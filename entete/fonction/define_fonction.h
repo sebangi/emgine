@@ -71,6 +71,9 @@ enum type_id_fonction{
     /** \brief Fonction de conversion réalisant le décalage de César. */
     f_conversion_cesar = 1000,
 
+    /** \brief Fonction de conversion formatant le texte, i.e. mise en majuscule et retrait des accents. */
+    f_conversion_formatage,
+
     /** \brief Fin des fonctions de conversions. */
     fin_fonction_conversion,
 
