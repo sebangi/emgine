@@ -15,6 +15,7 @@
 #include "entete/fonction/fonction_source/fonction_source_texte.h"
 
 // include des fonctions de conversion
+#include "entete/fonction/fonction_sortie/fonction_sortie_analyse_ligne.h"
 #include "entete/fonction/fonction_sortie/fonction_sortie_frequence.h"
 #include "entete/fonction/fonction_sortie/fonction_sortie_indice_coincidence.h"
 #include "entete/fonction/fonction_sortie/fonction_sortie_texte.h"
@@ -36,7 +37,8 @@ std::map<type_id_fonction, QString> bibliotheque_fonctions::s_fonctions_nom =
     { f_conversion_formatage, "Formatage du texte" },
     { f_sortie_texte, "Textes" },
     { f_sortie_frequence, "Fréquences des éléments" },
-    { f_sortie_indice_coincidence, "Indice de coincidence" }
+    { f_sortie_indice_coincidence, "Indice de coincidence" },
+    { f_sortie_analyse_ligne, "Analyse des lignes" }
 };
 
 std::map<type_id_fonction, QString> bibliotheque_fonctions::s_fonctions_aide =
@@ -52,7 +54,8 @@ std::map<type_id_fonction, QString> bibliotheque_fonctions::s_fonctions_aide =
     { f_conversion_formatage, "Formate le texte, i.e. mise en majuscule et retrait des accents." },
     { f_sortie_texte, "Sortie textuelle : la liste de tous les textes obtenus." },
     { f_sortie_frequence, "Sortie affichant la fréquence des éléments." },
-    { f_sortie_indice_coincidence, "Sortie affichant l'indice de coincidence.\nEn français, l'indice vaut environ 0,0778. Si l'indice de coincidence est grand (proche de 0.070), c'est à dire similaire à celui d'un message non chiffré, alors le message a probablement subit une substitution monoalphabetiquehref (une même lettre ne peut être remplacée que par une seule autre). Si l'indice de coincidence est faible (proche de 0.0385), c'est à dire similaire à une répartition aléatoire, alors le message a probablement subit un chiffrement polyalphabétique (une même lettre peut être remplacée par plusieurs autres). Plus l'indice est faible, plus le nombre d'alphabets utilisé est grand." }
+    { f_sortie_indice_coincidence, "Sortie affichant l'indice de coincidence.\nEn français, l'indice vaut environ 0,0778. Si l'indice de coincidence est grand (proche de 0.070), c'est à dire similaire à celui d'un message non chiffré, alors le message a probablement subit une substitution monoalphabetiquehref (une même lettre ne peut être remplacée que par une seule autre). Si l'indice de coincidence est faible (proche de 0.0385), c'est à dire similaire à une répartition aléatoire, alors le message a probablement subit un chiffrement polyalphabétique (une même lettre peut être remplacée par plusieurs autres). Plus l'indice est faible, plus le nombre d'alphabets utilisé est grand." },
+    { f_sortie_analyse_ligne, "Sortie affichant l'analyse de chaque ligne, i.e. son nombre de mots et de caractères." }
 };
 
 std::map<type_id_fonction, std::set<QString> > bibliotheque_fonctions::s_categories =
@@ -92,6 +95,9 @@ std::map<type_id_fonction, std::set<QString> > bibliotheque_fonctions::s_categor
     },
     { f_sortie_indice_coincidence,
       { }
+    },
+    { f_sortie_analyse_ligne,
+      { }
     }
 };
 
@@ -120,6 +126,7 @@ base_fonction * bibliotheque_fonctions::get_fonction(type_id_fonction id)
         case f_sortie_texte : return new fonction_sortie_texte(NULL);
         case f_sortie_frequence : return new fonction_sortie_frequence(NULL);
         case f_sortie_indice_coincidence : return new fonction_sortie_indice_coincidence(NULL);
+        case f_sortie_analyse_ligne : return new fonction_sortie_analyse_ligne(NULL);
 
         default:
             return NULL;

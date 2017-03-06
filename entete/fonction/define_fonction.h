@@ -92,6 +92,9 @@ enum type_id_fonction{
     /** \brief Fonction de sortie affichant l'indice de coincidence. */
     f_sortie_indice_coincidence,
 
+    /** \brief Fonction de sortie affichant l'analyse de chaque ligne. */
+    f_sortie_analyse_ligne,
+
     /** \brief Fin des fonctions de sortie. */
     fin_fonction_sortie
 };

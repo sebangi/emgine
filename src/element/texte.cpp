@@ -272,6 +272,8 @@ void texte::calculer_frequence( bool force_upper_case )
                 bool trouve = false;
                 // TODO gérer le force_upper_case
                 base_element e( it_c->to_string(), force_upper_case);
+                e.formater(true);
+
                 for ( type_frequences_texte::iterator it = m_frequences.begin(); it != m_frequences.end() && ! trouve; ++it )
                     if ( it->get_element() == e )
                     {
