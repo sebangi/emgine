@@ -77,6 +77,12 @@ enum type_id_fonction{
     /** \brief Fonction de conversion formatant le texte, i.e. mise en majuscule et retrait des accents. */
     f_conversion_formatage,
 
+    /** \brief Fonction de conversion filtrant le texte selon un dictionnaire. */
+    f_conversion_selection_selon_dictionnaire,
+
+    /** \brief Fonction de conversion affichant les anagrammes de chaque mot. */
+    f_conversion_anagramme,
+
     /** \brief Fin des fonctions de conversions. */
     fin_fonction_conversion,
 

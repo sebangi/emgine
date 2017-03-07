@@ -45,7 +45,10 @@ enum type_id_parametre{
     PARAM_ELEMENTS,
 
     /** \brief Paramètre pour indiquer si la ponctuation est à retirer. */
-    PARAM_RETRAIT_PONCTUATION
+    PARAM_RETRAIT_PONCTUATION,
+
+    /** \brief Paramètre pour indiquer le dictionnaire à utiliser. */
+    PARAM_DICTIONNAIRE,
 };
 
 #endif // DEFINE_PARAMETRE_H

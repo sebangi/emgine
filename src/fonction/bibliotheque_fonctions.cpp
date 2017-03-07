@@ -24,6 +24,8 @@
 // include des fonctions de sortie
 #include "entete/fonction/fonction_conversion/fonction_cesar.h"
 #include "entete/fonction/fonction_conversion/fonction_formatage.h"
+#include "entete/fonction/fonction_conversion/fonction_selection_selon_dictionnaire.h"
+#include "entete/fonction/fonction_conversion/fonction_anagramme.h"
 
 std::map<type_id_fonction, QString> bibliotheque_fonctions::s_fonctions_nom =
 {
@@ -38,6 +40,8 @@ std::map<type_id_fonction, QString> bibliotheque_fonctions::s_fonctions_nom =
 
     { f_conversion_cesar, "Chiffrement par Code César" },
     { f_conversion_formatage, "Formatage du texte" },
+    { f_conversion_selection_selon_dictionnaire, "Selection selon dictionnaire" },
+    { f_conversion_anagramme, "Anagramme" },
 
     { f_sortie_texte, "Textes" },
     { f_sortie_frequence, "Fréquences des éléments" },
@@ -57,7 +61,9 @@ std::map<type_id_fonction, QString> bibliotheque_fonctions::s_fonctions_aide =
     { f_source_dictionnaire, "Ajoute un dictionnaire" },
 
     { f_conversion_cesar, "Outil pour décoder/encoder avec César.\nLe code César (ou chiffre de César) est un chiffrement par décalage parmi les plus simples et les plus connu, il utilise la substitution d'une lettre par une autre plus loin dans l'alphabet." },
-    { f_conversion_formatage, "Formate le texte, i.e. mise en majuscule et retrait des accents." },
+    { f_conversion_formatage, "Formate le texte, i.e. mise en majuscule, retrait des accents et éventuellement de la ponctuation." },
+    { f_conversion_selection_selon_dictionnaire, "Sélectionne les textes selon un dictionnaire donné. Cela permet de filtrer par exemple les textes écrits en français." },
+    { f_conversion_anagramme, "Affiche les anagrammes de chaque mot." },
 
     { f_sortie_texte, "Sortie textuelle : la liste de tous les textes obtenus." },
     { f_sortie_frequence, "Sortie affichant la fréquence des éléments." },
@@ -70,44 +76,8 @@ std::map<type_id_fonction, std::set<QString> > bibliotheque_fonctions::s_categor
     { f_source_booleen,
       { "booléen", "booleen" }
     },
-    { f_source_entier,
-      {  }
-    },
-    { f_source_texte,
-      { }
-    },
-    { f_source_fichier_texte,
-      { }
-    },
     { f_source_caractere,
       { "caracteres" }
-    },
-    { f_source_choix,
-      { }
-    },
-    { f_source_generateur_permutation,
-      { }
-    },
-    { f_source_dictionnaire,
-      { }
-    },
-    { f_conversion_cesar,
-      { }
-    },
-    { f_conversion_formatage,
-      { }
-    },
-    { f_sortie_texte,
-      { }
-    },
-    { f_sortie_frequence,
-      { }
-    },
-    { f_sortie_indice_coincidence,
-      { }
-    },
-    { f_sortie_analyse_ligne,
-      { }
     }
 };
 
@@ -131,7 +101,9 @@ base_fonction * bibliotheque_fonctions::get_fonction(type_id_fonction id)
 
             // CONVERSIONS
         case f_conversion_cesar : return new fonction_cesar(NULL);
-        case f_conversion_formatage : return new fonction_formatage(NULL);
+        case f_conversion_formatage : return new fonction_formatage(NULL);            
+        case f_conversion_selection_selon_dictionnaire : return new fonction_selection_selon_dictionnaire(NULL);
+        case f_conversion_anagramme : return new fonction_anagramme(NULL);
 
             // SORTIES
         case f_sortie_texte : return new fonction_sortie_texte(NULL);
