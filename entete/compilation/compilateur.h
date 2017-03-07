@@ -10,6 +10,7 @@
 #include "entete/compilation/configuration.h"
 #include "entete/compilation/log_compilation.h"
 #include "entete/define.h"
+#include "entete/dictionnaire/dictionnaire.h"
 #include "entete/element/textes.h"
 
 #include <QStack>
@@ -30,6 +31,8 @@ class projet;
  */
 class compilateur
 {
+        typedef std::map< QString, dictionnaire *> map_dictionnaire;
+
     public:
         compilateur(logs_compilation_widget * get_vue_logs);
 
@@ -38,6 +41,8 @@ class compilateur
         void ajouter_configuration(base_fonction * f, type_id_parametre param, const QString& config);
         void retirer_configuration(base_fonction * f, type_id_parametre param);
         configuration get_configuration() const;
+        void ajouter_dictionnaire( const QString & nom_fichier );
+        const dictionnaire * get_dictionnaire( const QString & nom_fichier ) const;
 
     private:
         bool est_valide(projet *p);
@@ -59,6 +64,9 @@ class compilateur
 
         /** \brief La configuration en cours. */
         configuration m_configuration;
+
+        /** \brief Les dictionnaires. */
+        map_dictionnaire m_dictionnaires;
 };
 
 #endif // COMPILATEUR_H

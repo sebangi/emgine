@@ -162,6 +162,36 @@ configuration compilateur::get_configuration() const
 }
 
 /** --------------------------------------------------------------------------------------
+ * \brief Ajoute un dictionnaire.
+ * \param nom_fichier Le nom du fichier du dictionnaire.
+ */
+void compilateur::ajouter_dictionnaire(const QString & nom_fichier)
+{
+    m_vue_logs->ajouter_log
+            ( log_compilation( log_compilation::LOG_INFORMATION, "Chargement du dictionnaire...") );
+
+    if ( get_dictionnaire( nom_fichier ) == NULL )
+        m_dictionnaires[ nom_fichier ] = new dictionnaire( nom_fichier );
+    else
+        m_dictionnaires[ nom_fichier ]->mettre_a_jour();
+}
+
+/** --------------------------------------------------------------------------------------
+ * \brief Accesseur d'un dictionnaire.
+ * \param nom_fichier Le nom du fichier du dictionnaire recherché.
+ * \return Un pointeur sur le dictionnaire recherché.
+ */
+const dictionnaire * compilateur::get_dictionnaire(const QString & nom_fichier) const
+{
+    map_dictionnaire::const_iterator it = m_dictionnaires.find( nom_fichier );
+
+    if ( it == m_dictionnaires.end() )
+        return NULL;
+    else
+        return it->second;
+}
+
+/** --------------------------------------------------------------------------------------
  * \brief Accesseur du widget de la vue des logs.
  * \return Un pointeur sur le widget de la vue des logs.
  */

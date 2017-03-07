@@ -181,7 +181,7 @@ bool base_element::est_lettre_alphabet() const
 }
 
 /** --------------------------------------------------------------------------------------
- * \brief Formate l'élément, i.e mets en majuscule et retire les accents.
+ * \brief Formate l'élément, i.e mets en majuscule, retire les accents et éventuellement la ponctuation.
  * \param retrait_ponctuation Booléen indiquant s'il faut retirer la ponctuation.
  */
 void base_element::formater( bool retrait_ponctuation )
@@ -195,10 +195,21 @@ void base_element::formater( bool retrait_ponctuation )
     s.replace( QRegExp( "[Ç]") , "C" );
 
     if ( retrait_ponctuation )
-    {
-        QString ponct = QRegExp::escape("«»,;:!?./§*%^¨$£&~\"#'{([|`_\\^@)]°=}+-");
-        s.remove( QRegExp( "[" + ponct + "]" ) );
-    }
+        retirer_ponctuation();
+
+    m_string = s;
+    m_type = type_element_string;
+}
+
+/** --------------------------------------------------------------------------------------
+ * \brief Retire la ponctuation.
+ */
+void base_element::retirer_ponctuation( )
+{
+    QString s = to_string().toUpper();
+
+    QString ponct = QRegExp::escape("«»,;:!?./§*%^¨$£&~\"#'{([|`_\\^@)]°=}+-");
+    s.remove( QRegExp( "[" + ponct + "]" ) );
 
     m_string = s;
     m_type = type_element_string;

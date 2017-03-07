@@ -34,6 +34,7 @@ class base_element
         bool est_vide() const;
         bool est_lettre_alphabet() const;
         void formater( bool retrait_ponctuation );
+        void retirer_ponctuation();
 
         bool operator<(const base_element& e) const;
         bool operator==(const base_element& e) const;

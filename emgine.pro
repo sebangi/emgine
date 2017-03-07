@@ -75,7 +75,14 @@ SOURCES += \
     src/element/frequence.cpp \
     src/fonction_widget/fonction_sortie_widget/fonction_base_sortie_widget.cpp \
     src/fonction/fonction_conversion/fonction_formatage.cpp \
-    src/fonction/fonction_sortie/fonction_sortie_analyse_ligne.cpp
+    src/fonction/fonction_sortie/fonction_sortie_analyse_ligne.cpp \
+    entete/dictionnaire/impl/alpha_vector.tpp \
+    src/dictionnaire/cle_de_mot.cpp \
+    src/dictionnaire/comptage_mot.cpp \
+    src/dictionnaire/dictionnaire.cpp \
+    src/dictionnaire/mot_binaire.cpp \
+    src/fonction/fonction_source/fonction_source_dictionnaire.cpp \
+    src/fonction_widget/fonction_source_widget/fonction_source_dictionnaire_widget.cpp
 
 HEADERS  += \
         entete/compilation/compilateur.h \
@@ -140,7 +147,15 @@ HEADERS  += \
     entete/element/frequence.h \
     entete/fonction_widget/fonction_sortie_widget/fonction_base_sortie_widget.h \
     entete/fonction/fonction_conversion/fonction_formatage.h \
-    entete/fonction/fonction_sortie/fonction_sortie_analyse_ligne.h
+    entete/fonction/fonction_sortie/fonction_sortie_analyse_ligne.h \
+    entete/fonction/fonction_source/fonction_source_dictionnaire.h \
+    entete/fonction_widget/fonction_source_widget/fonction_source_dictionnaire_widget.h \
+    entete/dictionnaire/alpha_vector.h \
+    entete/dictionnaire/cle_de_mot.h \
+    entete/dictionnaire/comptage_mot.h \
+    entete/dictionnaire/dictionnaire.h \
+    entete/dictionnaire/indice_lettre.h \
+    entete/dictionnaire/mot_binaire.h
 
 FORMS    += \
     fenetre_principale.ui

@@ -56,6 +56,9 @@ enum type_id_fonction{
     /** \brief Fonction source correspondant à un choix. */
     f_source_choix,
 
+    /** \brief Fonction source correspondant à un dictionnaire. */
+    f_source_dictionnaire,
+
     /** \brief Fin des fonctions sources. */
     fin_fonction_source,
 
