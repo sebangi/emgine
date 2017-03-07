@@ -45,7 +45,9 @@ void dictionnaire::grep( const QString& motif, uint_set& mots ) const
 /*----------------------------------------------------------------------------*/
 void dictionnaire::anagramme( const QString& motif, uint_set& mots ) const
 {
-    cle_de_mot cle(motif);
+    QString motif_formate(motif);
+    formater(motif_formate);
+    cle_de_mot cle(motif_formate);
     map_code_comptage::const_iterator it_code;
     map_comptage_indice::const_iterator it_compte;
 
@@ -131,12 +133,10 @@ void dictionnaire::charger_dictionnaire( const QString & nom_fichier )
     while(!in.atEnd()) {
         QString line = in.readLine();
 
-        formater(line);
         m_mots.push_back(line);
 
         cle_de_mot cle(line);
         m_cles[ cle.taille() ][ cle.code_binaire() ][ cle.comptage() ].push_front( m_mots.size() - 1 );
-
    }
 
     file.close();

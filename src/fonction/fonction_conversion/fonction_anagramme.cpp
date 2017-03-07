@@ -74,19 +74,20 @@ void fonction_anagramme::executer( compilateur &compil, textes & textes_in, text
     for ( textes::const_iterator it_t = textes_in.begin(); it_t != textes_in.end(); ++it_t ) {
         texte t( it_t->get_configuration() );
         for ( texte::const_iterator it_l = it_t->begin(); it_l !=  it_t->end(); ++it_l ) {
-            ligne l;
             for ( ligne::const_iterator it_m = it_l->begin(); it_m != it_l->end(); ++it_m )
             {
-                QString s_m = it_l->to_string();
-                std::cout << s_m.toStdString() << std::endl;
+                ligne l;
+                QString s_m = it_m->to_string();
+
                 dictionnaire::uint_set mots;
                 dico->anagramme( s_m, mots );
                 l.ajouter_mot( mot(s_m + " :") );
 
                 for ( dictionnaire::uint_set::const_iterator it = mots.begin(); it != mots.end(); ++it )
                     l.ajouter_mot( mot( (*dico)[*it] ) );
+
+                t.ajouter_ligne(l);
             }
-            t.ajouter_ligne(l);
         }
         textes_out.ajouter_texte(compil.get_configuration(), t);
     }
