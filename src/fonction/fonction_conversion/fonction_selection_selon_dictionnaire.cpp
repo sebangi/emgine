@@ -21,6 +21,15 @@ fonction_selection_selon_dictionnaire::fonction_selection_selon_dictionnaire( fo
     : base_fonction(conteneur)
 {
     set_id(f_conversion_selection_selon_dictionnaire);
+    augmenter_max_niveau_visibilite(1);
+
+    ajouter_parametre( PARAM_DICTIONNAIRE,
+                       new base_parametre( this,
+                                           "Dictionnaire",
+                                           "Dictionnaire utilisé.",
+                                           base_parametre::CONTENU_PARAM_VIDE_IMPOSSIBLE,
+                                           base_parametre::CONFIGURATION_INVISIBLE,
+                                           base_parametre::ALGO_AUCUN) );
 }
 
 /** --------------------------------------------------------------------------------------
@@ -50,30 +59,38 @@ QString fonction_selection_selon_dictionnaire::get_valeur_courte() const
  */
 void fonction_selection_selon_dictionnaire::executer( compilateur &compil, textes & textes_in, textes & textes_out )
 {
-    // TODO : tout à modifier quand le grep du dico sera fait
-    for ( textes::const_iterator it_t = textes_in.begin(); it_t != textes_in.end(); ++it_t ) {
+    const textes & textes_dico = m_parametres[PARAM_DICTIONNAIRE]->get_textes_out();
+
+    if ( textes_dico.empty() )
+        return;
+
+    const dictionnaire * dico = compil.get_dictionnaire( textes_dico[0].to_string() );
+    if ( dico == NULL )
+        return;
+
+    for ( textes::const_iterator it_t = textes_in.begin(); it_t != textes_in.end(); ++it_t )
+    {
+        int nb_mots = 0;
+        int nb_mots_acceptes = 0;
+
         texte t( it_t->get_configuration() );
-        for ( texte::const_iterator it_l = it_t->begin(); it_l !=  it_t->end(); ++it_l ) {
+        for ( texte::const_iterator it_l = it_t->begin(); it_l !=  it_t->end(); ++it_l )
+        {
             ligne l;
-            for ( ligne::const_iterator it_m = it_l->begin(); it_m != it_l->end(); ++it_m ) {
-                mot m;
-                for ( mot::const_iterator it_c = it_m->begin(); it_c != it_m->end(); ++it_c )
-                {
-                    base_element elem(*it_c);
-                    elem.formater( m_map_PMIPL[PARAM_RETRAIT_PONCTUATION].it_courant->get_booleen() );
-                    if ( ! elem.est_vide() )
-                        m.push_back(elem);
-                    else if ( ! m.empty() )
-                    {
-                        l.ajouter_mot(m);
-                        m.clear();
-                    }
-                }
-                if ( ! m.empty() )
-                    l.ajouter_mot(m);
+            for ( ligne::const_iterator it_m = it_l->begin(); it_m != it_l->end(); ++it_m )
+            {
+                QString s_m = it_m->to_string();
+
+                nb_mots++;
+                if ( dico->existe(s_m) )
+                    nb_mots_acceptes++;
+
+                l.ajouter_mot( mot(s_m) );
             }
             t.ajouter_ligne(l);
         }
-        textes_out.ajouter_texte(compil.get_configuration(), t);
+
+        if ( nb_mots_acceptes * 2 >= nb_mots )
+            textes_out.ajouter_texte(compil.get_configuration(), t);
     }
 }

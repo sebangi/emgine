@@ -9,18 +9,18 @@
 class cle_de_mot
 {
 public:
-  cle_de_mot( const QString& mot );
+    cle_de_mot( const QString& mot );
 
-  unsigned int taille() const { return m_bits.taille(); }
-  unsigned int code_binaire() const { return m_bits.code(); }
+    unsigned int taille() const { return m_bits.taille(); }
+    unsigned int code_binaire() const { return m_bits.code(); }
 
-  const mot_binaire& le_mot_binaire() const { return m_bits; }
-  const comptage_mot& comptage() const { return m_comptage; }
+    const mot_binaire& le_mot_binaire() const { return m_bits; }
+    const comptage_mot& comptage() const { return m_comptage; }
 
 private:
-  mot_binaire m_bits;
+    mot_binaire m_bits;
 
-  comptage_mot m_comptage;
+    comptage_mot m_comptage;
 
 }; // class cle_de_mot
 

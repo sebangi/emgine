@@ -84,7 +84,8 @@ SOURCES += \
     src/fonction/fonction_source/fonction_source_dictionnaire.cpp \
     src/fonction_widget/fonction_source_widget/fonction_source_dictionnaire_widget.cpp \
     src/fonction/fonction_conversion/fonction_selection_selon_dictionnaire.cpp \
-    src/fonction/fonction_conversion/fonction_anagramme.cpp
+    src/fonction/fonction_conversion/fonction_anagramme.cpp \
+    src/dictionnaire/lettre_dictionnaire.cpp
 
 HEADERS  += \
         entete/compilation/compilateur.h \
@@ -159,7 +160,8 @@ HEADERS  += \
     entete/dictionnaire/indice_lettre.h \
     entete/dictionnaire/mot_binaire.h \
     entete/fonction/fonction_conversion/fonction_selection_selon_dictionnaire.h \
-    entete/fonction/fonction_conversion/fonction_anagramme.h
+    entete/fonction/fonction_conversion/fonction_anagramme.h \
+    entete/dictionnaire/lettre_dictionnaire.h
 
 FORMS    += \
     fenetre_principale.ui

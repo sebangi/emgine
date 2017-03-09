@@ -10,7 +10,13 @@
 dictionnaire::dictionnaire(const QString & nom_fichier)
     : m_nom_fichier( nom_fichier ), m_cles( sizeof(unsigned int) * 8 + 1 )
 {
+    m_arbre_mots = new lettre_dictionnaire();
     charger_dictionnaire( nom_fichier );
+}
+
+dictionnaire::~dictionnaire()
+{
+    clear();
 }
 
 void dictionnaire::mettre_a_jour()
@@ -42,6 +48,24 @@ void dictionnaire::grep( const QString& motif, uint_set& mots ) const
 
 }
 
+
+/*----------------------------------------------------------------------------*/
+bool dictionnaire::existe( const QString& motif ) const
+{
+    QString motif_formate(motif);
+    formater(motif_formate);
+
+    lettre_dictionnaire * lettre = m_arbre_mots;
+    for ( QString::iterator it = motif_formate.begin();
+          lettre != NULL && it != motif_formate.end(); ++it )
+        lettre = lettre->suivant(it->toLatin1() - 'A');
+
+    if ( lettre != NULL )
+        return lettre->est_mot();
+    else
+        return false;
+}
+
 /*----------------------------------------------------------------------------*/
 void dictionnaire::anagramme( const QString& motif, uint_set& mots ) const
 {
@@ -65,7 +89,9 @@ void dictionnaire::anagramme( const QString& motif, uint_set& mots ) const
 /*----------------------------------------------------------------------------*/
 void dictionnaire::sur_anagramme( const QString& motif, uint_set& mots ) const
 {
-    cle_de_mot cle(motif);
+    QString motif_formate(motif);
+    formater(motif_formate);
+    cle_de_mot cle(motif_formate);
     map_code_comptage::const_iterator it_code;
     map_comptage_indice::const_iterator it_compte;
 
@@ -83,7 +109,9 @@ void dictionnaire::sur_anagramme( const QString& motif, uint_set& mots ) const
 void
 dictionnaire::sous_anagramme( const QString& motif, uint_set& mots ) const
 {
-    cle_de_mot cle(motif);
+    QString motif_formate(motif);
+    formater(motif_formate);
+    cle_de_mot cle(motif_formate);
     map_code_comptage::const_iterator it_code;
     map_comptage_indice::const_iterator it_compte;
 
@@ -134,12 +162,13 @@ void dictionnaire::charger_dictionnaire( const QString & nom_fichier )
         QString line = in.readLine();
 
         m_mots.push_back(line);
+        ajouter_mot_dans_arbre(line);
 
         cle_de_mot cle(line);
         m_cles[ cle.taille() ][ cle.code_binaire() ][ cle.comptage() ].push_front( m_mots.size() - 1 );
    }
 
-    file.close();
+   file.close();
 }
 
 
@@ -147,4 +176,23 @@ void dictionnaire::clear(  )
 {
     m_cles.clear();
     m_mots.clear();
+    clear_arbre();
+}
+
+void dictionnaire::clear_arbre()
+{
+    delete m_arbre_mots;
+    m_arbre_mots = new lettre_dictionnaire();
+}
+
+void dictionnaire::ajouter_mot_dans_arbre( const QString &s )
+{
+    QString s_formate(s);
+    formater(s_formate);
+
+    lettre_dictionnaire * lettre = m_arbre_mots;
+    for ( QString::iterator it = s_formate.begin(); it != s_formate.end(); ++it )
+        lettre = lettre->get_suivant(it->toLatin1() - 'A');
+
+    lettre->set_est_mot();
 }
