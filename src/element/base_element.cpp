@@ -18,17 +18,6 @@ base_element::base_element()
 
 /** --------------------------------------------------------------------------------------
  * \brief Constructeur de la classe base_element.
- * \param valeur La valeur booléenne de l'élément créé.
- */
-base_element::base_element(bool valeur)
-    : m_type(type_element_booleen),
-      m_booleen(valeur)
-{
-    m_string = to_string();
-}
-
-/** --------------------------------------------------------------------------------------
- * \brief Constructeur de la classe base_element.
  * \param valeur La valeur entière de l'élément créé.
  */
 base_element::base_element(int valeur)
@@ -68,6 +57,17 @@ base_element::base_element(QString valeur)
     : m_type(type_element_string), m_string(valeur)
 {
 
+}
+
+/** --------------------------------------------------------------------------------------
+ * \brief Constructeur de la classe base_element.
+ * \param valeur La valeur booléenne de l'élément créé.
+ */
+base_element::base_element(bool valeur)
+    : m_type(type_element_booleen),
+      m_booleen(valeur)
+{
+    m_string = to_string();
 }
 
 /** --------------------------------------------------------------------------------------
@@ -118,7 +118,19 @@ int base_element::get_entier() const
     if ( m_type == type_element_entier )
         return m_entier;
     else
-        return m_string.toInt();
+    {
+        bool ok;
+        int valeur = m_string.toInt( & ok );
+        if ( ok )
+            return valeur;
+        else
+        {
+            if ( est_lettre_alphabet() )
+                return m_string[0].toUpper().toLatin1() - 'A' + 1;
+            else
+                return 0;
+        }
+    }
 }
 
 /** --------------------------------------------------------------------------------------
@@ -178,6 +190,22 @@ bool base_element::est_lettre_alphabet() const
         return false;
     else
         return (s[0] >= 'A' && s[0] <= 'Z') || (s[0] >= 'a' && s[0] <= 'z');
+}
+
+/** --------------------------------------------------------------------------------------
+ * \brief Teste si l'élément est un entier.
+ * \return \b True si l'élément est un entier, \b False sinon.
+ */
+bool base_element::est_entier() const
+{
+    if ( m_type == type_element_entier )
+        return true;
+    else
+    {
+        bool ok;
+        m_string.toInt( &ok );
+        return ok;
+    }
 }
 
 /** --------------------------------------------------------------------------------------

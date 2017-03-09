@@ -1,4 +1,5 @@
-/** \file fonction_formatage.cpp
+/**
+ * \file fonction_formatage.cpp
  * \brief Fichier d'implémentation de la classe fonction_formatage.
  * \author Sébastien Angibaud
  */

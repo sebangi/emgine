@@ -83,6 +83,9 @@ enum type_id_fonction{
     /** \brief Fonction de conversion affichant les anagrammes de chaque mot. */
     f_conversion_anagramme,
 
+    /** \brief Fonction de conversion des entiers en chiffres romain. */
+    f_conversion_entier_en_chiffre_romain,
+
     /** \brief Fin des fonctions de conversions. */
     fin_fonction_conversion,
 

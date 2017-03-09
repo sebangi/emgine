@@ -145,12 +145,14 @@ class base_fonction : public objet_selectionnable
         ( type_id_parametre id_param, compilateur &compil, textes & textes_in, textes & textes_out,
           pf_exec_callback callback );
         void PMIPL_suivant( type_id_parametre id_param );
+        void PMIPL_init( type_id_parametre id_param );
 
         // Algorithme d'exécution LIPL
         void algo_LIPL_iteration_premier_mot_par_ligne
         ( type_id_parametre id_param, compilateur &compil, textes & textes_in, textes & textes_out,
           pf_exec_callback callback );
         void LIPL_suivant( type_id_parametre id_param );
+        void LIPL_init( type_id_parametre id_param );
 
     public:
         virtual void callback_param_1( compilateur &compil, textes & textes_in, textes & textes_out );

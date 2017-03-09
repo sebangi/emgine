@@ -533,13 +533,22 @@ void base_fonction::algo_PMIPL_iteration_premier_mot_par_ligne
 
 /** --------------------------------------------------------------------------------------
  * \brief Avance l'itérateur d'un paramètre donné pour l'algorithme PMIPL.
- * \param id_param L'identifiant du paramètre qu'il faut lire.
+ * \param id_param L'identifiant du paramètre qu'il faut avancer.
  */
 void base_fonction::PMIPL_suivant(type_id_parametre id_param)
 {
     m_map_PMIPL[id_param].it_courant++;
     if ( m_map_PMIPL[id_param].it_courant == m_map_PMIPL[id_param].it_fin )
         m_map_PMIPL[id_param].it_courant = m_map_PMIPL[id_param].it_debut;
+}
+
+/** --------------------------------------------------------------------------------------
+ * \brief Initialise l'itérateur d'un paramètre donné pour l'algorithme PMIPL.
+ * \param id_param L'identifiant du paramètre qu'il faut initialiser.
+ */
+void base_fonction::PMIPL_init(type_id_parametre id_param)
+{
+    m_map_PMIPL[id_param].it_courant = m_map_PMIPL[id_param].it_debut;
 }
 
 /** --------------------------------------------------------------------------------------
@@ -598,13 +607,22 @@ void base_fonction::algo_LIPL_iteration_premier_mot_par_ligne
 
 /** --------------------------------------------------------------------------------------
  * \brief Avance l'itérateur d'un paramètre donné pour l'algorithme LIPL.
- * \param id_param L'identifiant du paramètre qu'il faut lire.
+ * \param id_param L'identifiant du paramètre qu'il faut avancer.
  */
 void base_fonction::LIPL_suivant(type_id_parametre id_param)
 {
     m_map_LIPL[id_param].it_courant++;
     if ( m_map_LIPL[id_param].it_courant == m_map_LIPL[id_param].it_fin )
         m_map_LIPL[id_param].it_courant = m_map_LIPL[id_param].it_debut;
+}
+
+/** --------------------------------------------------------------------------------------
+ * \brief Initialise l'itérateur d'un paramètre donné pour l'algorithme LIPL.
+ * \param id_param L'identifiant du paramètre qu'il faut initialiser.
+ */
+void base_fonction::LIPL_init(type_id_parametre id_param)
+{
+    m_map_LIPL[id_param].it_courant = m_map_LIPL[id_param].it_debut;
 }
 
 /** --------------------------------------------------------------------------------------

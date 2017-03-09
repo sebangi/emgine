@@ -6,6 +6,7 @@
 #include "entete/fonction/fonction_source/fonction_source_entier.h"
 
 #include "entete/compilation/compilateur.h"
+#include "entete/fonction_widget/fonction_source_widget/fonction_source_entier_widget.h"
 
 /** --------------------------------------------------------------------------------------
  * \brief Constructeur de la classe fonction_source_entier.
@@ -25,6 +26,15 @@ fonction_source_entier::fonction_source_entier(fonctions_conteneur * conteneur, 
 fonction_source_entier::~fonction_source_entier()
 {
 
+}
+
+/** --------------------------------------------------------------------------------------
+ * \brief Construit et retourne le widget associé à cette fonction.
+ * \return Un pointeur sur le widget créé.
+ */
+base_fonction_widget *fonction_source_entier::generer_fonction_widget()
+{
+    return new fonction_source_entier_widget(this);
 }
 
 /** --------------------------------------------------------------------------------------

@@ -31,6 +31,14 @@ QCheckBox#CheckBoxParametreWidget
     padding: 2px;
 }
 
+QSpinBox#SpinBoxParametreWidget
+{
+    margin: 2px;
+    padding: 2px;
+    width: 100px;
+    height: 25px;
+}
+
 QCheckBox::indicator#CheckBoxParametreWidget {
      width: 25px;
      height: 25px;

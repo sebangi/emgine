@@ -49,6 +49,9 @@ enum type_id_parametre{
 
     /** \brief Paramètre pour indiquer le dictionnaire à utiliser. */
     PARAM_DICTIONNAIRE,
+
+    /** \brief Paramètre pour indiquer que le traitement doit se faire pour chaque ligne. */
+    PARAM_TRAITER_PAR_LIGNE
 };
 
 #endif // DEFINE_PARAMETRE_H

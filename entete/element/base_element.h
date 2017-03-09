@@ -19,12 +19,12 @@ class base_element
 {
     public:
         base_element();
-        base_element( bool valeur );
         base_element( int valeur );
         base_element( QChar valeur );
         base_element( QCharRef valeur );
         base_element( QString valeur );
         base_element( QString valeur, bool sensible_a_la_casse );
+        base_element( bool valeur );
 
         type_element get_type() const;
         bool get_booleen() const;
@@ -33,6 +33,8 @@ class base_element
         QString to_string() const;
         bool est_vide() const;
         bool est_lettre_alphabet() const;
+        bool est_entier() const;
+
         void formater( bool retrait_ponctuation );
         void retirer_ponctuation();
 

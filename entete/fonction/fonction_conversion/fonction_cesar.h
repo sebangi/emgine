@@ -35,6 +35,7 @@ class fonction_cesar : public base_fonction
         void construire_alphabet();
         void callback_param_1( compilateur &compil, textes & textes_in, textes & textes_out );
         void callback_param_2( compilateur &compil, textes & textes_in, textes & textes_out );
+        void callback_param_3( compilateur &compil, textes & textes_in, textes & textes_out );
         void execution_specifique( compilateur &compil, textes & textes_in, textes & textes_out );
 
     private:

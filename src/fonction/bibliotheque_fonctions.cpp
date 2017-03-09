@@ -26,6 +26,7 @@
 #include "entete/fonction/fonction_conversion/fonction_formatage.h"
 #include "entete/fonction/fonction_conversion/fonction_selection_selon_dictionnaire.h"
 #include "entete/fonction/fonction_conversion/fonction_anagramme.h"
+#include "entete/fonction/fonction_conversion/fonction_entier_en_chiffre_romain.h"
 
 std::map<type_id_fonction, QString> bibliotheque_fonctions::s_fonctions_nom =
 {
@@ -40,8 +41,9 @@ std::map<type_id_fonction, QString> bibliotheque_fonctions::s_fonctions_nom =
 
     { f_conversion_cesar, "Chiffrement par Code César" },
     { f_conversion_formatage, "Formatage du texte" },
-    { f_conversion_selection_selon_dictionnaire, "Selection selon dictionnaire" },
+    { f_conversion_selection_selon_dictionnaire, "Sélection selon dictionnaire" },
     { f_conversion_anagramme, "Anagramme" },
+    { f_conversion_entier_en_chiffre_romain, "Ecriture en chiffre romain" },
 
     { f_sortie_texte, "Textes" },
     { f_sortie_frequence, "Fréquences des éléments" },
@@ -64,6 +66,7 @@ std::map<type_id_fonction, QString> bibliotheque_fonctions::s_fonctions_aide =
     { f_conversion_formatage, "Formate le texte, i.e. mise en majuscule, retrait des accents et éventuellement de la ponctuation." },
     { f_conversion_selection_selon_dictionnaire, "Sélectionne les textes selon un dictionnaire donné. Cela permet de filtrer par exemple les textes écrits en français." },
     { f_conversion_anagramme, "Affiche les anagrammes de chaque mot." },
+    { f_conversion_entier_en_chiffre_romain, "Convertit les entiers en chiffres romains." },
 
     { f_sortie_texte, "Sortie textuelle : la liste de tous les textes obtenus." },
     { f_sortie_frequence, "Sortie affichant la fréquence des éléments." },
@@ -104,6 +107,7 @@ base_fonction * bibliotheque_fonctions::get_fonction(type_id_fonction id)
         case f_conversion_formatage : return new fonction_formatage(NULL);            
         case f_conversion_selection_selon_dictionnaire : return new fonction_selection_selon_dictionnaire(NULL);
         case f_conversion_anagramme : return new fonction_anagramme(NULL);
+        case f_conversion_entier_en_chiffre_romain : return new fonction_entier_en_chiffre_romain(NULL);
 
             // SORTIES
         case f_sortie_texte : return new fonction_sortie_texte(NULL);
