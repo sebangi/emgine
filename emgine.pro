@@ -86,7 +86,8 @@ SOURCES += \
     src/dictionnaire/lettre_dictionnaire.cpp \
     src/fonction_widget/fonction_source_widget/fonction_source_entier_widget.cpp \
     src/fonction/fonction_conversion/fonction_entier_en_chiffre_romain.cpp \
-    src/fonction/algorithme/algo_IPL.cpp
+    src/fonction/algorithme/algo_IPL.cpp \
+    src/fonction/fonction_conversion/fonction_ajout_espace_selon_dictionnaire.cpp
 
 HEADERS  += \
         entete/compilation/compilateur.h \
@@ -163,7 +164,8 @@ HEADERS  += \
     entete/dictionnaire/lettre_dictionnaire.h \
     entete/fonction_widget/fonction_source_widget/fonction_source_entier_widget.h \
     entete/fonction/fonction_conversion/fonction_entier_en_chiffre_romain.h \
-    entete/fonction/algorithme/algo_IPL.h
+    entete/fonction/algorithme/algo_IPL.h \
+    entete/fonction/fonction_conversion/fonction_ajout_espace_selon_dictionnaire.h
 
 FORMS    += \
     fenetre_principale.ui

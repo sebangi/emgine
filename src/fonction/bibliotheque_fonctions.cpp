@@ -15,13 +15,14 @@
 #include "entete/fonction/fonction_source/fonction_source_permutation.h"
 #include "entete/fonction/fonction_source/fonction_source_texte.h"
 
-// include des fonctions de conversion
+// include des fonctions de sortie
 #include "entete/fonction/fonction_sortie/fonction_sortie_analyse_ligne.h"
 #include "entete/fonction/fonction_sortie/fonction_sortie_frequence.h"
 #include "entete/fonction/fonction_sortie/fonction_sortie_indice_coincidence.h"
 #include "entete/fonction/fonction_sortie/fonction_sortie_texte.h"
 
-// include des fonctions de sortie
+// include des fonctions de conversion
+#include "entete/fonction/fonction_conversion/fonction_ajout_espace_selon_dictionnaire.h"
 #include "entete/fonction/fonction_conversion/fonction_cesar.h"
 #include "entete/fonction/fonction_conversion/fonction_formatage.h"
 #include "entete/fonction/fonction_conversion/fonction_selection_selon_dictionnaire.h"
@@ -44,6 +45,7 @@ std::map<type_id_fonction, QString> bibliotheque_fonctions::s_fonctions_nom =
     { f_conversion_selection_selon_dictionnaire, "Sélection selon dictionnaire" },
     { f_conversion_anagramme, "Anagramme" },
     { f_conversion_entier_en_chiffre_romain, "Ecriture en chiffre romain" },
+    { f_conversion_ajout_espace_selon_dictionnaire, "Ajout d'espaces selon dictionnaire" },
 
     { f_sortie_texte, "Textes" },
     { f_sortie_frequence, "Fréquences des éléments" },
@@ -67,6 +69,7 @@ std::map<type_id_fonction, QString> bibliotheque_fonctions::s_fonctions_aide =
     { f_conversion_selection_selon_dictionnaire, "Sélectionne les textes selon un dictionnaire donné. Cela permet de filtrer par exemple les textes écrits en français." },
     { f_conversion_anagramme, "Affiche les anagrammes de chaque mot." },
     { f_conversion_entier_en_chiffre_romain, "Convertit les entiers en chiffres romains." },
+    { f_conversion_ajout_espace_selon_dictionnaire, "Ajoute les espaces entre mot selon un dictionnaire donné." },
 
     { f_sortie_texte, "Sortie textuelle : la liste de tous les textes obtenus." },
     { f_sortie_frequence, "Sortie affichant la fréquence des éléments." },
@@ -108,6 +111,7 @@ base_fonction * bibliotheque_fonctions::get_fonction(type_id_fonction id)
         case f_conversion_selection_selon_dictionnaire : return new fonction_selection_selon_dictionnaire(NULL);
         case f_conversion_anagramme : return new fonction_anagramme(NULL);
         case f_conversion_entier_en_chiffre_romain : return new fonction_entier_en_chiffre_romain(NULL);
+        case f_conversion_ajout_espace_selon_dictionnaire : return new fonction_ajout_espace_selon_dictionnaire(NULL);
 
             // SORTIES
         case f_sortie_texte : return new fonction_sortie_texte(NULL);

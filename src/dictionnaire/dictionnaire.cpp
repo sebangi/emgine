@@ -123,7 +123,33 @@ dictionnaire::sous_anagramme( const QString& motif, uint_set& mots ) const
                       ++it_compte )
                     if ( it_compte->first.est_inclus_dans(cle.comptage()) )
                         mots.insert( it_compte->second.begin(), it_compte->second.end() );
-} // dictionnaire::sous_anagramme()
+}
+
+QString dictionnaire::plus_grand_prefixe(const QString & s) const
+{
+    QString resultat("");
+
+    QString motif_formate(s);
+    formater(motif_formate);
+    QString mot_genere("");
+
+    lettre_dictionnaire * lettre = m_arbre_mots;
+    for ( QString::iterator it = motif_formate.begin();
+          lettre != NULL && it != motif_formate.end(); ++it )
+    {
+        if ( lettre->est_mot() )
+            resultat = mot_genere;
+
+        mot_genere.append( *it );
+        lettre = lettre->suivant(it->toLatin1() - 'A');
+    }
+
+    if ( lettre != NULL )
+        if ( lettre->est_mot() )
+            resultat = mot_genere;
+
+    return resultat;
+}
 
 /*----------------------------------------------------------------------------*/
 void dictionnaire::formater( QString& s ) const

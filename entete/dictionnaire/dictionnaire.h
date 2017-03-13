@@ -39,6 +39,8 @@ class dictionnaire
             return m_mots[i];
         }
 
+        QString plus_grand_prefixe( const QString & s ) const;
+
     private:
         void formater( QString& s ) const;
         void charger_dictionnaire( const QString & nom_fichier );
