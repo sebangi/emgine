@@ -318,3 +318,4 @@ double texte::get_indice_coincidence() const
 {
     return m_indice_coincidence;
 }
+

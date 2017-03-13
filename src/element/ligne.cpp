@@ -112,3 +112,4 @@ bool ligne::operator<(const ligne & l) const
     return to_string() < l.to_string();
 }
 
+

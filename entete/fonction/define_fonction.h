@@ -89,6 +89,9 @@ enum type_id_fonction{
     /** \brief Fonction de conversion ajoutant un esapce entre les mots selon un dictionnaire. */
     f_conversion_ajout_espace_selon_dictionnaire,
 
+    /** \brief Fonction de conversion formatant le texte, i.e. mise en majuscule et retrait des accents. */
+    f_conversion_fusion,
+
     /** \brief Fin des fonctions de conversions. */
     fin_fonction_conversion,
 

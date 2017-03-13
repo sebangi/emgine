@@ -27,6 +27,8 @@ class textes : public std::vector< texte >
         void ajouter_texte(const configuration & config, const texte& t);
         void calculer_frequence( bool force_upper_case );
         void calculer_indice_coincidence();
+
+        void effacer_tout();
 };
 
 #endif // TEXTES_Hs

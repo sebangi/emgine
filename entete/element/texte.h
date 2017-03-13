@@ -55,6 +55,7 @@ class texte : public std::vector< ligne >
         const type_frequences_texte & get_frequences() const;
         double get_indice_coincidence() const;
 
+
     private:
         /** \brief La configuration des paramètres induisant ce texte. */
         configuration m_configuration;

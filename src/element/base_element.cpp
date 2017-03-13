@@ -148,26 +148,7 @@ QChar base_element::get_caractere() const
  */
 QString base_element::to_string() const
 {
-    switch ( m_type )
-    {
-        case type_element_booleen:
-            if ( m_booleen )
-                return "oui";
-            else
-                return "non";
-
-        case type_element_entier:
-            return QString::number(m_entier);
-
-        case type_element_caractere:
-            return QString(m_caractere);
-
-        case type_element_string:
-            return m_string;
-
-        default:
-            return "";
-    }
+    return m_string;
 }
 
 /** --------------------------------------------------------------------------------------

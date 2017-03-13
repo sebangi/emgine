@@ -51,7 +51,19 @@ enum type_id_parametre{
     PARAM_DICTIONNAIRE,
 
     /** \brief Paramètre pour indiquer que le traitement doit se faire pour chaque ligne. */
-    PARAM_TRAITER_PAR_LIGNE
+    PARAM_TRAITER_PAR_LIGNE,
+
+    /** \brief Paramètre pour indiquer s'il faut fusionner les caractères. */
+    PARAM_FUSION_CARACTERES,
+
+    /** \brief Paramètre pour indiquer s'il faut fusionner les mots. */
+    PARAM_FUSION_MOTS,
+
+    /** \brief Paramètre pour indiquer s'il faut fusionner les lignes. */
+    PARAM_FUSION_LIGNES,
+
+    /** \brief Paramètre pour indiquer s'il faut fusionner les textes. */
+    PARAM_FUSION_TEXTES
 };
 
 #endif // DEFINE_PARAMETRE_H
