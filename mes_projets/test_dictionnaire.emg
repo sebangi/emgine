@@ -349,6 +349,29 @@ unhbh tm sdrs !</valeur>
                         </fonction>
                     </fonctions>
                 </parametre>
+                <parametre>
+                    <id>9</id>
+                    <nom>Traiter par ligne</nom>
+                    <dans_configuration>1</dans_configuration>
+                    <objet_selectionnable>
+                        <est_etendu>1</est_etendu>
+                        <verrouille>0</verrouille>
+                    </objet_selectionnable>
+                    <fonctions>
+                        <fonction>
+                            <id>4</id>
+                            <nom>Oui ou Non</nom>
+                            <niveau_visibilite>2</niveau_visibilite>
+                            <active>1</active>
+                            <objet_selectionnable>
+                                <est_etendu>0</est_etendu>
+                                <verrouille>0</verrouille>
+                            </objet_selectionnable>
+                            <valeur>0</valeur>
+                            <parametres/>
+                        </fonction>
+                    </fonctions>
+                </parametre>
             </parametres>
         </fonction>
         <fonction>

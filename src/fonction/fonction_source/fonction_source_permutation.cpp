@@ -27,7 +27,7 @@ fonction_source_permutation::fonction_source_permutation(fonctions_conteneur * c
                                            "Les éléments utilisés pour générer les permutations.\nÉviter de dépasser 9 éléments car trop long.",
                                            base_parametre::CONTENU_PARAM_VIDE_IMPOSSIBLE,
                                            base_parametre::CONFIGURATION_INVISIBLE,
-                                           base_parametre::ALGO_LIPL) );
+                                           base_parametre::ALGO_IPL) );
 }
 
 /** --------------------------------------------------------------------------------------
@@ -68,7 +68,7 @@ base_fonction_widget *fonction_source_permutation::generer_fonction_widget()
  */
 void fonction_source_permutation::executer( compilateur &compil, textes & textes_in, textes & textes_out )
 {
-    algo_LIPL_iteration_premier_mot_par_ligne
+    algo_IPL_iteration_par_ligne
         ( PARAM_ELEMENTS, compil, textes_in, textes_out, & base_fonction::execution_specifique );
 }
 
@@ -82,7 +82,7 @@ void fonction_source_permutation::execution_specifique( compilateur &compil, tex
 {
     texte t("", "\n" );
 
-    ligne l(* m_map_LIPL[PARAM_ELEMENTS].ligne_courante);
+    ligne l(* m_map_IPL[PARAM_ELEMENTS].ligne_courante);
     std::sort(l.begin(), l.end());
 
     do

@@ -7,8 +7,7 @@
  */
 
 #include "entete/element/textes.h"
-#include "entete/fonction/algorithme/algo_LIPL.h"
-#include "entete/fonction/algorithme/algo_PMIPL.h"
+#include "entete/fonction/algorithme/algo_IPL.h"
 #include "entete/fonction/define_fonction.h"
 #include "entete/projet/base_parametre.h"
 #include "entete/projet/fonctions_conteneur.h"
@@ -140,19 +139,13 @@ class base_fonction : public objet_selectionnable
         const textes & get_textes_parametre( type_id_parametre type ) const;
         void augmenter_max_niveau_visibilite( int val );
 
-        // Algorithme d'exécution PMIPL
-        void algo_PMIPL_iteration_premier_mot_par_ligne
+        // Algorithme d'exécution IPL
+        void algo_IPL_iteration_par_ligne
         ( type_id_parametre id_param, compilateur &compil, textes & textes_in, textes & textes_out,
           pf_exec_callback callback );
-        void PMIPL_suivant( type_id_parametre id_param );
-        void PMIPL_init( type_id_parametre id_param );
-
-        // Algorithme d'exécution LIPL
-        void algo_LIPL_iteration_premier_mot_par_ligne
-        ( type_id_parametre id_param, compilateur &compil, textes & textes_in, textes & textes_out,
-          pf_exec_callback callback );
-        void LIPL_suivant( type_id_parametre id_param );
-        void LIPL_init( type_id_parametre id_param );
+        void IPL_mot_suivant( type_id_parametre id_param );
+        void IPL_caractere_suivant( type_id_parametre id_param );
+        void IPL_init( type_id_parametre id_param );
 
     public:
         virtual void callback_param_1( compilateur &compil, textes & textes_in, textes & textes_out );
@@ -168,11 +161,8 @@ class base_fonction : public objet_selectionnable
         /** \brief La liste des parametres. */
         type_parametres m_parametres;
 
-        /** \brief Les valeurs courants des paramètres utilisant l'algorithme PMIPL. */
-        algo_PMIPL::type_map_PMIPL m_map_PMIPL;
-
-        /** \brief Les valeurs courants des paramètres utilisant l'algorithme LIPL. */
-        algo_LIPL::type_map_LIPL m_map_LIPL;
+        /** \brief Les valeurs courantes des paramètres utilisant l'algorithme IPL. */
+        algo_IPL::type_map_IPL m_map_IPL;
 
     private:
         /** \brief Le type de la fonction. */

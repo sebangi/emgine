@@ -26,10 +26,10 @@ fonction_cesar::fonction_cesar( fonctions_conteneur * conteneur )
     ajouter_parametre( PARAM_DECALAGE,
                        new base_parametre( this,
                                            "Décalage",
-                                           "Le décalage à réaliser.\nPossibilité d'alternance si le mot est une séquence.",
+                                           "Le décalage à réaliser.\nPossibilité d'alternance si le mot est une séquence.\n Le premier mot pour la première ligne. Le deuxième mot pour la seconde ligne, etc..",
                                            base_parametre::CONTENU_PARAM_VIDE_IMPOSSIBLE,
                                            base_parametre::CONFIGURATION_VISIBLE,
-                                           base_parametre::ALGO_PMIPL) );
+                                           base_parametre::ALGO_IPL) );
 
     ajouter_parametre( PARAM_ADDITIF,
                        new base_parametre( this,
@@ -37,14 +37,14 @@ fonction_cesar::fonction_cesar( fonctions_conteneur * conteneur )
                                            "Indique si le décalage est additif (Oui ou 1 pour Additif et Non ou 0 pour soustractif).\nPossibilité d'alternance si le mot est une séquence.",
                                            base_parametre::CONTENU_PARAM_VIDE_IMPOSSIBLE,
                                            base_parametre::CONFIGURATION_VISIBLE,
-                                           base_parametre::ALGO_PMIPL) );
+                                           base_parametre::ALGO_IPL) );
     ajouter_parametre( PARAM_ALPHABET,
                        new base_parametre( this,
                                            "Alphabet",
                                            "Alphabets utilisé (chaque mot de la ligne est un alphabet).",
                                            base_parametre::CONTENU_PARAM_VIDE_IMPOSSIBLE,
                                            base_parametre::CONFIGURATION_VISIBLE,
-                                           base_parametre::ALGO_LIPL) );
+                                           base_parametre::ALGO_IPL) );
 
     ajouter_parametre( PARAM_TRAITER_PAR_LIGNE,
                        new base_parametre( this,
@@ -52,7 +52,7 @@ fonction_cesar::fonction_cesar( fonctions_conteneur * conteneur )
                                            "Indique si le césar se réaliser par ligne, par opposition à tout le texte.",
                                            base_parametre::CONTENU_PARAM_VIDE_IMPOSSIBLE,
                                            base_parametre::CONFIGURATION_VISIBLE,
-                                           base_parametre::ALGO_PMIPL) );
+                                           base_parametre::ALGO_IPL) );
 }
 
 /** --------------------------------------------------------------------------------------
@@ -95,8 +95,8 @@ void fonction_cesar::construire_alphabet()
 
     int nb_alphabets = 0;
 
-    for ( ligne::const_iterator it_m = m_map_LIPL[PARAM_ALPHABET].it_debut;
-          it_m != m_map_LIPL[PARAM_ALPHABET].it_fin; ++it_m )
+    for ( ligne::const_iterator it_m = m_map_IPL[PARAM_ALPHABET].it_ligne_debut;
+          it_m != m_map_IPL[PARAM_ALPHABET].it_ligne_fin; ++it_m )
     {
         std::vector<base_element> alphabet;
 
@@ -119,7 +119,7 @@ void fonction_cesar::construire_alphabet()
  */
 void fonction_cesar::executer( compilateur &compil, textes & textes_in, textes & textes_out )
 {
-    algo_PMIPL_iteration_premier_mot_par_ligne
+    algo_IPL_iteration_par_ligne
             ( PARAM_TRAITER_PAR_LIGNE, compil, textes_in, textes_out, & base_fonction::callback_param_1 );
 }
 
@@ -131,7 +131,7 @@ void fonction_cesar::executer( compilateur &compil, textes & textes_in, textes &
  */
 void fonction_cesar::callback_param_1( compilateur &compil, textes & textes_in, textes & textes_out )
 {
-    algo_LIPL_iteration_premier_mot_par_ligne
+    algo_IPL_iteration_par_ligne
             ( PARAM_ALPHABET, compil, textes_in, textes_out, & base_fonction::callback_param_2 );
 }
 
@@ -145,7 +145,7 @@ void fonction_cesar::callback_param_2( compilateur &compil, textes & textes_in, 
 {
     construire_alphabet();
 
-    algo_PMIPL_iteration_premier_mot_par_ligne
+    algo_IPL_iteration_par_ligne
             ( PARAM_ADDITIF, compil, textes_in, textes_out, & base_fonction::callback_param_3 );
 }
 
@@ -157,7 +157,7 @@ void fonction_cesar::callback_param_2( compilateur &compil, textes & textes_in, 
  */
 void fonction_cesar::callback_param_3( compilateur &compil, textes & textes_in, textes & textes_out )
 {
-    algo_PMIPL_iteration_premier_mot_par_ligne
+    algo_IPL_iteration_par_ligne
             ( PARAM_DECALAGE, compil, textes_in, textes_out, & base_fonction::execution_specifique );
 }
 
@@ -173,10 +173,10 @@ void fonction_cesar::execution_specifique( compilateur &compil, textes & textes_
         texte t( it_t->get_configuration() );
         for ( texte::const_iterator it_l = it_t->begin(); it_l !=  it_t->end(); ++it_l ) {
             ligne l;
-            if ( m_map_PMIPL[PARAM_TRAITER_PAR_LIGNE].it_courant->get_booleen() )
+            if ( m_map_IPL[PARAM_TRAITER_PAR_LIGNE].it_caractere_courant->get_booleen() )
             {
-                PMIPL_init(PARAM_ADDITIF);
-                PMIPL_init(PARAM_DECALAGE);
+                IPL_init(PARAM_ADDITIF);
+                IPL_init(PARAM_DECALAGE);
             }
 
             for ( ligne::const_iterator it_m = it_l->begin(); it_m != it_l->end(); ++it_m ) {
@@ -190,18 +190,18 @@ void fonction_cesar::execution_specifique( compilateur &compil, textes & textes_
                         int pos;
                         int num_alphabet = it_pos->second.first;
 
-                        if (  m_map_PMIPL[PARAM_ADDITIF].it_courant->get_booleen() )
-                            pos = (it_pos->second.second + m_map_PMIPL[PARAM_DECALAGE].it_courant->get_entier()) %
+                        if (  m_map_IPL[PARAM_ADDITIF].it_caractere_courant->get_booleen() )
+                            pos = (it_pos->second.second + m_map_IPL[PARAM_DECALAGE].it_caractere_courant->get_entier()) %
                                     m_alphabets[num_alphabet].size();
                         else
                         {
-                            pos = it_pos->second.second - m_map_PMIPL[PARAM_DECALAGE].it_courant->get_entier();
+                            pos = it_pos->second.second - m_map_IPL[PARAM_DECALAGE].it_caractere_courant->get_entier();
                             if ( pos < 0 )
                                 pos += m_alphabets[num_alphabet].size();
                         }
 
-                        PMIPL_suivant(PARAM_ADDITIF);
-                        PMIPL_suivant(PARAM_DECALAGE);
+                        IPL_caractere_suivant(PARAM_ADDITIF);
+                        IPL_caractere_suivant(PARAM_DECALAGE);
 
                         m.push_back( m_alphabets[num_alphabet][pos] );
                     }
@@ -209,6 +209,8 @@ void fonction_cesar::execution_specifique( compilateur &compil, textes & textes_
                 l.ajouter_mot(m);
             }
             t.ajouter_ligne(l);
+
+            IPL_mot_suivant(PARAM_DECALAGE);
         }
         textes_out.ajouter_texte(compil.get_configuration(), t);
     }

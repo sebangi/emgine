@@ -14,6 +14,8 @@
 #include "entete/element/texte.h"
 #include "entete/element/type_element.h"
 
+#include <iostream>
+
 /** --------------------------------------------------------------------------------------
  \brief Constructeur de la classe fonction_formatage.
  \param conteneur Pointeur sur le conteneur de la fonction.
@@ -30,7 +32,7 @@ fonction_formatage::fonction_formatage( fonctions_conteneur * conteneur )
                                            "Indique si la ponctuation est à retirer.",
                                            base_parametre::CONTENU_PARAM_VIDE_IMPOSSIBLE,
                                            base_parametre::CONFIGURATION_INVISIBLE,
-                                           base_parametre::ALGO_PMIPL) );
+                                           base_parametre::ALGO_IPL) );
 }
 
 /** --------------------------------------------------------------------------------------
@@ -68,7 +70,7 @@ void fonction_formatage::initialisation_par_defaut()
  */
 void fonction_formatage::executer( compilateur &compil, textes & textes_in, textes & textes_out )
 {
-    algo_PMIPL_iteration_premier_mot_par_ligne
+    algo_IPL_iteration_par_ligne
             ( PARAM_RETRAIT_PONCTUATION, compil, textes_in, textes_out, & base_fonction::execution_specifique );
 }
 
@@ -89,7 +91,7 @@ void fonction_formatage::execution_specifique( compilateur &compil, textes & tex
                 for ( mot::const_iterator it_c = it_m->begin(); it_c != it_m->end(); ++it_c )
                 {
                     base_element elem(*it_c);
-                    elem.formater( m_map_PMIPL[PARAM_RETRAIT_PONCTUATION].it_courant->get_booleen() );
+                    elem.formater( m_map_IPL[PARAM_RETRAIT_PONCTUATION].it_caractere_courant->get_booleen() );
                     if ( ! elem.est_vide() )
                         m.push_back(elem);
                     else if ( ! m.empty() )

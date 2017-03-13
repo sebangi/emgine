@@ -469,101 +469,19 @@ void base_fonction::charger_parametre(QXmlStreamReader & xml)
 }
 
 /** --------------------------------------------------------------------------------------
- * \brief Algorithme d'exécution selon un parametre donné dans le cas : <b>premier mot, itération de chaque ligne</b>.
- * \param id_param L'identifiant du paramètre à exécuter.
- * \param compil Le compilateur utilisé.
- * \param textes_in Le texte source en entrée.
- * \param textes_out Le texte de sortie généré.
- * \param callback La fonction à appeler en fin d'algorithme.
- * \remark L'algorithme itère sur les lignes. Seule le premier mot de chaque ligne est considéré.\n
- * Les données courantes sont ainsi :
- *  - la ligne courante
- *  - un itérateur sur le premier mot de la ligne, i.e. un itérateur sur les caractères du premier mot.
- */
-void base_fonction::algo_PMIPL_iteration_premier_mot_par_ligne
-( type_id_parametre id_param, compilateur &compil, textes & textes_in, textes & textes_out,
-  pf_exec_callback callback )
-{
-    const textes& t_param = get_textes_parametre(id_param);
-    bool test_vide = ! m_parametres[id_param]->peut_etre_vide();
-
-    if ( test_vide && t_param.empty() )
-        compil.get_vue_logs()->ajouter_log
-                ( log_compilation( log_compilation::LOG_WARNING, (base_fonction*)this,
-                                   "Le paramètre " + m_parametres[id_param]->get_nom() + " est vide.") );
-    else
-        for ( textes::const_iterator it_t = t_param.begin(); it_t != t_param.end(); ++it_t)
-            if ( test_vide && it_t->empty() )
-                compil.get_vue_logs()->ajouter_log
-                        ( log_compilation( log_compilation::LOG_WARNING, (base_fonction*)this,
-                                           "Le paramètre " + m_parametres[id_param]->get_nom() + " est vide.") );
-            else
-            {
-                for ( texte::const_iterator it_l = it_t->begin(); it_l != it_t->end(); ++it_l)
-                    if ( test_vide && it_l->empty() )
-                        compil.get_vue_logs()->ajouter_log
-                                ( log_compilation( log_compilation::LOG_WARNING, (base_fonction*)this,
-                                                   "Le paramètre " + m_parametres[id_param]->get_nom() + " est vide sur une ligne.") );
-                    else
-                    {
-                        ligne::const_iterator it_m = it_l->begin();
-
-                        if ( test_vide && it_m->empty() )
-                            compil.get_vue_logs()->ajouter_log
-                                    ( log_compilation( log_compilation::LOG_WARNING, (base_fonction*)this,
-                                                       "Le paramètre " + m_parametres[id_param]->get_nom() + " est vide sur le premier mot d'une ligne.") );
-                        else
-                        {
-                            m_map_PMIPL[id_param].it_debut = it_m->begin();
-                            m_map_PMIPL[id_param].it_courant = it_m->begin();
-                            m_map_PMIPL[id_param].it_fin = it_m->end();
-                            m_map_PMIPL[id_param].mot_courant = &(*it_m);
-
-                            if ( m_parametres[id_param]->configuration_visible() )
-                                compil.ajouter_configuration(this, id_param, it_m->to_string_lisible());
-
-                            (this->*callback)(compil, textes_in, textes_out);
-
-                            if ( m_parametres[id_param]->configuration_visible() )
-                                compil.retirer_configuration(this, id_param);
-                        }
-                    }
-            }
-}
-
-/** --------------------------------------------------------------------------------------
- * \brief Avance l'itérateur d'un paramètre donné pour l'algorithme PMIPL.
- * \param id_param L'identifiant du paramètre qu'il faut avancer.
- */
-void base_fonction::PMIPL_suivant(type_id_parametre id_param)
-{
-    m_map_PMIPL[id_param].it_courant++;
-    if ( m_map_PMIPL[id_param].it_courant == m_map_PMIPL[id_param].it_fin )
-        m_map_PMIPL[id_param].it_courant = m_map_PMIPL[id_param].it_debut;
-}
-
-/** --------------------------------------------------------------------------------------
- * \brief Initialise l'itérateur d'un paramètre donné pour l'algorithme PMIPL.
- * \param id_param L'identifiant du paramètre qu'il faut initialiser.
- */
-void base_fonction::PMIPL_init(type_id_parametre id_param)
-{
-    m_map_PMIPL[id_param].it_courant = m_map_PMIPL[id_param].it_debut;
-}
-
-/** --------------------------------------------------------------------------------------
  * \brief Algorithme d'exécution selon un parametre donné dans le cas : <b>ligne, itération sur chaque ligne</b>.
  * \param id_param L'identifiant du paramètre à exécuter.
  * \param compil Le compilateur utilisé.
  * \param textes_in Le texte source en entrée.
  * \param textes_out Le texte de sortie généré.
  * \param callback La fonction à appeler en fin d'algorithme.
- * \remark L'algorithme itère sur les lignes. Seule le premier mot de chaque ligne est considéré.\n
+ * \remark L'algorithme itère sur les lignes. Possibilité de parcourir les mots de la ligne et les caractères des mots.\n
  * Les données courantes sont ainsi :
  *  - la ligne courante
+ *  - le mot courant
  *  - un itérateur sur la ligne, i.e. un itérateur sur les mots de la ligne.
  */
-void base_fonction::algo_LIPL_iteration_premier_mot_par_ligne
+void base_fonction::algo_IPL_iteration_par_ligne
 ( type_id_parametre id_param, compilateur &compil, textes & textes_in, textes & textes_out,
   pf_exec_callback callback )
 {
@@ -589,10 +507,11 @@ void base_fonction::algo_LIPL_iteration_premier_mot_par_ligne
                                                    "Le paramètre " + m_parametres[id_param]->get_nom() + " est vide sur une ligne.") );
                     else
                     {
-                        m_map_LIPL[id_param].it_debut = it_l->begin();
-                        m_map_LIPL[id_param].it_courant = it_l->begin();
-                        m_map_LIPL[id_param].it_fin = it_l->end();
-                        m_map_LIPL[id_param].ligne_courante = &(*it_l);
+                        m_map_IPL[id_param].it_ligne_debut = it_l->begin();
+                        m_map_IPL[id_param].it_mot_courant = it_l->begin();
+                        m_map_IPL[id_param].it_ligne_fin = it_l->end();
+
+                        IPL_init(id_param);
 
                         if ( m_parametres[id_param]->configuration_visible() )
                             compil.ajouter_configuration(this, id_param, it_l->to_string_lisible());
@@ -606,23 +525,42 @@ void base_fonction::algo_LIPL_iteration_premier_mot_par_ligne
 }
 
 /** --------------------------------------------------------------------------------------
- * \brief Avance l'itérateur d'un paramètre donné pour l'algorithme LIPL.
+ * \brief Avance l'itérateur d'un paramètre donné pour l'algorithme MIPL.
  * \param id_param L'identifiant du paramètre qu'il faut avancer.
  */
-void base_fonction::LIPL_suivant(type_id_parametre id_param)
+void base_fonction::IPL_mot_suivant(type_id_parametre id_param)
 {
-    m_map_LIPL[id_param].it_courant++;
-    if ( m_map_LIPL[id_param].it_courant == m_map_LIPL[id_param].it_fin )
-        m_map_LIPL[id_param].it_courant = m_map_LIPL[id_param].it_debut;
+    m_map_IPL[id_param].it_mot_courant++;
+    if ( m_map_IPL[id_param].it_mot_courant == m_map_IPL[id_param].it_ligne_fin )
+        m_map_IPL[id_param].it_mot_courant = m_map_IPL[id_param].it_ligne_debut;
+
+    m_map_IPL[id_param].it_mot_debut = m_map_IPL[id_param].it_mot_courant->begin();
+    m_map_IPL[id_param].it_caractere_courant = m_map_IPL[id_param].it_mot_debut;
+    m_map_IPL[id_param].it_mot_fin = m_map_IPL[id_param].it_mot_courant->end();
 }
 
 /** --------------------------------------------------------------------------------------
- * \brief Initialise l'itérateur d'un paramètre donné pour l'algorithme LIPL.
+ * \brief Initialise l'itérateur d'un paramètre donné pour l'algorithme MIPL.
  * \param id_param L'identifiant du paramètre qu'il faut initialiser.
  */
-void base_fonction::LIPL_init(type_id_parametre id_param)
+void base_fonction::IPL_init(type_id_parametre id_param)
 {
-    m_map_LIPL[id_param].it_courant = m_map_LIPL[id_param].it_debut;
+    m_map_IPL[id_param].it_mot_courant = m_map_IPL[id_param].it_ligne_debut;
+
+    m_map_IPL[id_param].it_mot_debut = m_map_IPL[id_param].it_mot_courant->begin();
+    m_map_IPL[id_param].it_caractere_courant = m_map_IPL[id_param].it_mot_debut;
+    m_map_IPL[id_param].it_mot_fin = m_map_IPL[id_param].it_mot_courant->end();
+}
+
+/** --------------------------------------------------------------------------------------
+ * \brief Avance l'itérateur d'un paramètre donné pour l'algorithme MIPL.
+ * \param id_param L'identifiant du paramètre qu'il faut avancer.
+ */
+void base_fonction::IPL_caractere_suivant(type_id_parametre id_param)
+{
+    m_map_IPL[id_param].it_caractere_courant++;
+    if ( m_map_IPL[id_param].it_caractere_courant == m_map_IPL[id_param].it_mot_fin )
+        m_map_IPL[id_param].it_caractere_courant = m_map_IPL[id_param].it_mot_debut;
 }
 
 /** --------------------------------------------------------------------------------------

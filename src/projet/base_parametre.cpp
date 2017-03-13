@@ -113,10 +113,8 @@ QString base_parametre::get_aide_algorithme() const
 {
     if ( m_algorithme == ALGO_AUCUN )
         return "aucun algorithme. Tout le texte est considéré d'un coup. Aucune itération.";
-    else if ( m_algorithme == ALGO_PMIPL )
-        return "Seul le premier mot de chaque ligne est considéré. Itération sur les lignes.";
-    else if ( m_algorithme == ALGO_LIPL )
-        return "Chaque ligne est considérée d'un coup. Itération sur les lignes";
+    else if ( m_algorithme == ALGO_IPL )
+        return "Chaque ligne génère une nouvelle configuration.";
     else
         return "inconnu";
 }

@@ -33,8 +33,6 @@ SOURCES += \
         src/explorateur/noeud_projet.cpp\
         src/fenetre_principale.cpp \
         src/fonction/bibliotheque_fonctions.cpp \
-        src/fonction/algorithme/algo_PMIPL.cpp \
-        src/fonction/algorithme/algo_LIPL.cpp \
         src/fonction/fonction_conversion/fonction_cesar.cpp \
         src/fonction/fonction_sortie/fonction_base_sortie.cpp \
         src/fonction/fonction_sortie/fonction_sortie_texte.cpp \
@@ -87,7 +85,8 @@ SOURCES += \
     src/fonction/fonction_conversion/fonction_anagramme.cpp \
     src/dictionnaire/lettre_dictionnaire.cpp \
     src/fonction_widget/fonction_source_widget/fonction_source_entier_widget.cpp \
-    src/fonction/fonction_conversion/fonction_entier_en_chiffre_romain.cpp
+    src/fonction/fonction_conversion/fonction_entier_en_chiffre_romain.cpp \
+    src/fonction/algorithme/algo_IPL.cpp
 
 HEADERS  += \
         entete/compilation/compilateur.h \
@@ -107,8 +106,6 @@ HEADERS  += \
         entete/explorateur/noeud_parametre.h \
         entete/explorateur/noeud_projet.h \
         entete/fenetre_principale.h \
-        entete/fonction/algorithme/algo_PMIPL.h \
-        entete/fonction/algorithme/algo_LIPL.h \
         entete/fonction/bibliotheque_fonctions.h \
         entete/fonction/fonction_conversion/fonction_cesar.h \
         entete/fonction/fonction_sortie/fonction_base_sortie.h \
@@ -165,7 +162,8 @@ HEADERS  += \
     entete/fonction/fonction_conversion/fonction_anagramme.h \
     entete/dictionnaire/lettre_dictionnaire.h \
     entete/fonction_widget/fonction_source_widget/fonction_source_entier_widget.h \
-    entete/fonction/fonction_conversion/fonction_entier_en_chiffre_romain.h
+    entete/fonction/fonction_conversion/fonction_entier_en_chiffre_romain.h \
+    entete/fonction/algorithme/algo_IPL.h
 
 FORMS    += \
     fenetre_principale.ui

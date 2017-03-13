@@ -33,7 +33,7 @@ fonction_source_fichier_texte::fonction_source_fichier_texte(fonctions_conteneur
                                            "Les séparateurs d'éléments.",
                                            base_parametre::CONTENU_PARAM_VIDE_POSSIBLE,
                                            base_parametre::CONFIGURATION_INVISIBLE,
-                                           base_parametre::ALGO_PMIPL) );
+                                           base_parametre::ALGO_IPL) );
 
     ajouter_parametre( PARAM_MOT_SEPARATEUR,
                        new base_parametre( this,
@@ -41,7 +41,7 @@ fonction_source_fichier_texte::fonction_source_fichier_texte(fonctions_conteneur
                                            "Les séparateurs de mot.",
                                            base_parametre::CONTENU_PARAM_VIDE_IMPOSSIBLE,
                                            base_parametre::CONFIGURATION_INVISIBLE,
-                                           base_parametre::ALGO_PMIPL) );
+                                           base_parametre::ALGO_IPL) );
 
     ajouter_parametre( PARAM_LIGNE_SEPARATEUR,
                        new base_parametre( this,
@@ -49,7 +49,7 @@ fonction_source_fichier_texte::fonction_source_fichier_texte(fonctions_conteneur
                                            "Les séparateurs de ligne.",
                                            base_parametre::CONTENU_PARAM_VIDE_IMPOSSIBLE,
                                            base_parametre::CONFIGURATION_INVISIBLE,
-                                           base_parametre::ALGO_PMIPL) );
+                                           base_parametre::ALGO_IPL) );
 }
 
 /** --------------------------------------------------------------------------------------
@@ -109,7 +109,7 @@ void fonction_source_fichier_texte::executer( compilateur &compil, textes & text
     m_contenu_fichier = in.readAll();
     file.close();
 
-    algo_PMIPL_iteration_premier_mot_par_ligne
+    algo_IPL_iteration_par_ligne
         ( PARAM_LIGNE_SEPARATEUR, compil, textes_in, textes_out, & base_fonction::callback_param_1 );
 }
 
@@ -121,7 +121,7 @@ void fonction_source_fichier_texte::executer( compilateur &compil, textes & text
  */
 void fonction_source_fichier_texte::callback_param_1( compilateur &compil, textes & textes_in, textes & textes_out )
 {
-    algo_PMIPL_iteration_premier_mot_par_ligne
+    algo_IPL_iteration_par_ligne
         ( PARAM_MOT_SEPARATEUR, compil, textes_in, textes_out, & base_fonction::callback_param_2 );
 }
 
@@ -133,7 +133,7 @@ void fonction_source_fichier_texte::callback_param_1( compilateur &compil, texte
  */
 void fonction_source_fichier_texte::callback_param_2( compilateur &compil, textes & textes_in, textes & textes_out )
 {
-    algo_PMIPL_iteration_premier_mot_par_ligne
+    algo_IPL_iteration_par_ligne
         ( PARAM_CARACTERE_SEPARATEUR, compil, textes_in, textes_out, & base_fonction::execution_specifique );
 }
 
@@ -145,9 +145,9 @@ void fonction_source_fichier_texte::callback_param_2( compilateur &compil, texte
  */
 void fonction_source_fichier_texte::execution_specifique( compilateur &compil, textes & textes_in, textes & textes_out )
 {
-    QString t_caractere = m_map_PMIPL[PARAM_CARACTERE_SEPARATEUR].mot_courant->to_string();
-    QString t_mot = m_map_PMIPL[PARAM_MOT_SEPARATEUR].mot_courant->to_string();
-    QString t_ligne = m_map_PMIPL[PARAM_LIGNE_SEPARATEUR].mot_courant->to_string();
+    QString t_caractere = m_map_IPL[PARAM_CARACTERE_SEPARATEUR].it_mot_courant->to_string();
+    QString t_mot = m_map_IPL[PARAM_MOT_SEPARATEUR].it_mot_courant->to_string();
+    QString t_ligne = m_map_IPL[PARAM_LIGNE_SEPARATEUR].it_mot_courant->to_string();
 
     texte t("", t_ligne );
     QStringList lignes = m_contenu_fichier.split( t_ligne );

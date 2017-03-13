@@ -214,9 +214,7 @@ ZULANWDGGPCJAFJABC</valeur>
                                 <est_etendu>0</est_etendu>
                                 <verrouille>0</verrouille>
                             </objet_selectionnable>
-                            <valeur>1803
-764
-1067</valeur>
+                            <valeur>1803 764 1067</valeur>
                             <parametres>
                                 <parametre>
                                     <id>0</id>
@@ -355,7 +353,7 @@ ZULANWDGGPCJAFJABC</valeur>
                                 <est_etendu>0</est_etendu>
                                 <verrouille>0</verrouille>
                             </objet_selectionnable>
-                            <valeur>1</valeur>
+                            <valeur>0</valeur>
                             <parametres/>
                         </fonction>
                     </fonctions>

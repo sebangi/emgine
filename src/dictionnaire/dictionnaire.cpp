@@ -137,7 +137,7 @@ void dictionnaire::formater( QString& s ) const
     s.replace( QRegExp( "[ÚÙÛÜ]") , "U" );
     s.replace( QRegExp( "[Ç]") , "C" );
 
-    QString ponct = QRegExp::escape("«»,;:!?./§*%^¨$£&~\"#'{([|`_\\^@)]°=}+-");
+    QString ponct = QRegExp::escape(" «»,;:!?./§*%^¨$£&~\"#'{([|`_\\^@)]°=}+-");
     s.remove( QRegExp( "[" + ponct + "]" ) );
 } // dictionnaire::formater()
 
@@ -192,7 +192,13 @@ void dictionnaire::ajouter_mot_dans_arbre( const QString &s )
 
     lettre_dictionnaire * lettre = m_arbre_mots;
     for ( QString::iterator it = s_formate.begin(); it != s_formate.end(); ++it )
-        lettre = lettre->get_suivant(it->toLatin1() - 'A');
+    {
+        int pos = it->toLatin1() - 'A';
+        if ( pos > 25 || pos < 0 )
+            std::cout << "Dictionnaire : Attention, impossible d'ajouter le caractère " << it->toLatin1() << std::endl;
+        else
+            lettre = lettre->get_suivant(pos);
+    }
 
     lettre->set_est_mot();
 }

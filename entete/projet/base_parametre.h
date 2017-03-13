@@ -61,14 +61,11 @@ class base_parametre : public fonctions_conteneur
          *  \brief Enumération décrivant les différents algorithmes pour l'excution des paramètres.
          */
         enum type_algorithme{
-            /** \brief Aucun algorithme n'est utilisé. */
+            /** \brief Tout le texte est considéré d'un coup. Aucune itération. */
             ALGO_AUCUN = 0,
 
-            /** \brief Algorithme PMIPL, i.e. <b>Premier Mot Itération Par Ligne</b>. */
-            ALGO_PMIPL,
-
-            /** \brief Algorithme LIPL, i.e. <b>Ligne Itération Par Ligne</b>. */
-            ALGO_LIPL
+            /** \brief Algorithme IPL, i.e. <b>Itération Par Ligne</b>. */
+            ALGO_IPL
         };
 
     public:

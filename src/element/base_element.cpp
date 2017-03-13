@@ -176,7 +176,7 @@ QString base_element::to_string() const
  */
 bool base_element::est_vide() const
 {
-    return to_string().isEmpty();
+    return m_string.isEmpty();
 }
 
 /** --------------------------------------------------------------------------------------
@@ -185,11 +185,10 @@ bool base_element::est_vide() const
  */
 bool base_element::est_lettre_alphabet() const
 {
-    QString s = to_string();
-    if ( s.size() != 1 )
+   if ( m_string.size() != 1 )
         return false;
     else
-        return (s[0] >= 'A' && s[0] <= 'Z') || (s[0] >= 'a' && s[0] <= 'z');
+        return (m_string[0] >= 'A' && m_string[0] <= 'Z') || (m_string[0] >= 'a' && m_string[0] <= 'z');
 }
 
 /** --------------------------------------------------------------------------------------
@@ -214,19 +213,17 @@ bool base_element::est_entier() const
  */
 void base_element::formater( bool retrait_ponctuation )
 {
-    QString s = to_string().toUpper();
-    s.replace( QRegExp( "[ÁÀÂÄ]") , "A" );
-    s.replace( QRegExp( "[ÉÈÊË]") , "E" );
-    s.replace( QRegExp( "[ÍÌÎÏ]") , "I" );
-    s.replace( QRegExp( "[ÓÒÔÖ]") , "O" );
-    s.replace( QRegExp( "[ÚÙÛÜ]") , "U" );
-    s.replace( QRegExp( "[Ç]") , "C" );
+    m_string = m_string.toUpper();
+
+    m_string.replace( QRegExp( "[ÁÀÂÄ]") , "A" );
+    m_string.replace( QRegExp( "[ÉÈÊË]") , "E" );
+    m_string.replace( QRegExp( "[ÍÌÎÏ]") , "I" );
+    m_string.replace( QRegExp( "[ÓÒÔÖ]") , "O" );
+    m_string.replace( QRegExp( "[ÚÙÛÜ]") , "U" );
+    m_string.replace( QRegExp( "[Ç]") , "C" );
 
     if ( retrait_ponctuation )
         retirer_ponctuation();
-
-    m_string = s;
-    m_type = type_element_string;
 }
 
 /** --------------------------------------------------------------------------------------
@@ -234,13 +231,8 @@ void base_element::formater( bool retrait_ponctuation )
  */
 void base_element::retirer_ponctuation( )
 {
-    QString s = to_string().toUpper();
-
     QString ponct = QRegExp::escape("«»,;:!?./§*%^¨$£&~\"#'{([|`_\\^@)]°=}+-");
-    s.remove( QRegExp( "[" + ponct + "]" ) );
-
-    m_string = s;
-    m_type = type_element_string;
+    m_string.remove( QRegExp( "[" + ponct + "]" ) );
 }
 
 /** --------------------------------------------------------------------------------------
