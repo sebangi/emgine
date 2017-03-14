@@ -88,7 +88,8 @@ SOURCES += \
     src/fonction/fonction_conversion/fonction_entier_en_chiffre_romain.cpp \
     src/fonction/algorithme/algo_IPL.cpp \
     src/fonction/fonction_conversion/fonction_ajout_espace_selon_dictionnaire.cpp \
-    src/fonction/fonction_conversion/fonction_fusion.cpp
+    src/fonction/fonction_conversion/fonction_fusion.cpp \
+    src/fonction/fonction_conversion/fonction_substitution.cpp
 
 HEADERS  += \
         entete/compilation/compilateur.h \
@@ -167,7 +168,8 @@ HEADERS  += \
     entete/fonction/fonction_conversion/fonction_entier_en_chiffre_romain.h \
     entete/fonction/algorithme/algo_IPL.h \
     entete/fonction/fonction_conversion/fonction_ajout_espace_selon_dictionnaire.h \
-    entete/fonction/fonction_conversion/fonction_fusion.h
+    entete/fonction/fonction_conversion/fonction_fusion.h \
+    entete/fonction/fonction_conversion/fonction_substitution.h
 
 FORMS    += \
     fenetre_principale.ui

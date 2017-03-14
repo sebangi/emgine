@@ -200,8 +200,8 @@ void fonction_cesar::execution_specifique( compilateur &compil, textes & textes_
                                 pos += m_alphabets[num_alphabet].size();
                         }
 
-                        IPL_caractere_suivant(PARAM_ADDITIF);
-                        IPL_caractere_suivant(PARAM_DECALAGE);
+                        IPL_caractere_suivant_dans_mot(PARAM_ADDITIF);
+                        IPL_caractere_suivant_dans_mot(PARAM_DECALAGE);
 
                         m.push_back( m_alphabets[num_alphabet][pos] );
                     }

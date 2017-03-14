@@ -60,20 +60,6 @@ base_element::base_element(QString valeur)
 }
 
 /** --------------------------------------------------------------------------------------
- * \brief Constructeur de la classe base_element.
- * \param valeur La valeur booléenne de l'élément créé.
- */
-base_element::base_element(bool valeur)
-    : m_type(type_element_booleen),
-      m_booleen(valeur)
-{
-    if ( m_booleen )
-        m_string = "oui";
-    else
-        m_string = "non";
-}
-
-/** --------------------------------------------------------------------------------------
  * \brief Constructeur par copie de la classe base_element.
  * \param elem L'élément à copier.
  */
@@ -225,7 +211,8 @@ void base_element::formater( bool retrait_ponctuation )
  */
 void base_element::retirer_ponctuation( )
 {
-    QString ponct = QRegExp::escape("«»,;:!?./§*%^¨$£&~\"#'{([|`_\\^@)]°=}+-");
+    // le caractère * est gardé pour coder caractere_non_trouve
+    QString ponct = QRegExp::escape("«»,;:!?./§%^¨$£&~\"#'{([|`_\\^@)]°=}+-");
     m_string.remove( QRegExp( "[" + ponct + "]" ) );
 }
 
@@ -247,5 +234,32 @@ bool base_element::operator <(const base_element& e) const
 bool base_element::operator==(const base_element &e) const
 {
     return m_string.compare( e.m_string ) == 0;
+}
+
+/** --------------------------------------------------------------------------------------
+ * \brief Génère un élément inconnu.
+ * \return Un élément inconnu.
+ */
+base_element base_element::element_inconnu()
+{
+    return base_element("*");
+}
+
+/** --------------------------------------------------------------------------------------
+ * \brief Génère un élément booléen.
+ * \param valeur La valeur booléenne de l'élément créé.
+ */
+base_element base_element::element_booleen(bool valeur)
+{
+    base_element e;
+    e.m_type == type_element_booleen;
+    e.m_booleen = valeur;
+
+    if ( e.m_booleen )
+        e.m_string = "oui";
+    else
+        e.m_string = "non";
+
+    return e;
 }
 

@@ -23,8 +23,7 @@ class base_element
         base_element( QChar valeur );
         base_element( QCharRef valeur );
         base_element( QString valeur );
-        base_element( QString valeur, bool sensible_a_la_casse );
-        base_element( bool valeur );
+        base_element( QString valeur, bool force_upper_case );
         base_element( const base_element & elem );
 
         type_element get_type() const;
@@ -41,6 +40,9 @@ class base_element
 
         bool operator<(const base_element& e) const;
         bool operator==(const base_element& e) const;
+
+        static base_element element_inconnu();        
+        static base_element element_booleen(bool valeur);
 
     private:
         /** \brief Le type de l'élément. */

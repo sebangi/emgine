@@ -144,7 +144,8 @@ class base_fonction : public objet_selectionnable
         ( type_id_parametre id_param, compilateur &compil, textes & textes_in, textes & textes_out,
           pf_exec_callback callback );
         void IPL_mot_suivant( type_id_parametre id_param );
-        void IPL_caractere_suivant( type_id_parametre id_param );
+        void IPL_caractere_suivant_dans_mot( type_id_parametre id_param );
+        void IPL_caractere_suivant_dans_ligne( type_id_parametre id_param );
         void IPL_init( type_id_parametre id_param );
 
     public:

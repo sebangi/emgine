@@ -91,7 +91,10 @@ void fonction_ajout_espace_selon_dictionnaire::executer( compilateur &compil, te
                         plus_grand_prefixe = s_m.mid(0,1);
                     }
 
-                    l.ajouter_mot( mot( plus_grand_prefixe ) );
+                    mot m;
+                    for ( int i = 0; i != plus_grand_prefixe.size(); ++i )
+                        m.push_back( base_element( plus_grand_prefixe[i] ) );
+                    l.ajouter_mot( m );
                     s_m.remove(0,taille);
                 }
             }

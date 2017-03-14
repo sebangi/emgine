@@ -469,7 +469,7 @@ void base_fonction::charger_parametre(QXmlStreamReader & xml)
 }
 
 /** --------------------------------------------------------------------------------------
- * \brief Algorithme d'exécution selon un parametre donné dans le cas : <b>ligne, itération sur chaque ligne</b>.
+ * \brief Algorithme d'exécution selon un parametre donné dans le cas : <b>itération sur chaque ligne</b>.
  * \param id_param L'identifiant du paramètre à exécuter.
  * \param compil Le compilateur utilisé.
  * \param textes_in Le texte source en entrée.
@@ -525,7 +525,7 @@ void base_fonction::algo_IPL_iteration_par_ligne
 }
 
 /** --------------------------------------------------------------------------------------
- * \brief Avance l'itérateur d'un paramètre donné pour l'algorithme MIPL.
+ * \brief Avance d'un mot l'itérateur d'un paramètre donné pour l'algorithme IPL.
  * \param id_param L'identifiant du paramètre qu'il faut avancer.
  */
 void base_fonction::IPL_mot_suivant(type_id_parametre id_param)
@@ -540,7 +540,7 @@ void base_fonction::IPL_mot_suivant(type_id_parametre id_param)
 }
 
 /** --------------------------------------------------------------------------------------
- * \brief Initialise l'itérateur d'un paramètre donné pour l'algorithme MIPL.
+ * \brief Initialise l'itérateur d'un paramètre donné pour l'algorithme IPL.
  * \param id_param L'identifiant du paramètre qu'il faut initialiser.
  */
 void base_fonction::IPL_init(type_id_parametre id_param)
@@ -553,14 +553,33 @@ void base_fonction::IPL_init(type_id_parametre id_param)
 }
 
 /** --------------------------------------------------------------------------------------
- * \brief Avance l'itérateur d'un paramètre donné pour l'algorithme MIPL.
+ * \brief Avance d'un caractère dans le mot courant l'itérateur d'un paramètre donné pour l'algorithme IPL.
  * \param id_param L'identifiant du paramètre qu'il faut avancer.
  */
-void base_fonction::IPL_caractere_suivant(type_id_parametre id_param)
+void base_fonction::IPL_caractere_suivant_dans_mot(type_id_parametre id_param)
 {
     m_map_IPL[id_param].it_caractere_courant++;
     if ( m_map_IPL[id_param].it_caractere_courant == m_map_IPL[id_param].it_mot_fin )
         m_map_IPL[id_param].it_caractere_courant = m_map_IPL[id_param].it_mot_debut;
+}
+
+/** --------------------------------------------------------------------------------------
+ * \brief Avance d'un caractère dans la ligne courante l'itérateur d'un paramètre donné pour l'algorithme IPL.
+ * \param id_param L'identifiant du paramètre qu'il faut avancer.
+ */
+void base_fonction::IPL_caractere_suivant_dans_ligne(type_id_parametre id_param)
+{
+    m_map_IPL[id_param].it_caractere_courant++;
+    if ( m_map_IPL[id_param].it_caractere_courant == m_map_IPL[id_param].it_mot_fin )
+    {
+        m_map_IPL[id_param].it_mot_courant++;
+        if ( m_map_IPL[id_param].it_mot_courant == m_map_IPL[id_param].it_ligne_fin )
+            m_map_IPL[id_param].it_mot_courant = m_map_IPL[id_param].it_ligne_debut;
+
+        m_map_IPL[id_param].it_mot_debut = m_map_IPL[id_param].it_mot_courant->begin();
+        m_map_IPL[id_param].it_caractere_courant = m_map_IPL[id_param].it_mot_debut;
+        m_map_IPL[id_param].it_mot_fin = m_map_IPL[id_param].it_mot_courant->end();
+    }
 }
 
 /** --------------------------------------------------------------------------------------

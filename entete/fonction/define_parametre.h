@@ -63,7 +63,14 @@ enum type_id_parametre{
     PARAM_FUSION_LIGNES,
 
     /** \brief Paramètre pour indiquer s'il faut fusionner les textes. */
-    PARAM_FUSION_TEXTES
+    PARAM_FUSION_TEXTES,
+
+    /** \brief Paramètre pour indiquer les caractères d'entrée d'un paramètre quelconque. */
+    PARAM_CARACTERES_ENTREE,
+
+    /** \brief Paramètre pour indiquer les caractères de sortie d'un paramètre quelconque. */
+    PARAM_CARACTERES_SORTIE
+
 };
 
 #endif // DEFINE_PARAMETRE_H
