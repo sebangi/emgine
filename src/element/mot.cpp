@@ -29,6 +29,17 @@ mot::mot(const QString &valeur, const QString & separateur_caractere)
     }
 }
 
+
+/** --------------------------------------------------------------------------------------
+ * \brief Constructeur par copie de la classe mot.
+ * \param m Le mot à copier.
+ */
+mot::mot(const mot &m)
+    : vector<base_element>(m), m_separateur_caractere(m.m_separateur_caractere)
+{
+
+}
+
 /** --------------------------------------------------------------------------------------
  * \brief Retourne le mot au format QString.
  * \return Le mot au format QString.
@@ -79,4 +90,14 @@ std::vector<base_element>::size_type mot::nb_caracteres_alphabet() const
             nb++;
 
     return nb;
+}
+
+/** --------------------------------------------------------------------------------------
+ * \brief Fusion des caractères.
+ */
+void mot::fusionner()
+{
+    base_element elem(to_string());
+    clear();
+    push_back(elem);
 }

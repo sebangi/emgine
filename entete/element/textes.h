@@ -19,7 +19,8 @@ class textes : public std::vector< texte >
 {
     public:
         textes();
-        textes(const QString& valeur);
+        textes( const QString& valeur);
+        textes( const textes& t );
 
         QString to_string() const;
         QString to_string_lisible() const;
@@ -27,8 +28,8 @@ class textes : public std::vector< texte >
         void ajouter_texte(const configuration & config, const texte& t);
         void calculer_frequence( bool force_upper_case );
         void calculer_indice_coincidence();
-
         void effacer_tout();
+        void fusionner(bool fusion_caracteres, bool fusion_mots, bool fusion_lignes, bool fusion_textes);
 };
 
 #endif // TEXTES_Hs

@@ -9,8 +9,6 @@
 #include "entete/element/type_element.h"
 #include "entete/fonction_widget/fonction_source_widget/fonction_source_texte_widget.h"
 
-#include <iostream>
-
 /** --------------------------------------------------------------------------------------
  * \brief Constructeur de la classe fonction_source_texte.
  * \param conteneur Un pointeur sur le conteneur de la fonction.

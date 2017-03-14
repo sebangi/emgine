@@ -30,6 +30,16 @@ ligne::ligne(const QString &valeur, const QString & separateur_mot)
 }
 
 /** --------------------------------------------------------------------------------------
+ * \brief Constructeur par copie de la classe ligne.
+ * \param l La ligne à copier.
+ */
+ligne::ligne(const ligne &l)
+    : vector<mot>(l), m_separateur_mot(l.m_separateur_mot), m_nb_caracteres(l.m_nb_caracteres)
+{
+
+}
+
+/** --------------------------------------------------------------------------------------
  * \brief Ajoute un mot à la ligne.
  * \param m Le mot à ajouter.
  */
@@ -112,4 +122,43 @@ bool ligne::operator<(const ligne & l) const
     return to_string() < l.to_string();
 }
 
+/** --------------------------------------------------------------------------------------
+ * \brief Fusion des mots et/ou des caractères.
+ * \param fusion_caracteres Indique s'il faut fusionner les caractères.
+ * \param fusion_mots Indique s'il faut fusionner les mots.
+ */
+void ligne::fusionner(bool fusion_caracteres, bool fusion_mots)
+{
+    if ( fusion_mots && ! empty() )
+    {
+        iterator it_premier = begin();
+        iterator it = begin();
+
+        for ( ++it; it != end(); ++it )
+            for ( mot::iterator it_m = it->begin(); it_m != it->end(); ++it_m )
+                it_premier->push_back(*it_m);
+
+        it = begin();
+        ++it;
+        erase(it,end());
+
+    }
+
+    if( fusion_caracteres )
+        for ( iterator it = begin(); it != end(); ++it )
+            it->fusionner();
+
+    maj_nb_caracteres();
+}
+
+/** --------------------------------------------------------------------------------------
+ * \brief Met à jour le nombre de caractères de la ligne.
+ */
+void ligne::maj_nb_caracteres()
+{
+    m_nb_caracteres = 0;
+
+    for ( int i = 0; i < size(); ++i )
+        m_nb_caracteres += this->at(i).nb_caracteres();
+}
 

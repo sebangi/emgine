@@ -43,19 +43,19 @@ fonction_fusion::fonction_fusion( fonctions_conteneur * conteneur )
                                            base_parametre::CONFIGURATION_INVISIBLE,
                                            base_parametre::ALGO_IPL) );
     ajouter_parametre( PARAM_FUSION_LIGNES,
-                   new base_parametre( this,
-                                       "Fusionner les lignes",
-                                       "Indique s'il faut fusionner les lignes.",
-                                       base_parametre::CONTENU_PARAM_VIDE_IMPOSSIBLE,
-                                       base_parametre::CONFIGURATION_INVISIBLE,
-                                       base_parametre::ALGO_IPL) );
+                       new base_parametre( this,
+                                           "Fusionner les lignes",
+                                           "Indique s'il faut fusionner les lignes.",
+                                           base_parametre::CONTENU_PARAM_VIDE_IMPOSSIBLE,
+                                           base_parametre::CONFIGURATION_INVISIBLE,
+                                           base_parametre::ALGO_IPL) );
     ajouter_parametre( PARAM_FUSION_TEXTES,
-                   new base_parametre( this,
-                                       "Fusionner les textes",
-                                       "Indique s'il faut fusionner les textes.",
-                                       base_parametre::CONTENU_PARAM_VIDE_IMPOSSIBLE,
-                                       base_parametre::CONFIGURATION_INVISIBLE,
-                                       base_parametre::ALGO_IPL) );
+                       new base_parametre( this,
+                                           "Fusionner les textes",
+                                           "Indique s'il faut fusionner les textes.",
+                                           base_parametre::CONTENU_PARAM_VIDE_IMPOSSIBLE,
+                                           base_parametre::CONFIGURATION_INVISIBLE,
+                                           base_parametre::ALGO_IPL) );
 }
 
 /** --------------------------------------------------------------------------------------
@@ -149,6 +149,13 @@ void fonction_fusion::execution_specifique( compilateur &compil, textes & textes
     bool fusion_lignes =  m_map_IPL[PARAM_FUSION_LIGNES].it_caractere_courant->get_booleen();
     bool fusion_textes =  m_map_IPL[PARAM_FUSION_TEXTES].it_caractere_courant->get_booleen();
 
+    textes t = textes(textes_in);
+    t.fusionner(fusion_caracteres, fusion_mots, fusion_lignes, fusion_textes);
+
+    for ( textes::const_iterator it_t = t.begin(); it_t != t.end(); ++it_t )
+        textes_out.ajouter_texte(compil.get_configuration(), *it_t);
+
+    /*
     texte t;
     ligne l;
     mot m;
@@ -169,27 +176,60 @@ void fonction_fusion::execution_specifique( compilateur &compil, textes & textes
                 for ( mot::const_iterator it_c = it_m->begin(); it_c != it_m->end(); ++it_c )
                 {
                     if ( ! fusion_caracteres )
+                    {
                         elem = base_element(*it_c);
+                        // C code 0 à 7
+                        m.push_back(elem);
+                    }
                     else
                         elem = base_element( elem.to_string() + it_c->to_string() );
+                } // FIN MOT
 
-                    std::cout << elem.to_string().toStdString() << std::endl;
-                    if ( ! fusion_mots )
-                        m.push_back(elem);
-                }
-                if ( fusion_mots )
+                // C code 8 à 11
+                if ( ! fusion_mots && fusion_caracteres )
+                {
                     m.push_back(elem);
+                    elem = base_element();
+                }
 
-                if ( ! fusion_lignes )
-                    t.ajouter_ligne(l);
+                if ( ! fusion_mots )
+                    l.ajouter_mot(m);
+            } // FIN LIGNE
+
+            // C code 12 à 13
+            if ( ! fusion_lignes && fusion_mots && fusion_caracteres )
+            {
+                m.push_back(elem);
+                elem = base_element();
+                l.push_back(m);
+                m = mot();
             }
-            if ( fusion_lignes )
+
+            if ( ! fusion_lignes )
                 t.ajouter_ligne(l);
+        } // FIN TEXTE
+
+        // C code 14
+        if ( ! fusion_textes && fusion_lignes && fusion_mots && fusion_caracteres )
+        {
+            m.push_back(elem);
+            elem = base_element();
+            l.push_back(m);
+            m = mot();
+            t.ajouter_ligne(l);
+            l = ligne();
         }
         if ( ! fusion_textes )
             textes_out.ajouter_texte(compil.get_configuration(), t);
-    }
+    } // FIN TEXTES
 
-    if ( fusion_textes )
+    // C code 15
+    if ( fusion_textes && fusion_lignes && fusion_mots && fusion_caracteres )
+    {
+        m.push_back(elem);
+        l.push_back(m);
+        t.ajouter_ligne(l);
         textes_out.ajouter_texte(compil.get_configuration(), t);
+    }
+    */
 }

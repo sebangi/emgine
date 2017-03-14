@@ -27,6 +27,7 @@ class texte : public std::vector< ligne >
         texte();
         texte(const configuration& config, const QString & separateur_ligne = "\n");
         texte(const QString& valeur, const QString & separateur_ligne = "\n");
+        texte( const texte & t);
         ~texte();
 
         void ajouter_ligne( const ligne & l);
@@ -54,7 +55,11 @@ class texte : public std::vector< ligne >
 
         const type_frequences_texte & get_frequences() const;
         double get_indice_coincidence() const;
+        void fusionner(bool fusion_caracteres, bool fusion_mots, bool fusion_lignes);
 
+    private:
+        void maj_nb_caracteres();
+        void maj_nb_mots();
 
     private:
         /** \brief La configuration des paramètres induisant ce texte. */

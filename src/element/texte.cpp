@@ -46,6 +46,22 @@ texte::texte(const QString &valeur, const QString & separateur_ligne)
     }
 }
 
+
+/** --------------------------------------------------------------------------------------
+ * \brief Constructeur par copie de la classe texte.
+ * \param t Le texte à copier.
+ */
+
+texte::texte(const texte &t)
+    : vector<ligne>( t ), m_configuration(t.m_configuration), m_string_configuration(t.m_string_configuration),
+      m_separateur_ligne(t.m_separateur_ligne),
+      m_configuration_visible(t.m_configuration_visible), m_nb_lignes_configuration(t.m_nb_lignes_configuration),
+      m_nb_caracteres(t.m_nb_caracteres), m_nb_mots(t.m_nb_mots),
+      m_frequences(t.m_frequences), m_indice_coincidence(t.m_indice_coincidence)
+{
+
+}
+
 /** --------------------------------------------------------------------------------------
  * \brief Destructeur de la classe texte.
  */
@@ -317,5 +333,57 @@ const texte::type_frequences_texte & texte::get_frequences() const
 double texte::get_indice_coincidence() const
 {
     return m_indice_coincidence;
+}
+
+/** --------------------------------------------------------------------------------------
+ * \brief Fusion des lignes, des mots et/ou des caractères.
+ * \param fusion_caracteres Indique s'il faut fusionner les caractères.
+ * \param fusion_mots Indique s'il faut fusionner les mots.
+ * \param fusion_lignes Indique s'il faut fusionner les lignes.
+ */
+void texte::fusionner(bool fusion_caracteres, bool fusion_mots, bool fusion_lignes)
+{
+    if ( fusion_lignes && ! empty() )
+    {
+        iterator it_premier = begin();
+        iterator it = begin();
+
+        for ( ++it; it != end(); ++it )
+            for ( ligne::iterator it_l = it->begin(); it_l != it->end(); ++it_l )
+                it_premier->ajouter_mot(*it_l);
+
+        it = begin();
+        ++it;
+        erase(it,end());
+    }
+
+    if ( fusion_caracteres || fusion_mots )
+        for ( iterator it = begin(); it != end(); ++it )
+            it->fusionner(fusion_caracteres, fusion_mots);
+
+    maj_nb_caracteres();
+    maj_nb_mots();
+}
+
+/** --------------------------------------------------------------------------------------
+ * \brief Met à jour le nombre de caractères du texte.
+ */
+void texte::maj_nb_caracteres()
+{
+    m_nb_caracteres = 0;
+
+    for ( int i = 0; i < size(); ++i )
+        m_nb_caracteres += this->at(i).nb_caracteres();
+}
+
+/** --------------------------------------------------------------------------------------
+ * \brief Met à jour le nombre de mots du texte.
+ */
+void texte::maj_nb_mots()
+{
+    m_nb_mots = 0;
+
+    for ( int i = 0; i < size(); ++i )
+        m_nb_mots += this->at(i).nb_mots();
 }
 

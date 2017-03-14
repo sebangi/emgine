@@ -33,9 +33,6 @@ class fonction_sortie_texte_widget : public fonction_base_sortie_widget
         void showContextMenu(const QPoint& pos);
         void creer_projet();
         void sauvegarder_texte();
-
-    private:
-        void init();
 };
 
 #endif // FONCTION_SORTIE_TEXTE_WIDGET_H

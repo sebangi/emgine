@@ -25,6 +25,7 @@ class base_element
         base_element( QString valeur );
         base_element( QString valeur, bool sensible_a_la_casse );
         base_element( bool valeur );
+        base_element( const base_element & elem );
 
         type_element get_type() const;
         bool get_booleen() const;

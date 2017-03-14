@@ -26,6 +26,16 @@ textes::textes(const QString &valeur)
 }
 
 /** --------------------------------------------------------------------------------------
+ * \brief Constructeur par copie de la classe textes.
+ * \param t Les textes à copier.
+ */
+textes::textes(const textes &t)
+    : vector<texte>(t)
+{
+
+}
+
+/** --------------------------------------------------------------------------------------
  * \brief Retourne l'ensemble de textes au format QString.
  * \return L'ensemble de textes au format QString.
  */
@@ -85,5 +95,32 @@ void textes::calculer_indice_coincidence()
 {
     for ( int i = 0; i != size(); ++i )
         this->at(i).calculer_indice_coincidence();
+}
+
+/** --------------------------------------------------------------------------------------
+ * \brief Fusion des textes, des lignes, des mots et/ou des caractères.
+ * \param fusion_caracteres Indique s'il faut fusionner les caractères.
+ * \param fusion_mots Indique s'il faut fusionner les mots.
+ * \param fusion_lignes Indique s'il faut fusionner les lignes.
+ * \param fusion_textes Indique s'il faut fusionner les textes.
+ */
+void textes::fusionner(bool fusion_caracteres, bool fusion_mots, bool fusion_lignes, bool fusion_textes)
+{
+    if ( fusion_textes && ! empty() )
+    {
+        iterator it_premier = begin();
+        iterator it = begin();
+
+        for ( ++it; it != end(); ++it )
+            for ( texte::iterator it_t = it->begin(); it_t != it->end(); ++it_t )
+                it_premier->ajouter_ligne(*it_t);
+        it = begin();
+        ++it;
+        erase(it,end());
+    }
+
+    if ( fusion_caracteres || fusion_mots || fusion_lignes)
+        for ( iterator it = begin(); it != end(); ++it )
+            it->fusionner(fusion_caracteres, fusion_mots, fusion_lignes);
 }
 

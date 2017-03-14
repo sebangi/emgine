@@ -18,6 +18,8 @@
 #include <QTextStream>
 #include <QMessageBox>
 
+#include <iostream>
+
 /** --------------------------------------------------------------------------------------
  * \brief Constructeur de la classe fonction_sortie_texte_widget.
  * \param fonction Un pointeur sur la fonction associée.
@@ -26,14 +28,6 @@
 fonction_sortie_texte_widget::fonction_sortie_texte_widget(base_fonction *fonction, QWidget *parent)
     : fonction_base_sortie_widget(fonction, parent)
 {
-}
-
-/** --------------------------------------------------------------------------------------
- * \brief Initialise le widget.
- */
-void fonction_sortie_texte_widget::init()
-{
-    super::init();
 
     connect(m_liste_texte, SIGNAL(customContextMenuRequested(QPoint)), this, SLOT(showContextMenu(QPoint)));
 }

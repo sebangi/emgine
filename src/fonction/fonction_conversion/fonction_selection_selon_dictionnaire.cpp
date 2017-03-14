@@ -82,7 +82,8 @@ void fonction_selection_selon_dictionnaire::executer( compilateur &compil, texte
                 QString s_m = it_m->to_string();
 
                 nb_mots++;
-                if ( dico->existe(s_m) )
+
+                if ( s_m.size() > 1 && dico->existe(s_m) )
                     nb_mots_acceptes++;
 
                 l.ajouter_mot( mot(s_m) );

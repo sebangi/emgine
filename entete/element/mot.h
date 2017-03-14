@@ -20,11 +20,13 @@ class mot : public std::vector< base_element >
     public:
         mot();
         mot(const QString &valeur, const QString & separateur_caractere = "");
+        mot( const mot& m);
 
         QString to_string() const;
         QString to_string_lisible() const;
         size_type nb_caracteres() const;
         size_type nb_caracteres_alphabet() const;
+        void fusionner();
 
     private:
         /** \brief Le séparateur de caractères. */

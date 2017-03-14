@@ -13,7 +13,7 @@
 base_element::base_element()
     : m_type(type_element_indefini)
 {
-
+    m_string = "";
 }
 
 /** --------------------------------------------------------------------------------------
@@ -24,7 +24,7 @@ base_element::base_element(int valeur)
     : m_type(type_element_entier),
       m_entier(valeur)
 {
-    m_string = to_string();
+    m_string = QString::number(m_entier);
 }
 
 /** --------------------------------------------------------------------------------------
@@ -35,7 +35,7 @@ base_element::base_element(QChar valeur)
     : m_type(type_element_caractere),
       m_caractere(valeur)
 {
-    m_string = to_string();
+    m_string = QString(m_caractere);
 }
 
 /** --------------------------------------------------------------------------------------
@@ -46,7 +46,7 @@ base_element::base_element(QCharRef valeur)
     : m_type(type_element_caractere),
       m_caractere(valeur)
 {
-    m_string = to_string();
+    m_string = QString(m_caractere);
 }
 
 /** --------------------------------------------------------------------------------------
@@ -67,7 +67,20 @@ base_element::base_element(bool valeur)
     : m_type(type_element_booleen),
       m_booleen(valeur)
 {
-    m_string = to_string();
+    if ( m_booleen )
+        m_string = "oui";
+    else
+        m_string = "non";
+}
+
+/** --------------------------------------------------------------------------------------
+ * \brief Constructeur par copie de la classe base_element.
+ * \param elem L'élément à copier.
+ */
+base_element::base_element(const base_element &elem)
+    :  m_type(elem.m_type), m_booleen(elem.m_booleen), m_entier(elem.m_entier), m_caractere(elem.m_caractere), m_string(elem.m_string)
+{
+
 }
 
 /** --------------------------------------------------------------------------------------
@@ -166,7 +179,7 @@ bool base_element::est_vide() const
  */
 bool base_element::est_lettre_alphabet() const
 {
-   if ( m_string.size() != 1 )
+    if ( m_string.size() != 1 )
         return false;
     else
         return (m_string[0] >= 'A' && m_string[0] <= 'Z') || (m_string[0] >= 'a' && m_string[0] <= 'z');

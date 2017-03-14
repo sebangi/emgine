@@ -24,6 +24,7 @@ class ligne : public std::vector< mot >
     public:
         ligne();
         ligne(const QString &valeur, const QString & separateur_mot = " ");
+        ligne( const ligne & l);
 
         void ajouter_mot( const mot & m);
 
@@ -35,6 +36,10 @@ class ligne : public std::vector< mot >
         size_type nb_mots() const;        
 
         bool operator<(const ligne & l) const;
+        void fusionner(bool fusion_caracteres, bool fusion_mots);
+
+    private:
+        void maj_nb_caracteres();
 
     private:
         /** \brief Le séparateur de mot. */
