@@ -28,17 +28,25 @@ fonction_substitution::fonction_substitution( fonctions_conteneur * conteneur )
 
     ajouter_parametre( PARAM_CARACTERES_ENTREE,
                        new base_parametre( this,
-                                           "Les caractères d'entrée du dictionnaire",
-                                           "Les caractères d'entrée du dictionnaire.",
+                                           "Entrée du dictionnaire",
+                                           "Les caractères en entrée du dictionnaire.",
                                            base_parametre::CONTENU_PARAM_VIDE_IMPOSSIBLE,
                                            base_parametre::CONFIGURATION_INVISIBLE,
                                            base_parametre::ALGO_IPL) );
 
     ajouter_parametre( PARAM_CARACTERES_SORTIE,
                        new base_parametre( this,
-                                           "Les caractères de sortie du dictionnaire",
+                                           "Sortie du dictionnaire",
                                            "Les caractères de sortie du dictionnaire.",
                                            base_parametre::CONTENU_PARAM_VIDE_IMPOSSIBLE,
+                                           base_parametre::CONFIGURATION_INVISIBLE,
+                                           base_parametre::ALGO_IPL) );
+
+    ajouter_parametre( PARAM_NUMERO_CHOIX,
+                       new base_parametre( this,
+                                           "Numéro du choix",
+                                           "Les numéro de choix à utiliser dans le cas d'un alphabet polyalphabétique.",
+                                           base_parametre::CONTENU_PARAM_VIDE_POSSIBLE,
                                            base_parametre::CONFIGURATION_INVISIBLE,
                                            base_parametre::ALGO_IPL) );
 }
@@ -68,7 +76,8 @@ QString fonction_substitution::get_valeur_courte() const
 void fonction_substitution::initialisation_par_defaut()
 {
     m_parametres[PARAM_CARACTERES_ENTREE]->set_texte_par_defaut("ABCDEFGHIJKLMNOPQRSTUVWXYZ");
-    m_parametres[PARAM_CARACTERES_SORTIE]->set_texte_par_defaut("ABCDEFGHIJKLMNOPQRSTUVWXYZ");
+    m_parametres[PARAM_CARACTERES_SORTIE]->set_texte_par_defaut("ABCDEFGHIJKLMNOPQRSTUVWXYZ");    
+    m_parametres[PARAM_NUMERO_CHOIX]->set_texte_par_defaut("");
 }
 
 /** --------------------------------------------------------------------------------------
@@ -92,7 +101,19 @@ void fonction_substitution::executer( compilateur &compil, textes & textes_in, t
 void fonction_substitution::callback_param_1( compilateur &compil, textes & textes_in, textes & textes_out )
 {
     algo_IPL_iteration_par_ligne
-            ( PARAM_CARACTERES_SORTIE, compil, textes_in, textes_out, & base_fonction::execution_specifique );
+            ( PARAM_CARACTERES_SORTIE, compil, textes_in, textes_out, & base_fonction::callback_param_2 );
+}
+
+/** --------------------------------------------------------------------------------------
+ * \brief Exécute le paramètre PARAM_CARACTERES_SORTIE.
+ * \param compil Le compilateur utilisé.
+ * \param textes_in Le texte source en entrée.
+ * \param textes_out Le texte de sortie généré.
+ */
+void fonction_substitution::callback_param_2( compilateur &compil, textes & textes_in, textes & textes_out )
+{
+    algo_IPL_iteration_par_ligne
+            ( PARAM_NUMERO_CHOIX, compil, textes_in, textes_out, & base_fonction::execution_specifique );
 }
 
 /** --------------------------------------------------------------------------------------
@@ -114,11 +135,12 @@ void fonction_substitution::execution_specifique( compilateur &compil, textes & 
                 for ( mot::const_iterator it_c = it_m->begin(); it_c != it_m->end(); ++it_c )
                 {
                     type_map_substitution::iterator it = m_substitution.find( *it_c );
+
                     if ( it == m_substitution.end() )
-                        m.push_back(*it_c);
+                        m.push_back( base_element::element_inconnu() );
                     else if ( it->second.empty() )
                         m.push_back( base_element::element_inconnu() );
-                    else
+                    else if ( IPL_test_vide(PARAM_NUMERO_CHOIX) )
                     {
                         if ( it->second.size() == 1 )
                             m.push_back( it->second[0] );
@@ -131,6 +153,17 @@ void fonction_substitution::execution_specifique( compilateur &compil, textes & 
                             m.push_back( base_element(s) );
                         }
                     }
+                    else
+                    {
+                        int pos = m_map_IPL[PARAM_NUMERO_CHOIX].it_caractere_courant->get_entier();
+                        if ( pos <= 0 || pos > it->second.size() )
+                            m.push_back( base_element::element_inconnu() );
+                        else
+                            m.push_back( it->second[pos-1] );
+                    }
+
+                    if ( ! IPL_test_vide(PARAM_NUMERO_CHOIX) )
+                        IPL_caractere_suivant_dans_ligne(PARAM_NUMERO_CHOIX);
                 }
                 l.ajouter_mot(m);
             }

@@ -487,6 +487,7 @@ void base_fonction::algo_IPL_iteration_par_ligne
 {
     const textes& t_param = get_textes_parametre(id_param);
     bool test_vide = ! m_parametres[id_param]->peut_etre_vide();
+    bool appel = false;
 
     if ( test_vide && t_param.empty() )
         compil.get_vue_logs()->ajouter_log
@@ -507,6 +508,7 @@ void base_fonction::algo_IPL_iteration_par_ligne
                                                    "Le paramètre " + m_parametres[id_param]->get_nom() + " est vide sur une ligne.") );
                     else
                     {
+                        appel = true;
                         m_map_IPL[id_param].it_ligne_debut = it_l->begin();
                         m_map_IPL[id_param].it_mot_courant = it_l->begin();
                         m_map_IPL[id_param].it_ligne_fin = it_l->end();
@@ -522,6 +524,18 @@ void base_fonction::algo_IPL_iteration_par_ligne
                             compil.retirer_configuration(this, id_param);
                     }
             }
+
+    if ( ! appel && m_parametres[id_param]->peut_etre_vide() )
+    {
+        m_map_IPL[id_param].it_ligne_debut = ligne::const_iterator();
+        m_map_IPL[id_param].it_ligne_fin = m_map_IPL[id_param].it_ligne_debut;
+        IPL_init(id_param);
+
+        (this->*callback)(compil, textes_in, textes_out);
+
+        if ( m_parametres[id_param]->configuration_visible() )
+            compil.retirer_configuration(this, id_param);
+    }
 }
 
 /** --------------------------------------------------------------------------------------
@@ -530,47 +544,7 @@ void base_fonction::algo_IPL_iteration_par_ligne
  */
 void base_fonction::IPL_mot_suivant(type_id_parametre id_param)
 {
-    m_map_IPL[id_param].it_mot_courant++;
-    if ( m_map_IPL[id_param].it_mot_courant == m_map_IPL[id_param].it_ligne_fin )
-        m_map_IPL[id_param].it_mot_courant = m_map_IPL[id_param].it_ligne_debut;
-
-    m_map_IPL[id_param].it_mot_debut = m_map_IPL[id_param].it_mot_courant->begin();
-    m_map_IPL[id_param].it_caractere_courant = m_map_IPL[id_param].it_mot_debut;
-    m_map_IPL[id_param].it_mot_fin = m_map_IPL[id_param].it_mot_courant->end();
-}
-
-/** --------------------------------------------------------------------------------------
- * \brief Initialise l'itérateur d'un paramètre donné pour l'algorithme IPL.
- * \param id_param L'identifiant du paramètre qu'il faut initialiser.
- */
-void base_fonction::IPL_init(type_id_parametre id_param)
-{
-    m_map_IPL[id_param].it_mot_courant = m_map_IPL[id_param].it_ligne_debut;
-
-    m_map_IPL[id_param].it_mot_debut = m_map_IPL[id_param].it_mot_courant->begin();
-    m_map_IPL[id_param].it_caractere_courant = m_map_IPL[id_param].it_mot_debut;
-    m_map_IPL[id_param].it_mot_fin = m_map_IPL[id_param].it_mot_courant->end();
-}
-
-/** --------------------------------------------------------------------------------------
- * \brief Avance d'un caractère dans le mot courant l'itérateur d'un paramètre donné pour l'algorithme IPL.
- * \param id_param L'identifiant du paramètre qu'il faut avancer.
- */
-void base_fonction::IPL_caractere_suivant_dans_mot(type_id_parametre id_param)
-{
-    m_map_IPL[id_param].it_caractere_courant++;
-    if ( m_map_IPL[id_param].it_caractere_courant == m_map_IPL[id_param].it_mot_fin )
-        m_map_IPL[id_param].it_caractere_courant = m_map_IPL[id_param].it_mot_debut;
-}
-
-/** --------------------------------------------------------------------------------------
- * \brief Avance d'un caractère dans la ligne courante l'itérateur d'un paramètre donné pour l'algorithme IPL.
- * \param id_param L'identifiant du paramètre qu'il faut avancer.
- */
-void base_fonction::IPL_caractere_suivant_dans_ligne(type_id_parametre id_param)
-{
-    m_map_IPL[id_param].it_caractere_courant++;
-    if ( m_map_IPL[id_param].it_caractere_courant == m_map_IPL[id_param].it_mot_fin )
+    if ( ! IPL_test_vide(id_param) )
     {
         m_map_IPL[id_param].it_mot_courant++;
         if ( m_map_IPL[id_param].it_mot_courant == m_map_IPL[id_param].it_ligne_fin )
@@ -579,6 +553,67 @@ void base_fonction::IPL_caractere_suivant_dans_ligne(type_id_parametre id_param)
         m_map_IPL[id_param].it_mot_debut = m_map_IPL[id_param].it_mot_courant->begin();
         m_map_IPL[id_param].it_caractere_courant = m_map_IPL[id_param].it_mot_debut;
         m_map_IPL[id_param].it_mot_fin = m_map_IPL[id_param].it_mot_courant->end();
+    }
+}
+
+/** --------------------------------------------------------------------------------------
+ * \brief Initialise l'itérateur d'un paramètre donné pour l'algorithme IPL.
+ * \param id_param L'identifiant du paramètre qu'il faut initialiser.
+ */
+void base_fonction::IPL_init(type_id_parametre id_param)
+{
+    if ( ! IPL_test_vide(id_param) )
+    {
+        m_map_IPL[id_param].it_mot_courant = m_map_IPL[id_param].it_ligne_debut;
+
+        m_map_IPL[id_param].it_mot_debut = m_map_IPL[id_param].it_mot_courant->begin();
+        m_map_IPL[id_param].it_caractere_courant = m_map_IPL[id_param].it_mot_debut;
+        m_map_IPL[id_param].it_mot_fin = m_map_IPL[id_param].it_mot_courant->end();
+    }
+}
+
+/** --------------------------------------------------------------------------------------
+ * \brief Teste si un paramètre donné est vide pour l'algorithme IPL.
+ * \param id_param L'identifiant du paramètre qu'il faut tester.
+ */
+bool base_fonction::IPL_test_vide(type_id_parametre id_param)
+{
+    return m_map_IPL[id_param].it_ligne_debut == m_map_IPL[id_param].it_ligne_fin;
+}
+
+/** --------------------------------------------------------------------------------------
+ * \brief Avance d'un caractère dans le mot courant l'itérateur d'un paramètre donné pour l'algorithme IPL.
+ * \param id_param L'identifiant du paramètre qu'il faut avancer.
+ */
+void base_fonction::IPL_caractere_suivant_dans_mot(type_id_parametre id_param)
+{
+    if ( ! IPL_test_vide(id_param) )
+    {
+        m_map_IPL[id_param].it_caractere_courant++;
+        if ( m_map_IPL[id_param].it_caractere_courant == m_map_IPL[id_param].it_mot_fin )
+            m_map_IPL[id_param].it_caractere_courant = m_map_IPL[id_param].it_mot_debut;
+    }
+}
+
+/** --------------------------------------------------------------------------------------
+ * \brief Avance d'un caractère dans la ligne courante l'itérateur d'un paramètre donné pour l'algorithme IPL.
+ * \param id_param L'identifiant du paramètre qu'il faut avancer.
+ */
+void base_fonction::IPL_caractere_suivant_dans_ligne(type_id_parametre id_param)
+{
+    if ( ! IPL_test_vide(id_param) )
+    {
+        m_map_IPL[id_param].it_caractere_courant++;
+        if ( m_map_IPL[id_param].it_caractere_courant == m_map_IPL[id_param].it_mot_fin )
+        {
+            m_map_IPL[id_param].it_mot_courant++;
+            if ( m_map_IPL[id_param].it_mot_courant == m_map_IPL[id_param].it_ligne_fin )
+                m_map_IPL[id_param].it_mot_courant = m_map_IPL[id_param].it_ligne_debut;
+
+            m_map_IPL[id_param].it_mot_debut = m_map_IPL[id_param].it_mot_courant->begin();
+            m_map_IPL[id_param].it_caractere_courant = m_map_IPL[id_param].it_mot_debut;
+            m_map_IPL[id_param].it_mot_fin = m_map_IPL[id_param].it_mot_courant->end();
+        }
     }
 }
 

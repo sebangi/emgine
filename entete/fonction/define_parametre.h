@@ -69,7 +69,10 @@ enum type_id_parametre{
     PARAM_CARACTERES_ENTREE,
 
     /** \brief Paramètre pour indiquer les caractères de sortie d'un paramètre quelconque. */
-    PARAM_CARACTERES_SORTIE
+    PARAM_CARACTERES_SORTIE,
+
+    /** \brief Paramètre pour indiquer les numéro des choix. */
+    PARAM_NUMERO_CHOIX
 
 };
 
