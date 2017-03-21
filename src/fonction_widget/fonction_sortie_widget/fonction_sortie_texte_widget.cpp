@@ -94,7 +94,8 @@ void fonction_sortie_texte_widget::sauvegarder_texte()
             return;
         }
 
-        texte_widget_item *item = (texte_widget_item *)m_liste_texte->takeItem(m_liste_texte->currentRow());
+        QPoint p(m_liste_texte->currentRow(), 0);
+        texte_widget_item *item = (texte_widget_item *)m_liste_texte->itemAt(p);
 
         QTextStream out(&file);
         out << item->get_texte().to_string_lisible();
