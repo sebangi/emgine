@@ -24,11 +24,13 @@ dictionnaire::~dictionnaire()
 
 void dictionnaire::mettre_a_jour()
 {
-    QFile file(m_nom_fichier);
+    QDir dir( QCoreApplication::applicationDirPath() );
+    QString absolu_path = dir.absoluteFilePath( m_nom_fichier );
+    QFile file(absolu_path);
 
     if (! file.open(QIODevice::ReadOnly))
     {
-        std::cout << "Erreur : impossible d'ouvrir le dictionnaire " << m_nom_fichier.toStdString() << std::endl;
+        std::cout << "Erreur : impossible d'ouvrir le dictionnaire " << absolu_path.toStdString() << std::endl;
         return;
     }
 
@@ -181,7 +183,7 @@ void dictionnaire::charger_dictionnaire( const QString & nom_fichier )
 
     if (! file.open(QIODevice::ReadOnly))
     {
-        std::cout << "Erreur : impossible d'ouvrir le dictionnaire " << nom_fichier.toStdString() << std::endl;
+        std::cout << "Erreur : impossible d'ouvrir le dictionnaire " << absolu_path.toStdString() << std::endl;
         return;
     }
 

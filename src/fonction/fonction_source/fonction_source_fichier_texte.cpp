@@ -257,5 +257,5 @@ QString fonction_source_fichier_texte::get_string_valeur() const
  */
 void fonction_source_fichier_texte::set_string_valeur(const QString &nom_fichier)
 {
-    set_nom_fichier( nom_fichier );
+    m_chemin_relatif_fichier = nom_fichier;
 }

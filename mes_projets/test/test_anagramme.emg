@@ -17,7 +17,8 @@
                 <verrouille>0</verrouille>
             </objet_selectionnable>
             <valeur>LAURENT
-LOUPE</valeur>
+LOUPE
+essai</valeur>
             <parametres>
                 <parametre>
                     <id>0</id>
@@ -119,7 +120,7 @@ LOUPE</valeur>
                                 <est_etendu>0</est_etendu>
                                 <verrouille>0</verrouille>
                             </objet_selectionnable>
-                            <valeur>H:/programmation/emgine/mes_projets/dico.txt</valeur>
+                            <valeur>../mes_projets/dico.txt</valeur>
                             <parametres/>
                         </fonction>
                     </fonctions>

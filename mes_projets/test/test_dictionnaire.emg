@@ -8,18 +8,6 @@
     </objet_selectionnable>
     <fonctions>
         <fonction>
-            <id>7</id>
-            <nom>Dictionnaire</nom>
-            <niveau_visibilite>2</niveau_visibilite>
-            <active>1</active>
-            <objet_selectionnable>
-                <est_etendu>0</est_etendu>
-                <verrouille>0</verrouille>
-            </objet_selectionnable>
-            <valeur>H:/programmation/emgine/mes_projets/texte1.txt</valeur>
-            <parametres/>
-        </fonction>
-        <fonction>
             <id>1</id>
             <nom>Texte</nom>
             <niveau_visibilite>2</niveau_visibilite>
@@ -368,6 +356,52 @@ unhbh tm sdrs !</valeur>
                                 <verrouille>0</verrouille>
                             </objet_selectionnable>
                             <valeur>0</valeur>
+                            <parametres/>
+                        </fonction>
+                    </fonctions>
+                </parametre>
+            </parametres>
+        </fonction>
+        <fonction>
+            <id>2000</id>
+            <nom>Textes</nom>
+            <niveau_visibilite>2</niveau_visibilite>
+            <active>1</active>
+            <objet_selectionnable>
+                <est_etendu>1</est_etendu>
+                <verrouille>0</verrouille>
+            </objet_selectionnable>
+            <parametres/>
+        </fonction>
+        <fonction>
+            <id>1002</id>
+            <nom>Sélection selon dictionnaire</nom>
+            <niveau_visibilite>2</niveau_visibilite>
+            <active>1</active>
+            <objet_selectionnable>
+                <est_etendu>1</est_etendu>
+                <verrouille>0</verrouille>
+            </objet_selectionnable>
+            <parametres>
+                <parametre>
+                    <id>8</id>
+                    <nom>Dictionnaire</nom>
+                    <dans_configuration>0</dans_configuration>
+                    <objet_selectionnable>
+                        <est_etendu>1</est_etendu>
+                        <verrouille>0</verrouille>
+                    </objet_selectionnable>
+                    <fonctions>
+                        <fonction>
+                            <id>7</id>
+                            <nom>Dictionnaire</nom>
+                            <niveau_visibilite>2</niveau_visibilite>
+                            <active>1</active>
+                            <objet_selectionnable>
+                                <est_etendu>0</est_etendu>
+                                <verrouille>0</verrouille>
+                            </objet_selectionnable>
+                            <valeur>../mes_projets/dico.txt</valeur>
                             <parametres/>
                         </fonction>
                     </fonctions>
