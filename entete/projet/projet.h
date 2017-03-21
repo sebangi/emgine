@@ -38,7 +38,8 @@ class projet : public fonctions_conteneur
 
         QString get_nom() const;
         QString get_titre() const;
-        QString get_nom_fichier() const;
+        QString get_chemin_relatif() const;
+        QString get_chemin_absolu() const;
         QString get_dossier() const;
         QString get_description() const;
 
@@ -96,7 +97,7 @@ class projet : public fonctions_conteneur
         QString m_nom;
 
         /** \brief Le nom du fichier du projet. */
-        QString m_nom_fichier;
+        QString m_chemin_relatif;
 
         /** \brief Booléen indiquant si le projet est nouveau, i.e. non enregistré. */
         bool m_nouveau;

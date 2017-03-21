@@ -11,6 +11,8 @@
 #include "entete/element/type_element.h"
 #include "entete/fonction_widget/fonction_source_widget/fonction_source_fichier_texte_widget.h"
 
+#include <QCoreApplication>
+#include <QDir>
 #include <QFile>
 #include <QTextStream>
 
@@ -21,7 +23,7 @@
  * \param conteneur Un pointeur sur le conteneur de la fonction.
  */
 fonction_source_fichier_texte::fonction_source_fichier_texte(fonctions_conteneur * conteneur)
-    : fonction_base_source(conteneur), m_nom_fichier("")
+    : fonction_base_source(conteneur), m_chemin_relatif_fichier("")
 {
     set_id(f_source_fichier_texte);
     augmenter_max_niveau_visibilite(2);
@@ -98,10 +100,10 @@ base_fonction_widget *fonction_source_fichier_texte::generer_fonction_widget()
  */
 void fonction_source_fichier_texte::executer( compilateur &compil, textes & textes_in, textes & textes_out )
 {
-    if ( m_nom_fichier.isEmpty() )
+    if ( m_chemin_relatif_fichier.isEmpty() )
         return;
 
-    QFile file(m_nom_fichier);
+    QFile file(get_chemin_absolu());
     if (! file.open(QIODevice::ReadOnly))
         return;
 
@@ -183,7 +185,7 @@ void fonction_source_fichier_texte::execution_specifique( compilateur &compil, t
 */
 bool fonction_source_fichier_texte::est_valide(logs_compilation_widget * vue_logs)
 {
-    QFile file(m_nom_fichier);
+    QFile file(get_chemin_absolu());
 
     if (! file.open(QIODevice::ReadOnly))
     {
@@ -203,16 +205,28 @@ bool fonction_source_fichier_texte::est_valide(logs_compilation_widget * vue_log
  */
 QString fonction_source_fichier_texte::get_valeur_courte() const
 {
-    return "Fichier " + m_nom_fichier;
+    return "Fichier " + m_chemin_relatif_fichier;
 }
 
 /** --------------------------------------------------------------------------------------
- * \brief Accesseur du nom de fichier source.
- * \return Le nom du fichier source.
+ * \brief Accesseur du chemin absolu du fichier source.
+ * \return Le chemin absolu du fichier source.
  */
-QString fonction_source_fichier_texte::get_nom_fichier() const
+QString fonction_source_fichier_texte::get_chemin_absolu() const
 {
-    return m_nom_fichier;
+    QDir dir( QCoreApplication::applicationDirPath() );
+    QString absolu_path = dir.absoluteFilePath( m_chemin_relatif_fichier );
+
+    return absolu_path;
+}
+
+/** --------------------------------------------------------------------------------------
+ * \brief Accesseur du chemin relatif de fichier source.
+ * \return Le chemin relatif du fichier source.
+ */
+QString fonction_source_fichier_texte::get_chemin_relatif() const
+{
+    return m_chemin_relatif_fichier;
 }
 
 /** --------------------------------------------------------------------------------------
@@ -221,7 +235,11 @@ QString fonction_source_fichier_texte::get_nom_fichier() const
  */
 void fonction_source_fichier_texte::set_nom_fichier(QString nom_fichier)
 {
-    m_nom_fichier = nom_fichier;
+    QFileInfo info(nom_fichier);
+    QDir dir( QCoreApplication::applicationDirPath() );
+    QString relative_path = dir.relativeFilePath( info.absoluteFilePath() );
+
+    m_chemin_relatif_fichier = relative_path;
 }
 
 /** --------------------------------------------------------------------------------------
@@ -230,7 +248,7 @@ void fonction_source_fichier_texte::set_nom_fichier(QString nom_fichier)
  */
 QString fonction_source_fichier_texte::get_string_valeur() const
 {
-    return m_nom_fichier;
+    return m_chemin_relatif_fichier;
 }
 
 /** --------------------------------------------------------------------------------------
@@ -239,5 +257,5 @@ QString fonction_source_fichier_texte::get_string_valeur() const
  */
 void fonction_source_fichier_texte::set_string_valeur(const QString &nom_fichier)
 {
-    m_nom_fichier = nom_fichier;
+    set_nom_fichier( nom_fichier );
 }

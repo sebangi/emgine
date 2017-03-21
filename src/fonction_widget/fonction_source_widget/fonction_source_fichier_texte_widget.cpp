@@ -46,7 +46,7 @@ void fonction_source_fichier_texte_widget::init()
 
     m_nom_fichier_label = new QLabel();
     m_nom_fichier_label->setObjectName("NomFichier");
-    m_nom_fichier_label->setText( ((fonction_source_fichier_texte*)m_fonction)->get_nom_fichier() );
+    m_nom_fichier_label->setText( ((fonction_source_fichier_texte*)m_fonction)->get_chemin_relatif() );
     lay->addWidget(m_nom_fichier_label);
 
     m_charger_bouton = new QPushButton();
@@ -136,8 +136,9 @@ void fonction_source_fichier_texte_widget::choisir_nom_fichier()
         return;
 
     m_choisi = true;
-    m_nom_fichier_label->setText( nom_fichier );
     ((fonction_source_fichier_texte*)m_fonction)->set_nom_fichier( nom_fichier );
+    m_nom_fichier_label->setText( ((fonction_source_fichier_texte*)m_fonction)->get_chemin_relatif() );
+
     update_boutons();
     m_fonction->modifier();
 }
@@ -147,7 +148,7 @@ void fonction_source_fichier_texte_widget::choisir_nom_fichier()
  */
 void fonction_source_fichier_texte_widget::charger_fichier()
 {
-    QFile file(((fonction_source_fichier_texte*)m_fonction)->get_nom_fichier());
+    QFile file(((fonction_source_fichier_texte*)m_fonction)->get_chemin_absolu());
     if (! file.open(QIODevice::ReadOnly))
         return;
 
@@ -166,7 +167,7 @@ void fonction_source_fichier_texte_widget::charger_fichier()
  */
 void fonction_source_fichier_texte_widget::sauvegarder_fichier()
 {
-    QFile file(((fonction_source_fichier_texte*)m_fonction)->get_nom_fichier());
+    QFile file(((fonction_source_fichier_texte*)m_fonction)->get_chemin_absolu());
 
     if (! file.open(QIODevice::WriteOnly  | QIODevice::Text)) {
         QMessageBox::information(this, tr("Impossible d'ouvrir le fichier"),

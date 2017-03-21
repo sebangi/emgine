@@ -349,7 +349,7 @@ bool fenetre_principale::on_enregistrer_projet(projet* p)
         if ( p->est_nouveau() )
             return on_enregistrer_projet_sous( p );
         else
-            return on_enregistrer_projet( p->get_nom_fichier(), p );
+            return on_enregistrer_projet( p->get_chemin_absolu(), p );
     }
 
     return false;
@@ -365,8 +365,8 @@ bool fenetre_principale::on_enregistrer_projet_sous(projet * p)
     QFileDialog d(this);
     d.setDefaultSuffix("emg");
     QString dir;
-    if( p->get_nom_fichier().isEmpty() )
-        dir = "mes_projets";
+    if( p->get_chemin_relatif().isEmpty() )
+        dir = "mes_projets/";
     else
         dir = p->get_dossier();
 
@@ -421,7 +421,7 @@ projet * fenetre_principale::get_projet_selon_nom_fichier(const QString &nom_fic
     projet * p = NULL;
 
     for ( type_projets::iterator it = s_projets.begin(); it != s_projets.end() && p == NULL; ++it )
-        if ( (*it)->get_nom_fichier() == nom_fichier )
+        if ( (*it)->get_chemin_relatif() == nom_fichier )
             p = *it;
 
     return p;

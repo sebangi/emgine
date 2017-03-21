@@ -1,0 +1,376 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<projet>
+    <nom>test_fichier_texte</nom>
+    <description></description>
+    <objet_selectionnable>
+        <est_etendu>1</est_etendu>
+        <verrouille>0</verrouille>
+    </objet_selectionnable>
+    <fonctions>
+        <fonction>
+            <id>2</id>
+            <nom>Fichier texte</nom>
+            <niveau_visibilite>2</niveau_visibilite>
+            <active>1</active>
+            <objet_selectionnable>
+                <est_etendu>0</est_etendu>
+                <verrouille>0</verrouille>
+            </objet_selectionnable>
+            <valeur>../mes_projets/texte_voici_un_test.txt</valeur>
+            <parametres>
+                <parametre>
+                    <id>0</id>
+                    <nom>Séparateur d'élément</nom>
+                    <dans_configuration>0</dans_configuration>
+                    <objet_selectionnable>
+                        <est_etendu>1</est_etendu>
+                        <verrouille>0</verrouille>
+                    </objet_selectionnable>
+                    <fonctions>
+                        <fonction>
+                            <id>3</id>
+                            <nom>Caractères</nom>
+                            <niveau_visibilite>2</niveau_visibilite>
+                            <active>1</active>
+                            <objet_selectionnable>
+                                <est_etendu>0</est_etendu>
+                                <verrouille>0</verrouille>
+                            </objet_selectionnable>
+                            <valeur></valeur>
+                            <parametres/>
+                        </fonction>
+                    </fonctions>
+                </parametre>
+                <parametre>
+                    <id>1</id>
+                    <nom>Séparateur de mot</nom>
+                    <dans_configuration>0</dans_configuration>
+                    <objet_selectionnable>
+                        <est_etendu>1</est_etendu>
+                        <verrouille>0</verrouille>
+                    </objet_selectionnable>
+                    <fonctions>
+                        <fonction>
+                            <id>3</id>
+                            <nom>Caractères</nom>
+                            <niveau_visibilite>2</niveau_visibilite>
+                            <active>1</active>
+                            <objet_selectionnable>
+                                <est_etendu>0</est_etendu>
+                                <verrouille>0</verrouille>
+                            </objet_selectionnable>
+                            <valeur> </valeur>
+                            <parametres/>
+                        </fonction>
+                    </fonctions>
+                </parametre>
+                <parametre>
+                    <id>2</id>
+                    <nom>Séparateur de ligne</nom>
+                    <dans_configuration>0</dans_configuration>
+                    <objet_selectionnable>
+                        <est_etendu>1</est_etendu>
+                        <verrouille>0</verrouille>
+                    </objet_selectionnable>
+                    <fonctions>
+                        <fonction>
+                            <id>3</id>
+                            <nom>Caractères</nom>
+                            <niveau_visibilite>2</niveau_visibilite>
+                            <active>1</active>
+                            <objet_selectionnable>
+                                <est_etendu>0</est_etendu>
+                                <verrouille>0</verrouille>
+                            </objet_selectionnable>
+                            <valeur>
+</valeur>
+                            <parametres/>
+                        </fonction>
+                    </fonctions>
+                </parametre>
+            </parametres>
+        </fonction>
+        <fonction>
+            <id>1000</id>
+            <nom>Chiffrement par Code César</nom>
+            <niveau_visibilite>2</niveau_visibilite>
+            <active>1</active>
+            <objet_selectionnable>
+                <est_etendu>1</est_etendu>
+                <verrouille>0</verrouille>
+            </objet_selectionnable>
+            <parametres>
+                <parametre>
+                    <id>3</id>
+                    <nom>Alphabet</nom>
+                    <dans_configuration>1</dans_configuration>
+                    <objet_selectionnable>
+                        <est_etendu>1</est_etendu>
+                        <verrouille>0</verrouille>
+                    </objet_selectionnable>
+                    <fonctions>
+                        <fonction>
+                            <id>1</id>
+                            <nom>Texte</nom>
+                            <niveau_visibilite>2</niveau_visibilite>
+                            <active>1</active>
+                            <objet_selectionnable>
+                                <est_etendu>0</est_etendu>
+                                <verrouille>0</verrouille>
+                            </objet_selectionnable>
+                            <valeur>ABCDEFGHIJKLMNOPQRSTUVWXYZ abcdefghijklmnopqrstuvwxyz</valeur>
+                            <parametres>
+                                <parametre>
+                                    <id>0</id>
+                                    <nom>Séparateur d'élément</nom>
+                                    <dans_configuration>0</dans_configuration>
+                                    <objet_selectionnable>
+                                        <est_etendu>1</est_etendu>
+                                        <verrouille>0</verrouille>
+                                    </objet_selectionnable>
+                                    <fonctions>
+                                        <fonction>
+                                            <id>3</id>
+                                            <nom>Caractères</nom>
+                                            <niveau_visibilite>2</niveau_visibilite>
+                                            <active>1</active>
+                                            <objet_selectionnable>
+                                                <est_etendu>0</est_etendu>
+                                                <verrouille>0</verrouille>
+                                            </objet_selectionnable>
+                                            <valeur></valeur>
+                                            <parametres/>
+                                        </fonction>
+                                    </fonctions>
+                                </parametre>
+                                <parametre>
+                                    <id>1</id>
+                                    <nom>Séparateur de mot</nom>
+                                    <dans_configuration>0</dans_configuration>
+                                    <objet_selectionnable>
+                                        <est_etendu>1</est_etendu>
+                                        <verrouille>0</verrouille>
+                                    </objet_selectionnable>
+                                    <fonctions>
+                                        <fonction>
+                                            <id>3</id>
+                                            <nom>Caractères</nom>
+                                            <niveau_visibilite>2</niveau_visibilite>
+                                            <active>1</active>
+                                            <objet_selectionnable>
+                                                <est_etendu>0</est_etendu>
+                                                <verrouille>0</verrouille>
+                                            </objet_selectionnable>
+                                            <valeur> </valeur>
+                                            <parametres/>
+                                        </fonction>
+                                    </fonctions>
+                                </parametre>
+                                <parametre>
+                                    <id>2</id>
+                                    <nom>Séparateur de ligne</nom>
+                                    <dans_configuration>0</dans_configuration>
+                                    <objet_selectionnable>
+                                        <est_etendu>1</est_etendu>
+                                        <verrouille>0</verrouille>
+                                    </objet_selectionnable>
+                                    <fonctions>
+                                        <fonction>
+                                            <id>3</id>
+                                            <nom>Caractères</nom>
+                                            <niveau_visibilite>2</niveau_visibilite>
+                                            <active>1</active>
+                                            <objet_selectionnable>
+                                                <est_etendu>0</est_etendu>
+                                                <verrouille>0</verrouille>
+                                            </objet_selectionnable>
+                                            <valeur>
+</valeur>
+                                            <parametres/>
+                                        </fonction>
+                                    </fonctions>
+                                </parametre>
+                            </parametres>
+                        </fonction>
+                    </fonctions>
+                </parametre>
+                <parametre>
+                    <id>4</id>
+                    <nom>Décalage</nom>
+                    <dans_configuration>1</dans_configuration>
+                    <objet_selectionnable>
+                        <est_etendu>1</est_etendu>
+                        <verrouille>0</verrouille>
+                    </objet_selectionnable>
+                    <fonctions>
+                        <fonction>
+                            <id>1</id>
+                            <nom>Texte</nom>
+                            <niveau_visibilite>2</niveau_visibilite>
+                            <active>1</active>
+                            <objet_selectionnable>
+                                <est_etendu>0</est_etendu>
+                                <verrouille>0</verrouille>
+                            </objet_selectionnable>
+                            <valeur>0
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25</valeur>
+                            <parametres>
+                                <parametre>
+                                    <id>0</id>
+                                    <nom>Séparateur d'élément</nom>
+                                    <dans_configuration>0</dans_configuration>
+                                    <objet_selectionnable>
+                                        <est_etendu>1</est_etendu>
+                                        <verrouille>0</verrouille>
+                                    </objet_selectionnable>
+                                    <fonctions>
+                                        <fonction>
+                                            <id>3</id>
+                                            <nom>Caractères</nom>
+                                            <niveau_visibilite>2</niveau_visibilite>
+                                            <active>1</active>
+                                            <objet_selectionnable>
+                                                <est_etendu>0</est_etendu>
+                                                <verrouille>0</verrouille>
+                                            </objet_selectionnable>
+                                            <valeur>,</valeur>
+                                            <parametres/>
+                                        </fonction>
+                                    </fonctions>
+                                </parametre>
+                                <parametre>
+                                    <id>1</id>
+                                    <nom>Séparateur de mot</nom>
+                                    <dans_configuration>0</dans_configuration>
+                                    <objet_selectionnable>
+                                        <est_etendu>1</est_etendu>
+                                        <verrouille>0</verrouille>
+                                    </objet_selectionnable>
+                                    <fonctions>
+                                        <fonction>
+                                            <id>3</id>
+                                            <nom>Caractères</nom>
+                                            <niveau_visibilite>2</niveau_visibilite>
+                                            <active>1</active>
+                                            <objet_selectionnable>
+                                                <est_etendu>0</est_etendu>
+                                                <verrouille>0</verrouille>
+                                            </objet_selectionnable>
+                                            <valeur> </valeur>
+                                            <parametres/>
+                                        </fonction>
+                                    </fonctions>
+                                </parametre>
+                                <parametre>
+                                    <id>2</id>
+                                    <nom>Séparateur de ligne</nom>
+                                    <dans_configuration>0</dans_configuration>
+                                    <objet_selectionnable>
+                                        <est_etendu>1</est_etendu>
+                                        <verrouille>0</verrouille>
+                                    </objet_selectionnable>
+                                    <fonctions>
+                                        <fonction>
+                                            <id>3</id>
+                                            <nom>Caractères</nom>
+                                            <niveau_visibilite>2</niveau_visibilite>
+                                            <active>1</active>
+                                            <objet_selectionnable>
+                                                <est_etendu>0</est_etendu>
+                                                <verrouille>0</verrouille>
+                                            </objet_selectionnable>
+                                            <valeur>
+</valeur>
+                                            <parametres/>
+                                        </fonction>
+                                    </fonctions>
+                                </parametre>
+                            </parametres>
+                        </fonction>
+                    </fonctions>
+                </parametre>
+                <parametre>
+                    <id>5</id>
+                    <nom>Additif</nom>
+                    <dans_configuration>1</dans_configuration>
+                    <objet_selectionnable>
+                        <est_etendu>1</est_etendu>
+                        <verrouille>0</verrouille>
+                    </objet_selectionnable>
+                    <fonctions>
+                        <fonction>
+                            <id>4</id>
+                            <nom>Oui ou Non</nom>
+                            <niveau_visibilite>2</niveau_visibilite>
+                            <active>1</active>
+                            <objet_selectionnable>
+                                <est_etendu>0</est_etendu>
+                                <verrouille>0</verrouille>
+                            </objet_selectionnable>
+                            <valeur>1</valeur>
+                            <parametres/>
+                        </fonction>
+                    </fonctions>
+                </parametre>
+                <parametre>
+                    <id>9</id>
+                    <nom>Traiter par ligne</nom>
+                    <dans_configuration>1</dans_configuration>
+                    <objet_selectionnable>
+                        <est_etendu>1</est_etendu>
+                        <verrouille>0</verrouille>
+                    </objet_selectionnable>
+                    <fonctions>
+                        <fonction>
+                            <id>4</id>
+                            <nom>Oui ou Non</nom>
+                            <niveau_visibilite>2</niveau_visibilite>
+                            <active>1</active>
+                            <objet_selectionnable>
+                                <est_etendu>0</est_etendu>
+                                <verrouille>0</verrouille>
+                            </objet_selectionnable>
+                            <valeur>0</valeur>
+                            <parametres/>
+                        </fonction>
+                    </fonctions>
+                </parametre>
+            </parametres>
+        </fonction>
+        <fonction>
+            <id>2000</id>
+            <nom>Textes</nom>
+            <niveau_visibilite>2</niveau_visibilite>
+            <active>1</active>
+            <objet_selectionnable>
+                <est_etendu>1</est_etendu>
+                <verrouille>0</verrouille>
+            </objet_selectionnable>
+            <parametres/>
+        </fonction>
+    </fonctions>
+</projet>

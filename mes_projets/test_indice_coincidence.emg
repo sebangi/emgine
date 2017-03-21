@@ -162,7 +162,7 @@ filles du village. Alors le jeudi est jour merveilleux ! Je vais me promener jus
                                 <est_etendu>0</est_etendu>
                                 <verrouille>0</verrouille>
                             </objet_selectionnable>
-                            <valeur>1</valeur>
+                            <valeur>0</valeur>
                             <parametres/>
                         </fonction>
                     </fonctions>

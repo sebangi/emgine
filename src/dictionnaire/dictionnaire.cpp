@@ -1,10 +1,13 @@
 #include "entete/dictionnaire/dictionnaire.h"
 
-#include <iostream>
+#include <QCoreApplication>
+#include <QDir>
 #include <QTextStream>
 #include <QFile>
 #include <QFileInfo>
 #include <QMessageBox>
+
+#include <iostream>
 
 /*----------------------------------------------------------------------------*/
 dictionnaire::dictionnaire(const QString & nom_fichier)
@@ -172,7 +175,9 @@ void dictionnaire::charger_dictionnaire( const QString & nom_fichier )
     if (nom_fichier.isEmpty())
         return;
 
-    QFile file(nom_fichier);
+    QDir dir( QCoreApplication::applicationDirPath() );
+    QString absolu_path = dir.absoluteFilePath( nom_fichier );
+    QFile file(absolu_path);
 
     if (! file.open(QIODevice::ReadOnly))
     {

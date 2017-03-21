@@ -11,7 +11,10 @@
 #include "entete/element/type_element.h"
 #include "entete/fonction_widget/fonction_source_widget/fonction_source_dictionnaire_widget.h"
 
+#include <QCoreApplication>
+#include <QDir>
 #include <QFile>
+#include <QFileInfo>
 #include <QTextStream>
 
 #include <iostream>
@@ -21,7 +24,7 @@
  * \param conteneur Un pointeur sur le conteneur de la fonction.
  */
 fonction_source_dictionnaire::fonction_source_dictionnaire(fonctions_conteneur * conteneur)
-    : fonction_base_source(conteneur), m_nom_fichier("")
+    : fonction_base_source(conteneur), m_chemin_relatif_fichier("")
 {
     set_id(f_source_dictionnaire);
     augmenter_max_niveau_visibilite(1);
@@ -52,12 +55,12 @@ base_fonction_widget *fonction_source_dictionnaire::generer_fonction_widget()
  */
 void fonction_source_dictionnaire::executer( compilateur &compil, textes & textes_in, textes & textes_out )
 {
-    ligne l(m_nom_fichier);
+    ligne l(m_chemin_relatif_fichier);
     texte t;
     t.ajouter_ligne(l);
     textes_out.push_back(t);
 
-    compil.ajouter_dictionnaire(m_nom_fichier);
+    compil.ajouter_dictionnaire( m_chemin_relatif_fichier );
 }
 
 
@@ -68,7 +71,7 @@ void fonction_source_dictionnaire::executer( compilateur &compil, textes & texte
 */
 bool fonction_source_dictionnaire::est_valide(logs_compilation_widget * vue_logs)
 {
-    QFile file(m_nom_fichier);
+    QFile file( get_chemin_absolu() ) ;
 
     if (! file.open(QIODevice::ReadOnly))
     {
@@ -88,16 +91,28 @@ bool fonction_source_dictionnaire::est_valide(logs_compilation_widget * vue_logs
  */
 QString fonction_source_dictionnaire::get_valeur_courte() const
 {
-    return "Dictionnaire " + m_nom_fichier;
+    return "Dictionnaire " + m_chemin_relatif_fichier;
 }
 
 /** --------------------------------------------------------------------------------------
- * \brief Accesseur du nom de fichier source.
- * \return Le nom du fichier source.
+ * \brief Accesseur du chemin absolu du fichier source.
+ * \return Le chemin absolu du fichier source.
  */
-QString fonction_source_dictionnaire::get_nom_fichier() const
+QString fonction_source_dictionnaire::get_chemin_absolu() const
 {
-    return m_nom_fichier;
+    QDir dir( QCoreApplication::applicationDirPath() );
+    QString absolu_path = dir.absoluteFilePath( m_chemin_relatif_fichier );
+
+    return absolu_path;
+}
+
+/** --------------------------------------------------------------------------------------
+ * \brief Accesseur du chemin relatif du fichier source.
+ * \return Le chemin relatif du fichier source.
+ */
+QString fonction_source_dictionnaire::get_chemin_relatif() const
+{
+    return m_chemin_relatif_fichier;
 }
 
 /** --------------------------------------------------------------------------------------
@@ -106,7 +121,11 @@ QString fonction_source_dictionnaire::get_nom_fichier() const
  */
 void fonction_source_dictionnaire::set_nom_fichier(QString nom_fichier)
 {
-    m_nom_fichier = nom_fichier;
+    QFileInfo info(nom_fichier);
+    QDir dir( QCoreApplication::applicationDirPath() );
+    QString relative_path = dir.relativeFilePath( info.absoluteFilePath() );
+
+    m_chemin_relatif_fichier = relative_path;
 }
 
 /** --------------------------------------------------------------------------------------
@@ -115,7 +134,7 @@ void fonction_source_dictionnaire::set_nom_fichier(QString nom_fichier)
  */
 QString fonction_source_dictionnaire::get_string_valeur() const
 {
-    return m_nom_fichier;
+    return m_chemin_relatif_fichier;
 }
 
 /** --------------------------------------------------------------------------------------
@@ -124,5 +143,5 @@ QString fonction_source_dictionnaire::get_string_valeur() const
  */
 void fonction_source_dictionnaire::set_string_valeur(const QString &nom_fichier)
 {
-    m_nom_fichier = nom_fichier;
+    set_nom_fichier(nom_fichier);
 }

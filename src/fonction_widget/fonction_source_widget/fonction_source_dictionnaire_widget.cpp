@@ -46,7 +46,7 @@ void fonction_source_dictionnaire_widget::init()
 
     m_nom_fichier_label = new QLabel();
     m_nom_fichier_label->setObjectName("NomFichier");
-    m_nom_fichier_label->setText( ((fonction_source_dictionnaire*)m_fonction)->get_nom_fichier() );
+    m_nom_fichier_label->setText( ((fonction_source_dictionnaire*)m_fonction)->get_chemin_relatif() );
     lay->addWidget(m_nom_fichier_label);
 
     connect( m_choix_bouton, SIGNAL(released()), this, SLOT(on_choisir_click()));
@@ -93,8 +93,9 @@ void fonction_source_dictionnaire_widget::choisir_nom_fichier()
     if (! file.open(QIODevice::ReadOnly))
         return;
 
-    m_nom_fichier_label->setText( nom_fichier );
     ((fonction_source_dictionnaire*)m_fonction)->set_nom_fichier( nom_fichier );
+    m_nom_fichier_label->setText( ((fonction_source_dictionnaire*)m_fonction)->get_chemin_relatif() );
+
     update_boutons();
     m_fonction->modifier();
 }

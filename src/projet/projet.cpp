@@ -14,6 +14,7 @@
 #include "entete/fonction/fonction_source/fonction_base_source.h"
 #include "entete/projet/base_fonction.h"
 
+#include <QCoreApplication>
 #include <QDir>
 
 #include <iostream>
@@ -255,12 +256,24 @@ bool projet::est_projet() const
 }
 
 /** --------------------------------------------------------------------------------------
- * \brief Retourne le nom du fichier du projet.
- * \return Le nom du fichier du projet.
+ * \brief Retourne le chemin relatif du fichier du projet.
+ * \return Le chemin relatif du fichier du projet.
  */
-QString projet::get_nom_fichier() const
+QString projet::get_chemin_relatif() const
 {
-    return m_nom_fichier;
+    return m_chemin_relatif;
+}
+
+/** --------------------------------------------------------------------------------------
+ * \brief Retourne le chemin absolu du fichier du projet.
+ * \return Le chemin absolu du fichier du projet.
+ */
+QString projet::get_chemin_absolu() const
+{
+    QDir dir( QCoreApplication::applicationDirPath() );
+    QString absolu_path = dir.absoluteFilePath( m_chemin_relatif );
+
+    return absolu_path;
 }
 
 /** --------------------------------------------------------------------------------------
@@ -269,10 +282,10 @@ QString projet::get_nom_fichier() const
  */
 QString projet::get_dossier() const
 {
-    if ( m_nom_fichier.isEmpty() )
+    if ( m_chemin_relatif.isEmpty() )
         return "";
     else
-        return QFileInfo(m_nom_fichier).absolutePath();
+        return QFileInfo( get_chemin_absolu() ).absolutePath();
 }
 
 /** --------------------------------------------------------------------------------------
@@ -281,9 +294,13 @@ QString projet::get_dossier() const
  */
 void projet::set_nom_fichier(const QString &nom_fichier)
 {
-    m_nom_fichier = nom_fichier;
+    QFileInfo info(nom_fichier);
+    QDir dir( QCoreApplication::applicationDirPath() );
+    QString relative_path = dir.relativeFilePath( info.absoluteFilePath() );
 
-    QString nom = m_nom_fichier.split("/").last();
+    m_chemin_relatif = relative_path;
+
+    QString nom = m_chemin_relatif.split("/").last();
     set_nom( nom.split(".").first() );
 }
 

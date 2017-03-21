@@ -24,7 +24,8 @@ class fonction_source_fichier_texte : public fonction_base_source
         base_fonction_widget *generer_fonction_widget();
         void executer( compilateur & compil, textes & textes_in, textes & textes_out );
         QString get_valeur_courte() const;
-        QString get_nom_fichier() const;
+        QString get_chemin_absolu() const;
+        QString get_chemin_relatif() const;
         void set_nom_fichier(QString nom_fichier);
         QString get_string_valeur() const;
         void set_string_valeur(const QString & nom_fichier);
@@ -37,7 +38,7 @@ class fonction_source_fichier_texte : public fonction_base_source
 
     private:
         /** \brief Le nom du fichier. */
-        QString m_nom_fichier;
+        QString m_chemin_relatif_fichier;
 
         /** \brief Le contenu du fichier. */
         QString m_contenu_fichier;
