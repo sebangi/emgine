@@ -117,10 +117,10 @@ essai</valeur>
                             <niveau_visibilite>2</niveau_visibilite>
                             <active>1</active>
                             <objet_selectionnable>
-                                <est_etendu>0</est_etendu>
+                                <est_etendu>1</est_etendu>
                                 <verrouille>0</verrouille>
                             </objet_selectionnable>
-                            <valeur>../mes_projets/dico.txt</valeur>
+                            <valeur>mes_projets/dico.txt</valeur>
                             <parametres/>
                         </fonction>
                     </fonctions>
