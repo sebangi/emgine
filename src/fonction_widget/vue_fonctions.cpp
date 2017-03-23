@@ -133,7 +133,7 @@ void vue_fonctions::creer_vue_conteneur()
     {
         QIcon icon1;
         if ( ! m_conteneur_courant->est_projet() )
-            icon1.addFile(QString::fromUtf8("icons/fleche_haut.png"), QSize(), QIcon::Normal, QIcon::Off);
+            icon1.addFile(QString::fromUtf8(":/icons/fleche_haut.png"), QSize(), QIcon::Normal, QIcon::Off);
 
         horizontalHeaderItem(1)->setIcon(icon1);
 
@@ -173,11 +173,11 @@ void vue_fonctions::ajouter_vue_fonction(base_fonction* f)
     image->setObjectName("NomParametre");
     QIcon icon1;
     if ( f->get_type() == type_fonction::fonction_source )
-        icon1.addFile(QString::fromUtf8("icons/selection_source.png"), QSize(), QIcon::Normal, QIcon::Off);
+        icon1.addFile(QString::fromUtf8(":/icons/selection_source.png"), QSize(), QIcon::Normal, QIcon::Off);
     else if ( f->get_type() == type_fonction::fonction_conversion )
-        icon1.addFile(QString::fromUtf8("icons/selection_conversion.png"), QSize(), QIcon::Normal, QIcon::Off);
+        icon1.addFile(QString::fromUtf8(":/icons/selection_conversion.png"), QSize(), QIcon::Normal, QIcon::Off);
     else
-        icon1.addFile(QString::fromUtf8("icons/selection_sortie.png"), QSize(), QIcon::Normal, QIcon::Off);
+        icon1.addFile(QString::fromUtf8(":/icons/selection_sortie.png"), QSize(), QIcon::Normal, QIcon::Off);
 
     image->setIcon(icon1);
     image->setIconSize(QSize(32,32));

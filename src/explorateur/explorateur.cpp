@@ -643,7 +643,7 @@ void explorateur::ajouter_menu_enregistrement(QMenu & menu, objet_selectionnable
     menu.addAction(newAct_enregistrer_sous);
 
     QIcon icon_dupliquer;
-    icon_dupliquer.addFile(QString::fromUtf8("icons/coller.png"), QSize(), QIcon::Normal, QIcon::Off);
+    icon_dupliquer.addFile(QString::fromUtf8(":/icons/coller.png"), QSize(), QIcon::Normal, QIcon::Off);
     QAction *newAct_dupliquer = new QAction(icon_dupliquer, tr("Dupliquer le projet"), this);
     newAct_dupliquer->setStatusTip(tr("Dupliquer le projet"));
     connect(newAct_dupliquer, SIGNAL(triggered()), this, SLOT(on_dupliquer_projet()));
@@ -658,7 +658,7 @@ void explorateur::ajouter_menu_enregistrement(QMenu & menu, objet_selectionnable
 void explorateur::ajouter_menu_copier_coller(QMenu & menu, objet_selectionnable * obj )
 {
     QIcon icon_copier;
-    icon_copier.addFile(QString::fromUtf8("icons/copier.png"), QSize(), QIcon::Normal, QIcon::Off);
+    icon_copier.addFile(QString::fromUtf8(":/icons/copier.png"), QSize(), QIcon::Normal, QIcon::Off);
     QString texte_copier;
     if ( obj->est_conteneur() )
         texte_copier = tr("Copier le contenu");
@@ -670,7 +670,7 @@ void explorateur::ajouter_menu_copier_coller(QMenu & menu, objet_selectionnable 
     menu.addAction(newAct_copier);
 
     QIcon icon_couper;
-    icon_couper.addFile(QString::fromUtf8("icons/couper.png"), QSize(), QIcon::Normal, QIcon::Off);
+    icon_couper.addFile(QString::fromUtf8(":/icons/couper.png"), QSize(), QIcon::Normal, QIcon::Off);
     QString texte_couper;
     if ( obj->est_conteneur() )
         texte_couper = tr("Couper le contenu");
@@ -683,7 +683,7 @@ void explorateur::ajouter_menu_copier_coller(QMenu & menu, objet_selectionnable 
     newAct_couper->setEnabled( ! obj->est_verrouille_avec_parent() );
 
     QIcon icon_coller;
-    icon_coller.addFile(QString::fromUtf8("icons/coller.png"), QSize(), QIcon::Normal, QIcon::Off);
+    icon_coller.addFile(QString::fromUtf8(":/icons/coller.png"), QSize(), QIcon::Normal, QIcon::Off);
     QString texte_coller;
     if ( obj->est_conteneur() )
         texte_coller = tr("Coller au début");
@@ -731,7 +731,7 @@ void explorateur::ajouter_menu_ajout_fonction(QMenu & menu, objet_selectionnable
 
     QString texte_source = tr("Ajouter une source") + fin_texte;
     QIcon icon_source;
-    icon_source.addFile(QString::fromUtf8("icons/ajout_source.png"), QSize(), QIcon::Normal, QIcon::Off);
+    icon_source.addFile(QString::fromUtf8(":/icons/ajout_source.png"), QSize(), QIcon::Normal, QIcon::Off);
     QAction *newAct2 = new QAction(icon_source, texte_source, this);
     newAct2->setStatusTip(texte_source);
     connect(newAct2, SIGNAL(triggered()), this, SLOT(on_ajout_source()));
@@ -740,7 +740,7 @@ void explorateur::ajouter_menu_ajout_fonction(QMenu & menu, objet_selectionnable
 
     QString texte_conversion = tr("Ajouter une conversion") + fin_texte;
     QIcon icon_conversion;
-    icon_conversion.addFile(QString::fromUtf8("icons/ajout_conversion.png"), QSize(), QIcon::Normal, QIcon::Off);
+    icon_conversion.addFile(QString::fromUtf8(":/icons/ajout_conversion.png"), QSize(), QIcon::Normal, QIcon::Off);
     QAction *newAct3 = new QAction(icon_conversion, texte_conversion, this);
     newAct3->setStatusTip(texte_conversion);
     connect(newAct3, SIGNAL(triggered()), this, SLOT(on_ajout_fonction_conversion()));
@@ -749,7 +749,7 @@ void explorateur::ajouter_menu_ajout_fonction(QMenu & menu, objet_selectionnable
 
     QString texte_sortie = tr("Ajouter une sortie") + fin_texte;
     QIcon icon_sortie;
-    icon_sortie.addFile(QString::fromUtf8("icons/ajout_sortie.png"), QSize(), QIcon::Normal, QIcon::Off);
+    icon_sortie.addFile(QString::fromUtf8(":/icons/ajout_sortie.png"), QSize(), QIcon::Normal, QIcon::Off);
     QAction *newAct4 = new QAction(icon_sortie, texte_sortie, this);
     newAct4->setStatusTip(texte_sortie);
     connect(newAct4, SIGNAL(triggered()), this, SLOT(on_ajout_sortie()));
@@ -769,12 +769,12 @@ void explorateur::ajouter_menu_activation(QMenu & menu, objet_selectionnable * o
     base_fonction* f = (base_fonction*)obj;
     if ( f->est_active() )
     {
-        icon_activer.addFile(QString::fromUtf8("icons/non_compile.png"), QSize(), QIcon::Normal, QIcon::Off);
+        icon_activer.addFile(QString::fromUtf8(":/icons/non_compile.png"), QSize(), QIcon::Normal, QIcon::Off);
         texte_activer = "Désactiver la fonction";
     }
     else
     {
-        icon_activer.addFile(QString::fromUtf8("icons/compile.png"), QSize(), QIcon::Normal, QIcon::Off);
+        icon_activer.addFile(QString::fromUtf8(":/icons/compile.png"), QSize(), QIcon::Normal, QIcon::Off);
         texte_activer = "Activer la fonction";
     }
     QAction *newAct_activer = new QAction(icon_activer, texte_activer, this);
@@ -797,12 +797,12 @@ void explorateur::ajouter_menu_verrouillage(QMenu & menu, objet_selectionnable *
 
     if ( obj->est_verrouille_avec_parent() )
     {
-        icon.addFile(QString::fromUtf8("icons/deverrouille.png"), QSize(), QIcon::Normal, QIcon::Off);
+        icon.addFile(QString::fromUtf8(":/icons/deverrouille.png"), QSize(), QIcon::Normal, QIcon::Off);
         texte = "Déverrouiller";
     }
     else
     {
-        icon.addFile(QString::fromUtf8("icons/verrouille.png"), QSize(), QIcon::Normal, QIcon::Off);
+        icon.addFile(QString::fromUtf8(":/icons/verrouille.png"), QSize(), QIcon::Normal, QIcon::Off);
         texte = "Verrouiller";
     }
 

@@ -12,7 +12,7 @@ greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 TARGET = emgine
 TEMPLATE = app
 
-DESTDIR = .
+DESTDIR = ../emgine
 OBJECTS_DIR = .obj
 MOC_DIR     = .moc
 
@@ -178,5 +178,9 @@ FORMS    += \
 DISTFILES += \
     stylesheet.qss \
     TODO.txt \
-    Doxyfile
+    Doxyfile \
+    stylesheet.qss
+
+RESOURCES += \
+    ressources.qrc
 

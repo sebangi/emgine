@@ -86,7 +86,7 @@ void logs_compilation_widget::init_widgets()
     toolbar->addWidget(m_cacher_bouton);
 
     QIcon icone_effacer;
-    icone_effacer.addFile(QString::fromUtf8("icons/balai.png"), QSize(), QIcon::Normal, QIcon::Off);
+    icone_effacer.addFile(QString::fromUtf8(":/icons/balai.png"), QSize(), QIcon::Normal, QIcon::Off);
     m_effacer_bouton = new QPushButton();
     m_effacer_bouton->setObjectName("BoutonFonctionWidget");
     m_effacer_bouton->setIcon( icone_effacer );

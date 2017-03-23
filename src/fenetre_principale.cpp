@@ -62,7 +62,7 @@ fenetre_principale::fenetre_principale(QWidget *parent) :
     init_widgets();
 
     QIcon icon1;
-    icon1.addFile(QString::fromUtf8("icons/emgine.png"), QSize(), QIcon::Normal, QIcon::Off);
+    icon1.addFile(QString::fromUtf8(":/icons/emgine.png"), QSize(), QIcon::Normal, QIcon::Off);
     setWindowIcon(icon1);
     resize(QSize(1200,900));
 
@@ -172,30 +172,30 @@ void fenetre_principale::init_widgets()
     setWindowTitle("Emgine");
 
     QIcon icone_source;
-    icone_source.addFile(QString::fromUtf8("icons/ajout_source.png"), QSize(), QIcon::Normal, QIcon::Off);
+    icone_source.addFile(QString::fromUtf8(":/icons/ajout_source.png"), QSize(), QIcon::Normal, QIcon::Off);
     m_toolbar_bouton_ajout_fonction_source->setIcon(icone_source);
     m_toolbar_bouton_ajout_fonction_source->setText("Source");
     m_toolbar_bouton_ajout_fonction_source->setShortcut( QKeySequence("Alt+A") );
 
     QIcon icone_conversion;
-    icone_conversion.addFile(QString::fromUtf8("icons/ajout_conversion.png"), QSize(), QIcon::Normal, QIcon::Off);
+    icone_conversion.addFile(QString::fromUtf8(":/icons/ajout_conversion.png"), QSize(), QIcon::Normal, QIcon::Off);
     m_toolbar_bouton_ajout_fonction_conversion->setIcon(icone_conversion);
     m_toolbar_bouton_ajout_fonction_conversion->setText("Conversion");
     m_toolbar_bouton_ajout_fonction_conversion->setShortcut( QKeySequence("Alt+Z") );
 
     QIcon icone_sortie;
-    icone_sortie.addFile(QString::fromUtf8("icons/ajout_sortie.png"), QSize(), QIcon::Normal, QIcon::Off);
+    icone_sortie.addFile(QString::fromUtf8(":/icons/ajout_sortie.png"), QSize(), QIcon::Normal, QIcon::Off);
     m_toolbar_bouton_ajout_fonction_sortie->setIcon(icone_sortie);
     m_toolbar_bouton_ajout_fonction_sortie->setText("Résultat");
     m_toolbar_bouton_ajout_fonction_sortie->setShortcut( QKeySequence("Alt+E") );
 
     QIcon icone_nouveau_projet;
-    icone_nouveau_projet.addFile(QString::fromUtf8("icons/nouveau_projet.png"), QSize(), QIcon::Normal, QIcon::Off);
+    icone_nouveau_projet.addFile(QString::fromUtf8(":/icons/nouveau_projet.png"), QSize(), QIcon::Normal, QIcon::Off);
     m_toolbar_bouton_nouveau_projet->setIcon(icone_nouveau_projet);
     m_toolbar_bouton_nouveau_projet->setText("Nouveau projet");
 
     QIcon icone_projet;
-    icone_projet.addFile(QString::fromUtf8("icons/projet.png"), QSize(), QIcon::Normal, QIcon::Off);
+    icone_projet.addFile(QString::fromUtf8(":/icons/projet.png"), QSize(), QIcon::Normal, QIcon::Off);
     m_toolbar_bouton_ouvrir_projet->setIcon(icone_projet);
     m_toolbar_bouton_ouvrir_projet->setText("Ouvrir un projet");
 
@@ -229,7 +229,7 @@ void fenetre_principale::init_widgets()
     m_ui->centralLayout->addWidget(s_vue_logs, 1);
 
     QIcon icon_compile;
-    icon_compile.addFile(QString::fromUtf8("icons/grand_compile.png"), QSize(), QIcon::Normal, QIcon::Off);
+    icon_compile.addFile(QString::fromUtf8(":/icons/grand_compile.png"), QSize(), QIcon::Normal, QIcon::Off);
     m_toolbar_bouton_executer->setIcon(icon_compile);
     m_toolbar_bouton_executer->setText("Exécuter");
     m_toolbar_bouton_executer->setShortcut( QKeySequence("Ctrl+R") );

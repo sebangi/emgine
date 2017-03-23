@@ -20,6 +20,7 @@ class fonction_selection_selon_dictionnaire : public base_fonction
     public:
         fonction_selection_selon_dictionnaire(fonctions_conteneur * conteneur);
 
+        void initialisation_par_defaut();
         void executer( compilateur & compil, textes & textes_in, textes & textes_out );
         QString get_valeur_courte() const;
 

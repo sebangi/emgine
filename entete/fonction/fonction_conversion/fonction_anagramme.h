@@ -22,6 +22,7 @@ class fonction_anagramme : public base_fonction
 
         void executer( compilateur & compil, textes & textes_in, textes & textes_out );
         QString get_valeur_courte() const;
+        void initialisation_par_defaut();
 
     private:
         bool est_valide(logs_compilation_widget * vue_logs);

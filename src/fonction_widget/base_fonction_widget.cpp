@@ -113,7 +113,7 @@ void base_fonction_widget::init()
     m_aide_bouton = new QPushButton();
     m_aide_bouton->setObjectName("BoutonFonctionWidget");
     QIcon icon1;
-    icon1.addFile(QString::fromUtf8("icons/info.png"), QSize(), QIcon::Normal, QIcon::Off);
+    icon1.addFile(QString::fromUtf8(":/icons/info.png"), QSize(), QIcon::Normal, QIcon::Off);
     m_aide_bouton->setIcon( icon1 );
     m_aide_bouton->setIconSize(QSize(24,24));
     m_aide_bouton->setFixedHeight(32);
@@ -190,12 +190,12 @@ void base_fonction_widget::update_actif_bouton()
         if ( m_fonction->est_active_avec_parent() )
         {
             m_actif_bouton->setToolTip("Cliquer pour ne pas exécuter la fonction");
-            icon1.addFile(QString::fromUtf8("icons/compile.png"), QSize(), QIcon::Normal, QIcon::Off);
+            icon1.addFile(QString::fromUtf8(":/icons/compile.png"), QSize(), QIcon::Normal, QIcon::Off);
         }
         else
         {
             m_actif_bouton->setToolTip("Cliquer pour exécuter la fonction");
-            icon1.addFile(QString::fromUtf8("icons/non_compile.png"), QSize(), QIcon::Normal, QIcon::Off);
+            icon1.addFile(QString::fromUtf8(":/icons/non_compile.png"), QSize(), QIcon::Normal, QIcon::Off);
             if ( ! m_fonction->parents_actifs() )
                 m_actif_bouton->setEnabled(false);
         }
@@ -203,7 +203,7 @@ void base_fonction_widget::update_actif_bouton()
     else
     {
         m_actif_bouton->setToolTip("Cliquer pour exécuter la fonction");
-        icon1.addFile( QString::fromUtf8("icons/non_compile.png"), QSize(), QIcon::Normal, QIcon::Off );
+        icon1.addFile( QString::fromUtf8(":/icons/non_compile.png"), QSize(), QIcon::Normal, QIcon::Off );
         m_actif_bouton->setEnabled(false);
     }
 
@@ -231,15 +231,15 @@ void base_fonction_widget::update_verrouillage_bouton()
     if ( m_fonction != NULL )
     {
         if ( m_fonction->est_verrouille_avec_parent() )
-            icon1.addFile(QString::fromUtf8("icons/verrouille.png"), QSize(), QIcon::Normal, QIcon::Off);
+            icon1.addFile(QString::fromUtf8(":/icons/verrouille.png"), QSize(), QIcon::Normal, QIcon::Off);
         else
         {
-            icon1.addFile(QString::fromUtf8("icons/deverrouille.png"), QSize(), QIcon::Normal, QIcon::Off);
+            icon1.addFile(QString::fromUtf8(":/icons/deverrouille.png"), QSize(), QIcon::Normal, QIcon::Off);
         }
     }
     else
     {
-        icon1.addFile( QString::fromUtf8("icons/verrouille.png"), QSize(), QIcon::Normal, QIcon::Off );
+        icon1.addFile( QString::fromUtf8(":/icons/verrouille.png"), QSize(), QIcon::Normal, QIcon::Off );
         m_verrouillage_bouton->setEnabled(false);
     }
 
@@ -256,19 +256,19 @@ void base_fonction_widget::update_visibilite_bouton()
     if ( m_fonction != NULL )
     {
         if ( m_fonction->get_niveau_visibilite() >= 3 )
-            icon1.addFile(QString::fromUtf8("icons/fleche_haut_double.png"), QSize(), QIcon::Normal, QIcon::Off);
+            icon1.addFile(QString::fromUtf8(":/icons/fleche_haut_double.png"), QSize(), QIcon::Normal, QIcon::Off);
         else if ( m_fonction->get_niveau_visibilite() >= 2 )
         {
             if ( m_fonction->get_max_niveau_visibilite() >= 3 )
-                icon1.addFile(QString::fromUtf8("icons/fleche_haut_bas.png"), QSize(), QIcon::Normal, QIcon::Off);
+                icon1.addFile(QString::fromUtf8(":/icons/fleche_haut_bas.png"), QSize(), QIcon::Normal, QIcon::Off);
             else
-                icon1.addFile(QString::fromUtf8("icons/fleche_haut.png"), QSize(), QIcon::Normal, QIcon::Off);
+                icon1.addFile(QString::fromUtf8(":/icons/fleche_haut.png"), QSize(), QIcon::Normal, QIcon::Off);
         }
         else
-            icon1.addFile(QString::fromUtf8("icons/fleche_bas.png"), QSize(), QIcon::Normal, QIcon::Off);
+            icon1.addFile(QString::fromUtf8(":/icons/fleche_bas.png"), QSize(), QIcon::Normal, QIcon::Off);
     }
     else
-        icon1.addFile(QString::fromUtf8("icons/fleche_bas.png"), QSize(), QIcon::Normal, QIcon::Off);
+        icon1.addFile(QString::fromUtf8(":/icons/fleche_bas.png"), QSize(), QIcon::Normal, QIcon::Off);
 
     m_visibilite_bouton->setIcon( icon1 );
 }

@@ -390,7 +390,7 @@ unhbh tm sdrs !</valeur>
                                 <est_etendu>0</est_etendu>
                                 <verrouille>0</verrouille>
                             </objet_selectionnable>
-                            <valeur>../mes_projets/dico.txt</valeur>
+                            <valeur>mes_projets/dico.txt</valeur>
                             <parametres/>
                         </fonction>
                     </fonctions>

@@ -93,6 +93,7 @@ class base_parametre : public fonctions_conteneur
         void set_booleen_par_defaut( bool valeur );
         void set_texte_par_defaut( QString texte, QString separ_caractere = "", QString separ_mot = " ", QString separ_ligne = "\n" );
         void set_caractere_par_defaut(QString s);
+        void set_dictionnaire_par_defaut(QString dico);
         void set_choix_par_defaut(const QStringList & selection);
         void set_textes_out(const textes &textes_out);
         void set_id(const type_id_parametre &id);

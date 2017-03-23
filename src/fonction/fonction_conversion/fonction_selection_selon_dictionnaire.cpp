@@ -33,6 +33,14 @@ fonction_selection_selon_dictionnaire::fonction_selection_selon_dictionnaire( fo
 }
 
 /** --------------------------------------------------------------------------------------
+ * \brief Initialisation par défaut de la fonction.
+ */
+void fonction_selection_selon_dictionnaire::initialisation_par_defaut()
+{
+    m_parametres[PARAM_DICTIONNAIRE]->set_dictionnaire_par_defaut( "mes_projets/dico.txt" );
+}
+
+/** --------------------------------------------------------------------------------------
   \brief Teste si la fonction est valide.
   \param vue_logs Un pointeur sur le widget de vue des logs.
   \return \b True si la fonction est valide, \b False sinon.

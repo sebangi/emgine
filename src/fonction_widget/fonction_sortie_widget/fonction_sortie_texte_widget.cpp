@@ -43,7 +43,7 @@ void fonction_sortie_texte_widget::showContextMenu(const QPoint& pos)
     QMenu menu;
 
     QIcon icon_nouveau_projet;
-    icon_nouveau_projet.addFile(QString::fromUtf8("icons/nouveau_projet.png"), QSize(), QIcon::Normal, QIcon::Off);
+    icon_nouveau_projet.addFile(QString::fromUtf8(":/icons/nouveau_projet.png"), QSize(), QIcon::Normal, QIcon::Off);
     QAction *newAct_nouveau_projet = new QAction(icon_nouveau_projet, tr("Créer un projet avec ce texte en source"), this);
     newAct_nouveau_projet->setStatusTip(tr("Créer un projet avec ce texte en source"));
     connect(newAct_nouveau_projet, SIGNAL(triggered()), this, SLOT(creer_projet()));

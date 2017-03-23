@@ -53,7 +53,7 @@ base_parametre* noeud_parametre::get_parametre() const
 void noeud_parametre::mise_a_jour_icone()
 {
     QIcon icon1;
-    icon1.addFile(QString::fromUtf8("icons/parameters.png"), QSize(), QIcon::Normal, QIcon::Off);
+    icon1.addFile(QString::fromUtf8(":/icons/parameters.png"), QSize(), QIcon::Normal, QIcon::Off);
     setIcon( 0, icon1 );
 }
 

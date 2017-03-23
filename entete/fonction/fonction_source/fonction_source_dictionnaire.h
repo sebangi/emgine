@@ -16,7 +16,7 @@
 class fonction_source_dictionnaire : public fonction_base_source
 {
     public:
-        fonction_source_dictionnaire(fonctions_conteneur * conteneur);
+        fonction_source_dictionnaire(fonctions_conteneur * conteneur, QString chemin = "");
         ~fonction_source_dictionnaire();
 
         base_fonction_widget *generer_fonction_widget();

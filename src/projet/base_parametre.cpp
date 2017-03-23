@@ -14,6 +14,7 @@
 #include "entete/fonction/fonction_source/fonction_source_booleen.h"
 #include "entete/fonction/fonction_source/fonction_source_caractere.h"
 #include "entete/fonction/fonction_source/fonction_source_choix.h"
+#include "entete/fonction/fonction_source/fonction_source_dictionnaire.h"
 #include "entete/fonction/fonction_source/fonction_source_texte.h"
 #include "entete/projet/base_fonction.h"
 
@@ -178,6 +179,16 @@ void base_parametre::set_texte_par_defaut
 void base_parametre::set_caractere_par_defaut(QString s)
 {
     base_fonction * f = new fonction_source_caractere(this,s);
+    ajouter_fonction(f, NULL);
+}
+
+/** --------------------------------------------------------------------------------------
+ * \brief Initialise le paramètre à partir d'un dictionnaire donné.
+ * \param dico Le dictionnaire à utiliser.
+ */
+void base_parametre::set_dictionnaire_par_defaut(QString dico)
+{
+    base_fonction * f = new fonction_source_dictionnaire(this, dico);
     ajouter_fonction(f, NULL);
 }
 

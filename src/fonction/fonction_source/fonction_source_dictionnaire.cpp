@@ -22,12 +22,14 @@
 /** --------------------------------------------------------------------------------------
  * \brief Constructeur de la classe fonction_source_dictionnaire.
  * \param conteneur Un pointeur sur le conteneur de la fonction.
+ * \param chemin Le chemin du dictionnaire.
  */
-fonction_source_dictionnaire::fonction_source_dictionnaire(fonctions_conteneur * conteneur)
-    : fonction_base_source(conteneur), m_chemin_relatif_fichier("")
+fonction_source_dictionnaire::fonction_source_dictionnaire(fonctions_conteneur * conteneur, QString chemin)
+    : fonction_base_source(conteneur)
 {
     set_id(f_source_dictionnaire);
     augmenter_max_niveau_visibilite(1);
+    set_nom_fichier(chemin);
 }
 
 /** --------------------------------------------------------------------------------------

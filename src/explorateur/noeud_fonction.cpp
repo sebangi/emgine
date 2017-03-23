@@ -48,7 +48,7 @@ base_fonction* noeud_fonction::get_fonction() const
 void noeud_fonction::mise_a_jour_icone()
 {
     QIcon icon1;
-    QString fichier = "icons/icone_";
+    QString fichier = ":/icons/icone_";
 
     if ( ((base_fonction *)m_objet)->get_type() == type_fonction::fonction_source )
         fichier += "source";

@@ -1,0 +1,42 @@
+<RCC>
+    <qresource prefix="/">
+        <file>icons/add.png</file>
+        <file>icons/ajout_conversion.png</file>
+        <file>icons/ajout_sortie.png</file>
+        <file>icons/ajout_source.png</file>
+        <file>icons/balai.png</file>
+        <file>icons/coller.png</file>
+        <file>icons/compile.png</file>
+        <file>icons/copier.png</file>
+        <file>icons/couper.png</file>
+        <file>icons/deverrouille.png</file>
+        <file>icons/emgine.ico</file>
+        <file>icons/emgine.png</file>
+        <file>icons/fleche_bas.png</file>
+        <file>icons/fleche_haut.png</file>
+        <file>icons/fleche_haut_bas.png</file>
+        <file>icons/fleche_haut_double.png</file>
+        <file>icons/grand_compile.png</file>
+        <file>icons/icone_conversion.png</file>
+        <file>icons/icone_conversion_verrouille.png</file>
+        <file>icons/icone_sortie.png</file>
+        <file>icons/icone_sortie_verrouille.png</file>
+        <file>icons/icone_source.png</file>
+        <file>icons/icone_source_verrouille.png</file>
+        <file>icons/info.png</file>
+        <file>icons/log.png</file>
+        <file>icons/no_log.png</file>
+        <file>icons/non_compile.png</file>
+        <file>icons/nouveau_projet.png</file>
+        <file>icons/parameters.png</file>
+        <file>icons/projet.png</file>
+        <file>icons/projet_verrouille.png</file>
+        <file>icons/selection.png</file>
+        <file>icons/selection_conversion.png</file>
+        <file>icons/selection_inactif.png</file>
+        <file>icons/selection_sortie.png</file>
+        <file>icons/selection_source.png</file>
+        <file>icons/verrouille.png</file>
+        <file>stylesheet.qss</file>
+    </qresource>
+</RCC>

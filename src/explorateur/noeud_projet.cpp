@@ -51,8 +51,8 @@ void noeud_projet::mise_a_jour_icone()
 {
     QIcon icon1;
     if ( m_objet->est_verrouille() )
-        icon1.addFile(QString::fromUtf8("icons/projet_verrouille.png"), QSize(), QIcon::Normal, QIcon::Off);
+        icon1.addFile(QString::fromUtf8(":/icons/projet_verrouille.png"), QSize(), QIcon::Normal, QIcon::Off);
     else
-        icon1.addFile(QString::fromUtf8("icons/projet.png"), QSize(), QIcon::Normal, QIcon::Off);
+        icon1.addFile(QString::fromUtf8(":/icons/projet.png"), QSize(), QIcon::Normal, QIcon::Off);
     setIcon( 0, icon1 );
 }
