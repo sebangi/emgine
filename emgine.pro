@@ -90,7 +90,8 @@ SOURCES += \
     src/fonction/algorithme/algo_IPL.cpp \
     src/fonction/fonction_conversion/fonction_ajout_espace_selon_dictionnaire.cpp \
     src/fonction/fonction_conversion/fonction_fusion.cpp \
-    src/fonction/fonction_conversion/fonction_substitution.cpp
+    src/fonction/fonction_conversion/fonction_substitution.cpp \
+    src/fonction/fonction_conversion/fonction_ecriture_morse.cpp
 
 HEADERS  += \
         entete/compilation/compilateur.h \
@@ -170,7 +171,8 @@ HEADERS  += \
     entete/fonction/algorithme/algo_IPL.h \
     entete/fonction/fonction_conversion/fonction_ajout_espace_selon_dictionnaire.h \
     entete/fonction/fonction_conversion/fonction_fusion.h \
-    entete/fonction/fonction_conversion/fonction_substitution.h
+    entete/fonction/fonction_conversion/fonction_substitution.h \
+    entete/fonction/fonction_conversion/fonction_ecriture_morse.h
 
 FORMS    += \
     fenetre_principale.ui

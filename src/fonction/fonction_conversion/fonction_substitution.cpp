@@ -19,8 +19,7 @@
 /** --------------------------------------------------------------------------------------
  \brief Constructeur de la classe fonction_substitution.
  \param conteneur Pointeur sur le conteneur de la fonction.
-*/
-fonction_substitution::fonction_substitution( fonctions_conteneur * conteneur )
+*/fonction_substitution::fonction_substitution( fonctions_conteneur * conteneur )
     : base_fonction(conteneur)
 {
     set_id(f_conversion_substitution);
