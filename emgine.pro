@@ -12,6 +12,7 @@ greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 TARGET = emgine
 TEMPLATE = app
 
+DESTDIR = .
 OBJECTS_DIR = .obj
 MOC_DIR     = .moc
 
