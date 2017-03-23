@@ -386,4 +386,3 @@ QListWidget#ListeTexte::item {
 QListWidget#ListeTexte::item::selected {
     background-color: Cornflowerblue;
 }
-
