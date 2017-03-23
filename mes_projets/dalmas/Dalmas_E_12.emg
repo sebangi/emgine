@@ -570,7 +570,7 @@ ZULANWDGGPCJAFJABC</valeur>
                         <fonction>
                             <id>1006</id>
                             <nom>Fusion du texte</nom>
-                            <niveau_visibilite>1</niveau_visibilite>
+                            <niveau_visibilite>2</niveau_visibilite>
                             <active>1</active>
                             <objet_selectionnable>
                                 <est_etendu>0</est_etendu>
@@ -699,7 +699,7 @@ ZULANWDGGPCJAFJABC</valeur>
                                                 <est_etendu>0</est_etendu>
                                                 <verrouille>0</verrouille>
                                             </objet_selectionnable>
-                                            <valeur>/home/sebastien/programmation/EMGINE/mes_projets/dico.txt</valeur>
+                                            <valeur>mes_projets/dico.txt</valeur>
                                             <parametres/>
                                         </fonction>
                                     </fonctions>
@@ -720,7 +720,7 @@ ZULANWDGGPCJAFJABC</valeur>
                         <fonction>
                             <id>1006</id>
                             <nom>Fusion du texte</nom>
-                            <niveau_visibilite>1</niveau_visibilite>
+                            <niveau_visibilite>2</niveau_visibilite>
                             <active>1</active>
                             <objet_selectionnable>
                                 <est_etendu>0</est_etendu>
