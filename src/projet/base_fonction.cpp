@@ -178,6 +178,17 @@ void base_fonction::augmenter_max_niveau_visibilite(int val)
 }
 
 /** --------------------------------------------------------------------------------------
+ * \brief Diminue le niveau maximum de visibilité de la fonction.
+ * \param val La diminution voulue.
+ */
+void base_fonction::diminuer_max_niveau_visibilite(int val)
+{
+    m_max_niveau_visibilite -= val;
+    m_niveau_visibilite -= val;
+    m_niveau_visibilite_avant_desactivation -= val;
+}
+
+/** --------------------------------------------------------------------------------------
  * \brief Accesseur de l'identifiant de la fonction.
  * \return L'identifiant de la fonction.
  */

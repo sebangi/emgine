@@ -91,7 +91,8 @@ SOURCES += \
     src/fonction/fonction_conversion/fonction_ajout_espace_selon_dictionnaire.cpp \
     src/fonction/fonction_conversion/fonction_fusion.cpp \
     src/fonction/fonction_conversion/fonction_substitution.cpp \
-    src/fonction/fonction_conversion/fonction_ecriture_morse.cpp
+    src/fonction/fonction_conversion/fonction_ecriture_morse.cpp \
+    src/fonction/fonction_conversion/fonction_lecture_morse.cpp
 
 HEADERS  += \
         entete/compilation/compilateur.h \
@@ -172,7 +173,8 @@ HEADERS  += \
     entete/fonction/fonction_conversion/fonction_ajout_espace_selon_dictionnaire.h \
     entete/fonction/fonction_conversion/fonction_fusion.h \
     entete/fonction/fonction_conversion/fonction_substitution.h \
-    entete/fonction/fonction_conversion/fonction_ecriture_morse.h
+    entete/fonction/fonction_conversion/fonction_ecriture_morse.h \
+    entete/fonction/fonction_conversion/fonction_lecture_morse.h
 
 FORMS    += \
     fenetre_principale.ui

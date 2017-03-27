@@ -98,6 +98,9 @@ enum type_id_fonction{
     /** \brief Fonction écriture en morse. */
     f_conversion_ecriture_morse,
 
+    /** \brief Fonction lecture du morse. */
+    f_conversion_lecture_morse,
+
     /** \brief Fin des fonctions de conversions. */
     fin_fonction_conversion,
 

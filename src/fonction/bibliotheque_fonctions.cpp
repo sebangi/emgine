@@ -25,12 +25,13 @@
 #include "entete/fonction/fonction_conversion/fonction_ajout_espace_selon_dictionnaire.h"
 #include "entete/fonction/fonction_conversion/fonction_anagramme.h"
 #include "entete/fonction/fonction_conversion/fonction_cesar.h"
+#include "entete/fonction/fonction_conversion/fonction_ecriture_morse.h"
 #include "entete/fonction/fonction_conversion/fonction_entier_en_chiffre_romain.h"
 #include "entete/fonction/fonction_conversion/fonction_formatage.h"
 #include "entete/fonction/fonction_conversion/fonction_fusion.h"
+#include "entete/fonction/fonction_conversion/fonction_lecture_morse.h"
 #include "entete/fonction/fonction_conversion/fonction_selection_selon_dictionnaire.h"
 #include "entete/fonction/fonction_conversion/fonction_substitution.h"
-#include "entete/fonction/fonction_conversion/fonction_ecriture_morse.h"
 
 std::map<type_id_fonction, QString> bibliotheque_fonctions::s_fonctions_nom =
 {
@@ -52,6 +53,7 @@ std::map<type_id_fonction, QString> bibliotheque_fonctions::s_fonctions_nom =
     { f_conversion_fusion, "Fusion du texte" },
     { f_conversion_substitution, "Substitution de caractères" },
     { f_conversion_ecriture_morse, "Écriture en morse" },
+    { f_conversion_lecture_morse, "Lecture du morse" },
 
     { f_sortie_texte, "Textes" },
     { f_sortie_frequence, "Fréquences des éléments" },
@@ -79,6 +81,7 @@ std::map<type_id_fonction, QString> bibliotheque_fonctions::s_fonctions_aide =
     { f_conversion_formatage, "Fusion des caractères, des mots, des lignes ou des textes." },
     { f_conversion_substitution, "Substitution de caractères." },
     { f_conversion_ecriture_morse, "Écriture en morse" },
+    { f_conversion_lecture_morse, "Lecture du morse" },
 
     { f_sortie_texte, "Sortie textuelle : la liste de tous les textes obtenus." },
     { f_sortie_frequence, "Sortie affichant la fréquence des éléments." },
@@ -124,6 +127,7 @@ base_fonction * bibliotheque_fonctions::get_fonction(type_id_fonction id)
         case f_conversion_fusion : return new fonction_fusion(NULL);
         case f_conversion_substitution : return new fonction_substitution(NULL);
         case f_conversion_ecriture_morse : return new fonction_ecriture_morse(NULL);
+        case f_conversion_lecture_morse : return new fonction_lecture_morse(NULL);
 
             // SORTIES
         case f_sortie_texte : return new fonction_sortie_texte(NULL);

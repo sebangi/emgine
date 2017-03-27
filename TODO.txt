@@ -7,7 +7,6 @@ ETAPE 2 : VERSION 0.1
 * FINI
 
 ETAPE 3 : AMELIORATION - DICTIONNAIRE - NOUVELLES FONCTIONS DE SORTIE
-* converesion en morse : les paramètre devrait être caché et non éditable
 * corriger les itérations sur source_texte et source_fichier_texte ??
 * améliorer la mise en page de l'aide des paramètres
 * améliorer la mise en page de l'aide des fonctions

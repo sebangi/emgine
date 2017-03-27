@@ -386,7 +386,8 @@ void explorateur::ajouter_fonction(base_fonction* f)
         noeud_parent->insertChild(f->get_position(), noeud);
 
         for ( base_fonction::parametres_iterateur it_p = f->parametres_begin(); it_p != f->parametres_end(); ++it_p )
-            ajouter_parametre( it_p->second );
+            if ( it_p->second->editable() )
+                ajouter_parametre( it_p->second );
 
         mettre_a_jour_activation(noeud, f->est_active(), false);
         noeud->setExpanded( f->est_etendu() );

@@ -12,6 +12,7 @@
 #include <QHeaderView>
 #include <QLayout>
 #include <QScrollBar>
+#include <iostream>
 
 /** --------------------------------------------------------------------------------------
  * \brief Constructeur de la classe liste_texte_widget.
@@ -27,7 +28,7 @@ liste_texte_widget::liste_texte_widget()
  */
 QSize liste_texte_widget::sizeHint() const
 {
-    int height = 10;
+    int height = 10 + horizontalScrollBar()->height();
 
     for ( int i = 0; i != count(); ++i )
         height += ((texte_widget_item*)item(i))->get_height() + 1;
@@ -58,5 +59,6 @@ void liste_texte_widget::init()
 
     setVerticalScrollMode(QAbstractItemView::ScrollPerPixel);
     verticalScrollBar()->setSingleStep(20);
+    setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOn);
 }
 

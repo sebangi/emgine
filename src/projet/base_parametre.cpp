@@ -33,7 +33,7 @@ base_parametre::base_parametre( objet_selectionnable * parent, QString nom, QStr
                                 type_mode_contenu_parametre mode_contenu_parametre,
                                 type_mode_configuration_visibilite mode_configuration_visibilite,
                                 type_algorithme algorithme)
-    : fonctions_conteneur(parent), m_fonction_parent((base_fonction*)parent), m_nom(nom), m_aide(aide),
+    : fonctions_conteneur(parent), m_fonction_parent((base_fonction*)parent), m_nom(nom), m_aide(aide), m_editable(true),
       m_mode_contenu_parametre(mode_contenu_parametre), m_textes_out(), m_mode_configuration_visibilite(mode_configuration_visibilite),
       m_algorithme(algorithme), m_type(TYPE_PARAM_BASE)
 {
@@ -341,6 +341,24 @@ void base_parametre::set_mode_configuration_visibilite(type_mode_configuration_v
 bool base_parametre::peut_etre_vide() const
 {
     return m_mode_contenu_parametre == CONTENU_PARAM_VIDE_POSSIBLE;
+}
+
+/** --------------------------------------------------------------------------------------
+ * \brief Initialise l'état editable du paramètre.
+ * \param editable Le nouvel état éditable.
+ */
+void base_parametre::set_editable(bool editable)
+{
+    m_editable = editable;
+}
+
+/** --------------------------------------------------------------------------------------
+ * \brief Accesseur de l'état éditable du paramètre.
+ * \return \b True si le paramètre est éditable, \b False sinon.
+ */
+bool base_parametre::editable() const
+{
+    return m_editable;
 }
 
 /** --------------------------------------------------------------------------------------

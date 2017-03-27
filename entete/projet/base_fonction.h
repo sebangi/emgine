@@ -138,6 +138,7 @@ class base_fonction : public objet_selectionnable
         void ajouter_parametre(type_id_parametre nom, base_parametre* p);
         const textes & get_textes_parametre( type_id_parametre type ) const;
         void augmenter_max_niveau_visibilite( int val );
+        void diminuer_max_niveau_visibilite( int val );
 
         // Algorithme d'exécution IPL
         void algo_IPL_iteration_par_ligne

@@ -159,9 +159,12 @@ void base_fonction_widget::init()
         base_fonction::parametres_const_iterateur it;
         for ( it = m_fonction->parametres_begin(); it != m_fonction->parametres_end(); ++it )
         {
-            base_parametre_widget* w = new base_parametre_widget(it->second);
-            m_parametre_layout->addWidget(w);
-            m_parametre_widgets.push_back(w);
+            if ( it->second->editable() )
+            {
+                base_parametre_widget* w = new base_parametre_widget(it->second);
+                m_parametre_layout->addWidget(w);
+                m_parametre_widgets.push_back(w);
+            }
         }
     }
 

@@ -13,7 +13,13 @@
 fonction_ecriture_morse::fonction_ecriture_morse( fonctions_conteneur * conteneur )
     : fonction_substitution(conteneur)
 {
+    set_id(f_conversion_ecriture_morse);
 
+    m_parametres[PARAM_CARACTERES_ENTREE]->set_editable(false);
+    m_parametres[PARAM_CARACTERES_SORTIE]->set_editable(false);
+    m_parametres[PARAM_NUMERO_CHOIX]->set_editable(false);
+
+    diminuer_max_niveau_visibilite(1);
 }
 
 /** --------------------------------------------------------------------------------------

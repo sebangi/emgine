@@ -102,6 +102,8 @@ class base_parametre : public fonctions_conteneur
         bool configuration_visible() const;
         void inverser_configuration_visibilite();
         bool peut_etre_vide() const;
+        void set_editable(bool editable);
+        bool editable() const;
 
     protected:
         /** \brief Le nom du paramètre. */
@@ -109,6 +111,9 @@ class base_parametre : public fonctions_conteneur
 
         /** \brief L'aide utilisateur du paramètre. */
         QString m_aide;
+
+        /** \brief Indique si le paramètre est éditable. */
+        bool m_editable;
 
         /** \brief Indique si le mode du contenu du paramètre. */
         type_mode_contenu_parametre m_mode_contenu_parametre;
