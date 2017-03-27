@@ -420,8 +420,12 @@ projet * fenetre_principale::get_projet_selon_nom_fichier(const QString &nom_fic
 {
     projet * p = NULL;
 
+    QFileInfo info(nom_fichier);
+    QDir dir( QCoreApplication::applicationDirPath() );
+    QString relative_path = dir.relativeFilePath( info.absoluteFilePath() );
+
     for ( type_projets::iterator it = s_projets.begin(); it != s_projets.end() && p == NULL; ++it )
-        if ( (*it)->get_chemin_relatif() == nom_fichier )
+        if ( (*it)->get_chemin_relatif() == relative_path )
             p = *it;
 
     return p;
@@ -442,7 +446,10 @@ void fenetre_principale::ouvrir_projet()
     projet* existant = get_projet_selon_nom_fichier(nom_fichier);
 
     if ( existant != NULL )
+    {
+        QMessageBox::information(this, tr("Ouverture de projet"), "Le projet est déjà ouvert !" );
         existant->selectionner();
+    }
     else
     {
         QFile file(nom_fichier);
