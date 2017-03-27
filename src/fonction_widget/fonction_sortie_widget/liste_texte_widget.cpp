@@ -12,7 +12,6 @@
 #include <QHeaderView>
 #include <QLayout>
 #include <QScrollBar>
-#include <iostream>
 
 /** --------------------------------------------------------------------------------------
  * \brief Constructeur de la classe liste_texte_widget.

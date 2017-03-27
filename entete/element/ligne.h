@@ -27,6 +27,7 @@ class ligne : public std::vector< mot >
         ligne( const ligne & l);
 
         void ajouter_mot( const mot & m);
+        void set_separateur_mot( const QString & separateur_mot = " " );
 
         QString to_string() const;
         QString to_string_lisible() const;

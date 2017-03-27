@@ -50,6 +50,15 @@ void ligne::ajouter_mot( const mot & m)
 }
 
 /** --------------------------------------------------------------------------------------
+ * \brief Initialise le séparateur de mot.
+ * \param separateur_mot Le séparateur de mot.
+ */
+void ligne::set_separateur_mot(const QString &separateur_mot)
+{
+    m_separateur_mot = separateur_mot;
+}
+
+/** --------------------------------------------------------------------------------------
  * \brief Convertit et retourne la ligne au format QString.
  * \return La ligne en format QString.
  */
@@ -75,7 +84,7 @@ QString ligne::to_string_lisible() const
         result += this->at(0).to_string_lisible();
 
     for ( int i = 1; i < size(); ++i )
-        result += " " + this->at(i).to_string_lisible();
+        result += m_separateur_mot + this->at(i).to_string_lisible();
 
     return result;
 }

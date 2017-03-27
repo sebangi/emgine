@@ -22,6 +22,7 @@ class mot : public std::vector< base_element >
         mot(const QString &valeur, const QString & separateur_caractere = "");
         mot( const mot& m);
 
+        void set_separateur_caractere( const QString & separateur_caractere = " " );
         QString to_string() const;
         QString to_string_lisible() const;
         size_type nb_caracteres() const;

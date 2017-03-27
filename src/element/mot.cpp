@@ -41,6 +41,14 @@ mot::mot(const mot &m)
 }
 
 /** --------------------------------------------------------------------------------------
+ * \brief Initialise le séparateur de caractères.
+ * \param separateur_caractere Le séparateur de caractères.
+ */void mot::set_separateur_caractere(const QString &separateur_caractere)
+{
+    m_separateur_caractere = separateur_caractere;
+}
+
+/** --------------------------------------------------------------------------------------
  * \brief Retourne le mot au format QString.
  * \return Le mot au format QString.
  */
@@ -62,8 +70,11 @@ QString mot::to_string_lisible() const
 {
     QString result;
 
-    for ( int i = 0; i < size(); ++i )
-        result += this->at(i).to_string();
+    if ( ! empty() )
+        result += this->at(0).to_string();
+
+    for ( int i = 1; i < size(); ++i )
+        result += m_separateur_caractere + this->at(i).to_string();
 
     return result;
 }

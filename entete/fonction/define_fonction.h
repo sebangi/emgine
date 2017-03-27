@@ -101,6 +101,9 @@ enum type_id_fonction{
     /** \brief Fonction lecture du morse. */
     f_conversion_lecture_morse,
 
+    /** \brief Fonction de choix des séparateurs. */
+    f_conversion_choisir_separateur,
+
     /** \brief Fin des fonctions de conversions. */
     fin_fonction_conversion,
 
