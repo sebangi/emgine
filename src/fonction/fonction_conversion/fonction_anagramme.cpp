@@ -80,19 +80,20 @@ void fonction_anagramme::executer( compilateur &compil, textes & textes_in, text
         return;
 
     for ( textes::const_iterator it_t = textes_in.begin(); it_t != textes_in.end(); ++it_t ) {
-        texte t( it_t->get_configuration() );
+        texte t( it_t->get_configuration(), it_t->get_separateur_ligne() );
         for ( texte::const_iterator it_l = it_t->begin(); it_l !=  it_t->end(); ++it_l ) {
             for ( ligne::const_iterator it_m = it_l->begin(); it_m != it_l->end(); ++it_m )
             {
                 ligne l;
+                l.set_separateur_mot( it_l->get_separateur_mot() );
                 QString s_m = it_m->to_string();
 
                 dictionnaire::uint_set mots;
                 dico->anagramme( s_m, mots );
-                l.ajouter_mot( mot(s_m + " :") );
+                l.ajouter_mot( mot(s_m + " :", it_m->get_separateur_caractere() ) );
 
                 for ( dictionnaire::uint_set::const_iterator it = mots.begin(); it != mots.end(); ++it )
-                    l.ajouter_mot( mot( (*dico)[*it] ) );
+                    l.ajouter_mot( mot( (*dico)[*it], it_m->get_separateur_caractere() ) );
 
                 t.ajouter_ligne(l);
             }

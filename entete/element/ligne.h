@@ -38,6 +38,7 @@ class ligne : public std::vector< mot >
 
         bool operator<(const ligne & l) const;
         void fusionner(bool fusion_caracteres, bool fusion_mots);
+        QString get_separateur_mot() const;
 
     private:
         void maj_nb_caracteres();

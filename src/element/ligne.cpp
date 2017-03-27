@@ -171,3 +171,12 @@ void ligne::maj_nb_caracteres()
         m_nb_caracteres += this->at(i).nb_caracteres();
 }
 
+/** --------------------------------------------------------------------------------------
+ * \brief Accesseur du séparateur de mots.
+ * \return Le séparateur de mot.
+ */
+QString ligne::get_separateur_mot() const
+{
+    return m_separateur_mot;
+}
+

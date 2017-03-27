@@ -81,10 +81,11 @@ void fonction_selection_selon_dictionnaire::executer( compilateur &compil, texte
         int nb_mots = 0;
         int nb_mots_acceptes = 0;
 
-        texte t( it_t->get_configuration() );
+        texte t( it_t->get_configuration(), it_t->get_separateur_ligne() );
         for ( texte::const_iterator it_l = it_t->begin(); it_l !=  it_t->end(); ++it_l )
         {
             ligne l;
+            l.set_separateur_mot( it_l->get_separateur_mot() );
             for ( ligne::const_iterator it_m = it_l->begin(); it_m != it_l->end(); ++it_m )
             {
                 QString s_m = it_m->to_string();

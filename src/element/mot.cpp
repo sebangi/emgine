@@ -112,3 +112,13 @@ void mot::fusionner()
     clear();
     push_back(elem);
 }
+
+
+/** --------------------------------------------------------------------------------------
+ * \brief Accesseur du séparateur de caractères.
+ * \return Le séparateur de caractere.
+ */
+QString mot::get_separateur_caractere() const
+{
+    return m_separateur_caractere;
+}

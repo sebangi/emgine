@@ -366,6 +366,15 @@ void texte::fusionner(bool fusion_caracteres, bool fusion_mots, bool fusion_lign
 }
 
 /** --------------------------------------------------------------------------------------
+ * \brief Accesseur du séparateur de lignes.
+ * \return Le séparateur de ligne.
+ */
+QString texte::get_separateur_ligne() const
+{
+    return m_separateur_ligne;
+}
+
+/** --------------------------------------------------------------------------------------
  * \brief Met à jour le nombre de caractères du texte.
  */
 void texte::maj_nb_caracteres()

@@ -28,6 +28,7 @@ class mot : public std::vector< base_element >
         size_type nb_caracteres() const;
         size_type nb_caracteres_alphabet() const;
         void fusionner();
+        QString get_separateur_caractere() const;
 
     private:
         /** \brief Le séparateur de caractères. */

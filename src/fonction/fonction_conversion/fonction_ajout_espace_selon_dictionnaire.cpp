@@ -80,10 +80,11 @@ void fonction_ajout_espace_selon_dictionnaire::executer( compilateur &compil, te
 
     for ( textes::const_iterator it_t = textes_in.begin(); it_t != textes_in.end(); ++it_t )
     {
-        texte t( it_t->get_configuration() );
+        texte t( it_t->get_configuration(), it_t->get_separateur_ligne() );
         for ( texte::const_iterator it_l = it_t->begin(); it_l !=  it_t->end(); ++it_l )
         {
             ligne l;
+            l.set_separateur_mot( it_l->get_separateur_mot() );
             for ( ligne::const_iterator it_m = it_l->begin(); it_m != it_l->end(); ++it_m )
             {
                 QString s_m = it_m->to_string();
@@ -100,6 +101,7 @@ void fonction_ajout_espace_selon_dictionnaire::executer( compilateur &compil, te
                     }
 
                     mot m;
+                    m.set_separateur_caractere( it_m->get_separateur_caractere() );
                     for ( int i = 0; i != plus_grand_prefixe.size(); ++i )
                         m.push_back( base_element( plus_grand_prefixe[i] ) );
                     l.ajouter_mot( m );

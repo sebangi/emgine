@@ -83,11 +83,13 @@ void fonction_formatage::executer( compilateur &compil, textes & textes_in, text
 void fonction_formatage::execution_specifique( compilateur &compil, textes & textes_in, textes & textes_out )
 {
     for ( textes::const_iterator it_t = textes_in.begin(); it_t != textes_in.end(); ++it_t ) {
-        texte t( it_t->get_configuration() );
+        texte t( it_t->get_configuration(), it_t->get_separateur_ligne() );
         for ( texte::const_iterator it_l = it_t->begin(); it_l !=  it_t->end(); ++it_l ) {
             ligne l;
+            l.set_separateur_mot( it_l->get_separateur_mot() );
             for ( ligne::const_iterator it_m = it_l->begin(); it_m != it_l->end(); ++it_m ) {
                 mot m;
+                m.set_separateur_caractere( it_m->get_separateur_caractere() );
                 for ( mot::const_iterator it_c = it_m->begin(); it_c != it_m->end(); ++it_c )
                 {
                     base_element elem(*it_c);
