@@ -104,6 +104,9 @@ enum type_id_fonction{
     /** \brief Fonction de choix des séparateurs. */
     f_conversion_choisir_separateur,
 
+    /** \brief Fonction réalisant la transposition des mots ou des caractères. */
+    f_conversion_transposition,
+
     /** \brief Fin des fonctions de conversions. */
     fin_fonction_conversion,
 

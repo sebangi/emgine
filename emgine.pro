@@ -93,7 +93,8 @@ SOURCES += \
     src/fonction/fonction_conversion/fonction_substitution.cpp \
     src/fonction/fonction_conversion/fonction_ecriture_morse.cpp \
     src/fonction/fonction_conversion/fonction_lecture_morse.cpp \
-    src/fonction/fonction_conversion/fonction_choisir_separateur.cpp
+    src/fonction/fonction_conversion/fonction_choisir_separateur.cpp \
+    src/fonction/fonction_conversion/fonction_transposition.cpp
 
 HEADERS  += \
         entete/compilation/compilateur.h \
@@ -176,7 +177,8 @@ HEADERS  += \
     entete/fonction/fonction_conversion/fonction_substitution.h \
     entete/fonction/fonction_conversion/fonction_ecriture_morse.h \
     entete/fonction/fonction_conversion/fonction_lecture_morse.h \
-    entete/fonction/fonction_conversion/fonction_choisir_separateur.h
+    entete/fonction/fonction_conversion/fonction_choisir_separateur.h \
+    entete/fonction/fonction_conversion/fonction_transposition.h
 
 FORMS    += \
     fenetre_principale.ui

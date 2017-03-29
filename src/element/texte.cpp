@@ -361,9 +361,87 @@ void texte::fusionner(bool fusion_caracteres, bool fusion_mots, bool fusion_lign
         for ( iterator it = begin(); it != end(); ++it )
             it->fusionner(fusion_caracteres, fusion_mots);
 
-    maj_nb_caracteres();
-    maj_nb_mots();
+    maj_comptages();
 }
+
+/** --------------------------------------------------------------------------------------
+ * \brief Transpose les mots du texte.
+ */
+void texte::transposer_mots()
+{
+    /*
+     * A B C
+     * D E F
+     * G H
+     *
+     * A D G
+     * B E H
+     * C F
+     * */
+    std::cout << "debut transposer_mots" << std::endl;
+    texte t;
+
+    for ( iterator it_t = begin(); it_t != end(); ++it_t )
+    {
+        unsigned int nb_lignes = 0;
+
+        for ( ligne::iterator it_l = it_t->begin(); it_l != it_t->end(); ++it_l, ++nb_lignes )
+        {
+            if ( nb_lignes >= size() )
+            {
+                ligne l;
+                l.set_separateur_mot( it_t->get_separateur_mot() );
+                t.ajouter_ligne(l);
+            }
+
+            t[nb_lignes].ajouter_mot(*it_l);
+        }
+    }
+
+    swap(t);
+    maj_comptages();
+    std::cout << "fin transposer_mots" << std::endl;
+}
+
+
+/** --------------------------------------------------------------------------------------
+ * \brief Transpose les caractères du texte.
+ */
+void texte::transposer_caracteres()
+{
+    /*
+     * A B C
+     * D E F
+     * G H
+     *
+     * A D G
+     * B E H
+     * C F
+     * */
+
+    texte t;
+
+    for ( iterator it_t = begin(); it_t != end(); ++it_t )
+    {
+        unsigned int nb_lignes = 0;
+
+        for ( ligne::iterator it_l = it_t->begin(); it_l != it_t->end(); ++it_l, ++nb_lignes )
+        {
+            if ( nb_lignes >= size() )
+            {
+                ligne l;
+                l.set_separateur_mot( it_t->get_separateur_mot() );
+                ajouter_ligne(l);
+            }
+
+            (*this)[nb_lignes].ajouter_mot(*it_l);
+        }
+    }
+
+    swap(t);
+    maj_comptages();
+}
+
 
 /** --------------------------------------------------------------------------------------
  * \brief Accesseur du séparateur de lignes.
@@ -372,6 +450,15 @@ void texte::fusionner(bool fusion_caracteres, bool fusion_mots, bool fusion_lign
 QString texte::get_separateur_ligne() const
 {
     return m_separateur_ligne;
+}
+
+/** --------------------------------------------------------------------------------------
+ * \brief Met à jour les différents comptages.
+ */
+void texte::maj_comptages()
+{
+    maj_nb_caracteres();
+    maj_nb_mots();
 }
 
 /** --------------------------------------------------------------------------------------

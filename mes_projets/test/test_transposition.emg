@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<projet>
+    <nom>test_transposition</nom>
+    <description></description>
+    <objet_selectionnable>
+        <est_etendu>1</est_etendu>
+        <verrouille>0</verrouille>
+    </objet_selectionnable>
+    <fonctions>
+        <fonction>
+            <id>1</id>
+            <nom>Texte</nom>
+            <niveau_visibilite>2</niveau_visibilite>
+            <active>1</active>
+            <objet_selectionnable>
+                <est_etendu>0</est_etendu>
+                <verrouille>0</verrouille>
+            </objet_selectionnable>
+            <valeur>aa bb cc
+dd ee ff
+gg hh ii</valeur>
+            <parametres>
+                <parametre>
+                    <id>0</id>
+                    <nom>Séparateur d'élément</nom>
+                    <dans_configuration>0</dans_configuration>
+                    <objet_selectionnable>
+                        <est_etendu>1</est_etendu>
+                        <verrouille>0</verrouille>
+                    </objet_selectionnable>
+                    <fonctions>
+                        <fonction>
+                            <id>3</id>
+                            <nom>Caractères</nom>
+                            <niveau_visibilite>2</niveau_visibilite>
+                            <active>1</active>
+                            <objet_selectionnable>
+                                <est_etendu>0</est_etendu>
+                                <verrouille>0</verrouille>
+                            </objet_selectionnable>
+                            <valeur></valeur>
+                            <parametres/>
+                        </fonction>
+                    </fonctions>
+                </parametre>
+                <parametre>
+                    <id>1</id>
+                    <nom>Séparateur de mot</nom>
+                    <dans_configuration>0</dans_configuration>
+                    <objet_selectionnable>
+                        <est_etendu>1</est_etendu>
+                        <verrouille>0</verrouille>
+                    </objet_selectionnable>
+                    <fonctions>
+                        <fonction>
+                            <id>3</id>
+                            <nom>Caractères</nom>
+                            <niveau_visibilite>2</niveau_visibilite>
+                            <active>1</active>
+                            <objet_selectionnable>
+                                <est_etendu>0</est_etendu>
+                                <verrouille>0</verrouille>
+                            </objet_selectionnable>
+                            <valeur> </valeur>
+                            <parametres/>
+                        </fonction>
+                    </fonctions>
+                </parametre>
+                <parametre>
+                    <id>2</id>
+                    <nom>Séparateur de ligne</nom>
+                    <dans_configuration>0</dans_configuration>
+                    <objet_selectionnable>
+                        <est_etendu>1</est_etendu>
+                        <verrouille>0</verrouille>
+                    </objet_selectionnable>
+                    <fonctions>
+                        <fonction>
+                            <id>3</id>
+                            <nom>Caractères</nom>
+                            <niveau_visibilite>2</niveau_visibilite>
+                            <active>1</active>
+                            <objet_selectionnable>
+                                <est_etendu>0</est_etendu>
+                                <verrouille>0</verrouille>
+                            </objet_selectionnable>
+                            <valeur>
+</valeur>
+                            <parametres/>
+                        </fonction>
+                    </fonctions>
+                </parametre>
+            </parametres>
+        </fonction>
+        <fonction>
+            <id>1011</id>
+            <nom>Transposition du texte</nom>
+            <niveau_visibilite>1</niveau_visibilite>
+            <active>1</active>
+            <objet_selectionnable>
+                <est_etendu>1</est_etendu>
+                <verrouille>0</verrouille>
+            </objet_selectionnable>
+            <parametres>
+                <parametre>
+                    <id>17</id>
+                    <nom>transpositionner suivant les mots</nom>
+                    <dans_configuration>0</dans_configuration>
+                    <objet_selectionnable>
+                        <est_etendu>1</est_etendu>
+                        <verrouille>0</verrouille>
+                    </objet_selectionnable>
+                    <fonctions>
+                        <fonction>
+                            <id>4</id>
+                            <nom>Oui ou Non</nom>
+                            <niveau_visibilite>2</niveau_visibilite>
+                            <active>1</active>
+                            <objet_selectionnable>
+                                <est_etendu>0</est_etendu>
+                                <verrouille>0</verrouille>
+                            </objet_selectionnable>
+                            <valeur>1</valeur>
+                            <parametres/>
+                        </fonction>
+                    </fonctions>
+                </parametre>
+            </parametres>
+        </fonction>
+        <fonction>
+            <id>2000</id>
+            <nom>Textes</nom>
+            <niveau_visibilite>2</niveau_visibilite>
+            <active>1</active>
+            <objet_selectionnable>
+                <est_etendu>1</est_etendu>
+                <verrouille>0</verrouille>
+            </objet_selectionnable>
+            <parametres/>
+        </fonction>
+    </fonctions>
+</projet>

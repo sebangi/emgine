@@ -33,6 +33,7 @@
 #include "entete/fonction/fonction_conversion/fonction_lecture_morse.h"
 #include "entete/fonction/fonction_conversion/fonction_selection_selon_dictionnaire.h"
 #include "entete/fonction/fonction_conversion/fonction_substitution.h"
+#include "entete/fonction/fonction_conversion/fonction_transposition.h"
 
 std::map<type_id_fonction, QString> bibliotheque_fonctions::s_fonctions_nom =
 {
@@ -56,6 +57,7 @@ std::map<type_id_fonction, QString> bibliotheque_fonctions::s_fonctions_nom =
     { f_conversion_ecriture_morse, "Écriture en morse" },
     { f_conversion_lecture_morse, "Lecture du morse" },
     { f_conversion_choisir_separateur, "Choix des séparateurs" },
+    { f_conversion_transposition, "Transposition du texte" },
 
     { f_sortie_texte, "Textes" },
     { f_sortie_frequence, "Fréquences des éléments" },
@@ -85,6 +87,7 @@ std::map<type_id_fonction, QString> bibliotheque_fonctions::s_fonctions_aide =
     { f_conversion_ecriture_morse, "Écriture en morse" },
     { f_conversion_lecture_morse, "Lecture du morse" },
     { f_conversion_choisir_separateur, "Choix des séparateurs (de caractères, de mots et de lignes)" },
+    { f_conversion_transposition, "Transposition du texte (des mots ou des caractères)" },
 
     { f_sortie_texte, "Sortie textuelle : la liste de tous les textes obtenus." },
     { f_sortie_frequence, "Sortie affichant la fréquence des éléments." },
@@ -132,6 +135,7 @@ base_fonction * bibliotheque_fonctions::get_fonction(type_id_fonction id)
         case f_conversion_ecriture_morse : return new fonction_ecriture_morse(NULL);
         case f_conversion_lecture_morse : return new fonction_lecture_morse(NULL);
         case f_conversion_choisir_separateur : return new fonction_choisir_separateur(NULL);
+        case f_conversion_transposition : return new fonction_transposition(NULL);
 
             // SORTIES
         case f_sortie_texte : return new fonction_sortie_texte(NULL);

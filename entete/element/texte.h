@@ -56,9 +56,12 @@ class texte : public std::vector< ligne >
         const type_frequences_texte & get_frequences() const;
         double get_indice_coincidence() const;
         void fusionner(bool fusion_caracteres, bool fusion_mots, bool fusion_lignes);
+        void transposer_mots();
+        void transposer_caracteres();
         QString get_separateur_ligne() const;
 
     private:
+        void maj_comptages();
         void maj_nb_caracteres();
         void maj_nb_mots();
 

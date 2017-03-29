@@ -124,3 +124,21 @@ void textes::fusionner(bool fusion_caracteres, bool fusion_mots, bool fusion_lig
             it->fusionner(fusion_caracteres, fusion_mots, fusion_lignes);
 }
 
+/** --------------------------------------------------------------------------------------
+ * \brief Transpose les mots de chaque texte.
+ */
+void textes::transposer_mots()
+{
+    for ( iterator it = begin(); it != end(); ++it )
+        it->transposer_mots();
+}
+
+/** --------------------------------------------------------------------------------------
+ * \brief Transpose les caracteres de chaque texte.
+ */
+void textes::transposer_caracteres()
+{
+    for ( iterator it = begin(); it != end(); ++it )
+        it->transposer_caracteres();
+}
+

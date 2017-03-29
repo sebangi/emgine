@@ -72,8 +72,10 @@ enum type_id_parametre{
     PARAM_CARACTERES_SORTIE,
 
     /** \brief Paramètre pour indiquer les numéro des choix. */
-    PARAM_NUMERO_CHOIX
+    PARAM_NUMERO_CHOIX,
 
+    /** \brief Paramètre pour indiquer s'il faut transposer selon les mots. */
+    PARAM_TRANSPOSITION_MOTS
 };
 
 #endif // DEFINE_PARAMETRE_H
