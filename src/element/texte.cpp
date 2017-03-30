@@ -370,15 +370,14 @@ void texte::fusionner(bool fusion_caracteres, bool fusion_mots, bool fusion_lign
 void texte::transposer_mots()
 {
     /*
-     * A B C
-     * D E F
-     * G H
+     * AA BB CC
+     * DD EE FF
+     * GG HH
      *
-     * A D G
-     * B E H
-     * C F
+     * AA DD GG
+     * BB EE HH
+     * CC FF
      * */
-    std::cout << "debut transposer_mots" << std::endl;
     texte t;
 
     for ( iterator it_t = begin(); it_t != end(); ++it_t )
@@ -408,32 +407,35 @@ void texte::transposer_mots()
 void texte::transposer_caracteres()
 {
     /*
-     * A B C
-     * D E F
-     * G H
+     * AA BB CC
+     * DD EE FF
+     * GG HH
      *
      * A D G
+     * A D G
+     * B E H
      * B E H
      * C F
+     * C F
      * */
-
     texte t;
 
     for ( iterator it_t = begin(); it_t != end(); ++it_t )
     {
         unsigned int nb_lignes = 0;
 
-        for ( ligne::iterator it_l = it_t->begin(); it_l != it_t->end(); ++it_l, ++nb_lignes )
-        {
-            if ( nb_lignes >= size() )
+        for ( ligne::iterator it_l = it_t->begin(); it_l != it_t->end(); ++it_l )
+            for ( mot::iterator it_m = it_l->begin(); it_m != it_l->end(); ++it_m, ++nb_lignes )
             {
-                ligne l;
-                l.set_separateur_mot( it_t->get_separateur_mot() );
-                ajouter_ligne(l);
-            }
-
-            (*this)[nb_lignes].ajouter_mot(*it_l);
-        }
+                if ( nb_lignes >= t.size() )
+                {
+                    ligne l;
+                    l.set_separateur_mot( it_t->get_separateur_mot() );
+                    t.ajouter_ligne(l);
+                }
+                mot m(it_m->to_string(), it_l->get_separateur_caractere() );
+                t[nb_lignes].ajouter_mot( m );
+             }
     }
 
     swap(t);
