@@ -38,6 +38,7 @@ class fonction_base_sortie_widget : public base_fonction_widget
 
     protected:
         virtual void init();
+        QString get_nom() const;
 
     protected:
         /** \brief La référence des fréquences des textes. */

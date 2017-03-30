@@ -120,11 +120,11 @@ void base_fonction_widget::init()
     connect(m_aide_bouton, SIGNAL(released()), this, SLOT(on_aide()));
     toolbar->addWidget(m_aide_bouton);
 
-    QLabel * label = new QLabel( m_fonction->get_nom() );
-    label->setObjectName("NomFonction");
-    label->setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Expanding);
-    label->setAlignment(Qt::AlignLeft | Qt::AlignVCenter);
-    toolbar->addWidget(label);
+    m_nom_label = new QLabel( get_nom() );
+    m_nom_label->setObjectName("NomFonction");
+    m_nom_label->setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Expanding);
+    m_nom_label->setAlignment(Qt::AlignLeft | Qt::AlignVCenter);
+    toolbar->addWidget(m_nom_label);
 
     m_fermer_bouton = new QPushButton();
     m_fermer_bouton->setObjectName("BoutonFonctionWidget");
@@ -495,12 +495,25 @@ void base_fonction_widget::deconnecter_fonction()
 }
 
 /** --------------------------------------------------------------------------------------
+ * \brief Initialise le nom du widget.
+*/
+void base_fonction_widget::init_nom()
+{
+    m_nom_label->setText( get_nom() );
+}
+
+/** --------------------------------------------------------------------------------------
+ * \brief Fonction retournant le nom de la fonction à afficher.
+ */
+QString base_fonction_widget::get_nom() const
+{
+    return m_fonction->get_nom();
+}
+
+/** --------------------------------------------------------------------------------------
  * \brief Fonction appelée lors d'un changement de verrouillage.
  */
 void base_fonction_widget::informer_verrouillage_change()
 {
 }
-
-
-
 

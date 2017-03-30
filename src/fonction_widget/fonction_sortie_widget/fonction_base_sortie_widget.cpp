@@ -57,6 +57,8 @@ void fonction_base_sortie_widget::creer_liste_texte()
         m_liste_texte->addItem( item );
         ++i;
     }
+
+    init_nom();
 }
 
 /** --------------------------------------------------------------------------------------
@@ -81,6 +83,17 @@ void fonction_base_sortie_widget::init()
     m_specialisation_layout->addLayout(layout);
 
     connect((fonction_base_sortie*)m_fonction, SIGNAL(signal_fbs_textes_modifie()), this, SLOT(on_externe_fbs_textes_modifie()));
+}
+
+/** --------------------------------------------------------------------------------------
+ * \brief Fonction retournant le nom de la fonction à afficher.
+ */
+QString fonction_base_sortie_widget::get_nom() const
+{
+    if ( m_textes_a_afficher.size() <= 1 )
+        return super::get_nom();
+    else
+        return super::get_nom() + " ( " + QString::number(  m_textes_a_afficher.size() ) + " textes )";
 }
 
 /** --------------------------------------------------------------------------------------

@@ -28,7 +28,6 @@
 fonction_sortie_texte_widget::fonction_sortie_texte_widget(base_fonction *fonction, QWidget *parent)
     : fonction_base_sortie_widget(fonction, parent)
 {
-
     connect(m_liste_texte, SIGNAL(customContextMenuRequested(QPoint)), this, SLOT(showContextMenu(QPoint)));
 }
 

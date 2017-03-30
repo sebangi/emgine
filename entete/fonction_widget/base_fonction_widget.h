@@ -9,6 +9,7 @@
 #include "entete/define.h"
 
 #include <QFrame>
+#include <QLabel>
 #include <QPushButton>
 #include <QTableWidget>
 #include <QTableWidgetItem>
@@ -54,6 +55,10 @@ class base_fonction_widget : public QWidget, public QTableWidgetItem
         void aide();
         void connecter_fonction();
         void deconnecter_fonction();
+
+    protected:
+        void init_nom();
+        virtual QString get_nom() const;
 
     public:
         virtual void informer_verrouillage_change();
@@ -117,6 +122,9 @@ class base_fonction_widget : public QWidget, public QTableWidgetItem
 
         /** \brief Un pointeur sur le bouton d'aide. */
         QPushButton *m_aide_bouton;
+
+        /** \brief Un pointeur sur le label du nom. */
+        QLabel * m_nom_label;
 
         /** \brief La liste des widgets affichant les paramètres. */
         type_liste_parametre_widgets m_parametre_widgets;
