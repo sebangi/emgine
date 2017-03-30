@@ -10,14 +10,14 @@
         <fonction>
             <id>1</id>
             <nom>Texte</nom>
-            <niveau_visibilite>2</niveau_visibilite>
+            <niveau_visibilite>3</niveau_visibilite>
             <active>1</active>
             <objet_selectionnable>
                 <est_etendu>0</est_etendu>
                 <verrouille>0</verrouille>
             </objet_selectionnable>
-            <valeur>Il fait beau
-Demain il pleut</valeur>
+            <valeur>Ii.l. f.a.i.t b.e.a.u
+D.e.m.a.i.n i.l p.l.e.u.t</valeur>
             <parametres>
                 <parametre>
                     <id>0</id>
@@ -37,7 +37,7 @@ Demain il pleut</valeur>
                                 <est_etendu>0</est_etendu>
                                 <verrouille>0</verrouille>
                             </objet_selectionnable>
-                            <valeur></valeur>
+                            <valeur>.</valeur>
                             <parametres/>
                         </fonction>
                     </fonctions>
@@ -103,7 +103,7 @@ Demain il pleut</valeur>
             <parametres>
                 <parametre>
                     <id>10</id>
-                    <nom>inverser la lecture des caractères</nom>
+                    <nom>inverser les éléments</nom>
                     <dans_configuration>1</dans_configuration>
                     <objet_selectionnable>
                         <est_etendu>1</est_etendu>
@@ -119,7 +119,8 @@ Demain il pleut</valeur>
                                 <est_etendu>0</est_etendu>
                                 <verrouille>0</verrouille>
                             </objet_selectionnable>
-                            <valeur>0</valeur>
+                            <valeur>0
+1</valeur>
                             <parametres>
                                 <parametre>
                                     <id>0</id>
@@ -197,7 +198,7 @@ Demain il pleut</valeur>
                 </parametre>
                 <parametre>
                     <id>11</id>
-                    <nom>inverser la lecture des mots</nom>
+                    <nom>inverser l'ordre des caractères</nom>
                     <dans_configuration>1</dans_configuration>
                     <objet_selectionnable>
                         <est_etendu>1</est_etendu>
@@ -292,7 +293,7 @@ Demain il pleut</valeur>
                 </parametre>
                 <parametre>
                     <id>12</id>
-                    <nom>inverser la lecture des lignes</nom>
+                    <nom>inverser l'ordre des mots</nom>
                     <dans_configuration>1</dans_configuration>
                     <objet_selectionnable>
                         <est_etendu>1</est_etendu>
@@ -387,7 +388,7 @@ Demain il pleut</valeur>
                 </parametre>
                 <parametre>
                     <id>13</id>
-                    <nom>inverser la lecture des textes</nom>
+                    <nom>inverser l'ordre des lignes</nom>
                     <dans_configuration>1</dans_configuration>
                     <objet_selectionnable>
                         <est_etendu>1</est_etendu>
@@ -477,6 +478,88 @@ Demain il pleut</valeur>
                                     </fonctions>
                                 </parametre>
                             </parametres>
+                        </fonction>
+                    </fonctions>
+                </parametre>
+            </parametres>
+        </fonction>
+        <fonction>
+            <id>1010</id>
+            <nom>Choix des séparateurs</nom>
+            <niveau_visibilite>2</niveau_visibilite>
+            <active>1</active>
+            <objet_selectionnable>
+                <est_etendu>1</est_etendu>
+                <verrouille>0</verrouille>
+            </objet_selectionnable>
+            <parametres>
+                <parametre>
+                    <id>0</id>
+                    <nom>Séparateur d'élément</nom>
+                    <dans_configuration>0</dans_configuration>
+                    <objet_selectionnable>
+                        <est_etendu>1</est_etendu>
+                        <verrouille>0</verrouille>
+                    </objet_selectionnable>
+                    <fonctions>
+                        <fonction>
+                            <id>3</id>
+                            <nom>Caractères</nom>
+                            <niveau_visibilite>2</niveau_visibilite>
+                            <active>1</active>
+                            <objet_selectionnable>
+                                <est_etendu>0</est_etendu>
+                                <verrouille>0</verrouille>
+                            </objet_selectionnable>
+                            <valeur></valeur>
+                            <parametres/>
+                        </fonction>
+                    </fonctions>
+                </parametre>
+                <parametre>
+                    <id>1</id>
+                    <nom>Séparateur de mot</nom>
+                    <dans_configuration>0</dans_configuration>
+                    <objet_selectionnable>
+                        <est_etendu>1</est_etendu>
+                        <verrouille>0</verrouille>
+                    </objet_selectionnable>
+                    <fonctions>
+                        <fonction>
+                            <id>3</id>
+                            <nom>Caractères</nom>
+                            <niveau_visibilite>2</niveau_visibilite>
+                            <active>1</active>
+                            <objet_selectionnable>
+                                <est_etendu>0</est_etendu>
+                                <verrouille>0</verrouille>
+                            </objet_selectionnable>
+                            <valeur> </valeur>
+                            <parametres/>
+                        </fonction>
+                    </fonctions>
+                </parametre>
+                <parametre>
+                    <id>2</id>
+                    <nom>Séparateur de ligne</nom>
+                    <dans_configuration>0</dans_configuration>
+                    <objet_selectionnable>
+                        <est_etendu>1</est_etendu>
+                        <verrouille>0</verrouille>
+                    </objet_selectionnable>
+                    <fonctions>
+                        <fonction>
+                            <id>3</id>
+                            <nom>Caractères</nom>
+                            <niveau_visibilite>2</niveau_visibilite>
+                            <active>1</active>
+                            <objet_selectionnable>
+                                <est_etendu>0</est_etendu>
+                                <verrouille>0</verrouille>
+                            </objet_selectionnable>
+                            <valeur>
+</valeur>
+                            <parametres/>
                         </fonction>
                     </fonctions>
                 </parametre>

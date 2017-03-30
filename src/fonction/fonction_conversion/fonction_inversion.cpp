@@ -81,10 +81,10 @@ QString fonction_inversion::get_valeur_courte() const
  */
 void fonction_inversion::initialisation_par_defaut()
 {
-    m_parametres[PARAM_CARACTERES]->set_booleen_par_defaut(false);
-    m_parametres[PARAM_MOTS]->set_booleen_par_defaut(false);
-    m_parametres[PARAM_LIGNES]->set_booleen_par_defaut(false);
-    m_parametres[PARAM_TEXTES]->set_booleen_par_defaut(false);
+    m_parametres[PARAM_CARACTERES]->set_booleen_par_defaut(true);
+    m_parametres[PARAM_MOTS]->set_booleen_par_defaut(true);
+    m_parametres[PARAM_LIGNES]->set_booleen_par_defaut(true);
+    m_parametres[PARAM_TEXTES]->set_booleen_par_defaut(true);
 }
 
 /** --------------------------------------------------------------------------------------
