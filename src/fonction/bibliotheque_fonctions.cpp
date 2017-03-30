@@ -26,6 +26,7 @@
 #include "entete/fonction/fonction_conversion/fonction_anagramme.h"
 #include "entete/fonction/fonction_conversion/fonction_cesar.h"
 #include "entete/fonction/fonction_conversion/fonction_choisir_separateur.h"
+#include "entete/fonction/fonction_conversion/fonction_concatenation.h"
 #include "entete/fonction/fonction_conversion/fonction_ecriture_morse.h"
 #include "entete/fonction/fonction_conversion/fonction_entier_en_chiffre_romain.h"
 #include "entete/fonction/fonction_conversion/fonction_formatage.h"
@@ -60,6 +61,7 @@ std::map<type_id_fonction, QString> bibliotheque_fonctions::s_fonctions_nom =
     { f_conversion_choisir_separateur, "Choix des séparateurs" },
     { f_conversion_transposition, "Transposition du texte" },
     { f_conversion_inversion, "Inversion du texte" },
+    { f_conversion_concatenation, "Concaténation de textes." },
 
     { f_sortie_texte, "Textes" },
     { f_sortie_frequence, "Fréquences des éléments" },
@@ -91,6 +93,7 @@ std::map<type_id_fonction, QString> bibliotheque_fonctions::s_fonctions_aide =
     { f_conversion_choisir_separateur, "Choix des séparateurs (de caractères, de mots et de lignes)" },
     { f_conversion_transposition, "Transposition du texte (des mots ou des caractères)" },
     { f_conversion_inversion, "Inversion des caractères, des mots et/ou des lignes." },
+    { f_conversion_concatenation, "Concaténation de textes. Ajoute à chaque texte en entrée les textes du paramètre." },
 
     { f_sortie_texte, "Sortie textuelle : la liste de tous les textes obtenus." },
     { f_sortie_frequence, "Sortie affichant la fréquence des éléments." },
@@ -108,6 +111,9 @@ std::map<type_id_fonction, std::set<QString> > bibliotheque_fonctions::s_categor
     },
     { f_conversion_inversion,
       { "inverser" }
+    },
+    { f_conversion_concatenation,
+      { "concatener" }
     }
 };
 
@@ -143,6 +149,7 @@ base_fonction * bibliotheque_fonctions::get_fonction(type_id_fonction id)
         case f_conversion_choisir_separateur : return new fonction_choisir_separateur(NULL);
         case f_conversion_transposition : return new fonction_transposition(NULL);
         case f_conversion_inversion : return new fonction_inversion(NULL);
+        case f_conversion_concatenation : return new fonction_concatenation(NULL);
 
             // SORTIES
         case f_sortie_texte : return new fonction_sortie_texte(NULL);

@@ -86,6 +86,18 @@ void texte::ajouter_ligne( const ligne & l)
 }
 
 /** --------------------------------------------------------------------------------------
+ * \brief Ajoute un texte donné à la fin du texte.
+ * \param t Le texte à ajouter.
+ */
+void texte::ajouter_texte(const texte &t)
+{
+    for ( const_iterator it = t.begin(); it != t.end(); ++it )
+        ajouter_ligne(*it);
+
+    ajouter_configuration( t.get_configuration() );
+}
+
+/** --------------------------------------------------------------------------------------
  * \brief Convertit le texte au format QString.
  * \return Le texte au format QString.
  */

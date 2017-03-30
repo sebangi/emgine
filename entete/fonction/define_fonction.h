@@ -110,6 +110,9 @@ enum type_id_fonction{
     /** \brief Fonction de conversion réalisant l'inversion des caractères, mots et/ou lignes. */
     f_conversion_inversion,
 
+    /** \brief Fonction de conversions réalisant la concaténation de textes. */
+    f_conversion_concatenation,
+
     /** \brief Fin des fonctions de conversions. */
     fin_fonction_conversion,
 

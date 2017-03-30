@@ -31,6 +31,7 @@ class texte : public std::vector< ligne >
         ~texte();
 
         void ajouter_ligne( const ligne & l);
+        void ajouter_texte( const texte & t);
         QString to_string() const;
         QString to_string_lisible() const;
 
