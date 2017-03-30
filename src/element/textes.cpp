@@ -125,6 +125,19 @@ void textes::fusionner(bool fusion_caracteres, bool fusion_mots, bool fusion_lig
 }
 
 /** --------------------------------------------------------------------------------------
+ * \brief Inversion des textes, des lignes, des mots et/ou des caractères.
+ * \param inversion_caracteres Indique s'il faut inverser les caractères.
+ * \param inversion_mots Indique s'il faut inverser les mots.
+ * \param inversion_lignes Indique s'il faut inverser les lignes.
+ * \param inversion_textes Indique s'il faut inverser les textes.
+ */
+void textes::inverser(bool inversion_caracteres, bool inversion_mots, bool inversion_lignes, bool inversion_textes)
+{
+    for ( iterator it = begin(); it != end(); ++it )
+        it->inverser(inversion_caracteres, inversion_mots, inversion_lignes, inversion_textes);
+}
+
+/** --------------------------------------------------------------------------------------
  * \brief Transpose les mots de chaque texte.
  */
 void textes::transposer_mots()

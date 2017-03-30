@@ -113,6 +113,20 @@ void mot::fusionner()
     push_back(elem);
 }
 
+/** --------------------------------------------------------------------------------------
+ * \brief Inversion des mots et/ou des caractères.
+ * \param inversion_caracteres Indique s'il faut inverser les caractères.
+ * \param inversion_mots Indique s'il faut inverser les mots.
+ */
+void mot::inverser(bool inversion_caracteres, bool inversion_mots)
+{
+    if ( inversion_caracteres )
+        for ( iterator it = begin(); it != end(); ++it )
+            it->inverser();
+
+    if ( inversion_mots )
+        std::reverse(begin(), end());
+}
 
 /** --------------------------------------------------------------------------------------
  * \brief Accesseur du séparateur de caractères.

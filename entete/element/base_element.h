@@ -36,6 +36,7 @@ class base_element
         bool est_entier() const;
 
         void formater( bool retrait_ponctuation );
+        void inverser();
         void retirer_ponctuation();
 
         bool operator<(const base_element& e) const;

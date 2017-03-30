@@ -8,6 +8,7 @@
 #include "entete/projet/base_fonction.h"
 
 #include <iostream>
+#include <algorithm>
 
 /** --------------------------------------------------------------------------------------
  * \brief Constructeur par défaut de la classe texte.
@@ -362,6 +363,23 @@ void texte::fusionner(bool fusion_caracteres, bool fusion_mots, bool fusion_lign
             it->fusionner(fusion_caracteres, fusion_mots);
 
     maj_comptages();
+}
+
+/** --------------------------------------------------------------------------------------
+ * \brief Inversion des textes, des lignes, des mots et/ou des caractères.
+ * \param inversion_caracteres Indique s'il faut inverser les caractères.
+ * \param inversion_mots Indique s'il faut inverser les mots.
+ * \param inversion_lignes Indique s'il faut inverser les lignes.
+ * \param inversion_textes Indique s'il faut inverser les textes.
+ */
+void texte::inverser(bool inversion_caracteres, bool inversion_mots, bool inversion_lignes, bool inversion_textes)
+{
+    if ( inversion_lignes || inversion_mots || inversion_caracteres )
+        for ( iterator it = begin(); it != end(); ++it )
+            it->inverser(inversion_caracteres, inversion_mots, inversion_lignes);
+
+    if ( inversion_textes )
+        std::reverse(begin(), end());
 }
 
 /** --------------------------------------------------------------------------------------

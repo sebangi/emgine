@@ -86,7 +86,6 @@ void fonction_transposition::execution_specifique( compilateur &compil, textes &
     bool transposition_mot =  m_map_IPL[PARAM_TRANSPOSITION_MOTS].it_caractere_courant->get_booleen();
 
     textes t = textes(textes_in);
-
     if ( transposition_mot )
         t.transposer_mots();
     else

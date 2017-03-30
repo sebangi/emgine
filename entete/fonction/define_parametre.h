@@ -53,17 +53,17 @@ enum type_id_parametre{
     /** \brief Paramètre pour indiquer que le traitement doit se faire pour chaque ligne. */
     PARAM_TRAITER_PAR_LIGNE,
 
-    /** \brief Paramètre pour indiquer s'il faut fusionner les caractères. */
-    PARAM_FUSION_CARACTERES,
+    /** \brief Paramètre dédié aux caractères. */
+    PARAM_CARACTERES,
 
-    /** \brief Paramètre pour indiquer s'il faut fusionner les mots. */
-    PARAM_FUSION_MOTS,
+    /** \brief Paramètre dédié aux mots. */
+    PARAM_MOTS,
 
-    /** \brief Paramètre pour indiquer s'il faut fusionner les lignes. */
-    PARAM_FUSION_LIGNES,
+    /** \brief Paramètre dédié aux lignes. */
+    PARAM_LIGNES,
 
-    /** \brief Paramètre pour indiquer s'il faut fusionner les textes. */
-    PARAM_FUSION_TEXTES,
+    /** \brief Paramètre dédié aux textes. */
+    PARAM_TEXTES,
 
     /** \brief Paramètre pour indiquer les caractères d'entrée d'un paramètre quelconque. */
     PARAM_CARACTERES_ENTREE,

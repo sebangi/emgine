@@ -207,6 +207,14 @@ void base_element::formater( bool retrait_ponctuation )
 }
 
 /** --------------------------------------------------------------------------------------
+ * \brief Inversion l'élément.
+ */
+void base_element::inverser()
+{
+    std::reverse(m_string.begin(), m_string.end());
+}
+
+/** --------------------------------------------------------------------------------------
  * \brief Retire la ponctuation.
  */
 void base_element::retirer_ponctuation( )

@@ -161,6 +161,22 @@ void ligne::fusionner(bool fusion_caracteres, bool fusion_mots)
 }
 
 /** --------------------------------------------------------------------------------------
+ * \brief Inversion des lignes, des mots et/ou des caractères.
+ * \param inversion_caracteres Indique s'il faut inverser les caractères.
+ * \param inversion_mots Indique s'il faut inverser les mots.
+ * \param inversion_lignes Indique s'il faut inverser les lignes.
+ */
+void ligne::inverser(bool inversion_caracteres, bool inversion_mots, bool inversion_lignes)
+{
+   if ( inversion_mots || inversion_caracteres )
+        for ( iterator it = begin(); it != end(); ++it )
+            it->inverser(inversion_caracteres, inversion_mots);
+
+    if ( inversion_lignes )
+        std::reverse(begin(), end());
+}
+
+/** --------------------------------------------------------------------------------------
  * \brief Met à jour le nombre de caractères de la ligne.
  */
 void ligne::maj_nb_caracteres()

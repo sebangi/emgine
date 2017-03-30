@@ -30,6 +30,7 @@
 #include "entete/fonction/fonction_conversion/fonction_entier_en_chiffre_romain.h"
 #include "entete/fonction/fonction_conversion/fonction_formatage.h"
 #include "entete/fonction/fonction_conversion/fonction_fusion.h"
+#include "entete/fonction/fonction_conversion/fonction_inversion.h"
 #include "entete/fonction/fonction_conversion/fonction_lecture_morse.h"
 #include "entete/fonction/fonction_conversion/fonction_selection_selon_dictionnaire.h"
 #include "entete/fonction/fonction_conversion/fonction_substitution.h"
@@ -58,6 +59,7 @@ std::map<type_id_fonction, QString> bibliotheque_fonctions::s_fonctions_nom =
     { f_conversion_lecture_morse, "Lecture du morse" },
     { f_conversion_choisir_separateur, "Choix des séparateurs" },
     { f_conversion_transposition, "Transposition du texte" },
+    { f_conversion_inversion, "Inversion du texte" },
 
     { f_sortie_texte, "Textes" },
     { f_sortie_frequence, "Fréquences des éléments" },
@@ -82,12 +84,13 @@ std::map<type_id_fonction, QString> bibliotheque_fonctions::s_fonctions_aide =
     { f_conversion_anagramme, "Affiche les anagrammes de chaque mot." },
     { f_conversion_entier_en_chiffre_romain, "Convertit les entiers en chiffres romains." },
     { f_conversion_ajout_espace_selon_dictionnaire, "Ajoute les espaces entre mot selon un dictionnaire donné." },
-    { f_conversion_formatage, "Fusion des caractères, des mots, des lignes ou des textes." },
+    { f_conversion_formatage, "Fusion des caractères, des mots, des lignes et/ou des textes." },
     { f_conversion_substitution, "Substitution de caractères." },
     { f_conversion_ecriture_morse, "Écriture en morse" },
     { f_conversion_lecture_morse, "Lecture du morse" },
     { f_conversion_choisir_separateur, "Choix des séparateurs (de caractères, de mots et de lignes)" },
     { f_conversion_transposition, "Transposition du texte (des mots ou des caractères)" },
+    { f_conversion_inversion, "Inversion des caractères, des mots et/ou des lignes." },
 
     { f_sortie_texte, "Sortie textuelle : la liste de tous les textes obtenus." },
     { f_sortie_frequence, "Sortie affichant la fréquence des éléments." },
@@ -102,6 +105,9 @@ std::map<type_id_fonction, std::set<QString> > bibliotheque_fonctions::s_categor
     },
     { f_source_caractere,
       { "caracteres" }
+    },
+    { f_conversion_inversion,
+      { "inverser" }
     }
 };
 
@@ -136,6 +142,7 @@ base_fonction * bibliotheque_fonctions::get_fonction(type_id_fonction id)
         case f_conversion_lecture_morse : return new fonction_lecture_morse(NULL);
         case f_conversion_choisir_separateur : return new fonction_choisir_separateur(NULL);
         case f_conversion_transposition : return new fonction_transposition(NULL);
+        case f_conversion_inversion : return new fonction_inversion(NULL);
 
             // SORTIES
         case f_sortie_texte : return new fonction_sortie_texte(NULL);
