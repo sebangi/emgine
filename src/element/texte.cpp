@@ -423,7 +423,7 @@ void texte::transposer_mots()
                 t.ajouter_ligne(l);
             }
             t[nb_lignes].ajouter_mot(*it_l);
-         }
+        }
     }
 
     swap(t);
@@ -465,7 +465,7 @@ void texte::transposer_caracteres()
                 }
                 mot m(it_m->to_string(), it_l->get_separateur_caractere() );
                 t[nb_lignes].ajouter_mot( m );
-             }
+            }
     }
 
     swap(t);
@@ -491,17 +491,71 @@ void texte::tourner_caracteres(rotation r)
 }
 
 /** --------------------------------------------------------------------------------------
- * \brief Accesseur du séparateur de lignes.
- * \return Le séparateur de ligne.
+ * \brief Détermine si un texte est rectangulaire en considérant les mots, i.e. Il y a autant de mots dans chaque ligne.
+ * \return \b True si le texte est rectangulaire en considérant les mots, \b False sinon.
  */
+bool texte::est_rectangulaire_selon_mots() const
+{
+    if ( size() <= 1 )
+        return true;
+    else
+    {
+        std::vector<mot>::size_type min_nb_mots = at(0).nb_mots();
+        std::vector<mot>::size_type max_nb_mots = at(0).nb_mots();
+
+        for ( int i = 1; i < size(); ++i )
+        {
+            std::vector<mot>::size_type nb_mots = at(i).nb_mots();
+
+            if ( nb_mots < min_nb_mots )
+                min_nb_mots = nb_mots;
+            if ( nb_mots > max_nb_mots )
+                max_nb_mots = nb_mots;
+        }
+
+        return min_nb_mots == max_nb_mots;
+    }
+}
+
+/** --------------------------------------------------------------------------------------
+      * \brief Détermine si un texte est rectangulaire en considérant les caractères, i.e. Il y a autant de caractères dans chaque ligne.
+      * \return \b True si le texte est rectangulaire en considérant les caractères, \b False sinon.
+      */
+bool texte::est_rectangulaire_selon_caracteres() const
+{
+    if ( size() <= 1 )
+        return true;
+    else
+    {
+        std::vector<mot>::size_type min_nb_caracteres = at(0).nb_caracteres();
+        std::vector<mot>::size_type max_nb_caracteres = at(0).nb_caracteres();
+
+        for ( int i = 1; i < size(); ++i )
+        {
+            std::vector<mot>::size_type nb_caracteres = at(i).nb_caracteres();
+
+            if ( nb_caracteres < min_nb_caracteres )
+                min_nb_caracteres = nb_caracteres;
+            if ( nb_caracteres > max_nb_caracteres )
+                max_nb_caracteres = nb_caracteres;
+        }
+
+        return min_nb_caracteres == max_nb_caracteres;
+    }
+}
+
+/** --------------------------------------------------------------------------------------
+      * \brief Accesseur du séparateur de lignes.
+      * \return Le séparateur de ligne.
+      */
 QString texte::get_separateur_ligne() const
 {
     return m_separateur_ligne;
 }
 
 /** --------------------------------------------------------------------------------------
- * \brief Met à jour les différents comptages.
- */
+      * \brief Met à jour les différents comptages.
+      */
 void texte::maj_comptages()
 {
     maj_nb_caracteres();
@@ -509,8 +563,8 @@ void texte::maj_comptages()
 }
 
 /** --------------------------------------------------------------------------------------
- * \brief Met à jour le nombre de caractères du texte.
- */
+      * \brief Met à jour le nombre de caractères du texte.
+      */
 void texte::maj_nb_caracteres()
 {
     m_nb_caracteres = 0;
@@ -520,8 +574,8 @@ void texte::maj_nb_caracteres()
 }
 
 /** --------------------------------------------------------------------------------------
- * \brief Met à jour le nombre de mots du texte.
- */
+      * \brief Met à jour le nombre de mots du texte.
+      */
 void texte::maj_nb_mots()
 {
     m_nb_mots = 0;

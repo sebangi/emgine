@@ -41,6 +41,8 @@ class rotation
     public:
         rotation(QString s);
 
+        bool est_valide() const;
+
         static QStringList liste_rotations_valides();
         static QStringList liste_rotations_par_defaut();
 

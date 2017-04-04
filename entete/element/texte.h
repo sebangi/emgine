@@ -62,6 +62,8 @@ class texte : public std::vector< ligne >
         void transposer_caracteres();
         void tourner_mots(rotation r);
         void tourner_caracteres(rotation r);
+        bool est_rectangulaire_selon_mots() const;
+        bool est_rectangulaire_selon_caracteres() const;
 
         QString get_separateur_ligne() const;
 

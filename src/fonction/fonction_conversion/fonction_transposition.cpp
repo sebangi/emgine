@@ -86,11 +86,28 @@ void fonction_transposition::execution_specifique( compilateur &compil, textes &
     bool transposition_mot =  m_map_IPL[PARAM_TRANSPOSITION_MOTS].it_caractere_courant->get_booleen();
 
     textes t = textes(textes_in);
-    if ( transposition_mot )
-        t.transposer_mots();
-    else
-        t.transposer_caracteres();
 
-    for ( textes::const_iterator it_t = t.begin(); it_t != t.end(); ++it_t )
+    for ( textes::iterator it_t = t.begin(); it_t != t.end(); ++it_t )
+    {
+        if ( transposition_mot )
+        {
+            if ( ! it_t->est_rectangulaire_selon_mots() )
+                compil.get_vue_logs()->ajouter_log
+                        ( log_compilation( log_compilation::LOG_WARNING, (base_fonction*)this,
+                                           "La transposition d'un texte non rectangulaire déforme le texte.") );
+
+            it_t->transposer_mots();
+        }
+        else
+        {
+            if ( ! it_t->est_rectangulaire_selon_caracteres() )
+                compil.get_vue_logs()->ajouter_log
+                        ( log_compilation( log_compilation::LOG_WARNING, (base_fonction*)this,
+                                           "La transposition d'un texte non rectangulaire déforme le texte.") );
+
+            it_t->transposer_caracteres();
+        }
+
         textes_out.ajouter_texte(compil.get_configuration(), *it_t);
+    }
 }

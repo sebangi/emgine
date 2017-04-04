@@ -35,13 +35,13 @@ fonction_rotation::fonction_rotation( fonctions_conteneur * conteneur )
 
     ajouter_parametre( PARAM_ROTATION,
                        new parametre_choix( this,
-                                           "Les rotations à réaliser",
-                                           "Indique quelles rotations réaliser.",
-                                           base_parametre::CONTENU_PARAM_VIDE_IMPOSSIBLE,
-                                           base_parametre::CONFIGURATION_VISIBLE,
-                                           base_parametre::ALGO_IPL,
-                                           rotation::liste_rotations_valides(),
-                                           true ) );
+                                            "Les rotations à réaliser",
+                                            "Indique quelles rotations réaliser.",
+                                            base_parametre::CONTENU_PARAM_VIDE_IMPOSSIBLE,
+                                            base_parametre::CONFIGURATION_VISIBLE,
+                                            base_parametre::ALGO_IPL,
+                                            rotation::liste_rotations_valides(),
+                                            true ) );
 }
 
 /** --------------------------------------------------------------------------------------
@@ -105,14 +105,34 @@ void fonction_rotation::callback_param_1( compilateur &compil, textes & textes_i
 void fonction_rotation::execution_specifique( compilateur &compil, textes & textes_in, textes & textes_out )
 {
     bool rotation_mot =  m_map_IPL[PARAM_ROTATION_MOTS].it_caractere_courant->get_booleen();
+    rotation r( m_map_IPL[PARAM_ROTATION].it_mot_courant->to_string() );
 
-    textes t = textes(textes_in);
+    if ( r.est_valide() )
+    {
+        textes t = textes(textes_in);
 
-   /* if ( rotation_mot )
-        t.tourner_mots();
-    else
-        t.tourner_caracteres();
-*/
-    for ( textes::const_iterator it_t = t.begin(); it_t != t.end(); ++it_t )
-        textes_out.ajouter_texte(compil.get_configuration(), *it_t);
+        for ( textes::iterator it_t = t.begin(); it_t != t.end(); ++it_t )
+        {
+            if ( rotation_mot )
+            {
+                if ( ! it_t->est_rectangulaire_selon_mots() )
+                    compil.get_vue_logs()->ajouter_log
+                            ( log_compilation( log_compilation::LOG_WARNING, (base_fonction*)this,
+                                               "La rotation d'un texte non rectangulaire déforme le texte.") );
+
+                it_t->tourner_mots(r);
+            }
+            else
+            {
+                if ( ! it_t->est_rectangulaire_selon_caracteres() )
+                    compil.get_vue_logs()->ajouter_log
+                            ( log_compilation( log_compilation::LOG_WARNING, (base_fonction*)this,
+                                               "La rotation d'un texte non rectangulaire déforme le texte.") );
+
+                it_t->tourner_caracteres(r);
+            }
+
+            textes_out.ajouter_texte(compil.get_configuration(), *it_t);
+        }
+    }
 }

@@ -1,4 +1,5 @@
-/** \file rotation.cpp
+/**
+ * \file rotation.cpp
  * \brief Fichier d'implémentation de la classe rotation.
  * \author Sébastien Angibaud
  */
@@ -21,6 +22,15 @@ rotation::rotation(QString s)
         m_type = rotation_270;
     else
         m_type = rotation_invalide;
+}
+
+/** --------------------------------------------------------------------------------------
+ * \brief Constructeur de la classe rotation.
+ * \return \b True si la rotation est valide, \b False sinon.
+ */
+bool rotation::est_valide() const
+{
+    return m_type != rotation_invalide;
 }
 
 /** --------------------------------------------------------------------------------------
