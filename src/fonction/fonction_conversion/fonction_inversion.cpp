@@ -148,10 +148,13 @@ void fonction_inversion::execution_specifique( compilateur &compil, textes & tex
     bool inversion_textes =  m_map_IPL[PARAM_TEXTES].it_caractere_courant->get_booleen();
 
     textes t = textes(textes_in);
-    t.inverser(inversion_caracteres, inversion_mots, inversion_lignes, inversion_textes);
 
-    for ( textes::const_iterator it_t = t.begin(); it_t != t.end(); ++it_t )
+    for ( textes::iterator it_t = t.begin(); it_t != t.end(); ++it_t )
+    {
+        it_t->inverser(inversion_caracteres, inversion_mots, inversion_lignes, inversion_textes);
+
         textes_out.ajouter_texte(compil.get_configuration(), *it_t);
+    }
 }
 
 
