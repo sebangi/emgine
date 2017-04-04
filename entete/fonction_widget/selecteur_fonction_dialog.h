@@ -40,7 +40,7 @@ class selecteur_fonction_dialog : public QDialog
         void on_choix();
         void chercher();
         void on_chercher(const QString &);
-        void calcul_nb_colonnes(type_fonction type);
+        void calcul_nb_colonnes(type_fonction type, fonctions_conteneur * conteneur);
 
     private:
         /** \brief Le bouton d'annulation. */

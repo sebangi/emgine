@@ -36,7 +36,7 @@ selecteur_fonction_dialog::selecteur_fonction_dialog(type_fonction type, fonctio
     recherche_layout->addWidget(m_recherche);
 
     m_grid_layout = new QGridLayout;
-    calcul_nb_colonnes(type);
+    calcul_nb_colonnes(type, conteneur);
     init_choix(type, conteneur);
 
     mainLayout->addLayout(recherche_layout);
@@ -120,8 +120,8 @@ void selecteur_fonction_dialog::ajouter_choix(type_id_fonction id)
     bouton_choix_fonction * bouton = new bouton_choix_fonction(id);
     connect(bouton, SIGNAL (released()),this, SLOT (on_choix()));
 
-    int ligne = m_boutons.size() / 2 ;
-    int colonne = m_boutons.size() % 2 ;
+    int ligne = m_boutons.size() / m_nb_colonnes ;
+    int colonne = m_boutons.size() % m_nb_colonnes ;
 
     m_boutons.push_back( bouton );
     m_grid_layout->addWidget(bouton, ligne, colonne);
@@ -175,13 +175,25 @@ void selecteur_fonction_dialog::on_chercher(const QString &)
 /** --------------------------------------------------------------------------------------
  * \brief Calcule le nombre de colonnes de choix en fonction de leur nombre.
  * \param type Le type de fonction à créer.
+ * \param conteneur Un pointeur sur le conteneur dans lequel il faut ajouter la fonction.
  */
-void selecteur_fonction_dialog::calcul_nb_colonnes(type_fonction type)
+void selecteur_fonction_dialog::calcul_nb_colonnes(type_fonction type, fonctions_conteneur * conteneur)
 {
     int nb_fonctions = 0;
 
     if ( type == type_fonction::fonction_source )
-        nb_fonctions = fin_fonction_source - debut_fonction_source;
+    {
+        bool type_choix = false;
+
+        if ( conteneur != NULL )
+            if ( conteneur->est_parametre() )
+                type_choix = ((base_parametre *)conteneur)->get_type() == TYPE_PARAM_CHOIX;
+
+        if ( type_choix )
+            nb_fonctions = fin_fonction_source_choix - debut_fonction_source_choix;
+        else
+            nb_fonctions = fin_fonction_source - debut_fonction_source;
+    }
     else if ( type == type_fonction::fonction_conversion )
         nb_fonctions = fin_fonction_conversion - debut_fonction_conversion;
     else
@@ -189,5 +201,4 @@ void selecteur_fonction_dialog::calcul_nb_colonnes(type_fonction type)
 
     m_nb_colonnes = nb_fonctions / 5 + 1;
     m_nb_colonnes = std::min( m_nb_colonnes, 4);
-
 }
