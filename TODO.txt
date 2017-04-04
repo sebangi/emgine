@@ -13,3 +13,5 @@ ETAPE 3 : AMELIORATION - DICTIONNAIRE - NOUVELLES FONCTIONS DE SORTIE
 * ajouter des fonctions de conversion
 * lancer l'exécution dans un thread et verrouiller le projet automatiquement durant l'exécution
 * afficher les exécutions différemment. S'inspirer des exécutions de Qt
+* Idée de fonctions :
+    - scinder ligne en texte, mot en ligne, caractère en mot, morceau de carcatere en caractère (inverse de fusion)
