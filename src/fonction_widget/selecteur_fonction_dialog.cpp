@@ -82,21 +82,24 @@ void selecteur_fonction_dialog::init_choix(type_fonction type, fonctions_contene
     int debut = debut_fonction_conversion;
     int fin = fin_fonction_conversion;
 
-    bool type_choix = false;
-
-    if ( conteneur != NULL )
-        if ( conteneur->est_parametre() )
-            type_choix = ((base_parametre *)conteneur)->get_type() == TYPE_PARAM_CHOIX;
-
-    if ( type_choix )
+    if ( type == type_fonction::fonction_source )
     {
-        debut = debut_fonction_source_choix;
-        fin = fin_fonction_source_choix;
-    }
-    else if ( type == type_fonction::fonction_source )
-    {
-        debut = debut_fonction_source;
-        fin = fin_fonction_source;
+        bool type_choix = false;
+
+        if ( conteneur != NULL )
+            if ( conteneur->est_parametre() )
+                type_choix = ((base_parametre *)conteneur)->get_type() == TYPE_PARAM_CHOIX;
+
+        if ( type_choix )
+        {
+            debut = debut_fonction_source_choix;
+            fin = fin_fonction_source_choix;
+        }
+        else
+        {
+            debut = debut_fonction_source;
+            fin = fin_fonction_source;
+        }
     }
     else if ( type == type_fonction::fonction_sortie )
     {

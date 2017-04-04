@@ -16,10 +16,11 @@
 /** --------------------------------------------------------------------------------------
  * \brief Constructeur de la classe fonction_source_choix.
  * \param conteneur Un pointeur sur le conteneur de al fonction.
+ * \param sur_une_seule_ligne Indique si les choix doivent être écrits sur une seule ligne.
  * \param selection La sélection initiale.
  */
-fonction_source_choix::fonction_source_choix( fonctions_conteneur * conteneur, const QStringList & selection )
-    : fonction_base_source(conteneur), m_selection(selection), m_sur_une_seule_ligne(false),
+fonction_source_choix::fonction_source_choix( fonctions_conteneur * conteneur, bool sur_une_seule_ligne, const QStringList & selection )
+    : fonction_base_source(conteneur), m_selection(selection), m_sur_une_seule_ligne(sur_une_seule_ligne),
       m_multiple_selection(false)
 {
     set_id(f_source_choix);

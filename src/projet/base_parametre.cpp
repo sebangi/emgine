@@ -195,10 +195,11 @@ void base_parametre::set_dictionnaire_par_defaut(QString dico)
 /** --------------------------------------------------------------------------------------
  * \brief Initialise le paramètre à partir d'une liste de choix donnée.
  * \param selection La liste des choix.
+ * \param sur_une_seule_ligne Indique si les choix doivent être écrits sur une seule ligne.
  */
-void base_parametre::set_choix_par_defaut(const QStringList& selection)
+void base_parametre::set_choix_par_defaut(const QStringList& selection, bool sur_une_seule_ligne)
 {
-    base_fonction * f = new fonction_source_choix(this,selection);
+    base_fonction * f = new fonction_source_choix(this, sur_une_seule_ligne, selection);
     ajouter_fonction(f, NULL);
 }
 

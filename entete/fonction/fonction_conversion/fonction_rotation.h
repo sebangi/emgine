@@ -25,6 +25,7 @@ class fonction_rotation : public base_fonction
         void initialisation_par_defaut();
 
     private:
+        void callback_param_1( compilateur &compil, textes & textes_in, textes & textes_out );
         void execution_specifique( compilateur &compil, textes & textes_in, textes & textes_out );
         bool est_valide(logs_compilation_widget * vue_logs);
 };

@@ -19,7 +19,7 @@ class fonction_source_choix : public fonction_base_source
         typedef fonction_base_source super;
 
     public:
-        fonction_source_choix(fonctions_conteneur * conteneur, const QStringList& selection = QStringList());
+        fonction_source_choix(fonctions_conteneur * conteneur, bool sur_une_seule_ligne = false, const QStringList& selection = QStringList());
         ~fonction_source_choix();
 
         void set_conteneur(fonctions_conteneur *conteneur);

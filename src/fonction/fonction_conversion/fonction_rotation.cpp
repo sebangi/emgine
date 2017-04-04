@@ -36,10 +36,10 @@ fonction_rotation::fonction_rotation( fonctions_conteneur * conteneur )
     ajouter_parametre( PARAM_ROTATION,
                        new parametre_choix( this,
                                            "Les rotations à réaliser",
-                                           "Indique quelles rotation réaliser.",
+                                           "Indique quelles rotations réaliser.",
                                            base_parametre::CONTENU_PARAM_VIDE_IMPOSSIBLE,
                                            base_parametre::CONFIGURATION_VISIBLE,
-                                           base_parametre::ALGO_AUCUN,
+                                           base_parametre::ALGO_IPL,
                                            rotation::liste_rotations_valides(),
                                            true ) );
 }
@@ -81,7 +81,19 @@ void fonction_rotation::initialisation_par_defaut()
 void fonction_rotation::executer( compilateur &compil, textes & textes_in, textes & textes_out )
 {
     algo_IPL_iteration_par_ligne
-            ( PARAM_ROTATION_MOTS, compil, textes_in, textes_out, & base_fonction::execution_specifique );
+            ( PARAM_ROTATION_MOTS, compil, textes_in, textes_out, & base_fonction::callback_param_1 );
+}
+
+/** --------------------------------------------------------------------------------------
+ * \brief Exécute le paramètre PARAM_CARACTERES.
+ * \param compil Le compilateur utilisé.
+ * \param textes_in Le texte source en entrée.
+ * \param textes_out Le texte de sortie généré.
+ */
+void fonction_rotation::callback_param_1( compilateur &compil, textes & textes_in, textes & textes_out )
+{
+    algo_IPL_iteration_par_ligne
+            ( PARAM_ROTATION, compil, textes_in, textes_out, & base_fonction::execution_specifique );
 }
 
 /** --------------------------------------------------------------------------------------
