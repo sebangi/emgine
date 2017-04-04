@@ -57,13 +57,17 @@ class texte : public std::vector< ligne >
         const type_frequences_texte & get_frequences() const;
         double get_indice_coincidence() const;
         void fusionner(bool fusion_caracteres, bool fusion_mots, bool fusion_lignes);
-        void inverser(bool inversion_caracteres, bool inversion_mots, bool inversion_lignes, bool inversion_textes);
+        void inverser(bool inversion_elements, bool inversion_ordre_caracteres, bool inversion_ordre_mots, bool inversion_ordre_lignes);
         void transposer_mots();
         void transposer_caracteres();
         void tourner_mots(rotation r);
         void tourner_caracteres(rotation r);
         bool est_rectangulaire_selon_mots() const;
         bool est_rectangulaire_selon_caracteres() const;
+        size_type get_maximum_mots_dans_ligne() const;
+        size_type get_minimum_mots_dans_ligne() const;
+        size_type get_maximum_caracteres_dans_ligne() const;
+        size_type get_minimum_caracteres_dans_ligne() const;
 
         QString get_separateur_ligne() const;
 

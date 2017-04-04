@@ -115,16 +115,16 @@ void mot::fusionner()
 
 /** --------------------------------------------------------------------------------------
  * \brief Inversion des mots et/ou des caractères.
- * \param inversion_caracteres Indique s'il faut inverser les caractères.
- * \param inversion_mots Indique s'il faut inverser les mots.
+ * \param inversion_elements Indique s'il faut inverser les éléments.
+ * \param inversion_ordre_caracteres Indique s'il faut inverser l'ordre des caractères.
  */
-void mot::inverser(bool inversion_caracteres, bool inversion_mots)
+void mot::inverser(bool inversion_elements, bool inversion_ordre_caracteres)
 {
-    if ( inversion_caracteres )
+    if ( inversion_elements )
         for ( iterator it = begin(); it != end(); ++it )
             it->inverser();
 
-    if ( inversion_mots )
+    if ( inversion_ordre_caracteres )
         std::reverse(begin(), end());
 }
 

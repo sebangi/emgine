@@ -379,18 +379,18 @@ void texte::fusionner(bool fusion_caracteres, bool fusion_mots, bool fusion_lign
 
 /** --------------------------------------------------------------------------------------
  * \brief Inversion des textes, des lignes, des mots et/ou des caractères.
- * \param inversion_caracteres Indique s'il faut inverser les caractères.
- * \param inversion_mots Indique s'il faut inverser les mots.
- * \param inversion_lignes Indique s'il faut inverser les lignes.
- * \param inversion_textes Indique s'il faut inverser les textes.
+ * \param inversion_elements Indique s'il faut inverser les éléments.
+ * \param inversion_ordre_caracteres Indique s'il faut inverser l'ordre des caractères.
+ * \param inversion_ordre_mots Indique s'il faut inverser l'ordre des mots.
+ * \param inversion_ordre_lignes Indique s'il faut inverser l'ordre des lignes.
  */
-void texte::inverser(bool inversion_caracteres, bool inversion_mots, bool inversion_lignes, bool inversion_textes)
+void texte::inverser(bool inversion_elements, bool inversion_ordre_caracteres, bool inversion_ordre_mots, bool inversion_ordre_lignes)
 {
-    if ( inversion_lignes || inversion_mots || inversion_caracteres )
+    if ( inversion_ordre_mots || inversion_ordre_caracteres || inversion_elements )
         for ( iterator it = begin(); it != end(); ++it )
-            it->inverser(inversion_caracteres, inversion_mots, inversion_lignes);
+            it->inverser(inversion_elements, inversion_ordre_caracteres, inversion_ordre_mots);
 
-    if ( inversion_textes )
+    if ( inversion_ordre_lignes )
         std::reverse(begin(), end());
 }
 
@@ -441,12 +441,12 @@ void texte::transposer_caracteres()
      * DD EE FF
      * GG HH
      *
-     * A D G
-     * A D G
-     * B E H
-     * B E H
-     * C F
-     * C F
+     * ADG
+     * ADG
+     * BEH
+     * BEH
+     * CF
+     * CF
      * */
     texte t;
 
@@ -469,6 +469,7 @@ void texte::transposer_caracteres()
     }
 
     swap(t);
+    fusionner(false,true,false);
     maj_comptages();
 }
 
@@ -478,7 +479,20 @@ void texte::transposer_caracteres()
  */
 void texte::tourner_mots(rotation r)
 {
-
+    if ( r.get_type() == rotation::rotation_90 )
+    {
+        transposer_mots();
+        inverser(false, false, true, false);
+    }
+    else if ( r.get_type() == rotation::rotation_180 )
+    {
+        inverser(false, false, true, true);
+    }
+    else if ( r.get_type() == rotation::rotation_270 )
+    {
+        transposer_mots();
+        inverser(false, false, false, true);
+    }
 }
 
 /** --------------------------------------------------------------------------------------
@@ -487,7 +501,25 @@ void texte::tourner_mots(rotation r)
  */
 void texte::tourner_caracteres(rotation r)
 {
+    if ( r.get_type() == rotation::rotation_90 ||
+         r.get_type() == rotation::rotation_180 ||
+         r.get_type() == rotation::rotation_270 )
+        fusionner( false, true, false );
 
+    if ( r.get_type() == rotation::rotation_90 )
+    {
+        transposer_caracteres();
+        inverser(false, true, false, false);
+    }
+    else if ( r.get_type() == rotation::rotation_180 )
+    {
+        inverser(false, true, false, true);
+    }
+    else if ( r.get_type() == rotation::rotation_270 )
+    {
+        transposer_caracteres();
+        inverser(false, false, false, true);
+    }
 }
 
 /** --------------------------------------------------------------------------------------
@@ -496,24 +528,58 @@ void texte::tourner_caracteres(rotation r)
  */
 bool texte::est_rectangulaire_selon_mots() const
 {
-    if ( size() <= 1 )
-        return true;
+    return get_maximum_mots_dans_ligne() == get_minimum_mots_dans_ligne();
+}
+
+/** --------------------------------------------------------------------------------------
+ * \brief Retourne le nombre maximum de mots dans une ligne.
+ * \return Le nombre maximum de mots dans une ligne.
+ */
+std::vector<mot>::size_type texte::get_maximum_mots_dans_ligne() const
+{
+    if ( empty() )
+        return 0;
+    else if ( size() == 1 )
+        return at(0).nb_mots();
     else
     {
-        std::vector<mot>::size_type min_nb_mots = at(0).nb_mots();
-        std::vector<mot>::size_type max_nb_mots = at(0).nb_mots();
+        size_type max_nb_mots = at(0).nb_mots();
 
         for ( int i = 1; i < size(); ++i )
         {
-            std::vector<mot>::size_type nb_mots = at(i).nb_mots();
+            size_type nb_mots = at(i).nb_mots();
 
-            if ( nb_mots < min_nb_mots )
-                min_nb_mots = nb_mots;
             if ( nb_mots > max_nb_mots )
                 max_nb_mots = nb_mots;
         }
 
-        return min_nb_mots == max_nb_mots;
+        return max_nb_mots;
+    }
+}
+
+/** --------------------------------------------------------------------------------------
+ * \brief Retourne le nombre minimum de mots dans une ligne.
+ * \return Le nombre minimum de mots dans une ligne.
+ */
+std::vector<mot>::size_type texte::get_minimum_mots_dans_ligne() const
+{
+    if ( empty() )
+        return 0;
+    else if ( size() == 1 )
+        return at(0).nb_mots();
+    else
+    {
+        size_type min_nb_mots = at(0).nb_mots();
+
+        for ( int i = 1; i < size(); ++i )
+        {
+            size_type nb_mots = at(i).nb_mots();
+
+            if ( nb_mots < min_nb_mots )
+                min_nb_mots = nb_mots;
+        }
+
+        return min_nb_mots;
     }
 }
 
@@ -523,24 +589,58 @@ bool texte::est_rectangulaire_selon_mots() const
       */
 bool texte::est_rectangulaire_selon_caracteres() const
 {
-    if ( size() <= 1 )
-        return true;
+    return get_maximum_caracteres_dans_ligne() == get_minimum_caracteres_dans_ligne();
+}
+
+/** --------------------------------------------------------------------------------------
+ * \brief Retourne le nombre maximum de caracteres dans une ligne.
+ * \return Le nombre maximum de caracteres dans une ligne.
+ */
+std::vector<mot>::size_type texte::get_maximum_caracteres_dans_ligne() const
+{
+    if ( empty() )
+        return 0;
+    else if ( size() == 1 )
+        return at(0).nb_caracteres();
     else
     {
-        std::vector<mot>::size_type min_nb_caracteres = at(0).nb_caracteres();
-        std::vector<mot>::size_type max_nb_caracteres = at(0).nb_caracteres();
+        size_type max_nb_caracteres = at(0).nb_caracteres();
 
         for ( int i = 1; i < size(); ++i )
         {
-            std::vector<mot>::size_type nb_caracteres = at(i).nb_caracteres();
+            size_type nb_caracteres = at(i).nb_caracteres();
 
-            if ( nb_caracteres < min_nb_caracteres )
-                min_nb_caracteres = nb_caracteres;
             if ( nb_caracteres > max_nb_caracteres )
                 max_nb_caracteres = nb_caracteres;
         }
 
-        return min_nb_caracteres == max_nb_caracteres;
+        return max_nb_caracteres;
+    }
+}
+
+/** --------------------------------------------------------------------------------------
+ * \brief Retourne le nombre minimum de caracteres dans une ligne.
+ * \return Le nombre minimum de caracteres dans une ligne.
+ */
+std::vector<mot>::size_type texte::get_minimum_caracteres_dans_ligne() const
+{
+    if ( empty() )
+        return 0;
+    else if ( size() == 1 )
+        return at(0).nb_caracteres();
+    else
+    {
+        size_type min_nb_caracteres = at(0).nb_caracteres();
+
+        for ( int i = 1; i < size(); ++i )
+        {
+            size_type nb_caracteres = at(i).nb_caracteres();
+
+            if ( nb_caracteres < min_nb_caracteres )
+                min_nb_caracteres = nb_caracteres;
+        }
+
+        return min_nb_caracteres;
     }
 }
 

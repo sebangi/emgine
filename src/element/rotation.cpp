@@ -34,6 +34,15 @@ bool rotation::est_valide() const
 }
 
 /** --------------------------------------------------------------------------------------
+ * \brief Accesseur du type de rotation.
+ * \return \b Le type de la rotation.
+ */
+rotation::type_rotation rotation::get_type() const
+{
+    return m_type;
+}
+
+/** --------------------------------------------------------------------------------------
  * \brief .
  * \return La lise des rotations valides au format QString.
  */

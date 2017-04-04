@@ -134,6 +134,7 @@ void fonction_inversion::callback_param_3( compilateur &compil, textes & textes_
     algo_IPL_iteration_par_ligne
             ( PARAM_TEXTES, compil, textes_in, textes_out, & base_fonction::execution_specifique );
 }
+
 /** --------------------------------------------------------------------------------------
      * \brief Exécute la fonction <b>inversion</b>.
      * \param compil Le compilateur utilisé.
@@ -142,16 +143,16 @@ void fonction_inversion::callback_param_3( compilateur &compil, textes & textes_
      */
 void fonction_inversion::execution_specifique( compilateur &compil, textes & textes_in, textes & textes_out )
 {
-    bool inversion_caracteres =  m_map_IPL[PARAM_CARACTERES].it_caractere_courant->get_booleen();
-    bool inversion_mots =  m_map_IPL[PARAM_MOTS].it_caractere_courant->get_booleen();
-    bool inversion_lignes =  m_map_IPL[PARAM_LIGNES].it_caractere_courant->get_booleen();
-    bool inversion_textes =  m_map_IPL[PARAM_TEXTES].it_caractere_courant->get_booleen();
+    bool inversion_elements =  m_map_IPL[PARAM_CARACTERES].it_caractere_courant->get_booleen();
+    bool inversion_ordre_caracteres =  m_map_IPL[PARAM_MOTS].it_caractere_courant->get_booleen();
+    bool inversion_ordre_mots =  m_map_IPL[PARAM_LIGNES].it_caractere_courant->get_booleen();
+    bool inversion_ordre_lignes =  m_map_IPL[PARAM_TEXTES].it_caractere_courant->get_booleen();
 
     textes t = textes(textes_in);
 
     for ( textes::iterator it_t = t.begin(); it_t != t.end(); ++it_t )
     {
-        it_t->inverser(inversion_caracteres, inversion_mots, inversion_lignes, inversion_textes);
+        it_t->inverser(inversion_elements, inversion_ordre_caracteres, inversion_ordre_mots, inversion_ordre_lignes);
 
         textes_out.ajouter_texte(compil.get_configuration(), *it_t);
     }

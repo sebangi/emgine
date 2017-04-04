@@ -28,7 +28,7 @@ class mot : public std::vector< base_element >
         size_type nb_caracteres() const;
         size_type nb_caracteres_alphabet() const;
         void fusionner();
-        void inverser(bool inversion_caracteres, bool inversion_mots);
+        void inverser(bool inversion_elements, bool inversion_ordre_caracteres);
         QString get_separateur_caractere() const;
 
     private:
