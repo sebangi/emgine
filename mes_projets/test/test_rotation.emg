@@ -93,6 +93,7 @@ mot4 mot5 mot6</valeur>
         </fonction>
         <fonction>
             <id>1014</id>
+            <nom>Rotation du texte</nom>
             <niveau_visibilite>2</niveau_visibilite>
             <active>1</active>
             <objet_selectionnable>
@@ -126,12 +127,14 @@ mot4 mot5 mot6</valeur>
                 <parametre>
                     <id>19</id>
                     <nom>Les rotations à réaliser</nom>
+                    <dans_configuration>1</dans_configuration>
                     <objet_selectionnable>
                         <est_etendu>1</est_etendu>
                         <verrouille>0</verrouille>
                     </objet_selectionnable>
                     <fonctions>
                         <fonction>
+                            <id>900</id>
                             <nom>Choix</nom>
                             <niveau_visibilite>2</niveau_visibilite>
                             <active>1</active>
@@ -139,6 +142,7 @@ mot4 mot5 mot6</valeur>
                                 <est_etendu>0</est_etendu>
                                 <verrouille>0</verrouille>
                             </objet_selectionnable>
+                            <valeur>90 degrés</valeur>
                             <parametres/>
                         </fonction>
                     </fonctions>
