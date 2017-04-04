@@ -472,6 +472,23 @@ void texte::transposer_caracteres()
     maj_comptages();
 }
 
+/** --------------------------------------------------------------------------------------
+ * \brief Tourne les mots du texte.
+ * \param r La rotation à réaliser.
+ */
+void texte::tourner_mots(rotation r)
+{
+
+}
+
+/** --------------------------------------------------------------------------------------
+ * \brief Tourne les caracteres du texte.
+ * \param r La rotation à réaliser.
+ */
+void texte::tourner_caracteres(rotation r)
+{
+
+}
 
 /** --------------------------------------------------------------------------------------
  * \brief Accesseur du séparateur de lignes.

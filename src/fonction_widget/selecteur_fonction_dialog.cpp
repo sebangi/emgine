@@ -19,9 +19,10 @@
 /** --------------------------------------------------------------------------------------
  * \brief Constructeur de la classe selecteur_fonction_dialog.
  * \param type Le type de fonction à créer.
+ * \param conteneur Un pointeur sur le conteneur dans lequel il faut ajouter la fonction.
  * \param parent Un pointeur sur le widget parent.
  */
-selecteur_fonction_dialog::selecteur_fonction_dialog(type_fonction type, QWidget *parent)
+selecteur_fonction_dialog::selecteur_fonction_dialog(type_fonction type, fonctions_conteneur * conteneur, QWidget *parent)
     : QDialog(parent), m_fonction(NULL), m_nb_colonnes(1)
 {
     QVBoxLayout *mainLayout = new QVBoxLayout;
@@ -36,7 +37,7 @@ selecteur_fonction_dialog::selecteur_fonction_dialog(type_fonction type, QWidget
 
     m_grid_layout = new QGridLayout;
     calcul_nb_colonnes(type);
-    init_choix(type);
+    init_choix(type, conteneur);
 
     mainLayout->addLayout(recherche_layout);
     mainLayout->addLayout(m_grid_layout);
@@ -74,13 +75,25 @@ base_fonction *selecteur_fonction_dialog::get_fonction() const
 /** --------------------------------------------------------------------------------------
  * \brief Initialise les choix.
  * \param type Le type de fonction à créer.
+ * \param conteneur Un pointeur sur le conteneur dans lequel il faut ajouter la fonction.
  */
-void selecteur_fonction_dialog::init_choix(type_fonction type)
+void selecteur_fonction_dialog::init_choix(type_fonction type, fonctions_conteneur * conteneur)
 {
     int debut = debut_fonction_conversion;
     int fin = fin_fonction_conversion;
 
-    if ( type == type_fonction::fonction_source )
+    bool type_choix = false;
+
+    if ( conteneur != NULL )
+        if ( conteneur->est_parametre() )
+            type_choix = ((base_parametre *)conteneur)->get_type() == TYPE_PARAM_CHOIX;
+
+    if ( type_choix )
+    {
+        debut = debut_fonction_source_choix;
+        fin = fin_fonction_source_choix;
+    }
+    else if ( type == type_fonction::fonction_source )
     {
         debut = debut_fonction_source;
         fin = fin_fonction_source;

@@ -7,6 +7,7 @@
  */
 
 #include "type_element.h"
+#include "entete/element/rotation.h"
 
 #include <QString>
 

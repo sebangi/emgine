@@ -275,7 +275,7 @@ void fenetre_principale::ajouter_fonction( fonctions_conteneur * conteneur, obje
 {
     if ( conteneur != NULL )
     {
-        selecteur_fonction_dialog * dlg = new selecteur_fonction_dialog(type, m_ui->centralWidget);
+        selecteur_fonction_dialog * dlg = new selecteur_fonction_dialog(type, conteneur, m_ui->centralWidget);
 
         int r = dlg->exec();
 

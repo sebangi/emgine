@@ -53,8 +53,8 @@ enum type_id_fonction{
     /** \brief Fonction source correspondant à un entier. */
     f_source_entier,
 
-    /** \brief Fonction source correspondant à un choix. */
-    f_source_choix,
+    /** \brief Fonction source correspondant à. */
+    f_source_NOUVEAU,
 
     /** \brief Fonction source correspondant à un dictionnaire. */
     f_source_dictionnaire,
@@ -64,6 +64,18 @@ enum type_id_fonction{
 
     /** \brief Source générant une permutation. */
     f_source_generateur_permutation, // retiré des propositions pour l'instant car trop gourmandes
+
+    //------------------------------------
+    // Fonction source de type choix
+
+    /** \brief Début des fonctions sources de type choix. */
+    debut_fonction_source_choix = 900,
+
+    /** \brief Fonction source correspondant à un choix. */
+    f_source_choix = 900,
+
+    /** \brief Fin des fonctions sources de type choix. */
+    fin_fonction_source_choix,
 
     //------------------------------------
     // Fonction de conversion
@@ -112,6 +124,9 @@ enum type_id_fonction{
 
     /** \brief Fonction de conversions réalisant la concaténation de textes. */
     f_conversion_concatenation,
+
+    /** \brief Fonction réalisant la rotation des mots ou des caractères. */
+    f_conversion_rotation,
 
     /** \brief Fin des fonctions de conversions. */
     fin_fonction_conversion,

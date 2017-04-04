@@ -33,6 +33,8 @@ class textes : public std::vector< texte >
         void inverser(bool inversion_caracteres, bool inversion_mots, bool inversion_lignes, bool inversion_textes);
         void transposer_mots();
         void transposer_caracteres();
+        void tourner_mots(rotation r);
+        void tourner_caracteres(rotation r);
 };
 
 #endif // TEXTES_Hs

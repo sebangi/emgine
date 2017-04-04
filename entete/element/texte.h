@@ -60,6 +60,9 @@ class texte : public std::vector< ligne >
         void inverser(bool inversion_caracteres, bool inversion_mots, bool inversion_lignes, bool inversion_textes);
         void transposer_mots();
         void transposer_caracteres();
+        void tourner_mots(rotation r);
+        void tourner_caracteres(rotation r);
+
         QString get_separateur_ligne() const;
 
     private:

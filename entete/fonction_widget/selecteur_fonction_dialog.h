@@ -28,12 +28,12 @@ class selecteur_fonction_dialog : public QDialog
         Q_OBJECT
 
     public:
-        explicit selecteur_fonction_dialog(type_fonction type, QWidget *parent = 0);
+        explicit selecteur_fonction_dialog(type_fonction type, fonctions_conteneur * conteneur, QWidget *parent = 0);
 
         base_fonction * get_fonction() const;
 
     private:
-        void init_choix(type_fonction type);
+        void init_choix(type_fonction type, fonctions_conteneur * conteneur);
         void ajouter_choix(type_id_fonction id);
 
     private slots:

@@ -155,3 +155,22 @@ void textes::transposer_caracteres()
         it->transposer_caracteres();
 }
 
+/** --------------------------------------------------------------------------------------
+ * \brief Tourne les mots de chaque texte.
+ * \param r La rotation à réaliser.
+ */
+void textes::tourner_mots(rotation r)
+{
+    for ( iterator it = begin(); it != end(); ++it )
+        it->tourner_mots(r);
+}
+
+/** --------------------------------------------------------------------------------------
+ * \brief Tourne les caracteres de chaque texte.
+ * \param r La rotation à réaliser.
+ */
+void textes::tourner_caracteres(rotation r)
+{
+    for ( iterator it = begin(); it != end(); ++it )
+        it->tourner_caracteres(r);
+}

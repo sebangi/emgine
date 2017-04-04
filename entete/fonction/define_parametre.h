@@ -75,7 +75,13 @@ enum type_id_parametre{
     PARAM_NUMERO_CHOIX,
 
     /** \brief Paramètre pour indiquer s'il faut transposer selon les mots. */
-    PARAM_TRANSPOSITION_MOTS
+    PARAM_TRANSPOSITION_MOTS,
+
+    /** \brief Paramètre pour indiquer s'il faut réaliser la rotation selon les mots. */
+    PARAM_ROTATION_MOTS,
+
+    /** \brief Paramètre pour indiquer quel rotation réaliser. */
+    PARAM_ROTATION
 };
 
 #endif // DEFINE_PARAMETRE_H

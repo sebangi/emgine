@@ -87,7 +87,7 @@ class base_fonction : public objet_selectionnable
         void set_id(const type_id_fonction &id);
         type_id_fonction get_id() const;
         fonctions_conteneur *get_conteneur() const;
-        void set_conteneur(fonctions_conteneur *conteneur);
+        virtual void set_conteneur(fonctions_conteneur *conteneur);
 
         // gestion des paramètres
         parametres_iterateur parametres_begin();

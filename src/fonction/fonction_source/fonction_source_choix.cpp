@@ -25,13 +25,7 @@ fonction_source_choix::fonction_source_choix( fonctions_conteneur * conteneur, c
     set_id(f_source_choix);
     augmenter_max_niveau_visibilite(1);
 
-    if ( conteneur != NULL )
-        if ( conteneur->est_parametre() )
-            if ( ((base_parametre *)conteneur)->get_type() == TYPE_PARAM_CHOIX )
-            {
-                m_multiple_selection = ((parametre_choix *)conteneur)->multiple_selection();
-                m_choix = ((parametre_choix *)conteneur)->get_choix();
-            }
+    init_choix();
 }
 
 /** --------------------------------------------------------------------------------------
@@ -40,6 +34,17 @@ fonction_source_choix::fonction_source_choix( fonctions_conteneur * conteneur, c
 fonction_source_choix::~fonction_source_choix()
 {
 
+}
+
+/** --------------------------------------------------------------------------------------
+ * \brief Initialise le conteneur de la fonction.
+ * \param conteneur Un pointeur sur le nouveau conteneur.
+ */
+void fonction_source_choix::set_conteneur(fonctions_conteneur *conteneur)
+{
+    super::set_conteneur(conteneur);
+
+    init_choix();
 }
 
 /** --------------------------------------------------------------------------------------
@@ -196,4 +201,18 @@ QString fonction_source_choix::get_string_valeur() const
 void fonction_source_choix::set_string_valeur(const QString &valeur)
 {
     m_selection = valeur.split( "\n" );
+}
+
+/** --------------------------------------------------------------------------------------
+ * \brief Initilialise les choix.
+ */
+void fonction_source_choix::init_choix()
+{
+    if ( get_conteneur() != NULL )
+        if ( get_conteneur()->est_parametre() )
+            if ( ((base_parametre *)get_conteneur())->get_type() == TYPE_PARAM_CHOIX )
+            {
+                m_multiple_selection = ((parametre_choix *)get_conteneur())->multiple_selection();
+                m_choix = ((parametre_choix *)get_conteneur())->get_choix();
+            }
 }

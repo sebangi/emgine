@@ -6,4 +6,5 @@
  * \author Sébastien Angibaud
  */
 
+
 #endif // DEFINE_H

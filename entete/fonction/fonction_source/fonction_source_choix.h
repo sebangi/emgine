@@ -15,10 +15,14 @@
  */
 class fonction_source_choix : public fonction_base_source
 {
+    private:
+        typedef fonction_base_source super;
+
     public:
         fonction_source_choix(fonctions_conteneur * conteneur, const QStringList& selection = QStringList());
         ~fonction_source_choix();
 
+        void set_conteneur(fonctions_conteneur *conteneur);
         base_fonction_widget *generer_fonction_widget();
         void executer( compilateur & compil, textes & textes_in, textes & textes_out );
         QString get_valeur_courte() const;
@@ -31,6 +35,7 @@ class fonction_source_choix : public fonction_base_source
 
     private:
         bool est_valide(logs_compilation_widget * vue_logs);
+        void init_choix();
 
     private:
         /** \brief La liste des choix courants. */

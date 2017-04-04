@@ -96,7 +96,9 @@ SOURCES += \
     src/fonction/fonction_conversion/fonction_choisir_separateur.cpp \
     src/fonction/fonction_conversion/fonction_transposition.cpp \
     src/fonction/fonction_conversion/fonction_inversion.cpp \
-    src/fonction/fonction_conversion/fonction_concatenation.cpp
+    src/fonction/fonction_conversion/fonction_concatenation.cpp \
+    src/fonction/fonction_conversion/fonction_rotation.cpp \
+    src/element/rotation.cpp
 
 HEADERS  += \
         entete/compilation/compilateur.h \
@@ -182,7 +184,9 @@ HEADERS  += \
     entete/fonction/fonction_conversion/fonction_choisir_separateur.h \
     entete/fonction/fonction_conversion/fonction_transposition.h \
     entete/fonction/fonction_conversion/fonction_inversion.h \
-    entete/fonction/fonction_conversion/fonction_concatenation.h
+    entete/fonction/fonction_conversion/fonction_concatenation.h \
+    entete/fonction/fonction_conversion/fonction_rotation.h \
+    entete/element/rotation.h
 
 FORMS    += \
     fenetre_principale.ui
