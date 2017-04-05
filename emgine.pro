@@ -100,7 +100,8 @@ SOURCES += \
     src/fonction/fonction_conversion/fonction_rotation.cpp \
     src/fonction/fonction_conversion/fonction_scission.cpp \
     src/fonction/fonction_conversion/fonction_ecriture_en_diagonale.cpp \
-    src/element/liste_choix.cpp
+    src/element/liste_choix.cpp \
+    src/fonction/fonction_conversion/fonction_inversion_en_diagonale.cpp
 
 HEADERS  += \
         entete/compilation/compilateur.h \
@@ -190,7 +191,8 @@ HEADERS  += \
     entete/fonction/fonction_conversion/fonction_rotation.h \
     entete/fonction/fonction_conversion/fonction_scission.h \
     entete/fonction/fonction_conversion/fonction_ecriture_en_diagonale.h \
-    entete/element/liste_choix.h
+    entete/element/liste_choix.h \
+    entete/fonction/fonction_conversion/fonction_inversion_en_diagonale.h
 
 FORMS    += \
     fenetre_principale.ui

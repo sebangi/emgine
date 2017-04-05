@@ -61,8 +61,12 @@ class texte : public std::vector< ligne >
         void inverser(bool inversion_elements, bool inversion_ordre_caracteres, bool inversion_ordre_mots, bool inversion_ordre_lignes);
         void transposer_mots();
         void transposer_caracteres();
-        void tourner_mots(choix r);
-        void tourner_caracteres(choix r);
+        void inverser_en_diagonale_mots( choix choix_diagonale );
+        void inverser_en_diagonale_caracteres( choix choix_diagonale );
+        void ecrire_mots_en_diagonale(choix choix_orientation, int nb_lignes_maximales, bool forcer_rectangularite);
+        void ecrire_caracteres_en_diagonale(choix choix_orientation, int nb_lignes_maximales, bool forcer_rectangularite);
+        void tourner_mots(choix choix_rotation);
+        void tourner_caracteres(choix choix_rotation);
         bool est_rectangulaire_selon_mots() const;
         bool est_rectangulaire_selon_caracteres() const;
         size_type get_maximum_mots_dans_ligne() const;

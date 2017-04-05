@@ -15,6 +15,16 @@ const QString liste_choix::rotation_270 = "270 degrés";
 
 const QString liste_choix::appliquer_sur_caracteres = "caractères";
 const QString liste_choix::appliquer_sur_mots = "mots";
+const QString liste_choix::appliquer_sur_lignes = "lignes";
+const QString liste_choix::appliquer_sur_textes = "textes";
+
+const QString liste_choix::de_haut_en_bas = "de haut en bas";
+const QString liste_choix::de_bas_en_haut = "de bas en haut";
+const QString liste_choix::de_gauche_a_droite = "de gauche a droite";
+const QString liste_choix::de_droite_a_gauche = "de droite à gauche";
+
+const QString liste_choix::diagonale_haut_gauche_bas_droit = "diagonale_haut_gauche_bas_droit";
+const QString liste_choix::diagonale_bas_gauche_haut_droit = "diagonale_bas_gauche_haut_droit";
 
 /** --------------------------------------------------------------------------------------
  * \brief Constructeur de la classe liste_choix.

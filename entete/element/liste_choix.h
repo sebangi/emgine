@@ -34,11 +34,35 @@ class liste_choix
             /** \brief Une rotation de 270 degré. */
             static const QString rotation_270;
 
-            /** \brief Le choix porte sur les caractère. */
+            /** \brief Le choix porte sur les caractères. */
             static const QString appliquer_sur_caracteres;
 
-            /** \brief Le choix porte sur les caractère. */
+            /** \brief Le choix porte sur les mots. */
             static const QString appliquer_sur_mots;
+
+            /** \brief Le choix porte sur les lignes. */
+            static const QString appliquer_sur_lignes;
+
+            /** \brief Le choix porte sur les textes. */
+            static const QString appliquer_sur_textes;
+
+            /** \brief Le choix de l'orentation de haut en bas. */
+            static const QString de_haut_en_bas;
+
+            /** \brief Le choix de l'orentation de bas en haut. */
+            static const QString de_bas_en_haut;
+
+            /** \brief Le choix de l'orentation de gauche à droite. */
+            static const QString de_gauche_a_droite;
+
+            /** \brief Le choix de l'orentation de droite_a_gauche. */
+            static const QString de_droite_a_gauche;
+
+            /** \brief Le choix de la diagonale haut_gauche_bas_droit. */
+            static const QString diagonale_haut_gauche_bas_droit;
+
+            /** \brief Le choix de la diagonale bas_gauche_haut_droit. */
+            static const QString diagonale_bas_gauche_haut_droit;
 
     public:
         liste_choix(const QStringList & liste_choix_possibles, const QStringList & liste_choix_par_defaut);

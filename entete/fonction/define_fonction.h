@@ -134,6 +134,9 @@ enum type_id_fonction{
     /** \brief Fonction de conversion réalisant l'écriture en diagonale des mots ou des caractères. */
     f_conversion_ecriture_en_diagonale,
 
+    /** \brief Fonction de conversion réalisant suivant une diagonale l'inversion des mots ou des caractères. */
+    f_conversion_inversion_en_diagonale,
+
     /** \brief Fin des fonctions de conversions. */
     fin_fonction_conversion,
 

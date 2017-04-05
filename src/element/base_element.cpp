@@ -116,6 +116,8 @@ int base_element::get_entier() const
 {
     if ( m_type == type_element_entier )
         return m_entier;
+    else if ( m_string.isEmpty() )
+        return 0;
     else
     {
         bool ok;

@@ -27,6 +27,10 @@ class fonction_transposition : public base_fonction
     private:
         void execution_specifique( compilateur &compil, textes & textes_in, textes & textes_out );
         bool est_valide(logs_compilation_widget * vue_logs);
+
+    private:
+        /** \brief Les choix des éléments transposables (les mots ou les caractères). */
+        liste_choix m_choix_elements;
 };
 
 #endif // FONCTION_TRANSPOSITION_H

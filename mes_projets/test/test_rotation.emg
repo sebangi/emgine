@@ -102,8 +102,8 @@ mot4 mot5 mot6</valeur>
             </objet_selectionnable>
             <parametres>
                 <parametre>
-                    <id>18</id>
-                    <nom>Élément à tourner</nom>
+                    <id>6</id>
+                    <nom>Éléments à tourner</nom>
                     <dans_configuration>1</dans_configuration>
                     <objet_selectionnable>
                         <est_etendu>1</est_etendu>
@@ -126,7 +126,7 @@ mots</valeur>
                     </fonctions>
                 </parametre>
                 <parametre>
-                    <id>19</id>
+                    <id>17</id>
                     <nom>La rotation à réaliser</nom>
                     <dans_configuration>1</dans_configuration>
                     <objet_selectionnable>

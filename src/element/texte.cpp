@@ -436,26 +436,29 @@ void texte::transposer_mots()
      * BB EE HH
      * CC FF
      * */
-    texte t;
-
-    for ( iterator it_t = begin(); it_t != end(); ++it_t )
+    if ( ! empty() )
     {
-        unsigned int nb_lignes = 0;
+        texte t;
 
-        for ( ligne::iterator it_l = it_t->begin(); it_l != it_t->end(); ++it_l, ++nb_lignes )
+        for ( iterator it_t = begin(); it_t != end(); ++it_t )
         {
-            if ( nb_lignes >= t.size() )
-            {
-                ligne l;
-                l.set_separateur_mot( it_t->get_separateur_mot() );
-                t.ajouter_ligne(l);
-            }
-            t[nb_lignes].ajouter_mot(*it_l);
-        }
-    }
+            unsigned int nb_lignes = 0;
 
-    swap(t);
-    maj_comptages();
+            for ( ligne::iterator it_l = it_t->begin(); it_l != it_t->end(); ++it_l, ++nb_lignes )
+            {
+                if ( nb_lignes >= t.size() )
+                {
+                    ligne l;
+                    l.set_separateur_mot( it_t->get_separateur_mot() );
+                    t.ajouter_ligne(l);
+                }
+                t[nb_lignes].ajouter_mot(*it_l);
+            }
+        }
+
+        swap(t);
+        maj_comptages();
+    }
 }
 
 
@@ -476,47 +479,288 @@ void texte::transposer_caracteres()
      * CF
      * CF
      * */
-    texte t;
-
-    for ( iterator it_t = begin(); it_t != end(); ++it_t )
+    if ( ! empty() )
     {
-        unsigned int nb_lignes = 0;
+        texte t;
 
-        for ( ligne::iterator it_l = it_t->begin(); it_l != it_t->end(); ++it_l )
-            for ( mot::iterator it_m = it_l->begin(); it_m != it_l->end(); ++it_m, ++nb_lignes )
+        for ( iterator it_t = begin(); it_t != end(); ++it_t )
+        {
+            unsigned int nb_lignes = 0;
+
+            for ( ligne::iterator it_l = it_t->begin(); it_l != it_t->end(); ++it_l )
+                for ( mot::iterator it_m = it_l->begin(); it_m != it_l->end(); ++it_m, ++nb_lignes )
+                {
+                    if ( nb_lignes >= t.size() )
+                    {
+                        ligne l;
+                        l.set_separateur_mot( it_t->get_separateur_mot() );
+                        t.ajouter_ligne(l);
+                    }
+                    mot m(it_m->to_string(), it_l->get_separateur_caractere() );
+                    t[nb_lignes].ajouter_mot( m );
+                }
+        }
+
+        swap(t);
+        fusionner(false,true,false);
+        maj_comptages();
+    }
+}
+
+/** --------------------------------------------------------------------------------------
+ * \brief Inverse les mots du texte suivant une diagonale.
+ * \param choix_diagonale Le choix de la diagonale pivot.
+ */
+void texte::inverser_en_diagonale_mots( choix choix_diagonale )
+{
+    /*
+     * AA BB CC DD
+     * EE FF GG HH
+     *
+     * AA EE FF GG
+     * BB CC DD HH
+     * */
+    if ( ! empty() )
+    {
+        if ( choix_diagonale == liste_choix::diagonale_bas_gauche_haut_droit )
+            inverser(false, false, true, false);
+
+        texte t;
+        size_t max_pos_l = size() - 1;
+        size_t max_pos_m = get_maximum_mots_dans_ligne() - 1;
+
+        for ( iterator it_t = begin(); it_t != end(); ++it_t  )
+        {
+            ligne l;
+            l.set_separateur_mot( it_t->get_separateur_mot() );
+            t.ajouter_ligne(l);
+        }
+
+        size_t pos_l = 0;
+        for ( iterator it_t = begin(); it_t != end(); ++it_t, ++pos_l )
+        {
+            size_t pos_m = 0;
+            for ( ligne::iterator it_l = it_t->begin(); it_l != it_t->end(); ++it_l, ++pos_m )
+            {
+                size_t new_pos_l;
+                if ( pos_l + pos_m <= std::min(max_pos_l,max_pos_m) )
+                    new_pos_l = pos_m;
+                else if ( pos_l + pos_m >= std::max(max_pos_l,max_pos_m)  )
+                    new_pos_l = max_pos_l + pos_m - max_pos_m;
+                else
+                    new_pos_l = max_pos_l - pos_l;
+                t[new_pos_l].ajouter_mot(*it_l);
+            }
+        }
+
+        swap(t);
+        if ( choix_diagonale == liste_choix::diagonale_bas_gauche_haut_droit )
+            inverser(false, false, true, false);
+
+        maj_comptages();
+    }
+}
+
+/** --------------------------------------------------------------------------------------
+ * \brief Inverse les caractères du texte suivant une diagonale.
+ * \param choix_diagonale Le choix de la diagonale pivot.
+ */
+void texte::inverser_en_diagonale_caracteres( choix choix_diagonale )
+{
+    /*
+     * AA BB CC DD
+     * EE FF GG HH
+     *
+     * AEEFFGGH
+     * ABBCCDDH
+     * */
+    /*
+     * AA BB CC DD
+     * EE FF GG HH
+     *
+     * AA EE FF GG
+     * BB CC DD HH
+     * */
+    if ( ! empty() )
+    {
+        if ( choix_diagonale == liste_choix::diagonale_bas_gauche_haut_droit )
+            inverser(false, false, true, false);
+
+        texte t;
+        size_t max_pos_l = size() - 1;
+        size_t max_pos_c = get_maximum_caracteres_dans_ligne() - 1;
+
+        for ( iterator it_t = begin(); it_t != end(); ++it_t  )
+        {
+            ligne l;
+            l.set_separateur_mot( it_t->get_separateur_mot() );
+            t.ajouter_ligne(l);
+        }
+
+        size_t pos_l = 0;
+        for ( iterator it_t = begin(); it_t != end(); ++it_t, ++pos_l )
+        {
+            size_t pos_c = 0;
+            for ( ligne::iterator it_l = it_t->begin(); it_l != it_t->end(); ++it_l )
+                for ( mot::iterator it_m = it_l->begin(); it_m != it_l->end(); ++it_m, ++pos_c )
+                {
+                    size_t new_pos_l;
+                    if ( pos_l + pos_c <= std::min(max_pos_l,max_pos_c) )
+                        new_pos_l = pos_c;
+                    else if ( pos_l + pos_c >= std::max(max_pos_l,max_pos_c)  )
+                        new_pos_l = max_pos_l + pos_c - max_pos_c;
+                    else
+                        new_pos_l = max_pos_l - pos_l;
+                    mot m(it_m->to_string(), it_l->get_separateur_caractere() );
+                    t[new_pos_l].ajouter_mot(m);
+                }
+        }
+
+        swap(t);
+        if ( choix_diagonale == liste_choix::diagonale_bas_gauche_haut_droit )
+            inverser(false, false, true, false);
+
+        maj_comptages();
+    }
+}
+
+/** --------------------------------------------------------------------------------------
+ * \brief Réécrit les mots du texte en diagonale.
+ * \param choix_orientation Le choix de l'orientation d'écriture.
+ * \param nb_lignes_maximales Le nombre de lignes maximales à écrire (0 si aucune limites).
+ * \param forcer_rectangularite Indique s'il faut écrire les mots dans un tableau.
+ */
+void texte::ecrire_mots_en_diagonale(choix choix_orientation, int nb_lignes_maximales, bool forcer_rectangularite )
+{
+    if ( nb_lignes_maximales == 0 )
+        forcer_rectangularite = false;
+    size_type max_mots;
+    size_type premiere_ligne = 0;
+
+    if ( forcer_rectangularite )
+        max_mots = ( ( nb_mots() - 1 ) / nb_lignes_maximales ) + 1;
+
+    if ( ! empty() )
+    {
+        texte t;
+
+        for ( iterator it_t = begin(); it_t != end(); ++it_t )
+        {
+            size_type nb_lignes = 0;
+
+            for ( ligne::iterator it_l = it_t->begin(); it_l != it_t->end(); ++it_l )
             {
                 if ( nb_lignes >= t.size() )
                 {
-                    ligne l;
-                    l.set_separateur_mot( it_t->get_separateur_mot() );
-                    t.ajouter_ligne(l);
+                    if ( nb_lignes_maximales != 0 && nb_lignes >= nb_lignes_maximales )
+                        nb_lignes = premiere_ligne;
+                    else
+                    {
+                        ligne l;
+                        l.set_separateur_mot( it_t->get_separateur_mot() );
+                        t.ajouter_ligne(l);
+                    }
                 }
-                mot m(it_m->to_string(), it_l->get_separateur_caractere() );
-                t[nb_lignes].ajouter_mot( m );
-            }
-    }
 
-    swap(t);
-    fusionner(false,true,false);
-    maj_comptages();
+                t[nb_lignes].ajouter_mot(*it_l);
+                if ( forcer_rectangularite )
+                    if ( t[nb_lignes].nb_mots() >= max_mots )
+                        ++premiere_ligne;
+
+                if ( t[nb_lignes].size() == 1 )
+                    nb_lignes = premiere_ligne;
+                else
+                    ++nb_lignes;
+            }
+        }
+
+        swap(t);
+
+        if ( choix_orientation == liste_choix::de_bas_en_haut )
+            inverser_en_diagonale_mots( liste_choix::diagonale_haut_gauche_bas_droit );
+
+        maj_comptages();
+    }
+}
+
+/** --------------------------------------------------------------------------------------
+ * \brief Réécrit les mots du texte en diagonale.
+ * \param choix_orientation Le choix de l'orientation d'écriture.
+ * \param nb_lignes_maximales Le nombre de lignes maximales à écrire (0 si aucune limites).
+ * \param forcer_rectangularite Indique s'il faut écrire les mots dans un tableau.
+ */
+void texte::ecrire_caracteres_en_diagonale(choix choix_orientation, int nb_lignes_maximales, bool forcer_rectangularite )
+{
+    if ( nb_lignes_maximales == 0 )
+        forcer_rectangularite = false;
+    size_type max_caracteres;
+    size_type premiere_ligne = 0;
+
+    if ( forcer_rectangularite )
+        max_caracteres = ( ( nb_caracteres() - 1 ) / nb_lignes_maximales ) + 1;
+
+    if ( ! empty() )
+    {
+        texte t;
+
+        for ( iterator it_t = begin(); it_t != end(); ++it_t )
+        {
+            size_type nb_lignes = 0;
+
+            for ( ligne::iterator it_l = it_t->begin(); it_l != it_t->end(); ++it_l )
+                for ( mot::iterator it_m = it_l->begin(); it_m != it_l->end(); ++it_m )
+                {
+                    if ( nb_lignes >= t.size() )
+                    {
+                        if ( nb_lignes_maximales != 0 && nb_lignes >= nb_lignes_maximales )
+                            nb_lignes = premiere_ligne;
+                        else
+                        {
+                            ligne l;
+                            l.set_separateur_mot( it_t->get_separateur_mot() );
+                            t.ajouter_ligne(l);
+                        }
+                    }
+
+                    mot m(it_m->to_string(), it_l->get_separateur_caractere() );
+                    t[nb_lignes].ajouter_mot(m);
+                    if ( forcer_rectangularite )
+                        if ( t[nb_lignes].nb_mots() >= max_caracteres )
+                            ++premiere_ligne;
+
+                    if ( t[nb_lignes].size() == 1 )
+                        nb_lignes = premiere_ligne;
+                    else
+                        ++nb_lignes;
+                }
+        }
+
+        swap(t);
+        fusionner(false,true,false);
+
+        if ( choix_orientation == liste_choix::de_bas_en_haut )
+            inverser_en_diagonale_caracteres( liste_choix::diagonale_haut_gauche_bas_droit );
+
+        maj_comptages();
+    }
 }
 
 /** --------------------------------------------------------------------------------------
  * \brief Tourne les mots du texte.
- * \param r Le choix de la rotation à réaliser.
+ * \param choix_rotation Le choix de la rotation à réaliser.
  */
-void texte::tourner_mots(choix r)
+void texte::tourner_mots(choix choix_rotation)
 {
-    if ( r == liste_choix::rotation_90 )
+    if ( choix_rotation == liste_choix::rotation_90 )
     {
         transposer_mots();
         inverser(false, false, true, false);
     }
-    else if ( r == liste_choix::rotation_180 )
+    else if ( choix_rotation == liste_choix::rotation_180 )
     {
         inverser(false, false, true, true);
     }
-    else if ( r == liste_choix::rotation_270 )
+    else if ( choix_rotation == liste_choix::rotation_270 )
     {
         transposer_mots();
         inverser(false, false, false, true);
@@ -525,25 +769,25 @@ void texte::tourner_mots(choix r)
 
 /** --------------------------------------------------------------------------------------
  * \brief Tourne les caracteres du texte.
- * \param r Le choix de la rotation à réaliser.
+ * \param choix_rotation Le choix de la rotation à réaliser.
  */
-void texte::tourner_caracteres(choix r)
+void texte::tourner_caracteres(choix choix_rotation)
 {
-    if ( r == liste_choix::rotation_90 ||
-         r == liste_choix::rotation_180 ||
-         r == liste_choix::rotation_270 )
+    if ( choix_rotation == liste_choix::rotation_90 ||
+         choix_rotation == liste_choix::rotation_180 ||
+         choix_rotation == liste_choix::rotation_270 )
         fusionner( false, true, false );
 
-    if ( r == liste_choix::rotation_90 )
+    if ( choix_rotation == liste_choix::rotation_90 )
     {
         transposer_caracteres();
         inverser(false, true, false, false);
     }
-    else if ( r == liste_choix::rotation_180 )
+    else if ( choix_rotation == liste_choix::rotation_180 )
     {
         inverser(false, true, false, true);
     }
-    else if ( r == liste_choix::rotation_270 )
+    else if ( choix_rotation == liste_choix::rotation_270 )
     {
         transposer_caracteres();
         inverser(false, false, false, true);

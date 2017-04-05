@@ -38,6 +38,7 @@ fonction_cesar::fonction_cesar( fonctions_conteneur * conteneur )
                                            base_parametre::CONTENU_PARAM_VIDE_IMPOSSIBLE,
                                            base_parametre::CONFIGURATION_VISIBLE,
                                            base_parametre::ALGO_IPL) );
+
     ajouter_parametre( PARAM_ALPHABET,
                        new base_parametre( this,
                                            "Alphabet",
