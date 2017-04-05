@@ -103,7 +103,7 @@ mot4 mot5 mot6</valeur>
             <parametres>
                 <parametre>
                     <id>18</id>
-                    <nom>Réaliser la rotation suivant les mots</nom>
+                    <nom>Élément à tourner</nom>
                     <dans_configuration>1</dans_configuration>
                     <objet_selectionnable>
                         <est_etendu>1</est_etendu>
@@ -111,94 +111,23 @@ mot4 mot5 mot6</valeur>
                     </objet_selectionnable>
                     <fonctions>
                         <fonction>
-                            <id>1</id>
-                            <nom>Texte</nom>
+                            <id>900</id>
+                            <nom>Choix</nom>
                             <niveau_visibilite>2</niveau_visibilite>
                             <active>1</active>
                             <objet_selectionnable>
                                 <est_etendu>0</est_etendu>
                                 <verrouille>0</verrouille>
                             </objet_selectionnable>
-                            <valeur>0
-1</valeur>
-                            <parametres>
-                                <parametre>
-                                    <id>0</id>
-                                    <nom>Séparateur d'élément</nom>
-                                    <dans_configuration>0</dans_configuration>
-                                    <objet_selectionnable>
-                                        <est_etendu>1</est_etendu>
-                                        <verrouille>0</verrouille>
-                                    </objet_selectionnable>
-                                    <fonctions>
-                                        <fonction>
-                                            <id>3</id>
-                                            <nom>Caractères</nom>
-                                            <niveau_visibilite>2</niveau_visibilite>
-                                            <active>1</active>
-                                            <objet_selectionnable>
-                                                <est_etendu>0</est_etendu>
-                                                <verrouille>0</verrouille>
-                                            </objet_selectionnable>
-                                            <valeur></valeur>
-                                            <parametres/>
-                                        </fonction>
-                                    </fonctions>
-                                </parametre>
-                                <parametre>
-                                    <id>1</id>
-                                    <nom>Séparateur de mot</nom>
-                                    <dans_configuration>0</dans_configuration>
-                                    <objet_selectionnable>
-                                        <est_etendu>1</est_etendu>
-                                        <verrouille>0</verrouille>
-                                    </objet_selectionnable>
-                                    <fonctions>
-                                        <fonction>
-                                            <id>3</id>
-                                            <nom>Caractères</nom>
-                                            <niveau_visibilite>2</niveau_visibilite>
-                                            <active>1</active>
-                                            <objet_selectionnable>
-                                                <est_etendu>0</est_etendu>
-                                                <verrouille>0</verrouille>
-                                            </objet_selectionnable>
-                                            <valeur> </valeur>
-                                            <parametres/>
-                                        </fonction>
-                                    </fonctions>
-                                </parametre>
-                                <parametre>
-                                    <id>2</id>
-                                    <nom>Séparateur de ligne</nom>
-                                    <dans_configuration>0</dans_configuration>
-                                    <objet_selectionnable>
-                                        <est_etendu>1</est_etendu>
-                                        <verrouille>0</verrouille>
-                                    </objet_selectionnable>
-                                    <fonctions>
-                                        <fonction>
-                                            <id>3</id>
-                                            <nom>Caractères</nom>
-                                            <niveau_visibilite>2</niveau_visibilite>
-                                            <active>1</active>
-                                            <objet_selectionnable>
-                                                <est_etendu>0</est_etendu>
-                                                <verrouille>0</verrouille>
-                                            </objet_selectionnable>
-                                            <valeur>
-</valeur>
-                                            <parametres/>
-                                        </fonction>
-                                    </fonctions>
-                                </parametre>
-                            </parametres>
+                            <valeur>caractères
+mots</valeur>
+                            <parametres/>
                         </fonction>
                     </fonctions>
                 </parametre>
                 <parametre>
                     <id>19</id>
-                    <nom>Les rotations à réaliser</nom>
+                    <nom>La rotation à réaliser</nom>
                     <dans_configuration>1</dans_configuration>
                     <objet_selectionnable>
                         <est_etendu>1</est_etendu>

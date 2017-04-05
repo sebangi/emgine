@@ -260,7 +260,7 @@ base_element base_element::element_inconnu()
 base_element base_element::element_booleen(bool valeur)
 {
     base_element e;
-    e.m_type == type_element_booleen;
+    e.m_type = type_element_booleen;
     e.m_booleen = valeur;
 
     if ( e.m_booleen )

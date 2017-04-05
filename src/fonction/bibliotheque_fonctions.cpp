@@ -33,10 +33,11 @@
 #include "entete/fonction/fonction_conversion/fonction_fusion.h"
 #include "entete/fonction/fonction_conversion/fonction_inversion.h"
 #include "entete/fonction/fonction_conversion/fonction_lecture_morse.h"
+#include "entete/fonction/fonction_conversion/fonction_rotation.h"
+#include "entete/fonction/fonction_conversion/fonction_scission.h"
 #include "entete/fonction/fonction_conversion/fonction_selection_selon_dictionnaire.h"
 #include "entete/fonction/fonction_conversion/fonction_substitution.h"
 #include "entete/fonction/fonction_conversion/fonction_transposition.h"
-#include "entete/fonction/fonction_conversion/fonction_rotation.h"
 
 std::map<type_id_fonction, QString> bibliotheque_fonctions::s_fonctions_nom =
 {
@@ -64,6 +65,7 @@ std::map<type_id_fonction, QString> bibliotheque_fonctions::s_fonctions_nom =
     { f_conversion_inversion, "Inversion du texte" },
     { f_conversion_concatenation, "Concaténation de textes" },
     { f_conversion_rotation, "Rotation du texte" },
+    { f_conversion_scission, "Scission du texte." },
 
     { f_sortie_texte, "Textes" },
     { f_sortie_frequence, "Fréquences des éléments" },
@@ -97,6 +99,8 @@ std::map<type_id_fonction, QString> bibliotheque_fonctions::s_fonctions_aide =
     { f_conversion_inversion, "Inversion des caractères, des mots et/ou des lignes." },
     { f_conversion_concatenation, "Concaténation de textes. Ajoute à chaque texte en entrée les textes du paramètre." },
     { f_conversion_rotation, "Rotation du texte (des mots ou des caractères)." },
+    { f_conversion_scission, "Scission des lignes en textes, des mots en lignes, des caractères en mots ou du contenu des caractères en caractères." },
+
 
     { f_sortie_texte, "Sortie textuelle : la liste de tous les textes obtenus." },
     { f_sortie_frequence, "Sortie affichant la fréquence des éléments." },
@@ -120,6 +124,9 @@ std::map<type_id_fonction, std::set<QString> > bibliotheque_fonctions::s_categor
     },
     { f_conversion_rotation,
       { "tourner" }
+    },
+    { f_conversion_scission,
+      { "scinder", "découper" }
     }
 };
 
@@ -158,6 +165,7 @@ base_fonction * bibliotheque_fonctions::get_fonction(type_id_fonction id)
         case f_conversion_inversion : return new fonction_inversion(NULL);
         case f_conversion_concatenation : return new fonction_concatenation(NULL);
         case f_conversion_rotation : return new fonction_rotation(NULL);
+        case f_conversion_scission : return new fonction_scission(NULL);
 
             // SORTIES
         case f_sortie_texte : return new fonction_sortie_texte(NULL);

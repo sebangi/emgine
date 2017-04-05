@@ -56,6 +56,8 @@ bool fonction_source_booleen::est_valide(logs_compilation_widget * vue_logs)
  */
 void fonction_source_booleen::executer( compilateur &compil, textes & textes_in, textes & textes_out )
 {
+    textes_out = textes_in;
+
     base_element e(m_valeur);
     mot m;
     m.push_back(e);

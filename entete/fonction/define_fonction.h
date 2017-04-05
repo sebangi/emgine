@@ -54,7 +54,7 @@ enum type_id_fonction{
     f_source_entier,
 
     /** \brief Fonction source correspondant à. */
-    f_source_NOUVEAU,
+    f_source_LIBRE,
 
     /** \brief Fonction source correspondant à un dictionnaire. */
     f_source_dictionnaire,
@@ -127,6 +127,12 @@ enum type_id_fonction{
 
     /** \brief Fonction réalisant la rotation des mots ou des caractères. */
     f_conversion_rotation,
+
+    /** \brief Fonction réalisant la scission des lignes en textes, des mots en lignes, des caractères en mots ou du contenu des caractères en caractères. */
+    f_conversion_scission,
+
+    /** \brief Fonction de conversion réalisant l'écriture en diagonale des mots ou des caractères. */
+    f_conversion_ecriture_en_diagonale,
 
     /** \brief Fin des fonctions de conversions. */
     fin_fonction_conversion,

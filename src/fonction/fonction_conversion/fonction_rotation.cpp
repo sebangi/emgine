@@ -20,27 +20,37 @@
  \param conteneur Pointeur sur le conteneur de la fonction.
 */
 fonction_rotation::fonction_rotation( fonctions_conteneur * conteneur )
-    : base_fonction(conteneur)
+    : base_fonction(conteneur),
+      m_choix_rotation( QStringList() << liste_choix::rotation_0
+                                      << liste_choix::rotation_90
+                                      << liste_choix::rotation_180
+                                      << liste_choix::rotation_270 ,
+                        QStringList() << liste_choix::rotation_90 ),
+      m_choix_type_rotation( QStringList() << liste_choix::appliquer_sur_caracteres
+                                           << liste_choix::appliquer_sur_mots,
+                             QStringList() << liste_choix::appliquer_sur_caracteres )
 {
     set_id(f_conversion_rotation);
     augmenter_max_niveau_visibilite(1);
 
     ajouter_parametre( PARAM_ROTATION_MOTS,
-                       new base_parametre( this,
-                                           "Réaliser la rotation suivant les mots",
-                                           "Indique s'il faut réaliser la rotation suivant les mots.",
-                                           base_parametre::CONTENU_PARAM_VIDE_IMPOSSIBLE,
-                                           base_parametre::CONFIGURATION_INVISIBLE,
-                                           base_parametre::ALGO_IPL) );
+                       new parametre_choix( this,
+                                            "Éléments à tourner",
+                                            "Indique s'il faut appliquer la rotation sur les mots ou sur les caractères.",
+                                            base_parametre::CONTENU_PARAM_VIDE_IMPOSSIBLE,
+                                            base_parametre::CONFIGURATION_INVISIBLE,
+                                            base_parametre::ALGO_IPL,
+                                            m_choix_type_rotation,
+                                            true) );
 
     ajouter_parametre( PARAM_ROTATION,
                        new parametre_choix( this,
-                                            "Les rotations à réaliser",
-                                            "Indique quelles rotations réaliser.",
+                                            "La rotation à réaliser",
+                                            "Indique quelle rotation réaliser.",
                                             base_parametre::CONTENU_PARAM_VIDE_IMPOSSIBLE,
                                             base_parametre::CONFIGURATION_VISIBLE,
                                             base_parametre::ALGO_IPL,
-                                            rotation::liste_rotations_valides(),
+                                            m_choix_rotation,
                                             true ) );
 }
 
@@ -69,7 +79,7 @@ QString fonction_rotation::get_valeur_courte() const
 void fonction_rotation::initialisation_par_defaut()
 {
     m_parametres[PARAM_ROTATION_MOTS]->set_booleen_par_defaut(true);
-    m_parametres[PARAM_ROTATION]->set_choix_par_defaut( rotation::liste_rotations_par_defaut() );
+    m_parametres[PARAM_ROTATION]->set_choix_par_defaut( m_choix_rotation.liste_choix_par_defaut() );
 }
 
 /** --------------------------------------------------------------------------------------
@@ -104,23 +114,23 @@ void fonction_rotation::callback_param_1( compilateur &compil, textes & textes_i
      */
 void fonction_rotation::execution_specifique( compilateur &compil, textes & textes_in, textes & textes_out )
 {
-    bool rotation_mot =  m_map_IPL[PARAM_ROTATION_MOTS].it_caractere_courant->get_booleen();
-    rotation r( m_map_IPL[PARAM_ROTATION].it_mot_courant->to_string() );
+    QString type_rotation = m_map_IPL[PARAM_ROTATION_MOTS].it_mot_courant->to_string();
+    QString rotation( m_map_IPL[PARAM_ROTATION].it_mot_courant->to_string() );
 
-    if ( r.est_valide() )
+    if ( m_choix_rotation.est_valide( rotation ) && m_choix_type_rotation.est_valide( type_rotation ) )
     {
         textes t = textes(textes_in);
 
         for ( textes::iterator it_t = t.begin(); it_t != t.end(); ++it_t )
         {
-            if ( rotation_mot )
+            if ( type_rotation == liste_choix::appliquer_sur_mots )
             {
                 if ( ! it_t->est_rectangulaire_selon_mots() )
                     compil.get_vue_logs()->ajouter_log
                             ( log_compilation( log_compilation::LOG_WARNING, (base_fonction*)this,
                                                "La rotation d'un texte non rectangulaire déforme le texte.") );
 
-                it_t->tourner_mots(r);
+                it_t->tourner_mots(rotation);
             }
             else
             {
@@ -129,7 +139,7 @@ void fonction_rotation::execution_specifique( compilateur &compil, textes & text
                             ( log_compilation( log_compilation::LOG_WARNING, (base_fonction*)this,
                                                "La rotation d'un texte non rectangulaire déforme le texte.") );
 
-                it_t->tourner_caracteres(r);
+                it_t->tourner_caracteres(rotation);
             }
 
             textes_out.ajouter_texte(compil.get_configuration(), *it_t);

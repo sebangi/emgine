@@ -56,7 +56,7 @@ QString mot::to_string() const
 {
     QString result;
 
-    for ( int i = 0; i < size(); ++i )
+    for ( size_type i = 0; i < size(); ++i )
         result += this->at(i).to_string();
 
     return result;
@@ -73,7 +73,7 @@ QString mot::to_string_lisible() const
     if ( ! empty() )
         result += this->at(0).to_string();
 
-    for ( int i = 1; i < size(); ++i )
+    for ( size_type i = 1; i < size(); ++i )
         result += m_separateur_caractere + this->at(i).to_string();
 
     return result;
@@ -96,7 +96,7 @@ std::vector<base_element>::size_type mot::nb_caracteres_alphabet() const
 {
     std::vector<base_element>::size_type nb = 0;
 
-    for ( int i = 0; i < size(); ++i )
+    for ( size_type i = 0; i < size(); ++i )
         if ( this->at(i).est_lettre_alphabet() )
             nb++;
 
@@ -108,9 +108,33 @@ std::vector<base_element>::size_type mot::nb_caracteres_alphabet() const
  */
 void mot::fusionner()
 {
-    base_element elem(to_string());
-    clear();
-    push_back(elem);
+    if ( ! empty() )
+    {
+        base_element elem(to_string());
+        clear();
+        push_back(elem);
+    }
+}
+
+/** --------------------------------------------------------------------------------------
+ * \brief Scinder le contenu des caractères.
+ */
+void mot::scinder_contenu_caracteres()
+{
+    if ( ! empty() )
+    {
+        mot m;
+
+        for ( iterator it = begin(); it != end(); ++it )
+        {
+            QString s = it->to_string();
+
+            for ( QString::iterator it_s = s.begin(); it_s != s.end(); ++it_s )
+                m.push_back( base_element(*it_s) );
+        }
+
+        swap(m);
+    }
 }
 
 /** --------------------------------------------------------------------------------------

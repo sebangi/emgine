@@ -43,7 +43,7 @@ QString textes::to_string() const
 {
     QString result;
 
-    for ( int i = 0; i != size(); ++i )
+    for ( size_type i = 0; i != size(); ++i )
         result += this->at(i).to_string();
 
     return result;
@@ -60,7 +60,7 @@ QString textes::to_string_lisible() const
     if ( ! empty() )
         result += this->at(0).to_string_lisible();
 
-    for ( int i = 1; i < size(); ++i )
+    for ( size_type i = 1; i < size(); ++i )
         result += "\n---------------------------------------\n" + this->at(i).to_string_lisible();
 
     return result;
@@ -84,7 +84,7 @@ void textes::ajouter_texte(const configuration& config, const texte &t)
  */
 void textes::calculer_frequence( bool force_upper_case )
 {
-    for ( int i = 0; i != size(); ++i )
+    for ( size_type i = 0; i != size(); ++i )
         this->at(i).calculer_frequence(force_upper_case);
 }
 
@@ -93,7 +93,7 @@ void textes::calculer_frequence( bool force_upper_case )
  */
 void textes::calculer_indice_coincidence()
 {
-    for ( int i = 0; i != size(); ++i )
+    for ( size_type i = 0; i != size(); ++i )
         this->at(i).calculer_indice_coincidence();
 }
 
@@ -122,4 +122,33 @@ void textes::fusionner(bool fusion_caracteres, bool fusion_mots, bool fusion_lig
     if ( fusion_caracteres || fusion_mots || fusion_lignes)
         for ( iterator it = begin(); it != end(); ++it )
             it->fusionner(fusion_caracteres, fusion_mots, fusion_lignes);
+}
+
+/** --------------------------------------------------------------------------------------
+ * \brief Scinder les lignes, les mots, les caractères et/ou le contenu des caractères.
+ * \param scission_interne_caracteres Indique s'il faut scinder le contenu des caractères.
+ * \param scission_caracteres Indique s'il faut scinder les caractères.
+ * \param scission_mots Indique s'il faut scinder les mots.
+ * \param scission_lignes Indique s'il faut scinder les lignes.
+ */
+void textes::scinder(bool scission_interne_caracteres, bool scission_caracteres, bool scission_mots, bool scission_lignes)
+{
+    if ( scission_interne_caracteres || scission_caracteres || scission_mots)
+        for ( iterator it = begin(); it != end(); ++it )
+            it->scinder( scission_interne_caracteres, scission_caracteres, scission_mots);
+
+    if ( scission_lignes && ! empty() )
+    {
+        textes ts;
+
+        for ( iterator it = begin(); it != end(); ++it )
+            for ( texte::iterator it_t = it->begin(); it_t != it->end(); ++it_t )
+            {
+                texte t;
+                t.ajouter_ligne(*it_t);
+                ts.ajouter_texte(it->get_configuration(), t);
+            }
+
+        swap(ts);
+    }
 }

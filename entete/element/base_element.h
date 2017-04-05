@@ -7,7 +7,7 @@
  */
 
 #include "type_element.h"
-#include "entete/element/rotation.h"
+#include "entete/element/liste_choix.h"
 
 #include <QString>
 

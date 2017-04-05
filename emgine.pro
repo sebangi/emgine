@@ -98,7 +98,9 @@ SOURCES += \
     src/fonction/fonction_conversion/fonction_inversion.cpp \
     src/fonction/fonction_conversion/fonction_concatenation.cpp \
     src/fonction/fonction_conversion/fonction_rotation.cpp \
-    src/element/rotation.cpp
+    src/fonction/fonction_conversion/fonction_scission.cpp \
+    src/fonction/fonction_conversion/fonction_ecriture_en_diagonale.cpp \
+    src/element/liste_choix.cpp
 
 HEADERS  += \
         entete/compilation/compilateur.h \
@@ -186,7 +188,9 @@ HEADERS  += \
     entete/fonction/fonction_conversion/fonction_inversion.h \
     entete/fonction/fonction_conversion/fonction_concatenation.h \
     entete/fonction/fonction_conversion/fonction_rotation.h \
-    entete/element/rotation.h
+    entete/fonction/fonction_conversion/fonction_scission.h \
+    entete/fonction/fonction_conversion/fonction_ecriture_en_diagonale.h \
+    entete/element/liste_choix.h
 
 FORMS    += \
     fenetre_principale.ui

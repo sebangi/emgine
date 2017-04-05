@@ -9,6 +9,7 @@
 #include "entete/projet/base_fonction.h"
 
 class base_element;
+class liste_choix;
 
 /**
  * \class fonction_rotation
@@ -28,6 +29,13 @@ class fonction_rotation : public base_fonction
         void callback_param_1( compilateur &compil, textes & textes_in, textes & textes_out );
         void execution_specifique( compilateur &compil, textes & textes_in, textes & textes_out );
         bool est_valide(logs_compilation_widget * vue_logs);
+
+    private:
+        /** \brief La liste des rotations possibles. */
+        liste_choix m_choix_rotation;
+
+        /** \brief La liste type de rotation possibles (par mot ou par caractères). */
+        liste_choix m_choix_type_rotation;
 };
 
 #endif // FONCTION_ROTATION_H

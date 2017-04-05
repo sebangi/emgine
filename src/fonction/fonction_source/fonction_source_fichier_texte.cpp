@@ -100,6 +100,8 @@ base_fonction_widget *fonction_source_fichier_texte::generer_fonction_widget()
  */
 void fonction_source_fichier_texte::executer( compilateur &compil, textes & textes_in, textes & textes_out )
 {
+    textes_out = textes_in;
+
     if ( m_chemin_relatif_fichier.isEmpty() )
         return;
 

@@ -66,7 +66,7 @@ QString ligne::to_string() const
 {
     QString result;
 
-    for ( int i = 0; i < size(); ++i )
+    for ( size_type i = 0; i < size(); ++i )
         result += this->at(i).to_string();
 
     return result;
@@ -83,7 +83,7 @@ QString ligne::to_string_lisible() const
     if ( ! empty() )
         result += this->at(0).to_string_lisible();
 
-    for ( int i = 1; i < size(); ++i )
+    for ( size_type i = 1; i < size(); ++i )
         result += m_separateur_mot + this->at(i).to_string_lisible();
 
     return result;
@@ -106,7 +106,7 @@ std::vector<mot>::size_type ligne::nb_caracteres_alphabet() const
 {
     std::vector<mot>::size_type nb = 0;
 
-    for ( int i = 0; i < size(); ++i )
+    for ( size_type i = 0; i < size(); ++i )
         nb += this->at(i).nb_caracteres_alphabet();
 
     return nb;
@@ -161,6 +161,33 @@ void ligne::fusionner(bool fusion_caracteres, bool fusion_mots)
 }
 
 /** --------------------------------------------------------------------------------------
+ * \brief Scinder les caractères et/ou le contenu des caractères.
+ * \param scission_interne_caracteres Indique s'il faut scinder le contenu des caractères.
+ * \param scission_caracteres Indique s'il faut scinder les caractères.
+ */
+void ligne::scinder(bool scission_interne_caracteres, bool scission_caracteres)
+{
+    if ( scission_interne_caracteres )
+        for ( iterator it = begin(); it != end(); ++it )
+            it->scinder_contenu_caracteres();
+
+    if ( scission_caracteres && ! empty() )
+    {
+        ligne l;
+
+        for ( iterator it = begin(); it != end(); ++it )
+            for ( mot::iterator it_m = it->begin(); it_m != it->end(); ++it_m )
+            {
+                mot m;
+                m.push_back(*it_m);
+                l.ajouter_mot(m);
+            }
+
+        swap(l);
+    }
+}
+
+/** --------------------------------------------------------------------------------------
  * \brief Inversion des lignes, des mots et/ou des caractères.
  * \param inversion_elements Indique s'il faut inverser les elements.
  * \param inversion_ordre_caracteres Indique s'il faut inverser l'ordre des caractères.
@@ -183,7 +210,7 @@ void ligne::maj_nb_caracteres()
 {
     m_nb_caracteres = 0;
 
-    for ( int i = 0; i < size(); ++i )
+    for ( size_type i = 0; i < size(); ++i )
         m_nb_caracteres += this->at(i).nb_caracteres();
 }
 

@@ -38,6 +38,7 @@ class ligne : public std::vector< mot >
 
         bool operator<(const ligne & l) const;
         void fusionner(bool fusion_caracteres, bool fusion_mots);
+        void scinder(bool scission_interne_caracteres, bool scission_caracteres);
         void inverser(bool inversion_elements, bool inversion_ordre_caracteres, bool inversion_ordre_mots);
         QString get_separateur_mot() const;
 

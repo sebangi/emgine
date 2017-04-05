@@ -28,7 +28,8 @@ class textes : public std::vector< texte >
         void ajouter_texte(const configuration & config, const texte& t);
         void calculer_frequence( bool force_upper_case );
         void calculer_indice_coincidence();
-        void fusionner(bool fusion_caracteres, bool fusion_mots, bool fusion_lignes, bool fusion_textes);        
+        void fusionner(bool fusion_caracteres, bool fusion_mots, bool fusion_lignes, bool fusion_textes);
+        void scinder(bool scission_interne_caracteres, bool scission_caracteres, bool scission_mots, bool scission_lignes);
 };
 
 #endif // TEXTES_Hs

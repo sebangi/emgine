@@ -45,6 +45,8 @@ base_fonction_widget *fonction_source_caractere::generer_fonction_widget()
  */
 void fonction_source_caractere::executer( compilateur &compil, textes & textes_in, textes & textes_out )
 {
+    textes_out = textes_in;
+
     mot m;
 
     for ( int i = 0 ; i != m_valeur.size(); ++i )

@@ -75,7 +75,7 @@ texte::~texte()
  * \brief Ajoute une ligne donnée en fin de texte.
  * \param l La ligne à ajouter.
  */
-void texte::ajouter_ligne( const ligne & l)
+void texte::ajouter_ligne( const ligne & l )
 {
     push_back(l);
     m_nb_caracteres += l.nb_caracteres();
@@ -105,7 +105,7 @@ QString texte::to_string() const
 {
     QString result;
 
-    for ( int i = 0; i < size(); ++i )
+    for ( size_type i = 0; i < size(); ++i )
         result += this->at(i).to_string();
 
     return result;
@@ -122,7 +122,7 @@ QString texte::to_string_lisible() const
     if ( ! empty() )
         result += this->at(0).to_string_lisible();
 
-    for ( int i = 1; i < size(); ++i )
+    for ( size_type i = 1; i < size(); ++i )
         result += m_separateur_ligne + this->at(i).to_string_lisible();
 
     return result;
@@ -262,7 +262,7 @@ std::vector<ligne>::size_type texte::nb_caracteres_alphabet() const
 {
     std::vector<ligne>::size_type nb = 0;
 
-    for ( int i = 0; i < size(); ++i )
+    for ( size_type i = 0; i < size(); ++i )
         nb += this->at(i).nb_caracteres_alphabet();
 
     return nb;
@@ -378,6 +378,34 @@ void texte::fusionner(bool fusion_caracteres, bool fusion_mots, bool fusion_lign
 }
 
 /** --------------------------------------------------------------------------------------
+ * \brief Scinder les mots, les caractères et/ou le contenu des caractères.
+ * \param scission_interne_caracteres Indique s'il faut scinder le contenu des caractères.
+ * \param scission_caracteres Indique s'il faut scinder les caractères.
+ * \param scission_mots Indique s'il faut scinder les mots.
+ */
+void texte::scinder(bool scission_interne_caracteres, bool scission_caracteres, bool scission_mots)
+{
+    if ( scission_interne_caracteres || scission_caracteres )
+        for ( iterator it = begin(); it != end(); ++it )
+            it->scinder( scission_interne_caracteres, scission_caracteres );
+
+    if ( scission_mots && ! empty() )
+    {
+        texte t;
+
+        for ( iterator it = begin(); it != end(); ++it )
+            for ( ligne::iterator it_l = it->begin(); it_l != it->end(); ++it_l )
+            {
+                ligne l;
+                l.ajouter_mot(*it_l);
+                t.ajouter_ligne(l);
+            }
+
+        swap(t);
+    }
+}
+
+/** --------------------------------------------------------------------------------------
  * \brief Inversion des textes, des lignes, des mots et/ou des caractères.
  * \param inversion_elements Indique s'il faut inverser les éléments.
  * \param inversion_ordre_caracteres Indique s'il faut inverser l'ordre des caractères.
@@ -475,20 +503,20 @@ void texte::transposer_caracteres()
 
 /** --------------------------------------------------------------------------------------
  * \brief Tourne les mots du texte.
- * \param r La rotation à réaliser.
+ * \param r Le choix de la rotation à réaliser.
  */
-void texte::tourner_mots(rotation r)
+void texte::tourner_mots(choix r)
 {
-    if ( r.get_type() == rotation::rotation_90 )
+    if ( r == liste_choix::rotation_90 )
     {
         transposer_mots();
         inverser(false, false, true, false);
     }
-    else if ( r.get_type() == rotation::rotation_180 )
+    else if ( r == liste_choix::rotation_180 )
     {
         inverser(false, false, true, true);
     }
-    else if ( r.get_type() == rotation::rotation_270 )
+    else if ( r == liste_choix::rotation_270 )
     {
         transposer_mots();
         inverser(false, false, false, true);
@@ -497,25 +525,25 @@ void texte::tourner_mots(rotation r)
 
 /** --------------------------------------------------------------------------------------
  * \brief Tourne les caracteres du texte.
- * \param r La rotation à réaliser.
+ * \param r Le choix de la rotation à réaliser.
  */
-void texte::tourner_caracteres(rotation r)
+void texte::tourner_caracteres(choix r)
 {
-    if ( r.get_type() == rotation::rotation_90 ||
-         r.get_type() == rotation::rotation_180 ||
-         r.get_type() == rotation::rotation_270 )
+    if ( r == liste_choix::rotation_90 ||
+         r == liste_choix::rotation_180 ||
+         r == liste_choix::rotation_270 )
         fusionner( false, true, false );
 
-    if ( r.get_type() == rotation::rotation_90 )
+    if ( r == liste_choix::rotation_90 )
     {
         transposer_caracteres();
         inverser(false, true, false, false);
     }
-    else if ( r.get_type() == rotation::rotation_180 )
+    else if ( r == liste_choix::rotation_180 )
     {
         inverser(false, true, false, true);
     }
-    else if ( r.get_type() == rotation::rotation_270 )
+    else if ( r == liste_choix::rotation_270 )
     {
         transposer_caracteres();
         inverser(false, false, false, true);
@@ -545,7 +573,7 @@ std::vector<mot>::size_type texte::get_maximum_mots_dans_ligne() const
     {
         size_type max_nb_mots = at(0).nb_mots();
 
-        for ( int i = 1; i < size(); ++i )
+        for ( size_type i = 1; i < size(); ++i )
         {
             size_type nb_mots = at(i).nb_mots();
 
@@ -571,7 +599,7 @@ std::vector<mot>::size_type texte::get_minimum_mots_dans_ligne() const
     {
         size_type min_nb_mots = at(0).nb_mots();
 
-        for ( int i = 1; i < size(); ++i )
+        for ( size_type i = 1; i < size(); ++i )
         {
             size_type nb_mots = at(i).nb_mots();
 
@@ -606,7 +634,7 @@ std::vector<mot>::size_type texte::get_maximum_caracteres_dans_ligne() const
     {
         size_type max_nb_caracteres = at(0).nb_caracteres();
 
-        for ( int i = 1; i < size(); ++i )
+        for ( size_type i = 1; i < size(); ++i )
         {
             size_type nb_caracteres = at(i).nb_caracteres();
 
@@ -632,7 +660,7 @@ std::vector<mot>::size_type texte::get_minimum_caracteres_dans_ligne() const
     {
         size_type min_nb_caracteres = at(0).nb_caracteres();
 
-        for ( int i = 1; i < size(); ++i )
+        for ( size_type i = 1; i < size(); ++i )
         {
             size_type nb_caracteres = at(i).nb_caracteres();
 
@@ -669,7 +697,7 @@ void texte::maj_nb_caracteres()
 {
     m_nb_caracteres = 0;
 
-    for ( int i = 0; i < size(); ++i )
+    for ( size_type i = 0; i < size(); ++i )
         m_nb_caracteres += this->at(i).nb_caracteres();
 }
 
@@ -680,7 +708,7 @@ void texte::maj_nb_mots()
 {
     m_nb_mots = 0;
 
-    for ( int i = 0; i < size(); ++i )
+    for ( size_type i = 0; i < size(); ++i )
         m_nb_mots += this->at(i).nb_mots();
 }
 

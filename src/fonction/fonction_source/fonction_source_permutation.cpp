@@ -68,6 +68,8 @@ base_fonction_widget *fonction_source_permutation::generer_fonction_widget()
  */
 void fonction_source_permutation::executer( compilateur &compil, textes & textes_in, textes & textes_out )
 {
+    textes_out = textes_in;
+
     algo_IPL_iteration_par_ligne
         ( PARAM_ELEMENTS, compil, textes_in, textes_out, & base_fonction::execution_specifique );
 }

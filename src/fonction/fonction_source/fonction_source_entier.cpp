@@ -45,6 +45,8 @@ base_fonction_widget *fonction_source_entier::generer_fonction_widget()
  */
 void fonction_source_entier::executer( compilateur &compil, textes & textes_in, textes & textes_out )
 {
+    textes_out = textes_in;
+
     base_element e(m_valeur);
     mot m;
     m.push_back(e);

@@ -192,7 +192,7 @@ void fonction_substitution::construire_map_substitution()
 
     if ( ! tab_entree.empty() )
     {
-        int i = 0;
+        unsigned int i = 0;
         for ( ligne::const_iterator it_m = m_map_IPL[PARAM_CARACTERES_SORTIE].it_ligne_debut;
               it_m != m_map_IPL[PARAM_CARACTERES_SORTIE].it_ligne_fin; ++it_m )
             for ( mot::const_iterator it_c = it_m->begin(); it_c != it_m->end(); ++it_c )

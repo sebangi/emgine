@@ -10,6 +10,8 @@
 
 #include <QStringList>
 
+class liste_choix;
+
 /**
  \class parametre_choix
  \brief Classe décrivant un parametre de type choix.
@@ -24,15 +26,15 @@ class parametre_choix : public base_parametre
                          type_mode_contenu_parametre mode_contenu_parametre,
                          type_mode_configuration_visibilite mode_configuration_visibilite,
                          type_algorithme algorithme,
-                         const QStringList & get_choix, bool multiple_selection);
+                         const liste_choix & choix, bool multiple_selection);
         ~parametre_choix();
 
         QStringList get_choix() const;
         bool multiple_selection() const;
 
     private:
-        /** \brief La liste des choix possibles. */
-        QStringList m_choix;
+        /** \brief La liste des choix. */
+        liste_choix m_choix;
 
         /** \brief Booléen indiquant si la sélection peut être multiple. */
         bool m_multiple_selection;

@@ -92,6 +92,8 @@ base_fonction_widget *fonction_source_texte::generer_fonction_widget()
  */
 void fonction_source_texte::executer( compilateur &compil, textes & textes_in, textes & textes_out )
 {
+    textes_out = textes_in;
+
     algo_IPL_iteration_par_ligne
         ( PARAM_LIGNE_SEPARATEUR, compil, textes_in, textes_out, & base_fonction::callback_param_1 );
 }

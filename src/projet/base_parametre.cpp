@@ -33,8 +33,9 @@ base_parametre::base_parametre( objet_selectionnable * parent, QString nom, QStr
                                 type_mode_contenu_parametre mode_contenu_parametre,
                                 type_mode_configuration_visibilite mode_configuration_visibilite,
                                 type_algorithme algorithme)
-    : fonctions_conteneur(parent), m_fonction_parent((base_fonction*)parent), m_nom(nom), m_aide(aide), m_editable(true),
-      m_mode_contenu_parametre(mode_contenu_parametre), m_textes_out(), m_mode_configuration_visibilite(mode_configuration_visibilite),
+    : fonctions_conteneur(parent), m_nom(nom), m_aide(aide), m_editable(true),
+      m_mode_contenu_parametre(mode_contenu_parametre), m_fonction_parent((base_fonction*)parent),
+      m_textes_out(), m_mode_configuration_visibilite(mode_configuration_visibilite),
       m_algorithme(algorithme), m_type(TYPE_PARAM_BASE)
 {
 

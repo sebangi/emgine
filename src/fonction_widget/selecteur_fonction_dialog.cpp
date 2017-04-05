@@ -1,4 +1,5 @@
-/** \file selecteur_fonction_dialog.cpp
+/**
+ * \file selecteur_fonction_dialog.cpp
  * \brief Fichier d'implémentation de la classe selecteur_fonction_dialog.
  * \author Sébastien Angibaud
  */
