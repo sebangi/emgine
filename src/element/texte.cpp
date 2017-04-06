@@ -287,6 +287,34 @@ std::vector<ligne>::size_type texte::nb_lignes() const
 }
 
 /** --------------------------------------------------------------------------------------
+ * \brief Teste si le texte a une taille multiple d'une taille d'élément donnée.
+ * \param largeur La largeur d'un élément.
+ * \param hauteur La hauteur d'un élément.
+ * \return Le nombre de lignes du texte.
+ */
+bool texte::est_multiple(size_t largeur, size_t hauteur ) const
+{
+    if ( size() % hauteur != 0)
+        return false;
+    else
+    {
+        for ( texte::const_iterator it_l1 = begin(); it_l1 != end(); )
+        {
+            if ( it_l1->nb_caracteres() % largeur != 0 )
+                return false;
+
+            texte::const_iterator it_l = it_l1;
+            size_t h = 0;
+            for ( ; h < hauteur; ++h, ++it_l1 )
+                if ( it_l1->nb_caracteres() != it_l->nb_caracteres() )
+                    return false;
+        }
+    }
+
+    return true;
+}
+
+/** --------------------------------------------------------------------------------------
  * \brief Calcule la fréquence des éléments.
  * \param force_upper_case Booléen indiquant s'il faut forcer le upper_case.
  */

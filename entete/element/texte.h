@@ -50,6 +50,7 @@ class texte : public std::vector< ligne >
         size_type nb_caracteres_alphabet() const;
         size_type nb_mots() const;
         size_type nb_lignes() const;
+        bool est_multiple( size_t largeur, size_t hauteur ) const;
 
         void calculer_frequence( bool force_upper_case );
         void calculer_indice_coincidence();

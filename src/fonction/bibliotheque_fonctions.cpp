@@ -33,6 +33,7 @@
 #include "entete/fonction/fonction_conversion/fonction_fusion.h"
 #include "entete/fonction/fonction_conversion/fonction_inversion.h"
 #include "entete/fonction/fonction_conversion/fonction_lecture_morse.h"
+#include "entete/fonction/fonction_conversion/fonction_lecture_braille.h"
 #include "entete/fonction/fonction_conversion/fonction_rotation.h"
 #include "entete/fonction/fonction_conversion/fonction_scission.h"
 #include "entete/fonction/fonction_conversion/fonction_selection_selon_dictionnaire.h"
@@ -70,6 +71,8 @@ std::map<type_id_fonction, QString> bibliotheque_fonctions::s_fonctions_nom =
     { f_conversion_scission, "Scission du texte" },
     { f_conversion_ecriture_en_diagonale, "Écriture du texte en diagonale" },
     { f_conversion_inversion_en_diagonale, "Inversion suivant diagonale" },
+    { f_conversion_ecriture_braille, "Écriture en braille" },
+    { f_conversion_lecture_braille, "Lecture du braille" },
 
     { f_sortie_texte, "Textes" },
     { f_sortie_frequence, "Fréquences des éléments" },
@@ -106,6 +109,8 @@ std::map<type_id_fonction, QString> bibliotheque_fonctions::s_fonctions_aide =
     { f_conversion_scission, "Scission des lignes en textes, des mots en lignes, des caractères en mots ou du contenu des caractères en caractères." },
     { f_conversion_ecriture_en_diagonale, "Écriture du texte en diagonale (des mots ou des caractères)." },
     { f_conversion_inversion_en_diagonale, "Inverse suivant une diagonale les mots ou les caractères." },
+    { f_conversion_ecriture_braille, "Écriture en braille" },
+    { f_conversion_lecture_braille, "Lecture du braille" },
 
     { f_sortie_texte, "Sortie textuelle : la liste de tous les textes obtenus." },
     { f_sortie_frequence, "Sortie affichant la fréquence des éléments." },
@@ -176,6 +181,7 @@ base_fonction * bibliotheque_fonctions::get_fonction(type_id_fonction id)
         case f_conversion_scission : return new fonction_scission(NULL);
         case f_conversion_ecriture_en_diagonale : return new fonction_ecriture_en_diagonale(NULL);
         case f_conversion_inversion_en_diagonale : return new fonction_inversion_en_diagonale(NULL);
+        case f_conversion_lecture_braille : return new fonction_lecture_braille(NULL);
 
             // SORTIES
         case f_sortie_texte : return new fonction_sortie_texte(NULL);

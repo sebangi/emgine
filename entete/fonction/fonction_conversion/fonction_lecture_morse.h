@@ -1,7 +1,6 @@
 #ifndef FONCTION_LECTURE_MORSE_H
 #define FONCTION_LECTURE_MORSE_H
 
-
 /** \file fonction_lecture_morse.h
  * \brief Fichier de déclaration de la classe fonction_lecture_morse.
  * \author Sébastien Angibaud

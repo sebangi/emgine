@@ -137,6 +137,12 @@ enum type_id_fonction{
     /** \brief Fonction de conversion réalisant suivant une diagonale l'inversion des mots ou des caractères. */
     f_conversion_inversion_en_diagonale,
 
+    /** \brief Fonction écriture en braille. */
+    f_conversion_ecriture_braille,
+
+    /** \brief Fonction lecture du braille. */
+    f_conversion_lecture_braille,
+
     /** \brief Fin des fonctions de conversions. */
     fin_fonction_conversion,
 
