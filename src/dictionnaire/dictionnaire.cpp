@@ -89,6 +89,11 @@ void dictionnaire::anagramme( const QString& motif, uint_set& mots ) const
         if ( it_compte != it_code->second.end() )
             mots.insert( it_compte->second.begin(), it_compte->second.end() );
     }
+}
+
+void dictionnaire::recherche_expression_reguliere(const QString &motif, dictionnaire::uint_set &mots) const
+{
+
 } // dictionnaire::anagramme()
 
 /*----------------------------------------------------------------------------*/

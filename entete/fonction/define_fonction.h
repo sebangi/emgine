@@ -143,6 +143,9 @@ enum type_id_fonction{
     /** \brief Fonction lecture du braille. */
     f_conversion_lecture_braille,
 
+    /** \brief Fonction filtrant les mots suivant un dictionnaire. */
+    f_conversion_filtrage_selon_dictionnaire,
+
     /** \brief Fin des fonctions de conversions. */
     fin_fonction_conversion,
 

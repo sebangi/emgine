@@ -31,6 +31,7 @@ class dictionnaire
         bool existe( const QString& motif ) const;
         void grep( const QString& motif, uint_set& mots ) const;
         void anagramme( const QString& motif, uint_set& mots ) const;
+        void recherche_expression_reguliere( const QString& motif, uint_set& mots ) const;
         void sur_anagramme( const QString& motif, uint_set& mots ) const;
         void sous_anagramme( const QString& motif, uint_set& mots ) const;
 
