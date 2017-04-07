@@ -16,6 +16,8 @@
 #include <QStyle>
 #include <QTextStream>
 
+#include <iostream>
+
 /** --------------------------------------------------------------------------------------
  * \brief Constructeur de la classe fonction_source_dictionnaire_widget.
  * \param fonction Un pointeur sur la fonction associée.
@@ -51,6 +53,8 @@ void fonction_source_dictionnaire_widget::init()
 
     connect( m_choix_bouton, SIGNAL(released()), this, SLOT(on_choisir_click()));
     m_specialisation_layout->addLayout(lay);
+
+    informer_verrouillage_change();
 }
 
 /** --------------------------------------------------------------------------------------

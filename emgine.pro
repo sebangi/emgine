@@ -103,7 +103,8 @@ SOURCES += \
     src/element/liste_choix.cpp \
     src/fonction/fonction_conversion/fonction_inversion_en_diagonale.cpp \
     src/fonction/fonction_conversion/fonction_lecture_braille.cpp \
-    src/fonction/fonction_conversion/fonction_filtrage_selon_dictionnaire.cpp
+    src/fonction/fonction_conversion/fonction_expression_reguliere.cpp \
+    src/fonction/fonction_source/fonction_source_ensemble_sources.cpp
 
 HEADERS  += \
         entete/compilation/compilateur.h \
@@ -196,7 +197,8 @@ HEADERS  += \
     entete/element/liste_choix.h \
     entete/fonction/fonction_conversion/fonction_inversion_en_diagonale.h \
     entete/fonction/fonction_conversion/fonction_lecture_braille.h \
-    entete/fonction/fonction_conversion/fonction_filtrage_selon_dictionnaire.h
+    entete/fonction/fonction_conversion/fonction_expression_reguliere.h \
+    entete/fonction/fonction_source/fonction_source_ensemble_sources.h
 
 FORMS    += \
     fenetre_principale.ui

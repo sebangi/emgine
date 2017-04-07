@@ -15,6 +15,7 @@ class dictionnaire
 {
     public:
         typedef std::set<unsigned int> uint_set;
+        typedef std::set<QString> qstring_set;
 
     private:
         typedef std::list<unsigned int> uint_list;
@@ -29,9 +30,8 @@ class dictionnaire
         void mettre_a_jour();
 
         bool existe( const QString& motif ) const;
-        void grep( const QString& motif, uint_set& mots ) const;
         void anagramme( const QString& motif, uint_set& mots ) const;
-        void recherche_expression_reguliere( const QString& motif, uint_set& mots ) const;
+        void recherche_expression_reguliere( const QString& motif, qstring_set& mots ) const;
         void sur_anagramme( const QString& motif, uint_set& mots ) const;
         void sous_anagramme( const QString& motif, uint_set& mots ) const;
 
@@ -43,11 +43,15 @@ class dictionnaire
         QString plus_grand_prefixe( const QString & s ) const;
 
     private:
-        void formater( QString& s ) const;
+        void formater( QString& s, bool format_expression_reguliere = false ) const;
         void charger_dictionnaire( const QString & nom_fichier );
         void clear();
         void ajouter_mot_dans_arbre( const QString& s);
         void clear_arbre();
+        bool est_expression_reguliere(const QString &motif ) const;
+        void parcourir_avec_expression_reguliere
+        ( const QString &motif, dictionnaire::qstring_set &mots, lettre_dictionnaire * lettre,
+          const QString & mot) const;
 
     private:
         /** \brief Le nom du fichier source. */

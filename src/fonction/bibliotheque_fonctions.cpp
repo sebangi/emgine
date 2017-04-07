@@ -11,6 +11,7 @@
 #include "entete/fonction/fonction_source/fonction_source_choix.h"
 #include "entete/fonction/fonction_source/fonction_source_dictionnaire.h"
 #include "entete/fonction/fonction_source/fonction_source_entier.h"
+#include "entete/fonction/fonction_source/fonction_source_ensemble_sources.h"
 #include "entete/fonction/fonction_source/fonction_source_fichier_texte.h"
 #include "entete/fonction/fonction_source/fonction_source_permutation.h"
 #include "entete/fonction/fonction_source/fonction_source_texte.h"
@@ -41,7 +42,7 @@
 #include "entete/fonction/fonction_conversion/fonction_transposition.h"
 #include "entete/fonction/fonction_conversion/fonction_ecriture_en_diagonale.h"
 #include "entete/fonction/fonction_conversion/fonction_inversion_en_diagonale.h"
-#include "entete/fonction/fonction_conversion/fonction_filtrage_selon_dictionnaire.h"
+#include "entete/fonction/fonction_conversion/fonction_expression_reguliere.h"
 
 std::map<type_id_fonction, QString> bibliotheque_fonctions::s_fonctions_nom =
 {
@@ -50,31 +51,33 @@ std::map<type_id_fonction, QString> bibliotheque_fonctions::s_fonctions_nom =
     { f_source_texte, "Texte" },
     { f_source_fichier_texte, "Fichier texte" },
     { f_source_caractere, "Caractères" },
-    { f_source_choix, "Choix" },
     { f_source_generateur_permutation, "Générateur de permutations" },
     { f_source_dictionnaire, "Dictionnaire" },
+    { f_source_ensemble_sources, "Ensemble de sources" },
+
+    { f_source_choix, "Choix" },
 
     { f_conversion_cesar, "Chiffrement par Code César" },
-    { f_conversion_formatage, "Formatage du texte" },
+    { f_conversion_formatage, "Formatage" },
     { f_conversion_selection_selon_dictionnaire, "Sélection selon dictionnaire" },
     { f_conversion_anagramme, "Anagramme" },
-    { f_conversion_entier_en_chiffre_romain, "Ecriture en chiffre romain" },
+    { f_conversion_entier_en_chiffre_romain, "Écriture en chiffre romain" },
     { f_conversion_ajout_espace_selon_dictionnaire, "Ajout d'espaces selon dictionnaire" },
-    { f_conversion_fusion, "Fusion du texte" },
+    { f_conversion_fusion, "Fusion" },
     { f_conversion_substitution, "Substitution de caractères" },
     { f_conversion_ecriture_morse, "Écriture en morse" },
     { f_conversion_lecture_morse, "Lecture du morse" },
     { f_conversion_choisir_separateur, "Choix des séparateurs" },
-    { f_conversion_transposition, "Transposition du texte" },
-    { f_conversion_inversion, "Inversion du texte" },
-    { f_conversion_concatenation, "Concaténation de textes" },
-    { f_conversion_rotation, "Rotation du texte" },
-    { f_conversion_scission, "Scission du texte" },
-    { f_conversion_ecriture_en_diagonale, "Écriture du texte en diagonale" },
+    { f_conversion_transposition, "Transposition" },
+    { f_conversion_inversion, "Inversion" },
+    { f_conversion_concatenation, "Concaténation" },
+    { f_conversion_rotation, "Rotation" },
+    { f_conversion_scission, "Scission" },
+    { f_conversion_ecriture_en_diagonale, "Écriture en diagonale" },
     { f_conversion_inversion_en_diagonale, "Inversion suivant diagonale" },
     { f_conversion_ecriture_braille, "Écriture en braille" },
     { f_conversion_lecture_braille, "Lecture du braille" },
-    { f_conversion_filtrage_selon_dictionnaire, "Filtrer selon dictionnaire" },
+    { f_conversion_expression_reguliere, "Expression régulière" },
 
     { f_sortie_texte, "Textes" },
     { f_sortie_frequence, "Fréquences des éléments" },
@@ -92,6 +95,7 @@ std::map<type_id_fonction, QString> bibliotheque_fonctions::s_fonctions_aide =
     { f_source_choix, "Source de type choix" },
     { f_source_generateur_permutation, "Générateur de permutations" },
     { f_source_dictionnaire, "Ajoute un dictionnaire" },
+    { f_source_ensemble_sources, "Ensemble de sources" },
 
     { f_conversion_cesar, "Outil pour décoder/encoder avec César.\nLe code César (ou chiffre de César) est un chiffrement par décalage parmi les plus simples et les plus connu, il utilise la substitution d'une lettre par une autre plus loin dans l'alphabet." },
     { f_conversion_formatage, "Formate le texte, i.e. mise en majuscule, retrait des accents et éventuellement de la ponctuation." },
@@ -113,7 +117,7 @@ std::map<type_id_fonction, QString> bibliotheque_fonctions::s_fonctions_aide =
     { f_conversion_inversion_en_diagonale, "Inverse suivant une diagonale les mots ou les caractères." },
     { f_conversion_ecriture_braille, "Écriture en braille" },
     { f_conversion_lecture_braille, "Lecture du braille" },
-    { f_conversion_filtrage_selon_dictionnaire, "Filtre les mots selon dictionnaire. Les expressions régulières sont prise en compte." },
+    { f_conversion_expression_reguliere, "Mappe une expression régulière à partir d'un dictionnaire" },
 
     { f_sortie_texte, "Sortie textuelle : la liste de tous les textes obtenus." },
     { f_sortie_frequence, "Sortie affichant la fréquence des éléments." },
@@ -164,6 +168,7 @@ base_fonction * bibliotheque_fonctions::get_fonction(type_id_fonction id)
         case f_source_choix : return new fonction_source_choix(NULL);
         case f_source_generateur_permutation : return new fonction_source_permutation(NULL);
         case f_source_dictionnaire : return new fonction_source_dictionnaire(NULL);
+        case f_source_ensemble_sources : return new fonction_source_ensemble_sources(NULL);
 
             // CONVERSIONS
         case f_conversion_cesar : return new fonction_cesar(NULL);
@@ -185,7 +190,7 @@ base_fonction * bibliotheque_fonctions::get_fonction(type_id_fonction id)
         case f_conversion_ecriture_en_diagonale : return new fonction_ecriture_en_diagonale(NULL);
         case f_conversion_inversion_en_diagonale : return new fonction_inversion_en_diagonale(NULL);
         case f_conversion_lecture_braille : return new fonction_lecture_braille(NULL);
-        case f_conversion_filtrage_selon_dictionnaire : return new fonction_filtrage_selon_dictionnaire(NULL);
+        case f_conversion_expression_reguliere : return new fonction_expression_reguliere(NULL);
 
             // SORTIES
         case f_sortie_texte : return new fonction_sortie_texte(NULL);

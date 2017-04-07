@@ -52,6 +52,8 @@ void fonction_source_booleen_widget::init()
     connect(m_check_non, SIGNAL(stateChanged(int)), this, SLOT(on_non_stateChanged(int)));
 
     m_specialisation_layout->addLayout(lay);
+
+    informer_verrouillage_change();
 }
 
 /** --------------------------------------------------------------------------------------

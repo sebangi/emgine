@@ -53,8 +53,8 @@ enum type_id_fonction{
     /** \brief Fonction source correspondant à un entier. */
     f_source_entier,
 
-    /** \brief Fonction source correspondant à. */
-    f_source_LIBRE,
+    /** \brief Fonction source correspondant à un ensemble de textes. */
+    f_source_ensemble_sources,
 
     /** \brief Fonction source correspondant à un dictionnaire. */
     f_source_dictionnaire,
@@ -143,8 +143,8 @@ enum type_id_fonction{
     /** \brief Fonction lecture du braille. */
     f_conversion_lecture_braille,
 
-    /** \brief Fonction filtrant les mots suivant un dictionnaire. */
-    f_conversion_filtrage_selon_dictionnaire,
+    /** \brief Fonction mappant une expression régulière à partir d'un dictionnaire. */
+    f_conversion_expression_reguliere,
 
     /** \brief Fin des fonctions de conversions. */
     fin_fonction_conversion,

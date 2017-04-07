@@ -13,5 +13,5 @@ ETAPE 3 : AMELIORATION - DICTIONNAIRE - NOUVELLES FONCTIONS DE SORTIE
 * ajouter des fonctions de conversion
 * lancer l'exécution dans un thread et verrouiller le projet automatiquement durant l'exécution
 * afficher les exécutions différemment. S'inspirer des exécutions de Qt
-*
 * ajouter à la scission un nombre d'éléments. Exemple : scindre tous les 3 mots (par défaut, tous les 1)
+* faire ecriture_braille

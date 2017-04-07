@@ -43,6 +43,8 @@ void fonction_source_entier_widget::init()
     connect(m_spin_box, SIGNAL(valueChanged(int)), this, SLOT(on_entier_changed(int)));
 
     m_specialisation_layout->addLayout(lay);
+
+    informer_verrouillage_change();
 }
 
 /** --------------------------------------------------------------------------------------

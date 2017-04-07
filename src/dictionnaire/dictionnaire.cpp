@@ -47,12 +47,6 @@ void dictionnaire::mettre_a_jour()
     }
 }
 
-/*----------------------------------------------------------------------------*/
-void dictionnaire::grep( const QString& motif, uint_set& mots ) const
-{
-
-}
-
 
 /*----------------------------------------------------------------------------*/
 bool dictionnaire::existe( const QString& motif ) const
@@ -91,10 +85,83 @@ void dictionnaire::anagramme( const QString& motif, uint_set& mots ) const
     }
 }
 
-void dictionnaire::recherche_expression_reguliere(const QString &motif, dictionnaire::uint_set &mots) const
+/*----------------------------------------------------------------------------*/
+void dictionnaire::recherche_expression_reguliere(const QString &motif, dictionnaire::qstring_set &mots) const
 {
+    QString motif_formate(motif);
+    formater(motif_formate, true);
 
-} // dictionnaire::anagramme()
+    if ( est_expression_reguliere( motif_formate ) )
+    {
+        lettre_dictionnaire * lettre = m_arbre_mots;
+        QString mot("");
+        parcourir_avec_expression_reguliere( motif, mots, lettre, mot);
+    }
+} // dictionnaire::recherche_expression_reguliere()
+
+/*----------------------------------------------------------------------------*/
+void dictionnaire::parcourir_avec_expression_reguliere
+(const QString &motif, dictionnaire::qstring_set &mots, lettre_dictionnaire * lettre, const QString & mot) const
+{
+    if ( lettre != NULL )
+    {
+        if ( motif.isEmpty() )
+        {
+            if ( lettre->est_mot() )
+                mots.insert(mot);
+        }
+        else
+        {
+            char c = motif[0].toLatin1();
+            QString suite = motif.mid(1);
+
+            if ( c == '.' )
+            {
+                for ( char c = 'A'; c <= 'Z'; ++c )
+                {
+                    QString s(mot + c);
+                    parcourir_avec_expression_reguliere(suite, mots, lettre->suivant(c - 'A'), s );
+                }
+            }
+            else if ( c == '*' )
+            {
+                parcourir_avec_expression_reguliere( suite, mots, lettre, mot );
+
+                for ( char pos = 'A'; pos <= 'Z'; ++pos )
+                {
+                    QString s(mot + pos);
+                    parcourir_avec_expression_reguliere(motif, mots, lettre->suivant(pos - 'A'), s );
+                }
+            }
+            else if ( c == '(' || c == '|' )
+            {
+                c = motif[1].toLatin1();
+                int pos = c - 'A';
+
+                if ( pos < 26 && pos >= 0 )
+                {
+                    QString s( mot + c );
+                    while ( suite[1].toLatin1() != ')' )
+                        suite = suite.mid(2);
+                    suite = suite.mid(2);
+                    parcourir_avec_expression_reguliere(suite, mots, lettre->suivant(pos), s );
+                }
+
+                suite = motif.mid(2);
+                parcourir_avec_expression_reguliere(suite, mots, lettre, mot );
+            }
+            else
+            {
+                int pos = c - 'A';
+                if ( pos < 26 && pos >= 0 )
+                {
+                    QString s( mot + c );
+                    parcourir_avec_expression_reguliere(suite, mots, lettre->suivant(pos), s );
+                }
+            }
+        }
+    }
+} // dictionnaire::parcourir_avec_expression_reguliere
 
 /*----------------------------------------------------------------------------*/
 void dictionnaire::sur_anagramme( const QString& motif, uint_set& mots ) const
@@ -162,7 +229,7 @@ QString dictionnaire::plus_grand_prefixe(const QString & s) const
 }
 
 /*----------------------------------------------------------------------------*/
-void dictionnaire::formater( QString& s ) const
+void dictionnaire::formater( QString& s, bool format_expression_reguliere ) const
 {
     s = s.toUpper();
 
@@ -173,8 +240,13 @@ void dictionnaire::formater( QString& s ) const
     s.replace( QRegExp( "[ÚÙÛÜ]") , "U" );
     s.replace( QRegExp( "[Ç]") , "C" );
 
-    QString ponct = QRegExp::escape(" «»,;:!?./§*%^¨$£&~\"#'{([|`_\\^@)]°=}+-");
+    QString ponct;
+    if ( format_expression_reguliere )
+        ponct = QRegExp::escape(" «»,;:!?/§%^¨$£&~\"#'{[`_\\^@]°=}+-");
+    else
+        ponct = QRegExp::escape(" «»,;:!?./§*%^¨$£&~\"#'{([|`_\\^@)]°=}+-");
     s.remove( QRegExp( "[" + ponct + "]" ) );
+
 } // dictionnaire::formater()
 
 void dictionnaire::charger_dictionnaire( const QString & nom_fichier )
@@ -204,9 +276,9 @@ void dictionnaire::charger_dictionnaire( const QString & nom_fichier )
 
         cle_de_mot cle(line);
         m_cles[ cle.taille() ][ cle.code_binaire() ][ cle.comptage() ].push_front( m_mots.size() - 1 );
-   }
+    }
 
-   file.close();
+    file.close();
 }
 
 
@@ -221,6 +293,11 @@ void dictionnaire::clear_arbre()
 {
     delete m_arbre_mots;
     m_arbre_mots = new lettre_dictionnaire();
+}
+
+bool dictionnaire::est_expression_reguliere(const QString &motif) const
+{
+    return true;
 }
 
 void dictionnaire::ajouter_mot_dans_arbre( const QString &s )
