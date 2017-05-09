@@ -104,7 +104,8 @@ SOURCES += \
     src/fonction/fonction_conversion/fonction_inversion_en_diagonale.cpp \
     src/fonction/fonction_conversion/fonction_lecture_braille.cpp \
     src/fonction/fonction_conversion/fonction_expression_reguliere.cpp \
-    src/fonction/fonction_source/fonction_source_ensemble_sources.cpp
+    src/fonction/fonction_source/fonction_source_ensemble_sources.cpp \
+    src/fonction/fonction_conversion/fonction_ordonnancement.cpp
 
 HEADERS  += \
         entete/compilation/compilateur.h \
@@ -198,7 +199,8 @@ HEADERS  += \
     entete/fonction/fonction_conversion/fonction_inversion_en_diagonale.h \
     entete/fonction/fonction_conversion/fonction_lecture_braille.h \
     entete/fonction/fonction_conversion/fonction_expression_reguliere.h \
-    entete/fonction/fonction_source/fonction_source_ensemble_sources.h
+    entete/fonction/fonction_source/fonction_source_ensemble_sources.h \
+    entete/fonction/fonction_conversion/fonction_ordonnancement.h
 
 FORMS    += \
     fenetre_principale.ui

@@ -43,6 +43,7 @@
 #include "entete/fonction/fonction_conversion/fonction_ecriture_en_diagonale.h"
 #include "entete/fonction/fonction_conversion/fonction_inversion_en_diagonale.h"
 #include "entete/fonction/fonction_conversion/fonction_expression_reguliere.h"
+#include "entete/fonction/fonction_conversion/fonction_ordonnancement.h"
 
 std::map<type_id_fonction, QString> bibliotheque_fonctions::s_fonctions_nom =
 {
@@ -78,6 +79,7 @@ std::map<type_id_fonction, QString> bibliotheque_fonctions::s_fonctions_nom =
     { f_conversion_ecriture_braille, "Écriture en braille" },
     { f_conversion_lecture_braille, "Lecture du braille" },
     { f_conversion_expression_reguliere, "Expression régulière" },
+    { f_conversion_ordonnancement, "Ordonnancement" },
 
     { f_sortie_texte, "Textes" },
     { f_sortie_frequence, "Fréquences des éléments" },
@@ -117,7 +119,8 @@ std::map<type_id_fonction, QString> bibliotheque_fonctions::s_fonctions_aide =
     { f_conversion_inversion_en_diagonale, "Inverse suivant une diagonale les mots ou les caractères." },
     { f_conversion_ecriture_braille, "Écriture en braille" },
     { f_conversion_lecture_braille, "Lecture du braille" },
-    { f_conversion_expression_reguliere, "Mappe une expression régulière à partir d'un dictionnaire" },
+    { f_conversion_expression_reguliere, "Mappe une expression régulière à partir d'un dictionnaire." },
+    { f_conversion_ordonnancement, "Ré-ordonne les élements (mots ou caractères)." },
 
     { f_sortie_texte, "Sortie textuelle : la liste de tous les textes obtenus." },
     { f_sortie_frequence, "Sortie affichant la fréquence des éléments." },
@@ -191,6 +194,7 @@ base_fonction * bibliotheque_fonctions::get_fonction(type_id_fonction id)
         case f_conversion_inversion_en_diagonale : return new fonction_inversion_en_diagonale(NULL);
         case f_conversion_lecture_braille : return new fonction_lecture_braille(NULL);
         case f_conversion_expression_reguliere : return new fonction_expression_reguliere(NULL);
+        case f_conversion_ordonnancement : return new fonction_ordonnancement(NULL);
 
             // SORTIES
         case f_sortie_texte : return new fonction_sortie_texte(NULL);
