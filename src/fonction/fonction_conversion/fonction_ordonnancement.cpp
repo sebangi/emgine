@@ -140,7 +140,7 @@ void fonction_ordonnancement::execution_specifique( compilateur &compil, textes 
             t.scinder(false,true,false,false);
 
         if ( ! m_map_IPL[PARAM_TRAITER_PAR_LIGNE].it_caractere_courant->get_booleen() )
-             t.scinder(false,false,true,false);
+             t.fusionner(false,false,true,false);
 
         for ( textes::const_iterator it_t = t.begin(); it_t != t.end(); ++it_t )
         {
@@ -152,19 +152,18 @@ void fonction_ordonnancement::execution_specifique( compilateur &compil, textes 
                 if ( m_map_IPL[PARAM_TRAITER_PAR_LIGNE].it_caractere_courant->get_booleen() )
                     IPL_init(PARAM_ORDRE);
 
-                for ( ligne::const_iterator it_m = it_l->begin(); it_m != it_l->end(); ++it_m ) {
-
-                        int pos = m_map_IPL[PARAM_ORDRE].it_caractere_courant->get_entier();
-                        IPL_caractere_suivant_dans_ligne(PARAM_ORDRE);
-                        l.push_back( it_l->mot_a_la_position(pos, mot_par_defaut) );
-                    }
-                    l.ajouter_mot(m);
+                for ( ligne::const_iterator it_m = it_l->begin(); it_m != it_l->end(); ++it_m )
+                {
+                    int pos = m_map_IPL[PARAM_ORDRE].it_caractere_courant->get_entier() - 1;
+                    IPL_caractere_suivant_dans_ligne(PARAM_ORDRE);
+                    l.ajouter_mot( it_l->mot_a_la_position(pos, mot_par_defaut) );
                 }
                 t.ajouter_ligne(l);
 
                 IPL_mot_suivant(PARAM_DECALAGE);
             }
-            t.fusionner(false,true,false,false);
+            if ( choix_elements_a_ordonner == liste_choix::appliquer_sur_caracteres )
+                t.fusionner(false,true,false);
             textes_out.ajouter_texte(compil.get_configuration(), t);
         }
     }
