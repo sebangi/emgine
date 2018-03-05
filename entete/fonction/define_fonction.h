@@ -146,6 +146,9 @@ enum type_id_fonction{
     /** \brief Fonction mappant une expression régulière à partir d'un dictionnaire. */
     f_conversion_expression_reguliere,
 
+    /** \brief Fonction réordonnant les mots ou les caractères. */
+    f_conversion_ordonnancement,
+
     /** \brief Fin des fonctions de conversions. */
     fin_fonction_conversion,
 

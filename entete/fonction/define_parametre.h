@@ -78,7 +78,10 @@ enum type_id_parametre{
     PARAM_ROTATION,
 
     /** \brief Paramètre pour indiquer quelle orientation choisir. */
-    PARAM_ORIENTATION
+    PARAM_ORIENTATION,
+
+    /** \brief Paramètre pour indiquer quel ordre effectuer. */
+    PARAM_ORDRE
 };
 
 #endif // DEFINE_PARAMETRE_H

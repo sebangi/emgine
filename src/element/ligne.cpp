@@ -59,6 +59,20 @@ void ligne::set_separateur_mot(const QString &separateur_mot)
 }
 
 /** --------------------------------------------------------------------------------------
+ * \brief Retourne le mot d'une position donnée.
+ * \param pos La position recherchée.
+ * \param mot_par_defaut Le mot renvoyé si la position n'existe pas.
+ * \return Le mot de la position recherchée.
+ */
+const mot & ligne::mot_a_la_position(size_type pos, const mot & mot_par_defaut) const
+{
+    if ( pos >= 0 && pos < size() )
+        return (*this)[pos];
+    else
+        return mot_par_defaut;
+}
+
+/** --------------------------------------------------------------------------------------
  * \brief Convertit et retourne la ligne au format QString.
  * \return La ligne en format QString.
  */

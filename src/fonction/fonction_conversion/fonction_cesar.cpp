@@ -170,7 +170,8 @@ void fonction_cesar::callback_param_3( compilateur &compil, textes & textes_in, 
  */
 void fonction_cesar::execution_specifique( compilateur &compil, textes & textes_in, textes & textes_out )
 {
-    for ( textes::const_iterator it_t = textes_in.begin(); it_t != textes_in.end(); ++it_t ) {
+    for ( textes::const_iterator it_t = textes_in.begin(); it_t != textes_in.end(); ++it_t )
+    {
         texte t( it_t->get_configuration(), it_t->get_separateur_ligne() );
         for ( texte::const_iterator it_l = it_t->begin(); it_l !=  it_t->end(); ++it_l ) {
             ligne l;
