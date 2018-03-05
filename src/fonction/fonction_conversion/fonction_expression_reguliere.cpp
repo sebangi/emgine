@@ -131,6 +131,7 @@ void fonction_expression_reguliere::execution_specifique( compilateur &compil, t
                         }
                         if ( ! t.empty() )
                         {
+                            t.scinder(true,false,false);
                             textes_out.ajouter_texte(compil.get_configuration(), t);
                             t = texte( it_t->get_configuration(), it_t->get_separateur_ligne() );
                         }
@@ -157,6 +158,9 @@ void fonction_expression_reguliere::execution_specifique( compilateur &compil, t
                 t.ajouter_ligne(l);
         }
         if ( ! t.empty() )
+        {
+            t.scinder(true,false,false);
             textes_out.ajouter_texte(compil.get_configuration(), t);
+        }
     }
 }

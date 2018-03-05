@@ -31,6 +31,7 @@ class fonction_substitution : public base_fonction
     private:
         void callback_param_1( compilateur &compil, textes & textes_in, textes & textes_out );
         void callback_param_2( compilateur &compil, textes & textes_in, textes & textes_out );
+        void callback_param_3( compilateur &compil, textes & textes_in, textes & textes_out );
         void execution_specifique( compilateur &compil, textes & textes_in, textes & textes_out );
         bool est_valide(logs_compilation_widget * vue_logs);
         void construire_map_substitution();

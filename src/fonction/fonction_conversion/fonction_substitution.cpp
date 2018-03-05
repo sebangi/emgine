@@ -41,6 +41,14 @@
                                            base_parametre::CONFIGURATION_INVISIBLE,
                                            base_parametre::ALGO_IPL) );
 
+    ajouter_parametre( PARAM_CARACTERES,
+                       new base_parametre( this,
+                                           "Garder les inconnus",
+                                           "Les caractères inconnus sont-ils gardés ou bien remplacé par *.",
+                                           base_parametre::CONTENU_PARAM_VIDE_POSSIBLE,
+                                           base_parametre::CONFIGURATION_INVISIBLE,
+                                           base_parametre::ALGO_IPL) );
+
     ajouter_parametre( PARAM_NUMERO_CHOIX,
                        new base_parametre( this,
                                            "Numéro du choix",
@@ -77,6 +85,7 @@ void fonction_substitution::initialisation_par_defaut()
     m_parametres[PARAM_CARACTERES_ENTREE]->set_texte_par_defaut("ABCDEFGHIJKLMNOPQRSTUVWXYZ");
     m_parametres[PARAM_CARACTERES_SORTIE]->set_texte_par_defaut("ABCDEFGHIJKLMNOPQRSTUVWXYZ");    
     m_parametres[PARAM_NUMERO_CHOIX]->set_texte_par_defaut("");
+    m_parametres[PARAM_CARACTERES]->set_booleen_par_defaut(false);
 }
 
 /** --------------------------------------------------------------------------------------
@@ -112,7 +121,19 @@ void fonction_substitution::callback_param_1( compilateur &compil, textes & text
 void fonction_substitution::callback_param_2( compilateur &compil, textes & textes_in, textes & textes_out )
 {
     algo_IPL_iteration_par_ligne
-            ( PARAM_NUMERO_CHOIX, compil, textes_in, textes_out, & base_fonction::execution_specifique );
+            ( PARAM_NUMERO_CHOIX, compil, textes_in, textes_out, & base_fonction::callback_param_3 );
+}
+
+/** --------------------------------------------------------------------------------------
+ * \brief Exécute le paramètre PARAM_CARACTERES.
+ * \param compil Le compilateur utilisé.
+ * \param textes_in Le texte source en entrée.
+ * \param textes_out Le texte de sortie généré.
+ */
+void fonction_substitution::callback_param_3( compilateur &compil, textes & textes_in, textes & textes_out )
+{
+    algo_IPL_iteration_par_ligne
+            ( PARAM_CARACTERES, compil, textes_in, textes_out, & base_fonction::execution_specifique );
 }
 
 /** --------------------------------------------------------------------------------------
@@ -124,6 +145,7 @@ void fonction_substitution::callback_param_2( compilateur &compil, textes & text
 void fonction_substitution::execution_specifique( compilateur &compil, textes & textes_in, textes & textes_out )
 {
     construire_map_substitution();
+    bool garder_inconnu =  m_map_IPL[PARAM_CARACTERES].it_caractere_courant->get_booleen();
 
     for ( textes::const_iterator it_t = textes_in.begin(); it_t != textes_in.end(); ++it_t ) {
         texte t( it_t->get_configuration(), it_t->get_separateur_ligne() );
@@ -138,9 +160,19 @@ void fonction_substitution::execution_specifique( compilateur &compil, textes & 
                     type_map_substitution::iterator it = m_substitution.find( *it_c );
 
                     if ( it == m_substitution.end() )
-                        m.push_back( base_element::element_inconnu() );
+                    {
+                        if ( garder_inconnu )
+                            m.push_back( *it_c );
+                        else
+                            m.push_back( base_element::element_inconnu() );
+                    }
                     else if ( it->second.empty() )
-                        m.push_back( base_element::element_inconnu() );
+                    {
+                        if ( garder_inconnu )
+                            m.push_back( *it_c );
+                        else
+                            m.push_back( base_element::element_inconnu() );
+                    }
                     else if ( IPL_test_vide(PARAM_NUMERO_CHOIX) )
                     {
                         if ( it->second.size() == 1 )
@@ -158,7 +190,12 @@ void fonction_substitution::execution_specifique( compilateur &compil, textes & 
                     {
                         int pos = m_map_IPL[PARAM_NUMERO_CHOIX].it_caractere_courant->get_entier();
                         if ( pos <= 0 || pos > it->second.size() )
-                            m.push_back( base_element::element_inconnu() );
+                        {
+                            if ( garder_inconnu )
+                                m.push_back( *it_c );
+                            else
+                                    m.push_back( base_element::element_inconnu() );
+                        }
                         else
                             m.push_back( it->second[pos-1] );
                     }
