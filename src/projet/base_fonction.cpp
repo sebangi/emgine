@@ -19,7 +19,7 @@
 #include <iostream>
 
 /** --------------------------------------------------------------------------------------
- * \brief Constructeur de la fonctipon base_fonction.
+ * \brief Constructeur de la fonction base_fonction.
  * \param parent Un pointeur sur le fonctions_conteneur parent.
  * \param type Le type de la fonction.
  */

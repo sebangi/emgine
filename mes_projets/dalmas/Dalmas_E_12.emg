@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <projet>
-    <nom>E_12</nom>
+    <nom>Dalmas_E_12</nom>
     <description></description>
     <objet_selectionnable>
         <est_etendu>1</est_etendu>
@@ -497,7 +497,7 @@ ZULANWDGGPCJAFJABC</valeur>
                                         </fonction>
                                         <fonction>
                                             <id>1004</id>
-                                            <nom>Ecriture en chiffre romain</nom>
+                                            <nom>Écriture en chiffre romain</nom>
                                             <niveau_visibilite>1</niveau_visibilite>
                                             <active>1</active>
                                             <objet_selectionnable>
@@ -568,8 +568,19 @@ ZULANWDGGPCJAFJABC</valeur>
                             </parametres>
                         </fonction>
                         <fonction>
+                            <id>2000</id>
+                            <nom>Textes</nom>
+                            <niveau_visibilite>2</niveau_visibilite>
+                            <active>1</active>
+                            <objet_selectionnable>
+                                <est_etendu>1</est_etendu>
+                                <verrouille>0</verrouille>
+                            </objet_selectionnable>
+                            <parametres/>
+                        </fonction>
+                        <fonction>
                             <id>1006</id>
-                            <nom>Fusion du texte</nom>
+                            <nom>Fusion</nom>
                             <niveau_visibilite>2</niveau_visibilite>
                             <active>1</active>
                             <objet_selectionnable>
@@ -672,6 +683,17 @@ ZULANWDGGPCJAFJABC</valeur>
                             </parametres>
                         </fonction>
                         <fonction>
+                            <id>2000</id>
+                            <nom>Textes</nom>
+                            <niveau_visibilite>2</niveau_visibilite>
+                            <active>1</active>
+                            <objet_selectionnable>
+                                <est_etendu>1</est_etendu>
+                                <verrouille>0</verrouille>
+                            </objet_selectionnable>
+                            <parametres/>
+                        </fonction>
+                        <fonction>
                             <id>1005</id>
                             <nom>Ajout d'espaces selon dictionnaire</nom>
                             <niveau_visibilite>2</niveau_visibilite>
@@ -719,7 +741,7 @@ ZULANWDGGPCJAFJABC</valeur>
                         </fonction>
                         <fonction>
                             <id>1006</id>
-                            <nom>Fusion du texte</nom>
+                            <nom>Fusion</nom>
                             <niveau_visibilite>2</niveau_visibilite>
                             <active>1</active>
                             <objet_selectionnable>
