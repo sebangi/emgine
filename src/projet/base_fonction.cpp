@@ -70,7 +70,8 @@ QString base_fonction::get_info_bulle() const
 
         parametres_const_iterateur it;
         for ( it = m_parametres.begin(); it != m_parametres.end(); ++it )
-            resultat += "\n\t" + it->second->get_nom() + " :\n\t\t" + it->second->get_aide() + "\n";
+            resultat += "\n\t" + it->second->get_nom() + " :\n\t\t" +
+                    it->second->get_aide() + "\n";
     }
 
     return resultat;

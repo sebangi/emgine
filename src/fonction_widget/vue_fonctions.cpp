@@ -136,8 +136,7 @@ void vue_fonctions::creer_vue_conteneur()
             icon1.addFile(QString::fromUtf8(":/icons/fleche_haut.png"), QSize(), QIcon::Normal, QIcon::Off);
 
         horizontalHeaderItem(1)->setIcon(icon1);
-
-        horizontalHeaderItem(1)->setText( m_conteneur_courant->get_titre() );
+        horizontalHeaderItem(1)->setText( QObject::tr( qUtf8Printable( m_conteneur_courant->get_titre() ) ) );
 
         for ( fonctions_conteneur::fonctions_iterateur it = m_conteneur_courant->fonctions_begin();
               it != m_conteneur_courant->fonctions_end(); ++it )

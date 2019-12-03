@@ -25,32 +25,32 @@ fonction_cesar::fonction_cesar( fonctions_conteneur * conteneur )
 
     ajouter_parametre( PARAM_DECALAGE,
                        new base_parametre( this,
-                                           "Décalage",
-                                           "Le décalage à réaliser.\nPossibilité d'alternance si le mot est une séquence.\n Le premier mot pour la première ligne. Le deuxième mot pour la seconde ligne, etc..",
+                                           QObject::tr("Décalage"),
+                                           QObject::tr("Le décalage à réaliser.\nPossibilité d'alternance si le mot est une séquence.\n Le premier mot pour la première ligne. Le deuxième mot pour la seconde ligne, etc.."),
                                            base_parametre::CONTENU_PARAM_VIDE_IMPOSSIBLE,
                                            base_parametre::CONFIGURATION_VISIBLE,
                                            base_parametre::ALGO_IPL) );
 
     ajouter_parametre( PARAM_ADDITIF,
                        new base_parametre( this,
-                                           "Additif",
-                                           "Indique si le décalage est additif (Oui ou 1 pour Additif et Non ou 0 pour soustractif).\nPossibilité d'alternance si le mot est une séquence.",
+                                           QObject::tr("Additif"),
+                                           QObject::tr("Indique si le décalage est additif (Oui ou 1 pour Additif et Non ou 0 pour soustractif).\nPossibilité d'alternance si le mot est une séquence."),
                                            base_parametre::CONTENU_PARAM_VIDE_IMPOSSIBLE,
                                            base_parametre::CONFIGURATION_VISIBLE,
                                            base_parametre::ALGO_IPL) );
 
     ajouter_parametre( PARAM_ALPHABET,
                        new base_parametre( this,
-                                           "Alphabet",
-                                           "Alphabets utilisé (chaque mot de la ligne est un alphabet).",
+                                           QObject::tr("Alphabet"),
+                                           QObject::tr("Alphabets utilisés (chaque mot de la ligne est un alphabet)."),
                                            base_parametre::CONTENU_PARAM_VIDE_IMPOSSIBLE,
                                            base_parametre::CONFIGURATION_VISIBLE,
                                            base_parametre::ALGO_IPL) );
 
     ajouter_parametre( PARAM_TRAITER_PAR_LIGNE,
                        new base_parametre( this,
-                                           "Traiter par ligne",
-                                           "Indique si le césar se réaliser par ligne, par opposition à tout le texte.",
+                                           QObject::tr("Traiter par ligne"),
+                                           QObject::tr("Indique si le césar se réaliser par ligne, par opposition à tout le texte."),
                                            base_parametre::CONTENU_PARAM_VIDE_IMPOSSIBLE,
                                            base_parametre::CONFIGURATION_VISIBLE,
                                            base_parametre::ALGO_IPL) );

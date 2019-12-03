@@ -9,6 +9,7 @@
 #include <QApplication>
 #include <QFile>
 #include <QTextCodec>
+#include <QTranslator>
 
 /*! --------------------------------------------------------------------------------------
  \brief Fonction principale du projet.
@@ -17,13 +18,17 @@
  \return Le code d'erreur de la fonction.
 */
 int main(int argc, char *argv[])
-{
+{    
     QFile File("stylesheet.qss");
     File.open(QFile::ReadOnly);
     QString StyleSheet = QLatin1String(File.readAll());
 
     QApplication a(argc, argv);
     a.setStyleSheet(StyleSheet);
+
+    QTranslator translator;
+    translator.load("emgine_en");
+    a.installTranslator(&translator);
 
     fenetre_principale w;
     w.show();

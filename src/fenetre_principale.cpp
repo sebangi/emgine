@@ -169,7 +169,7 @@ void fenetre_principale::init_widgets()
 {
     QStyle* style = QApplication::style();
 
-    setWindowTitle("Emgine");
+    setWindowTitle( tr("Emgine") );
 
     QIcon icone_source;
     icone_source.addFile(QString::fromUtf8(":/icons/ajout_source.png"), QSize(), QIcon::Normal, QIcon::Off);
@@ -312,7 +312,7 @@ void fenetre_principale::ajouter_fonction( fonctions_conteneur * conteneur, obje
 void fenetre_principale::init_test()
 {
     projet * p  = new projet();
-    p->set_nom("Exemple");
+    p->set_nom(tr("Exemple"));
     ajouter_projet(p);
 
     ajouter_fonction( p, NULL, new fonction_source_texte(p, "UNHBH TM SDRS !\nunhbh tm sdrs !"), true );

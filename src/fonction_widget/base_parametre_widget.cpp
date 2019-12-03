@@ -69,14 +69,15 @@ void base_parametre_widget::init()
     main_layout->setMargin(5);
     main_layout->setSpacing(5);
 
-    QLabel * nom = new QLabel( m_parametre->get_nom() + " : " );
+    QString s( QObject::tr( qUtf8Printable( m_parametre->get_nom() ) ) );
+    QLabel * nom = new QLabel( s + " : " );
     nom->setObjectName("NomParametre");
     nom->setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Expanding);
     nom->setAlignment(Qt::AlignRight | Qt::AlignVCenter);
     main_layout->addWidget(nom,3);
 
     QLabel * valeur = new QLabel( calcul_valeur_courte() );
-    valeur->setObjectName("ValeurCourte");
+    valeur->setObjectName(tr("ValeurCourte"));
     valeur->setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Expanding);
     valeur->setAlignment(Qt::AlignLeft | Qt::AlignVCenter);
     main_layout->addWidget(valeur,7);

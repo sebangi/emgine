@@ -120,7 +120,7 @@ void base_fonction_widget::init()
     connect(m_aide_bouton, SIGNAL(released()), this, SLOT(on_aide()));
     toolbar->addWidget(m_aide_bouton);
 
-    m_nom_label = new QLabel( get_nom() );
+    m_nom_label = new QLabel( QObject::tr( qUtf8Printable( get_nom() ) ) );
     m_nom_label->setObjectName("NomFonction");
     m_nom_label->setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Expanding);
     m_nom_label->setAlignment(Qt::AlignLeft | Qt::AlignVCenter);

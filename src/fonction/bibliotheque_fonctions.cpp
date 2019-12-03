@@ -47,109 +47,109 @@
 
 std::map<type_id_fonction, QString> bibliotheque_fonctions::s_fonctions_nom =
 {
-    { f_source_booleen, "Oui ou Non" },
-    { f_source_entier, "Entier" },
-    { f_source_texte, "Texte" },
-    { f_source_fichier_texte, "Fichier texte" },
-    { f_source_caractere, "Caractères" },
-    { f_source_generateur_permutation, "Générateur de permutations" },
-    { f_source_dictionnaire, "Dictionnaire" },
-    { f_source_ensemble_sources, "Ensemble de sources" },
+    { f_source_booleen, QObject::tr("Oui ou Non") },
+    { f_source_entier, QObject::tr("Entier") },
+    { f_source_texte, QObject::tr("Texte") },
+    { f_source_fichier_texte, QObject::tr("Fichier texte") },
+    { f_source_caractere, QObject::tr("Caractères") },
+    { f_source_generateur_permutation, QObject::tr("Générateur de permutations") },
+    { f_source_dictionnaire, QObject::tr("Dictionnaire") },
+    { f_source_ensemble_sources, QObject::tr("Ensemble de sources") },
 
-    { f_source_choix, "Choix" },
+    { f_source_choix, QObject::tr("Choix") },
 
-    { f_conversion_cesar, "Chiffrement par Code César" },
-    { f_conversion_formatage, "Formatage" },
-    { f_conversion_selection_selon_dictionnaire, "Sélection selon dictionnaire" },
-    { f_conversion_anagramme, "Anagramme" },
-    { f_conversion_entier_en_chiffre_romain, "Écriture en chiffre romain" },
-    { f_conversion_ajout_espace_selon_dictionnaire, "Ajout d'espaces selon dictionnaire" },
-    { f_conversion_fusion, "Fusion" },
-    { f_conversion_substitution, "Substitution de caractères" },
-    { f_conversion_ecriture_morse, "Écriture en morse" },
-    { f_conversion_lecture_morse, "Lecture du morse" },
-    { f_conversion_choisir_separateur, "Choix des séparateurs" },
-    { f_conversion_transposition, "Transposition" },
-    { f_conversion_inversion, "Inversion" },
-    { f_conversion_concatenation, "Concaténation" },
-    { f_conversion_rotation, "Rotation" },
-    { f_conversion_scission, "Scission" },
-    { f_conversion_ecriture_en_diagonale, "Écriture en diagonale" },
-    { f_conversion_inversion_en_diagonale, "Inversion suivant diagonale" },
-    { f_conversion_ecriture_braille, "Écriture en braille" },
-    { f_conversion_lecture_braille, "Lecture du braille" },
-    { f_conversion_expression_reguliere, "Expression régulière" },
-    { f_conversion_ordonnancement, "Ordonnancement" },
+    { f_conversion_cesar, QObject::tr("Chiffrement par Code César") },
+    { f_conversion_formatage, QObject::tr("Formatage") },
+    { f_conversion_selection_selon_dictionnaire, QObject::tr("Sélection selon dictionnaire") },
+    { f_conversion_anagramme, QObject::tr("Anagramme") },
+    { f_conversion_entier_en_chiffre_romain, QObject::tr("Écriture en chiffre romain") },
+    { f_conversion_ajout_espace_selon_dictionnaire, QObject::tr("Ajout d'espaces selon dictionnaire") },
+    { f_conversion_fusion, QObject::tr("Fusion") },
+    { f_conversion_substitution, QObject::tr("Substitution de caractères") },
+    { f_conversion_ecriture_morse, QObject::tr("Écriture en morse") },
+    { f_conversion_lecture_morse, QObject::tr("Lecture du morse") },
+    { f_conversion_choisir_separateur, QObject::tr("Choix des séparateurs") },
+    { f_conversion_transposition, QObject::tr("Transposition") },
+    { f_conversion_inversion, QObject::tr("Inversion") },
+    { f_conversion_concatenation, QObject::tr("Concaténation") },
+    { f_conversion_rotation, QObject::tr("Rotation") },
+    { f_conversion_scission, QObject::tr("Scission") },
+    { f_conversion_ecriture_en_diagonale, QObject::tr("Écriture en diagonale") },
+    { f_conversion_inversion_en_diagonale, QObject::tr("Inversion suivant diagonale") },
+    { f_conversion_ecriture_braille, QObject::tr("Écriture en braille") },
+    { f_conversion_lecture_braille, QObject::tr("Lecture du braille") },
+    { f_conversion_expression_reguliere, QObject::tr("Expression régulière") },
+    { f_conversion_ordonnancement, QObject::tr("Ordonnancement") },
 
-    { f_sortie_texte, "Textes" },
-    { f_sortie_frequence, "Fréquences des éléments" },
-    { f_sortie_indice_coincidence, "Indice de coincidence" },
-    { f_sortie_analyse_ligne, "Analyse des lignes" }
+    { f_sortie_texte, QObject::tr("Textes") },
+    { f_sortie_frequence, QObject::tr("Fréquences des éléments") },
+    { f_sortie_indice_coincidence, QObject::tr("Indice de coincidence") },
+    { f_sortie_analyse_ligne, QObject::tr("Analyse des lignes") }
 };
 
 std::map<type_id_fonction, QString> bibliotheque_fonctions::s_fonctions_aide =
 {
-    { f_source_booleen, "Source de type Oui ou Non" },
-    { f_source_entier, "Source de type entier" },
-    { f_source_texte, "Source textuelle" },
-    { f_source_fichier_texte, "Source fichier textuel" },
-    { f_source_caractere, "Source de type un caractère" },
-    { f_source_choix, "Source de type choix" },
-    { f_source_generateur_permutation, "Générateur de permutations" },
-    { f_source_dictionnaire, "Ajoute un dictionnaire" },
-    { f_source_ensemble_sources, "Ensemble de sources" },
+    { f_source_booleen, QObject::tr("Source de type Oui ou Non") },
+    { f_source_entier, QObject::tr("Source de type entier") },
+    { f_source_texte, QObject::tr("Source textuelle") },
+    { f_source_fichier_texte, QObject::tr("Source fichier textuel") },
+    { f_source_caractere, QObject::tr("Source de type un caractère") },
+    { f_source_choix, QObject::tr("Source de type choix") },
+    { f_source_generateur_permutation, QObject::tr("Générateur de permutations") },
+    { f_source_dictionnaire, QObject::tr("Ajoute un dictionnaire") },
+    { f_source_ensemble_sources, QObject::tr("Ensemble de sources") },
 
-    { f_conversion_cesar, "Outil pour décoder/encoder avec César.\nLe code César (ou chiffre de César) est un chiffrement par décalage parmi les plus simples et les plus connu, il utilise la substitution d'une lettre par une autre plus loin dans l'alphabet." },
-    { f_conversion_formatage, "Formate le texte, i.e. mise en majuscule, retrait des accents et éventuellement de la ponctuation." },
-    { f_conversion_selection_selon_dictionnaire, "Sélectionne les textes selon un dictionnaire donné. Cela permet de filtrer par exemple les textes écrits en français." },
-    { f_conversion_anagramme, "Affiche les anagrammes de chaque mot." },
-    { f_conversion_entier_en_chiffre_romain, "Convertit les entiers en chiffres romains." },
-    { f_conversion_ajout_espace_selon_dictionnaire, "Ajoute les espaces entre mot selon un dictionnaire donné." },
-    { f_conversion_formatage, "Fusion des caractères, des mots, des lignes et/ou des textes." },
-    { f_conversion_substitution, "Substitution de caractères." },
-    { f_conversion_ecriture_morse, "Écriture en morse" },
-    { f_conversion_lecture_morse, "Lecture du morse" },
-    { f_conversion_choisir_separateur, "Choix des séparateurs (de caractères, de mots et de lignes)" },
-    { f_conversion_transposition, "Transposition du texte (des mots ou des caractères)" },
-    { f_conversion_inversion, "Inversion des caractères, des mots et/ou des lignes." },
-    { f_conversion_concatenation, "Concaténation de textes. Ajoute à chaque texte en entrée les textes du paramètre." },
-    { f_conversion_rotation, "Rotation du texte (des mots ou des caractères)." },
-    { f_conversion_scission, "Scission des lignes en textes, des mots en lignes, des caractères en mots ou du contenu des caractères en caractères." },
-    { f_conversion_ecriture_en_diagonale, "Écriture du texte en diagonale (des mots ou des caractères)." },
-    { f_conversion_inversion_en_diagonale, "Inverse suivant une diagonale les mots ou les caractères." },
-    { f_conversion_ecriture_braille, "Écriture en braille" },
-    { f_conversion_lecture_braille, "Lecture du braille" },
-    { f_conversion_expression_reguliere, "Mappe une expression régulière à partir d'un dictionnaire." },
-    { f_conversion_ordonnancement, "Ré-ordonne les élements (mots ou caractères)." },
+    { f_conversion_cesar, QObject::tr("Outil pour décoder/encoder avec César.\nLe code César (ou chiffre de César) est un chiffrement par décalage parmi les plus simples et les plus connus, il utilise la substitution d'une lettre par une autre plus loin dans l'alphabet.") },
+    { f_conversion_formatage, QObject::tr("Formate le texte, i.e. mise en majuscule, retrait des accents et éventuellement de la ponctuation.") },
+    { f_conversion_selection_selon_dictionnaire, QObject::tr("Sélectionne les textes selon un dictionnaire donné. Cela permet de filtrer par exemple les textes écrits en français.") },
+    { f_conversion_anagramme, QObject::tr("Affiche les anagrammes de chaque mot.") },
+    { f_conversion_entier_en_chiffre_romain, QObject::tr("Convertit les entiers en chiffres romains.") },
+    { f_conversion_ajout_espace_selon_dictionnaire, QObject::tr("Ajoute les espaces entre mot selon un dictionnaire donné.") },
+    { f_conversion_formatage, QObject::tr("Fusion des caractères, des mots, des lignes et/ou des textes.") },
+    { f_conversion_substitution, QObject::tr("Substitution de caractères.") },
+    { f_conversion_ecriture_morse, QObject::tr("Écriture en morse") },
+    { f_conversion_lecture_morse, QObject::tr("Lecture du morse") },
+    { f_conversion_choisir_separateur, QObject::tr("Choix des séparateurs (de caractères, de mots et de lignes)") },
+    { f_conversion_transposition, QObject::tr("Transposition du texte (des mots ou des caractères)") },
+    { f_conversion_inversion, QObject::tr("Inversion des caractères, des mots et/ou des lignes.") },
+    { f_conversion_concatenation, QObject::tr("Concaténation de textes. Ajoute à chaque texte en entrée les textes du paramètre.") },
+    { f_conversion_rotation, QObject::tr("Rotation du texte (des mots ou des caractères).") },
+    { f_conversion_scission, QObject::tr("Scission des lignes en textes, des mots en lignes, des caractères en mots ou du contenu des caractères en caractères.") },
+    { f_conversion_ecriture_en_diagonale, QObject::tr("Écriture du texte en diagonale (des mots ou des caractères).") },
+    { f_conversion_inversion_en_diagonale, QObject::tr("Inverse suivant une diagonale les mots ou les caractères.") },
+    { f_conversion_ecriture_braille, QObject::tr("Écriture en braille") },
+    { f_conversion_lecture_braille, QObject::tr("Lecture du braille") },
+    { f_conversion_expression_reguliere, QObject::tr("Mappe une expression régulière à partir d'un dictionnaire.") },
+    { f_conversion_ordonnancement, QObject::tr("Ré-ordonne les élements (mots ou caractères).") },
 
-    { f_sortie_texte, "Sortie textuelle : la liste de tous les textes obtenus." },
-    { f_sortie_frequence, "Sortie affichant la fréquence des éléments." },
-    { f_sortie_indice_coincidence, "Sortie affichant l'indice de coincidence.\nEn français, l'indice vaut environ 0,0778. Si l'indice de coincidence est grand (proche de 0.070), c'est à dire similaire à celui d'un message non chiffré, alors le message a probablement subit une substitution monoalphabetiquehref (une même lettre ne peut être remplacée que par une seule autre). Si l'indice de coincidence est faible (proche de 0.0385), c'est à dire similaire à une répartition aléatoire, alors le message a probablement subit un chiffrement polyalphabétique (une même lettre peut être remplacée par plusieurs autres). Plus l'indice est faible, plus le nombre d'alphabets utilisé est grand." },
-    { f_sortie_analyse_ligne, "Sortie affichant l'analyse de chaque ligne, i.e. son nombre de mots et de caractères." }
+    { f_sortie_texte, QObject::tr("Sortie textuelle : la liste de tous les textes obtenus.") },
+    { f_sortie_frequence, QObject::tr("Sortie affichant la fréquence des éléments.") },
+    { f_sortie_indice_coincidence, QObject::tr("Sortie affichant l'indice de coincidence.\nEn français, l'indice vaut environ 0,0778. Si l'indice de coincidence est grand (proche de 0.070), c'est à dire similaire à celui d'un message non chiffré, alors le message a probablement subit une substitution monoalphabetiquehref (une même lettre ne peut être remplacée que par une seule autre). Si l'indice de coincidence est faible (proche de 0.0385), c'est à dire similaire à une répartition aléatoire, alors le message a probablement subit un chiffrement polyalphabétique (une même lettre peut être remplacée par plusieurs autres). Plus l'indice est faible, plus le nombre d'alphabets utilisé est grand.") },
+    { f_sortie_analyse_ligne, QObject::tr("Sortie affichant l'analyse de chaque ligne, i.e. son nombre de mots et de caractères.") }
 };
 
 std::map<type_id_fonction, std::set<QString> > bibliotheque_fonctions::s_categories =
 {
     { f_source_booleen,
-      { "booléen", "booleen" }
+      { "booléen", QObject::tr("booleen") }
     },
     { f_source_caractere,
-      { "caracteres" }
+      { QObject::tr("caracteres") }
     },
     { f_conversion_inversion,
-      { "inverser" }
+      { QObject::tr("inverser") }
     },
     { f_conversion_concatenation,
-      { "concatener" }
+      { QObject::tr("concatener") }
     },
     { f_conversion_rotation,
-      { "tourner" }
+      { QObject::tr("tourner") }
     },
     { f_conversion_scission,
-      { "scinder", "découper" }
+      { QObject::tr("scinder"), QObject::tr("découper") }
     },
     { f_conversion_inversion_en_diagonale,
-      { "inverser" }
+      { QObject::tr("inverser") }
     }
 };
 

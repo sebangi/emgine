@@ -205,6 +205,8 @@ HEADERS  += \
 FORMS    += \
     fenetre_principale.ui
 
+TRANSLATIONS = emgine_en.ts
+
 DISTFILES += \
     stylesheet.qss \
     TODO.txt \
