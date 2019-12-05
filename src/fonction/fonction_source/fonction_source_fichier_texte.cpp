@@ -31,24 +31,24 @@ fonction_source_fichier_texte::fonction_source_fichier_texte(fonctions_conteneur
 
     ajouter_parametre( PARAM_CARACTERE_SEPARATEUR,
                        new base_parametre( this,
-                                           "Séparateur d'élément",
-                                           "Les séparateurs d'éléments.",
+                                           base_parametre::tr("Séparateur d'élément"),
+                                           base_parametre::tr("Les séparateurs d'éléments."),
                                            base_parametre::CONTENU_PARAM_VIDE_POSSIBLE,
                                            base_parametre::CONFIGURATION_INVISIBLE,
                                            base_parametre::ALGO_IPL) );
 
     ajouter_parametre( PARAM_MOT_SEPARATEUR,
                        new base_parametre( this,
-                                           "Séparateur de mot",
-                                           "Les séparateurs de mot.",
+                                           base_parametre::tr("Séparateur de mot"),
+                                           base_parametre::tr("Les séparateurs de mot."),
                                            base_parametre::CONTENU_PARAM_VIDE_IMPOSSIBLE,
                                            base_parametre::CONFIGURATION_INVISIBLE,
                                            base_parametre::ALGO_IPL) );
 
     ajouter_parametre( PARAM_LIGNE_SEPARATEUR,
                        new base_parametre( this,
-                                           "Séparateur de ligne",
-                                           "Les séparateurs de ligne.",
+                                           base_parametre::tr("Séparateur de ligne"),
+                                           base_parametre::tr("Les séparateurs de ligne."),
                                            base_parametre::CONTENU_PARAM_VIDE_IMPOSSIBLE,
                                            base_parametre::CONFIGURATION_INVISIBLE,
                                            base_parametre::ALGO_IPL) );
@@ -193,8 +193,8 @@ bool fonction_source_fichier_texte::est_valide(logs_compilation_widget * vue_log
     {
         vue_logs->ajouter_log
                 ( log_compilation( log_compilation::LOG_ERREUR, this,
-                                   "La fonction \"" + get_nom() +
-                                   "\" charge un fichier inexistant ou erroné.") );
+                                   base_fonction::tr("La fonction") + " \"" + get_nom() +
+                                   "\" " + base_fonction::tr("charge un fichier inexistant ou erroné.")) );
         return false;
     }
 
@@ -207,7 +207,7 @@ bool fonction_source_fichier_texte::est_valide(logs_compilation_widget * vue_log
  */
 QString fonction_source_fichier_texte::get_valeur_courte() const
 {
-    return "Fichier " + m_chemin_relatif_fichier;
+    return base_fonction::tr("Fichier") + " : " + m_chemin_relatif_fichier;
 }
 
 /** --------------------------------------------------------------------------------------

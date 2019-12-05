@@ -33,8 +33,8 @@ fonction_transposition::fonction_transposition( fonctions_conteneur * conteneur 
 
     ajouter_parametre( PARAM_ELEMENTS,
                        new parametre_choix( this,
-                                            "Éléments à transposer",
-                                            "Indique s'il faut transposer sur les mots ou sur les caractères.",
+                                            base_parametre::tr("Éléments à transposer"),
+                                            base_parametre::tr("Indique s'il faut transposer sur les mots ou sur les caractères."),
                                             base_parametre::CONTENU_PARAM_VIDE_IMPOSSIBLE,
                                             base_parametre::CONFIGURATION_INVISIBLE,
                                             base_parametre::ALGO_IPL,
@@ -58,7 +58,7 @@ bool fonction_transposition::est_valide(logs_compilation_widget * vue_logs)
  */
 QString fonction_transposition::get_valeur_courte() const
 {
-    return "[transposition]";
+    return base_fonction::tr("[transposition]");
 }
 
 /** --------------------------------------------------------------------------------------
@@ -102,7 +102,7 @@ void fonction_transposition::execution_specifique( compilateur &compil, textes &
                 if ( ! it_t->est_rectangulaire_selon_mots() )
                     compil.get_vue_logs()->ajouter_log
                             ( log_compilation( log_compilation::LOG_WARNING, (base_fonction*)this,
-                                               "La transposition d'un texte non rectangulaire déforme le texte.") );
+                                               base_fonction::tr("La transposition d'un texte non rectangulaire déforme le texte.")) );
 
                 it_t->transposer_mots();
             }
@@ -111,7 +111,7 @@ void fonction_transposition::execution_specifique( compilateur &compil, textes &
                 if ( ! it_t->est_rectangulaire_selon_caracteres() )
                     compil.get_vue_logs()->ajouter_log
                             ( log_compilation( log_compilation::LOG_WARNING, (base_fonction*)this,
-                                               "La transposition d'un texte non rectangulaire déforme le texte.") );
+                                               base_fonction::tr("La transposition d'un texte non rectangulaire déforme le texte.")) );
 
                 it_t->transposer_caracteres();
             }

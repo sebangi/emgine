@@ -50,11 +50,11 @@ selecteur_fonction_dialog::selecteur_fonction_dialog(type_fonction type, fonctio
     setLayout(mainLayout);
 
     if ( type == type_fonction::fonction_source )
-        setWindowTitle("Quelle source souhaitez-vous ?");
+        setWindowTitle(tr("Quelle source souhaitez-vous ?"));
     else if ( type == type_fonction::fonction_conversion )
-        setWindowTitle("Quelle fonction souhaitez-vous ?");
+        setWindowTitle(tr("Quelle fonction souhaitez-vous ?"));
     else
-        setWindowTitle("Quelle sortie souhaitez-vous ?");
+        setWindowTitle(tr("Quelle sortie souhaitez-vous ?"));
 
     setMinimumWidth( std::max(m_nb_colonnes * 200,400) );
 

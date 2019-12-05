@@ -125,7 +125,7 @@ void fonction_source_fichier_texte_widget::choisir_nom_fichier()
 
     QString nom_fichier =
             QFileDialog::getOpenFileName( this, tr("Ouvrir un fichier textuel"),
-                                          dir, tr("Texte (*.txt);;Autres fichiers (*))"));
+                                          dir, tr("Texte") + " (*.txt);;" + tr("Autres fichiers") + " (*))");
 
     if ( nom_fichier.isEmpty() || nom_fichier.compare( m_nom_fichier_label->text() ) == 0 )
         return;

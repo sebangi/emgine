@@ -59,7 +59,9 @@ $(function() {
 </div><!-- top -->
 <div class="header">
   <div class="summary">
+<a href="#pub-types">Types publics</a> &#124;
 <a href="#pub-methods">Fonctions membres publiques</a> &#124;
+<a href="#pri-methods">Fonctions membres privées</a> &#124;
 <a href="#pri-attribs">Attributs privés</a> &#124;
 <a href="classtexte-members.html">Liste de tous les membres</a>  </div>
   <div class="headertitle">
@@ -85,6 +87,13 @@ Graphe de collaboration de texte:</div>
 </map>
 <center><span class="legend">[<a href="graph_legend.html">légende</a>]</span></center></div>
 <table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-types"></a>
+Types publics</h2></td></tr>
+<tr class="memitem:a446b517ef1a5a4465f2f3ad2990a1e00"><td class="memItemLeft" align="right" valign="top"><a id="a446b517ef1a5a4465f2f3ad2990a1e00"></a>
+typedef std::vector&lt; <a class="el" href="classfrequence.html">frequence</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtexte.html#a446b517ef1a5a4465f2f3ad2990a1e00">type_frequences_texte</a></td></tr>
+<tr class="memdesc:a446b517ef1a5a4465f2f3ad2990a1e00"><td class="mdescLeft">&#160;</td><td class="mdescRight">Type représentant un ensemble de fréquence d'un texte. <br /></td></tr>
+<tr class="separator:a446b517ef1a5a4465f2f3ad2990a1e00"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Fonctions membres publiques</h2></td></tr>
 <tr class="memitem:a76efdbc60519c5abe8437c2a6d9926c0"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtexte.html#a76efdbc60519c5abe8437c2a6d9926c0">texte</a> ()</td></tr>
@@ -96,12 +105,18 @@ Fonctions membres publiques</h2></td></tr>
 <tr class="memitem:aa804e0976ae8e641499ef68c2124164f"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtexte.html#aa804e0976ae8e641499ef68c2124164f">texte</a> (const QString &amp;valeur, const QString &amp;separateur_ligne=&quot;\)</td></tr>
 <tr class="memdesc:aa804e0976ae8e641499ef68c2124164f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructeur de la classe texte.  <a href="#aa804e0976ae8e641499ef68c2124164f">Plus de détails...</a><br /></td></tr>
 <tr class="separator:aa804e0976ae8e641499ef68c2124164f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aec9f9b67dffc86801e18c0cc2f67f68b"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtexte.html#aec9f9b67dffc86801e18c0cc2f67f68b">texte</a> (const <a class="el" href="classtexte.html">texte</a> &amp;t)</td></tr>
+<tr class="memdesc:aec9f9b67dffc86801e18c0cc2f67f68b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructeur par copie de la classe texte.  <a href="#aec9f9b67dffc86801e18c0cc2f67f68b">Plus de détails...</a><br /></td></tr>
+<tr class="separator:aec9f9b67dffc86801e18c0cc2f67f68b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a344af8f134b06ddcb076b341caa3ed30"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtexte.html#a344af8f134b06ddcb076b341caa3ed30">~texte</a> ()</td></tr>
 <tr class="memdesc:a344af8f134b06ddcb076b341caa3ed30"><td class="mdescLeft">&#160;</td><td class="mdescRight">Destructeur de la classe texte.  <a href="#a344af8f134b06ddcb076b341caa3ed30">Plus de détails...</a><br /></td></tr>
 <tr class="separator:a344af8f134b06ddcb076b341caa3ed30"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:abb3d9763a37659b12552379cb4e0dc8c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtexte.html#abb3d9763a37659b12552379cb4e0dc8c">ajouter_ligne</a> (const <a class="el" href="classligne.html">ligne</a> &amp;l)</td></tr>
 <tr class="memdesc:abb3d9763a37659b12552379cb4e0dc8c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Ajoute une ligne donnée en fin de texte.  <a href="#abb3d9763a37659b12552379cb4e0dc8c">Plus de détails...</a><br /></td></tr>
 <tr class="separator:abb3d9763a37659b12552379cb4e0dc8c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7ccbb85275948e0e4d2cc45dcfd52d9b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtexte.html#a7ccbb85275948e0e4d2cc45dcfd52d9b">ajouter_texte</a> (const <a class="el" href="classtexte.html">texte</a> &amp;t)</td></tr>
+<tr class="memdesc:a7ccbb85275948e0e4d2cc45dcfd52d9b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Ajoute un texte donné à la fin du texte.  <a href="#a7ccbb85275948e0e4d2cc45dcfd52d9b">Plus de détails...</a><br /></td></tr>
+<tr class="separator:a7ccbb85275948e0e4d2cc45dcfd52d9b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0734254110460b5493c01b3923da7d13"><td class="memItemLeft" align="right" valign="top">QString&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtexte.html#a0734254110460b5493c01b3923da7d13">to_string</a> () const</td></tr>
 <tr class="memdesc:a0734254110460b5493c01b3923da7d13"><td class="mdescLeft">&#160;</td><td class="mdescRight">Convertit le texte au format QString.  <a href="#a0734254110460b5493c01b3923da7d13">Plus de détails...</a><br /></td></tr>
 <tr class="separator:a0734254110460b5493c01b3923da7d13"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -138,12 +153,96 @@ Fonctions membres publiques</h2></td></tr>
 <tr class="memitem:ae8511739fb7e8c52a4c300676d6b30e0"><td class="memItemLeft" align="right" valign="top">size_type&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtexte.html#ae8511739fb7e8c52a4c300676d6b30e0">nb_caracteres</a> () const</td></tr>
 <tr class="memdesc:ae8511739fb7e8c52a4c300676d6b30e0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retourne le nombre de caractères du texte.  <a href="#ae8511739fb7e8c52a4c300676d6b30e0">Plus de détails...</a><br /></td></tr>
 <tr class="separator:ae8511739fb7e8c52a4c300676d6b30e0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a79dae3c56272e8bbd5e744f713df32c2"><td class="memItemLeft" align="right" valign="top">size_type&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtexte.html#a79dae3c56272e8bbd5e744f713df32c2">nb_caracteres_alphabet</a> () const</td></tr>
+<tr class="memdesc:a79dae3c56272e8bbd5e744f713df32c2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retourne le nombre de caractère alphabet du mot.  <a href="#a79dae3c56272e8bbd5e744f713df32c2">Plus de détails...</a><br /></td></tr>
+<tr class="separator:a79dae3c56272e8bbd5e744f713df32c2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a954c4a3a28faa5a13bd5002a112eef86"><td class="memItemLeft" align="right" valign="top">size_type&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtexte.html#a954c4a3a28faa5a13bd5002a112eef86">nb_mots</a> () const</td></tr>
 <tr class="memdesc:a954c4a3a28faa5a13bd5002a112eef86"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retourne le nombre de mots du texte.  <a href="#a954c4a3a28faa5a13bd5002a112eef86">Plus de détails...</a><br /></td></tr>
 <tr class="separator:a954c4a3a28faa5a13bd5002a112eef86"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac094147ada894bfde38c68b631724750"><td class="memItemLeft" align="right" valign="top">size_type&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtexte.html#ac094147ada894bfde38c68b631724750">nb_lignes</a> () const</td></tr>
 <tr class="memdesc:ac094147ada894bfde38c68b631724750"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retourne le nombre de lignes du texte.  <a href="#ac094147ada894bfde38c68b631724750">Plus de détails...</a><br /></td></tr>
 <tr class="separator:ac094147ada894bfde38c68b631724750"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab18c93e28774a2875eebe5c9ba0875a7"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtexte.html#ab18c93e28774a2875eebe5c9ba0875a7">est_multiple</a> (size_t largeur, size_t hauteur) const</td></tr>
+<tr class="memdesc:ab18c93e28774a2875eebe5c9ba0875a7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Teste si le texte a une taille multiple d'une taille d'élément donnée.  <a href="#ab18c93e28774a2875eebe5c9ba0875a7">Plus de détails...</a><br /></td></tr>
+<tr class="separator:ab18c93e28774a2875eebe5c9ba0875a7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a055e5f2820663f2ba054d4a08dae5ccd"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtexte.html#a055e5f2820663f2ba054d4a08dae5ccd">calculer_frequence</a> (bool force_upper_case)</td></tr>
+<tr class="memdesc:a055e5f2820663f2ba054d4a08dae5ccd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calcule la fréquence des éléments.  <a href="#a055e5f2820663f2ba054d4a08dae5ccd">Plus de détails...</a><br /></td></tr>
+<tr class="separator:a055e5f2820663f2ba054d4a08dae5ccd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7aef2e000913fb14c5d2daaea438d68d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtexte.html#a7aef2e000913fb14c5d2daaea438d68d">calculer_indice_coincidence</a> ()</td></tr>
+<tr class="memdesc:a7aef2e000913fb14c5d2daaea438d68d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calcule l'indice de coincidence du texte.  <a href="#a7aef2e000913fb14c5d2daaea438d68d">Plus de détails...</a><br /></td></tr>
+<tr class="separator:a7aef2e000913fb14c5d2daaea438d68d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae0aaf1a92edba554491a46a6f053f508"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="classtexte.html#a446b517ef1a5a4465f2f3ad2990a1e00">type_frequences_texte</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtexte.html#ae0aaf1a92edba554491a46a6f053f508">get_frequences</a> () const</td></tr>
+<tr class="memdesc:ae0aaf1a92edba554491a46a6f053f508"><td class="mdescLeft">&#160;</td><td class="mdescRight">Accesseur des fréquences des éléments du texte.  <a href="#ae0aaf1a92edba554491a46a6f053f508">Plus de détails...</a><br /></td></tr>
+<tr class="separator:ae0aaf1a92edba554491a46a6f053f508"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a536de8337075ae446df46d7646b76490"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtexte.html#a536de8337075ae446df46d7646b76490">get_indice_coincidence</a> () const</td></tr>
+<tr class="memdesc:a536de8337075ae446df46d7646b76490"><td class="mdescLeft">&#160;</td><td class="mdescRight">Accesseur de l'indice de coincidence du texte.  <a href="#a536de8337075ae446df46d7646b76490">Plus de détails...</a><br /></td></tr>
+<tr class="separator:a536de8337075ae446df46d7646b76490"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a16582508b6ad1e0a567c0a83af7fb0fa"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtexte.html#a16582508b6ad1e0a567c0a83af7fb0fa">fusionner</a> (bool fusion_caracteres, bool fusion_mots, bool fusion_lignes)</td></tr>
+<tr class="memdesc:a16582508b6ad1e0a567c0a83af7fb0fa"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fusion des lignes, des mots et/ou des caractères.  <a href="#a16582508b6ad1e0a567c0a83af7fb0fa">Plus de détails...</a><br /></td></tr>
+<tr class="separator:a16582508b6ad1e0a567c0a83af7fb0fa"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afeaea42e16aaa6d53299a3db867df9b1"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtexte.html#afeaea42e16aaa6d53299a3db867df9b1">scinder</a> (bool scission_interne_caracteres, bool scission_caracteres, bool scission_mots)</td></tr>
+<tr class="memdesc:afeaea42e16aaa6d53299a3db867df9b1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Scinder les mots, les caractères et/ou le contenu des caractères.  <a href="#afeaea42e16aaa6d53299a3db867df9b1">Plus de détails...</a><br /></td></tr>
+<tr class="separator:afeaea42e16aaa6d53299a3db867df9b1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa2b06368ab5cb65e09aee99554cf0f30"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtexte.html#aa2b06368ab5cb65e09aee99554cf0f30">inverser</a> (bool inversion_elements, bool inversion_ordre_caracteres, bool inversion_ordre_mots, bool inversion_ordre_lignes)</td></tr>
+<tr class="memdesc:aa2b06368ab5cb65e09aee99554cf0f30"><td class="mdescLeft">&#160;</td><td class="mdescRight">Inversion des textes, des lignes, des mots et/ou des caractères.  <a href="#aa2b06368ab5cb65e09aee99554cf0f30">Plus de détails...</a><br /></td></tr>
+<tr class="separator:aa2b06368ab5cb65e09aee99554cf0f30"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5342285e846ec116a16780f776af761f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtexte.html#a5342285e846ec116a16780f776af761f">transposer_mots</a> ()</td></tr>
+<tr class="memdesc:a5342285e846ec116a16780f776af761f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Transpose les mots du texte.  <a href="#a5342285e846ec116a16780f776af761f">Plus de détails...</a><br /></td></tr>
+<tr class="separator:a5342285e846ec116a16780f776af761f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a872ef0ccbf0b3f0aeaf1a8169632d763"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtexte.html#a872ef0ccbf0b3f0aeaf1a8169632d763">transposer_caracteres</a> ()</td></tr>
+<tr class="memdesc:a872ef0ccbf0b3f0aeaf1a8169632d763"><td class="mdescLeft">&#160;</td><td class="mdescRight">Transpose les caractères du texte.  <a href="#a872ef0ccbf0b3f0aeaf1a8169632d763">Plus de détails...</a><br /></td></tr>
+<tr class="separator:a872ef0ccbf0b3f0aeaf1a8169632d763"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac7d454f367c1f6a9cafc0fcab08fb147"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtexte.html#ac7d454f367c1f6a9cafc0fcab08fb147">inverser_en_diagonale_mots</a> (<a class="el" href="liste__choix_8h.html#acec1076a1029985bdb538fea9dff7fea">choix</a> choix_diagonale)</td></tr>
+<tr class="memdesc:ac7d454f367c1f6a9cafc0fcab08fb147"><td class="mdescLeft">&#160;</td><td class="mdescRight">Inverse les mots du texte suivant une diagonale.  <a href="#ac7d454f367c1f6a9cafc0fcab08fb147">Plus de détails...</a><br /></td></tr>
+<tr class="separator:ac7d454f367c1f6a9cafc0fcab08fb147"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0c2d8a5ad8c04f1576376ddcc4304bb5"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtexte.html#a0c2d8a5ad8c04f1576376ddcc4304bb5">inverser_en_diagonale_caracteres</a> (<a class="el" href="liste__choix_8h.html#acec1076a1029985bdb538fea9dff7fea">choix</a> choix_diagonale)</td></tr>
+<tr class="memdesc:a0c2d8a5ad8c04f1576376ddcc4304bb5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Inverse les caractères du texte suivant une diagonale.  <a href="#a0c2d8a5ad8c04f1576376ddcc4304bb5">Plus de détails...</a><br /></td></tr>
+<tr class="separator:a0c2d8a5ad8c04f1576376ddcc4304bb5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa9fadcac4aa3e800d604434edb621aff"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtexte.html#aa9fadcac4aa3e800d604434edb621aff">ecrire_mots_en_diagonale</a> (<a class="el" href="liste__choix_8h.html#acec1076a1029985bdb538fea9dff7fea">choix</a> choix_orientation, int nb_lignes_maximales, bool forcer_rectangularite)</td></tr>
+<tr class="memdesc:aa9fadcac4aa3e800d604434edb621aff"><td class="mdescLeft">&#160;</td><td class="mdescRight">Réécrit les mots du texte en diagonale.  <a href="#aa9fadcac4aa3e800d604434edb621aff">Plus de détails...</a><br /></td></tr>
+<tr class="separator:aa9fadcac4aa3e800d604434edb621aff"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab0cc7d5a8ce0221c2ec642b8b204c3c6"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtexte.html#ab0cc7d5a8ce0221c2ec642b8b204c3c6">ecrire_caracteres_en_diagonale</a> (<a class="el" href="liste__choix_8h.html#acec1076a1029985bdb538fea9dff7fea">choix</a> choix_orientation, int nb_lignes_maximales, bool forcer_rectangularite)</td></tr>
+<tr class="memdesc:ab0cc7d5a8ce0221c2ec642b8b204c3c6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Réécrit les mots du texte en diagonale.  <a href="#ab0cc7d5a8ce0221c2ec642b8b204c3c6">Plus de détails...</a><br /></td></tr>
+<tr class="separator:ab0cc7d5a8ce0221c2ec642b8b204c3c6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a263f0c3e36340703169a82acbe7e3374"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtexte.html#a263f0c3e36340703169a82acbe7e3374">tourner_mots</a> (<a class="el" href="liste__choix_8h.html#acec1076a1029985bdb538fea9dff7fea">choix</a> choix_rotation)</td></tr>
+<tr class="memdesc:a263f0c3e36340703169a82acbe7e3374"><td class="mdescLeft">&#160;</td><td class="mdescRight">Tourne les mots du texte.  <a href="#a263f0c3e36340703169a82acbe7e3374">Plus de détails...</a><br /></td></tr>
+<tr class="separator:a263f0c3e36340703169a82acbe7e3374"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ade07bdaa0e52c7a8e96abc23a1be4ae4"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtexte.html#ade07bdaa0e52c7a8e96abc23a1be4ae4">tourner_caracteres</a> (<a class="el" href="liste__choix_8h.html#acec1076a1029985bdb538fea9dff7fea">choix</a> choix_rotation)</td></tr>
+<tr class="memdesc:ade07bdaa0e52c7a8e96abc23a1be4ae4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Tourne les caracteres du texte.  <a href="#ade07bdaa0e52c7a8e96abc23a1be4ae4">Plus de détails...</a><br /></td></tr>
+<tr class="separator:ade07bdaa0e52c7a8e96abc23a1be4ae4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acf036d46c63b9c224adc75f36ccdb39f"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtexte.html#acf036d46c63b9c224adc75f36ccdb39f">est_rectangulaire_selon_mots</a> () const</td></tr>
+<tr class="memdesc:acf036d46c63b9c224adc75f36ccdb39f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Détermine si un texte est rectangulaire en considérant les mots, i.e. Il y a autant de mots dans chaque ligne.  <a href="#acf036d46c63b9c224adc75f36ccdb39f">Plus de détails...</a><br /></td></tr>
+<tr class="separator:acf036d46c63b9c224adc75f36ccdb39f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3dac8b82902393bebb39cbaaa48247e8"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtexte.html#a3dac8b82902393bebb39cbaaa48247e8">est_rectangulaire_selon_caracteres</a> () const</td></tr>
+<tr class="memdesc:a3dac8b82902393bebb39cbaaa48247e8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Détermine si un texte est rectangulaire en considérant les caractères, i.e. Il y a autant de caractères dans chaque ligne.  <a href="#a3dac8b82902393bebb39cbaaa48247e8">Plus de détails...</a><br /></td></tr>
+<tr class="separator:a3dac8b82902393bebb39cbaaa48247e8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afc6c545dda7731f97266774813c16ed5"><td class="memItemLeft" align="right" valign="top">size_type&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtexte.html#afc6c545dda7731f97266774813c16ed5">get_maximum_mots_dans_ligne</a> () const</td></tr>
+<tr class="memdesc:afc6c545dda7731f97266774813c16ed5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retourne le nombre maximum de mots dans une ligne.  <a href="#afc6c545dda7731f97266774813c16ed5">Plus de détails...</a><br /></td></tr>
+<tr class="separator:afc6c545dda7731f97266774813c16ed5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aece70d0c58509927084f1a96c79acf32"><td class="memItemLeft" align="right" valign="top">size_type&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtexte.html#aece70d0c58509927084f1a96c79acf32">get_minimum_mots_dans_ligne</a> () const</td></tr>
+<tr class="memdesc:aece70d0c58509927084f1a96c79acf32"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retourne le nombre minimum de mots dans une ligne.  <a href="#aece70d0c58509927084f1a96c79acf32">Plus de détails...</a><br /></td></tr>
+<tr class="separator:aece70d0c58509927084f1a96c79acf32"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aff4e5ce65ca280497cbd309374619c79"><td class="memItemLeft" align="right" valign="top">size_type&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtexte.html#aff4e5ce65ca280497cbd309374619c79">get_maximum_caracteres_dans_ligne</a> () const</td></tr>
+<tr class="memdesc:aff4e5ce65ca280497cbd309374619c79"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retourne le nombre maximum de caracteres dans une ligne.  <a href="#aff4e5ce65ca280497cbd309374619c79">Plus de détails...</a><br /></td></tr>
+<tr class="separator:aff4e5ce65ca280497cbd309374619c79"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac938c2bb7d7839b624bf844f056395b5"><td class="memItemLeft" align="right" valign="top">size_type&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtexte.html#ac938c2bb7d7839b624bf844f056395b5">get_minimum_caracteres_dans_ligne</a> () const</td></tr>
+<tr class="memdesc:ac938c2bb7d7839b624bf844f056395b5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retourne le nombre minimum de caracteres dans une ligne.  <a href="#ac938c2bb7d7839b624bf844f056395b5">Plus de détails...</a><br /></td></tr>
+<tr class="separator:ac938c2bb7d7839b624bf844f056395b5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acd12b33c04d080e044450656267af3d5"><td class="memItemLeft" align="right" valign="top">QString&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtexte.html#acd12b33c04d080e044450656267af3d5">get_separateur_ligne</a> () const</td></tr>
+<tr class="memdesc:acd12b33c04d080e044450656267af3d5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Accesseur du séparateur de lignes.  <a href="#acd12b33c04d080e044450656267af3d5">Plus de détails...</a><br /></td></tr>
+<tr class="separator:acd12b33c04d080e044450656267af3d5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-methods"></a>
+Fonctions membres privées</h2></td></tr>
+<tr class="memitem:a26290d2cb7eb4b656b8be0e121c1049f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtexte.html#a26290d2cb7eb4b656b8be0e121c1049f">maj_comptages</a> ()</td></tr>
+<tr class="memdesc:a26290d2cb7eb4b656b8be0e121c1049f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Met à jour les différents comptages.  <a href="#a26290d2cb7eb4b656b8be0e121c1049f">Plus de détails...</a><br /></td></tr>
+<tr class="separator:a26290d2cb7eb4b656b8be0e121c1049f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4a2b045dbb975c1c3e7b3d20c60edd34"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtexte.html#a4a2b045dbb975c1c3e7b3d20c60edd34">maj_nb_caracteres</a> ()</td></tr>
+<tr class="memdesc:a4a2b045dbb975c1c3e7b3d20c60edd34"><td class="mdescLeft">&#160;</td><td class="mdescRight">Met à jour le nombre de caractères du texte.  <a href="#a4a2b045dbb975c1c3e7b3d20c60edd34">Plus de détails...</a><br /></td></tr>
+<tr class="separator:a4a2b045dbb975c1c3e7b3d20c60edd34"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aeed3eacb585627aa50aadaaba067c9c2"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtexte.html#aeed3eacb585627aa50aadaaba067c9c2">maj_nb_mots</a> ()</td></tr>
+<tr class="memdesc:aeed3eacb585627aa50aadaaba067c9c2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Met à jour le nombre de mots du texte.  <a href="#aeed3eacb585627aa50aadaaba067c9c2">Plus de détails...</a><br /></td></tr>
+<tr class="separator:aeed3eacb585627aa50aadaaba067c9c2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
 Attributs privés</h2></td></tr>
@@ -175,15 +274,23 @@ size_type&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href=
 size_type&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtexte.html#af9fd6d72cc8127bc1e20578a68b4e09b">m_nb_mots</a></td></tr>
 <tr class="memdesc:af9fd6d72cc8127bc1e20578a68b4e09b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Le nombre de mots du texte. <br /></td></tr>
 <tr class="separator:af9fd6d72cc8127bc1e20578a68b4e09b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af6ea8e37710c8266954b44c22fbcf6ce"><td class="memItemLeft" align="right" valign="top"><a id="af6ea8e37710c8266954b44c22fbcf6ce"></a>
+<a class="el" href="classtexte.html#a446b517ef1a5a4465f2f3ad2990a1e00">type_frequences_texte</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtexte.html#af6ea8e37710c8266954b44c22fbcf6ce">m_frequences</a></td></tr>
+<tr class="memdesc:af6ea8e37710c8266954b44c22fbcf6ce"><td class="mdescLeft">&#160;</td><td class="mdescRight">Les fréquences des éléments du texte. <br /></td></tr>
+<tr class="separator:af6ea8e37710c8266954b44c22fbcf6ce"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:addc74b504ad521f5f31b1f945b006229"><td class="memItemLeft" align="right" valign="top"><a id="addc74b504ad521f5f31b1f945b006229"></a>
+double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtexte.html#addc74b504ad521f5f31b1f945b006229">m_indice_coincidence</a></td></tr>
+<tr class="memdesc:addc74b504ad521f5f31b1f945b006229"><td class="mdescLeft">&#160;</td><td class="mdescRight">L'indice de coincidence du texte. <br /></td></tr>
+<tr class="separator:addc74b504ad521f5f31b1f945b006229"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Description détaillée</h2>
 <div class="textblock"><p>Classe décrivant un texte, i.e. un tableau de ligne. </p>
 <dl class="section author"><dt>Auteur</dt><dd>Sébastien Angibaud </dd></dl>
 
-<p class="definition">Définition à la ligne <a class="el" href="texte_8h_source.html#l00019">19</a> du fichier <a class="el" href="texte_8h_source.html">texte.h</a>.</p>
+<p class="definition">Définition à la ligne <a class="el" href="texte_8h_source.html#l00020">20</a> du fichier <a class="el" href="texte_8h_source.html">texte.h</a>.</p>
 </div><h2 class="groupheader">Documentation des constructeurs et destructeur</h2>
 <a id="a76efdbc60519c5abe8437c2a6d9926c0"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a76efdbc60519c5abe8437c2a6d9926c0">&#9670;&nbsp;</a></span>texte() <span class="overload">[1/3]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a76efdbc60519c5abe8437c2a6d9926c0">&#9670;&nbsp;</a></span>texte() <span class="overload">[1/4]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -200,12 +307,12 @@ size_type&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href=
 <p>Constructeur par défaut de la classe texte. </p>
 <hr/>
  
-<p class="definition">Définition à la ligne <a class="el" href="texte_8cpp_source.html#l00015">15</a> du fichier <a class="el" href="texte_8cpp_source.html">texte.cpp</a>.</p>
+<p class="definition">Définition à la ligne <a class="el" href="texte_8cpp_source.html#l00016">16</a> du fichier <a class="el" href="texte_8cpp_source.html">texte.cpp</a>.</p>
 
 </div>
 </div>
 <a id="a0fb6c8b80669bfff019ae233776337d5"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a0fb6c8b80669bfff019ae233776337d5">&#9670;&nbsp;</a></span>texte() <span class="overload">[2/3]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a0fb6c8b80669bfff019ae233776337d5">&#9670;&nbsp;</a></span>texte() <span class="overload">[2/4]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -240,7 +347,7 @@ size_type&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href=
   </dd>
 </dl>
 
-<p class="definition">Définition à la ligne <a class="el" href="texte_8cpp_source.html#l00026">26</a> du fichier <a class="el" href="texte_8cpp_source.html">texte.cpp</a>.</p>
+<p class="definition">Définition à la ligne <a class="el" href="texte_8cpp_source.html#l00027">27</a> du fichier <a class="el" href="texte_8cpp_source.html">texte.cpp</a>.</p>
 <div class="dynheader">
 Voici le graphe d'appel pour cette fonction :</div>
 <div class="dyncontent">
@@ -252,7 +359,7 @@ Voici le graphe d'appel pour cette fonction :</div>
 </div>
 </div>
 <a id="aa804e0976ae8e641499ef68c2124164f"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aa804e0976ae8e641499ef68c2124164f">&#9670;&nbsp;</a></span>texte() <span class="overload">[3/3]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#aa804e0976ae8e641499ef68c2124164f">&#9670;&nbsp;</a></span>texte() <span class="overload">[3/4]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -287,7 +394,7 @@ Voici le graphe d'appel pour cette fonction :</div>
   </dd>
 </dl>
 
-<p class="definition">Définition à la ligne <a class="el" href="texte_8cpp_source.html#l00038">38</a> du fichier <a class="el" href="texte_8cpp_source.html">texte.cpp</a>.</p>
+<p class="definition">Définition à la ligne <a class="el" href="texte_8cpp_source.html#l00039">39</a> du fichier <a class="el" href="texte_8cpp_source.html">texte.cpp</a>.</p>
 <div class="dynheader">
 Voici le graphe d'appel pour cette fonction :</div>
 <div class="dyncontent">
@@ -295,6 +402,35 @@ Voici le graphe d'appel pour cette fonction :</div>
 <map name="classtexte_aa804e0976ae8e641499ef68c2124164f_cgraph" id="classtexte_aa804e0976ae8e641499ef68c2124164f_cgraph">
 </map>
 </div>
+
+</div>
+</div>
+<a id="aec9f9b67dffc86801e18c0cc2f67f68b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aec9f9b67dffc86801e18c0cc2f67f68b">&#9670;&nbsp;</a></span>texte() <span class="overload">[4/4]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">texte::texte </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classtexte.html">texte</a> &amp;&#160;</td>
+          <td class="paramname"><em>t</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Constructeur par copie de la classe texte. </p>
+<hr/>
+ <dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">t</td><td>Le texte à copier. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Définition à la ligne <a class="el" href="texte_8cpp_source.html#l00056">56</a> du fichier <a class="el" href="texte_8cpp_source.html">texte.cpp</a>.</p>
 
 </div>
 </div>
@@ -316,7 +452,7 @@ Voici le graphe d'appel pour cette fonction :</div>
 <p>Destructeur de la classe texte. </p>
 <hr/>
  
-<p class="definition">Définition à la ligne <a class="el" href="texte_8cpp_source.html#l00052">52</a> du fichier <a class="el" href="texte_8cpp_source.html">texte.cpp</a>.</p>
+<p class="definition">Définition à la ligne <a class="el" href="texte_8cpp_source.html#l00069">69</a> du fichier <a class="el" href="texte_8cpp_source.html">texte.cpp</a>.</p>
 
 </div>
 </div>
@@ -346,7 +482,7 @@ Voici le graphe d'appel pour cette fonction :</div>
   </dd>
 </dl>
 
-<p class="definition">Définition à la ligne <a class="el" href="texte_8cpp_source.html#l00166">166</a> du fichier <a class="el" href="texte_8cpp_source.html">texte.cpp</a>.</p>
+<p class="definition">Définition à la ligne <a class="el" href="texte_8cpp_source.html#l00195">195</a> du fichier <a class="el" href="texte_8cpp_source.html">texte.cpp</a>.</p>
 <div class="dynheader">
 Voici le graphe d'appel pour cette fonction :</div>
 <div class="dyncontent">
@@ -383,7 +519,7 @@ Voici le graphe d'appel pour cette fonction :</div>
   </dd>
 </dl>
 
-<p class="definition">Définition à la ligne <a class="el" href="texte_8cpp_source.html#l00061">61</a> du fichier <a class="el" href="texte_8cpp_source.html">texte.cpp</a>.</p>
+<p class="definition">Définition à la ligne <a class="el" href="texte_8cpp_source.html#l00078">78</a> du fichier <a class="el" href="texte_8cpp_source.html">texte.cpp</a>.</p>
 <div class="dynheader">
 Voici le graphe d'appel pour cette fonction :</div>
 <div class="dyncontent">
@@ -422,7 +558,364 @@ Voici le graphe d'appel pour cette fonction :</div>
   </dd>
 </dl>
 
-<p class="definition">Définition à la ligne <a class="el" href="texte_8cpp_source.html#l00147">147</a> du fichier <a class="el" href="texte_8cpp_source.html">texte.cpp</a>.</p>
+<p class="definition">Définition à la ligne <a class="el" href="texte_8cpp_source.html#l00176">176</a> du fichier <a class="el" href="texte_8cpp_source.html">texte.cpp</a>.</p>
+
+</div>
+</div>
+<a id="a7ccbb85275948e0e4d2cc45dcfd52d9b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7ccbb85275948e0e4d2cc45dcfd52d9b">&#9670;&nbsp;</a></span>ajouter_texte()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void texte::ajouter_texte </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classtexte.html">texte</a> &amp;&#160;</td>
+          <td class="paramname"><em>t</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Ajoute un texte donné à la fin du texte. </p>
+<hr/>
+ <dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">t</td><td>Le texte à ajouter. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Définition à la ligne <a class="el" href="texte_8cpp_source.html#l00092">92</a> du fichier <a class="el" href="texte_8cpp_source.html">texte.cpp</a>.</p>
+<div class="dynheader">
+Voici le graphe d'appel pour cette fonction :</div>
+<div class="dyncontent">
+<div class="center"><img src="classtexte_a7ccbb85275948e0e4d2cc45dcfd52d9b_cgraph.png" border="0" usemap="#classtexte_a7ccbb85275948e0e4d2cc45dcfd52d9b_cgraph" alt=""/></div>
+<map name="classtexte_a7ccbb85275948e0e4d2cc45dcfd52d9b_cgraph" id="classtexte_a7ccbb85275948e0e4d2cc45dcfd52d9b_cgraph">
+</map>
+</div>
+
+</div>
+</div>
+<a id="a055e5f2820663f2ba054d4a08dae5ccd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a055e5f2820663f2ba054d4a08dae5ccd">&#9670;&nbsp;</a></span>calculer_frequence()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void texte::calculer_frequence </td>
+          <td>(</td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>force_upper_case</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Calcule la fréquence des éléments. </p>
+<hr/>
+ <dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">force_upper_case</td><td>Booléen indiquant s'il faut forcer le upper_case. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Définition à la ligne <a class="el" href="texte_8cpp_source.html#l00321">321</a> du fichier <a class="el" href="texte_8cpp_source.html">texte.cpp</a>.</p>
+
+</div>
+</div>
+<a id="a7aef2e000913fb14c5d2daaea438d68d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7aef2e000913fb14c5d2daaea438d68d">&#9670;&nbsp;</a></span>calculer_indice_coincidence()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void texte::calculer_indice_coincidence </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Calcule l'indice de coincidence du texte. </p>
+<hr/>
+ 
+<p class="definition">Définition à la ligne <a class="el" href="texte_8cpp_source.html#l00348">348</a> du fichier <a class="el" href="texte_8cpp_source.html">texte.cpp</a>.</p>
+<div class="dynheader">
+Voici le graphe d'appel pour cette fonction :</div>
+<div class="dyncontent">
+<div class="center"><img src="classtexte_a7aef2e000913fb14c5d2daaea438d68d_cgraph.png" border="0" usemap="#classtexte_a7aef2e000913fb14c5d2daaea438d68d_cgraph" alt=""/></div>
+<map name="classtexte_a7aef2e000913fb14c5d2daaea438d68d_cgraph" id="classtexte_a7aef2e000913fb14c5d2daaea438d68d_cgraph">
+</map>
+</div>
+
+</div>
+</div>
+<a id="ab0cc7d5a8ce0221c2ec642b8b204c3c6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab0cc7d5a8ce0221c2ec642b8b204c3c6">&#9670;&nbsp;</a></span>ecrire_caracteres_en_diagonale()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void texte::ecrire_caracteres_en_diagonale </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="liste__choix_8h.html#acec1076a1029985bdb538fea9dff7fea">choix</a>&#160;</td>
+          <td class="paramname"><em>choix_orientation</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>nb_lignes_maximales</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>forcer_rectangularite</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Réécrit les mots du texte en diagonale. </p>
+<hr/>
+ <dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">choix_orientation</td><td>Le choix de l'orientation d'écriture. </td></tr>
+    <tr><td class="paramname">nb_lignes_maximales</td><td>Le nombre de lignes maximales à écrire (0 si aucune limites). </td></tr>
+    <tr><td class="paramname">forcer_rectangularite</td><td>Indique s'il faut écrire les mots dans un tableau. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Définition à la ligne <a class="el" href="texte_8cpp_source.html#l00720">720</a> du fichier <a class="el" href="texte_8cpp_source.html">texte.cpp</a>.</p>
+<div class="dynheader">
+Voici le graphe d'appel pour cette fonction :</div>
+<div class="dyncontent">
+<div class="center"><img src="classtexte_ab0cc7d5a8ce0221c2ec642b8b204c3c6_cgraph.png" border="0" usemap="#classtexte_ab0cc7d5a8ce0221c2ec642b8b204c3c6_cgraph" alt=""/></div>
+<map name="classtexte_ab0cc7d5a8ce0221c2ec642b8b204c3c6_cgraph" id="classtexte_ab0cc7d5a8ce0221c2ec642b8b204c3c6_cgraph">
+</map>
+</div>
+
+</div>
+</div>
+<a id="aa9fadcac4aa3e800d604434edb621aff"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa9fadcac4aa3e800d604434edb621aff">&#9670;&nbsp;</a></span>ecrire_mots_en_diagonale()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void texte::ecrire_mots_en_diagonale </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="liste__choix_8h.html#acec1076a1029985bdb538fea9dff7fea">choix</a>&#160;</td>
+          <td class="paramname"><em>choix_orientation</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>nb_lignes_maximales</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>forcer_rectangularite</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Réécrit les mots du texte en diagonale. </p>
+<hr/>
+ <dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">choix_orientation</td><td>Le choix de l'orientation d'écriture. </td></tr>
+    <tr><td class="paramname">nb_lignes_maximales</td><td>Le nombre de lignes maximales à écrire (0 si aucune limites). </td></tr>
+    <tr><td class="paramname">forcer_rectangularite</td><td>Indique s'il faut écrire les mots dans un tableau. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Définition à la ligne <a class="el" href="texte_8cpp_source.html#l00661">661</a> du fichier <a class="el" href="texte_8cpp_source.html">texte.cpp</a>.</p>
+<div class="dynheader">
+Voici le graphe d'appel pour cette fonction :</div>
+<div class="dyncontent">
+<div class="center"><img src="classtexte_aa9fadcac4aa3e800d604434edb621aff_cgraph.png" border="0" usemap="#classtexte_aa9fadcac4aa3e800d604434edb621aff_cgraph" alt=""/></div>
+<map name="classtexte_aa9fadcac4aa3e800d604434edb621aff_cgraph" id="classtexte_aa9fadcac4aa3e800d604434edb621aff_cgraph">
+</map>
+</div>
+
+</div>
+</div>
+<a id="ab18c93e28774a2875eebe5c9ba0875a7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab18c93e28774a2875eebe5c9ba0875a7">&#9670;&nbsp;</a></span>est_multiple()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool texte::est_multiple </td>
+          <td>(</td>
+          <td class="paramtype">size_t&#160;</td>
+          <td class="paramname"><em>largeur</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">size_t&#160;</td>
+          <td class="paramname"><em>hauteur</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Teste si le texte a une taille multiple d'une taille d'élément donnée. </p>
+<hr/>
+ <dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">largeur</td><td>La largeur d'un élément. </td></tr>
+    <tr><td class="paramname">hauteur</td><td>La hauteur d'un élément. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Renvoie</dt><dd>Le nombre de lignes du texte. </dd></dl>
+
+<p class="definition">Définition à la ligne <a class="el" href="texte_8cpp_source.html#l00295">295</a> du fichier <a class="el" href="texte_8cpp_source.html">texte.cpp</a>.</p>
+
+</div>
+</div>
+<a id="a3dac8b82902393bebb39cbaaa48247e8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3dac8b82902393bebb39cbaaa48247e8">&#9670;&nbsp;</a></span>est_rectangulaire_selon_caracteres()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool texte::est_rectangulaire_selon_caracteres </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Détermine si un texte est rectangulaire en considérant les caractères, i.e. Il y a autant de caractères dans chaque ligne. </p>
+<hr/>
+ <dl class="section return"><dt>Renvoie</dt><dd><b>True</b> si le texte est rectangulaire en considérant les caractères, <b>False</b> sinon. </dd></dl>
+
+<p class="definition">Définition à la ligne <a class="el" href="texte_8cpp_source.html#l00890">890</a> du fichier <a class="el" href="texte_8cpp_source.html">texte.cpp</a>.</p>
+<div class="dynheader">
+Voici le graphe d'appel pour cette fonction :</div>
+<div class="dyncontent">
+<div class="center"><img src="classtexte_a3dac8b82902393bebb39cbaaa48247e8_cgraph.png" border="0" usemap="#classtexte_a3dac8b82902393bebb39cbaaa48247e8_cgraph" alt=""/></div>
+<map name="classtexte_a3dac8b82902393bebb39cbaaa48247e8_cgraph" id="classtexte_a3dac8b82902393bebb39cbaaa48247e8_cgraph">
+</map>
+</div>
+
+</div>
+</div>
+<a id="acf036d46c63b9c224adc75f36ccdb39f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acf036d46c63b9c224adc75f36ccdb39f">&#9670;&nbsp;</a></span>est_rectangulaire_selon_mots()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool texte::est_rectangulaire_selon_mots </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Détermine si un texte est rectangulaire en considérant les mots, i.e. Il y a autant de mots dans chaque ligne. </p>
+<hr/>
+ <dl class="section return"><dt>Renvoie</dt><dd><b>True</b> si le texte est rectangulaire en considérant les mots, <b>False</b> sinon. </dd></dl>
+
+<p class="definition">Définition à la ligne <a class="el" href="texte_8cpp_source.html#l00829">829</a> du fichier <a class="el" href="texte_8cpp_source.html">texte.cpp</a>.</p>
+<div class="dynheader">
+Voici le graphe d'appel pour cette fonction :</div>
+<div class="dyncontent">
+<div class="center"><img src="classtexte_acf036d46c63b9c224adc75f36ccdb39f_cgraph.png" border="0" usemap="#classtexte_acf036d46c63b9c224adc75f36ccdb39f_cgraph" alt=""/></div>
+<map name="classtexte_acf036d46c63b9c224adc75f36ccdb39f_cgraph" id="classtexte_acf036d46c63b9c224adc75f36ccdb39f_cgraph">
+</map>
+</div>
+
+</div>
+</div>
+<a id="a16582508b6ad1e0a567c0a83af7fb0fa"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a16582508b6ad1e0a567c0a83af7fb0fa">&#9670;&nbsp;</a></span>fusionner()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void texte::fusionner </td>
+          <td>(</td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>fusion_caracteres</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>fusion_mots</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>fusion_lignes</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Fusion des lignes, des mots et/ou des caractères. </p>
+<hr/>
+ <dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">fusion_caracteres</td><td>Indique s'il faut fusionner les caractères. </td></tr>
+    <tr><td class="paramname">fusion_mots</td><td>Indique s'il faut fusionner les mots. </td></tr>
+    <tr><td class="paramname">fusion_lignes</td><td>Indique s'il faut fusionner les lignes. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Définition à la ligne <a class="el" href="texte_8cpp_source.html#l00385">385</a> du fichier <a class="el" href="texte_8cpp_source.html">texte.cpp</a>.</p>
+<div class="dynheader">
+Voici le graphe d'appel pour cette fonction :</div>
+<div class="dyncontent">
+<div class="center"><img src="classtexte_a16582508b6ad1e0a567c0a83af7fb0fa_cgraph.png" border="0" usemap="#classtexte_a16582508b6ad1e0a567c0a83af7fb0fa_cgraph" alt=""/></div>
+<map name="classtexte_a16582508b6ad1e0a567c0a83af7fb0fa_cgraph" id="classtexte_a16582508b6ad1e0a567c0a83af7fb0fa_cgraph">
+</map>
+</div>
 
 </div>
 </div>
@@ -445,7 +938,7 @@ Voici le graphe d'appel pour cette fonction :</div>
 <hr/>
  <dl class="section return"><dt>Renvoie</dt><dd>La configuration du texte. </dd></dl>
 
-<p class="definition">Définition à la ligne <a class="el" href="texte_8cpp_source.html#l00178">178</a> du fichier <a class="el" href="texte_8cpp_source.html">texte.cpp</a>.</p>
+<p class="definition">Définition à la ligne <a class="el" href="texte_8cpp_source.html#l00207">207</a> du fichier <a class="el" href="texte_8cpp_source.html">texte.cpp</a>.</p>
 
 </div>
 </div>
@@ -468,7 +961,173 @@ Voici le graphe d'appel pour cette fonction :</div>
 <hr/>
  <dl class="section return"><dt>Renvoie</dt><dd><b>True</b> si la configuration est visible, <b>False</b> sinon. </dd></dl>
 
-<p class="definition">Définition à la ligne <a class="el" href="texte_8cpp_source.html#l00187">187</a> du fichier <a class="el" href="texte_8cpp_source.html">texte.cpp</a>.</p>
+<p class="definition">Définition à la ligne <a class="el" href="texte_8cpp_source.html#l00216">216</a> du fichier <a class="el" href="texte_8cpp_source.html">texte.cpp</a>.</p>
+
+</div>
+</div>
+<a id="ae0aaf1a92edba554491a46a6f053f508"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae0aaf1a92edba554491a46a6f053f508">&#9670;&nbsp;</a></span>get_frequences()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const <a class="el" href="classtexte.html#a446b517ef1a5a4465f2f3ad2990a1e00">texte::type_frequences_texte</a> &amp; texte::get_frequences </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Accesseur des fréquences des éléments du texte. </p>
+<hr/>
+ <dl class="section return"><dt>Renvoie</dt><dd>La référence du tableau des fréquences des éléments. </dd></dl>
+
+<p class="definition">Définition à la ligne <a class="el" href="texte_8cpp_source.html#l00365">365</a> du fichier <a class="el" href="texte_8cpp_source.html">texte.cpp</a>.</p>
+
+</div>
+</div>
+<a id="a536de8337075ae446df46d7646b76490"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a536de8337075ae446df46d7646b76490">&#9670;&nbsp;</a></span>get_indice_coincidence()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">double texte::get_indice_coincidence </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Accesseur de l'indice de coincidence du texte. </p>
+<hr/>
+ <dl class="section return"><dt>Renvoie</dt><dd>L'indice de coincidence du texte. </dd></dl>
+
+<p class="definition">Définition à la ligne <a class="el" href="texte_8cpp_source.html#l00374">374</a> du fichier <a class="el" href="texte_8cpp_source.html">texte.cpp</a>.</p>
+
+</div>
+</div>
+<a id="aff4e5ce65ca280497cbd309374619c79"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aff4e5ce65ca280497cbd309374619c79">&#9670;&nbsp;</a></span>get_maximum_caracteres_dans_ligne()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::vector&lt; <a class="el" href="classmot.html">mot</a> &gt;::size_type texte::get_maximum_caracteres_dans_ligne </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Retourne le nombre maximum de caracteres dans une ligne. </p>
+<hr/>
+ <dl class="section return"><dt>Renvoie</dt><dd>Le nombre maximum de caracteres dans une ligne. </dd></dl>
+
+<p class="definition">Définition à la ligne <a class="el" href="texte_8cpp_source.html#l00899">899</a> du fichier <a class="el" href="texte_8cpp_source.html">texte.cpp</a>.</p>
+<div class="dynheader">
+Voici le graphe d'appel pour cette fonction :</div>
+<div class="dyncontent">
+<div class="center"><img src="classtexte_aff4e5ce65ca280497cbd309374619c79_cgraph.png" border="0" usemap="#classtexte_aff4e5ce65ca280497cbd309374619c79_cgraph" alt=""/></div>
+<map name="classtexte_aff4e5ce65ca280497cbd309374619c79_cgraph" id="classtexte_aff4e5ce65ca280497cbd309374619c79_cgraph">
+</map>
+</div>
+
+</div>
+</div>
+<a id="afc6c545dda7731f97266774813c16ed5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afc6c545dda7731f97266774813c16ed5">&#9670;&nbsp;</a></span>get_maximum_mots_dans_ligne()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::vector&lt; <a class="el" href="classmot.html">mot</a> &gt;::size_type texte::get_maximum_mots_dans_ligne </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Retourne le nombre maximum de mots dans une ligne. </p>
+<hr/>
+ <dl class="section return"><dt>Renvoie</dt><dd>Le nombre maximum de mots dans une ligne. </dd></dl>
+
+<p class="definition">Définition à la ligne <a class="el" href="texte_8cpp_source.html#l00838">838</a> du fichier <a class="el" href="texte_8cpp_source.html">texte.cpp</a>.</p>
+<div class="dynheader">
+Voici le graphe d'appel pour cette fonction :</div>
+<div class="dyncontent">
+<div class="center"><img src="classtexte_afc6c545dda7731f97266774813c16ed5_cgraph.png" border="0" usemap="#classtexte_afc6c545dda7731f97266774813c16ed5_cgraph" alt=""/></div>
+<map name="classtexte_afc6c545dda7731f97266774813c16ed5_cgraph" id="classtexte_afc6c545dda7731f97266774813c16ed5_cgraph">
+</map>
+</div>
+
+</div>
+</div>
+<a id="ac938c2bb7d7839b624bf844f056395b5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac938c2bb7d7839b624bf844f056395b5">&#9670;&nbsp;</a></span>get_minimum_caracteres_dans_ligne()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::vector&lt; <a class="el" href="classmot.html">mot</a> &gt;::size_type texte::get_minimum_caracteres_dans_ligne </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Retourne le nombre minimum de caracteres dans une ligne. </p>
+<hr/>
+ <dl class="section return"><dt>Renvoie</dt><dd>Le nombre minimum de caracteres dans une ligne. </dd></dl>
+
+<p class="definition">Définition à la ligne <a class="el" href="texte_8cpp_source.html#l00925">925</a> du fichier <a class="el" href="texte_8cpp_source.html">texte.cpp</a>.</p>
+<div class="dynheader">
+Voici le graphe d'appel pour cette fonction :</div>
+<div class="dyncontent">
+<div class="center"><img src="classtexte_ac938c2bb7d7839b624bf844f056395b5_cgraph.png" border="0" usemap="#classtexte_ac938c2bb7d7839b624bf844f056395b5_cgraph" alt=""/></div>
+<map name="classtexte_ac938c2bb7d7839b624bf844f056395b5_cgraph" id="classtexte_ac938c2bb7d7839b624bf844f056395b5_cgraph">
+</map>
+</div>
+
+</div>
+</div>
+<a id="aece70d0c58509927084f1a96c79acf32"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aece70d0c58509927084f1a96c79acf32">&#9670;&nbsp;</a></span>get_minimum_mots_dans_ligne()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::vector&lt; <a class="el" href="classmot.html">mot</a> &gt;::size_type texte::get_minimum_mots_dans_ligne </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Retourne le nombre minimum de mots dans une ligne. </p>
+<hr/>
+ <dl class="section return"><dt>Renvoie</dt><dd>Le nombre minimum de mots dans une ligne. </dd></dl>
+
+<p class="definition">Définition à la ligne <a class="el" href="texte_8cpp_source.html#l00864">864</a> du fichier <a class="el" href="texte_8cpp_source.html">texte.cpp</a>.</p>
+<div class="dynheader">
+Voici le graphe d'appel pour cette fonction :</div>
+<div class="dyncontent">
+<div class="center"><img src="classtexte_aece70d0c58509927084f1a96c79acf32_cgraph.png" border="0" usemap="#classtexte_aece70d0c58509927084f1a96c79acf32_cgraph" alt=""/></div>
+<map name="classtexte_aece70d0c58509927084f1a96c79acf32_cgraph" id="classtexte_aece70d0c58509927084f1a96c79acf32_cgraph">
+</map>
+</div>
 
 </div>
 </div>
@@ -491,7 +1150,30 @@ Voici le graphe d'appel pour cette fonction :</div>
 <hr/>
  <dl class="section return"><dt>Renvoie</dt><dd>Le nombre de lignes du texte avec les informations. </dd></dl>
 
-<p class="definition">Définition à la ligne <a class="el" href="texte_8cpp_source.html#l00204">204</a> du fichier <a class="el" href="texte_8cpp_source.html">texte.cpp</a>.</p>
+<p class="definition">Définition à la ligne <a class="el" href="texte_8cpp_source.html#l00233">233</a> du fichier <a class="el" href="texte_8cpp_source.html">texte.cpp</a>.</p>
+
+</div>
+</div>
+<a id="acd12b33c04d080e044450656267af3d5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acd12b33c04d080e044450656267af3d5">&#9670;&nbsp;</a></span>get_separateur_ligne()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">QString texte::get_separateur_ligne </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Accesseur du séparateur de lignes. </p>
+<hr/>
+ <dl class="section return"><dt>Renvoie</dt><dd>Le séparateur de ligne. </dd></dl>
+
+<p class="definition">Définition à la ligne <a class="el" href="texte_8cpp_source.html#l00951">951</a> du fichier <a class="el" href="texte_8cpp_source.html">texte.cpp</a>.</p>
 
 </div>
 </div>
@@ -514,7 +1196,7 @@ Voici le graphe d'appel pour cette fonction :</div>
 <hr/>
  <dl class="section return"><dt>Renvoie</dt><dd>La configuration des paramètres au format QString. </dd></dl>
 
-<p class="definition">Définition à la ligne <a class="el" href="texte_8cpp_source.html#l00106">106</a> du fichier <a class="el" href="texte_8cpp_source.html">texte.cpp</a>.</p>
+<p class="definition">Définition à la ligne <a class="el" href="texte_8cpp_source.html#l00135">135</a> du fichier <a class="el" href="texte_8cpp_source.html">texte.cpp</a>.</p>
 
 </div>
 </div>
@@ -537,7 +1219,7 @@ Voici le graphe d'appel pour cette fonction :</div>
 <hr/>
  <dl class="section return"><dt>Renvoie</dt><dd>Les informations de taille au format QString. </dd></dl>
 
-<p class="definition">Définition à la ligne <a class="el" href="texte_8cpp_source.html#l00122">122</a> du fichier <a class="el" href="texte_8cpp_source.html">texte.cpp</a>.</p>
+<p class="definition">Définition à la ligne <a class="el" href="texte_8cpp_source.html#l00151">151</a> du fichier <a class="el" href="texte_8cpp_source.html">texte.cpp</a>.</p>
 <div class="dynheader">
 Voici le graphe d'appel pour cette fonction :</div>
 <div class="dyncontent">
@@ -567,7 +1249,61 @@ Voici le graphe d'appel pour cette fonction :</div>
 <hr/>
  <dl class="section return"><dt>Renvoie</dt><dd>Une ligne de séparation au format QString. </dd></dl>
 
-<p class="definition">Définition à la ligne <a class="el" href="texte_8cpp_source.html#l00133">133</a> du fichier <a class="el" href="texte_8cpp_source.html">texte.cpp</a>.</p>
+<p class="definition">Définition à la ligne <a class="el" href="texte_8cpp_source.html#l00162">162</a> du fichier <a class="el" href="texte_8cpp_source.html">texte.cpp</a>.</p>
+
+</div>
+</div>
+<a id="aa2b06368ab5cb65e09aee99554cf0f30"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa2b06368ab5cb65e09aee99554cf0f30">&#9670;&nbsp;</a></span>inverser()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void texte::inverser </td>
+          <td>(</td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>inversion_elements</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>inversion_ordre_caracteres</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>inversion_ordre_mots</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>inversion_ordre_lignes</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Inversion des textes, des lignes, des mots et/ou des caractères. </p>
+<hr/>
+ <dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">inversion_elements</td><td>Indique s'il faut inverser les éléments. </td></tr>
+    <tr><td class="paramname">inversion_ordre_caracteres</td><td>Indique s'il faut inverser l'ordre des caractères. </td></tr>
+    <tr><td class="paramname">inversion_ordre_mots</td><td>Indique s'il faut inverser l'ordre des mots. </td></tr>
+    <tr><td class="paramname">inversion_ordre_lignes</td><td>Indique s'il faut inverser l'ordre des lignes. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Définition à la ligne <a class="el" href="texte_8cpp_source.html#l00443">443</a> du fichier <a class="el" href="texte_8cpp_source.html">texte.cpp</a>.</p>
 
 </div>
 </div>
@@ -589,7 +1325,176 @@ Voici le graphe d'appel pour cette fonction :</div>
 <p>Inverse l'état de visibilité de la configuration. </p>
 <hr/>
  
-<p class="definition">Définition à la ligne <a class="el" href="texte_8cpp_source.html#l00195">195</a> du fichier <a class="el" href="texte_8cpp_source.html">texte.cpp</a>.</p>
+<p class="definition">Définition à la ligne <a class="el" href="texte_8cpp_source.html#l00224">224</a> du fichier <a class="el" href="texte_8cpp_source.html">texte.cpp</a>.</p>
+
+</div>
+</div>
+<a id="a0c2d8a5ad8c04f1576376ddcc4304bb5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0c2d8a5ad8c04f1576376ddcc4304bb5">&#9670;&nbsp;</a></span>inverser_en_diagonale_caracteres()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void texte::inverser_en_diagonale_caracteres </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="liste__choix_8h.html#acec1076a1029985bdb538fea9dff7fea">choix</a>&#160;</td>
+          <td class="paramname"><em>choix_diagonale</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Inverse les caractères du texte suivant une diagonale. </p>
+<hr/>
+ <dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">choix_diagonale</td><td>Le choix de la diagonale pivot. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Définition à la ligne <a class="el" href="texte_8cpp_source.html#l00596">596</a> du fichier <a class="el" href="texte_8cpp_source.html">texte.cpp</a>.</p>
+<div class="dynheader">
+Voici le graphe d'appel pour cette fonction :</div>
+<div class="dyncontent">
+<div class="center"><img src="classtexte_a0c2d8a5ad8c04f1576376ddcc4304bb5_cgraph.png" border="0" usemap="#classtexte_a0c2d8a5ad8c04f1576376ddcc4304bb5_cgraph" alt=""/></div>
+<map name="classtexte_a0c2d8a5ad8c04f1576376ddcc4304bb5_cgraph" id="classtexte_a0c2d8a5ad8c04f1576376ddcc4304bb5_cgraph">
+</map>
+</div>
+
+</div>
+</div>
+<a id="ac7d454f367c1f6a9cafc0fcab08fb147"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac7d454f367c1f6a9cafc0fcab08fb147">&#9670;&nbsp;</a></span>inverser_en_diagonale_mots()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void texte::inverser_en_diagonale_mots </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="liste__choix_8h.html#acec1076a1029985bdb538fea9dff7fea">choix</a>&#160;</td>
+          <td class="paramname"><em>choix_diagonale</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Inverse les mots du texte suivant une diagonale. </p>
+<hr/>
+ <dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">choix_diagonale</td><td>Le choix de la diagonale pivot. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Définition à la ligne <a class="el" href="texte_8cpp_source.html#l00542">542</a> du fichier <a class="el" href="texte_8cpp_source.html">texte.cpp</a>.</p>
+<div class="dynheader">
+Voici le graphe d'appel pour cette fonction :</div>
+<div class="dyncontent">
+<div class="center"><img src="classtexte_ac7d454f367c1f6a9cafc0fcab08fb147_cgraph.png" border="0" usemap="#classtexte_ac7d454f367c1f6a9cafc0fcab08fb147_cgraph" alt=""/></div>
+<map name="classtexte_ac7d454f367c1f6a9cafc0fcab08fb147_cgraph" id="classtexte_ac7d454f367c1f6a9cafc0fcab08fb147_cgraph">
+</map>
+</div>
+
+</div>
+</div>
+<a id="a26290d2cb7eb4b656b8be0e121c1049f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a26290d2cb7eb4b656b8be0e121c1049f">&#9670;&nbsp;</a></span>maj_comptages()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void texte::maj_comptages </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Met à jour les différents comptages. </p>
+<hr/>
+ 
+<p class="definition">Définition à la ligne <a class="el" href="texte_8cpp_source.html#l00959">959</a> du fichier <a class="el" href="texte_8cpp_source.html">texte.cpp</a>.</p>
+<div class="dynheader">
+Voici le graphe d'appel pour cette fonction :</div>
+<div class="dyncontent">
+<div class="center"><img src="classtexte_a26290d2cb7eb4b656b8be0e121c1049f_cgraph.png" border="0" usemap="#classtexte_a26290d2cb7eb4b656b8be0e121c1049f_cgraph" alt=""/></div>
+<map name="classtexte_a26290d2cb7eb4b656b8be0e121c1049f_cgraph" id="classtexte_a26290d2cb7eb4b656b8be0e121c1049f_cgraph">
+</map>
+</div>
+
+</div>
+</div>
+<a id="a4a2b045dbb975c1c3e7b3d20c60edd34"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4a2b045dbb975c1c3e7b3d20c60edd34">&#9670;&nbsp;</a></span>maj_nb_caracteres()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void texte::maj_nb_caracteres </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Met à jour le nombre de caractères du texte. </p>
+<hr/>
+ 
+<p class="definition">Définition à la ligne <a class="el" href="texte_8cpp_source.html#l00968">968</a> du fichier <a class="el" href="texte_8cpp_source.html">texte.cpp</a>.</p>
+
+</div>
+</div>
+<a id="aeed3eacb585627aa50aadaaba067c9c2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aeed3eacb585627aa50aadaaba067c9c2">&#9670;&nbsp;</a></span>maj_nb_mots()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void texte::maj_nb_mots </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Met à jour le nombre de mots du texte. </p>
+<hr/>
+ 
+<p class="definition">Définition à la ligne <a class="el" href="texte_8cpp_source.html#l00979">979</a> du fichier <a class="el" href="texte_8cpp_source.html">texte.cpp</a>.</p>
 
 </div>
 </div>
@@ -612,7 +1517,30 @@ Voici le graphe d'appel pour cette fonction :</div>
 <hr/>
  <dl class="section return"><dt>Renvoie</dt><dd>Le nombre de caractères du texte. </dd></dl>
 
-<p class="definition">Définition à la ligne <a class="el" href="texte_8cpp_source.html#l00223">223</a> du fichier <a class="el" href="texte_8cpp_source.html">texte.cpp</a>.</p>
+<p class="definition">Définition à la ligne <a class="el" href="texte_8cpp_source.html#l00252">252</a> du fichier <a class="el" href="texte_8cpp_source.html">texte.cpp</a>.</p>
+
+</div>
+</div>
+<a id="a79dae3c56272e8bbd5e744f713df32c2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a79dae3c56272e8bbd5e744f713df32c2">&#9670;&nbsp;</a></span>nb_caracteres_alphabet()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::vector&lt; <a class="el" href="classligne.html">ligne</a> &gt;::size_type texte::nb_caracteres_alphabet </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Retourne le nombre de caractère alphabet du mot. </p>
+<hr/>
+ <dl class="section return"><dt>Renvoie</dt><dd>Le nombre de caractères alphabet du mot. </dd></dl>
+
+<p class="definition">Définition à la ligne <a class="el" href="texte_8cpp_source.html#l00261">261</a> du fichier <a class="el" href="texte_8cpp_source.html">texte.cpp</a>.</p>
 
 </div>
 </div>
@@ -635,7 +1563,7 @@ Voici le graphe d'appel pour cette fonction :</div>
 <hr/>
  <dl class="section return"><dt>Renvoie</dt><dd>Le nombre de lignes du texte. </dd></dl>
 
-<p class="definition">Définition à la ligne <a class="el" href="texte_8cpp_source.html#l00241">241</a> du fichier <a class="el" href="texte_8cpp_source.html">texte.cpp</a>.</p>
+<p class="definition">Définition à la ligne <a class="el" href="texte_8cpp_source.html#l00284">284</a> du fichier <a class="el" href="texte_8cpp_source.html">texte.cpp</a>.</p>
 
 </div>
 </div>
@@ -658,7 +1586,61 @@ Voici le graphe d'appel pour cette fonction :</div>
 <hr/>
  <dl class="section return"><dt>Renvoie</dt><dd>Le nombre de mots du texte. </dd></dl>
 
-<p class="definition">Définition à la ligne <a class="el" href="texte_8cpp_source.html#l00232">232</a> du fichier <a class="el" href="texte_8cpp_source.html">texte.cpp</a>.</p>
+<p class="definition">Définition à la ligne <a class="el" href="texte_8cpp_source.html#l00275">275</a> du fichier <a class="el" href="texte_8cpp_source.html">texte.cpp</a>.</p>
+
+</div>
+</div>
+<a id="afeaea42e16aaa6d53299a3db867df9b1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afeaea42e16aaa6d53299a3db867df9b1">&#9670;&nbsp;</a></span>scinder()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void texte::scinder </td>
+          <td>(</td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>scission_interne_caracteres</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>scission_caracteres</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>scission_mots</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Scinder les mots, les caractères et/ou le contenu des caractères. </p>
+<hr/>
+ <dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">scission_interne_caracteres</td><td>Indique s'il faut scinder le contenu des caractères. </td></tr>
+    <tr><td class="paramname">scission_caracteres</td><td>Indique s'il faut scinder les caractères. </td></tr>
+    <tr><td class="paramname">scission_mots</td><td>Indique s'il faut scinder les mots. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Définition à la ligne <a class="el" href="texte_8cpp_source.html#l00414">414</a> du fichier <a class="el" href="texte_8cpp_source.html">texte.cpp</a>.</p>
+<div class="dynheader">
+Voici le graphe d'appel pour cette fonction :</div>
+<div class="dyncontent">
+<div class="center"><img src="classtexte_afeaea42e16aaa6d53299a3db867df9b1_cgraph.png" border="0" usemap="#classtexte_afeaea42e16aaa6d53299a3db867df9b1_cgraph" alt=""/></div>
+<map name="classtexte_afeaea42e16aaa6d53299a3db867df9b1_cgraph" id="classtexte_afeaea42e16aaa6d53299a3db867df9b1_cgraph">
+</map>
+</div>
 
 </div>
 </div>
@@ -681,7 +1663,7 @@ Voici le graphe d'appel pour cette fonction :</div>
 <hr/>
  <dl class="section return"><dt>Renvoie</dt><dd>Le texte au format QString. </dd></dl>
 
-<p class="definition">Définition à la ligne <a class="el" href="texte_8cpp_source.html#l00075">75</a> du fichier <a class="el" href="texte_8cpp_source.html">texte.cpp</a>.</p>
+<p class="definition">Définition à la ligne <a class="el" href="texte_8cpp_source.html#l00104">104</a> du fichier <a class="el" href="texte_8cpp_source.html">texte.cpp</a>.</p>
 
 </div>
 </div>
@@ -704,7 +1686,137 @@ Voici le graphe d'appel pour cette fonction :</div>
 <hr/>
  <dl class="section return"><dt>Renvoie</dt><dd>Le texte au format QString. </dd></dl>
 
-<p class="definition">Définition à la ligne <a class="el" href="texte_8cpp_source.html#l00089">89</a> du fichier <a class="el" href="texte_8cpp_source.html">texte.cpp</a>.</p>
+<p class="definition">Définition à la ligne <a class="el" href="texte_8cpp_source.html#l00118">118</a> du fichier <a class="el" href="texte_8cpp_source.html">texte.cpp</a>.</p>
+
+</div>
+</div>
+<a id="ade07bdaa0e52c7a8e96abc23a1be4ae4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ade07bdaa0e52c7a8e96abc23a1be4ae4">&#9670;&nbsp;</a></span>tourner_caracteres()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void texte::tourner_caracteres </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="liste__choix_8h.html#acec1076a1029985bdb538fea9dff7fea">choix</a>&#160;</td>
+          <td class="paramname"><em>choix_rotation</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Tourne les caracteres du texte. </p>
+<hr/>
+ <dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">choix_rotation</td><td>Le choix de la rotation à réaliser. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Définition à la ligne <a class="el" href="texte_8cpp_source.html#l00802">802</a> du fichier <a class="el" href="texte_8cpp_source.html">texte.cpp</a>.</p>
+<div class="dynheader">
+Voici le graphe d'appel pour cette fonction :</div>
+<div class="dyncontent">
+<div class="center"><img src="classtexte_ade07bdaa0e52c7a8e96abc23a1be4ae4_cgraph.png" border="0" usemap="#classtexte_ade07bdaa0e52c7a8e96abc23a1be4ae4_cgraph" alt=""/></div>
+<map name="classtexte_ade07bdaa0e52c7a8e96abc23a1be4ae4_cgraph" id="classtexte_ade07bdaa0e52c7a8e96abc23a1be4ae4_cgraph">
+</map>
+</div>
+
+</div>
+</div>
+<a id="a263f0c3e36340703169a82acbe7e3374"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a263f0c3e36340703169a82acbe7e3374">&#9670;&nbsp;</a></span>tourner_mots()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void texte::tourner_mots </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="liste__choix_8h.html#acec1076a1029985bdb538fea9dff7fea">choix</a>&#160;</td>
+          <td class="paramname"><em>choix_rotation</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Tourne les mots du texte. </p>
+<hr/>
+ <dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">choix_rotation</td><td>Le choix de la rotation à réaliser. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Définition à la ligne <a class="el" href="texte_8cpp_source.html#l00780">780</a> du fichier <a class="el" href="texte_8cpp_source.html">texte.cpp</a>.</p>
+<div class="dynheader">
+Voici le graphe d'appel pour cette fonction :</div>
+<div class="dyncontent">
+<div class="center"><img src="classtexte_a263f0c3e36340703169a82acbe7e3374_cgraph.png" border="0" usemap="#classtexte_a263f0c3e36340703169a82acbe7e3374_cgraph" alt=""/></div>
+<map name="classtexte_a263f0c3e36340703169a82acbe7e3374_cgraph" id="classtexte_a263f0c3e36340703169a82acbe7e3374_cgraph">
+</map>
+</div>
+
+</div>
+</div>
+<a id="a872ef0ccbf0b3f0aeaf1a8169632d763"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a872ef0ccbf0b3f0aeaf1a8169632d763">&#9670;&nbsp;</a></span>transposer_caracteres()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void texte::transposer_caracteres </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Transpose les caractères du texte. </p>
+<hr/>
+ 
+<p class="definition">Définition à la ligne <a class="el" href="texte_8cpp_source.html#l00496">496</a> du fichier <a class="el" href="texte_8cpp_source.html">texte.cpp</a>.</p>
+<div class="dynheader">
+Voici le graphe d'appel pour cette fonction :</div>
+<div class="dyncontent">
+<div class="center"><img src="classtexte_a872ef0ccbf0b3f0aeaf1a8169632d763_cgraph.png" border="0" usemap="#classtexte_a872ef0ccbf0b3f0aeaf1a8169632d763_cgraph" alt=""/></div>
+<map name="classtexte_a872ef0ccbf0b3f0aeaf1a8169632d763_cgraph" id="classtexte_a872ef0ccbf0b3f0aeaf1a8169632d763_cgraph">
+</map>
+</div>
+
+</div>
+</div>
+<a id="a5342285e846ec116a16780f776af761f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5342285e846ec116a16780f776af761f">&#9670;&nbsp;</a></span>transposer_mots()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void texte::transposer_mots </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Transpose les mots du texte. </p>
+<hr/>
+ 
+<p class="definition">Définition à la ligne <a class="el" href="texte_8cpp_source.html#l00456">456</a> du fichier <a class="el" href="texte_8cpp_source.html">texte.cpp</a>.</p>
+<div class="dynheader">
+Voici le graphe d'appel pour cette fonction :</div>
+<div class="dyncontent">
+<div class="center"><img src="classtexte_a5342285e846ec116a16780f776af761f_cgraph.png" border="0" usemap="#classtexte_a5342285e846ec116a16780f776af761f_cgraph" alt=""/></div>
+<map name="classtexte_a5342285e846ec116a16780f776af761f_cgraph" id="classtexte_a5342285e846ec116a16780f776af761f_cgraph">
+</map>
+</div>
 
 </div>
 </div>
@@ -715,7 +1827,7 @@ Voici le graphe d'appel pour cette fonction :</div>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Généré le Mardi 28 Février 2017 10:28:30 pour Emgine par &#160;<a href="http://www.doxygen.org/index.html">
+Généré le Jeudi 5 Décembre 2019 09:58:43 pour Emgine par &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.13
 </small></address>

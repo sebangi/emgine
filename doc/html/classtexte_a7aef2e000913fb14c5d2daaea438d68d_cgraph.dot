@@ -1,0 +1,11 @@
+digraph "texte::calculer_indice_coincidence"
+{
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="LR";
+  Node26 [label="texte::calculer_indice\l_coincidence",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black"];
+  Node26 -> Node27 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node27 [label="texte::calculer_frequence",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classtexte.html#a055e5f2820663f2ba054d4a08dae5ccd",tooltip="Calcule la fréquence des éléments. "];
+  Node26 -> Node28 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node28 [label="texte::nb_caracteres\l_alphabet",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classtexte.html#a79dae3c56272e8bbd5e744f713df32c2",tooltip="Retourne le nombre de caractère alphabet du mot. "];
+}

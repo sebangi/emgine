@@ -30,29 +30,29 @@ fonction_fusion::fonction_fusion( fonctions_conteneur * conteneur )
 
     ajouter_parametre( PARAM_CARACTERES,
                        new base_parametre( this,
-                                           "Fusionner les caractères",
-                                           "Indique s'il faut fusionner les caractères.",
+                                           base_parametre::tr("Fusionner les caractères"),
+                                           base_parametre::tr("Indique s'il faut fusionner les caractères."),
                                            base_parametre::CONTENU_PARAM_VIDE_IMPOSSIBLE,
                                            base_parametre::CONFIGURATION_INVISIBLE,
                                            base_parametre::ALGO_IPL) );
     ajouter_parametre( PARAM_MOTS,
                        new base_parametre( this,
-                                           "Fusionner les mots",
-                                           "Indique s'il faut fusionner les mots.",
+                                           base_parametre::tr("Fusionner les mots"),
+                                           base_parametre::tr("Indique s'il faut fusionner les mots."),
                                            base_parametre::CONTENU_PARAM_VIDE_IMPOSSIBLE,
                                            base_parametre::CONFIGURATION_INVISIBLE,
                                            base_parametre::ALGO_IPL) );
     ajouter_parametre( PARAM_LIGNES,
                        new base_parametre( this,
-                                           "Fusionner les lignes",
-                                           "Indique s'il faut fusionner les lignes.",
+                                           base_parametre::tr("Fusionner les lignes"),
+                                           base_parametre::tr("Indique s'il faut fusionner les lignes."),
                                            base_parametre::CONTENU_PARAM_VIDE_IMPOSSIBLE,
                                            base_parametre::CONFIGURATION_INVISIBLE,
                                            base_parametre::ALGO_IPL) );
     ajouter_parametre( PARAM_TEXTES,
                        new base_parametre( this,
-                                           "Fusionner les textes",
-                                           "Indique s'il faut fusionner les textes.",
+                                           base_parametre::tr("Fusionner les textes"),
+                                           base_parametre::tr("Indique s'il faut fusionner les textes."),
                                            base_parametre::CONTENU_PARAM_VIDE_IMPOSSIBLE,
                                            base_parametre::CONFIGURATION_INVISIBLE,
                                            base_parametre::ALGO_IPL) );
@@ -74,7 +74,7 @@ bool fonction_fusion::est_valide(logs_compilation_widget * vue_logs)
  */
 QString fonction_fusion::get_valeur_courte() const
 {
-    return "[fusion]";
+    return base_fonction::tr("[fusion]");
 }
 
 /** --------------------------------------------------------------------------------------

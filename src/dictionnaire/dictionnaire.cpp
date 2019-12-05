@@ -30,7 +30,7 @@ void dictionnaire::mettre_a_jour()
 
     if (! file.open(QIODevice::ReadOnly))
     {
-        std::cout << "Erreur : impossible d'ouvrir le dictionnaire " << absolu_path.toStdString() << std::endl;
+        std::cout << tr("Erreur : impossible d'ouvrir le dictionnaire").toStdString() + " " << absolu_path.toStdString() << std::endl;
         return;
     }
 
@@ -260,7 +260,7 @@ void dictionnaire::charger_dictionnaire( const QString & nom_fichier )
 
     if (! file.open(QIODevice::ReadOnly))
     {
-        std::cout << "Erreur : impossible d'ouvrir le dictionnaire " << absolu_path.toStdString() << std::endl;
+        std::cout << tr("Erreur : impossible d'ouvrir le dictionnaire").toStdString() + " " << absolu_path.toStdString() << std::endl;
         return;
     }
 
@@ -310,7 +310,7 @@ void dictionnaire::ajouter_mot_dans_arbre( const QString &s )
     {
         int pos = it->toLatin1() - 'A';
         if ( pos > 25 || pos < 0 )
-            std::cout << "Dictionnaire : Attention, impossible d'ajouter le caractère " << it->toLatin1() << std::endl;
+            std::cout << tr("Dictionnaire : Attention, impossible d'ajouter le caractère").toStdString() + " " << it->toLatin1() << std::endl;
         else
             lettre = lettre->get_suivant(pos);
     }

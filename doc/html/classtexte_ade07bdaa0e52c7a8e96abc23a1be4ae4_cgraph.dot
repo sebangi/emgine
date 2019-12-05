@@ -1,0 +1,33 @@
+digraph "texte::tourner_caracteres"
+{
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="LR";
+  Node136 [label="texte::tourner_caracteres",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black"];
+  Node136 -> Node137 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node137 [label="texte::fusionner",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classtexte.html#a16582508b6ad1e0a567c0a83af7fb0fa",tooltip="Fusion des lignes, des mots et/ou des caractères. "];
+  Node137 -> Node138 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node138 [label="texte::maj_comptages",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classtexte.html#a26290d2cb7eb4b656b8be0e121c1049f",tooltip="Met à jour les différents comptages. "];
+  Node138 -> Node139 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node139 [label="texte::maj_nb_caracteres",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classtexte.html#a4a2b045dbb975c1c3e7b3d20c60edd34",tooltip="Met à jour le nombre de caractères du texte. "];
+  Node138 -> Node140 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node140 [label="texte::maj_nb_mots",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classtexte.html#aeed3eacb585627aa50aadaaba067c9c2",tooltip="Met à jour le nombre de mots du texte. "];
+  Node136 -> Node141 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node141 [label="texte::transposer_caracteres",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classtexte.html#a872ef0ccbf0b3f0aeaf1a8169632d763",tooltip="Transpose les caractères du texte. "];
+  Node141 -> Node142 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node142 [label="texte::nb_lignes",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classtexte.html#ac094147ada894bfde38c68b631724750",tooltip="Retourne le nombre de lignes du texte. "];
+  Node141 -> Node143 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node143 [label="ligne::set_separateur_mot",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classligne.html#aa13dd59094abd373163ef55e2f33bf8a",tooltip="Initialise le séparateur de mot. "];
+  Node141 -> Node144 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node144 [label="texte::ajouter_ligne",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classtexte.html#abb3d9763a37659b12552379cb4e0dc8c",tooltip="Ajoute une ligne donnée en fin de texte. "];
+  Node144 -> Node145 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node145 [label="ligne::nb_caracteres",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classligne.html#a3bfedd99e8ffbb068432df6d0768d5d1",tooltip="Retourne le nombre de caractères de la ligne. "];
+  Node144 -> Node146 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node146 [label="ligne::nb_mots",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classligne.html#ada0847f3e3c95773bb2c03db970f81d7",tooltip="Retourne le nombre de mots de la ligne. "];
+  Node144 -> Node147 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node147 [label="ligne::to_string_lisible",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classligne.html#affd23e66b472f932e1e28df34a652539",tooltip="Convertit et retourne la ligne au format QString avec l&#39;ajout de séparateur. "];
+  Node141 -> Node137 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node141 -> Node138 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node136 -> Node148 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node148 [label="texte::inverser",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classtexte.html#aa2b06368ab5cb65e09aee99554cf0f30",tooltip="Inversion des textes, des lignes, des mots et/ou des caractères. "];
+}

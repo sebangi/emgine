@@ -61,6 +61,7 @@ $(function() {
   <div class="summary">
 <a href="#signals">Signaux</a> &#124;
 <a href="#pub-methods">Fonctions membres publiques</a> &#124;
+<a href="#pro-methods">Fonctions membres protégées</a> &#124;
 <a href="#pro-attribs">Attributs protégés</a> &#124;
 <a href="#pri-types">Types privés</a> &#124;
 <a href="#pri-slots">Connecteurs privés</a> &#124;
@@ -130,6 +131,15 @@ Fonctions membres publiques</h2></td></tr>
 <tr class="memitem:aa4f470af8fb51c1ff276b18205104c94"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classbase__fonction__widget.html#aa4f470af8fb51c1ff276b18205104c94">informer_verrouillage_change</a> ()</td></tr>
 <tr class="memdesc:aa4f470af8fb51c1ff276b18205104c94"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fonction appelée lors d'un changement de verrouillage.  <a href="#aa4f470af8fb51c1ff276b18205104c94">Plus de détails...</a><br /></td></tr>
 <tr class="separator:aa4f470af8fb51c1ff276b18205104c94"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-methods"></a>
+Fonctions membres protégées</h2></td></tr>
+<tr class="memitem:af9f4195c6345ee8a1b77ec5edd2bcf36"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classbase__fonction__widget.html#af9f4195c6345ee8a1b77ec5edd2bcf36">init_nom</a> ()</td></tr>
+<tr class="memdesc:af9f4195c6345ee8a1b77ec5edd2bcf36"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initialise le nom du widget.  <a href="#af9f4195c6345ee8a1b77ec5edd2bcf36">Plus de détails...</a><br /></td></tr>
+<tr class="separator:af9f4195c6345ee8a1b77ec5edd2bcf36"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a49158595d1376bdf84a712ff18cb00b2"><td class="memItemLeft" align="right" valign="top">virtual QString&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classbase__fonction__widget.html#a49158595d1376bdf84a712ff18cb00b2">get_nom</a> () const</td></tr>
+<tr class="memdesc:a49158595d1376bdf84a712ff18cb00b2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fonction retournant le nom de la fonction à afficher.  <a href="#a49158595d1376bdf84a712ff18cb00b2">Plus de détails...</a><br /></td></tr>
+<tr class="separator:a49158595d1376bdf84a712ff18cb00b2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-attribs"></a>
 Attributs protégés</h2></td></tr>
@@ -251,6 +261,10 @@ QPushButton *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" h
 QPushButton *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classbase__fonction__widget.html#ac8ef60db0942a135ff86595b852f399b">m_aide_bouton</a></td></tr>
 <tr class="memdesc:ac8ef60db0942a135ff86595b852f399b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Un pointeur sur le bouton d'aide. <br /></td></tr>
 <tr class="separator:ac8ef60db0942a135ff86595b852f399b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a886baf36faa051cc4915d9595c745f19"><td class="memItemLeft" align="right" valign="top"><a id="a886baf36faa051cc4915d9595c745f19"></a>
+QLabel *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classbase__fonction__widget.html#a886baf36faa051cc4915d9595c745f19">m_nom_label</a></td></tr>
+<tr class="memdesc:a886baf36faa051cc4915d9595c745f19"><td class="mdescLeft">&#160;</td><td class="mdescRight">Un pointeur sur le label du nom. <br /></td></tr>
+<tr class="separator:a886baf36faa051cc4915d9595c745f19"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0f75e22100ca68e7944703d71f3b5a28"><td class="memItemLeft" align="right" valign="top"><a id="a0f75e22100ca68e7944703d71f3b5a28"></a>
 <a class="el" href="classbase__fonction__widget.html#a6e894a053609120fe246e350fe57f7d6">type_liste_parametre_widgets</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classbase__fonction__widget.html#a0f75e22100ca68e7944703d71f3b5a28">m_parametre_widgets</a></td></tr>
 <tr class="memdesc:a0f75e22100ca68e7944703d71f3b5a28"><td class="mdescLeft">&#160;</td><td class="mdescRight">La liste des widgets affichant les paramètres. <br /></td></tr>
@@ -260,7 +274,7 @@ QPushButton *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" h
 <div class="textblock"><p>Classe décrivant un widget de base affichant une fonction. </p>
 <dl class="section author"><dt>Auteur</dt><dd>Sébastien Angibaud </dd></dl>
 
-<p class="definition">Définition à la ligne <a class="el" href="base__fonction__widget_8h_source.html#l00030">30</a> du fichier <a class="el" href="base__fonction__widget_8h_source.html">base_fonction_widget.h</a>.</p>
+<p class="definition">Définition à la ligne <a class="el" href="base__fonction__widget_8h_source.html#l00031">31</a> du fichier <a class="el" href="base__fonction__widget_8h_source.html">base_fonction_widget.h</a>.</p>
 </div><h2 class="groupheader">Documentation des constructeurs et destructeur</h2>
 <a id="a60a58ede76a44450e7bca66c72eabd80"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a60a58ede76a44450e7bca66c72eabd80">&#9670;&nbsp;</a></span>base_fonction_widget()</h2>
@@ -402,7 +416,7 @@ Voici le graphe d'appel pour cette fonction :</div>
 <p>Affiche l'aide de la fonction associée. </p>
 <hr/>
  
-<p class="definition">Définition à la ligne <a class="el" href="base__fonction__widget_8cpp_source.html#l00352">352</a> du fichier <a class="el" href="base__fonction__widget_8cpp_source.html">base_fonction_widget.cpp</a>.</p>
+<p class="definition">Définition à la ligne <a class="el" href="base__fonction__widget_8cpp_source.html#l00355">355</a> du fichier <a class="el" href="base__fonction__widget_8cpp_source.html">base_fonction_widget.cpp</a>.</p>
 <div class="dynheader">
 Voici le graphe d'appel pour cette fonction :</div>
 <div class="dyncontent">
@@ -442,7 +456,7 @@ Voici le graphe d'appel pour cette fonction :</div>
 <p>Ajoute les connections pour la fonction associée. </p>
 <hr/>
  
-<p class="definition">Définition à la ligne <a class="el" href="base__fonction__widget_8cpp_source.html#l00461">461</a> du fichier <a class="el" href="base__fonction__widget_8cpp_source.html">base_fonction_widget.cpp</a>.</p>
+<p class="definition">Définition à la ligne <a class="el" href="base__fonction__widget_8cpp_source.html#l00464">464</a> du fichier <a class="el" href="base__fonction__widget_8cpp_source.html">base_fonction_widget.cpp</a>.</p>
 <div class="dynheader">
 Voici le graphe d'appel pour cette fonction :</div>
 <div class="dyncontent">
@@ -500,7 +514,7 @@ Voici le graphe d'appel pour cette fonction :</div>
 <p>Retire les connections de la fonction associée. </p>
 <hr/>
  
-<p class="definition">Définition à la ligne <a class="el" href="base__fonction__widget_8cpp_source.html#l00479">479</a> du fichier <a class="el" href="base__fonction__widget_8cpp_source.html">base_fonction_widget.cpp</a>.</p>
+<p class="definition">Définition à la ligne <a class="el" href="base__fonction__widget_8cpp_source.html#l00482">482</a> du fichier <a class="el" href="base__fonction__widget_8cpp_source.html">base_fonction_widget.cpp</a>.</p>
 <div class="dynheader">
 Voici le graphe d'appel pour cette fonction :</div>
 <div class="dyncontent">
@@ -544,6 +558,45 @@ Voici le graphe d'appel pour cette fonction :</div>
 
 </div>
 </div>
+<a id="a49158595d1376bdf84a712ff18cb00b2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a49158595d1376bdf84a712ff18cb00b2">&#9670;&nbsp;</a></span>get_nom()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QString base_fonction_widget::get_nom </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Fonction retournant le nom de la fonction à afficher. </p>
+<hr/>
+ 
+<p>Réimplémentée dans <a class="el" href="classfonction__base__sortie__widget.html#a207ceb757f67d58f8e5f40cb239c52e9">fonction_base_sortie_widget</a>.</p>
+
+<p class="definition">Définition à la ligne <a class="el" href="base__fonction__widget_8cpp_source.html#l00508">508</a> du fichier <a class="el" href="base__fonction__widget_8cpp_source.html">base_fonction_widget.cpp</a>.</p>
+<div class="dynheader">
+Voici le graphe d'appel pour cette fonction :</div>
+<div class="dyncontent">
+<div class="center"><img src="classbase__fonction__widget_a49158595d1376bdf84a712ff18cb00b2_cgraph.png" border="0" usemap="#classbase__fonction__widget_a49158595d1376bdf84a712ff18cb00b2_cgraph" alt=""/></div>
+<map name="classbase__fonction__widget_a49158595d1376bdf84a712ff18cb00b2_cgraph" id="classbase__fonction__widget_a49158595d1376bdf84a712ff18cb00b2_cgraph">
+</map>
+</div>
+
+</div>
+</div>
 <a id="aa4f470af8fb51c1ff276b18205104c94"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#aa4f470af8fb51c1ff276b18205104c94">&#9670;&nbsp;</a></span>informer_verrouillage_change()</h2>
 
@@ -570,9 +623,9 @@ Voici le graphe d'appel pour cette fonction :</div>
 <p>Fonction appelée lors d'un changement de verrouillage. </p>
 <hr/>
  
-<p>Réimplémentée dans <a class="el" href="classfonction__source__fichier__texte__widget.html#a25b6f07eb4a9264c775a97740de7d31a">fonction_source_fichier_texte_widget</a>, <a class="el" href="classbase__fonction__widget__avec__text__edit.html#ab0e37417e61a7445e1d506b130073815">base_fonction_widget_avec_text_edit</a>, <a class="el" href="classfonction__source__choix__widget.html#a45b3ac508d4a05206c8f987b0125dc1a">fonction_source_choix_widget</a>, et <a class="el" href="classfonction__source__booleen__widget.html#a3d75dcb2f29c2d1c00888b0f378719cd">fonction_source_booleen_widget</a>.</p>
+<p>Réimplémentée dans <a class="el" href="classfonction__source__fichier__texte__widget.html#a25b6f07eb4a9264c775a97740de7d31a">fonction_source_fichier_texte_widget</a>, <a class="el" href="classbase__fonction__widget__avec__text__edit.html#ab0e37417e61a7445e1d506b130073815">base_fonction_widget_avec_text_edit</a>, <a class="el" href="classfonction__source__dictionnaire__widget.html#ac6bd206b0fe919954a9993aff16631a7">fonction_source_dictionnaire_widget</a>, <a class="el" href="classfonction__source__choix__widget.html#a45b3ac508d4a05206c8f987b0125dc1a">fonction_source_choix_widget</a>, <a class="el" href="classfonction__source__booleen__widget.html#a3d75dcb2f29c2d1c00888b0f378719cd">fonction_source_booleen_widget</a>, et <a class="el" href="classfonction__source__entier__widget.html#a5fe8e6e5bee919c0343ace06144e5dac">fonction_source_entier_widget</a>.</p>
 
-<p class="definition">Définition à la ligne <a class="el" href="base__fonction__widget_8cpp_source.html#l00497">497</a> du fichier <a class="el" href="base__fonction__widget_8cpp_source.html">base_fonction_widget.cpp</a>.</p>
+<p class="definition">Définition à la ligne <a class="el" href="base__fonction__widget_8cpp_source.html#l00516">516</a> du fichier <a class="el" href="base__fonction__widget_8cpp_source.html">base_fonction_widget.cpp</a>.</p>
 
 </div>
 </div>
@@ -655,6 +708,43 @@ Voici le graphe d'appel pour cette fonction :</div>
 
 </div>
 </div>
+<a id="af9f4195c6345ee8a1b77ec5edd2bcf36"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af9f4195c6345ee8a1b77ec5edd2bcf36">&#9670;&nbsp;</a></span>init_nom()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void base_fonction_widget::init_nom </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Initialise le nom du widget. </p>
+<hr/>
+ 
+<p class="definition">Définition à la ligne <a class="el" href="base__fonction__widget_8cpp_source.html#l00500">500</a> du fichier <a class="el" href="base__fonction__widget_8cpp_source.html">base_fonction_widget.cpp</a>.</p>
+<div class="dynheader">
+Voici le graphe d'appel pour cette fonction :</div>
+<div class="dyncontent">
+<div class="center"><img src="classbase__fonction__widget_af9f4195c6345ee8a1b77ec5edd2bcf36_cgraph.png" border="0" usemap="#classbase__fonction__widget_af9f4195c6345ee8a1b77ec5edd2bcf36_cgraph" alt=""/></div>
+<map name="classbase__fonction__widget_af9f4195c6345ee8a1b77ec5edd2bcf36_cgraph" id="classbase__fonction__widget_af9f4195c6345ee8a1b77ec5edd2bcf36_cgraph">
+</map>
+</div>
+
+</div>
+</div>
 <a id="a7b70afc37ac7d91da2ce41bd62ea185c"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a7b70afc37ac7d91da2ce41bd62ea185c">&#9670;&nbsp;</a></span>mettre_a_jour_verrouillage()</h2>
 
@@ -720,7 +810,7 @@ Voici le graphe d'appel pour cette fonction :</div>
 <p>Fonction appelée lors d'une demande d'affichage de l'aide. </p>
 <hr/>
  
-<p class="definition">Définition à la ligne <a class="el" href="base__fonction__widget_8cpp_source.html#l00453">453</a> du fichier <a class="el" href="base__fonction__widget_8cpp_source.html">base_fonction_widget.cpp</a>.</p>
+<p class="definition">Définition à la ligne <a class="el" href="base__fonction__widget_8cpp_source.html#l00456">456</a> du fichier <a class="el" href="base__fonction__widget_8cpp_source.html">base_fonction_widget.cpp</a>.</p>
 <div class="dynheader">
 Voici le graphe d'appel pour cette fonction :</div>
 <div class="dyncontent">
@@ -768,7 +858,7 @@ Voici le graphe d'appel pour cette fonction :</div>
   </dd>
 </dl>
 
-<p class="definition">Définition à la ligne <a class="el" href="base__fonction__widget_8cpp_source.html#l00385">385</a> du fichier <a class="el" href="base__fonction__widget_8cpp_source.html">base_fonction_widget.cpp</a>.</p>
+<p class="definition">Définition à la ligne <a class="el" href="base__fonction__widget_8cpp_source.html#l00388">388</a> du fichier <a class="el" href="base__fonction__widget_8cpp_source.html">base_fonction_widget.cpp</a>.</p>
 <div class="dynheader">
 Voici le graphe d'appel pour cette fonction :</div>
 <div class="dyncontent">
@@ -820,7 +910,7 @@ Voici le graphe d'appel pour cette fonction :</div>
   </dd>
 </dl>
 
-<p class="definition">Définition à la ligne <a class="el" href="base__fonction__widget_8cpp_source.html#l00404">404</a> du fichier <a class="el" href="base__fonction__widget_8cpp_source.html">base_fonction_widget.cpp</a>.</p>
+<p class="definition">Définition à la ligne <a class="el" href="base__fonction__widget_8cpp_source.html#l00407">407</a> du fichier <a class="el" href="base__fonction__widget_8cpp_source.html">base_fonction_widget.cpp</a>.</p>
 <div class="dynheader">
 Voici le graphe d'appel pour cette fonction :</div>
 <div class="dyncontent">
@@ -869,7 +959,7 @@ Voici le graphe d'appel pour cette fonction :</div>
   </dd>
 </dl>
 
-<p class="definition">Définition à la ligne <a class="el" href="base__fonction__widget_8cpp_source.html#l00395">395</a> du fichier <a class="el" href="base__fonction__widget_8cpp_source.html">base_fonction_widget.cpp</a>.</p>
+<p class="definition">Définition à la ligne <a class="el" href="base__fonction__widget_8cpp_source.html#l00398">398</a> du fichier <a class="el" href="base__fonction__widget_8cpp_source.html">base_fonction_widget.cpp</a>.</p>
 <div class="dynheader">
 Voici le graphe d'appel pour cette fonction :</div>
 <div class="dyncontent">
@@ -917,7 +1007,7 @@ Voici le graphe d'appel pour cette fonction :</div>
 <p>Fonction appelée lors d'une demande de fermeture de la fonction. </p>
 <hr/>
  
-<p class="definition">Définition à la ligne <a class="el" href="base__fonction__widget_8cpp_source.html#l00414">414</a> du fichier <a class="el" href="base__fonction__widget_8cpp_source.html">base_fonction_widget.cpp</a>.</p>
+<p class="definition">Définition à la ligne <a class="el" href="base__fonction__widget_8cpp_source.html#l00417">417</a> du fichier <a class="el" href="base__fonction__widget_8cpp_source.html">base_fonction_widget.cpp</a>.</p>
 <div class="dynheader">
 Voici le graphe d'appel pour cette fonction :</div>
 <div class="dyncontent">
@@ -966,7 +1056,7 @@ Voici le graphe d'appel pour cette fonction :</div>
 <p>Fonction appelée lors d'une demande d'inversion d'activation. </p>
 <hr/>
  
-<p class="definition">Définition à la ligne <a class="el" href="base__fonction__widget_8cpp_source.html#l00366">366</a> du fichier <a class="el" href="base__fonction__widget_8cpp_source.html">base_fonction_widget.cpp</a>.</p>
+<p class="definition">Définition à la ligne <a class="el" href="base__fonction__widget_8cpp_source.html#l00369">369</a> du fichier <a class="el" href="base__fonction__widget_8cpp_source.html">base_fonction_widget.cpp</a>.</p>
 <div class="dynheader">
 Voici le graphe d'appel pour cette fonction :</div>
 <div class="dyncontent">
@@ -1010,7 +1100,7 @@ Voici le graphe d'appel pour cette fonction :</div>
 <p>Fonction appelée lors d'une demande d'inversion de verrouillage. </p>
 <hr/>
  
-<p class="definition">Définition à la ligne <a class="el" href="base__fonction__widget_8cpp_source.html#l00375">375</a> du fichier <a class="el" href="base__fonction__widget_8cpp_source.html">base_fonction_widget.cpp</a>.</p>
+<p class="definition">Définition à la ligne <a class="el" href="base__fonction__widget_8cpp_source.html#l00378">378</a> du fichier <a class="el" href="base__fonction__widget_8cpp_source.html">base_fonction_widget.cpp</a>.</p>
 <div class="dynheader">
 Voici le graphe d'appel pour cette fonction :</div>
 <div class="dyncontent">
@@ -1051,7 +1141,7 @@ Voici le graphe d'appel pour cette fonction :</div>
 <p>Fonction appelée lors d'une demande de changement de niveau de visibilité. </p>
 <hr/>
  
-<p class="definition">Définition à la ligne <a class="el" href="base__fonction__widget_8cpp_source.html#l00444">444</a> du fichier <a class="el" href="base__fonction__widget_8cpp_source.html">base_fonction_widget.cpp</a>.</p>
+<p class="definition">Définition à la ligne <a class="el" href="base__fonction__widget_8cpp_source.html#l00447">447</a> du fichier <a class="el" href="base__fonction__widget_8cpp_source.html">base_fonction_widget.cpp</a>.</p>
 <div class="dynheader">
 Voici le graphe d'appel pour cette fonction :</div>
 <div class="dyncontent">
@@ -1180,7 +1270,7 @@ Voici le graphe d'appel pour cette fonction :</div>
 <p>Met à jour le bouton d'activation. </p>
 <hr/>
  
-<p class="definition">Définition à la ligne <a class="el" href="base__fonction__widget_8cpp_source.html#l00182">182</a> du fichier <a class="el" href="base__fonction__widget_8cpp_source.html">base_fonction_widget.cpp</a>.</p>
+<p class="definition">Définition à la ligne <a class="el" href="base__fonction__widget_8cpp_source.html#l00185">185</a> du fichier <a class="el" href="base__fonction__widget_8cpp_source.html">base_fonction_widget.cpp</a>.</p>
 <div class="dynheader">
 Voici le graphe d'appel pour cette fonction :</div>
 <div class="dyncontent">
@@ -1222,7 +1312,7 @@ Voici le graphe d'appel pour cette fonction :</div>
 <p>Met à jour le bouton de fermeture. </p>
 <hr/>
  
-<p class="definition">Définition à la ligne <a class="el" href="base__fonction__widget_8cpp_source.html#l00216">216</a> du fichier <a class="el" href="base__fonction__widget_8cpp_source.html">base_fonction_widget.cpp</a>.</p>
+<p class="definition">Définition à la ligne <a class="el" href="base__fonction__widget_8cpp_source.html#l00219">219</a> du fichier <a class="el" href="base__fonction__widget_8cpp_source.html">base_fonction_widget.cpp</a>.</p>
 <div class="dynheader">
 Voici le graphe d'appel pour cette fonction :</div>
 <div class="dyncontent">
@@ -1261,7 +1351,7 @@ Voici le graphe d'appel pour cette fonction :</div>
 <p>Met à jour les noms des objets. </p>
 <hr/>
  
-<p class="definition">Définition à la ligne <a class="el" href="base__fonction__widget_8cpp_source.html#l00304">304</a> du fichier <a class="el" href="base__fonction__widget_8cpp_source.html">base_fonction_widget.cpp</a>.</p>
+<p class="definition">Définition à la ligne <a class="el" href="base__fonction__widget_8cpp_source.html#l00307">307</a> du fichier <a class="el" href="base__fonction__widget_8cpp_source.html">base_fonction_widget.cpp</a>.</p>
 <div class="dynheader">
 Voici le graphe d'appel pour cette fonction :</div>
 <div class="dyncontent">
@@ -1301,7 +1391,7 @@ Voici le graphe d'appel pour cette fonction :</div>
 <p>Met à jour le bouton de verrouillage. </p>
 <hr/>
  
-<p class="definition">Définition à la ligne <a class="el" href="base__fonction__widget_8cpp_source.html#l00225">225</a> du fichier <a class="el" href="base__fonction__widget_8cpp_source.html">base_fonction_widget.cpp</a>.</p>
+<p class="definition">Définition à la ligne <a class="el" href="base__fonction__widget_8cpp_source.html#l00228">228</a> du fichier <a class="el" href="base__fonction__widget_8cpp_source.html">base_fonction_widget.cpp</a>.</p>
 <div class="dynheader">
 Voici le graphe d'appel pour cette fonction :</div>
 <div class="dyncontent">
@@ -1341,7 +1431,7 @@ Voici le graphe d'appel pour cette fonction :</div>
 <p>Met à jour le widget en fonction du niveau de visibilité de la fonction associée. </p>
 <hr/>
  
-<p class="definition">Définition à la ligne <a class="el" href="base__fonction__widget_8cpp_source.html#l00279">279</a> du fichier <a class="el" href="base__fonction__widget_8cpp_source.html">base_fonction_widget.cpp</a>.</p>
+<p class="definition">Définition à la ligne <a class="el" href="base__fonction__widget_8cpp_source.html#l00282">282</a> du fichier <a class="el" href="base__fonction__widget_8cpp_source.html">base_fonction_widget.cpp</a>.</p>
 <div class="dynheader">
 Voici le graphe d'appel pour cette fonction :</div>
 <div class="dyncontent">
@@ -1381,7 +1471,7 @@ Voici le graphe d'appel pour cette fonction :</div>
 <p>Met à jour le bouton de visibilité. </p>
 <hr/>
  
-<p class="definition">Définition à la ligne <a class="el" href="base__fonction__widget_8cpp_source.html#l00252">252</a> du fichier <a class="el" href="base__fonction__widget_8cpp_source.html">base_fonction_widget.cpp</a>.</p>
+<p class="definition">Définition à la ligne <a class="el" href="base__fonction__widget_8cpp_source.html#l00255">255</a> du fichier <a class="el" href="base__fonction__widget_8cpp_source.html">base_fonction_widget.cpp</a>.</p>
 <div class="dynheader">
 Voici le graphe d'appel pour cette fonction :</div>
 <div class="dyncontent">
@@ -1401,7 +1491,7 @@ Voici le graphe d'appel pour cette fonction :</div>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Généré le Mardi 28 Février 2017 10:28:20 pour Emgine par &#160;<a href="http://www.doxygen.org/index.html">
+Généré le Jeudi 5 Décembre 2019 09:58:19 pour Emgine par &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.13
 </small></address>

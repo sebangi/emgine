@@ -76,9 +76,9 @@ void fonction_source_booleen::executer( compilateur &compil, textes & textes_in,
 QString fonction_source_booleen::get_valeur_courte() const
 {
     if ( m_valeur )
-        return "oui";
+        return base_fonction::tr("oui");
     else
-        return "non";
+        return base_fonction::tr("non");
 }
 
 /** --------------------------------------------------------------------------------------

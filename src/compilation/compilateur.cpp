@@ -40,21 +40,21 @@ void compilateur::compiler(projet *p)
                                "----------------------------------------------------------") );
     m_vue_logs->ajouter_log
             ( log_compilation( log_compilation::LOG_IMPORTANT, p,
-                               "Compilation du projet \"" + p->get_nom() + "\"...") );
+                               tr("Compilation du projet") + " \"" + p->get_nom() + "\"...") );
 
     if ( est_valide( p ) )
     {
         m_vue_logs->ajouter_log
-                ( log_compilation( log_compilation::LOG_SUCCES, p, "Le projet \"" + p->get_nom() + "\" est valide.") );
+                ( log_compilation( log_compilation::LOG_SUCCES, p, tr("Le projet") + " \"" + p->get_nom() + "\" " + tr("est valide.")) );
         reset();
         executer_projet(p);
     }
     else
     {
-        QString message("compilation");
+        QString message(tr("compilation"));
 
         m_vue_logs->ajouter_log
-                ( log_compilation( log_compilation::LOG_ERREUR, p, "Le projet \"" + p->get_nom() + "\" n'est pas valide.") );
+                ( log_compilation( log_compilation::LOG_ERREUR, p, tr("Le projet") + " \"" + p->get_nom() + "\" " + tr("n'est pas valide.")) );
     }
 }
 
@@ -85,7 +85,7 @@ void compilateur::executer_projet(projet *p)
 {
     p->executer();
     m_vue_logs->ajouter_log
-            ( log_compilation( log_compilation::LOG_IMPORTANT, "Exécution...") );
+            ( log_compilation( log_compilation::LOG_IMPORTANT, tr("Exécution") + "...") );
     m_pile_textes.push(textes());
 
     projet::type_fonctions actifs;
@@ -144,11 +144,11 @@ void compilateur::afficher_resultat()
 
     if ( ! m_pile_textes.empty() )
         m_vue_logs->ajouter_log
-                ( log_compilation( log_compilation::LOG_ERREUR, "La pile d'exécution n'est pas vide.") );
+                ( log_compilation( log_compilation::LOG_ERREUR, tr("La pile d'exécution n'est pas vide.")) );
     else
     {        
         m_vue_logs->ajouter_log
-                ( log_compilation( log_compilation::LOG_IMPORTANT, "Exécution terminée.") );
+                ( log_compilation( log_compilation::LOG_IMPORTANT, tr("Exécution terminée.")) );
     }
 }
 
@@ -168,7 +168,7 @@ configuration compilateur::get_configuration() const
 void compilateur::ajouter_dictionnaire(const QString & nom_fichier)
 {
     m_vue_logs->ajouter_log
-            ( log_compilation( log_compilation::LOG_INFORMATION, "Chargement du dictionnaire...") );
+            ( log_compilation( log_compilation::LOG_INFORMATION, tr("Chargement du dictionnaire. Patientez...")) );
 
     if ( get_dictionnaire( nom_fichier ) == NULL )
         m_dictionnaires[ nom_fichier ] = new dictionnaire( nom_fichier );

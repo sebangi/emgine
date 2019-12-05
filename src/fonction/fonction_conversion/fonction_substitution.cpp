@@ -27,32 +27,32 @@
 
     ajouter_parametre( PARAM_CARACTERES_ENTREE,
                        new base_parametre( this,
-                                           "Entrée du dictionnaire",
-                                           "Les caractères en entrée du dictionnaire.",
+                                           base_parametre::tr("Entrée du dictionnaire"),
+                                           base_parametre::tr("Les caractères en entrée du dictionnaire."),
                                            base_parametre::CONTENU_PARAM_VIDE_IMPOSSIBLE,
                                            base_parametre::CONFIGURATION_INVISIBLE,
                                            base_parametre::ALGO_IPL) );
 
     ajouter_parametre( PARAM_CARACTERES_SORTIE,
                        new base_parametre( this,
-                                           "Sortie du dictionnaire",
-                                           "Les caractères de sortie du dictionnaire.",
+                                           base_parametre::tr("Sortie du dictionnaire"),
+                                           base_parametre::tr("Les caractères de sortie du dictionnaire."),
                                            base_parametre::CONTENU_PARAM_VIDE_IMPOSSIBLE,
                                            base_parametre::CONFIGURATION_INVISIBLE,
                                            base_parametre::ALGO_IPL) );
 
     ajouter_parametre( PARAM_CARACTERES,
                        new base_parametre( this,
-                                           "Garder les inconnus",
-                                           "Les caractères inconnus sont-ils gardés ou bien remplacé par *.",
+                                           base_parametre::tr("Garder les inconnus"),
+                                           base_parametre::tr("Les caractères inconnus sont-ils gardés ou bien remplacé par *."),
                                            base_parametre::CONTENU_PARAM_VIDE_POSSIBLE,
                                            base_parametre::CONFIGURATION_INVISIBLE,
                                            base_parametre::ALGO_IPL) );
 
     ajouter_parametre( PARAM_NUMERO_CHOIX,
                        new base_parametre( this,
-                                           "Numéro du choix",
-                                           "Les numéro de choix à utiliser dans le cas d'un alphabet polyalphabétique.",
+                                           base_parametre::tr("Numéro du choix"),
+                                           base_parametre::tr("Les numéro de choix à utiliser dans le cas d'un alphabet polyalphabétique."),
                                            base_parametre::CONTENU_PARAM_VIDE_POSSIBLE,
                                            base_parametre::CONFIGURATION_INVISIBLE,
                                            base_parametre::ALGO_IPL) );
@@ -74,7 +74,7 @@ bool fonction_substitution::est_valide(logs_compilation_widget * vue_logs)
  */
 QString fonction_substitution::get_valeur_courte() const
 {
-    return "[substitution]";
+    return base_fonction::tr("[substitution]");
 }
 
 /** --------------------------------------------------------------------------------------

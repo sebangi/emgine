@@ -1,0 +1,9 @@
+digraph "Graphe hiérarchique des classes"
+{
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="LR";
+  Node89 [label="map",height=0.2,width=0.4,color="grey75", fillcolor="white", style="filled"];
+  Node89 -> Node0 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node0 [label="configuration",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classconfiguration.html",tooltip="Classe décrivant un configuration lors d&#39;une exécution. Pour un texte donné, une configuration corres..."];
+}

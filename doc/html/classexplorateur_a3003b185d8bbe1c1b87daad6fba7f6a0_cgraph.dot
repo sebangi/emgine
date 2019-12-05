@@ -1,0 +1,18 @@
+digraph "explorateur::ajouter_menu_supprimer_projet"
+{
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="LR";
+  Node413 [label="explorateur::ajouter\l_menu_supprimer_projet",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black"];
+  Node413 -> Node414 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node414 [label="explorateur::on_fermer\l_projet",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classexplorateur.html#af384b08871362ec45d8554e4fffa1e0d",tooltip="Fonction appelée lors d&#39;une demande de fermeture de projet. "];
+  Node414 -> Node415 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node415 [label="base_noeud::get_objet",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classbase__noeud.html#a762c999077b247ebf1d8c6dd83313ffd",tooltip="Retourne l&#39;objet sélectionnable associé au noeud. "];
+  Node414 -> Node416 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node416 [label="objet_selectionnable\l::get_projet",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classobjet__selectionnable.html#ab48a75e720955aebe27f720dfaa5e78e",tooltip="Retourne le projet contenant l&#39;objet sélectionnable. "];
+  Node416 -> Node417 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node417 [label="objet_selectionnable\l::est_projet",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classobjet__selectionnable.html#a49ea1a29523e46f099896477a2b43eaa",tooltip="Indique si l&#39;objet est un projet. "];
+  Node416 -> Node416 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node414 -> Node418 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node418 [label="projet::fermer",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classprojet.html#adbb06eb069730cd0c973881af783b967",tooltip="Ferme le projet. "];
+}

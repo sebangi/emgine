@@ -25,8 +25,8 @@ fonction_selection_selon_dictionnaire::fonction_selection_selon_dictionnaire( fo
 
     ajouter_parametre( PARAM_DICTIONNAIRE,
                        new base_parametre( this,
-                                           "Dictionnaire",
-                                           "Dictionnaire utilisé.",
+                                           base_parametre::tr("Dictionnaire"),
+                                           base_parametre::tr("Dictionnaire utilisé."),
                                            base_parametre::CONTENU_PARAM_VIDE_IMPOSSIBLE,
                                            base_parametre::CONFIGURATION_INVISIBLE,
                                            base_parametre::ALGO_AUCUN) );
@@ -56,7 +56,7 @@ bool fonction_selection_selon_dictionnaire::est_valide(logs_compilation_widget *
  */
 QString fonction_selection_selon_dictionnaire::get_valeur_courte() const
 {
-    return "[Selection selon dictionnaire]";
+    return base_fonction::tr("[Selection selon dictionnaire]");
 }
 
 /** --------------------------------------------------------------------------------------

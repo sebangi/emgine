@@ -1,0 +1,90 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.13"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Emgine:  Fichier source de entete/fonction/fonction_conversion/fonction_ajout_espace_selon_dictionnaire.h</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">Emgine
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Généré par Doxygen 1.8.13 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'Recherche');
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+$(function() {
+  initMenu('',true,false,'search.php','Recherche');
+  $(document).ready(function() { init_search(); });
+});
+</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_2db5f1c5034b754c69755a32007f81b7.html">entete</a></li><li class="navelem"><a class="el" href="dir_2a17f3b6bd0d472023dbd77d40fac0ed.html">fonction</a></li><li class="navelem"><a class="el" href="dir_ccd171850a3f6ddf889b4abacdcaeda8.html">fonction_conversion</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle">
+<div class="title">fonction_ajout_espace_selon_dictionnaire.h</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="fonction__ajout__espace__selon__dictionnaire_8h.html">Aller à la documentation de ce fichier.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#ifndef FONCTION_AJOUT_ESPACE_SELON_DICTIONNAIRE_H</span></div><div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor">#define FONCTION_AJOUT_ESPACE_SELON_DICTIONNAIRE_H</span></div><div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;</div><div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="base__fonction_8h.html">entete/projet/base_fonction.h</a>&quot;</span></div><div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;</div><div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="keyword">class </span><a class="code" href="classbase__element.html">base_element</a>;</div><div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;</div><div class="line"><a name="l00018"></a><span class="lineno"><a class="line" href="classfonction__ajout__espace__selon__dictionnaire.html">   18</a></span>&#160;<span class="keyword">class </span><a class="code" href="classfonction__ajout__espace__selon__dictionnaire.html">fonction_ajout_espace_selon_dictionnaire</a> : <span class="keyword">public</span> <a class="code" href="classbase__fonction.html">base_fonction</a></div><div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;{</div><div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;    <span class="keyword">public</span>:</div><div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;        <a class="code" href="classfonction__ajout__espace__selon__dictionnaire.html#a651a7e33ca12619a4da33cebe1bae874">fonction_ajout_espace_selon_dictionnaire</a>(<a class="code" href="classfonctions__conteneur.html">fonctions_conteneur</a> * conteneur);</div><div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;</div><div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="classfonction__ajout__espace__selon__dictionnaire.html#a28795cf5e7fc10d39977a6c7b77519f8">initialisation_par_defaut</a>();</div><div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="classfonction__ajout__espace__selon__dictionnaire.html#a3be04f880aac9d97dd42dc9fcb6bc85f">executer</a>( <a class="code" href="classcompilateur.html">compilateur</a> &amp; compil, <a class="code" href="classtextes.html">textes</a> &amp; textes_in, <a class="code" href="classtextes.html">textes</a> &amp; textes_out );</div><div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;        QString <a class="code" href="classfonction__ajout__espace__selon__dictionnaire.html#a5d6cb41a6874ca61d1ab694c34022bc9">get_valeur_courte</a>() <span class="keyword">const</span>;</div><div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;</div><div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;    <span class="keyword">private</span>:</div><div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;        <span class="keywordtype">bool</span> <a class="code" href="classfonction__ajout__espace__selon__dictionnaire.html#a7a19677a07597e06aebc96d06860fcb2">est_valide</a>(<a class="code" href="classlogs__compilation__widget.html">logs_compilation_widget</a> * vue_logs);</div><div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;};</div><div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;</div><div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;<span class="preprocessor">#endif // FONCTION_AJOUT_ESPACE_SELON_DICTIONNAIRE_H</span></div><div class="ttc" id="classfonction__ajout__espace__selon__dictionnaire_html_a28795cf5e7fc10d39977a6c7b77519f8"><div class="ttname"><a href="classfonction__ajout__espace__selon__dictionnaire.html#a28795cf5e7fc10d39977a6c7b77519f8">fonction_ajout_espace_selon_dictionnaire::initialisation_par_defaut</a></div><div class="ttdeci">void initialisation_par_defaut()</div><div class="ttdoc">Initialisation par défaut de la fonction. </div><div class="ttdef"><b>Definition:</b> <a href="fonction__ajout__espace__selon__dictionnaire_8cpp_source.html#l00040">fonction_ajout_espace_selon_dictionnaire.cpp:40</a></div></div>
+<div class="ttc" id="classfonction__ajout__espace__selon__dictionnaire_html_a5d6cb41a6874ca61d1ab694c34022bc9"><div class="ttname"><a href="classfonction__ajout__espace__selon__dictionnaire.html#a5d6cb41a6874ca61d1ab694c34022bc9">fonction_ajout_espace_selon_dictionnaire::get_valeur_courte</a></div><div class="ttdeci">QString get_valeur_courte() const</div><div class="ttdoc">Retourne la valeur de la fonction en version raccourci. </div><div class="ttdef"><b>Definition:</b> <a href="fonction__ajout__espace__selon__dictionnaire_8cpp_source.html#l00059">fonction_ajout_espace_selon_dictionnaire.cpp:59</a></div></div>
+<div class="ttc" id="classfonction__ajout__espace__selon__dictionnaire_html"><div class="ttname"><a href="classfonction__ajout__espace__selon__dictionnaire.html">fonction_ajout_espace_selon_dictionnaire</a></div><div class="ttdoc">Classe décrivant une fonction filtrant les textes selon un dictionnaire. </div><div class="ttdef"><b>Definition:</b> <a href="fonction__ajout__espace__selon__dictionnaire_8h_source.html#l00018">fonction_ajout_espace_selon_dictionnaire.h:18</a></div></div>
+<div class="ttc" id="classbase__element_html"><div class="ttname"><a href="classbase__element.html">base_element</a></div><div class="ttdoc">Classe décrivant un élément de texte. Cela peut être un caractère, un entier, un booléen ou une chain...</div><div class="ttdef"><b>Definition:</b> <a href="base__element_8h_source.html#l00019">base_element.h:19</a></div></div>
+<div class="ttc" id="classlogs__compilation__widget_html"><div class="ttname"><a href="classlogs__compilation__widget.html">logs_compilation_widget</a></div><div class="ttdoc">Classe décrivant le widget affichant l&amp;#39;ensemble des logs. </div><div class="ttdef"><b>Definition:</b> <a href="logs__compilation__widget_8h_source.html#l00021">logs_compilation_widget.h:21</a></div></div>
+<div class="ttc" id="classcompilateur_html"><div class="ttname"><a href="classcompilateur.html">compilateur</a></div><div class="ttdoc">Classe décrivant un compilateur. Le compilateur a pour rôle d&amp;#39;exécuter un projet. ...</div><div class="ttdef"><b>Definition:</b> <a href="compilateur_8h_source.html#l00032">compilateur.h:32</a></div></div>
+<div class="ttc" id="classfonction__ajout__espace__selon__dictionnaire_html_a651a7e33ca12619a4da33cebe1bae874"><div class="ttname"><a href="classfonction__ajout__espace__selon__dictionnaire.html#a651a7e33ca12619a4da33cebe1bae874">fonction_ajout_espace_selon_dictionnaire::fonction_ajout_espace_selon_dictionnaire</a></div><div class="ttdeci">fonction_ajout_espace_selon_dictionnaire(fonctions_conteneur *conteneur)</div><div class="ttdoc">Constructeur de la classe fonction_ajout_espace_selon_dictionnaire. </div><div class="ttdef"><b>Definition:</b> <a href="fonction__ajout__espace__selon__dictionnaire_8cpp_source.html#l00022">fonction_ajout_espace_selon_dictionnaire.cpp:22</a></div></div>
+<div class="ttc" id="classtextes_html"><div class="ttname"><a href="classtextes.html">textes</a></div><div class="ttdoc">Classe décrivant un ensemble de textes. </div><div class="ttdef"><b>Definition:</b> <a href="textes_8h_source.html#l00018">textes.h:18</a></div></div>
+<div class="ttc" id="classbase__fonction_html"><div class="ttname"><a href="classbase__fonction.html">base_fonction</a></div><div class="ttdoc">Classe décrivant une fonction de conversion d&amp;#39;un texte. </div><div class="ttdef"><b>Definition:</b> <a href="base__fonction_8h_source.html#l00032">base_fonction.h:32</a></div></div>
+<div class="ttc" id="classfonction__ajout__espace__selon__dictionnaire_html_a3be04f880aac9d97dd42dc9fcb6bc85f"><div class="ttname"><a href="classfonction__ajout__espace__selon__dictionnaire.html#a3be04f880aac9d97dd42dc9fcb6bc85f">fonction_ajout_espace_selon_dictionnaire::executer</a></div><div class="ttdeci">void executer(compilateur &amp;compil, textes &amp;textes_in, textes &amp;textes_out)</div><div class="ttdoc">Execute la fonction. </div><div class="ttdef"><b>Definition:</b> <a href="fonction__ajout__espace__selon__dictionnaire_8cpp_source.html#l00070">fonction_ajout_espace_selon_dictionnaire.cpp:70</a></div></div>
+<div class="ttc" id="base__fonction_8h_html"><div class="ttname"><a href="base__fonction_8h.html">base_fonction.h</a></div><div class="ttdoc">Déclaration de la classe base_fonction. </div></div>
+<div class="ttc" id="classfonction__ajout__espace__selon__dictionnaire_html_a7a19677a07597e06aebc96d06860fcb2"><div class="ttname"><a href="classfonction__ajout__espace__selon__dictionnaire.html#a7a19677a07597e06aebc96d06860fcb2">fonction_ajout_espace_selon_dictionnaire::est_valide</a></div><div class="ttdeci">bool est_valide(logs_compilation_widget *vue_logs)</div><div class="ttdoc">Teste si la fonction est valide. </div><div class="ttdef"><b>Definition:</b> <a href="fonction__ajout__espace__selon__dictionnaire_8cpp_source.html#l00050">fonction_ajout_espace_selon_dictionnaire.cpp:50</a></div></div>
+<div class="ttc" id="classfonctions__conteneur_html"><div class="ttname"><a href="classfonctions__conteneur.html">fonctions_conteneur</a></div><div class="ttdoc">Classe décrivant un conteneur de fonctions. </div><div class="ttdef"><b>Definition:</b> <a href="fonctions__conteneur_8h_source.html#l00022">fonctions_conteneur.h:22</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Généré le Jeudi 5 Décembre 2019 09:57:59 pour Emgine par &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.13
+</small></address>
+</body>
+</html>

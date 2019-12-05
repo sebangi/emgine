@@ -37,7 +37,7 @@ explorateur::explorateur(QWidget *parent)
     setDragDropMode(QAbstractItemView::InternalMove);
     setDropIndicatorShown(true);
     setContextMenuPolicy(Qt::CustomContextMenu);
-    setHeaderLabel("Explorateur de projets");
+    setHeaderLabel(tr("Explorateur de projets"));
     QFont font = headerItem()->font(0);
     font.setBold(true);
     font.setPointSize(10);
@@ -615,8 +615,8 @@ void explorateur::ajouter_menu_supprimer_fonction(QMenu & menu, objet_selectionn
     QStyle * style = QApplication::style();
 
     menu.addSeparator();
-    QAction *newAct_supprimer_fonction = new QAction(style->standardIcon( QStyle::SP_DialogCloseButton ), "Supprimer la fonction", this);
-    newAct_supprimer_fonction->setStatusTip("Supprimer la fonction");
+    QAction *newAct_supprimer_fonction = new QAction(style->standardIcon( QStyle::SP_DialogCloseButton ), tr("Supprimer la fonction"), this);
+    newAct_supprimer_fonction->setStatusTip(tr("Supprimer la fonction"));
     connect(newAct_supprimer_fonction, SIGNAL(triggered()), this, SLOT(on_supprimer_fonction()));
     menu.addAction(newAct_supprimer_fonction);
 
@@ -726,9 +726,9 @@ void explorateur::ajouter_menu_ajout_fonction(QMenu & menu, objet_selectionnable
 
     QString fin_texte;
     if ( obj->est_fonction() )
-        fin_texte = tr(" à la suite");
+        fin_texte = " " + tr("à la suite");
     else
-        fin_texte = tr(" en début de liste");
+        fin_texte = " " + tr("en début de liste");
 
     QString texte_source = tr("Ajouter une source") + fin_texte;
     QIcon icon_source;
@@ -771,12 +771,12 @@ void explorateur::ajouter_menu_activation(QMenu & menu, objet_selectionnable * o
     if ( f->est_active() )
     {
         icon_activer.addFile(QString::fromUtf8(":/icons/non_compile.png"), QSize(), QIcon::Normal, QIcon::Off);
-        texte_activer = "Désactiver la fonction";
+        texte_activer = tr("Désactiver la fonction");
     }
     else
     {
         icon_activer.addFile(QString::fromUtf8(":/icons/compile.png"), QSize(), QIcon::Normal, QIcon::Off);
-        texte_activer = "Activer la fonction";
+        texte_activer = tr("Activer la fonction");
     }
     QAction *newAct_activer = new QAction(icon_activer, texte_activer, this);
     newAct_activer->setStatusTip(texte_activer);
@@ -799,18 +799,18 @@ void explorateur::ajouter_menu_verrouillage(QMenu & menu, objet_selectionnable *
     if ( obj->est_verrouille_avec_parent() )
     {
         icon.addFile(QString::fromUtf8(":/icons/deverrouille.png"), QSize(), QIcon::Normal, QIcon::Off);
-        texte = "Déverrouiller";
+        texte = tr("Déverrouiller");
     }
     else
     {
         icon.addFile(QString::fromUtf8(":/icons/verrouille.png"), QSize(), QIcon::Normal, QIcon::Off);
-        texte = "Verrouiller";
+        texte = tr("Verrouiller");
     }
 
     if ( obj->est_fonction() )
-        texte += " la fonction";
+        texte += " " + tr("la fonction");
     else
-        texte += " le projet";
+        texte += " " + tr("le projet");
 
     QAction *newAct = new QAction(icon, texte, this);
     newAct->setStatusTip(texte);
@@ -1075,8 +1075,8 @@ void explorateur::on_supprimer_fonction()
         base_fonction * fonction = (base_fonction*)m_noeud_context->get_objet();
 
         QMessageBox msgBox;
-        msgBox.setWindowTitle("Fonction " + fonction->get_nom());
-        msgBox.setText("Voulez-vous vraiment supprimer la fonction " + fonction->get_nom() + " ?");
+        msgBox.setWindowTitle(tr("Fonction") + " " + fonction->get_nom());
+        msgBox.setText(tr("Voulez-vous vraiment supprimer la fonction") + " " + fonction->get_nom() + " ?");
         msgBox.setStandardButtons(QMessageBox::Yes | QMessageBox::Cancel);
         msgBox.setDefaultButton(QMessageBox::Yes);
         msgBox.setButtonText(QMessageBox::Yes,tr("Oui"));

@@ -1,0 +1,15 @@
+digraph "Graphe hiérarchique des classes"
+{
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="LR";
+  Node0 [label="vector",height=0.2,width=0.4,color="grey75", fillcolor="white", style="filled"];
+  Node0 -> Node0 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node0 [label="ligne",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classligne.html",tooltip="Classe décrivant une ligne, i.e. un tableau de mots. "];
+  Node0 -> Node2 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node2 [label="mot",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classmot.html",tooltip="Classe décrivant un mot, i.e. un tableau d&#39;élément. "];
+  Node0 -> Node3 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node3 [label="texte",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classtexte.html",tooltip="Classe décrivant un texte, i.e. un tableau de ligne. "];
+  Node0 -> Node4 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node4 [label="textes",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classtextes.html",tooltip="Classe décrivant un ensemble de textes. "];
+}

@@ -1,0 +1,14 @@
+digraph "texte::est_rectangulaire_selon_caracteres"
+{
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="LR";
+  Node60 [label="texte::est_rectangulaire\l_selon_caracteres",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black"];
+  Node60 -> Node61 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node61 [label="texte::get_maximum\l_caracteres_dans_ligne",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classtexte.html#aff4e5ce65ca280497cbd309374619c79",tooltip="Retourne le nombre maximum de caracteres dans une ligne. "];
+  Node61 -> Node62 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node62 [label="texte::nb_caracteres",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classtexte.html#ae8511739fb7e8c52a4c300676d6b30e0",tooltip="Retourne le nombre de caractères du texte. "];
+  Node60 -> Node63 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node63 [label="texte::get_minimum\l_caracteres_dans_ligne",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classtexte.html#ac938c2bb7d7839b624bf844f056395b5",tooltip="Retourne le nombre minimum de caracteres dans une ligne. "];
+  Node63 -> Node62 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+}

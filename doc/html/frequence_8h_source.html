@@ -1,0 +1,87 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.13"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Emgine:  Fichier source de entete/element/frequence.h</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">Emgine
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Généré par Doxygen 1.8.13 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'Recherche');
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+$(function() {
+  initMenu('',true,false,'search.php','Recherche');
+  $(document).ready(function() { init_search(); });
+});
+</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_2db5f1c5034b754c69755a32007f81b7.html">entete</a></li><li class="navelem"><a class="el" href="dir_4832fa68ea590285dd7ec4a85118439c.html">element</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle">
+<div class="title">frequence.h</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="frequence_8h.html">Aller à la documentation de ce fichier.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#ifndef FREQUENCE_H</span></div><div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor">#define FREQUENCE_H</span></div><div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;</div><div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="base__element_8h.html">entete/element/base_element.h</a>&quot;</span></div><div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;</div><div class="line"><a name="l00017"></a><span class="lineno"><a class="line" href="classfrequence.html">   17</a></span>&#160;<span class="keyword">class </span><a class="code" href="classfrequence.html">frequence</a></div><div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;{</div><div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;    <span class="keyword">public</span>:</div><div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;        <a class="code" href="classfrequence.html#a80dc14208d4d9a24616ad10a83855103">frequence</a>(<a class="code" href="classbase__element.html">base_element</a> e, <span class="keywordtype">bool</span> force_upper_case);</div><div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;</div><div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;        <span class="keywordtype">bool</span> <a class="code" href="classfrequence.html#adac8a3a7632e69e41e335343c40d2adc">operator&lt;</a>( <span class="keyword">const</span> <a class="code" href="classfrequence.html">frequence</a>&amp; f ) <span class="keyword">const</span>;</div><div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;        <a class="code" href="classbase__element.html">base_element</a> <a class="code" href="classfrequence.html#a52c40f5b25d3e3542d005c4692387bac">get_element</a>() <span class="keyword">const</span>;</div><div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;        <span class="keywordtype">int</span> <a class="code" href="classfrequence.html#a23aa547d9cc520e5f98c258bdbce09e5">get_occurrence</a>() <span class="keyword">const</span>;</div><div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="classfrequence.html#a38ed4b085d677ab783f93e99645a91da">ajouter_occurrence</a>();</div><div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;</div><div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;    <span class="keyword">private</span>:</div><div class="line"><a name="l00029"></a><span class="lineno"><a class="line" href="classfrequence.html#a8fda7baebc78f8fc31da1c3f2b85f1ab">   29</a></span>&#160;        <span class="keywordtype">int</span> <a class="code" href="classfrequence.html#a8fda7baebc78f8fc31da1c3f2b85f1ab">m_occurrence</a>;</div><div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;</div><div class="line"><a name="l00032"></a><span class="lineno"><a class="line" href="classfrequence.html#a12828bf21225533bdbe7ca96ff165f00">   32</a></span>&#160;        <a class="code" href="classbase__element.html">base_element</a> <a class="code" href="classfrequence.html#a12828bf21225533bdbe7ca96ff165f00">m_element</a>;</div><div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;};</div><div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;</div><div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;<span class="preprocessor">#endif // FREQUENCE_H</span></div><div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;</div><div class="ttc" id="classfrequence_html_a52c40f5b25d3e3542d005c4692387bac"><div class="ttname"><a href="classfrequence.html#a52c40f5b25d3e3542d005c4692387bac">frequence::get_element</a></div><div class="ttdeci">base_element get_element() const</div><div class="ttdoc">Accesseur de l&amp;#39;élément compté. </div><div class="ttdef"><b>Definition:</b> <a href="frequence_8cpp_source.html#l00054">frequence.cpp:54</a></div></div>
+<div class="ttc" id="base__element_8h_html"><div class="ttname"><a href="base__element_8h.html">base_element.h</a></div><div class="ttdoc">Fichier de déclaration de la classe base_element. </div></div>
+<div class="ttc" id="classfrequence_html_a38ed4b085d677ab783f93e99645a91da"><div class="ttname"><a href="classfrequence.html#a38ed4b085d677ab783f93e99645a91da">frequence::ajouter_occurrence</a></div><div class="ttdeci">void ajouter_occurrence()</div><div class="ttdoc">Augmente le nombre d&amp;#39;occurrence d&amp;#39;une unité. </div><div class="ttdef"><b>Definition:</b> <a href="frequence_8cpp_source.html#l00045">frequence.cpp:45</a></div></div>
+<div class="ttc" id="classbase__element_html"><div class="ttname"><a href="classbase__element.html">base_element</a></div><div class="ttdoc">Classe décrivant un élément de texte. Cela peut être un caractère, un entier, un booléen ou une chain...</div><div class="ttdef"><b>Definition:</b> <a href="base__element_8h_source.html#l00019">base_element.h:19</a></div></div>
+<div class="ttc" id="classfrequence_html_a12828bf21225533bdbe7ca96ff165f00"><div class="ttname"><a href="classfrequence.html#a12828bf21225533bdbe7ca96ff165f00">frequence::m_element</a></div><div class="ttdeci">base_element m_element</div><div class="ttdoc">L&amp;#39;élément compté. </div><div class="ttdef"><b>Definition:</b> <a href="frequence_8h_source.html#l00032">frequence.h:32</a></div></div>
+<div class="ttc" id="classfrequence_html_adac8a3a7632e69e41e335343c40d2adc"><div class="ttname"><a href="classfrequence.html#adac8a3a7632e69e41e335343c40d2adc">frequence::operator&lt;</a></div><div class="ttdeci">bool operator&lt;(const frequence &amp;f) const</div><div class="ttdoc">Surcharge de l&amp;#39;opérateur d&amp;#39;infériorité. </div><div class="ttdef"><b>Definition:</b> <a href="frequence_8cpp_source.html#l00025">frequence.cpp:25</a></div></div>
+<div class="ttc" id="classfrequence_html"><div class="ttname"><a href="classfrequence.html">frequence</a></div><div class="ttdoc">Classe décrivant la fréquence d&amp;#39;un élément. </div><div class="ttdef"><b>Definition:</b> <a href="frequence_8h_source.html#l00017">frequence.h:17</a></div></div>
+<div class="ttc" id="classfrequence_html_a8fda7baebc78f8fc31da1c3f2b85f1ab"><div class="ttname"><a href="classfrequence.html#a8fda7baebc78f8fc31da1c3f2b85f1ab">frequence::m_occurrence</a></div><div class="ttdeci">int m_occurrence</div><div class="ttdoc">Le nombre d&amp;#39;occurrence de l&amp;#39;élément. </div><div class="ttdef"><b>Definition:</b> <a href="frequence_8h_source.html#l00029">frequence.h:29</a></div></div>
+<div class="ttc" id="classfrequence_html_a23aa547d9cc520e5f98c258bdbce09e5"><div class="ttname"><a href="classfrequence.html#a23aa547d9cc520e5f98c258bdbce09e5">frequence::get_occurrence</a></div><div class="ttdeci">int get_occurrence() const</div><div class="ttdoc">Accesseur du nombre d&amp;#39;occurrence. </div><div class="ttdef"><b>Definition:</b> <a href="frequence_8cpp_source.html#l00037">frequence.cpp:37</a></div></div>
+<div class="ttc" id="classfrequence_html_a80dc14208d4d9a24616ad10a83855103"><div class="ttname"><a href="classfrequence.html#a80dc14208d4d9a24616ad10a83855103">frequence::frequence</a></div><div class="ttdeci">frequence(base_element e, bool force_upper_case)</div><div class="ttdoc">Constructeur de la classe frequence. </div><div class="ttdef"><b>Definition:</b> <a href="frequence_8cpp_source.html#l00014">frequence.cpp:14</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Généré le Jeudi 5 Décembre 2019 09:57:59 pour Emgine par &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.13
+</small></address>
+</body>
+</html>

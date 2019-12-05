@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['explorateur',['explorateur',['../classexplorateur.html',1,'']]]
+  ['dictionnaire',['dictionnaire',['../classdictionnaire.html',1,'']]]
 ];

@@ -28,8 +28,8 @@ fonction_anagramme::fonction_anagramme( fonctions_conteneur * conteneur )
 
     ajouter_parametre( PARAM_DICTIONNAIRE,
                        new base_parametre( this,
-                                           "Dictionnaire",
-                                           "Dictionnaire utilisé.",
+                                           base_parametre::tr("Dictionnaire"),
+                                           base_parametre::tr("Dictionnaire utilisé."),
                                            base_parametre::CONTENU_PARAM_VIDE_IMPOSSIBLE,
                                            base_parametre::CONFIGURATION_INVISIBLE,
                                            base_parametre::ALGO_AUCUN) );
@@ -59,7 +59,7 @@ bool fonction_anagramme::est_valide(logs_compilation_widget * vue_logs)
  */
 QString fonction_anagramme::get_valeur_courte() const
 {
-    return "[Anagramme]";
+    return base_fonction::tr("[Anagramme]");
 }
 
 /** --------------------------------------------------------------------------------------

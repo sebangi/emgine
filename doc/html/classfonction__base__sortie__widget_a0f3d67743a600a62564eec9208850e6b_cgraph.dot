@@ -1,0 +1,15 @@
+digraph "fonction_base_sortie_widget::on_externe_fbs_textes_modifie"
+{
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="LR";
+  Node22 [label="fonction_base_sortie\l_widget::on_externe_fbs\l_textes_modifie",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black"];
+  Node22 -> Node23 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node23 [label="fonction_base_sortie\l_widget::creer_liste_texte",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classfonction__base__sortie__widget.html#a2edf3f178d90f7112d60aedfd5e96692",tooltip="Affiche les textes. "];
+  Node23 -> Node24 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node24 [label="base_fonction_widget\l::init_nom",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classbase__fonction__widget.html#af9f4195c6345ee8a1b77ec5edd2bcf36",tooltip="Initialise le nom du widget. "];
+  Node24 -> Node25 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node25 [label="base_fonction_widget\l::get_nom",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classbase__fonction__widget.html#a49158595d1376bdf84a712ff18cb00b2",tooltip="Fonction retournant le nom de la fonction à afficher. "];
+  Node25 -> Node26 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node26 [label="base_fonction::get_nom",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classbase__fonction.html#aa184addbc0e71b3fd255b2f0b9e7c99e",tooltip="Accesseur du nom de la fonction. "];
+}

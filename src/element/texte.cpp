@@ -134,10 +134,10 @@ QString texte::to_string_lisible() const
  */
 QString texte::get_string_configuration() const
 {
-    QString result = "Configuration : \n";
+    QString result = QObject::tr("Configuration") + " : \n";
 
     if( m_string_configuration.isEmpty() )
-        result += "\taucune\n" ;
+        result += "\t" + QObject::tr("aucune") + "\n" ;
     else
         result += m_string_configuration;
 
@@ -150,9 +150,9 @@ QString texte::get_string_configuration() const
  */
 QString texte::get_string_information_taille() const
 {
-    return QString( "Nombre de lignes : " + QString::number( nb_lignes() ) + "\n" +
-                    "Nombre de mots : " + QString::number( nb_mots() ) + "\n" +
-                    "Nombre de caracteres : " + QString::number( nb_caracteres() ) + "\n" );
+    return QString( QObject::tr("Nombre de lignes") + " : " + QString::number( nb_lignes() ) + "\n" +
+                    QObject::tr("Nombre de mots") + " : " + QString::number( nb_mots() ) + "\n" +
+                    QObject::tr("Nombre de caracteres") + " : " + QString::number( nb_caracteres() ) + "\n" );
 }
 
 /** --------------------------------------------------------------------------------------

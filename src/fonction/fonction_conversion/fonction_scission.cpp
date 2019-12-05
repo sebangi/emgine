@@ -30,29 +30,29 @@ fonction_scission::fonction_scission( fonctions_conteneur * conteneur )
 
     ajouter_parametre( PARAM_CARACTERES,
                        new base_parametre( this,
-                                           "Scinder le contenu des caractères",
-                                           "Indique s'il faut scinder le contenu des caractères.",
+                                           base_parametre::tr("Scinder le contenu des caractères"),
+                                           base_parametre::tr("Indique s'il faut scinder le contenu des caractères."),
                                            base_parametre::CONTENU_PARAM_VIDE_IMPOSSIBLE,
                                            base_parametre::CONFIGURATION_INVISIBLE,
                                            base_parametre::ALGO_IPL) );
     ajouter_parametre( PARAM_MOTS,
                        new base_parametre( this,
-                                           "Scinder les caractères",
-                                           "Indique si chaque caractère doit devenir un mot.",
+                                           base_parametre::tr("Scinder les caractères"),
+                                           base_parametre::tr("Indique si chaque caractère doit devenir un mot."),
                                            base_parametre::CONTENU_PARAM_VIDE_IMPOSSIBLE,
                                            base_parametre::CONFIGURATION_INVISIBLE,
                                            base_parametre::ALGO_IPL) );
     ajouter_parametre( PARAM_LIGNES,
                        new base_parametre( this,
-                                           "Scinder les mots",
-                                           "Indique si chaque mot doit devenir une une ligne.",
+                                           base_parametre::tr("Scinder les mots"),
+                                           base_parametre::tr("Indique si chaque mot doit devenir une une ligne."),
                                            base_parametre::CONTENU_PARAM_VIDE_IMPOSSIBLE,
                                            base_parametre::CONFIGURATION_INVISIBLE,
                                            base_parametre::ALGO_IPL) );
     ajouter_parametre( PARAM_TEXTES,
                        new base_parametre( this,
-                                           "Scinder les lignes",
-                                           "Indique si chaque ligne doit devenir un texte.",
+                                           base_parametre::tr("Scinder les lignes"),
+                                           base_parametre::tr("Indique si chaque ligne doit devenir un texte."),
                                            base_parametre::CONTENU_PARAM_VIDE_IMPOSSIBLE,
                                            base_parametre::CONFIGURATION_INVISIBLE,
                                            base_parametre::ALGO_IPL) );
@@ -74,7 +74,7 @@ bool fonction_scission::est_valide(logs_compilation_widget * vue_logs)
  */
 QString fonction_scission::get_valeur_courte() const
 {
-    return "[scission]";
+    return base_fonction::tr("[scission]");
 }
 
 /** --------------------------------------------------------------------------------------

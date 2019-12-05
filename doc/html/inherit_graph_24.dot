@@ -1,0 +1,11 @@
+digraph "Graphe hiérarchique des classes"
+{
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="LR";
+  Node85 [label="QDialog",height=0.2,width=0.4,color="grey75", fillcolor="white", style="filled"];
+  Node85 -> Node0 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node0 [label="parametre_aide_message_box",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classparametre__aide__message__box.html",tooltip="Classe décrivant une fenêtre affichant l&#39;éaide d&#39;un paramètre. "];
+  Node85 -> Node87 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node87 [label="selecteur_fonction\l_dialog",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classselecteur__fonction__dialog.html",tooltip="Classe décrivant une fenêtre de dialog permettant de sélectionner une fonction, puis de l&#39;instancier..."];
+}

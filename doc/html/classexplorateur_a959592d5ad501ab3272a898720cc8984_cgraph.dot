@@ -1,0 +1,30 @@
+digraph "explorateur::ajouter_menu_verrouillage"
+{
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="LR";
+  Node419 [label="explorateur::ajouter\l_menu_verrouillage",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black"];
+  Node419 -> Node420 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node420 [label="objet_selectionnable\l::est_verrouille_avec\l_parent",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classobjet__selectionnable.html#a001c4584a6430689f478544ec560fb7e",tooltip="Indique si l&#39;objet est verrouillé en considérant également ses parents. "];
+  Node420 -> Node421 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node421 [label="objet_selectionnable\l::est_verrouille",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classobjet__selectionnable.html#ae9c29950b9e5b582338ac659ecc3e3d6",tooltip="Indique si l&#39;objet est vérrouillé, i.e. non éditable. "];
+  Node420 -> Node420 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node419 -> Node422 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node422 [label="objet_selectionnable\l::est_fonction",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classobjet__selectionnable.html#a8a235fc5211fbec0347ebe2342e99fa5",tooltip="Indique si l&#39;objet est une fonction. "];
+  Node419 -> Node423 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node423 [label="explorateur::on_verrouiller\l_selectionnable",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classexplorateur.html#add77f5981057fc14b9bbac37c251a467",tooltip="Fonction appelée lors d&#39;une demande de verrouillage d&#39;un objet. "];
+  Node423 -> Node424 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node424 [label="base_noeud::get_objet",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classbase__noeud.html#a762c999077b247ebf1d8c6dd83313ffd",tooltip="Retourne l&#39;objet sélectionnable associé au noeud. "];
+  Node423 -> Node425 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node425 [label="objet_selectionnable\l::inverser_verrouillage",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classobjet__selectionnable.html#a028ac895965858e0e8e8e2cc25e8323c",tooltip="Inverse l&#39;état de verrouillage. "];
+  Node425 -> Node426 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node426 [label="objet_selectionnable\l::set_verrouille",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classobjet__selectionnable.html#a5d39343f43293805a0b60e8520687d87",tooltip="Initialise l&#39;état de verrouillage de l&#39;objet. "];
+  Node426 -> Node427 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node427 [label="objet_selectionnable\l::modifier",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classobjet__selectionnable.html#a9f76b8e89231a79c3fc840af874bd868",tooltip="Modifie l&#39;objet. "];
+  Node427 -> Node428 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node428 [label="objet_selectionnable\l::est_projet",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classobjet__selectionnable.html#a49ea1a29523e46f099896477a2b43eaa",tooltip="Indique si l&#39;objet est un projet. "];
+  Node427 -> Node427 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node419 -> Node429 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node429 [label="objet_selectionnable\l::parents_verrouilles",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classobjet__selectionnable.html#ad9357af8b3471529814165378c6ce13d",tooltip="Indique si le paret de l&#39;objet est verrouillé. "];
+  Node429 -> Node420 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+}

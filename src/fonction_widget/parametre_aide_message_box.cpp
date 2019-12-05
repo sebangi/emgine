@@ -28,13 +28,13 @@ parametre_aide_message_box::parametre_aide_message_box(QWidget *parent, const ba
  */
 void parametre_aide_message_box::init()
 {
-    setWindowTitle("Fonction " + m_parametre->get_fonction_parent()->get_nom());
+    setWindowTitle(tr("Fonction") + " " + m_parametre->get_fonction_parent()->get_nom());
 
     QVBoxLayout * central_layout = new QVBoxLayout();
     central_layout->setMargin(5);
     central_layout->setSpacing(0);
 
-    QLabel * item_nom = new QLabel("Paramètre " + m_parametre->get_nom());
+    QLabel * item_nom = new QLabel(tr("Paramètre") + " " + m_parametre->get_nom());
     item_nom->setObjectName( "AideNomParametre" );
     central_layout->addWidget( item_nom );
 
@@ -42,7 +42,7 @@ void parametre_aide_message_box::init()
     item_aide->setObjectName( "AideParametre" );
     central_layout->addWidget( item_aide );
 
-    QLabel * item_algo = new QLabel("Algorithme : " + m_parametre->get_aide_algorithme());
+    QLabel * item_algo = new QLabel(tr("Algorithme") + " : " + m_parametre->get_aide_algorithme());
     item_algo->setObjectName( "AideAlgoParametre" );
     central_layout->addWidget( item_algo );
 

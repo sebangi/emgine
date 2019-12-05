@@ -174,36 +174,36 @@ void fenetre_principale::init_widgets()
     QIcon icone_source;
     icone_source.addFile(QString::fromUtf8(":/icons/ajout_source.png"), QSize(), QIcon::Normal, QIcon::Off);
     m_toolbar_bouton_ajout_fonction_source->setIcon(icone_source);
-    m_toolbar_bouton_ajout_fonction_source->setText("Source");
+    m_toolbar_bouton_ajout_fonction_source->setText(tr("Source"));
     m_toolbar_bouton_ajout_fonction_source->setShortcut( QKeySequence("Alt+A") );
 
     QIcon icone_conversion;
     icone_conversion.addFile(QString::fromUtf8(":/icons/ajout_conversion.png"), QSize(), QIcon::Normal, QIcon::Off);
     m_toolbar_bouton_ajout_fonction_conversion->setIcon(icone_conversion);
-    m_toolbar_bouton_ajout_fonction_conversion->setText("Conversion");
+    m_toolbar_bouton_ajout_fonction_conversion->setText(tr("Conversion"));
     m_toolbar_bouton_ajout_fonction_conversion->setShortcut( QKeySequence("Alt+Z") );
 
     QIcon icone_sortie;
     icone_sortie.addFile(QString::fromUtf8(":/icons/ajout_sortie.png"), QSize(), QIcon::Normal, QIcon::Off);
     m_toolbar_bouton_ajout_fonction_sortie->setIcon(icone_sortie);
-    m_toolbar_bouton_ajout_fonction_sortie->setText("Résultat");
+    m_toolbar_bouton_ajout_fonction_sortie->setText(tr("Résultat"));
     m_toolbar_bouton_ajout_fonction_sortie->setShortcut( QKeySequence("Alt+E") );
 
     QIcon icone_nouveau_projet;
     icone_nouveau_projet.addFile(QString::fromUtf8(":/icons/nouveau_projet.png"), QSize(), QIcon::Normal, QIcon::Off);
     m_toolbar_bouton_nouveau_projet->setIcon(icone_nouveau_projet);
-    m_toolbar_bouton_nouveau_projet->setText("Nouveau projet");
+    m_toolbar_bouton_nouveau_projet->setText(tr("Nouveau projet"));
 
     QIcon icone_projet;
     icone_projet.addFile(QString::fromUtf8(":/icons/projet.png"), QSize(), QIcon::Normal, QIcon::Off);
     m_toolbar_bouton_ouvrir_projet->setIcon(icone_projet);
-    m_toolbar_bouton_ouvrir_projet->setText("Ouvrir un projet");
+    m_toolbar_bouton_ouvrir_projet->setText(tr("Ouvrir un projet"));
 
     m_toolbar_bouton_sauvegarder_projet->setIcon(style->standardIcon( QStyle::SP_DialogSaveButton ));
     m_toolbar_bouton_sauvegarder_projet->setText("Enregistrer");
     m_toolbar_bouton_sauvegarder_projet->setShortcut( QKeySequence("Ctrl+S") );
     m_toolbar_bouton_sauvegarder_projet_sous->setIcon(style->standardIcon( QStyle::SP_DialogSaveButton ));
-    m_toolbar_bouton_sauvegarder_projet_sous->setText("Enregistrer sous");
+    m_toolbar_bouton_sauvegarder_projet_sous->setText(tr("Enregistrer sous"));
 
     connect( m_toolbar_bouton_ajout_fonction_source, SIGNAL(released()), this, SLOT(on_ajouter_fonction_source_click()));
     connect( m_toolbar_bouton_ajout_fonction_conversion, SIGNAL(released()), this, SLOT(on_ajouter_fonction_conversion_click()));
@@ -231,7 +231,7 @@ void fenetre_principale::init_widgets()
     QIcon icon_compile;
     icon_compile.addFile(QString::fromUtf8(":/icons/grand_compile.png"), QSize(), QIcon::Normal, QIcon::Off);
     m_toolbar_bouton_executer->setIcon(icon_compile);
-    m_toolbar_bouton_executer->setText("Exécuter");
+    m_toolbar_bouton_executer->setText(tr("Exécuter"));
     m_toolbar_bouton_executer->setShortcut( QKeySequence("Ctrl+R") );
 }
 
@@ -371,7 +371,7 @@ bool fenetre_principale::on_enregistrer_projet_sous(projet * p)
         dir = p->get_dossier();
 
     QString nom_fichier = d.getSaveFileName( this, tr("Sauvegarder le projet"), dir,
-                                             tr("projet Decode (*.emg);;"));
+                                             tr("projet Emgine") + " (*.emg);;");
 
     if (nom_fichier.isEmpty())
         return false;
@@ -437,8 +437,8 @@ projet * fenetre_principale::get_projet_selon_nom_fichier(const QString &nom_fic
 void fenetre_principale::ouvrir_projet()
 {
     QString nom_fichier =
-            QFileDialog::getOpenFileName( this, tr("Ouvrir un projet Decode"),
-                                          "mes_projets", tr("projet Decode (*.emg);;"));
+            QFileDialog::getOpenFileName( this, tr("Ouvrir un projet Emgine"),
+                                          "mes_projets", tr("projet Emgine") +" (*.emg);;");
 
     if (nom_fichier.isEmpty())
         return;
@@ -447,7 +447,7 @@ void fenetre_principale::ouvrir_projet()
 
     if ( existant != NULL )
     {
-        QMessageBox::information(this, tr("Ouverture de projet"), "Le projet est déjà ouvert !" );
+        QMessageBox::information(this, tr("Ouverture de projet"), tr("Le projet est déjà ouvert !") );
         existant->selectionner();
     }
     else
@@ -494,7 +494,7 @@ void fenetre_principale::creer_projet(const texte &t)
 {
     projet * p = new projet();
 
-    p->set_nom("Nouveau projet");
+    p->set_nom(tr("Nouveau projet"));
     ajouter_projet(p);
 
     ajouter_fonction( p, NULL, new fonction_source_texte(p, t.to_string_lisible()), true );
@@ -778,8 +778,8 @@ void fenetre_principale::on_externe_fermeture_projet(projet *p)
             fermer = false;
 
             QMessageBox msgBox;
-            msgBox.setText("Le projet n'est pas enregistré.");
-            msgBox.setInformativeText("Souhaitez-vous enregistrer les changements ?");
+            msgBox.setText(tr("Le projet n'est pas enregistré."));
+            msgBox.setInformativeText(tr("Souhaitez-vous enregistrer les changements ?"));
             msgBox.setStandardButtons(QMessageBox::Save | QMessageBox::Discard | QMessageBox::Cancel);
             msgBox.setDefaultButton(QMessageBox::Save);
             int ret = msgBox.exec();
@@ -822,7 +822,7 @@ void fenetre_principale::on_externe_dupliquer_projet(projet *p)
     XmlWriter.writeEndDocument();
 
     QXmlStreamReader xmlReader(copie);
-    QString nom = p->get_nom() + "[copie]";
+    QString nom = p->get_nom() + "[" + tr("copie") + "]";
     creer_projet(xmlReader, nom );
 }
 

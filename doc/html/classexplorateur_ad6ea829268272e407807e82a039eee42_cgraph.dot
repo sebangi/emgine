@@ -1,0 +1,35 @@
+digraph "explorateur::ajouter_menu_ajout_fonction"
+{
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="LR";
+  Node127 [label="explorateur::ajouter\l_menu_ajout_fonction",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black"];
+  Node127 -> Node128 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node128 [label="objet_selectionnable\l::est_conteneur",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classobjet__selectionnable.html#a2c6b5b342b5f3a9f48893f793f935e0f",tooltip="Indique si l&#39;objet est un conteneur. "];
+  Node127 -> Node129 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node129 [label="objet_selectionnable\l::est_verrouille_avec\l_parent",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classobjet__selectionnable.html#a001c4584a6430689f478544ec560fb7e",tooltip="Indique si l&#39;objet est verrouillé en considérant également ses parents. "];
+  Node129 -> Node130 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node130 [label="objet_selectionnable\l::est_verrouille",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classobjet__selectionnable.html#ae9c29950b9e5b582338ac659ecc3e3d6",tooltip="Indique si l&#39;objet est vérrouillé, i.e. non éditable. "];
+  Node129 -> Node129 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node127 -> Node131 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node131 [label="objet_selectionnable\l::est_fonction",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classobjet__selectionnable.html#a8a235fc5211fbec0347ebe2342e99fa5",tooltip="Indique si l&#39;objet est une fonction. "];
+  Node127 -> Node132 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node132 [label="objet_selectionnable\l::parents_verrouilles",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classobjet__selectionnable.html#ad9357af8b3471529814165378c6ce13d",tooltip="Indique si le paret de l&#39;objet est verrouillé. "];
+  Node132 -> Node129 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node127 -> Node133 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node133 [label="explorateur::on_ajout\l_source",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classexplorateur.html#a9f87ebe9efe7486d6e781556238feb4e",tooltip="Fonction appelée lors d&#39;une demande d&#39;ajout de fonction source. "];
+  Node133 -> Node134 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node134 [label="base_noeud::get_objet",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classbase__noeud.html#a762c999077b247ebf1d8c6dd83313ffd",tooltip="Retourne l&#39;objet sélectionnable associé au noeud. "];
+  Node133 -> Node135 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node135 [label="objet_selectionnable\l::get_conteneur",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classobjet__selectionnable.html#ab809d020155b7fec48ff3adbe15c9b65",tooltip="Retourne le fonctions_conteneur le plus proche : l&#39;objet lui-même s&#39;il est un conteneur, ou le conteneur parent sinon. "];
+  Node135 -> Node128 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node135 -> Node135 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node127 -> Node136 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node136 [label="explorateur::on_ajout\l_fonction_conversion",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classexplorateur.html#a513ccd6238459ae6982973a5b671a63b",tooltip="Fonction appelée lors d&#39;une demande d&#39;ajout de fonction de conversion. "];
+  Node136 -> Node134 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node136 -> Node135 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node127 -> Node137 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node137 [label="explorateur::on_ajout\l_sortie",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classexplorateur.html#aad600593e3982f73bd876a32cc4b8381",tooltip="Fonction appelée lors d&#39;une demande d&#39;ajout de fonction de sortie. "];
+  Node137 -> Node134 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node137 -> Node135 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+}

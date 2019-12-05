@@ -24,7 +24,7 @@
  * \param type Le type de la fonction.
  */
 base_fonction::base_fonction(fonctions_conteneur * parent, type_fonction type)
-    : objet_selectionnable(parent), m_nom("fonction inconnue"), m_type(type), m_id(fonction_indefini),
+    : objet_selectionnable(parent), m_nom(tr("fonction inconnue")), m_type(type), m_id(fonction_indefini),
       m_conteneur(parent), m_niveau_visibilite(1), m_max_niveau_visibilite(1),
       m_niveau_visibilite_avant_desactivation(1)
 {
@@ -63,7 +63,7 @@ QString base_fonction::get_info_bulle() const
 
     if ( ! m_parametres.empty() )
     {
-        resultat += "\n\nParamètre";
+        resultat += "\n\n" + tr("Paramètre");
         if ( m_parametres.size() > 1 )
             resultat += "s";
         resultat += " :";
@@ -126,7 +126,7 @@ base_fonction_widget *base_fonction::generer_fonction_widget()
 */
 QString base_fonction::get_nom() const
 {
-    return m_nom;
+    return tr( qUtf8Printable(m_nom) );
 }
 
 /** --------------------------------------------------------------------------------------
@@ -504,20 +504,21 @@ void base_fonction::algo_IPL_iteration_par_ligne
     if ( test_vide && t_param.empty() )
         compil.get_vue_logs()->ajouter_log
                 ( log_compilation( log_compilation::LOG_WARNING, (base_fonction*)this,
-                                   "Le paramètre " + m_parametres[id_param]->get_nom() + " est vide.") );
+                                   tr("Le paramètre") + " " + m_parametres[id_param]->get_nom() + " " + tr("est vide.")) );
     else
         for ( textes::const_iterator it_t = t_param.begin(); it_t != t_param.end(); ++it_t)
             if ( test_vide && it_t->empty() )
                 compil.get_vue_logs()->ajouter_log
                         ( log_compilation( log_compilation::LOG_WARNING, (base_fonction*)this,
-                                           "Le paramètre " + m_parametres[id_param]->get_nom() + " est vide.") );
+                                           tr("Le paramètre") + " " + m_parametres[id_param]->get_nom() + " " + tr("est vide.")) );
             else
             {
                 for ( texte::const_iterator it_l = it_t->begin(); it_l != it_t->end(); ++it_l)
                     if ( test_vide && it_l->empty() )
                         compil.get_vue_logs()->ajouter_log
                                 ( log_compilation( log_compilation::LOG_WARNING, (base_fonction*)this,
-                                                   "Le paramètre " + m_parametres[id_param]->get_nom() + " est vide sur une ligne.") );
+                                                   tr("Le paramètre") + " " + m_parametres[id_param]->get_nom() +
+                                                   " " + tr("est vide sur une ligne.")) );
                     else
                     {
                         appel = true;
@@ -637,8 +638,8 @@ void base_fonction::IPL_caractere_suivant_dans_ligne(type_id_parametre id_param)
  */
 void base_fonction::callback_param_1(compilateur &compil, textes & textes_in, textes &textes_out)
 {
-    std::cout << "base_fonction::callback_param_1" << std::endl;
-    std::cout << "Erreur : on ne doit pas passer dans cette méthode virtuelle." << std::endl;
+    std::cout << tr("base_fonction::callback_param_1").toStdString() << std::endl;
+    std::cout << tr("Erreur : on ne doit pas passer dans cette méthode virtuelle.").toStdString() << std::endl;
 }
 
 /** --------------------------------------------------------------------------------------
@@ -649,8 +650,8 @@ void base_fonction::callback_param_1(compilateur &compil, textes & textes_in, te
  */
 void base_fonction::callback_param_2(compilateur &compil, textes & textes_in, textes &textes_out)
 {
-    std::cout << "base_fonction::callback_param_2" << std::endl;
-    std::cout << "Erreur : on ne doit pas passer dans cette méthode virtuelle." << std::endl;
+    std::cout << tr("base_fonction::callback_param_2").toStdString() << std::endl;
+    std::cout << tr("Erreur : on ne doit pas passer dans cette méthode virtuelle.").toStdString() << std::endl;
 }
 
 /** --------------------------------------------------------------------------------------
@@ -661,8 +662,8 @@ void base_fonction::callback_param_2(compilateur &compil, textes & textes_in, te
  */
 void base_fonction::callback_param_3(compilateur &compil, textes & textes_in, textes &textes_out)
 {
-    std::cout << "base_fonction::callback_param_3" << std::endl;
-    std::cout << "Erreur : on ne doit pas passer dans cette méthode virtuelle." << std::endl;
+    std::cout << tr("base_fonction::callback_param_3").toStdString() << std::endl;
+    std::cout << tr("Erreur : on ne doit pas passer dans cette méthode virtuelle.").toStdString() << std::endl;
 }
 
 /** --------------------------------------------------------------------------------------
@@ -673,8 +674,8 @@ void base_fonction::callback_param_3(compilateur &compil, textes & textes_in, te
  */
 void base_fonction::callback_param_4(compilateur &compil, textes & textes_in, textes &textes_out)
 {
-    std::cout << "base_fonction::callback_param_4" << std::endl;
-    std::cout << "Erreur : on ne doit pas passer dans cette méthode virtuelle." << std::endl;
+    std::cout << tr("base_fonction::callback_param_4").toStdString() << std::endl;
+    std::cout << tr("Erreur : on ne doit pas passer dans cette méthode virtuelle.").toStdString() << std::endl;
 }
 
 /** --------------------------------------------------------------------------------------
@@ -685,6 +686,6 @@ void base_fonction::callback_param_4(compilateur &compil, textes & textes_in, te
  */
 void base_fonction::execution_specifique(compilateur &compil, textes & textes_in, textes &textes_out)
 {
-    std::cout << "base_fonction::execution_specifique" << std::endl;
-    std::cout << "Erreur : on ne doit pas passer dans cette méthode virtuelle." << std::endl;
+    std::cout << tr("base_fonction::execution_specifique").toStdString() << std::endl;
+    std::cout << tr("Erreur : on ne doit pas passer dans cette méthode virtuelle.").toStdString() << std::endl;
 }

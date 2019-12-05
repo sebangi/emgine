@@ -36,8 +36,8 @@ fonction_inversion_en_diagonale::fonction_inversion_en_diagonale( fonctions_cont
 
     ajouter_parametre( PARAM_ELEMENTS,
                        new parametre_choix( this,
-                                            "Éléments à transposer",
-                                            "Indique s'il faut transposer sur les mots ou sur les caractères.",
+                                            base_parametre::tr("Éléments à transposer"),
+                                            base_parametre::tr("Indique s'il faut transposer sur les mots ou sur les caractères."),
                                             base_parametre::CONTENU_PARAM_VIDE_IMPOSSIBLE,
                                             base_parametre::CONFIGURATION_INVISIBLE,
                                             base_parametre::ALGO_IPL,
@@ -46,8 +46,8 @@ fonction_inversion_en_diagonale::fonction_inversion_en_diagonale( fonctions_cont
 
     ajouter_parametre( PARAM_ORIENTATION,
                        new parametre_choix( this,
-                                            "Orientation de l'inversion",
-                                            "Indique suivant quelle diagonale inverser.",
+                                            base_parametre::tr("Orientation de l'inversion"),
+                                            base_parametre::tr("Indique suivant quelle diagonale inverser."),
                                             base_parametre::CONTENU_PARAM_VIDE_IMPOSSIBLE,
                                             base_parametre::CONFIGURATION_INVISIBLE,
                                             base_parametre::ALGO_IPL,
@@ -71,7 +71,7 @@ bool fonction_inversion_en_diagonale::est_valide(logs_compilation_widget * vue_l
  */
 QString fonction_inversion_en_diagonale::get_valeur_courte() const
 {
-    return "[inversion_en_diagonale]";
+    return base_fonction::tr("[inversion_en_diagonale]");
 }
 
 /** --------------------------------------------------------------------------------------

@@ -1,0 +1,7 @@
+digraph "Graphe hiérarchique des classes"
+{
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="LR";
+  Node0 [label="base_element",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classbase__element.html",tooltip="Classe décrivant un élément de texte. Cela peut être un caractère, un entier, un booléen ou une chain..."];
+}

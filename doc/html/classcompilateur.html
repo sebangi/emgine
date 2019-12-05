@@ -60,6 +60,7 @@ $(function() {
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Fonctions membres publiques</a> &#124;
+<a href="#pri-types">Types privés</a> &#124;
 <a href="#pri-methods">Fonctions membres privées</a> &#124;
 <a href="#pri-attribs">Attributs privés</a> &#124;
 <a href="classcompilateur-members.html">Liste de tous les membres</a>  </div>
@@ -102,6 +103,18 @@ Fonctions membres publiques</h2></td></tr>
 <tr class="memitem:a1b90b920c98f81b88171bda33967ffac"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classconfiguration.html">configuration</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcompilateur.html#a1b90b920c98f81b88171bda33967ffac">get_configuration</a> () const</td></tr>
 <tr class="memdesc:a1b90b920c98f81b88171bda33967ffac"><td class="mdescLeft">&#160;</td><td class="mdescRight">Accesseur de la configuration courante.  <a href="#a1b90b920c98f81b88171bda33967ffac">Plus de détails...</a><br /></td></tr>
 <tr class="separator:a1b90b920c98f81b88171bda33967ffac"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adcc703c29d40c41a3db5457db1c5fe6d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcompilateur.html#adcc703c29d40c41a3db5457db1c5fe6d">ajouter_dictionnaire</a> (const QString &amp;nom_fichier)</td></tr>
+<tr class="memdesc:adcc703c29d40c41a3db5457db1c5fe6d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Ajoute un dictionnaire.  <a href="#adcc703c29d40c41a3db5457db1c5fe6d">Plus de détails...</a><br /></td></tr>
+<tr class="separator:adcc703c29d40c41a3db5457db1c5fe6d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6fe40946fe454b0569e544285d457e80"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="classdictionnaire.html">dictionnaire</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcompilateur.html#a6fe40946fe454b0569e544285d457e80">get_dictionnaire</a> (const QString &amp;nom_fichier) const</td></tr>
+<tr class="memdesc:a6fe40946fe454b0569e544285d457e80"><td class="mdescLeft">&#160;</td><td class="mdescRight">Accesseur d'un dictionnaire.  <a href="#a6fe40946fe454b0569e544285d457e80">Plus de détails...</a><br /></td></tr>
+<tr class="separator:a6fe40946fe454b0569e544285d457e80"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-types"></a>
+Types privés</h2></td></tr>
+<tr class="memitem:a356f64cf35b334af1f81f589e3a8bf92"><td class="memItemLeft" align="right" valign="top"><a id="a356f64cf35b334af1f81f589e3a8bf92"></a>
+typedef std::map&lt; QString, <a class="el" href="classdictionnaire.html">dictionnaire</a> * &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>map_dictionnaire</b></td></tr>
+<tr class="separator:a356f64cf35b334af1f81f589e3a8bf92"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-methods"></a>
 Fonctions membres privées</h2></td></tr>
@@ -142,12 +155,16 @@ QStack&lt; <a class="el" href="classtextes.html">textes</a> &gt;&#160;</td><td c
 <a class="el" href="classconfiguration.html">configuration</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcompilateur.html#aed817791f876d6cde3e4683b21d20d7d">m_configuration</a></td></tr>
 <tr class="memdesc:aed817791f876d6cde3e4683b21d20d7d"><td class="mdescLeft">&#160;</td><td class="mdescRight">La configuration en cours. <br /></td></tr>
 <tr class="separator:aed817791f876d6cde3e4683b21d20d7d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9de00965b3536aff63f77aed5b4d1163"><td class="memItemLeft" align="right" valign="top"><a id="a9de00965b3536aff63f77aed5b4d1163"></a>
+map_dictionnaire&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcompilateur.html#a9de00965b3536aff63f77aed5b4d1163">m_dictionnaires</a></td></tr>
+<tr class="memdesc:a9de00965b3536aff63f77aed5b4d1163"><td class="mdescLeft">&#160;</td><td class="mdescRight">Les dictionnaires. <br /></td></tr>
+<tr class="separator:a9de00965b3536aff63f77aed5b4d1163"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Description détaillée</h2>
 <div class="textblock"><p>Classe décrivant un compilateur. Le compilateur a pour rôle d'exécuter un projet. </p>
 <dl class="section author"><dt>Auteur</dt><dd>Sébastien Angibaud </dd></dl>
 
-<p class="definition">Définition à la ligne <a class="el" href="compilateur_8h_source.html#l00031">31</a> du fichier <a class="el" href="compilateur_8h_source.html">compilateur.h</a>.</p>
+<p class="definition">Définition à la ligne <a class="el" href="compilateur_8h_source.html#l00032">32</a> du fichier <a class="el" href="compilateur_8h_source.html">compilateur.h</a>.</p>
 </div><h2 class="groupheader">Documentation des constructeurs et destructeur</h2>
 <a id="ab5bb51e36c11cc13dc09c0db790ddeaa"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ab5bb51e36c11cc13dc09c0db790ddeaa">&#9670;&nbsp;</a></span>compilateur()</h2>
@@ -263,7 +280,43 @@ Voici le graphe d'appel pour cette fonction :</div>
   </dd>
 </dl>
 
-<p class="definition">Définition à la ligne <a class="el" href="compilateur_8cpp_source.html#l00179">179</a> du fichier <a class="el" href="compilateur_8cpp_source.html">compilateur.cpp</a>.</p>
+<p class="definition">Définition à la ligne <a class="el" href="compilateur_8cpp_source.html#l00209">209</a> du fichier <a class="el" href="compilateur_8cpp_source.html">compilateur.cpp</a>.</p>
+
+</div>
+</div>
+<a id="adcc703c29d40c41a3db5457db1c5fe6d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adcc703c29d40c41a3db5457db1c5fe6d">&#9670;&nbsp;</a></span>ajouter_dictionnaire()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void compilateur::ajouter_dictionnaire </td>
+          <td>(</td>
+          <td class="paramtype">const QString &amp;&#160;</td>
+          <td class="paramname"><em>nom_fichier</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Ajoute un dictionnaire. </p>
+<hr/>
+ <dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">nom_fichier</td><td>Le nom du fichier du dictionnaire. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Définition à la ligne <a class="el" href="compilateur_8cpp_source.html#l00168">168</a> du fichier <a class="el" href="compilateur_8cpp_source.html">compilateur.cpp</a>.</p>
+<div class="dynheader">
+Voici le graphe d'appel pour cette fonction :</div>
+<div class="dyncontent">
+<div class="center"><img src="classcompilateur_adcc703c29d40c41a3db5457db1c5fe6d_cgraph.png" border="0" usemap="#classcompilateur_adcc703c29d40c41a3db5457db1c5fe6d_cgraph" alt=""/></div>
+<map name="classcompilateur_adcc703c29d40c41a3db5457db1c5fe6d_cgraph" id="classcompilateur_adcc703c29d40c41a3db5457db1c5fe6d_cgraph">
+</map>
+</div>
 
 </div>
 </div>
@@ -558,6 +611,36 @@ Voici le graphe d'appel pour cette fonction :</div>
 
 </div>
 </div>
+<a id="a6fe40946fe454b0569e544285d457e80"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6fe40946fe454b0569e544285d457e80">&#9670;&nbsp;</a></span>get_dictionnaire()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const <a class="el" href="classdictionnaire.html">dictionnaire</a> * compilateur::get_dictionnaire </td>
+          <td>(</td>
+          <td class="paramtype">const QString &amp;&#160;</td>
+          <td class="paramname"><em>nom_fichier</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Accesseur d'un dictionnaire. </p>
+<hr/>
+ <dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">nom_fichier</td><td>Le nom du fichier du dictionnaire recherché. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Renvoie</dt><dd>Un pointeur sur le dictionnaire recherché. </dd></dl>
+
+<p class="definition">Définition à la ligne <a class="el" href="compilateur_8cpp_source.html#l00184">184</a> du fichier <a class="el" href="compilateur_8cpp_source.html">compilateur.cpp</a>.</p>
+
+</div>
+</div>
 <a id="a082b5dae21b0b539a159e180164a5f7c"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a082b5dae21b0b539a159e180164a5f7c">&#9670;&nbsp;</a></span>get_vue_logs()</h2>
 
@@ -577,7 +660,7 @@ Voici le graphe d'appel pour cette fonction :</div>
 <hr/>
  <dl class="section return"><dt>Renvoie</dt><dd>Un pointeur sur le widget de la vue des logs. </dd></dl>
 
-<p class="definition">Définition à la ligne <a class="el" href="compilateur_8cpp_source.html#l00168">168</a> du fichier <a class="el" href="compilateur_8cpp_source.html">compilateur.cpp</a>.</p>
+<p class="definition">Définition à la ligne <a class="el" href="compilateur_8cpp_source.html#l00198">198</a> du fichier <a class="el" href="compilateur_8cpp_source.html">compilateur.cpp</a>.</p>
 
 </div>
 </div>
@@ -647,7 +730,7 @@ Voici le graphe d'appel pour cette fonction :</div>
   </dd>
 </dl>
 
-<p class="definition">Définition à la ligne <a class="el" href="compilateur_8cpp_source.html#l00189">189</a> du fichier <a class="el" href="compilateur_8cpp_source.html">compilateur.cpp</a>.</p>
+<p class="definition">Définition à la ligne <a class="el" href="compilateur_8cpp_source.html#l00219">219</a> du fichier <a class="el" href="compilateur_8cpp_source.html">compilateur.cpp</a>.</p>
 
 </div>
 </div>
@@ -658,7 +741,7 @@ Voici le graphe d'appel pour cette fonction :</div>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Généré le Mardi 28 Février 2017 10:28:21 pour Emgine par &#160;<a href="http://www.doxygen.org/index.html">
+Généré le Jeudi 5 Décembre 2019 09:58:21 pour Emgine par &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.13
 </small></address>

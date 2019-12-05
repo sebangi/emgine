@@ -7,6 +7,7 @@
  */
 
 #include <QStringList>
+#include <QObject>
 
 /** \brief Le type choix. */
 typedef QString choix;
@@ -16,8 +17,10 @@ typedef QString choix;
  * \brief Classe décrivant une liste de choix.
  * \author Sébastien Angibaud
  */
-class liste_choix
+class liste_choix : public QObject
 {
+        Q_OBJECT
+
     public:
             /** \brief Un choix non valide. */
             static const QString choix_invalide;
@@ -65,7 +68,10 @@ class liste_choix
             static const QString diagonale_bas_gauche_haut_droit;
 
     public:
+        liste_choix();
+        liste_choix(const liste_choix & l_choix);
         liste_choix(const QStringList & liste_choix_possibles, const QStringList & liste_choix_par_defaut);
+        ~liste_choix();
 
         bool est_valide( const QStringList& c ) const;
         bool est_valide( const QString& c ) const;

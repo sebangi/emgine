@@ -120,7 +120,7 @@ void base_fonction_widget::init()
     connect(m_aide_bouton, SIGNAL(released()), this, SLOT(on_aide()));
     toolbar->addWidget(m_aide_bouton);
 
-    m_nom_label = new QLabel( QObject::tr( qUtf8Printable( get_nom() ) ) );
+    m_nom_label = new QLabel( get_nom() );
     m_nom_label->setObjectName("NomFonction");
     m_nom_label->setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Expanding);
     m_nom_label->setAlignment(Qt::AlignLeft | Qt::AlignVCenter);
@@ -192,12 +192,12 @@ void base_fonction_widget::update_actif_bouton()
     {
         if ( m_fonction->est_active_avec_parent() )
         {
-            m_actif_bouton->setToolTip("Cliquer pour ne pas exécuter la fonction");
+            m_actif_bouton->setToolTip(tr("Cliquer pour ne pas exécuter la fonction"));
             icon1.addFile(QString::fromUtf8(":/icons/compile.png"), QSize(), QIcon::Normal, QIcon::Off);
         }
         else
         {
-            m_actif_bouton->setToolTip("Cliquer pour exécuter la fonction");
+            m_actif_bouton->setToolTip(tr("Cliquer pour exécuter la fonction"));
             icon1.addFile(QString::fromUtf8(":/icons/non_compile.png"), QSize(), QIcon::Normal, QIcon::Off);
             if ( ! m_fonction->parents_actifs() )
                 m_actif_bouton->setEnabled(false);
@@ -205,7 +205,7 @@ void base_fonction_widget::update_actif_bouton()
     }
     else
     {
-        m_actif_bouton->setToolTip("Cliquer pour exécuter la fonction");
+        m_actif_bouton->setToolTip(tr("Cliquer pour exécuter la fonction"));
         icon1.addFile( QString::fromUtf8(":/icons/non_compile.png"), QSize(), QIcon::Normal, QIcon::Off );
         m_actif_bouton->setEnabled(false);
     }
@@ -419,8 +419,8 @@ void base_fonction_widget::on_fermer()
     if ( m_fonction != NULL )
     {
         QMessageBox msgBox;
-        msgBox.setWindowTitle("Fonction " + m_fonction->get_nom());
-        msgBox.setText("Voulez-vous vraiment supprimer la fonction " + m_fonction->get_nom() + " ?");
+        msgBox.setWindowTitle(tr("Fonction") + " " + m_fonction->get_nom());
+        msgBox.setText(tr("Voulez-vous vraiment supprimer la fonction") + " " + m_fonction->get_nom() + " ?");
         msgBox.setStandardButtons(QMessageBox::Yes | QMessageBox::Cancel);
         msgBox.setDefaultButton(QMessageBox::Yes);
         msgBox.setButtonText(QMessageBox::Yes,tr("Oui"));

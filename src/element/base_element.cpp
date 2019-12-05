@@ -101,7 +101,7 @@ bool base_element::get_booleen() const
     if ( m_type == type_element_entier )
         return m_entier != 0;
     else if ( m_type == type_element_string )
-        return m_string != "0" && m_string != "non";
+        return m_string != "0" && m_string != QObject::tr("non");
     else if ( m_type == type_element_caractere )
         return m_caractere != '0';
     else
@@ -266,9 +266,9 @@ base_element base_element::element_booleen(bool valeur)
     e.m_booleen = valeur;
 
     if ( e.m_booleen )
-        e.m_string = "oui";
+        e.m_string = QObject::tr("oui");
     else
-        e.m_string = "non";
+        e.m_string = QObject::tr("non");
 
     return e;
 }

@@ -76,7 +76,7 @@ void fonction_sortie_texte_widget::sauvegarder_texte()
     if ( ! m_fonction->get_projet()->est_nouveau() )
         dir = m_fonction->get_projet()->get_dossier();
 
-    QString nom_fichier = QFileDialog::getSaveFileName( this, "Sauvegarder le fichier", dir, "*.txt" );
+    QString nom_fichier = QFileDialog::getSaveFileName( this, tr("Sauvegarder le fichier"), dir, "*.txt" );
 
     if ( nom_fichier.isEmpty() )
         return;

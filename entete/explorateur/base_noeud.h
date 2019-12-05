@@ -6,7 +6,6 @@
  * \author Sébastien Angibaud
  */
 
-#include <QObject>
 #include <QTreeWidgetItem>
 
 class objet_selectionnable;

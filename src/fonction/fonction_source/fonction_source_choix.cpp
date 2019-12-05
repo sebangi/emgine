@@ -109,8 +109,8 @@ bool fonction_source_choix::est_valide(logs_compilation_widget * vue_logs)
 
     vue_logs->ajouter_log
             ( log_compilation( log_compilation::LOG_ERREUR, this,
-                               "La fonction \"" + get_nom() +
-                               "\" n'est pas situé dans un parametre de type choix") );
+                               base_fonction::tr("La fonction") + " \"" + get_nom() +
+                               "\" " + tr("n'est pas située dans un parametre de type choix")) );
 
     return false;
 }
@@ -148,7 +148,7 @@ QString fonction_source_choix::get_valeur_courte() const
 
         for ( ++it; it != m_selection.constEnd(); ++it )
             if ( m_sur_une_seule_ligne )
-                resultat += " et " + *it;
+                resultat += " " + base_fonction::tr("et") + " " + *it;
             else
                 resultat += "\n" + *it;
     }

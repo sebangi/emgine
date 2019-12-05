@@ -57,8 +57,8 @@ void fonction_sortie_analyse_ligne::executer_sortie_specifique( compilateur &com
             ligne l;
 
             l.ajouter_mot( mot( QString::number( i ) + " : " ) );
-            l.ajouter_mot( mot( QString::number( it_l->nb_mots() ) + " mots, " ) );
-            l.ajouter_mot( mot( QString::number( it_l->nb_caracteres()) +  " caractères" ) );
+            l.ajouter_mot( mot( QString::number( it_l->nb_mots() ) + base_fonction::tr(" mots, ") ) );
+            l.ajouter_mot( mot( QString::number( it_l->nb_caracteres()) +  base_fonction::tr(" caractères") ) );
 
             t.ajouter_ligne(l);
             ++i;
@@ -84,6 +84,6 @@ bool fonction_sortie_analyse_ligne::est_valide(logs_compilation_widget * vue_log
  */
 QString fonction_sortie_analyse_ligne::get_valeur_courte() const
 {
-    return "[analyse ligne]";
+    return base_fonction::tr("[analyse ligne]");
 }
 

@@ -1,0 +1,29 @@
+digraph "fonction_source_dictionnaire_widget::choisir_nom_fichier"
+{
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="LR";
+  Node14 [label="fonction_source_dictionnaire\l_widget::choisir_nom_fichier",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black"];
+  Node14 -> Node15 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node15 [label="objet_selectionnable\l::get_projet",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classobjet__selectionnable.html#ab48a75e720955aebe27f720dfaa5e78e",tooltip="Retourne le projet contenant l&#39;objet sélectionnable. "];
+  Node15 -> Node16 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node16 [label="objet_selectionnable\l::est_projet",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classobjet__selectionnable.html#a49ea1a29523e46f099896477a2b43eaa",tooltip="Indique si l&#39;objet est un projet. "];
+  Node15 -> Node15 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node14 -> Node17 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node17 [label="projet::est_nouveau",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classprojet.html#a5ec26ee61a91af62a268bb85263d6a30",tooltip="Indique si le projet est nouveau. "];
+  Node14 -> Node18 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node18 [label="projet::get_dossier",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classprojet.html#a090c95e58831875cf4e81928c1d75b7e",tooltip="Retourne le dossier du projet. "];
+  Node18 -> Node19 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node19 [label="projet::get_chemin\l_absolu",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classprojet.html#aefa5df1c78bc74bedfa8c845524d9e3e",tooltip="Retourne le chemin absolu du fichier du projet. "];
+  Node14 -> Node20 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node20 [label="fonction_source_dictionnaire\l_widget::update_boutons",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classfonction__source__dictionnaire__widget.html#affb7defcec57ca6f4035c138340b86cd",tooltip="Met à jour l&#39;ensemble des boutons. "];
+  Node20 -> Node21 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node21 [label="objet_selectionnable\l::est_verrouille_avec\l_parent",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classobjet__selectionnable.html#a001c4584a6430689f478544ec560fb7e",tooltip="Indique si l&#39;objet est verrouillé en considérant également ses parents. "];
+  Node21 -> Node22 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node22 [label="objet_selectionnable\l::est_verrouille",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classobjet__selectionnable.html#ae9c29950b9e5b582338ac659ecc3e3d6",tooltip="Indique si l&#39;objet est vérrouillé, i.e. non éditable. "];
+  Node21 -> Node21 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node14 -> Node23 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node23 [label="objet_selectionnable\l::modifier",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classobjet__selectionnable.html#a9f76b8e89231a79c3fc840af874bd868",tooltip="Modifie l&#39;objet. "];
+  Node23 -> Node16 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node23 -> Node23 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+}

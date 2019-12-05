@@ -28,8 +28,8 @@ fonction_formatage::fonction_formatage( fonctions_conteneur * conteneur )
 
     ajouter_parametre( PARAM_RETRAIT_PONCTUATION,
                        new base_parametre( this,
-                                           "Retrait de la ponctuation",
-                                           "Indique si la ponctuation est à retirer.",
+                                           base_parametre::tr("Retrait de la ponctuation"),
+                                           base_parametre::tr("Indique si la ponctuation est à retirer."),
                                            base_parametre::CONTENU_PARAM_VIDE_IMPOSSIBLE,
                                            base_parametre::CONFIGURATION_INVISIBLE,
                                            base_parametre::ALGO_IPL) );
@@ -51,7 +51,7 @@ bool fonction_formatage::est_valide(logs_compilation_widget * vue_logs)
  */
 QString fonction_formatage::get_valeur_courte() const
 {
-    return "[Formatage]";
+    return base_fonction::tr("[Formatage]");
 }
 
 /** --------------------------------------------------------------------------------------

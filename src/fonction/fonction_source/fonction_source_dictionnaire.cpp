@@ -79,8 +79,8 @@ bool fonction_source_dictionnaire::est_valide(logs_compilation_widget * vue_logs
     {
         vue_logs->ajouter_log
                 ( log_compilation( log_compilation::LOG_ERREUR, this,
-                                   "La fonction \"" + get_nom() +
-                                   "\" charge un dictionnaire inexistant ou erroné.") );
+                                   base_fonction::tr("La fonction") + " \"" + get_nom() +
+                                   "\" " + base_fonction::tr("charge un dictionnaire inexistant ou erroné.")) );
         return false;
     }
 
@@ -93,7 +93,7 @@ bool fonction_source_dictionnaire::est_valide(logs_compilation_widget * vue_logs
  */
 QString fonction_source_dictionnaire::get_valeur_courte() const
 {
-    return "Dictionnaire " + m_chemin_relatif_fichier;
+    return base_fonction::tr("Dictionnaire") + " : " + m_chemin_relatif_fichier;
 }
 
 /** --------------------------------------------------------------------------------------

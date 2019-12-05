@@ -61,6 +61,7 @@ $(function() {
   <div class="summary">
 <a href="#pub-methods">Fonctions membres publiques</a> &#124;
 <a href="#pri-types">Types privés</a> &#124;
+<a href="#pri-methods">Fonctions membres privées</a> &#124;
 <a href="#pri-attribs">Attributs privés</a> &#124;
 <a href="classligne-members.html">Liste de tous les membres</a>  </div>
   <div class="headertitle">
@@ -91,9 +92,18 @@ Fonctions membres publiques</h2></td></tr>
 <tr class="memitem:a716d489af0b55a8e9a7c6f840e94ea94"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classligne.html#a716d489af0b55a8e9a7c6f840e94ea94">ligne</a> (const QString &amp;valeur, const QString &amp;separateur_mot=&quot; &quot;)</td></tr>
 <tr class="memdesc:a716d489af0b55a8e9a7c6f840e94ea94"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructeur de la classe ligne.  <a href="#a716d489af0b55a8e9a7c6f840e94ea94">Plus de détails...</a><br /></td></tr>
 <tr class="separator:a716d489af0b55a8e9a7c6f840e94ea94"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac795ba0aed9e4e5094efb6687435d5bc"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classligne.html#ac795ba0aed9e4e5094efb6687435d5bc">ligne</a> (const <a class="el" href="classligne.html">ligne</a> &amp;l)</td></tr>
+<tr class="memdesc:ac795ba0aed9e4e5094efb6687435d5bc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructeur par copie de la classe ligne.  <a href="#ac795ba0aed9e4e5094efb6687435d5bc">Plus de détails...</a><br /></td></tr>
+<tr class="separator:ac795ba0aed9e4e5094efb6687435d5bc"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:abb194a19c94d5d7ec48ef442f5043d1e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classligne.html#abb194a19c94d5d7ec48ef442f5043d1e">ajouter_mot</a> (const <a class="el" href="classmot.html">mot</a> &amp;m)</td></tr>
 <tr class="memdesc:abb194a19c94d5d7ec48ef442f5043d1e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Ajoute un mot à la ligne.  <a href="#abb194a19c94d5d7ec48ef442f5043d1e">Plus de détails...</a><br /></td></tr>
 <tr class="separator:abb194a19c94d5d7ec48ef442f5043d1e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa13dd59094abd373163ef55e2f33bf8a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classligne.html#aa13dd59094abd373163ef55e2f33bf8a">set_separateur_mot</a> (const QString &amp;separateur_mot=&quot; &quot;)</td></tr>
+<tr class="memdesc:aa13dd59094abd373163ef55e2f33bf8a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initialise le séparateur de mot.  <a href="#aa13dd59094abd373163ef55e2f33bf8a">Plus de détails...</a><br /></td></tr>
+<tr class="separator:aa13dd59094abd373163ef55e2f33bf8a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4f4f45ac634c761ae39f572542bc1387"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="classmot.html">mot</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classligne.html#a4f4f45ac634c761ae39f572542bc1387">mot_a_la_position</a> (size_type pos, const <a class="el" href="classmot.html">mot</a> &amp;mot_par_defaut) const</td></tr>
+<tr class="memdesc:a4f4f45ac634c761ae39f572542bc1387"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retourne le mot d'une position donnée.  <a href="#a4f4f45ac634c761ae39f572542bc1387">Plus de détails...</a><br /></td></tr>
+<tr class="separator:a4f4f45ac634c761ae39f572542bc1387"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2a87dbf818765326d114d8b514fd3dd2"><td class="memItemLeft" align="right" valign="top">QString&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classligne.html#a2a87dbf818765326d114d8b514fd3dd2">to_string</a> () const</td></tr>
 <tr class="memdesc:a2a87dbf818765326d114d8b514fd3dd2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Convertit et retourne la ligne au format QString.  <a href="#a2a87dbf818765326d114d8b514fd3dd2">Plus de détails...</a><br /></td></tr>
 <tr class="separator:a2a87dbf818765326d114d8b514fd3dd2"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -103,12 +113,27 @@ Fonctions membres publiques</h2></td></tr>
 <tr class="memitem:a3bfedd99e8ffbb068432df6d0768d5d1"><td class="memItemLeft" align="right" valign="top">size_type&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classligne.html#a3bfedd99e8ffbb068432df6d0768d5d1">nb_caracteres</a> () const</td></tr>
 <tr class="memdesc:a3bfedd99e8ffbb068432df6d0768d5d1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retourne le nombre de caractères de la ligne.  <a href="#a3bfedd99e8ffbb068432df6d0768d5d1">Plus de détails...</a><br /></td></tr>
 <tr class="separator:a3bfedd99e8ffbb068432df6d0768d5d1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2726237de2b9c93e40e38b95d090dfb8"><td class="memItemLeft" align="right" valign="top">size_type&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classligne.html#a2726237de2b9c93e40e38b95d090dfb8">nb_caracteres_alphabet</a> () const</td></tr>
+<tr class="memdesc:a2726237de2b9c93e40e38b95d090dfb8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retourne le nombre de caractère alphabet du mot.  <a href="#a2726237de2b9c93e40e38b95d090dfb8">Plus de détails...</a><br /></td></tr>
+<tr class="separator:a2726237de2b9c93e40e38b95d090dfb8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ada0847f3e3c95773bb2c03db970f81d7"><td class="memItemLeft" align="right" valign="top">size_type&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classligne.html#ada0847f3e3c95773bb2c03db970f81d7">nb_mots</a> () const</td></tr>
 <tr class="memdesc:ada0847f3e3c95773bb2c03db970f81d7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retourne le nombre de mots de la ligne.  <a href="#ada0847f3e3c95773bb2c03db970f81d7">Plus de détails...</a><br /></td></tr>
 <tr class="separator:ada0847f3e3c95773bb2c03db970f81d7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a838c048877d211c407293e534eae14c5"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classligne.html#a838c048877d211c407293e534eae14c5">operator&lt;</a> (const <a class="el" href="classligne.html">ligne</a> &amp;l) const</td></tr>
 <tr class="memdesc:a838c048877d211c407293e534eae14c5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Surcharge de l'opérateur d'infériorité stricte.  <a href="#a838c048877d211c407293e534eae14c5">Plus de détails...</a><br /></td></tr>
 <tr class="separator:a838c048877d211c407293e534eae14c5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:add8e621e579dc0152603307cb746839a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classligne.html#add8e621e579dc0152603307cb746839a">fusionner</a> (bool fusion_caracteres, bool fusion_mots)</td></tr>
+<tr class="memdesc:add8e621e579dc0152603307cb746839a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fusion des mots et/ou des caractères.  <a href="#add8e621e579dc0152603307cb746839a">Plus de détails...</a><br /></td></tr>
+<tr class="separator:add8e621e579dc0152603307cb746839a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af4b3251f640d045908bf6f4087100e6c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classligne.html#af4b3251f640d045908bf6f4087100e6c">scinder</a> (bool scission_interne_caracteres, bool scission_caracteres)</td></tr>
+<tr class="memdesc:af4b3251f640d045908bf6f4087100e6c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Scinder les caractères et/ou le contenu des caractères.  <a href="#af4b3251f640d045908bf6f4087100e6c">Plus de détails...</a><br /></td></tr>
+<tr class="separator:af4b3251f640d045908bf6f4087100e6c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5c5b58ee161167a65fbac6867712d0ed"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classligne.html#a5c5b58ee161167a65fbac6867712d0ed">inverser</a> (bool inversion_elements, bool inversion_ordre_caracteres, bool inversion_ordre_mots)</td></tr>
+<tr class="memdesc:a5c5b58ee161167a65fbac6867712d0ed"><td class="mdescLeft">&#160;</td><td class="mdescRight">Inversion des lignes, des mots et/ou des caractères.  <a href="#a5c5b58ee161167a65fbac6867712d0ed">Plus de détails...</a><br /></td></tr>
+<tr class="separator:a5c5b58ee161167a65fbac6867712d0ed"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3b74ed1e8f29e7049deda7d219e94e31"><td class="memItemLeft" align="right" valign="top">QString&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classligne.html#a3b74ed1e8f29e7049deda7d219e94e31">get_separateur_mot</a> () const</td></tr>
+<tr class="memdesc:a3b74ed1e8f29e7049deda7d219e94e31"><td class="mdescLeft">&#160;</td><td class="mdescRight">Accesseur du séparateur de mots.  <a href="#a3b74ed1e8f29e7049deda7d219e94e31">Plus de détails...</a><br /></td></tr>
+<tr class="separator:a3b74ed1e8f29e7049deda7d219e94e31"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-types"></a>
 Types privés</h2></td></tr>
@@ -116,6 +141,12 @@ Types privés</h2></td></tr>
 typedef std::vector&lt; <a class="el" href="classmot.html">mot</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classligne.html#a6f7addb13116e799f64f777a59a7e7bd">super</a></td></tr>
 <tr class="memdesc:a6f7addb13116e799f64f777a59a7e7bd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Alias de la classe mère. <br /></td></tr>
 <tr class="separator:a6f7addb13116e799f64f777a59a7e7bd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-methods"></a>
+Fonctions membres privées</h2></td></tr>
+<tr class="memitem:a22efa7ceb50cb9406cbcbc6d1c93a55e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classligne.html#a22efa7ceb50cb9406cbcbc6d1c93a55e">maj_nb_caracteres</a> ()</td></tr>
+<tr class="memdesc:a22efa7ceb50cb9406cbcbc6d1c93a55e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Met à jour le nombre de caractères de la ligne.  <a href="#a22efa7ceb50cb9406cbcbc6d1c93a55e">Plus de détails...</a><br /></td></tr>
+<tr class="separator:a22efa7ceb50cb9406cbcbc6d1c93a55e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
 Attributs privés</h2></td></tr>
@@ -135,7 +166,7 @@ size_type&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href=
 <p class="definition">Définition à la ligne <a class="el" href="ligne_8h_source.html#l00018">18</a> du fichier <a class="el" href="ligne_8h_source.html">ligne.h</a>.</p>
 </div><h2 class="groupheader">Documentation des constructeurs et destructeur</h2>
 <a id="ab9ab2dab09a1d5335f0f33911a5f0fdf"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ab9ab2dab09a1d5335f0f33911a5f0fdf">&#9670;&nbsp;</a></span>ligne() <span class="overload">[1/2]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#ab9ab2dab09a1d5335f0f33911a5f0fdf">&#9670;&nbsp;</a></span>ligne() <span class="overload">[1/3]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -157,7 +188,7 @@ size_type&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href=
 </div>
 </div>
 <a id="a716d489af0b55a8e9a7c6f840e94ea94"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a716d489af0b55a8e9a7c6f840e94ea94">&#9670;&nbsp;</a></span>ligne() <span class="overload">[2/2]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a716d489af0b55a8e9a7c6f840e94ea94">&#9670;&nbsp;</a></span>ligne() <span class="overload">[2/3]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -205,6 +236,35 @@ Voici le graphe d'appel pour cette fonction :</div>
 
 </div>
 </div>
+<a id="ac795ba0aed9e4e5094efb6687435d5bc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac795ba0aed9e4e5094efb6687435d5bc">&#9670;&nbsp;</a></span>ligne() <span class="overload">[3/3]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">ligne::ligne </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classligne.html">ligne</a> &amp;&#160;</td>
+          <td class="paramname"><em>l</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Constructeur par copie de la classe ligne. </p>
+<hr/>
+ <dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">l</td><td>La ligne à copier. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Définition à la ligne <a class="el" href="ligne_8cpp_source.html#l00036">36</a> du fichier <a class="el" href="ligne_8cpp_source.html">ligne.cpp</a>.</p>
+
+</div>
+</div>
 <h2 class="groupheader">Documentation des fonctions membres</h2>
 <a id="abb194a19c94d5d7ec48ef442f5043d1e"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#abb194a19c94d5d7ec48ef442f5043d1e">&#9670;&nbsp;</a></span>ajouter_mot()</h2>
@@ -231,7 +291,7 @@ Voici le graphe d'appel pour cette fonction :</div>
   </dd>
 </dl>
 
-<p class="definition">Définition à la ligne <a class="el" href="ligne_8cpp_source.html#l00036">36</a> du fichier <a class="el" href="ligne_8cpp_source.html">ligne.cpp</a>.</p>
+<p class="definition">Définition à la ligne <a class="el" href="ligne_8cpp_source.html#l00046">46</a> du fichier <a class="el" href="ligne_8cpp_source.html">ligne.cpp</a>.</p>
 <div class="dynheader">
 Voici le graphe d'appel pour cette fonction :</div>
 <div class="dyncontent">
@@ -240,6 +300,194 @@ Voici le graphe d'appel pour cette fonction :</div>
 <area shape="rect" id="node2" href="classmot.html#afda7d448982a5cece83b6459b319fed1" title="Retourne le nombre de caractère du mot. " alt="" coords="179,5,314,32"/>
 </map>
 </div>
+
+</div>
+</div>
+<a id="add8e621e579dc0152603307cb746839a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#add8e621e579dc0152603307cb746839a">&#9670;&nbsp;</a></span>fusionner()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ligne::fusionner </td>
+          <td>(</td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>fusion_caracteres</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>fusion_mots</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Fusion des mots et/ou des caractères. </p>
+<hr/>
+ <dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">fusion_caracteres</td><td>Indique s'il faut fusionner les caractères. </td></tr>
+    <tr><td class="paramname">fusion_mots</td><td>Indique s'il faut fusionner les mots. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Définition à la ligne <a class="el" href="ligne_8cpp_source.html#l00153">153</a> du fichier <a class="el" href="ligne_8cpp_source.html">ligne.cpp</a>.</p>
+<div class="dynheader">
+Voici le graphe d'appel pour cette fonction :</div>
+<div class="dyncontent">
+<div class="center"><img src="classligne_add8e621e579dc0152603307cb746839a_cgraph.png" border="0" usemap="#classligne_add8e621e579dc0152603307cb746839a_cgraph" alt=""/></div>
+<map name="classligne_add8e621e579dc0152603307cb746839a_cgraph" id="classligne_add8e621e579dc0152603307cb746839a_cgraph">
+</map>
+</div>
+
+</div>
+</div>
+<a id="a3b74ed1e8f29e7049deda7d219e94e31"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3b74ed1e8f29e7049deda7d219e94e31">&#9670;&nbsp;</a></span>get_separateur_mot()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">QString ligne::get_separateur_mot </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Accesseur du séparateur de mots. </p>
+<hr/>
+ <dl class="section return"><dt>Renvoie</dt><dd>Le séparateur de mot. </dd></dl>
+
+<p class="definition">Définition à la ligne <a class="el" href="ligne_8cpp_source.html#l00235">235</a> du fichier <a class="el" href="ligne_8cpp_source.html">ligne.cpp</a>.</p>
+
+</div>
+</div>
+<a id="a5c5b58ee161167a65fbac6867712d0ed"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5c5b58ee161167a65fbac6867712d0ed">&#9670;&nbsp;</a></span>inverser()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ligne::inverser </td>
+          <td>(</td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>inversion_elements</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>inversion_ordre_caracteres</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>inversion_ordre_mots</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Inversion des lignes, des mots et/ou des caractères. </p>
+<hr/>
+ <dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">inversion_elements</td><td>Indique s'il faut inverser les elements. </td></tr>
+    <tr><td class="paramname">inversion_ordre_caracteres</td><td>Indique s'il faut inverser l'ordre des caractères. </td></tr>
+    <tr><td class="paramname">inversion_ordre_mots</td><td>Indique s'il faut inverser l'ordre des mots. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Définition à la ligne <a class="el" href="ligne_8cpp_source.html#l00210">210</a> du fichier <a class="el" href="ligne_8cpp_source.html">ligne.cpp</a>.</p>
+
+</div>
+</div>
+<a id="a22efa7ceb50cb9406cbcbc6d1c93a55e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a22efa7ceb50cb9406cbcbc6d1c93a55e">&#9670;&nbsp;</a></span>maj_nb_caracteres()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ligne::maj_nb_caracteres </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Met à jour le nombre de caractères de la ligne. </p>
+<hr/>
+ 
+<p class="definition">Définition à la ligne <a class="el" href="ligne_8cpp_source.html#l00223">223</a> du fichier <a class="el" href="ligne_8cpp_source.html">ligne.cpp</a>.</p>
+
+</div>
+</div>
+<a id="a4f4f45ac634c761ae39f572542bc1387"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4f4f45ac634c761ae39f572542bc1387">&#9670;&nbsp;</a></span>mot_a_la_position()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const <a class="el" href="classmot.html">mot</a> &amp; ligne::mot_a_la_position </td>
+          <td>(</td>
+          <td class="paramtype">size_type&#160;</td>
+          <td class="paramname"><em>pos</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classmot.html">mot</a> &amp;&#160;</td>
+          <td class="paramname"><em>mot_par_defaut</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Retourne le mot d'une position donnée. </p>
+<hr/>
+ <dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">pos</td><td>La position recherchée. </td></tr>
+    <tr><td class="paramname">mot_par_defaut</td><td>Le mot renvoyé si la position n'existe pas. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Renvoie</dt><dd>Le mot de la position recherchée. </dd></dl>
+
+<p class="definition">Définition à la ligne <a class="el" href="ligne_8cpp_source.html#l00067">67</a> du fichier <a class="el" href="ligne_8cpp_source.html">ligne.cpp</a>.</p>
 
 </div>
 </div>
@@ -262,7 +510,30 @@ Voici le graphe d'appel pour cette fonction :</div>
 <hr/>
  <dl class="section return"><dt>Renvoie</dt><dd>Le nombre de caractères de la ligne. </dd></dl>
 
-<p class="definition">Définition à la ligne <a class="el" href="ligne_8cpp_source.html#l00077">77</a> du fichier <a class="el" href="ligne_8cpp_source.html">ligne.cpp</a>.</p>
+<p class="definition">Définition à la ligne <a class="el" href="ligne_8cpp_source.html#l00110">110</a> du fichier <a class="el" href="ligne_8cpp_source.html">ligne.cpp</a>.</p>
+
+</div>
+</div>
+<a id="a2726237de2b9c93e40e38b95d090dfb8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2726237de2b9c93e40e38b95d090dfb8">&#9670;&nbsp;</a></span>nb_caracteres_alphabet()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::vector&lt; <a class="el" href="classmot.html">mot</a> &gt;::size_type ligne::nb_caracteres_alphabet </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Retourne le nombre de caractère alphabet du mot. </p>
+<hr/>
+ <dl class="section return"><dt>Renvoie</dt><dd>Le nombre de caractères alphabet du mot. </dd></dl>
+
+<p class="definition">Définition à la ligne <a class="el" href="ligne_8cpp_source.html#l00119">119</a> du fichier <a class="el" href="ligne_8cpp_source.html">ligne.cpp</a>.</p>
 
 </div>
 </div>
@@ -285,7 +556,7 @@ Voici le graphe d'appel pour cette fonction :</div>
 <hr/>
  <dl class="section return"><dt>Renvoie</dt><dd>Le nombre de mots de la ligne. </dd></dl>
 
-<p class="definition">Définition à la ligne <a class="el" href="ligne_8cpp_source.html#l00086">86</a> du fichier <a class="el" href="ligne_8cpp_source.html">ligne.cpp</a>.</p>
+<p class="definition">Définition à la ligne <a class="el" href="ligne_8cpp_source.html#l00133">133</a> du fichier <a class="el" href="ligne_8cpp_source.html">ligne.cpp</a>.</p>
 
 </div>
 </div>
@@ -315,7 +586,7 @@ Voici le graphe d'appel pour cette fonction :</div>
 </dl>
 <dl class="section return"><dt>Renvoie</dt><dd><b>True</b> si la ligne courante est inférieur strictement, <b>False</b> sinon. </dd></dl>
 
-<p class="definition">Définition à la ligne <a class="el" href="ligne_8cpp_source.html#l00096">96</a> du fichier <a class="el" href="ligne_8cpp_source.html">ligne.cpp</a>.</p>
+<p class="definition">Définition à la ligne <a class="el" href="ligne_8cpp_source.html#l00143">143</a> du fichier <a class="el" href="ligne_8cpp_source.html">ligne.cpp</a>.</p>
 <div class="dynheader">
 Voici le graphe d'appel pour cette fonction :</div>
 <div class="dyncontent">
@@ -323,6 +594,82 @@ Voici le graphe d'appel pour cette fonction :</div>
 <map name="classligne_a838c048877d211c407293e534eae14c5_cgraph" id="classligne_a838c048877d211c407293e534eae14c5_cgraph">
 </map>
 </div>
+
+</div>
+</div>
+<a id="af4b3251f640d045908bf6f4087100e6c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af4b3251f640d045908bf6f4087100e6c">&#9670;&nbsp;</a></span>scinder()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ligne::scinder </td>
+          <td>(</td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>scission_interne_caracteres</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>scission_caracteres</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Scinder les caractères et/ou le contenu des caractères. </p>
+<hr/>
+ <dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">scission_interne_caracteres</td><td>Indique s'il faut scinder le contenu des caractères. </td></tr>
+    <tr><td class="paramname">scission_caracteres</td><td>Indique s'il faut scinder les caractères. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Définition à la ligne <a class="el" href="ligne_8cpp_source.html#l00182">182</a> du fichier <a class="el" href="ligne_8cpp_source.html">ligne.cpp</a>.</p>
+<div class="dynheader">
+Voici le graphe d'appel pour cette fonction :</div>
+<div class="dyncontent">
+<div class="center"><img src="classligne_af4b3251f640d045908bf6f4087100e6c_cgraph.png" border="0" usemap="#classligne_af4b3251f640d045908bf6f4087100e6c_cgraph" alt=""/></div>
+<map name="classligne_af4b3251f640d045908bf6f4087100e6c_cgraph" id="classligne_af4b3251f640d045908bf6f4087100e6c_cgraph">
+</map>
+</div>
+
+</div>
+</div>
+<a id="aa13dd59094abd373163ef55e2f33bf8a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa13dd59094abd373163ef55e2f33bf8a">&#9670;&nbsp;</a></span>set_separateur_mot()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ligne::set_separateur_mot </td>
+          <td>(</td>
+          <td class="paramtype">const QString &amp;&#160;</td>
+          <td class="paramname"><em>separateur_mot</em> = <code>&quot;&#160;&quot;</code></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Initialise le séparateur de mot. </p>
+<hr/>
+ <dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">separateur_mot</td><td>Le séparateur de mot. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Définition à la ligne <a class="el" href="ligne_8cpp_source.html#l00056">56</a> du fichier <a class="el" href="ligne_8cpp_source.html">ligne.cpp</a>.</p>
 
 </div>
 </div>
@@ -345,7 +692,7 @@ Voici le graphe d'appel pour cette fonction :</div>
 <hr/>
  <dl class="section return"><dt>Renvoie</dt><dd>La ligne en format QString. </dd></dl>
 
-<p class="definition">Définition à la ligne <a class="el" href="ligne_8cpp_source.html#l00046">46</a> du fichier <a class="el" href="ligne_8cpp_source.html">ligne.cpp</a>.</p>
+<p class="definition">Définition à la ligne <a class="el" href="ligne_8cpp_source.html#l00079">79</a> du fichier <a class="el" href="ligne_8cpp_source.html">ligne.cpp</a>.</p>
 
 </div>
 </div>
@@ -368,7 +715,7 @@ Voici le graphe d'appel pour cette fonction :</div>
 <hr/>
  <dl class="section return"><dt>Renvoie</dt><dd>La ligne en format QString. </dd></dl>
 
-<p class="definition">Définition à la ligne <a class="el" href="ligne_8cpp_source.html#l00060">60</a> du fichier <a class="el" href="ligne_8cpp_source.html">ligne.cpp</a>.</p>
+<p class="definition">Définition à la ligne <a class="el" href="ligne_8cpp_source.html#l00093">93</a> du fichier <a class="el" href="ligne_8cpp_source.html">ligne.cpp</a>.</p>
 
 </div>
 </div>
@@ -379,7 +726,7 @@ Voici le graphe d'appel pour cette fonction :</div>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Généré le Mardi 28 Février 2017 10:28:27 pour Emgine par &#160;<a href="http://www.doxygen.org/index.html">
+Généré le Jeudi 5 Décembre 2019 09:58:38 pour Emgine par &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.13
 </small></address>

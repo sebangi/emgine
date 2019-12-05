@@ -80,6 +80,6 @@ bool fonction_sortie_frequence::est_valide(logs_compilation_widget * vue_logs)
  */
 QString fonction_sortie_frequence::get_valeur_courte() const
 {
-    return "[fréquence]";
+    return base_fonction::tr("[fréquence]");
 }
 

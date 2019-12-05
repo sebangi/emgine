@@ -40,7 +40,7 @@ bool fonction_entier_en_chiffre_romain::est_valide(logs_compilation_widget * vue
  */
 QString fonction_entier_en_chiffre_romain::get_valeur_courte() const
 {
-    return "[Entier en chiffre romain]";
+    return base_fonction::tr("[Entier en chiffre romain]");
 }
 
 /** --------------------------------------------------------------------------------------

@@ -79,7 +79,7 @@ QString base_parametre::get_nom() const
  */
 QString base_parametre::get_titre() const
 {
-    return get_fonction_parent()->get_nom() + " : paramètre " + get_nom();
+    return get_fonction_parent()->get_nom() + " : " + tr("paramètre") + " " + get_nom();
 }
 
 /** --------------------------------------------------------------------------------------
@@ -91,11 +91,11 @@ QString base_parametre::get_valeur_courte() const
     int nb_fonctions_actives = get_nb_fonctions_actives();
 
     if ( nb_fonctions_actives == 0 )
-        return "aucun";
+        return tr("aucun");
     else if ( nb_fonctions_actives == 1 )
         return premiere_fonction_active()->get_valeur_courte();
     else
-        return "complexe";
+        return tr("complexe");
 }
 
 /** --------------------------------------------------------------------------------------
@@ -114,11 +114,11 @@ QString base_parametre::get_aide() const
 QString base_parametre::get_aide_algorithme() const
 {
     if ( m_algorithme == ALGO_AUCUN )
-        return "aucun algorithme. Tout le texte est considéré d'un coup. Aucune itération.";
+        return tr("aucun algorithme. Tout le texte est considéré d'un coup. Aucune itération.");
     else if ( m_algorithme == ALGO_IPL )
-        return "Chaque ligne génère une nouvelle configuration.";
+        return tr("Chaque ligne génère une nouvelle configuration.");
     else
-        return "inconnu";
+        return tr("inconnu");
 }
 
 /** --------------------------------------------------------------------------------------
@@ -249,18 +249,18 @@ bool base_parametre::est_valide(logs_compilation_widget * vue_logs)
     {
         vue_logs->ajouter_log
                 ( log_compilation( log_compilation::LOG_ERREUR, this,
-                                   "Le parametre \"" + m_nom +
-                                   "\" de la fonction \"" + m_fonction_parent->get_nom() +
-                                   "\" n'a aucune fonction active") );
+                                   tr("Le parametre") + " \"" + m_nom +
+                                   "\" " + tr("de la fonction") + " \"" + m_fonction_parent->get_nom() +
+                                   "\" " + tr("n'a aucune fonction active")) );
         result = false;
     }
     else if ( ! ( actifs.front()->get_type() == type_fonction::fonction_source ) )
     {
         vue_logs->ajouter_log
                 ( log_compilation( log_compilation::LOG_ERREUR, this,
-                                   "Le parametre \"" + m_nom +
-                                   "\" de la fonction \"" + m_fonction_parent->get_nom() +
-                                   "\" doit commencer par une fonction source active") );
+                                   tr("Le parametre") + " \"" + m_nom +
+                                   "\" " + tr("de la fonction") + " \"" + m_fonction_parent->get_nom() +
+                                   "\" " + tr("doit commencer par une fonction source active")) );
         result = false;
     }
 

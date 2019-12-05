@@ -30,7 +30,7 @@ void fonction_source_entier_widget::init()
 {
     QHBoxLayout * lay = new QHBoxLayout();
 
-    QLabel* label1 = new QLabel( "valeur" );
+    QLabel* label1 = new QLabel( tr("valeur") );
     label1->setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Expanding);
     label1->setAlignment(Qt::AlignRight | Qt::AlignVCenter);
     lay->addWidget(label1, 1, Qt::AlignRight);

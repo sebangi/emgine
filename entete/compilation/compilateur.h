@@ -14,6 +14,7 @@
 #include "entete/element/textes.h"
 
 #include <QStack>
+#include <QObject>
 
 #include <list>
 #include <map>
@@ -29,8 +30,10 @@ class projet;
  * \brief Classe décrivant un compilateur. Le compilateur a pour rôle d'exécuter un projet.
  * \author Sébastien Angibaud
  */
-class compilateur
+class compilateur : public QObject
 {
+        Q_OBJECT
+
         typedef std::map< QString, dictionnaire *> map_dictionnaire;
 
     public:

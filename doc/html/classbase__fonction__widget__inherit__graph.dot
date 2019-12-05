@@ -1,0 +1,31 @@
+digraph "base_fonction_widget"
+{
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="LR";
+  Node0 [label="base_fonction_widget",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black"];
+  Node1 -> Node0 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node1 [label="QWidget",height=0.2,width=0.4,color="grey75", fillcolor="white", style="filled"];
+  Node2 -> Node0 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node2 [label="QTableWidgetItem",height=0.2,width=0.4,color="grey75", fillcolor="white", style="filled"];
+  Node0 -> Node3 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node3 [label="base_fonction_widget\l_avec_text_edit",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classbase__fonction__widget__avec__text__edit.html",tooltip="Classe décrivant un widget affichant une fonction et nécessitant un text_edit. "];
+  Node3 -> Node4 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node4 [label="fonction_source_caractere\l_widget",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classfonction__source__caractere__widget.html",tooltip="Classe décrivant un widget affichant une fonction de type fonction_source_caractere. "];
+  Node3 -> Node5 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node5 [label="fonction_source_fichier\l_texte_widget",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classfonction__source__fichier__texte__widget.html",tooltip="Classe décrivant un widget affichant une fonction de type fonction_source_fichier_texte_widget. "];
+  Node3 -> Node6 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node6 [label="fonction_source_texte\l_widget",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classfonction__source__texte__widget.html",tooltip="Classe décrivant un widget affichant une fonction de type fonction_source_texte. "];
+  Node0 -> Node7 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node7 [label="fonction_base_sortie\l_widget",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classfonction__base__sortie__widget.html",tooltip="Classe décrivant un widget de base affichant une fonction de type sortie. "];
+  Node7 -> Node8 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node8 [label="fonction_sortie_texte\l_widget",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classfonction__sortie__texte__widget.html",tooltip="Classe décrivant un widget affichant une fonction de type sortie_texte. "];
+  Node0 -> Node9 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node9 [label="fonction_source_booleen\l_widget",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classfonction__source__booleen__widget.html",tooltip="Classe décrivant un widget affichant une fonction de type fonction_source_booleen. "];
+  Node0 -> Node10 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node10 [label="fonction_source_choix\l_widget",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classfonction__source__choix__widget.html",tooltip="Classe décrivant un widget affichant une fonction de type fonction_source_choix . ..."];
+  Node0 -> Node11 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node11 [label="fonction_source_dictionnaire\l_widget",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classfonction__source__dictionnaire__widget.html",tooltip="Classe décrivant un widget affichant une fonction de type fonction_source_dictionnaire_widget. "];
+  Node0 -> Node12 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node12 [label="fonction_source_entier\l_widget",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classfonction__source__entier__widget.html",tooltip="Classe décrivant un widget affichant une fonction de type fonction_source_entier. ..."];
+}

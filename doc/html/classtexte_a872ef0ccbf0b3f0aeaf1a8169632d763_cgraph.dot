@@ -1,0 +1,28 @@
+digraph "texte::transposer_caracteres"
+{
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="LR";
+  Node161 [label="texte::transposer_caracteres",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black"];
+  Node161 -> Node162 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node162 [label="texte::nb_lignes",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classtexte.html#ac094147ada894bfde38c68b631724750",tooltip="Retourne le nombre de lignes du texte. "];
+  Node161 -> Node163 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node163 [label="ligne::set_separateur_mot",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classligne.html#aa13dd59094abd373163ef55e2f33bf8a",tooltip="Initialise le séparateur de mot. "];
+  Node161 -> Node164 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node164 [label="texte::ajouter_ligne",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classtexte.html#abb3d9763a37659b12552379cb4e0dc8c",tooltip="Ajoute une ligne donnée en fin de texte. "];
+  Node164 -> Node165 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node165 [label="ligne::nb_caracteres",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classligne.html#a3bfedd99e8ffbb068432df6d0768d5d1",tooltip="Retourne le nombre de caractères de la ligne. "];
+  Node164 -> Node166 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node166 [label="ligne::nb_mots",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classligne.html#ada0847f3e3c95773bb2c03db970f81d7",tooltip="Retourne le nombre de mots de la ligne. "];
+  Node164 -> Node167 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node167 [label="ligne::to_string_lisible",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classligne.html#affd23e66b472f932e1e28df34a652539",tooltip="Convertit et retourne la ligne au format QString avec l&#39;ajout de séparateur. "];
+  Node161 -> Node168 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node168 [label="texte::fusionner",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classtexte.html#a16582508b6ad1e0a567c0a83af7fb0fa",tooltip="Fusion des lignes, des mots et/ou des caractères. "];
+  Node168 -> Node169 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node169 [label="texte::maj_comptages",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classtexte.html#a26290d2cb7eb4b656b8be0e121c1049f",tooltip="Met à jour les différents comptages. "];
+  Node169 -> Node170 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node170 [label="texte::maj_nb_caracteres",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classtexte.html#a4a2b045dbb975c1c3e7b3d20c60edd34",tooltip="Met à jour le nombre de caractères du texte. "];
+  Node169 -> Node171 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node171 [label="texte::maj_nb_mots",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classtexte.html#aeed3eacb585627aa50aadaaba067c9c2",tooltip="Met à jour le nombre de mots du texte. "];
+  Node161 -> Node169 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+}

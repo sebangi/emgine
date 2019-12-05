@@ -27,8 +27,8 @@ fonction_ajout_espace_selon_dictionnaire::fonction_ajout_espace_selon_dictionnai
 
     ajouter_parametre( PARAM_DICTIONNAIRE,
                        new base_parametre( this,
-                                           "Dictionnaire",
-                                           "Dictionnaire utilisé.",
+                                           base_parametre::tr("Dictionnaire"),
+                                           base_parametre::tr("Dictionnaire utilisé."),
                                            base_parametre::CONTENU_PARAM_VIDE_IMPOSSIBLE,
                                            base_parametre::CONFIGURATION_INVISIBLE,
                                            base_parametre::ALGO_AUCUN) );
@@ -58,7 +58,7 @@ bool fonction_ajout_espace_selon_dictionnaire::est_valide(logs_compilation_widge
  */
 QString fonction_ajout_espace_selon_dictionnaire::get_valeur_courte() const
 {
-    return "[Ajout d'espaces selon dictionnaire]";
+    return base_fonction::tr("[Ajout d'espaces selon dictionnaire]");
 }
 
 /** --------------------------------------------------------------------------------------

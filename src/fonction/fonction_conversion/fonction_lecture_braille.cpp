@@ -73,8 +73,8 @@ fonction_lecture_braille::fonction_lecture_braille( fonctions_conteneur * conten
 
     ajouter_parametre( PARAM_CARACTERES,
                        new base_parametre( this,
-                                           "Caractère plein",
-                                           "Le caractère plein à considérer.",
+                                           base_parametre::tr("Caractère plein"),
+                                           base_parametre::tr("Le caractère plein à considérer."),
                                            base_parametre::CONTENU_PARAM_VIDE_IMPOSSIBLE,
                                            base_parametre::CONFIGURATION_INVISIBLE,
                                            base_parametre::ALGO_IPL) );
@@ -111,7 +111,7 @@ QString fonction_lecture_braille::calcul_lettre(const type_element_braille & e) 
  */
 QString fonction_lecture_braille::get_valeur_courte() const
 {
-    return "[lecture_braille]";
+    return base_fonction::tr("[lecture_braille]");
 }
 
 /** --------------------------------------------------------------------------------------

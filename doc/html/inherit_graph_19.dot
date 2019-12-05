@@ -3,5 +3,5 @@ digraph "Graphe hiérarchique des classes"
   edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
   node [fontname="Helvetica",fontsize="10",shape=record];
   rankdir="LR";
-  Node0 [label="texte_edit",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classtexte__edit.html",tooltip="Classe décrivant un widget de type QPlainTextEdit dont la taille est ajustable suivant son contenu..."];
+  Node0 [label="liste_choix",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classliste__choix.html",tooltip="Classe décrivant une liste de choix. "];
 }

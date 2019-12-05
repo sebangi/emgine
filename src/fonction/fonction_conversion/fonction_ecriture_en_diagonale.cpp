@@ -36,8 +36,8 @@ fonction_ecriture_en_diagonale::fonction_ecriture_en_diagonale( fonctions_conten
 
     ajouter_parametre( PARAM_ELEMENTS,
                        new parametre_choix( this,
-                                            "Éléments à écrire",
-                                            "Indique s'il faut écrire les mots ou les caractères.",
+                                            base_parametre::tr("Éléments à écrire"),
+                                            base_parametre::tr("Indique s'il faut écrire les mots ou les caractères."),
                                             base_parametre::CONTENU_PARAM_VIDE_IMPOSSIBLE,
                                             base_parametre::CONFIGURATION_INVISIBLE,
                                             base_parametre::ALGO_IPL,
@@ -46,8 +46,8 @@ fonction_ecriture_en_diagonale::fonction_ecriture_en_diagonale( fonctions_conten
 
     ajouter_parametre( PARAM_ORIENTATION,
                        new parametre_choix( this,
-                                            "Orientation de l'écriture",
-                                            "Indique s'il faut écrire de haut en bas ou de bas en haut.",
+                                            base_parametre::tr("Orientation de l'écriture"),
+                                            base_parametre::tr("Indique s'il faut écrire de haut en bas ou de bas en haut."),
                                             base_parametre::CONTENU_PARAM_VIDE_IMPOSSIBLE,
                                             base_parametre::CONFIGURATION_INVISIBLE,
                                             base_parametre::ALGO_IPL,
@@ -56,16 +56,16 @@ fonction_ecriture_en_diagonale::fonction_ecriture_en_diagonale( fonctions_conten
 
     ajouter_parametre( PARAM_LIGNES,
                        new base_parametre( this,
-                                           "Nombre maximal de lignes",
-                                           "Le nombre maximal de lignes à écrire (aucune limite si non spécifié ou égale à 0).",
+                                           base_parametre::tr("Nombre maximal de lignes"),
+                                           base_parametre::tr("Le nombre maximal de lignes à écrire (aucune limite si non spécifié ou égale à 0)."),
                                            base_parametre::CONTENU_PARAM_VIDE_POSSIBLE,
                                            base_parametre::CONFIGURATION_INVISIBLE,
                                            base_parametre::ALGO_IPL) );
 
     ajouter_parametre( PARAM_MOTS,
                        new base_parametre( this,
-                                           "Forcer la rectangularité",
-                                           "Indique s'il faut forcer la rectangularité. Ce paramètre est pris en compte seulement si le nombre maximal de lignes est spécifié.",
+                                           base_parametre::tr("Forcer la rectangularité"),
+                                           base_parametre::tr("Indique s'il faut forcer la rectangularité. Ce paramètre est pris en compte seulement si le nombre maximal de lignes est spécifié."),
                                            base_parametre::CONTENU_PARAM_VIDE_POSSIBLE,
                                            base_parametre::CONFIGURATION_INVISIBLE,
                                            base_parametre::ALGO_IPL) );
@@ -87,7 +87,7 @@ bool fonction_ecriture_en_diagonale::est_valide(logs_compilation_widget * vue_lo
  */
 QString fonction_ecriture_en_diagonale::get_valeur_courte() const
 {
-    return "[ecriture_en_diagonale]";
+    return base_fonction::tr("[ecriture_en_diagonale]");
 }
 
 /** --------------------------------------------------------------------------------------

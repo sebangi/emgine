@@ -66,20 +66,29 @@ $(function() {
 <p>Liste complète des membres de <a class="el" href="classligne.html">ligne</a>, y compris les membres hérités :</p>
 <table class="directory">
   <tr class="even"><td class="entry"><a class="el" href="classligne.html#abb194a19c94d5d7ec48ef442f5043d1e">ajouter_mot</a>(const mot &amp;m)</td><td class="entry"><a class="el" href="classligne.html">ligne</a></td><td class="entry"></td></tr>
-  <tr><td class="entry"><a class="el" href="classligne.html#ab9ab2dab09a1d5335f0f33911a5f0fdf">ligne</a>()</td><td class="entry"><a class="el" href="classligne.html">ligne</a></td><td class="entry"></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="classligne.html#a716d489af0b55a8e9a7c6f840e94ea94">ligne</a>(const QString &amp;valeur, const QString &amp;separateur_mot=&quot; &quot;)</td><td class="entry"><a class="el" href="classligne.html">ligne</a></td><td class="entry"></td></tr>
+  <tr><td class="entry"><a class="el" href="classligne.html#add8e621e579dc0152603307cb746839a">fusionner</a>(bool fusion_caracteres, bool fusion_mots)</td><td class="entry"><a class="el" href="classligne.html">ligne</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="classligne.html#a3b74ed1e8f29e7049deda7d219e94e31">get_separateur_mot</a>() const</td><td class="entry"><a class="el" href="classligne.html">ligne</a></td><td class="entry"></td></tr>
+  <tr><td class="entry"><a class="el" href="classligne.html#a5c5b58ee161167a65fbac6867712d0ed">inverser</a>(bool inversion_elements, bool inversion_ordre_caracteres, bool inversion_ordre_mots)</td><td class="entry"><a class="el" href="classligne.html">ligne</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="classligne.html#ab9ab2dab09a1d5335f0f33911a5f0fdf">ligne</a>()</td><td class="entry"><a class="el" href="classligne.html">ligne</a></td><td class="entry"></td></tr>
+  <tr><td class="entry"><a class="el" href="classligne.html#a716d489af0b55a8e9a7c6f840e94ea94">ligne</a>(const QString &amp;valeur, const QString &amp;separateur_mot=&quot; &quot;)</td><td class="entry"><a class="el" href="classligne.html">ligne</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="classligne.html#ac795ba0aed9e4e5094efb6687435d5bc">ligne</a>(const ligne &amp;l)</td><td class="entry"><a class="el" href="classligne.html">ligne</a></td><td class="entry"></td></tr>
   <tr><td class="entry"><a class="el" href="classligne.html#a53b26b5089259aa657ef936d2c1459be">m_nb_caracteres</a></td><td class="entry"><a class="el" href="classligne.html">ligne</a></td><td class="entry"><span class="mlabel">private</span></td></tr>
   <tr class="even"><td class="entry"><a class="el" href="classligne.html#a94e2e9a8b204018cc2440c9d10aaeb71">m_separateur_mot</a></td><td class="entry"><a class="el" href="classligne.html">ligne</a></td><td class="entry"><span class="mlabel">private</span></td></tr>
+  <tr><td class="entry"><a class="el" href="classligne.html#a22efa7ceb50cb9406cbcbc6d1c93a55e">maj_nb_caracteres</a>()</td><td class="entry"><a class="el" href="classligne.html">ligne</a></td><td class="entry"><span class="mlabel">private</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="classligne.html#a4f4f45ac634c761ae39f572542bc1387">mot_a_la_position</a>(size_type pos, const mot &amp;mot_par_defaut) const</td><td class="entry"><a class="el" href="classligne.html">ligne</a></td><td class="entry"></td></tr>
   <tr><td class="entry"><a class="el" href="classligne.html#a3bfedd99e8ffbb068432df6d0768d5d1">nb_caracteres</a>() const</td><td class="entry"><a class="el" href="classligne.html">ligne</a></td><td class="entry"></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="classligne.html#ada0847f3e3c95773bb2c03db970f81d7">nb_mots</a>() const</td><td class="entry"><a class="el" href="classligne.html">ligne</a></td><td class="entry"></td></tr>
-  <tr><td class="entry"><a class="el" href="classligne.html#a838c048877d211c407293e534eae14c5">operator&lt;</a>(const ligne &amp;l) const</td><td class="entry"><a class="el" href="classligne.html">ligne</a></td><td class="entry"></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="classligne.html#a6f7addb13116e799f64f777a59a7e7bd">super</a> typedef</td><td class="entry"><a class="el" href="classligne.html">ligne</a></td><td class="entry"><span class="mlabel">private</span></td></tr>
-  <tr><td class="entry"><a class="el" href="classligne.html#a2a87dbf818765326d114d8b514fd3dd2">to_string</a>() const</td><td class="entry"><a class="el" href="classligne.html">ligne</a></td><td class="entry"></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="classligne.html#affd23e66b472f932e1e28df34a652539">to_string_lisible</a>() const</td><td class="entry"><a class="el" href="classligne.html">ligne</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="classligne.html#a2726237de2b9c93e40e38b95d090dfb8">nb_caracteres_alphabet</a>() const</td><td class="entry"><a class="el" href="classligne.html">ligne</a></td><td class="entry"></td></tr>
+  <tr><td class="entry"><a class="el" href="classligne.html#ada0847f3e3c95773bb2c03db970f81d7">nb_mots</a>() const</td><td class="entry"><a class="el" href="classligne.html">ligne</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="classligne.html#a838c048877d211c407293e534eae14c5">operator&lt;</a>(const ligne &amp;l) const</td><td class="entry"><a class="el" href="classligne.html">ligne</a></td><td class="entry"></td></tr>
+  <tr><td class="entry"><a class="el" href="classligne.html#af4b3251f640d045908bf6f4087100e6c">scinder</a>(bool scission_interne_caracteres, bool scission_caracteres)</td><td class="entry"><a class="el" href="classligne.html">ligne</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="classligne.html#aa13dd59094abd373163ef55e2f33bf8a">set_separateur_mot</a>(const QString &amp;separateur_mot=&quot; &quot;)</td><td class="entry"><a class="el" href="classligne.html">ligne</a></td><td class="entry"></td></tr>
+  <tr><td class="entry"><a class="el" href="classligne.html#a6f7addb13116e799f64f777a59a7e7bd">super</a> typedef</td><td class="entry"><a class="el" href="classligne.html">ligne</a></td><td class="entry"><span class="mlabel">private</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="classligne.html#a2a87dbf818765326d114d8b514fd3dd2">to_string</a>() const</td><td class="entry"><a class="el" href="classligne.html">ligne</a></td><td class="entry"></td></tr>
+  <tr><td class="entry"><a class="el" href="classligne.html#affd23e66b472f932e1e28df34a652539">to_string_lisible</a>() const</td><td class="entry"><a class="el" href="classligne.html">ligne</a></td><td class="entry"></td></tr>
 </table></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Généré le Mardi 28 Février 2017 10:28:27 pour Emgine par &#160;<a href="http://www.doxygen.org/index.html">
+Généré le Jeudi 5 Décembre 2019 09:58:38 pour Emgine par &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.13
 </small></address>

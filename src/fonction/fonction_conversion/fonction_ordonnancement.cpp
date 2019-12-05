@@ -30,8 +30,8 @@ fonction_ordonnancement::fonction_ordonnancement( fonctions_conteneur * conteneu
 
     ajouter_parametre( PARAM_ELEMENTS,
                        new parametre_choix( this,
-                                            "Éléments à ordonner",
-                                            "Indique s'il faut appliquer l'ordonnancement sur les mots ou sur les caractères.",
+                                            base_parametre::tr("Éléments à ordonner"),
+                                            base_parametre::tr("Indique s'il faut appliquer l'ordonnancement sur les mots ou sur les caractères."),
                                             base_parametre::CONTENU_PARAM_VIDE_IMPOSSIBLE,
                                             base_parametre::CONFIGURATION_INVISIBLE,
                                             base_parametre::ALGO_IPL,
@@ -40,16 +40,16 @@ fonction_ordonnancement::fonction_ordonnancement( fonctions_conteneur * conteneu
 
     ajouter_parametre( PARAM_ORDRE,
                        new base_parametre( this,
-                                           "Ordre",
-                                           "L'ordre à considérer.",
+                                           base_parametre::tr("Ordre"),
+                                           base_parametre::tr("L'ordre à considérer."),
                                            base_parametre::CONTENU_PARAM_VIDE_IMPOSSIBLE,
                                            base_parametre::CONFIGURATION_VISIBLE,
                                            base_parametre::ALGO_IPL) );
 
     ajouter_parametre( PARAM_TRAITER_PAR_LIGNE,
                        new base_parametre( this,
-                                           "Traiter par ligne",
-                                           "Indique si le ré-ordonnancement se réalise par ligne, par opposition à tout le texte.",
+                                           base_parametre::tr("Traiter par ligne"),
+                                           base_parametre::tr("Indique si le ré-ordonnancement se réalise par ligne, par opposition à tout le texte."),
                                            base_parametre::CONTENU_PARAM_VIDE_IMPOSSIBLE,
                                            base_parametre::CONFIGURATION_VISIBLE,
                                            base_parametre::ALGO_IPL) );
@@ -72,7 +72,7 @@ bool fonction_ordonnancement::est_valide(logs_compilation_widget * vue_logs)
  */
 QString fonction_ordonnancement::get_valeur_courte() const
 {
-    return "[ordonnancement]";
+    return base_fonction::tr("[ordonnancement]");
 }
 
 /** --------------------------------------------------------------------------------------

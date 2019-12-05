@@ -31,8 +31,8 @@ fonction_source_ensemble_sources::fonction_source_ensemble_sources(fonctions_con
 
     ajouter_parametre( PARAM_TEXTES,
                        new base_parametre( this,
-                                           "Sources",
-                                           "Les textes sources.",
+                                           base_parametre::tr("Sources"),
+                                           base_parametre::tr("Les textes sources."),
                                            base_parametre::CONTENU_PARAM_VIDE_POSSIBLE,
                                            base_parametre::CONFIGURATION_INVISIBLE,
                                            base_parametre::ALGO_AUCUN) );
@@ -95,7 +95,7 @@ bool fonction_source_ensemble_sources::est_valide(logs_compilation_widget * vue_
  */
 QString fonction_source_ensemble_sources::get_valeur_courte() const
 {
-    return "ensemble de textes ";
+    return base_fonction::tr("ensemble de textes ");
 }
 
 /** --------------------------------------------------------------------------------------

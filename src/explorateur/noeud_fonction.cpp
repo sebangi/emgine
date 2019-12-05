@@ -51,14 +51,14 @@ void noeud_fonction::mise_a_jour_icone()
     QString fichier = ":/icons/icone_";
 
     if ( ((base_fonction *)m_objet)->get_type() == type_fonction::fonction_source )
-        fichier += "source";
+        fichier += QObject::tr("source");
     else if ( ((base_fonction *)m_objet)->get_type() == type_fonction::fonction_conversion )
-        fichier += "conversion";
+        fichier += QObject::tr("conversion");
     else if ( ((base_fonction *)m_objet)->get_type() == type_fonction::fonction_sortie )
-        fichier += "sortie";
+        fichier += QObject::tr("sortie");
 
     if ( m_objet->est_verrouille_avec_parent() )
-        fichier += "_verrouille";
+        fichier += "_" + QObject::tr("verrouille");
 
     fichier += ".png";
     icon1.addFile(fichier, QSize(), QIcon::Normal, QIcon::Off);

@@ -61,11 +61,11 @@ QString log_compilation::get_message() const
     switch ( m_type )
     {
         case LOG_ERREUR:
-            return "Erreur : " + m_message;
+            return tr("Erreur") + " : " + m_message;
             break;
 
         case LOG_WARNING:
-            return "Danger : " + m_message;
+            return tr("Danger") + " : " + m_message;
             break;
 
         default :
@@ -100,27 +100,27 @@ QString log_compilation::get_type_string() const
     switch ( m_type )
     {
         case LOG_INFORMATION:
-            return "LOG_INFORMATION";
+            return tr("LOG_INFORMATION");
             break;
 
         case LOG_ERREUR:
-            return "LOG_ERREUR";
+            return tr("LOG_ERREUR");
             break;
 
         case LOG_SUCCES:
-            return "LOG_SUCCES";
+            return tr("LOG_SUCCES");
             break;
 
         case LOG_WARNING:
-            return "LOG_WARNING";
+            return tr("LOG_WARNING");
             break;
 
         case LOG_IMPORTANT:
-            return "LOG_IMPORTANT";
+            return tr("LOG_IMPORTANT");
             break;
 
         default:
-            return "LOG_NO_TYPE";
+            return tr("LOG_NO_TYPE");
     }
 }
 

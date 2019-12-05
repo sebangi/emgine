@@ -23,24 +23,24 @@ fonction_source_texte::fonction_source_texte(fonctions_conteneur * conteneur, QS
 
     ajouter_parametre( PARAM_CARACTERE_SEPARATEUR,
                        new base_parametre( this,
-                                           "Séparateur d'élément",
-                                           "Les séparateurs d'éléments.",
+                                           base_parametre::tr("Séparateur d'élément"),
+                                           base_parametre::tr("Les séparateurs d'éléments."),
                                            base_parametre::CONTENU_PARAM_VIDE_POSSIBLE,
                                            base_parametre::CONFIGURATION_INVISIBLE,
                                            base_parametre::ALGO_IPL) );
 
     ajouter_parametre( PARAM_MOT_SEPARATEUR,
                        new base_parametre( this,
-                                           "Séparateur de mot",
-                                           "Les séparateurs de mot.",
+                                           base_parametre::tr("Séparateur de mot"),
+                                           base_parametre::tr("Les séparateurs de mot."),
                                            base_parametre::CONTENU_PARAM_VIDE_IMPOSSIBLE,
                                            base_parametre::CONFIGURATION_INVISIBLE,
                                            base_parametre::ALGO_IPL) );
 
     ajouter_parametre( PARAM_LIGNE_SEPARATEUR,
                        new base_parametre( this,
-                                           "Séparateur de ligne",
-                                           "Les séparateurs de ligne.",
+                                           base_parametre::tr("Séparateur de ligne"),
+                                           base_parametre::tr("Les séparateurs de ligne."),
                                            base_parametre::CONTENU_PARAM_VIDE_IMPOSSIBLE,
                                            base_parametre::CONFIGURATION_INVISIBLE,
                                            base_parametre::ALGO_IPL) );

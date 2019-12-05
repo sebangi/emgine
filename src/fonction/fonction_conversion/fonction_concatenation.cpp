@@ -28,8 +28,8 @@ fonction_concatenation::fonction_concatenation( fonctions_conteneur * conteneur 
 
     ajouter_parametre( PARAM_TEXTES,
                        new base_parametre( this,
-                                           "Le texte à concaténer",
-                                           "Le texte à concaténer.",
+                                           base_parametre::tr("Le texte à concaténer"),
+                                           base_parametre::tr("Le texte à concaténer."),
                                            base_parametre::CONTENU_PARAM_VIDE_IMPOSSIBLE,
                                            base_parametre::CONFIGURATION_INVISIBLE,
                                            base_parametre::ALGO_AUCUN) );
@@ -51,7 +51,7 @@ bool fonction_concatenation::est_valide(logs_compilation_widget * vue_logs)
  */
 QString fonction_concatenation::get_valeur_courte() const
 {
-    return "[concatenation]";
+    return base_fonction::tr("[concatenation]");
 }
 
 /** --------------------------------------------------------------------------------------
@@ -59,7 +59,7 @@ QString fonction_concatenation::get_valeur_courte() const
  */
 void fonction_concatenation::initialisation_par_defaut()
 {
-    m_parametres[PARAM_TEXTES]->set_texte_par_defaut("Texte à concaténer");
+    m_parametres[PARAM_TEXTES]->set_texte_par_defaut(base_fonction::tr("Texte à concaténer"));
 }
 
 /** --------------------------------------------------------------------------------------

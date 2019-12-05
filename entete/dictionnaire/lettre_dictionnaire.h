@@ -2,9 +2,12 @@
 #define LETTRE_DICTIONNAIRE_H
 
 #include <vector>
+#include <QObject>
 
-class lettre_dictionnaire
+class lettre_dictionnaire : public QObject
 {
+        Q_OBJECT
+
 public:
     typedef std::vector< lettre_dictionnaire *> type_tab_lettres;
 

@@ -7,12 +7,15 @@
 #include <vector>
 #include <QString>
 #include <QDateTime>
+#include <QObject>
 
 #include "entete/dictionnaire/cle_de_mot.h"
 #include "entete/dictionnaire/lettre_dictionnaire.h"
 
-class dictionnaire
+class dictionnaire : public QObject
 {
+        Q_OBJECT
+
     public:
         typedef std::set<unsigned int> uint_set;
         typedef std::set<QString> qstring_set;

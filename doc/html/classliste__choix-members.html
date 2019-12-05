@@ -3,16 +3,15 @@
 <head>
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
-<meta name="generator" content="Doxygen 1.8.6"/>
+<meta name="generator" content="Doxygen 1.8.13"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
 <title>Emgine: Liste des membres</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
-<script type="text/javascript">
-  $(document).ready(function() { searchBox.OnSelectItem(0); });
-</script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
@@ -21,7 +20,7 @@
 <table cellspacing="0" cellpadding="0">
  <tbody>
  <tr style="height: 56px;">
-  <td style="padding-left: 0.5em;">
+  <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">Emgine
    </div>
   </td>
@@ -30,49 +29,25 @@
 </table>
 </div>
 <!-- end header part -->
-<!-- Généré par Doxygen 1.8.6 -->
+<!-- Généré par Doxygen 1.8.13 -->
 <script type="text/javascript">
 var searchBox = new SearchBox("searchBox", "search",false,'Recherche');
 </script>
-  <div id="navrow1" class="tabs">
-    <ul class="tablist">
-      <li><a href="index.html"><span>Page&#160;principale</span></a></li>
-      <li><a href="pages.html"><span>Pages&#160;associées</span></a></li>
-      <li><a href="modules.html"><span>Modules</span></a></li>
-      <li class="current"><a href="annotated.html"><span>Classes</span></a></li>
-      <li><a href="files.html"><span>Fichiers</span></a></li>
-      <li>
-        <div id="MSearchBox" class="MSearchBoxInactive">
-        <span class="left">
-          <img id="MSearchSelect" src="search/mag_sel.png"
-               onmouseover="return searchBox.OnSearchSelectShow()"
-               onmouseout="return searchBox.OnSearchSelectHide()"
-               alt=""/>
-          <input type="text" id="MSearchField" value="Recherche" accesskey="S"
-               onfocus="searchBox.OnSearchFieldFocus(true)" 
-               onblur="searchBox.OnSearchFieldFocus(false)" 
-               onkeyup="searchBox.OnSearchFieldChange(event)"/>
-          </span><span class="right">
-            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
-          </span>
-        </div>
-      </li>
-    </ul>
-  </div>
-  <div id="navrow2" class="tabs2">
-    <ul class="tablist">
-      <li><a href="annotated.html"><span>Liste&#160;des&#160;classes</span></a></li>
-      <li><a href="classes.html"><span>Index&#160;des&#160;classes</span></a></li>
-      <li><a href="inherits.html"><span>Hiérarchie&#160;des&#160;classes</span></a></li>
-      <li><a href="functions.html"><span>Membres&#160;de&#160;classe</span></a></li>
-    </ul>
-  </div>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+$(function() {
+  initMenu('',true,false,'search.php','Recherche');
+  $(document).ready(function() { init_search(); });
+});
+</script>
+<div id="main-nav"></div>
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>Tout</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Fichiers</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Fonctions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Définitions de type</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Énumérations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Valeurs énumérées</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Groupes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&#160;</span>Pages</a></div>
+</div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -90,23 +65,34 @@ var searchBox = new SearchBox("searchBox", "search",false,'Recherche');
 
 <p>Liste complète des membres de <a class="el" href="classliste__choix.html">liste_choix</a>, y compris les membres hérités :</p>
 <table class="directory">
-  <tr bgcolor="#f0f0f0" class="even"><td class="entry"><b>ajout_choix</b>(const choix &amp;c) (défini dans <a class="el" href="classliste__choix.html">liste_choix</a>)</td><td class="entry"><a class="el" href="classliste__choix.html">liste_choix</a></td><td class="entry"><span class="mlabel">static</span></td></tr>
-  <tr bgcolor="#f0f0f0"><td class="entry"><b>appliquer</b>(const old_texte &amp;source, old_texte &amp;resultat) (défini dans <a class="el" href="classliste__choix.html">liste_choix</a>)</td><td class="entry"><a class="el" href="classliste__choix.html">liste_choix</a></td><td class="entry"><span class="mlabel">static</span></td></tr>
-  <tr bgcolor="#f0f0f0" class="even"><td class="entry"><b>clear</b>() (défini dans <a class="el" href="classliste__choix.html">liste_choix</a>)</td><td class="entry"><a class="el" href="classliste__choix.html">liste_choix</a></td><td class="entry"><span class="mlabel">static</span></td></tr>
-  <tr bgcolor="#f0f0f0"><td class="entry"><b>descendre</b>(unsigned int index) (défini dans <a class="el" href="classliste__choix.html">liste_choix</a>)</td><td class="entry"><a class="el" href="classliste__choix.html">liste_choix</a></td><td class="entry"><span class="mlabel">static</span></td></tr>
-  <tr bgcolor="#f0f0f0" class="even"><td class="entry"><b>get_choix</b>(unsigned int index) (défini dans <a class="el" href="classliste__choix.html">liste_choix</a>)</td><td class="entry"><a class="el" href="classliste__choix.html">liste_choix</a></td><td class="entry"><span class="mlabel">static</span></td></tr>
-  <tr bgcolor="#f0f0f0"><td class="entry"><b>get_nb_choix</b>() (défini dans <a class="el" href="classliste__choix.html">liste_choix</a>)</td><td class="entry"><a class="el" href="classliste__choix.html">liste_choix</a></td><td class="entry"><span class="mlabel">static</span></td></tr>
-  <tr bgcolor="#f0f0f0" class="even"><td class="entry"><b>liste_choix</b>() (défini dans <a class="el" href="classliste__choix.html">liste_choix</a>)</td><td class="entry"><a class="el" href="classliste__choix.html">liste_choix</a></td><td class="entry"></td></tr>
-  <tr bgcolor="#f0f0f0"><td class="entry"><b>monter</b>(unsigned int index) (défini dans <a class="el" href="classliste__choix.html">liste_choix</a>)</td><td class="entry"><a class="el" href="classliste__choix.html">liste_choix</a></td><td class="entry"><span class="mlabel">static</span></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="classliste__choix.html#ab033adf713728b76ed70686e0c453f5e">s_choix</a></td><td class="entry"><a class="el" href="classliste__choix.html">liste_choix</a></td><td class="entry"><span class="mlabel">private</span><span class="mlabel">static</span></td></tr>
-  <tr bgcolor="#f0f0f0"><td class="entry"><b>supprimer</b>(unsigned int index) (défini dans <a class="el" href="classliste__choix.html">liste_choix</a>)</td><td class="entry"><a class="el" href="classliste__choix.html">liste_choix</a></td><td class="entry"><span class="mlabel">static</span></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="classliste__choix.html#a682db50de2fcc2902105ae4d31c228ce">type_tableau_choix</a> typedef</td><td class="entry"><a class="el" href="classliste__choix.html">liste_choix</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="classliste__choix.html#acad3057499092f846c77518da1037819">appliquer_sur_caracteres</a></td><td class="entry"><a class="el" href="classliste__choix.html">liste_choix</a></td><td class="entry"><span class="mlabel">static</span></td></tr>
+  <tr><td class="entry"><a class="el" href="classliste__choix.html#a976f59282ca3b5ef269a62c3843c95bd">appliquer_sur_lignes</a></td><td class="entry"><a class="el" href="classliste__choix.html">liste_choix</a></td><td class="entry"><span class="mlabel">static</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="classliste__choix.html#a3bce708dfb95112fc93d4626bbb2f9d1">appliquer_sur_mots</a></td><td class="entry"><a class="el" href="classliste__choix.html">liste_choix</a></td><td class="entry"><span class="mlabel">static</span></td></tr>
+  <tr><td class="entry"><a class="el" href="classliste__choix.html#ad1d86f80205e831c59cbfda3f530252b">appliquer_sur_textes</a></td><td class="entry"><a class="el" href="classliste__choix.html">liste_choix</a></td><td class="entry"><span class="mlabel">static</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="classliste__choix.html#ac7776feee5276caf5f4eba783c67f189">choix_invalide</a></td><td class="entry"><a class="el" href="classliste__choix.html">liste_choix</a></td><td class="entry"><span class="mlabel">static</span></td></tr>
+  <tr><td class="entry"><a class="el" href="classliste__choix.html#a41ba99396b0d4f3a7de9b160e12ba933">de_bas_en_haut</a></td><td class="entry"><a class="el" href="classliste__choix.html">liste_choix</a></td><td class="entry"><span class="mlabel">static</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="classliste__choix.html#a4b088fa58b60ee0352ab3159d3315840">de_droite_a_gauche</a></td><td class="entry"><a class="el" href="classliste__choix.html">liste_choix</a></td><td class="entry"><span class="mlabel">static</span></td></tr>
+  <tr><td class="entry"><a class="el" href="classliste__choix.html#adcf434f6c8e921d17e7f3e2295480efd">de_gauche_a_droite</a></td><td class="entry"><a class="el" href="classliste__choix.html">liste_choix</a></td><td class="entry"><span class="mlabel">static</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="classliste__choix.html#ab394fbb81c68cac36e3b70ba8bb5ba08">de_haut_en_bas</a></td><td class="entry"><a class="el" href="classliste__choix.html">liste_choix</a></td><td class="entry"><span class="mlabel">static</span></td></tr>
+  <tr><td class="entry"><a class="el" href="classliste__choix.html#ac98aa6e5e896209514c44eb2f32e409b">diagonale_bas_gauche_haut_droit</a></td><td class="entry"><a class="el" href="classliste__choix.html">liste_choix</a></td><td class="entry"><span class="mlabel">static</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="classliste__choix.html#aa7e2d107a427033c35f138d994840c80">diagonale_haut_gauche_bas_droit</a></td><td class="entry"><a class="el" href="classliste__choix.html">liste_choix</a></td><td class="entry"><span class="mlabel">static</span></td></tr>
+  <tr><td class="entry"><a class="el" href="classliste__choix.html#a0c328b8bc313cc5379034fd89157d58a">est_valide</a>(const QStringList &amp;c) const</td><td class="entry"><a class="el" href="classliste__choix.html">liste_choix</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="classliste__choix.html#ad2a021a1df330d91d0b07d35ba8225b7">est_valide</a>(const QString &amp;c) const</td><td class="entry"><a class="el" href="classliste__choix.html">liste_choix</a></td><td class="entry"></td></tr>
+  <tr><td class="entry"><a class="el" href="classliste__choix.html#a5ac44b1361ce5aef940a6aecbc3003eb">liste_choix</a>(const QStringList &amp;liste_choix_possibles, const QStringList &amp;liste_choix_par_defaut)</td><td class="entry"><a class="el" href="classliste__choix.html">liste_choix</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="classliste__choix.html#ac66a134a7155029c871f2b99ebcfd9f0">liste_choix_par_defaut</a>() const</td><td class="entry"><a class="el" href="classliste__choix.html">liste_choix</a></td><td class="entry"></td></tr>
+  <tr><td class="entry"><a class="el" href="classliste__choix.html#a385994981d0bd7768ae5165ce5683d77">liste_choix_possibles</a>() const</td><td class="entry"><a class="el" href="classliste__choix.html">liste_choix</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="classliste__choix.html#a83a8b96de0ad60d21402b304a5da67d0">m_liste_choix_par_defaut</a></td><td class="entry"><a class="el" href="classliste__choix.html">liste_choix</a></td><td class="entry"><span class="mlabel">private</span></td></tr>
+  <tr><td class="entry"><a class="el" href="classliste__choix.html#a53151ac1991fb06000aca6573e319956">m_liste_choix_possibles</a></td><td class="entry"><a class="el" href="classliste__choix.html">liste_choix</a></td><td class="entry"><span class="mlabel">private</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="classliste__choix.html#a02396c6bd7bba9acc845ae1af60bf5f9">rotation_0</a></td><td class="entry"><a class="el" href="classliste__choix.html">liste_choix</a></td><td class="entry"><span class="mlabel">static</span></td></tr>
+  <tr><td class="entry"><a class="el" href="classliste__choix.html#a39c5d5e2ee56d979d8039e37b63e5f49">rotation_180</a></td><td class="entry"><a class="el" href="classliste__choix.html">liste_choix</a></td><td class="entry"><span class="mlabel">static</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="classliste__choix.html#ac7397b4f2c1a3b904bf734f69382b13b">rotation_270</a></td><td class="entry"><a class="el" href="classliste__choix.html">liste_choix</a></td><td class="entry"><span class="mlabel">static</span></td></tr>
+  <tr><td class="entry"><a class="el" href="classliste__choix.html#a5acd8b9168e50ecd3e0740a9c5f8d71e">rotation_90</a></td><td class="entry"><a class="el" href="classliste__choix.html">liste_choix</a></td><td class="entry"><span class="mlabel">static</span></td></tr>
 </table></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Généré le Vendredi 10 Février 2017 15:45:29 pour Emgine par &#160;<a href="http://www.doxygen.org/index.html">
+Généré le Jeudi 5 Décembre 2019 09:58:38 pour Emgine par &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
-</a> 1.8.6
+</a> 1.8.13
 </small></address>
 </body>
 </html>

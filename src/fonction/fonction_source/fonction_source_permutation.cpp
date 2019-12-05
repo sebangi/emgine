@@ -23,8 +23,8 @@ fonction_source_permutation::fonction_source_permutation(fonctions_conteneur * c
 
     ajouter_parametre( PARAM_ELEMENTS,
                        new base_parametre( this,
-                                           "Éléments",
-                                           "Les éléments utilisés pour générer les permutations.\nÉviter de dépasser 9 éléments car trop long.",
+                                           base_parametre::tr("Éléments"),
+                                           base_parametre::tr("Les éléments utilisés pour générer les permutations.\nÉviter de dépasser neuf éléments car trop long."),
                                            base_parametre::CONTENU_PARAM_VIDE_IMPOSSIBLE,
                                            base_parametre::CONFIGURATION_INVISIBLE,
                                            base_parametre::ALGO_IPL) );
@@ -111,7 +111,7 @@ bool fonction_source_permutation::est_valide(logs_compilation_widget * vue_logs)
  */
 QString fonction_source_permutation::get_valeur_courte() const
 {
-    return "généré lors de l'exécution";
+    return base_fonction::tr("généré lors de l'exécution");
 }
 
 /** --------------------------------------------------------------------------------------

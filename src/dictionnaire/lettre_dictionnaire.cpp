@@ -19,7 +19,7 @@ lettre_dictionnaire *lettre_dictionnaire::get_suivant( int pos )
 {
     if ( pos > 25 || pos < 0 )
     {
-        std::cout << "erreur : " <<  pos << std::endl;
+        std::cout << tr("erreur").toStdString() + " : " <<  pos << std::endl;
         return NULL;
     }
 

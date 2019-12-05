@@ -29,7 +29,7 @@ void fonction_source_booleen_widget::init()
 {
     QHBoxLayout * lay = new QHBoxLayout();
 
-    QLabel* label1 = new QLabel( "oui" );
+    QLabel* label1 = new QLabel( tr("oui") );
     label1->setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Expanding);
     label1->setAlignment(Qt::AlignRight | Qt::AlignVCenter);
     lay->addWidget(label1, 1, Qt::AlignRight);
@@ -40,7 +40,7 @@ void fonction_source_booleen_widget::init()
     lay->addWidget(m_check_oui, 1, Qt::AlignLeft);
     connect(m_check_oui, SIGNAL(stateChanged(int)), this, SLOT(on_oui_stateChanged(int)));
 
-    QLabel* label2 = new QLabel( "non" );
+    QLabel* label2 = new QLabel( tr("non") );
     label2->setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Expanding);
     label2->setAlignment(Qt::AlignRight | Qt::AlignVCenter);
     lay->addWidget(label2, 1, Qt::AlignRight);

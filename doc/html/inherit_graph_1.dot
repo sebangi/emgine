@@ -1,0 +1,7 @@
+digraph "Graphe hiérarchique des classes"
+{
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="LR";
+  Node0 [label="algo_MIPL",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classalgo___m_i_p_l.html",tooltip="Classe de stockage pour l&#39;utilisation de l&#39;algorithme IPL (Itération Par Ligne) "];
+}

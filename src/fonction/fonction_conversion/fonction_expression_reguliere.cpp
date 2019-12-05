@@ -28,16 +28,16 @@ fonction_expression_reguliere::fonction_expression_reguliere( fonctions_conteneu
 
     ajouter_parametre( PARAM_DICTIONNAIRE,
                        new base_parametre( this,
-                                           "Dictionnaire",
-                                           "Dictionnaire utilisé.",
+                                           base_parametre::tr("Dictionnaire"),
+                                           base_parametre::tr("Dictionnaire utilisé."),
                                            base_parametre::CONTENU_PARAM_VIDE_IMPOSSIBLE,
                                            base_parametre::CONFIGURATION_INVISIBLE,
                                            base_parametre::ALGO_AUCUN) );
 
     ajouter_parametre( PARAM_LIGNES,
                        new base_parametre( this,
-                                           "Générer un texte par mot",
-                                           "Indique si chaque mot en entrée génère un texte avec toutes les possibilités.",
+                                           base_parametre::tr("Générer un texte par mot"),
+                                           base_parametre::tr("Indique si chaque mot en entrée génère un texte avec toutes les possibilités."),
                                            base_parametre::CONTENU_PARAM_VIDE_IMPOSSIBLE,
                                            base_parametre::CONFIGURATION_INVISIBLE,
                                            base_parametre::ALGO_IPL) );
@@ -68,7 +68,7 @@ bool fonction_expression_reguliere::est_valide(logs_compilation_widget * vue_log
  */
 QString fonction_expression_reguliere::get_valeur_courte() const
 {
-    return "[expression_reguliere]";
+    return base_fonction::tr("[expression_reguliere]");
 }
 
 /** --------------------------------------------------------------------------------------

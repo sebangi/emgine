@@ -35,8 +35,8 @@ fonction_rotation::fonction_rotation( fonctions_conteneur * conteneur )
 
     ajouter_parametre( PARAM_ELEMENTS,
                        new parametre_choix( this,
-                                            "Éléments à tourner",
-                                            "Indique s'il faut appliquer la rotation sur les mots ou sur les caractères.",
+                                            base_parametre::tr("Éléments à tourner"),
+                                            base_parametre::tr("Indique s'il faut appliquer la rotation sur les mots ou sur les caractères."),
                                             base_parametre::CONTENU_PARAM_VIDE_IMPOSSIBLE,
                                             base_parametre::CONFIGURATION_INVISIBLE,
                                             base_parametre::ALGO_IPL,
@@ -45,8 +45,8 @@ fonction_rotation::fonction_rotation( fonctions_conteneur * conteneur )
 
     ajouter_parametre( PARAM_ROTATION,
                        new parametre_choix( this,
-                                            "La rotation à réaliser",
-                                            "Indique quelle rotation réaliser.",
+                                            base_parametre::tr("La rotation à réaliser"),
+                                            base_parametre::tr("Indique quelle rotation réaliser."),
                                             base_parametre::CONTENU_PARAM_VIDE_IMPOSSIBLE,
                                             base_parametre::CONFIGURATION_VISIBLE,
                                             base_parametre::ALGO_IPL,
@@ -70,7 +70,7 @@ bool fonction_rotation::est_valide(logs_compilation_widget * vue_logs)
  */
 QString fonction_rotation::get_valeur_courte() const
 {
-    return "[rotation]";
+    return base_fonction::tr("[rotation]");
 }
 
 /** --------------------------------------------------------------------------------------
@@ -128,7 +128,7 @@ void fonction_rotation::execution_specifique( compilateur &compil, textes & text
                 if ( ! it_t->est_rectangulaire_selon_mots() )
                     compil.get_vue_logs()->ajouter_log
                             ( log_compilation( log_compilation::LOG_WARNING, (base_fonction*)this,
-                                               "La rotation d'un texte non rectangulaire déforme le texte.") );
+                                               base_fonction::tr("La rotation d'un texte non rectangulaire déforme le texte.")) );
 
                 it_t->tourner_mots(choix_rotation);
             }
@@ -137,7 +137,7 @@ void fonction_rotation::execution_specifique( compilateur &compil, textes & text
                 if ( ! it_t->est_rectangulaire_selon_caracteres() )
                     compil.get_vue_logs()->ajouter_log
                             ( log_compilation( log_compilation::LOG_WARNING, (base_fonction*)this,
-                                               "La rotation d'un texte non rectangulaire déforme le texte.") );
+                                               base_fonction::tr("La rotation d'un texte non rectangulaire déforme le texte.")) );
 
                 it_t->tourner_caracteres(choix_rotation);
             }

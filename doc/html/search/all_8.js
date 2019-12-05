@@ -1,10 +1,15 @@
 var searchData=
 [
-  ['ligne',['ligne',['../classligne.html',1,'ligne'],['../classligne.html#ab9ab2dab09a1d5335f0f33911a5f0fdf',1,'ligne::ligne()'],['../classligne.html#a716d489af0b55a8e9a7c6f840e94ea94',1,'ligne::ligne(const QString &amp;valeur, const QString &amp;separateur_mot=&quot; &quot;)']]],
+  ['lettre_5fdictionnaire',['lettre_dictionnaire',['../classlettre__dictionnaire.html',1,'']]],
+  ['ligne',['ligne',['../classligne.html',1,'ligne'],['../classligne.html#ab9ab2dab09a1d5335f0f33911a5f0fdf',1,'ligne::ligne()'],['../classligne.html#a716d489af0b55a8e9a7c6f840e94ea94',1,'ligne::ligne(const QString &amp;valeur, const QString &amp;separateur_mot=&quot; &quot;)'],['../classligne.html#ac795ba0aed9e4e5094efb6687435d5bc',1,'ligne::ligne(const ligne &amp;l)']]],
   ['ligne_2ecpp',['ligne.cpp',['../ligne_8cpp.html',1,'']]],
   ['ligne_2eh',['ligne.h',['../ligne_8h.html',1,'']]],
-  ['ligne_5fcourante',['ligne_courante',['../classalgo___l_i_p_l.html#a221d88a3279f6cd23f9f6b2045281b82',1,'algo_LIPL']]],
-  ['lipl_5fsuivant',['LIPL_suivant',['../classbase__fonction.html#ab159f0fd86bdbbfeb609d8e691f4fbb2',1,'base_fonction']]],
+  ['ligne_5fcourante',['ligne_courante',['../classalgo___i_p_l.html#aca1574ac06f7502a67dd84ce6c40967d',1,'algo_IPL']]],
+  ['liste_5fchoix',['liste_choix',['../classliste__choix.html',1,'liste_choix'],['../classliste__choix.html#a5ac44b1361ce5aef940a6aecbc3003eb',1,'liste_choix::liste_choix()']]],
+  ['liste_5fchoix_2ecpp',['liste_choix.cpp',['../liste__choix_8cpp.html',1,'']]],
+  ['liste_5fchoix_2eh',['liste_choix.h',['../liste__choix_8h.html',1,'']]],
+  ['liste_5fchoix_5fpar_5fdefaut',['liste_choix_par_defaut',['../classliste__choix.html#ac66a134a7155029c871f2b99ebcfd9f0',1,'liste_choix']]],
+  ['liste_5fchoix_5fpossibles',['liste_choix_possibles',['../classliste__choix.html#a385994981d0bd7768ae5165ce5683d77',1,'liste_choix']]],
   ['liste_5fselectionnable',['liste_selectionnable',['../classvue__fonctions.html#a4b7bd7b89f25904608694984411dcdfd',1,'vue_fonctions']]],
   ['liste_5ftexte_5fwidget',['liste_texte_widget',['../classliste__texte__widget.html',1,'liste_texte_widget'],['../classliste__texte__widget.html#a0548a37c423530270c05051953191a17',1,'liste_texte_widget::liste_texte_widget()']]],
   ['liste_5ftexte_5fwidget_2ecpp',['liste_texte_widget.cpp',['../liste__texte__widget_8cpp.html',1,'']]],

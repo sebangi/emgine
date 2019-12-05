@@ -31,7 +31,7 @@ projet::projet()
 {
     s_nb_projets++;
 
-    m_nom = "Nouveau projet " + QString::number( s_nb_projets );
+    m_nom = tr("Nouveau projet ") + QString::number( s_nb_projets );
 }
 
 /** --------------------------------------------------------------------------------------
@@ -322,14 +322,14 @@ bool projet::est_valide(logs_compilation_widget * vue_logs)
     {
         vue_logs->ajouter_log
                 ( log_compilation( log_compilation::LOG_ERREUR, this,
-                                   "Le projet \"" + m_nom + "\" n'a aucune fonction active") );
+                                   tr("Le projet") + " \"" + m_nom + "\" " + tr("n'a aucune fonction active")) );
         result = false;
     }
     else if ( ! ( actifs.front()->get_type() == type_fonction::fonction_source ) )
     {
         vue_logs->ajouter_log
                 ( log_compilation( log_compilation::LOG_ERREUR, this,
-                                   "Le projet \"" + m_nom + "\" doit commencer par une fonction source active") );
+                                   tr("Le projet") + " \"" + m_nom + "\" " + tr("doit commencer par une fonction source active")) );
         result = false;
     }
 
