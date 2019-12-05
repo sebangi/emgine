@@ -51,8 +51,8 @@ fenetre_principale::type_projets fenetre_principale::s_projets = fenetre_princip
  * \brief Constructeur de la classe fenetre_principale.
  * \param parent Un pointeur sur le widget parent.
  */
-fenetre_principale::fenetre_principale(QWidget *parent) :
-    QMainWindow(parent), m_ui(new Ui::fenetre_principale)
+fenetre_principale::fenetre_principale(QApplication * app, QWidget *parent) :
+    m_application(app), QMainWindow(parent), m_ui(new Ui::fenetre_principale)
 {
     m_ui->setupUi(this);
     m_ui->menuBar->hide();
@@ -60,6 +60,8 @@ fenetre_principale::fenetre_principale(QWidget *parent) :
     creer_toolbar();
     creer_widgets();
     init_widgets();
+
+    selectionner_langue("en");
 
     QIcon icon1;
     icon1.addFile(QString::fromUtf8(":/icons/emgine.png"), QSize(), QIcon::Normal, QIcon::Off);
@@ -99,6 +101,8 @@ void fenetre_principale::creer_toolbar()
     m_toolbar_bouton_ajout_fonction_conversion = new QPushButton();
     m_toolbar_bouton_ajout_fonction_sortie = new QPushButton();
     m_toolbar_bouton_executer = new QPushButton();
+    m_toolbar_bouton_francais = new QPushButton();
+    m_toolbar_bouton_anglais = new QPushButton();
 
     m_toolbar_bouton_nouveau_projet->setObjectName("ButtonToolBar");
     m_toolbar_bouton_sauvegarder_projet->setObjectName("ButtonToolBar");
@@ -111,6 +115,9 @@ void fenetre_principale::creer_toolbar()
 
     m_toolbar_bouton_executer->setObjectName("ButtonToolBar");
 
+    m_toolbar_bouton_francais->setObjectName("BoutonLangueNonSelectionne");
+    m_toolbar_bouton_anglais->setObjectName("BoutonLangueSelectionne");
+
     m_ui->mainToolBar->addWidget(m_toolbar_bouton_nouveau_projet);
     m_ui->mainToolBar->addWidget(m_toolbar_bouton_ouvrir_projet);
     m_ui->mainToolBar->addSeparator();
@@ -122,15 +129,14 @@ void fenetre_principale::creer_toolbar()
     m_ui->mainToolBar->addWidget(m_toolbar_bouton_ajout_fonction_sortie);
     m_ui->mainToolBar->addSeparator();
 
-    /*
-     // Pour mettre le bouton tout en bas
+    m_ui->mainToolBar->addWidget(m_toolbar_bouton_executer);
+
     QWidget* spacer = new QWidget();
     spacer->setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Expanding);
     m_ui->mainToolBar->addWidget(spacer);
-    */
 
-    //m_ui->mainToolBar->addSeparator();
-    m_ui->mainToolBar->addWidget(m_toolbar_bouton_executer);
+    m_ui->mainToolBar->addWidget(m_toolbar_bouton_francais);
+    m_ui->mainToolBar->addWidget(m_toolbar_bouton_anglais);
 }
 
 /** --------------------------------------------------------------------------------------
@@ -205,6 +211,16 @@ void fenetre_principale::init_widgets()
     m_toolbar_bouton_sauvegarder_projet_sous->setIcon(style->standardIcon( QStyle::SP_DialogSaveButton ));
     m_toolbar_bouton_sauvegarder_projet_sous->setText(tr("Enregistrer sous"));
 
+    QIcon icone_drapeau_francais;
+    icone_drapeau_francais.addFile(QString::fromUtf8(":/icons/drapeau/francais.png"), QSize(), QIcon::Normal, QIcon::Off);
+    m_toolbar_bouton_francais->setIcon(icone_drapeau_francais);
+    m_toolbar_bouton_francais->setText(tr("Français"));
+
+    QIcon icone_drapeau_anglais;
+    icone_drapeau_anglais.addFile(QString::fromUtf8(":/icons/drapeau/anglais.png"), QSize(), QIcon::Normal, QIcon::Off);
+    m_toolbar_bouton_anglais->setIcon(icone_drapeau_anglais);
+    m_toolbar_bouton_anglais->setText(tr("Anglais"));
+
     connect( m_toolbar_bouton_ajout_fonction_source, SIGNAL(released()), this, SLOT(on_ajouter_fonction_source_click()));
     connect( m_toolbar_bouton_ajout_fonction_conversion, SIGNAL(released()), this, SLOT(on_ajouter_fonction_conversion_click()));
     connect( m_toolbar_bouton_ajout_fonction_sortie, SIGNAL(released()), this, SLOT(on_ajouter_fonction_sortie_click()));
@@ -213,6 +229,9 @@ void fenetre_principale::init_widgets()
     connect( m_toolbar_bouton_sauvegarder_projet_sous, SIGNAL(released()), this, SLOT(on_enregistrer_projet_sous_click()));
     connect( m_toolbar_bouton_ouvrir_projet, SIGNAL(released()), this, SLOT(on_ouvrir_projet_click()));
     connect( m_toolbar_bouton_executer, SIGNAL(released()), this, SLOT(on_executer_click()));
+
+    connect( m_toolbar_bouton_francais, SIGNAL(released()), this, SLOT(on_francais_click()));
+    connect( m_toolbar_bouton_anglais, SIGNAL(released()), this, SLOT(on_anglais_click()));
 
     QWidget * top_widget = new QWidget(this);
     QHBoxLayout * hor_lay = new QHBoxLayout();
@@ -626,6 +645,20 @@ void fenetre_principale::deconnecter()
 }
 
 /** --------------------------------------------------------------------------------------
+ \brief Sélectionne une langue donnée.
+ \param langue La langue voulue.
+*/
+void fenetre_principale::selectionner_langue(QString langue)
+{
+    std::cout << langue.toStdString() << std::endl;
+
+    m_application->removeTranslator(& m_translator );
+    m_translator.load("emgine_" + langue );
+    m_application->installTranslator(& m_translator);
+    m_ui->retranslateUi(this);
+}
+
+/** --------------------------------------------------------------------------------------
  \brief Fonction appelée lorsque le bouton ajouter_fonction_source est activé.
 */
 void fenetre_principale::on_ajouter_fonction_source_click()
@@ -691,6 +724,40 @@ void fenetre_principale::on_executer_click()
 {
     if ( objet_selectionnable::existe_selection() )
         executer( objet_selectionnable::get_projet_courant() );
+}
+
+/** --------------------------------------------------------------------------------------
+ \brief Fonction appelée lorsque l'on choisit la langue française.
+*/
+void fenetre_principale::on_francais_click()
+{
+    std::cout << "francais" << std::endl;
+    selectionner_langue("fr");
+
+    m_toolbar_bouton_francais->setObjectName("BoutonLangueSelectionne");
+    m_toolbar_bouton_anglais->setObjectName("BoutonLangueNonSelectionne");
+
+    m_toolbar_bouton_francais->style()->unpolish(m_toolbar_bouton_francais);
+    m_toolbar_bouton_francais->style()->polish(m_toolbar_bouton_francais);
+    m_toolbar_bouton_anglais->style()->unpolish(m_toolbar_bouton_anglais);
+    m_toolbar_bouton_anglais->style()->polish(m_toolbar_bouton_anglais);
+}
+
+/** --------------------------------------------------------------------------------------
+ \brief Fonction appelée lorsque l'on choisit la langue anglaise.
+*/
+void fenetre_principale::on_anglais_click()
+{
+    std::cout << "anglais" << std::endl;
+    selectionner_langue("en");
+
+    m_toolbar_bouton_francais->setObjectName("BoutonLangueNonSelectionne");
+    m_toolbar_bouton_anglais->setObjectName("BoutonLangueSelectionne");
+
+    m_toolbar_bouton_francais->style()->unpolish(m_toolbar_bouton_francais);
+    m_toolbar_bouton_francais->style()->polish(m_toolbar_bouton_francais);
+    m_toolbar_bouton_anglais->style()->unpolish(m_toolbar_bouton_anglais);
+    m_toolbar_bouton_anglais->style()->polish(m_toolbar_bouton_anglais);
 }
 
 /** --------------------------------------------------------------------------------------

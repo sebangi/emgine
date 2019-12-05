@@ -13,6 +13,7 @@
 #include <QStyle>
 #include <QTableWidget>
 #include <QTextEdit>
+#include <QTranslator>
 #include <QTreeWidgetItem>
 #include <QVBoxLayout>
 #include <QXmlStreamReader>
@@ -60,7 +61,7 @@ class fenetre_principale : public QMainWindow
         typedef type_projets::const_iterator projets_const_iterateur;
 
     public:
-        explicit fenetre_principale(QWidget *parent = 0);
+        explicit fenetre_principale(QApplication * app, QWidget *parent = 0);
         ~fenetre_principale();
 
         void ajouter_source();
@@ -88,7 +89,8 @@ class fenetre_principale : public QMainWindow
         void connecter_projet(projet * p);
         void deconnecter_projet(projet * p);
         void deconnecter_projets();
-        void deconnecter();
+        void deconnecter();        
+        void selectionner_langue(QString langue);
 
     private slots:
         bool on_enregistrer_projet_sous(projet * p);
@@ -101,6 +103,8 @@ class fenetre_principale : public QMainWindow
         void on_enregistrer_projet_click();
         void on_ouvrir_projet_click();
         void on_executer_click();
+        void on_francais_click();
+        void on_anglais_click();
 
         void on_externe_demande_ajout_fonction(fonctions_conteneur * conteneur, objet_selectionnable* obj_ref, type_fonction type);
         void on_externe_verrouillage_change(objet_selectionnable *obj);
@@ -129,6 +133,12 @@ class fenetre_principale : public QMainWindow
         static logs_compilation_widget * s_vue_logs;
 
     private:
+        /** \brief Un pointeur sur l'application. */
+        QApplication * m_application;
+
+        /** \brief Le traducteur de l'application. */
+        QTranslator m_translator;
+
         /** \brief La référence sur la fenetre elle-même. */
         Ui::fenetre_principale *m_ui;
 
@@ -154,7 +164,13 @@ class fenetre_principale : public QMainWindow
         QPushButton *m_toolbar_bouton_ajout_fonction_sortie;
 
         /** \brief Le bouton de la barre d'outil pour exécuter le projet courant.*/
-        QPushButton *m_toolbar_bouton_executer;
+        QPushButton *m_toolbar_bouton_executer;        
+
+        /** \brief Le bouton de la barre d'outil pour sélectionner la langue française.*/
+        QPushButton *m_toolbar_bouton_francais;
+
+        /** \brief Le bouton de la barre d'outil pour sélectionner la langue anglaise.*/
+        QPushButton *m_toolbar_bouton_anglais;
 };
 
 #endif // FENETRE_PRINCIPALE_H

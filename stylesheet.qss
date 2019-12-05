@@ -162,6 +162,42 @@ QPushButton#BoutonChoixFonctionSortie:hover
     background-color: rgba(255,180,0);
 }
 
+
+QPushButton#BoutonLangueSelectionne
+{
+    text-align: center;
+    padding: 2px;
+    margin: 1px;
+    border-color: green;
+    border-style: solid;
+    border-width: 1px;
+    border-radius: 4px;
+    background-color: Lawngreen;
+}
+
+QPushButton#BoutonLangueSelectionne:hover
+{
+    background-color: rgba(88,242,80);
+}
+
+QPushButton#BoutonLangueNonSelectionne
+{
+    text-align: center;
+    padding: 2px;
+    margin: 1px;
+    border-color: red;
+    border-style: solid;
+    border-width: 1px;
+    border-radius: 4px;
+    background-color: Coral;
+}
+
+QPushButton#BoutonLangueNonSelectionne:hover
+{
+    background-color: rgba(242,88,80);
+}
+
+
 QPushButton#ButtonToolBar
 {
     text-align: left;

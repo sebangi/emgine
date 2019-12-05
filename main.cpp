@@ -9,7 +9,6 @@
 #include <QApplication>
 #include <QFile>
 #include <QTextCodec>
-#include <QTranslator>
 
 /*! --------------------------------------------------------------------------------------
  \brief Fonction principale du projet.
@@ -26,11 +25,7 @@ int main(int argc, char *argv[])
     QApplication a(argc, argv);
     a.setStyleSheet(StyleSheet);
 
-    QTranslator translator;
-    translator.load("emgine_en");
-    a.installTranslator(&translator);
-
-    fenetre_principale w;
+    fenetre_principale w(&a);
     w.show();
     
     return a.exec();
