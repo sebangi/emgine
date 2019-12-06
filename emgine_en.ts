@@ -39,29 +39,9 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="src/explorateur/noeud_fonction.cpp" line="54"/>
-        <source>source</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="src/explorateur/noeud_fonction.cpp" line="56"/>
-        <source>conversion</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="src/explorateur/noeud_fonction.cpp" line="58"/>
-        <source>sortie</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="src/explorateur/noeud_fonction.cpp" line="61"/>
-        <source>verrouille</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <location filename="src/fonction_widget/fonction_sortie_widget/texte_widget_item.cpp" line="26"/>
         <source>Texte</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Text</translation>
     </message>
 </context>
 <context>
@@ -69,7 +49,7 @@
     <message>
         <location filename="src/fonction/bibliotheque_fonctions.cpp" line="50"/>
         <source>Oui ou Non</source>
-        <translation type="unfinished"></translation>
+        <translation>Yes or No</translation>
     </message>
     <message>
         <location filename="src/fonction/bibliotheque_fonctions.cpp" line="51"/>
@@ -79,7 +59,7 @@
     <message>
         <location filename="src/fonction/bibliotheque_fonctions.cpp" line="52"/>
         <source>Texte</source>
-        <translation type="unfinished"></translation>
+        <translation>Text</translation>
     </message>
     <message>
         <location filename="src/fonction/bibliotheque_fonctions.cpp" line="53"/>
@@ -214,7 +194,7 @@
     <message>
         <location filename="src/fonction/bibliotheque_fonctions.cpp" line="84"/>
         <source>Textes</source>
-        <translation type="unfinished"></translation>
+        <translation>Texts</translation>
     </message>
     <message>
         <location filename="src/fonction/bibliotheque_fonctions.cpp" line="85"/>
@@ -712,7 +692,7 @@ En fran&#xe7;ais, l&apos;indice vaut environ 0,0778. Si l&apos;indice de coincid
     <message>
         <location filename="src/fonction/fonction_conversion/fonction_cesar.cpp" line="28"/>
         <source>D&#xe9;calage</source>
-        <translation type="unfinished"></translation>
+        <translation>Shift</translation>
     </message>
     <message>
         <location filename="src/fonction/fonction_conversion/fonction_cesar.cpp" line="29"/>
@@ -1223,137 +1203,137 @@ Possibilit&#xe9; d&apos;alternance si le mot est une s&#xe9;quence.</source>
 <context>
     <name>explorateur</name>
     <message>
-        <location filename="src/explorateur/explorateur.cpp" line="40"/>
+        <location filename="src/explorateur/explorateur.cpp" line="99"/>
         <source>Explorateur de projets</source>
         <translation>Project explorator</translation>
     </message>
     <message>
-        <location filename="src/explorateur/explorateur.cpp" line="603"/>
+        <location filename="src/explorateur/explorateur.cpp" line="614"/>
         <source>Fermer le projet</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="src/explorateur/explorateur.cpp" line="619"/>
+        <location filename="src/explorateur/explorateur.cpp" line="630"/>
         <source>Supprimer la fonction</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="src/explorateur/explorateur.cpp" line="636"/>
+        <location filename="src/explorateur/explorateur.cpp" line="647"/>
         <source>Enregistrer le projet</source>
-        <translation type="unfinished"></translation>
+        <translation>Save the project</translation>
     </message>
     <message>
-        <location filename="src/explorateur/explorateur.cpp" line="642"/>
+        <location filename="src/explorateur/explorateur.cpp" line="653"/>
         <source>Enregistrer le projet sous</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="src/explorateur/explorateur.cpp" line="649"/>
+        <location filename="src/explorateur/explorateur.cpp" line="660"/>
         <source>Dupliquer le projet</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="src/explorateur/explorateur.cpp" line="665"/>
+        <location filename="src/explorateur/explorateur.cpp" line="676"/>
         <source>Copier le contenu</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="src/explorateur/explorateur.cpp" line="667"/>
+        <location filename="src/explorateur/explorateur.cpp" line="678"/>
         <source>Copier la fonction</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="src/explorateur/explorateur.cpp" line="677"/>
+        <location filename="src/explorateur/explorateur.cpp" line="688"/>
         <source>Couper le contenu</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="src/explorateur/explorateur.cpp" line="679"/>
+        <location filename="src/explorateur/explorateur.cpp" line="690"/>
         <source>Couper la fonction</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="src/explorateur/explorateur.cpp" line="690"/>
+        <location filename="src/explorateur/explorateur.cpp" line="701"/>
         <source>Coller au d&#xe9;but</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="src/explorateur/explorateur.cpp" line="692"/>
+        <location filename="src/explorateur/explorateur.cpp" line="703"/>
         <source>Coller apr&#xe8;s</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="src/explorateur/explorateur.cpp" line="729"/>
+        <location filename="src/explorateur/explorateur.cpp" line="740"/>
         <source>&#xe0; la suite</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="src/explorateur/explorateur.cpp" line="731"/>
+        <location filename="src/explorateur/explorateur.cpp" line="742"/>
         <source>en d&#xe9;but de liste</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="src/explorateur/explorateur.cpp" line="733"/>
+        <location filename="src/explorateur/explorateur.cpp" line="744"/>
         <source>Ajouter une source</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="src/explorateur/explorateur.cpp" line="742"/>
+        <location filename="src/explorateur/explorateur.cpp" line="753"/>
         <source>Ajouter une conversion</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="src/explorateur/explorateur.cpp" line="751"/>
+        <location filename="src/explorateur/explorateur.cpp" line="762"/>
         <source>Ajouter une sortie</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="src/explorateur/explorateur.cpp" line="774"/>
+        <location filename="src/explorateur/explorateur.cpp" line="785"/>
         <source>D&#xe9;sactiver la fonction</source>
-        <translation type="unfinished"></translation>
+        <translation>Desactivate the function</translation>
     </message>
     <message>
-        <location filename="src/explorateur/explorateur.cpp" line="779"/>
+        <location filename="src/explorateur/explorateur.cpp" line="790"/>
         <source>Activer la fonction</source>
-        <translation type="unfinished"></translation>
+        <translation>Activate the function</translation>
     </message>
     <message>
-        <location filename="src/explorateur/explorateur.cpp" line="802"/>
+        <location filename="src/explorateur/explorateur.cpp" line="813"/>
         <source>D&#xe9;verrouiller</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="src/explorateur/explorateur.cpp" line="807"/>
+        <location filename="src/explorateur/explorateur.cpp" line="818"/>
         <source>Verrouiller</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="src/explorateur/explorateur.cpp" line="811"/>
+        <location filename="src/explorateur/explorateur.cpp" line="822"/>
         <source>la fonction</source>
-        <translation type="unfinished"></translation>
+        <translation>The function</translation>
     </message>
     <message>
-        <location filename="src/explorateur/explorateur.cpp" line="813"/>
+        <location filename="src/explorateur/explorateur.cpp" line="824"/>
         <source>le projet</source>
-        <translation type="unfinished"></translation>
+        <translation>The project</translation>
     </message>
     <message>
-        <location filename="src/explorateur/explorateur.cpp" line="1078"/>
+        <location filename="src/explorateur/explorateur.cpp" line="1089"/>
         <source>Fonction</source>
-        <translation type="unfinished"></translation>
+        <translation>Function</translation>
     </message>
     <message>
-        <location filename="src/explorateur/explorateur.cpp" line="1079"/>
+        <location filename="src/explorateur/explorateur.cpp" line="1090"/>
         <source>Voulez-vous vraiment supprimer la fonction</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="src/explorateur/explorateur.cpp" line="1082"/>
+        <location filename="src/explorateur/explorateur.cpp" line="1093"/>
         <source>Oui</source>
         <translation>Yes</translation>
     </message>
     <message>
-        <location filename="src/explorateur/explorateur.cpp" line="1083"/>
+        <location filename="src/explorateur/explorateur.cpp" line="1094"/>
         <source>Non</source>
         <translation>No</translation>
     </message>
@@ -1361,107 +1341,107 @@ Possibilit&#xe9; d&apos;alternance si le mot est une s&#xe9;quence.</source>
 <context>
     <name>fenetre_principale</name>
     <message>
-        <location filename="src/fenetre_principale.cpp" line="179"/>
+        <location filename="src/fenetre_principale.cpp" line="685"/>
         <source>Emgine</source>
         <translation>Emgine</translation>
     </message>
     <message>
-        <location filename="src/fenetre_principale.cpp" line="666"/>
+        <location filename="src/fenetre_principale.cpp" line="679"/>
         <source>Source</source>
         <translation>Source</translation>
     </message>
     <message>
-        <location filename="src/fenetre_principale.cpp" line="667"/>
+        <location filename="src/fenetre_principale.cpp" line="680"/>
         <source>Conversion</source>
         <translation>Conversion</translation>
     </message>
     <message>
-        <location filename="src/fenetre_principale.cpp" line="668"/>
+        <location filename="src/fenetre_principale.cpp" line="681"/>
         <source>R&#xe9;sultat</source>
         <translation>Result</translation>
     </message>
     <message>
-        <location filename="src/fenetre_principale.cpp" line="662"/>
+        <location filename="src/fenetre_principale.cpp" line="675"/>
         <source>Nouveau projet</source>
         <translation>New project</translation>
     </message>
     <message>
-        <location filename="src/fenetre_principale.cpp" line="663"/>
+        <location filename="src/fenetre_principale.cpp" line="676"/>
         <source>Ouvrir un projet</source>
         <translation>Open project</translation>
     </message>
     <message>
-        <location filename="src/fenetre_principale.cpp" line="665"/>
+        <location filename="src/fenetre_principale.cpp" line="678"/>
         <source>Enregistrer sous</source>
         <translation>Save as</translation>
     </message>
     <message>
-        <location filename="src/fenetre_principale.cpp" line="670"/>
+        <location filename="src/fenetre_principale.cpp" line="683"/>
         <source>Fran&#xe7;ais</source>
         <translation>French</translation>
     </message>
     <message>
-        <location filename="src/fenetre_principale.cpp" line="671"/>
+        <location filename="src/fenetre_principale.cpp" line="684"/>
         <source>Anglais</source>
         <translation>English</translation>
     </message>
     <message>
-        <location filename="src/fenetre_principale.cpp" line="669"/>
+        <location filename="src/fenetre_principale.cpp" line="682"/>
         <source>Ex&#xe9;cuter</source>
         <translation>Run</translation>
     </message>
     <message>
-        <location filename="src/fenetre_principale.cpp" line="335"/>
+        <location filename="src/fenetre_principale.cpp" line="343"/>
         <source>Exemple</source>
         <translation>Example</translation>
     </message>
     <message>
-        <location filename="src/fenetre_principale.cpp" line="393"/>
+        <location filename="src/fenetre_principale.cpp" line="401"/>
         <source>Sauvegarder le projet</source>
         <translation>Save the project</translation>
     </message>
     <message>
-        <location filename="src/fenetre_principale.cpp" line="461"/>
+        <location filename="src/fenetre_principale.cpp" line="469"/>
         <source>projet Emgine</source>
         <translation>Emgine project</translation>
     </message>
     <message>
-        <location filename="src/fenetre_principale.cpp" line="479"/>
+        <location filename="src/fenetre_principale.cpp" line="487"/>
         <source>Impossible d&apos;ouvrir le fichier.</source>
         <translation>Fail open the project.</translation>
     </message>
     <message>
-        <location filename="src/fenetre_principale.cpp" line="460"/>
+        <location filename="src/fenetre_principale.cpp" line="468"/>
         <source>Ouvrir un projet Emgine</source>
         <translation>Open Emgine project</translation>
     </message>
     <message>
-        <location filename="src/fenetre_principale.cpp" line="470"/>
+        <location filename="src/fenetre_principale.cpp" line="478"/>
         <source>Ouverture de projet</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="src/fenetre_principale.cpp" line="470"/>
+        <location filename="src/fenetre_principale.cpp" line="478"/>
         <source>Le projet est d&#xe9;j&#xe0; ouvert !</source>
         <translation>The project is already opened !</translation>
     </message>
     <message>
-        <location filename="src/fenetre_principale.cpp" line="664"/>
+        <location filename="src/fenetre_principale.cpp" line="677"/>
         <source>Enregistrer</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="src/fenetre_principale.cpp" line="861"/>
+        <location filename="src/fenetre_principale.cpp" line="873"/>
         <source>Le projet n&apos;est pas enregistr&#xe9;.</source>
         <translation>The project is not saved.</translation>
     </message>
     <message>
-        <location filename="src/fenetre_principale.cpp" line="862"/>
+        <location filename="src/fenetre_principale.cpp" line="874"/>
         <source>Souhaitez-vous enregistrer les changements ?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="src/fenetre_principale.cpp" line="905"/>
+        <location filename="src/fenetre_principale.cpp" line="917"/>
         <source>copie</source>
         <translation>copy</translation>
     </message>
@@ -1520,7 +1500,7 @@ Possibilit&#xe9; d&apos;alternance si le mot est une s&#xe9;quence.</source>
     <message>
         <location filename="src/fonction_widget/fonction_source_widget/fonction_source_dictionnaire_widget.cpp" line="90"/>
         <source>Texte</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Text</translation>
     </message>
     <message>
         <location filename="src/fonction_widget/fonction_source_widget/fonction_source_dictionnaire_widget.cpp" line="90"/>
@@ -1546,7 +1526,7 @@ Possibilit&#xe9; d&apos;alternance si le mot est une s&#xe9;quence.</source>
     <message>
         <location filename="src/fonction_widget/fonction_source_widget/fonction_source_fichier_texte_widget.cpp" line="128"/>
         <source>Texte</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Text</translation>
     </message>
     <message>
         <location filename="src/fonction_widget/fonction_source_widget/fonction_source_fichier_texte_widget.cpp" line="128"/>

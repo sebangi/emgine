@@ -23,6 +23,7 @@ class noeud_fonction : public base_noeud
 
         base_fonction* get_fonction() const;
         void mise_a_jour_icone();
+        void maj_langues();
 };
 
 #endif // NOEUD_FONCTION_H

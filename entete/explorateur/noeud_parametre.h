@@ -23,6 +23,7 @@ class noeud_parametre : public base_noeud
 
         base_parametre* get_parametre() const;
         void mise_a_jour_icone();
+        void maj_langues();
 };
 
 #endif // NOEUD_PARAMETRE_H

@@ -74,3 +74,12 @@ void base_noeud::mise_a_jour_icone()
     // La fonction sera à définir dans les classes filles SI BESOIN
 }
 
+/** --------------------------------------------------------------------------------------
+ \brief Met à jour les textes selon la langue choisie.
+*/
+void base_noeud::maj_langues()
+{
+    for ( int i = 0; i < childCount(); ++i )
+        ( (base_noeud*)child(i) )->maj_langues();
+}
+

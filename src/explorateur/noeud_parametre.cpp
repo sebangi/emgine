@@ -57,4 +57,13 @@ void noeud_parametre::mise_a_jour_icone()
     setIcon( 0, icon1 );
 }
 
+/** --------------------------------------------------------------------------------------
+ \brief Met à jour les textes selon la langue choisie.
+*/
+void noeud_parametre::maj_langues()
+{
+    base_noeud::maj_langues();
+
+    setText(0, get_parametre()->get_nom());
+}
 

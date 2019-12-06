@@ -92,6 +92,17 @@ void explorateur::ajouter_projet(projet *p)
 }
 
 /** --------------------------------------------------------------------------------------
+ \brief Met à jour les textes selon la langue choisie.
+*/
+void explorateur::maj_langues()
+{
+    setHeaderLabel(tr("Explorateur de projets"));
+
+    for ( int i = 0; i < topLevelItemCount(); ++i )
+       ((base_noeud*)topLevelItem(i))->maj_langues();
+}
+
+/** --------------------------------------------------------------------------------------
  * \brief Fonction appelée lorsque l'état d'activation d'une fonction change.
  * \param f Un pointeur sur la fonction dont l'activation vient de changer.
  */

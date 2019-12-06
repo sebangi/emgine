@@ -663,13 +663,14 @@ void fenetre_principale::selectionner_langue(QString langue)
     m_translator.load("emgine_" + langue );
     m_application->installTranslator(& m_translator);
 
-    maj_textes();
+    maj_langues();
+    s_explorateur->maj_langues();
 }
 
 /** --------------------------------------------------------------------------------------
- \brief Met à jour les textes.
+ \brief Met à jour les textes selon la langue choisie.
 */
-void fenetre_principale::maj_textes()
+void fenetre_principale::maj_langues()
 {
     m_toolbar_bouton_nouveau_projet->setText(tr("Nouveau projet"));
     m_toolbar_bouton_ouvrir_projet->setText(tr("Ouvrir un projet"));

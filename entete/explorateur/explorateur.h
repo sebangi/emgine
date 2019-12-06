@@ -40,6 +40,7 @@ class explorateur : public QTreeWidget
         ~explorateur();
 
         void ajouter_projet(projet* p);
+        void maj_langues();
 
     private:
         void ajouter_fonction(base_fonction* f);

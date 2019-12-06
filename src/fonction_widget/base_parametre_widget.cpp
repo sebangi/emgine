@@ -69,7 +69,7 @@ void base_parametre_widget::init()
     main_layout->setMargin(5);
     main_layout->setSpacing(5);
 
-    QString s( base_parametre::tr( qUtf8Printable( m_parametre->get_nom() ) ) );
+    QString s( m_parametre->get_nom() );
     QLabel * nom = new QLabel( s + " : " );
     nom->setObjectName("NomParametre");
     nom->setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Expanding);

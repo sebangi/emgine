@@ -93,7 +93,7 @@ class fenetre_principale : public QMainWindow
         void deconnecter_projets();
         void deconnecter();        
         void selectionner_langue(QString langue);
-        void maj_textes();
+        void maj_langues();
 
     private slots:
         bool on_enregistrer_projet_sous(projet * p);

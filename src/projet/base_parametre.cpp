@@ -70,7 +70,7 @@ void base_parametre::sauvegarder( QXmlStreamWriter & stream ) const
  */
 QString base_parametre::get_nom() const
 {
-    return m_nom;
+    return tr( qUtf8Printable( m_nom ) );
 }
 
 /** --------------------------------------------------------------------------------------

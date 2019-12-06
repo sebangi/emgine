@@ -12,6 +12,7 @@
 #include "entete/projet/objet_selectionnable.h"
 
 #include <QApplication>
+#include <iostream>
 
 /** --------------------------------------------------------------------------------------
  * \brief Constructeur de la classe neoud_fonction.
@@ -51,18 +52,28 @@ void noeud_fonction::mise_a_jour_icone()
     QString fichier = ":/icons/icone_";
 
     if ( ((base_fonction *)m_objet)->get_type() == type_fonction::fonction_source )
-        fichier += QObject::tr("source");
+        fichier += "source";
     else if ( ((base_fonction *)m_objet)->get_type() == type_fonction::fonction_conversion )
-        fichier += QObject::tr("conversion");
+        fichier += "conversion";
     else if ( ((base_fonction *)m_objet)->get_type() == type_fonction::fonction_sortie )
-        fichier += QObject::tr("sortie");
+        fichier += "sortie";
 
     if ( m_objet->est_verrouille_avec_parent() )
-        fichier += "_" + QObject::tr("verrouille");
+        fichier += "_verrouille";
 
     fichier += ".png";
     icon1.addFile(fichier, QSize(), QIcon::Normal, QIcon::Off);
     setIcon( 0, icon1 );
+}
+
+/** --------------------------------------------------------------------------------------
+ \brief Met à jour les textes selon la langue choisie.
+*/
+void noeud_fonction::maj_langues()
+{
+    base_noeud::maj_langues();
+
+    setText(0, ((base_fonction *)m_objet)->get_nom());
 }
 
 
