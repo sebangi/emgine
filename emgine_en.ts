@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS><TS version="1.1" language="en_US">
-<defaultcodec></defaultcodec>
+<!DOCTYPE TS>
+<TS version="2.1" language="en_US">
 <context>
     <name>QObject</name>
     <message>
+        <location filename="src/element/base_element.cpp" line="104"/>
         <location filename="src/element/base_element.cpp" line="271"/>
         <source>non</source>
         <translation>no</translation>
@@ -50,7 +51,7 @@
     </message>
     <message>
         <location filename="src/fonction_widget/parametre_aide_message_box.cpp" line="37"/>
-        <source>Param&#xe8;tre</source>
+        <source>Paramètre</source>
         <translation>Parameter</translation>
     </message>
     <message>
@@ -83,20 +84,23 @@
     </message>
     <message>
         <location filename="src/fonction/bibliotheque_fonctions.cpp" line="54"/>
-        <source>Caract&#xe8;res</source>
+        <source>Caractères</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+        <location filename="src/fonction/bibliotheque_fonctions.cpp" line="55"/>
         <location filename="src/fonction/bibliotheque_fonctions.cpp" line="98"/>
-        <source>G&#xe9;n&#xe9;rateur de permutations</source>
+        <source>Générateur de permutations</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+        <location filename="src/fonction/bibliotheque_fonctions.cpp" line="56"/>
         <location filename="src/fonction/fonction_source/fonction_source_dictionnaire.cpp" line="96"/>
         <source>Dictionnaire</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+        <location filename="src/fonction/bibliotheque_fonctions.cpp" line="57"/>
         <location filename="src/fonction/bibliotheque_fonctions.cpp" line="100"/>
         <source>Ensemble de sources</source>
         <translation type="unfinished"></translation>
@@ -108,7 +112,7 @@
     </message>
     <message>
         <location filename="src/fonction/bibliotheque_fonctions.cpp" line="61"/>
-        <source>Chiffrement par Code C&#xe9;sar</source>
+        <source>Chiffrement par Code César</source>
         <translation>Caesar Cipher</translation>
     </message>
     <message>
@@ -118,7 +122,7 @@
     </message>
     <message>
         <location filename="src/fonction/bibliotheque_fonctions.cpp" line="63"/>
-        <source>S&#xe9;lection selon dictionnaire</source>
+        <source>Sélection selon dictionnaire</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -128,7 +132,7 @@
     </message>
     <message>
         <location filename="src/fonction/bibliotheque_fonctions.cpp" line="65"/>
-        <source>&#xc9;criture en chiffre romain</source>
+        <source>Écriture en chiffre romain</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -143,22 +147,24 @@
     </message>
     <message>
         <location filename="src/fonction/bibliotheque_fonctions.cpp" line="68"/>
-        <source>Substitution de caract&#xe8;res</source>
+        <source>Substitution de caractères</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+        <location filename="src/fonction/bibliotheque_fonctions.cpp" line="69"/>
         <location filename="src/fonction/bibliotheque_fonctions.cpp" line="110"/>
-        <source>&#xc9;criture en morse</source>
+        <source>Écriture en morse</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+        <location filename="src/fonction/bibliotheque_fonctions.cpp" line="70"/>
         <location filename="src/fonction/bibliotheque_fonctions.cpp" line="111"/>
         <source>Lecture du morse</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="src/fonction/bibliotheque_fonctions.cpp" line="71"/>
-        <source>Choix des s&#xe9;parateurs</source>
+        <source>Choix des séparateurs</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -173,7 +179,7 @@
     </message>
     <message>
         <location filename="src/fonction/bibliotheque_fonctions.cpp" line="74"/>
-        <source>Concat&#xe9;nation</source>
+        <source>Concaténation</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -188,7 +194,7 @@
     </message>
     <message>
         <location filename="src/fonction/bibliotheque_fonctions.cpp" line="77"/>
-        <source>&#xc9;criture en diagonale</source>
+        <source>Écriture en diagonale</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -198,7 +204,7 @@
     </message>
     <message>
         <location filename="src/fonction/bibliotheque_fonctions.cpp" line="81"/>
-        <source>Expression r&#xe9;guli&#xe8;re</source>
+        <source>Expression régulière</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -213,7 +219,7 @@
     </message>
     <message>
         <location filename="src/fonction/bibliotheque_fonctions.cpp" line="85"/>
-        <source>Fr&#xe9;quences des &#xe9;l&#xe9;ments</source>
+        <source>Fréquences des éléments</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -248,7 +254,7 @@
     </message>
     <message>
         <location filename="src/fonction/bibliotheque_fonctions.cpp" line="96"/>
-        <source>Source de type un caract&#xe8;re</source>
+        <source>Source de type un caractère</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -263,18 +269,18 @@
     </message>
     <message>
         <location filename="src/fonction/bibliotheque_fonctions.cpp" line="102"/>
-        <source>Outil pour d&#xe9;coder/encoder avec C&#xe9;sar.
-Le code C&#xe9;sar (ou chiffre de C&#xe9;sar) est un chiffrement par d&#xe9;calage parmi les plus simples et les plus connus, il utilise la substitution d&apos;une lettre par une autre plus loin dans l&apos;alphabet.</source>
+        <source>Outil pour décoder/encoder avec César.
+Le code César (ou chiffre de César) est un chiffrement par décalage parmi les plus simples et les plus connus, il utilise la substitution d&apos;une lettre par une autre plus loin dans l&apos;alphabet.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="src/fonction/bibliotheque_fonctions.cpp" line="103"/>
-        <source>Formate le texte, i.e. mise en majuscule, retrait des accents et &#xe9;ventuellement de la ponctuation.</source>
+        <source>Formate le texte, i.e. mise en majuscule, retrait des accents et éventuellement de la ponctuation.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="src/fonction/bibliotheque_fonctions.cpp" line="104"/>
-        <source>S&#xe9;lectionne les textes selon un dictionnaire donn&#xe9;. Cela permet de filtrer par exemple les textes &#xe9;crits en fran&#xe7;ais.</source>
+        <source>Sélectionne les textes selon un dictionnaire donné. Cela permet de filtrer par exemple les textes écrits en français.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -289,62 +295,62 @@ Le code C&#xe9;sar (ou chiffre de C&#xe9;sar) est un chiffrement par d&#xe9;cala
     </message>
     <message>
         <location filename="src/fonction/bibliotheque_fonctions.cpp" line="107"/>
-        <source>Ajoute les espaces entre mot selon un dictionnaire donn&#xe9;.</source>
+        <source>Ajoute les espaces entre mot selon un dictionnaire donné.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="src/fonction/bibliotheque_fonctions.cpp" line="108"/>
-        <source>Fusion des caract&#xe8;res, des mots, des lignes et/ou des textes.</source>
+        <source>Fusion des caractères, des mots, des lignes et/ou des textes.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="src/fonction/bibliotheque_fonctions.cpp" line="109"/>
-        <source>Substitution de caract&#xe8;res.</source>
+        <source>Substitution de caractères.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="src/fonction/bibliotheque_fonctions.cpp" line="112"/>
-        <source>Choix des s&#xe9;parateurs (de caract&#xe8;res, de mots et de lignes)</source>
+        <source>Choix des séparateurs (de caractères, de mots et de lignes)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="src/fonction/bibliotheque_fonctions.cpp" line="113"/>
-        <source>Transposition du texte (des mots ou des caract&#xe8;res)</source>
+        <source>Transposition du texte (des mots ou des caractères)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="src/fonction/bibliotheque_fonctions.cpp" line="114"/>
-        <source>Inversion des caract&#xe8;res, des mots et/ou des lignes.</source>
+        <source>Inversion des caractères, des mots et/ou des lignes.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="src/fonction/bibliotheque_fonctions.cpp" line="115"/>
-        <source>Concat&#xe9;nation de textes. Ajoute &#xe0; chaque texte en entr&#xe9;e les textes du param&#xe8;tre.</source>
+        <source>Concaténation de textes. Ajoute à chaque texte en entrée les textes du paramètre.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="src/fonction/bibliotheque_fonctions.cpp" line="116"/>
-        <source>Rotation du texte (des mots ou des caract&#xe8;res).</source>
+        <source>Rotation du texte (des mots ou des caractères).</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="src/fonction/bibliotheque_fonctions.cpp" line="117"/>
-        <source>Scission des lignes en textes, des mots en lignes, des caract&#xe8;res en mots ou du contenu des caract&#xe8;res en caract&#xe8;res.</source>
+        <source>Scission des lignes en textes, des mots en lignes, des caractères en mots ou du contenu des caractères en caractères.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="src/fonction/bibliotheque_fonctions.cpp" line="118"/>
-        <source>&#xc9;criture du texte en diagonale (des mots ou des caract&#xe8;res).</source>
+        <source>Écriture du texte en diagonale (des mots ou des caractères).</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="src/fonction/bibliotheque_fonctions.cpp" line="119"/>
-        <source>Inverse suivant une diagonale les mots ou les caract&#xe8;res.</source>
+        <source>Inverse suivant une diagonale les mots ou les caractères.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="src/fonction/bibliotheque_fonctions.cpp" line="120"/>
-        <source>&#xc9;criture en braille</source>
+        <source>Écriture en braille</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -354,12 +360,12 @@ Le code C&#xe9;sar (ou chiffre de C&#xe9;sar) est un chiffrement par d&#xe9;cala
     </message>
     <message>
         <location filename="src/fonction/bibliotheque_fonctions.cpp" line="122"/>
-        <source>Mappe une expression r&#xe9;guli&#xe8;re &#xe0; partir d&apos;un dictionnaire.</source>
+        <source>Mappe une expression régulière à partir d&apos;un dictionnaire.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="src/fonction/bibliotheque_fonctions.cpp" line="123"/>
-        <source>R&#xe9;-ordonne les &#xe9;lements (mots ou caract&#xe8;res).</source>
+        <source>Ré-ordonne les élements (mots ou caractères).</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -369,18 +375,18 @@ Le code C&#xe9;sar (ou chiffre de C&#xe9;sar) est un chiffrement par d&#xe9;cala
     </message>
     <message>
         <location filename="src/fonction/bibliotheque_fonctions.cpp" line="126"/>
-        <source>Sortie affichant la fr&#xe9;quence des &#xe9;l&#xe9;ments.</source>
+        <source>Sortie affichant la fréquence des éléments.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="src/fonction/bibliotheque_fonctions.cpp" line="127"/>
         <source>Sortie affichant l&apos;indice de coincidence.
-En fran&#xe7;ais, l&apos;indice vaut environ 0,0778. Si l&apos;indice de coincidence est grand (proche de 0.070), c&apos;est &#xe0; dire similaire &#xe0; celui d&apos;un message non chiffr&#xe9;, alors le message a probablement subit une substitution monoalphabetiquehref (une m&#xea;me lettre ne peut &#xea;tre remplac&#xe9;e que par une seule autre). Si l&apos;indice de coincidence est faible (proche de 0.0385), c&apos;est &#xe0; dire similaire &#xe0; une r&#xe9;partition al&#xe9;atoire, alors le message a probablement subit un chiffrement polyalphab&#xe9;tique (une m&#xea;me lettre peut &#xea;tre remplac&#xe9;e par plusieurs autres). Plus l&apos;indice est faible, plus le nombre d&apos;alphabets utilis&#xe9; est grand.</source>
+En français, l&apos;indice vaut environ 0,0778. Si l&apos;indice de coincidence est grand (proche de 0.070), c&apos;est à dire similaire à celui d&apos;un message non chiffré, alors le message a probablement subit une substitution monoalphabetiquehref (une même lettre ne peut être remplacée que par une seule autre). Si l&apos;indice de coincidence est faible (proche de 0.0385), c&apos;est à dire similaire à une répartition aléatoire, alors le message a probablement subit un chiffrement polyalphabétique (une même lettre peut être remplacée par plusieurs autres). Plus l&apos;indice est faible, plus le nombre d&apos;alphabets utilisé est grand.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="src/fonction/bibliotheque_fonctions.cpp" line="128"/>
-        <source>Sortie affichant l&apos;analyse de chaque ligne, i.e. son nombre de mots et de caract&#xe8;res.</source>
+        <source>Sortie affichant l&apos;analyse de chaque ligne, i.e. son nombre de mots et de caractères.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -394,6 +400,7 @@ En fran&#xe7;ais, l&apos;indice vaut environ 0,0778. Si l&apos;indice de coincid
         <translation type="unfinished"></translation>
     </message>
     <message>
+        <location filename="src/fonction/bibliotheque_fonctions.cpp" line="140"/>
         <location filename="src/fonction/bibliotheque_fonctions.cpp" line="152"/>
         <source>inverser</source>
         <translation type="unfinished"></translation>
@@ -415,17 +422,17 @@ En fran&#xe7;ais, l&apos;indice vaut environ 0,0778. Si l&apos;indice de coincid
     </message>
     <message>
         <location filename="src/fonction/bibliotheque_fonctions.cpp" line="149"/>
-        <source>d&#xe9;couper</source>
+        <source>découper</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="src/fonction/bibliotheque_fonctions.cpp" line="220"/>
-        <source>Fonction non document&#xe9;e</source>
+        <source>Fonction non documentée</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="src/fonction/bibliotheque_fonctions.cpp" line="235"/>
-        <source>fonction en cours d&apos;impl&#xe9;mentation</source>
+        <source>fonction en cours d&apos;implémentation</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -440,12 +447,12 @@ En fran&#xe7;ais, l&apos;indice vaut environ 0,0778. Si l&apos;indice de coincid
     </message>
     <message>
         <location filename="src/fonction/fonction_conversion/fonction_cesar.cpp" line="86"/>
-        <source>[c&#xe9;sar]</source>
+        <source>[césar]</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="src/fonction/fonction_conversion/fonction_choisir_separateur.cpp" line="162"/>
-        <source>[choix des s&#xe9;parateurs]</source>
+        <source>[choix des séparateurs]</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -455,7 +462,7 @@ En fran&#xe7;ais, l&apos;indice vaut environ 0,0778. Si l&apos;indice de coincid
     </message>
     <message>
         <location filename="src/fonction/fonction_conversion/fonction_concatenation.cpp" line="62"/>
-        <source>Texte &#xe0; concat&#xe9;ner</source>
+        <source>Texte à concaténer</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -509,8 +516,9 @@ En fran&#xe7;ais, l&apos;indice vaut environ 0,0778. Si l&apos;indice de coincid
         <translation type="unfinished"></translation>
     </message>
     <message>
+        <location filename="src/fonction/fonction_conversion/fonction_rotation.cpp" line="131"/>
         <location filename="src/fonction/fonction_conversion/fonction_rotation.cpp" line="140"/>
-        <source>La rotation d&apos;un texte non rectangulaire d&#xe9;forme le texte.</source>
+        <source>La rotation d&apos;un texte non rectangulaire déforme le texte.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -534,8 +542,9 @@ En fran&#xe7;ais, l&apos;indice vaut environ 0,0778. Si l&apos;indice de coincid
         <translation type="unfinished"></translation>
     </message>
     <message>
+        <location filename="src/fonction/fonction_conversion/fonction_transposition.cpp" line="105"/>
         <location filename="src/fonction/fonction_conversion/fonction_transposition.cpp" line="114"/>
-        <source>La transposition d&apos;un texte non rectangulaire d&#xe9;forme le texte.</source>
+        <source>La transposition d&apos;un texte non rectangulaire déforme le texte.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -545,7 +554,7 @@ En fran&#xe7;ais, l&apos;indice vaut environ 0,0778. Si l&apos;indice de coincid
     </message>
     <message>
         <location filename="src/fonction/fonction_sortie/fonction_sortie_analyse_ligne.cpp" line="61"/>
-        <source> caract&#xe8;res</source>
+        <source> caractères</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -555,7 +564,7 @@ En fran&#xe7;ais, l&apos;indice vaut environ 0,0778. Si l&apos;indice de coincid
     </message>
     <message>
         <location filename="src/fonction/fonction_sortie/fonction_sortie_frequence.cpp" line="83"/>
-        <source>[fr&#xe9;quence]</source>
+        <source>[fréquence]</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -569,6 +578,8 @@ En fran&#xe7;ais, l&apos;indice vaut environ 0,0778. Si l&apos;indice de coincid
         <translation>no</translation>
     </message>
     <message>
+        <location filename="src/fonction/fonction_source/fonction_source_choix.cpp" line="112"/>
+        <location filename="src/fonction/fonction_source/fonction_source_dictionnaire.cpp" line="82"/>
         <location filename="src/fonction/fonction_source/fonction_source_fichier_texte.cpp" line="196"/>
         <source>La fonction</source>
         <translation type="unfinished"></translation>
@@ -580,7 +591,7 @@ En fran&#xe7;ais, l&apos;indice vaut environ 0,0778. Si l&apos;indice de coincid
     </message>
     <message>
         <location filename="src/fonction/fonction_source/fonction_source_dictionnaire.cpp" line="83"/>
-        <source>charge un dictionnaire inexistant ou erron&#xe9;.</source>
+        <source>charge un dictionnaire inexistant ou erroné.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -590,7 +601,7 @@ En fran&#xe7;ais, l&apos;indice vaut environ 0,0778. Si l&apos;indice de coincid
     </message>
     <message>
         <location filename="src/fonction/fonction_source/fonction_source_fichier_texte.cpp" line="197"/>
-        <source>charge un fichier inexistant ou erron&#xe9;.</source>
+        <source>charge un fichier inexistant ou erroné.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -600,7 +611,7 @@ En fran&#xe7;ais, l&apos;indice vaut environ 0,0778. Si l&apos;indice de coincid
     </message>
     <message>
         <location filename="src/fonction/fonction_source/fonction_source_permutation.cpp" line="114"/>
-        <source>g&#xe9;n&#xe9;r&#xe9; lors de l&apos;ex&#xe9;cution</source>
+        <source>généré lors de l&apos;exécution</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -610,15 +621,18 @@ En fran&#xe7;ais, l&apos;indice vaut environ 0,0778. Si l&apos;indice de coincid
     </message>
     <message>
         <location filename="src/projet/base_fonction.cpp" line="66"/>
-        <source>Param&#xe8;tre</source>
+        <source>Paramètre</source>
         <translation>Parameter</translation>
     </message>
     <message>
+        <location filename="src/projet/base_fonction.cpp" line="507"/>
+        <location filename="src/projet/base_fonction.cpp" line="513"/>
         <location filename="src/projet/base_fonction.cpp" line="520"/>
-        <source>Le param&#xe8;tre</source>
+        <source>Le paramètre</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+        <location filename="src/projet/base_fonction.cpp" line="507"/>
         <location filename="src/projet/base_fonction.cpp" line="513"/>
         <source>est vide.</source>
         <translation type="unfinished"></translation>
@@ -634,8 +648,12 @@ En fran&#xe7;ais, l&apos;indice vaut environ 0,0778. Si l&apos;indice de coincid
         <translation type="unfinished"></translation>
     </message>
     <message>
+        <location filename="src/projet/base_fonction.cpp" line="642"/>
+        <location filename="src/projet/base_fonction.cpp" line="654"/>
+        <location filename="src/projet/base_fonction.cpp" line="666"/>
+        <location filename="src/projet/base_fonction.cpp" line="678"/>
         <location filename="src/projet/base_fonction.cpp" line="690"/>
-        <source>Erreur : on ne doit pas passer dans cette m&#xe9;thode virtuelle.</source>
+        <source>Erreur : on ne doit pas passer dans cette méthode virtuelle.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -663,12 +681,13 @@ En fran&#xe7;ais, l&apos;indice vaut environ 0,0778. Si l&apos;indice de coincid
     <name>base_fonction_widget</name>
     <message>
         <location filename="src/fonction_widget/base_fonction_widget.cpp" line="209"/>
-        <source>Cliquer pour ne pas ex&#xe9;cuter la fonction</source>
+        <source>Cliquer pour ne pas exécuter la fonction</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+        <location filename="src/fonction_widget/base_fonction_widget.cpp" line="214"/>
         <location filename="src/fonction_widget/base_fonction_widget.cpp" line="222"/>
-        <source>Cliquer pour ex&#xe9;cuter la fonction</source>
+        <source>Cliquer pour exécuter la fonction</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -695,25 +714,31 @@ En fran&#xe7;ais, l&apos;indice vaut environ 0,0778. Si l&apos;indice de coincid
 <context>
     <name>base_parametre</name>
     <message>
+        <location filename="src/fonction/fonction_conversion/fonction_ajout_espace_selon_dictionnaire.cpp" line="30"/>
+        <location filename="src/fonction/fonction_conversion/fonction_anagramme.cpp" line="31"/>
+        <location filename="src/fonction/fonction_conversion/fonction_expression_reguliere.cpp" line="31"/>
         <location filename="src/fonction/fonction_conversion/fonction_selection_selon_dictionnaire.cpp" line="28"/>
         <source>Dictionnaire</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+        <location filename="src/fonction/fonction_conversion/fonction_ajout_espace_selon_dictionnaire.cpp" line="31"/>
+        <location filename="src/fonction/fonction_conversion/fonction_anagramme.cpp" line="32"/>
+        <location filename="src/fonction/fonction_conversion/fonction_expression_reguliere.cpp" line="32"/>
         <location filename="src/fonction/fonction_conversion/fonction_selection_selon_dictionnaire.cpp" line="29"/>
-        <source>Dictionnaire utilis&#xe9;.</source>
+        <source>Dictionnaire utilisé.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="src/fonction/fonction_conversion/fonction_cesar.cpp" line="28"/>
-        <source>D&#xe9;calage</source>
+        <source>Décalage</source>
         <translation>Shift</translation>
     </message>
     <message>
         <location filename="src/fonction/fonction_conversion/fonction_cesar.cpp" line="29"/>
-        <source>Le d&#xe9;calage &#xe0; r&#xe9;aliser.
-Possibilit&#xe9; d&apos;alternance si le mot est une s&#xe9;quence.
- Le premier mot pour la premi&#xe8;re ligne. Le deuxi&#xe8;me mot pour la seconde ligne, etc..</source>
+        <source>Le décalage à réaliser.
+Possibilité d&apos;alternance si le mot est une séquence.
+ Le premier mot pour la première ligne. Le deuxième mot pour la seconde ligne, etc..</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -723,8 +748,8 @@ Possibilit&#xe9; d&apos;alternance si le mot est une s&#xe9;quence.
     </message>
     <message>
         <location filename="src/fonction/fonction_conversion/fonction_cesar.cpp" line="37"/>
-        <source>Indique si le d&#xe9;calage est additif (Oui ou 1 pour Additif et Non ou 0 pour soustractif).
-Possibilit&#xe9; d&apos;alternance si le mot est une s&#xe9;quence.</source>
+        <source>Indique si le décalage est additif (Oui ou 1 pour Additif et Non ou 0 pour soustractif).
+Possibilité d&apos;alternance si le mot est une séquence.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -734,77 +759,90 @@ Possibilit&#xe9; d&apos;alternance si le mot est une s&#xe9;quence.</source>
     </message>
     <message>
         <location filename="src/fonction/fonction_conversion/fonction_cesar.cpp" line="45"/>
-        <source>Alphabets utilis&#xe9;s (chaque mot de la ligne est un alphabet).</source>
+        <source>Alphabets utilisés (chaque mot de la ligne est un alphabet).</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+        <location filename="src/fonction/fonction_conversion/fonction_cesar.cpp" line="52"/>
         <location filename="src/fonction/fonction_conversion/fonction_ordonnancement.cpp" line="51"/>
         <source>Traiter par ligne</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="src/fonction/fonction_conversion/fonction_cesar.cpp" line="53"/>
-        <source>Indique si le c&#xe9;sar se r&#xe9;aliser par ligne, par opposition &#xe0; tout le texte.</source>
+        <source>Indique si le césar se réaliser par ligne, par opposition à tout le texte.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+        <location filename="src/fonction/fonction_conversion/fonction_choisir_separateur.cpp" line="25"/>
+        <location filename="src/fonction/fonction_source/fonction_source_fichier_texte.cpp" line="34"/>
         <location filename="src/fonction/fonction_source/fonction_source_texte.cpp" line="26"/>
-        <source>S&#xe9;parateur d&apos;&#xe9;l&#xe9;ment</source>
+        <source>Séparateur d&apos;élément</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+        <location filename="src/fonction/fonction_conversion/fonction_choisir_separateur.cpp" line="26"/>
+        <location filename="src/fonction/fonction_source/fonction_source_fichier_texte.cpp" line="35"/>
         <location filename="src/fonction/fonction_source/fonction_source_texte.cpp" line="27"/>
-        <source>Les s&#xe9;parateurs d&apos;&#xe9;l&#xe9;ments.</source>
+        <source>Les séparateurs d&apos;éléments.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+        <location filename="src/fonction/fonction_conversion/fonction_choisir_separateur.cpp" line="33"/>
+        <location filename="src/fonction/fonction_source/fonction_source_fichier_texte.cpp" line="42"/>
         <location filename="src/fonction/fonction_source/fonction_source_texte.cpp" line="34"/>
-        <source>S&#xe9;parateur de mot</source>
+        <source>Séparateur de mot</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+        <location filename="src/fonction/fonction_conversion/fonction_choisir_separateur.cpp" line="34"/>
+        <location filename="src/fonction/fonction_source/fonction_source_fichier_texte.cpp" line="43"/>
         <location filename="src/fonction/fonction_source/fonction_source_texte.cpp" line="35"/>
-        <source>Les s&#xe9;parateurs de mot.</source>
+        <source>Les séparateurs de mot.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+        <location filename="src/fonction/fonction_conversion/fonction_choisir_separateur.cpp" line="41"/>
+        <location filename="src/fonction/fonction_source/fonction_source_fichier_texte.cpp" line="50"/>
         <location filename="src/fonction/fonction_source/fonction_source_texte.cpp" line="42"/>
-        <source>S&#xe9;parateur de ligne</source>
+        <source>Séparateur de ligne</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+        <location filename="src/fonction/fonction_conversion/fonction_choisir_separateur.cpp" line="42"/>
+        <location filename="src/fonction/fonction_source/fonction_source_fichier_texte.cpp" line="51"/>
         <location filename="src/fonction/fonction_source/fonction_source_texte.cpp" line="43"/>
-        <source>Les s&#xe9;parateurs de ligne.</source>
+        <source>Les séparateurs de ligne.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="src/fonction/fonction_conversion/fonction_concatenation.cpp" line="31"/>
-        <source>Le texte &#xe0; concat&#xe9;ner</source>
+        <source>Le texte à concaténer</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="src/fonction/fonction_conversion/fonction_concatenation.cpp" line="32"/>
-        <source>Le texte &#xe0; concat&#xe9;ner.</source>
+        <source>Le texte à concaténer.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="src/fonction/fonction_conversion/fonction_ecriture_en_diagonale.cpp" line="39"/>
-        <source>&#xc9;l&#xe9;ments &#xe0; &#xe9;crire</source>
+        <source>Éléments à écrire</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="src/fonction/fonction_conversion/fonction_ecriture_en_diagonale.cpp" line="40"/>
-        <source>Indique s&apos;il faut &#xe9;crire les mots ou les caract&#xe8;res.</source>
+        <source>Indique s&apos;il faut écrire les mots ou les caractères.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="src/fonction/fonction_conversion/fonction_ecriture_en_diagonale.cpp" line="49"/>
-        <source>Orientation de l&apos;&#xe9;criture</source>
+        <source>Orientation de l&apos;écriture</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="src/fonction/fonction_conversion/fonction_ecriture_en_diagonale.cpp" line="50"/>
-        <source>Indique s&apos;il faut &#xe9;crire de haut en bas ou de bas en haut.</source>
+        <source>Indique s&apos;il faut écrire de haut en bas ou de bas en haut.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -814,27 +852,27 @@ Possibilit&#xe9; d&apos;alternance si le mot est une s&#xe9;quence.</source>
     </message>
     <message>
         <location filename="src/fonction/fonction_conversion/fonction_ecriture_en_diagonale.cpp" line="60"/>
-        <source>Le nombre maximal de lignes &#xe0; &#xe9;crire (aucune limite si non sp&#xe9;cifi&#xe9; ou &#xe9;gale &#xe0; 0).</source>
+        <source>Le nombre maximal de lignes à écrire (aucune limite si non spécifié ou égale à 0).</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="src/fonction/fonction_conversion/fonction_ecriture_en_diagonale.cpp" line="67"/>
-        <source>Forcer la rectangularit&#xe9;</source>
+        <source>Forcer la rectangularité</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="src/fonction/fonction_conversion/fonction_ecriture_en_diagonale.cpp" line="68"/>
-        <source>Indique s&apos;il faut forcer la rectangularit&#xe9;. Ce param&#xe8;tre est pris en compte seulement si le nombre maximal de lignes est sp&#xe9;cifi&#xe9;.</source>
+        <source>Indique s&apos;il faut forcer la rectangularité. Ce paramètre est pris en compte seulement si le nombre maximal de lignes est spécifié.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="src/fonction/fonction_conversion/fonction_expression_reguliere.cpp" line="39"/>
-        <source>G&#xe9;n&#xe9;rer un texte par mot</source>
+        <source>Générer un texte par mot</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="src/fonction/fonction_conversion/fonction_expression_reguliere.cpp" line="40"/>
-        <source>Indique si chaque mot en entr&#xe9;e g&#xe9;n&#xe8;re un texte avec toutes les possibilit&#xe9;s.</source>
+        <source>Indique si chaque mot en entrée génère un texte avec toutes les possibilités.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -844,17 +882,17 @@ Possibilit&#xe9; d&apos;alternance si le mot est une s&#xe9;quence.</source>
     </message>
     <message>
         <location filename="src/fonction/fonction_conversion/fonction_formatage.cpp" line="32"/>
-        <source>Indique si la ponctuation est &#xe0; retirer.</source>
+        <source>Indique si la ponctuation est à retirer.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="src/fonction/fonction_conversion/fonction_fusion.cpp" line="33"/>
-        <source>Fusionner les caract&#xe8;res</source>
+        <source>Fusionner les caractères</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="src/fonction/fonction_conversion/fonction_fusion.cpp" line="34"/>
-        <source>Indique s&apos;il faut fusionner les caract&#xe8;res.</source>
+        <source>Indique s&apos;il faut fusionner les caractères.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -889,22 +927,22 @@ Possibilit&#xe9; d&apos;alternance si le mot est une s&#xe9;quence.</source>
     </message>
     <message>
         <location filename="src/fonction/fonction_conversion/fonction_inversion.cpp" line="32"/>
-        <source>inverser les &#xe9;l&#xe9;ments</source>
+        <source>inverser les éléments</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="src/fonction/fonction_conversion/fonction_inversion.cpp" line="33"/>
-        <source>Indique s&apos;il faut inverser les &#xe9;l&#xe9;ments.</source>
+        <source>Indique s&apos;il faut inverser les éléments.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="src/fonction/fonction_conversion/fonction_inversion.cpp" line="39"/>
-        <source>inverser l&apos;ordre des caract&#xe8;res</source>
+        <source>inverser l&apos;ordre des caractères</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="src/fonction/fonction_conversion/fonction_inversion.cpp" line="40"/>
-        <source>Indique s&apos;il faut inverser l&apos;ordre des caract&#xe8;res.</source>
+        <source>Indique s&apos;il faut inverser l&apos;ordre des caractères.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -928,13 +966,15 @@ Possibilit&#xe9; d&apos;alternance si le mot est une s&#xe9;quence.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+        <location filename="src/fonction/fonction_conversion/fonction_inversion_en_diagonale.cpp" line="39"/>
         <location filename="src/fonction/fonction_conversion/fonction_transposition.cpp" line="36"/>
-        <source>&#xc9;l&#xe9;ments &#xe0; transposer</source>
+        <source>Éléments à transposer</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+        <location filename="src/fonction/fonction_conversion/fonction_inversion_en_diagonale.cpp" line="40"/>
         <location filename="src/fonction/fonction_conversion/fonction_transposition.cpp" line="37"/>
-        <source>Indique s&apos;il faut transposer sur les mots ou sur les caract&#xe8;res.</source>
+        <source>Indique s&apos;il faut transposer sur les mots ou sur les caractères.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -949,22 +989,22 @@ Possibilit&#xe9; d&apos;alternance si le mot est une s&#xe9;quence.</source>
     </message>
     <message>
         <location filename="src/fonction/fonction_conversion/fonction_lecture_braille.cpp" line="76"/>
-        <source>Caract&#xe8;re plein</source>
+        <source>Caractère plein</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="src/fonction/fonction_conversion/fonction_lecture_braille.cpp" line="77"/>
-        <source>Le caract&#xe8;re plein &#xe0; consid&#xe9;rer.</source>
+        <source>Le caractère plein à considérer.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="src/fonction/fonction_conversion/fonction_ordonnancement.cpp" line="33"/>
-        <source>&#xc9;l&#xe9;ments &#xe0; ordonner</source>
+        <source>Éléments à ordonner</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="src/fonction/fonction_conversion/fonction_ordonnancement.cpp" line="34"/>
-        <source>Indique s&apos;il faut appliquer l&apos;ordonnancement sur les mots ou sur les caract&#xe8;res.</source>
+        <source>Indique s&apos;il faut appliquer l&apos;ordonnancement sur les mots ou sur les caractères.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -974,52 +1014,52 @@ Possibilit&#xe9; d&apos;alternance si le mot est une s&#xe9;quence.</source>
     </message>
     <message>
         <location filename="src/fonction/fonction_conversion/fonction_ordonnancement.cpp" line="44"/>
-        <source>L&apos;ordre &#xe0; consid&#xe9;rer.</source>
+        <source>L&apos;ordre à considérer.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="src/fonction/fonction_conversion/fonction_ordonnancement.cpp" line="52"/>
-        <source>Indique si le r&#xe9;-ordonnancement se r&#xe9;alise par ligne, par opposition &#xe0; tout le texte.</source>
+        <source>Indique si le ré-ordonnancement se réalise par ligne, par opposition à tout le texte.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="src/fonction/fonction_conversion/fonction_rotation.cpp" line="38"/>
-        <source>&#xc9;l&#xe9;ments &#xe0; tourner</source>
+        <source>Éléments à tourner</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="src/fonction/fonction_conversion/fonction_rotation.cpp" line="39"/>
-        <source>Indique s&apos;il faut appliquer la rotation sur les mots ou sur les caract&#xe8;res.</source>
+        <source>Indique s&apos;il faut appliquer la rotation sur les mots ou sur les caractères.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="src/fonction/fonction_conversion/fonction_rotation.cpp" line="48"/>
-        <source>La rotation &#xe0; r&#xe9;aliser</source>
+        <source>La rotation à réaliser</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="src/fonction/fonction_conversion/fonction_rotation.cpp" line="49"/>
-        <source>Indique quelle rotation r&#xe9;aliser.</source>
+        <source>Indique quelle rotation réaliser.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="src/fonction/fonction_conversion/fonction_scission.cpp" line="33"/>
-        <source>Scinder le contenu des caract&#xe8;res</source>
+        <source>Scinder le contenu des caractères</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="src/fonction/fonction_conversion/fonction_scission.cpp" line="34"/>
-        <source>Indique s&apos;il faut scinder le contenu des caract&#xe8;res.</source>
+        <source>Indique s&apos;il faut scinder le contenu des caractères.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="src/fonction/fonction_conversion/fonction_scission.cpp" line="40"/>
-        <source>Scinder les caract&#xe8;res</source>
+        <source>Scinder les caractères</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="src/fonction/fonction_conversion/fonction_scission.cpp" line="41"/>
-        <source>Indique si chaque caract&#xe8;re doit devenir un mot.</source>
+        <source>Indique si chaque caractère doit devenir un mot.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -1044,12 +1084,12 @@ Possibilit&#xe9; d&apos;alternance si le mot est une s&#xe9;quence.</source>
     </message>
     <message>
         <location filename="src/fonction/fonction_conversion/fonction_substitution.cpp" line="30"/>
-        <source>Entr&#xe9;e du dictionnaire</source>
+        <source>Entrée du dictionnaire</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="src/fonction/fonction_conversion/fonction_substitution.cpp" line="31"/>
-        <source>Les caract&#xe8;res en entr&#xe9;e du dictionnaire.</source>
+        <source>Les caractères en entrée du dictionnaire.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -1059,7 +1099,7 @@ Possibilit&#xe9; d&apos;alternance si le mot est une s&#xe9;quence.</source>
     </message>
     <message>
         <location filename="src/fonction/fonction_conversion/fonction_substitution.cpp" line="39"/>
-        <source>Les caract&#xe8;res de sortie du dictionnaire.</source>
+        <source>Les caractères de sortie du dictionnaire.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -1069,17 +1109,17 @@ Possibilit&#xe9; d&apos;alternance si le mot est une s&#xe9;quence.</source>
     </message>
     <message>
         <location filename="src/fonction/fonction_conversion/fonction_substitution.cpp" line="47"/>
-        <source>Les caract&#xe8;res inconnus sont-ils gard&#xe9;s ou bien remplac&#xe9; par *.</source>
+        <source>Les caractères inconnus sont-ils gardés ou bien remplacé par *.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="src/fonction/fonction_conversion/fonction_substitution.cpp" line="54"/>
-        <source>Num&#xe9;ro du choix</source>
+        <source>Numéro du choix</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="src/fonction/fonction_conversion/fonction_substitution.cpp" line="55"/>
-        <source>Les num&#xe9;ro de choix &#xe0; utiliser dans le cas d&apos;un alphabet polyalphab&#xe9;tique.</source>
+        <source>Les numéro de choix à utiliser dans le cas d&apos;un alphabet polyalphabétique.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -1094,18 +1134,18 @@ Possibilit&#xe9; d&apos;alternance si le mot est une s&#xe9;quence.</source>
     </message>
     <message>
         <location filename="src/fonction/fonction_source/fonction_source_permutation.cpp" line="26"/>
-        <source>&#xc9;l&#xe9;ments</source>
+        <source>Éléments</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="src/fonction/fonction_source/fonction_source_permutation.cpp" line="27"/>
-        <source>Les &#xe9;l&#xe9;ments utilis&#xe9;s pour g&#xe9;n&#xe9;rer les permutations.
-&#xc9;viter de d&#xe9;passer neuf &#xe9;l&#xe9;ments car trop long.</source>
+        <source>Les éléments utilisés pour générer les permutations.
+Éviter de dépasser neuf éléments car trop long.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="src/projet/base_parametre.cpp" line="82"/>
-        <source>param&#xe8;tre</source>
+        <source>paramètre</source>
         <translation>Parameter</translation>
     </message>
     <message>
@@ -1120,12 +1160,12 @@ Possibilit&#xe9; d&apos;alternance si le mot est une s&#xe9;quence.</source>
     </message>
     <message>
         <location filename="src/projet/base_parametre.cpp" line="117"/>
-        <source>aucun algorithme. Tout le texte est consid&#xe9;r&#xe9; d&apos;un coup. Aucune it&#xe9;ration.</source>
+        <source>aucun algorithme. Tout le texte est considéré d&apos;un coup. Aucune itération.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="src/projet/base_parametre.cpp" line="119"/>
-        <source>Chaque ligne g&#xe9;n&#xe8;re une nouvelle configuration.</source>
+        <source>Chaque ligne génère une nouvelle configuration.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -1134,11 +1174,13 @@ Possibilit&#xe9; d&apos;alternance si le mot est une s&#xe9;quence.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+        <location filename="src/projet/base_parametre.cpp" line="252"/>
         <location filename="src/projet/base_parametre.cpp" line="261"/>
         <source>Le parametre</source>
         <translation>The parameter</translation>
     </message>
     <message>
+        <location filename="src/projet/base_parametre.cpp" line="253"/>
         <location filename="src/projet/base_parametre.cpp" line="262"/>
         <source>de la fonction</source>
         <translation type="unfinished"></translation>
@@ -1162,6 +1204,7 @@ Possibilit&#xe9; d&apos;alternance si le mot est une s&#xe9;quence.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+        <location filename="src/compilation/compilateur.cpp" line="48"/>
         <location filename="src/compilation/compilateur.cpp" line="57"/>
         <source>Le projet</source>
         <translation type="unfinished"></translation>
@@ -1183,17 +1226,17 @@ Possibilit&#xe9; d&apos;alternance si le mot est une s&#xe9;quence.</source>
     </message>
     <message>
         <location filename="src/compilation/compilateur.cpp" line="88"/>
-        <source>Ex&#xe9;cution</source>
+        <source>Exécution</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="src/compilation/compilateur.cpp" line="147"/>
-        <source>La pile d&apos;ex&#xe9;cution n&apos;est pas vide.</source>
+        <source>La pile d&apos;exécution n&apos;est pas vide.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="src/compilation/compilateur.cpp" line="151"/>
-        <source>Ex&#xe9;cution termin&#xe9;e.</source>
+        <source>Exécution terminée.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -1205,44 +1248,51 @@ Possibilit&#xe9; d&apos;alternance si le mot est une s&#xe9;quence.</source>
 <context>
     <name>dictionnaire</name>
     <message>
+        <location filename="src/dictionnaire/dictionnaire.cpp" line="33"/>
         <location filename="src/dictionnaire/dictionnaire.cpp" line="263"/>
         <source>Erreur : impossible d&apos;ouvrir le dictionnaire</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="src/dictionnaire/dictionnaire.cpp" line="313"/>
-        <source>Dictionnaire : Attention, impossible d&apos;ajouter le caract&#xe8;re</source>
+        <source>Dictionnaire : Attention, impossible d&apos;ajouter le caractère</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
     <name>explorateur</name>
     <message>
+        <location filename="src/explorateur/explorateur.cpp" line="40"/>
         <location filename="src/explorateur/explorateur.cpp" line="99"/>
         <source>Explorateur de projets</source>
         <translation>Project explorator</translation>
     </message>
     <message>
+        <location filename="src/explorateur/explorateur.cpp" line="613"/>
         <location filename="src/explorateur/explorateur.cpp" line="614"/>
         <source>Fermer le projet</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+        <location filename="src/explorateur/explorateur.cpp" line="629"/>
         <location filename="src/explorateur/explorateur.cpp" line="630"/>
         <source>Supprimer la fonction</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+        <location filename="src/explorateur/explorateur.cpp" line="646"/>
         <location filename="src/explorateur/explorateur.cpp" line="647"/>
         <source>Enregistrer le projet</source>
         <translation>Save the project</translation>
     </message>
     <message>
+        <location filename="src/explorateur/explorateur.cpp" line="652"/>
         <location filename="src/explorateur/explorateur.cpp" line="653"/>
         <source>Enregistrer le projet sous</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+        <location filename="src/explorateur/explorateur.cpp" line="659"/>
         <location filename="src/explorateur/explorateur.cpp" line="660"/>
         <source>Dupliquer le projet</source>
         <translation type="unfinished"></translation>
@@ -1269,22 +1319,22 @@ Possibilit&#xe9; d&apos;alternance si le mot est une s&#xe9;quence.</source>
     </message>
     <message>
         <location filename="src/explorateur/explorateur.cpp" line="701"/>
-        <source>Coller au d&#xe9;but</source>
+        <source>Coller au début</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="src/explorateur/explorateur.cpp" line="703"/>
-        <source>Coller apr&#xe8;s</source>
+        <source>Coller après</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="src/explorateur/explorateur.cpp" line="740"/>
-        <source>&#xe0; la suite</source>
+        <source>à la suite</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="src/explorateur/explorateur.cpp" line="742"/>
-        <source>en d&#xe9;but de liste</source>
+        <source>en début de liste</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -1304,17 +1354,19 @@ Possibilit&#xe9; d&apos;alternance si le mot est une s&#xe9;quence.</source>
     </message>
     <message>
         <location filename="src/explorateur/explorateur.cpp" line="785"/>
-        <source>D&#xe9;sactiver la fonction</source>
-        <translation>Desactivate the function</translation>
+        <source>Désactiver</source>
+        <oldsource>Désactiver la fonction</oldsource>
+        <translation type="unfinished">Desactivate the function</translation>
     </message>
     <message>
         <location filename="src/explorateur/explorateur.cpp" line="790"/>
-        <source>Activer la fonction</source>
-        <translation>Activate the function</translation>
+        <source>Activer</source>
+        <oldsource>Activer la fonction</oldsource>
+        <translation type="unfinished">Activate the function</translation>
     </message>
     <message>
         <location filename="src/explorateur/explorateur.cpp" line="813"/>
-        <source>D&#xe9;verrouiller</source>
+        <source>Déverrouiller</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -1356,53 +1408,65 @@ Possibilit&#xe9; d&apos;alternance si le mot est une s&#xe9;quence.</source>
 <context>
     <name>fenetre_principale</name>
     <message>
+        <location filename="fenetre_principale.ui" line="14"/>
+        <location filename="src/fenetre_principale.cpp" line="179"/>
         <location filename="src/fenetre_principale.cpp" line="686"/>
         <source>Emgine</source>
         <translation>Emgine</translation>
     </message>
     <message>
+        <location filename="src/fenetre_principale.cpp" line="184"/>
         <location filename="src/fenetre_principale.cpp" line="680"/>
         <source>Source</source>
         <translation>Source</translation>
     </message>
     <message>
+        <location filename="src/fenetre_principale.cpp" line="190"/>
         <location filename="src/fenetre_principale.cpp" line="681"/>
         <source>Conversion</source>
         <translation>Conversion</translation>
     </message>
     <message>
+        <location filename="src/fenetre_principale.cpp" line="196"/>
         <location filename="src/fenetre_principale.cpp" line="682"/>
-        <source>R&#xe9;sultat</source>
+        <source>Résultat</source>
         <translation>Result</translation>
     </message>
     <message>
+        <location filename="src/fenetre_principale.cpp" line="202"/>
+        <location filename="src/fenetre_principale.cpp" line="525"/>
         <location filename="src/fenetre_principale.cpp" line="676"/>
         <source>Nouveau projet</source>
         <translation>New project</translation>
     </message>
     <message>
+        <location filename="src/fenetre_principale.cpp" line="207"/>
         <location filename="src/fenetre_principale.cpp" line="677"/>
         <source>Ouvrir un projet</source>
         <translation>Open project</translation>
     </message>
     <message>
+        <location filename="src/fenetre_principale.cpp" line="213"/>
         <location filename="src/fenetre_principale.cpp" line="679"/>
         <source>Enregistrer sous</source>
         <translation>Save as</translation>
     </message>
     <message>
+        <location filename="src/fenetre_principale.cpp" line="218"/>
         <location filename="src/fenetre_principale.cpp" line="684"/>
-        <source>Fran&#xe7;ais</source>
+        <source>Français</source>
         <translation>French</translation>
     </message>
     <message>
+        <location filename="src/fenetre_principale.cpp" line="223"/>
         <location filename="src/fenetre_principale.cpp" line="685"/>
         <source>Anglais</source>
         <translation>English</translation>
     </message>
     <message>
+        <location filename="src/fenetre_principale.cpp" line="254"/>
         <location filename="src/fenetre_principale.cpp" line="683"/>
-        <source>Ex&#xe9;cuter</source>
+        <source>Exécuter</source>
         <translation>Run</translation>
     </message>
     <message>
@@ -1416,11 +1480,13 @@ Possibilit&#xe9; d&apos;alternance si le mot est une s&#xe9;quence.</source>
         <translation>Save the project</translation>
     </message>
     <message>
+        <location filename="src/fenetre_principale.cpp" line="402"/>
         <location filename="src/fenetre_principale.cpp" line="469"/>
         <source>projet Emgine</source>
         <translation>Emgine project</translation>
     </message>
     <message>
+        <location filename="src/fenetre_principale.cpp" line="426"/>
         <location filename="src/fenetre_principale.cpp" line="487"/>
         <source>Impossible d&apos;ouvrir le fichier.</source>
         <translation>Fail open the project.</translation>
@@ -1437,7 +1503,7 @@ Possibilit&#xe9; d&apos;alternance si le mot est une s&#xe9;quence.</source>
     </message>
     <message>
         <location filename="src/fenetre_principale.cpp" line="478"/>
-        <source>Le projet est d&#xe9;j&#xe0; ouvert !</source>
+        <source>Le projet est déjà ouvert !</source>
         <translation>The project is already opened !</translation>
     </message>
     <message>
@@ -1447,7 +1513,7 @@ Possibilit&#xe9; d&apos;alternance si le mot est une s&#xe9;quence.</source>
     </message>
     <message>
         <location filename="src/fenetre_principale.cpp" line="874"/>
-        <source>Le projet n&apos;est pas enregistr&#xe9;.</source>
+        <source>Le projet n&apos;est pas enregistré.</source>
         <translation>The project is not saved.</translation>
     </message>
     <message>
@@ -1464,11 +1530,13 @@ Possibilit&#xe9; d&apos;alternance si le mot est une s&#xe9;quence.</source>
 <context>
     <name>fonction_sortie_texte_widget</name>
     <message>
+        <location filename="src/fonction_widget/fonction_sortie_widget/fonction_sortie_texte_widget.cpp" line="46"/>
         <location filename="src/fonction_widget/fonction_sortie_widget/fonction_sortie_texte_widget.cpp" line="47"/>
-        <source>Cr&#xe9;er un projet avec ce texte en source</source>
+        <source>Créer un projet avec ce texte en source</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+        <location filename="src/fonction_widget/fonction_sortie_widget/fonction_sortie_texte_widget.cpp" line="51"/>
         <location filename="src/fonction_widget/fonction_sortie_widget/fonction_sortie_texte_widget.cpp" line="52"/>
         <source>Sauvegarder ce texte</source>
         <translation type="unfinished"></translation>
@@ -1501,7 +1569,7 @@ Possibilit&#xe9; d&apos;alternance si le mot est une s&#xe9;quence.</source>
     <name>fonction_source_choix</name>
     <message>
         <location filename="src/fonction/fonction_source/fonction_source_choix.cpp" line="113"/>
-        <source>n&apos;est pas situ&#xe9;e dans un parametre de type choix</source>
+        <source>n&apos;est pas située dans un parametre de type choix</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -1566,27 +1634,27 @@ Possibilit&#xe9; d&apos;alternance si le mot est une s&#xe9;quence.</source>
     <name>liste_choix</name>
     <message>
         <location filename="src/element/liste_choix.cpp" line="11"/>
-        <source>0 degr&#xe9;</source>
+        <source>0 degré</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="src/element/liste_choix.cpp" line="12"/>
-        <source>90 degr&#xe9;s</source>
+        <source>90 degrés</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="src/element/liste_choix.cpp" line="13"/>
-        <source>180 degr&#xe9;s</source>
+        <source>180 degrés</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="src/element/liste_choix.cpp" line="14"/>
-        <source>270 degr&#xe9;s</source>
+        <source>270 degrés</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="src/element/liste_choix.cpp" line="16"/>
-        <source>caract&#xe8;res</source>
+        <source>caractères</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -1621,7 +1689,7 @@ Possibilit&#xe9; d&apos;alternance si le mot est une s&#xe9;quence.</source>
     </message>
     <message>
         <location filename="src/element/liste_choix.cpp" line="24"/>
-        <source>de droite &#xe0; gauche</source>
+        <source>de droite à gauche</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -1682,15 +1750,15 @@ Possibilit&#xe9; d&apos;alternance si le mot est une s&#xe9;quence.</source>
     <name>parametre_aide_message_box</name>
     <message>
         <source>Fonction</source>
-        <translation>Function</translation>
+        <translation type="vanished">Function</translation>
     </message>
     <message>
-        <source>Param&#xe8;tre</source>
-        <translation>Parameter</translation>
+        <source>Paramètre</source>
+        <translation type="vanished">Parameter</translation>
     </message>
     <message>
         <source>Algorithme</source>
-        <translation>Algorithm</translation>
+        <translation type="vanished">Algorithm</translation>
     </message>
 </context>
 <context>
@@ -1701,6 +1769,7 @@ Possibilit&#xe9; d&apos;alternance si le mot est une s&#xe9;quence.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+        <location filename="src/projet/projet.cpp" line="325"/>
         <location filename="src/projet/projet.cpp" line="332"/>
         <source>Le projet</source>
         <translation type="unfinished"></translation>

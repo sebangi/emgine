@@ -782,12 +782,12 @@ void explorateur::ajouter_menu_activation(QMenu & menu, objet_selectionnable * o
     if ( f->est_active() )
     {
         icon_activer.addFile(QString::fromUtf8(":/icons/non_compile.png"), QSize(), QIcon::Normal, QIcon::Off);
-        texte_activer = tr("Désactiver la fonction");
+        texte_activer = tr("Désactiver");
     }
     else
     {
         icon_activer.addFile(QString::fromUtf8(":/icons/compile.png"), QSize(), QIcon::Normal, QIcon::Off);
-        texte_activer = tr("Activer la fonction");
+        texte_activer = tr("Activer");
     }
     QAction *newAct_activer = new QAction(icon_activer, texte_activer, this);
     newAct_activer->setStatusTip(texte_activer);
