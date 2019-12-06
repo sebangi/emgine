@@ -61,6 +61,15 @@ void base_parametre_widget::informer_verrouillage_change()
 }
 
 /** --------------------------------------------------------------------------------------
+ \brief Met à jour les textes selon la langue choisie.
+*/
+void base_parametre_widget::maj_langues()
+{
+    m_nom_label->setText(  m_parametre->get_nom() + " : " );
+    m_valeur_label->setText( calcul_valeur_courte() );
+}
+
+/** --------------------------------------------------------------------------------------
  * \brief Initialise le widget.
  */
 void base_parametre_widget::init()
@@ -70,17 +79,17 @@ void base_parametre_widget::init()
     main_layout->setSpacing(5);
 
     QString s( m_parametre->get_nom() );
-    QLabel * nom = new QLabel( s + " : " );
-    nom->setObjectName("NomParametre");
-    nom->setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Expanding);
-    nom->setAlignment(Qt::AlignRight | Qt::AlignVCenter);
-    main_layout->addWidget(nom,3);
+    m_nom_label = new QLabel( s + " : " );
+    m_nom_label->setObjectName("NomParametre");
+    m_nom_label->setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Expanding);
+    m_nom_label->setAlignment(Qt::AlignRight | Qt::AlignVCenter);
+    main_layout->addWidget(m_nom_label,3);
 
-    QLabel * valeur = new QLabel( calcul_valeur_courte() );
-    valeur->setObjectName("ValeurCourte");
-    valeur->setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Expanding);
-    valeur->setAlignment(Qt::AlignLeft | Qt::AlignVCenter);
-    main_layout->addWidget(valeur,7);
+    m_valeur_label = new QLabel( calcul_valeur_courte() );
+    m_valeur_label->setObjectName("ValeurCourte");
+    m_valeur_label->setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Expanding);
+    m_valeur_label->setAlignment(Qt::AlignLeft | Qt::AlignVCenter);
+    main_layout->addWidget(m_valeur_label,7);
 
     m_configuration_bouton = new QPushButton();
     m_configuration_bouton->setObjectName("BoutonParametreWidget");

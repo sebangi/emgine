@@ -19,6 +19,8 @@
 #include <QStyleOption>
 #include <QVBoxLayout>
 
+#include <iostream>
+
 /** --------------------------------------------------------------------------------------
  * \brief Constructeur de la classe base_fonction_widget.
  * \param fonction Un pointeur sur la fonction associée au composant.
@@ -73,6 +75,18 @@ void base_fonction_widget::mettre_a_jour_verrouillage()
         (*it)->informer_verrouillage_change();
 
     informer_verrouillage_change();
+}
+
+/** --------------------------------------------------------------------------------------
+ \brief Met à jour les textes selon la langue choisie.
+*/
+void base_fonction_widget::maj_langues()
+{
+    m_nom_label->setText( get_nom() );
+
+    for ( type_liste_parametre_widgets::iterator it = m_parametre_widgets.begin();
+          it != m_parametre_widgets.end(); ++it )
+        (*it)->maj_langues();
 }
 
 /** --------------------------------------------------------------------------------------

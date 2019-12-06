@@ -32,6 +32,7 @@ class vue_fonctions : public QTableWidget
         vue_fonctions(QWidget *parent);
 
         void ajouter_projet(projet * p);
+        void maj_langues();
 
     private:
         void init();

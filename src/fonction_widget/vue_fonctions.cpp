@@ -45,6 +45,18 @@ void vue_fonctions::ajouter_projet(projet *p)
 }
 
 /** --------------------------------------------------------------------------------------
+ \brief Met à jour les textes selon la langue choisie.
+*/
+void vue_fonctions::maj_langues()
+{
+    for ( int i = 0; i != rowCount(); ++i )
+    {
+        base_fonction_widget * widget = ((base_fonction_widget *)(this->cellWidget(i,1)));
+        widget->maj_langues();
+    }
+}
+
+/** --------------------------------------------------------------------------------------
  * \brief Initialise la vue.
  */
 void vue_fonctions::init()

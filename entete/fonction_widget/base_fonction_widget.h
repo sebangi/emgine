@@ -43,6 +43,7 @@ class base_fonction_widget : public QWidget, public QTableWidgetItem
         void paintEvent(QPaintEvent * e);
         base_fonction *get_fonction();
         void mettre_a_jour_verrouillage();
+        void maj_langues();
 
     private:
         void init();

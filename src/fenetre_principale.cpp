@@ -665,6 +665,7 @@ void fenetre_principale::selectionner_langue(QString langue)
 
     maj_langues();
     s_explorateur->maj_langues();
+    s_vue_fonctions->maj_langues();
 }
 
 /** --------------------------------------------------------------------------------------

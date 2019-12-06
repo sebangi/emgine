@@ -546,12 +546,12 @@ En fran&#xe7;ais, l&apos;indice vaut environ 0,0778. Si l&apos;indice de coincid
     <message>
         <location filename="src/fonction/fonction_source/fonction_source_booleen.cpp" line="79"/>
         <source>oui</source>
-        <translation type="unfinished">yes</translation>
+        <translation>yes</translation>
     </message>
     <message>
         <location filename="src/fonction/fonction_source/fonction_source_booleen.cpp" line="81"/>
         <source>non</source>
-        <translation type="unfinished">no</translation>
+        <translation>no</translation>
     </message>
     <message>
         <location filename="src/fonction/fonction_source/fonction_source_fichier_texte.cpp" line="196"/>
@@ -596,7 +596,7 @@ En fran&#xe7;ais, l&apos;indice vaut environ 0,0778. Si l&apos;indice de coincid
     <message>
         <location filename="src/projet/base_fonction.cpp" line="66"/>
         <source>Param&#xe8;tre</source>
-        <translation type="unfinished"></translation>
+        <translation>Parameter</translation>
     </message>
     <message>
         <location filename="src/projet/base_fonction.cpp" line="520"/>
@@ -1091,7 +1091,7 @@ Possibilit&#xe9; d&apos;alternance si le mot est une s&#xe9;quence.</source>
     <message>
         <location filename="src/projet/base_parametre.cpp" line="82"/>
         <source>param&#xe8;tre</source>
-        <translation type="unfinished"></translation>
+        <translation>Parameter</translation>
     </message>
     <message>
         <location filename="src/projet/base_parametre.cpp" line="94"/>
@@ -1121,7 +1121,7 @@ Possibilit&#xe9; d&apos;alternance si le mot est une s&#xe9;quence.</source>
     <message>
         <location filename="src/projet/base_parametre.cpp" line="261"/>
         <source>Le parametre</source>
-        <translation type="unfinished"></translation>
+        <translation>The parameter</translation>
     </message>
     <message>
         <location filename="src/projet/base_parametre.cpp" line="262"/>

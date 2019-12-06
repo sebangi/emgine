@@ -6,6 +6,7 @@
  * \author Sébastien Angibaud
  */
 
+#include <QLabel>
 #include <QMouseEvent>
 #include <QPushButton>
 #include <QWidget>
@@ -27,6 +28,7 @@ class base_parametre_widget : public QWidget
 
         void paintEvent(QPaintEvent *);
         void informer_verrouillage_change();
+        void maj_langues();
 
     private:
         void init();
@@ -53,6 +55,12 @@ class base_parametre_widget : public QWidget
 
         /** \brief Un pointeur sur le bouton d'aide du paramètre. */
         QPushButton *m_aide_bouton;
+
+        /** \brief Un pointeur sur le label du nom du paramètre. */
+        QLabel * m_nom_label;
+
+        /** \brief Un pointeur sur le label de la valeur du paramètre. */
+        QLabel * m_valeur_label;
 };
 
 #endif // BASE_PARAMETRE_WIDGET_H
