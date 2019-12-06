@@ -663,7 +663,7 @@ void fenetre_principale::selectionner_langue(QString langue)
     m_translator.load("emgine_" + langue );
     m_application->installTranslator(& m_translator);
 
-    emit signal_fp_language_changed();
+    maj_textes();
 }
 
 /** --------------------------------------------------------------------------------------
