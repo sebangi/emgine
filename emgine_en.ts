@@ -41,7 +41,22 @@
     <message>
         <location filename="src/fonction_widget/fonction_sortie_widget/texte_widget_item.cpp" line="26"/>
         <source>Texte</source>
-        <translation type="unfinished">Text</translation>
+        <translation>Text</translation>
+    </message>
+    <message>
+        <location filename="src/fonction_widget/parametre_aide_message_box.cpp" line="31"/>
+        <source>Fonction</source>
+        <translation>Function</translation>
+    </message>
+    <message>
+        <location filename="src/fonction_widget/parametre_aide_message_box.cpp" line="37"/>
+        <source>Param&#xe8;tre</source>
+        <translation>Parameter</translation>
+    </message>
+    <message>
+        <location filename="src/fonction_widget/parametre_aide_message_box.cpp" line="45"/>
+        <source>Algorithme</source>
+        <translation>Algorithm</translation>
     </message>
 </context>
 <context>
@@ -647,32 +662,32 @@ En fran&#xe7;ais, l&apos;indice vaut environ 0,0778. Si l&apos;indice de coincid
 <context>
     <name>base_fonction_widget</name>
     <message>
-        <location filename="src/fonction_widget/base_fonction_widget.cpp" line="195"/>
+        <location filename="src/fonction_widget/base_fonction_widget.cpp" line="209"/>
         <source>Cliquer pour ne pas ex&#xe9;cuter la fonction</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="src/fonction_widget/base_fonction_widget.cpp" line="208"/>
+        <location filename="src/fonction_widget/base_fonction_widget.cpp" line="222"/>
         <source>Cliquer pour ex&#xe9;cuter la fonction</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="src/fonction_widget/base_fonction_widget.cpp" line="422"/>
+        <location filename="src/fonction_widget/base_fonction_widget.cpp" line="436"/>
         <source>Fonction</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Function</translation>
     </message>
     <message>
-        <location filename="src/fonction_widget/base_fonction_widget.cpp" line="423"/>
+        <location filename="src/fonction_widget/base_fonction_widget.cpp" line="437"/>
         <source>Voulez-vous vraiment supprimer la fonction</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="src/fonction_widget/base_fonction_widget.cpp" line="426"/>
+        <location filename="src/fonction_widget/base_fonction_widget.cpp" line="440"/>
         <source>Oui</source>
         <translation type="unfinished">Yes</translation>
     </message>
     <message>
-        <location filename="src/fonction_widget/base_fonction_widget.cpp" line="427"/>
+        <location filename="src/fonction_widget/base_fonction_widget.cpp" line="441"/>
         <source>Non</source>
         <translation type="unfinished">No</translation>
     </message>
@@ -1341,52 +1356,52 @@ Possibilit&#xe9; d&apos;alternance si le mot est une s&#xe9;quence.</source>
 <context>
     <name>fenetre_principale</name>
     <message>
-        <location filename="src/fenetre_principale.cpp" line="685"/>
+        <location filename="src/fenetre_principale.cpp" line="686"/>
         <source>Emgine</source>
         <translation>Emgine</translation>
     </message>
     <message>
-        <location filename="src/fenetre_principale.cpp" line="679"/>
+        <location filename="src/fenetre_principale.cpp" line="680"/>
         <source>Source</source>
         <translation>Source</translation>
     </message>
     <message>
-        <location filename="src/fenetre_principale.cpp" line="680"/>
+        <location filename="src/fenetre_principale.cpp" line="681"/>
         <source>Conversion</source>
         <translation>Conversion</translation>
     </message>
     <message>
-        <location filename="src/fenetre_principale.cpp" line="681"/>
+        <location filename="src/fenetre_principale.cpp" line="682"/>
         <source>R&#xe9;sultat</source>
         <translation>Result</translation>
     </message>
     <message>
-        <location filename="src/fenetre_principale.cpp" line="675"/>
+        <location filename="src/fenetre_principale.cpp" line="676"/>
         <source>Nouveau projet</source>
         <translation>New project</translation>
     </message>
     <message>
-        <location filename="src/fenetre_principale.cpp" line="676"/>
+        <location filename="src/fenetre_principale.cpp" line="677"/>
         <source>Ouvrir un projet</source>
         <translation>Open project</translation>
     </message>
     <message>
-        <location filename="src/fenetre_principale.cpp" line="678"/>
+        <location filename="src/fenetre_principale.cpp" line="679"/>
         <source>Enregistrer sous</source>
         <translation>Save as</translation>
     </message>
     <message>
-        <location filename="src/fenetre_principale.cpp" line="683"/>
+        <location filename="src/fenetre_principale.cpp" line="684"/>
         <source>Fran&#xe7;ais</source>
         <translation>French</translation>
     </message>
     <message>
-        <location filename="src/fenetre_principale.cpp" line="684"/>
+        <location filename="src/fenetre_principale.cpp" line="685"/>
         <source>Anglais</source>
         <translation>English</translation>
     </message>
     <message>
-        <location filename="src/fenetre_principale.cpp" line="682"/>
+        <location filename="src/fenetre_principale.cpp" line="683"/>
         <source>Ex&#xe9;cuter</source>
         <translation>Run</translation>
     </message>
@@ -1426,22 +1441,22 @@ Possibilit&#xe9; d&apos;alternance si le mot est une s&#xe9;quence.</source>
         <translation>The project is already opened !</translation>
     </message>
     <message>
-        <location filename="src/fenetre_principale.cpp" line="677"/>
+        <location filename="src/fenetre_principale.cpp" line="678"/>
         <source>Enregistrer</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="src/fenetre_principale.cpp" line="873"/>
+        <location filename="src/fenetre_principale.cpp" line="874"/>
         <source>Le projet n&apos;est pas enregistr&#xe9;.</source>
         <translation>The project is not saved.</translation>
     </message>
     <message>
-        <location filename="src/fenetre_principale.cpp" line="874"/>
+        <location filename="src/fenetre_principale.cpp" line="875"/>
         <source>Souhaitez-vous enregistrer les changements ?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="src/fenetre_principale.cpp" line="917"/>
+        <location filename="src/fenetre_principale.cpp" line="918"/>
         <source>copie</source>
         <translation>copy</translation>
     </message>
@@ -1666,19 +1681,16 @@ Possibilit&#xe9; d&apos;alternance si le mot est une s&#xe9;quence.</source>
 <context>
     <name>parametre_aide_message_box</name>
     <message>
-        <location filename="src/fonction_widget/parametre_aide_message_box.cpp" line="31"/>
         <source>Fonction</source>
-        <translation type="unfinished"></translation>
+        <translation>Function</translation>
     </message>
     <message>
-        <location filename="src/fonction_widget/parametre_aide_message_box.cpp" line="37"/>
         <source>Param&#xe8;tre</source>
-        <translation type="unfinished"></translation>
+        <translation>Parameter</translation>
     </message>
     <message>
-        <location filename="src/fonction_widget/parametre_aide_message_box.cpp" line="45"/>
         <source>Algorithme</source>
-        <translation type="unfinished"></translation>
+        <translation>Algorithm</translation>
     </message>
 </context>
 <context>
@@ -1725,7 +1737,7 @@ Possibilit&#xe9; d&apos;alternance si le mot est une s&#xe9;quence.</source>
 <context>
     <name>vue_fonctions</name>
     <message>
-        <location filename="src/fonction_widget/vue_fonctions.cpp" line="166"/>
+        <location filename="src/fonction_widget/vue_fonctions.cpp" line="178"/>
         <source>essai</source>
         <translation type="unfinished"></translation>
     </message>
