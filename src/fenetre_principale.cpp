@@ -57,11 +57,12 @@ fenetre_principale::fenetre_principale(QApplication * app, QWidget *parent) :
     m_ui->setupUi(this);
     m_ui->menuBar->hide();
 
+    m_translator.load("emgine_fr");
+    m_application->installTranslator(& m_translator);
+
     creer_toolbar();
     creer_widgets();
     init_widgets();
-
-    selectionner_langue("en");
 
     QIcon icon1;
     icon1.addFile(QString::fromUtf8(":/icons/emgine.png"), QSize(), QIcon::Normal, QIcon::Off);
@@ -115,8 +116,8 @@ void fenetre_principale::creer_toolbar()
 
     m_toolbar_bouton_executer->setObjectName("ButtonToolBar");
 
-    m_toolbar_bouton_francais->setObjectName("BoutonLangueNonSelectionne");
-    m_toolbar_bouton_anglais->setObjectName("BoutonLangueSelectionne");
+    m_toolbar_bouton_francais->setObjectName("BoutonLangueSelectionne");
+    m_toolbar_bouton_anglais->setObjectName("BoutonLangueNonSelectionne");
 
     m_ui->mainToolBar->addWidget(m_toolbar_bouton_nouveau_projet);
     m_ui->mainToolBar->addWidget(m_toolbar_bouton_ouvrir_projet);
@@ -323,6 +324,14 @@ void fenetre_principale::ajouter_fonction( fonctions_conteneur * conteneur, obje
 
     conteneur->ajouter_fonction(f,obj_ref);
     f->selectionner();
+}
+
+/** --------------------------------------------------------------------------------------
+ \brief Fixe la largeur de la barre de menu.
+*/
+void fenetre_principale::fixer_largeur_menu()
+{
+     m_ui->mainToolBar->setFixedWidth(  m_ui->mainToolBar->width() );
 }
 
 /** --------------------------------------------------------------------------------------
@@ -650,12 +659,29 @@ void fenetre_principale::deconnecter()
 */
 void fenetre_principale::selectionner_langue(QString langue)
 {
-    std::cout << langue.toStdString() << std::endl;
-
     m_application->removeTranslator(& m_translator );
     m_translator.load("emgine_" + langue );
     m_application->installTranslator(& m_translator);
-    m_ui->retranslateUi(this);
+
+    emit signal_fp_language_changed();
+}
+
+/** --------------------------------------------------------------------------------------
+ \brief Met à jour les textes.
+*/
+void fenetre_principale::maj_textes()
+{
+    m_toolbar_bouton_nouveau_projet->setText(tr("Nouveau projet"));
+    m_toolbar_bouton_ouvrir_projet->setText(tr("Ouvrir un projet"));
+    m_toolbar_bouton_sauvegarder_projet->setText(tr("Enregistrer"));
+    m_toolbar_bouton_sauvegarder_projet_sous->setText(tr("Enregistrer sous"));
+    m_toolbar_bouton_ajout_fonction_source->setText(tr("Source"));
+    m_toolbar_bouton_ajout_fonction_conversion->setText(tr("Conversion"));
+    m_toolbar_bouton_ajout_fonction_sortie->setText(tr("Résultat"));
+    m_toolbar_bouton_executer->setText(tr("Exécuter"));
+    m_toolbar_bouton_francais->setText(tr("Français"));
+    m_toolbar_bouton_anglais->setText(tr("Anglais"));
+    setWindowTitle( tr("Emgine") );
 }
 
 /** --------------------------------------------------------------------------------------
@@ -731,7 +757,6 @@ void fenetre_principale::on_executer_click()
 */
 void fenetre_principale::on_francais_click()
 {
-    std::cout << "francais" << std::endl;
     selectionner_langue("fr");
 
     m_toolbar_bouton_francais->setObjectName("BoutonLangueSelectionne");
@@ -748,7 +773,6 @@ void fenetre_principale::on_francais_click()
 */
 void fenetre_principale::on_anglais_click()
 {
-    std::cout << "anglais" << std::endl;
     selectionner_langue("en");
 
     m_toolbar_bouton_francais->setObjectName("BoutonLangueNonSelectionne");

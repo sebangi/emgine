@@ -11,7 +11,7 @@
    </rect>
   </property>
   <property name="windowTitle">
-   <string>Mon décodeur</string>
+   <string>Emgine</string>
   </property>
   <widget class="QWidget" name="centralWidget">
    <property name="autoFillBackground">

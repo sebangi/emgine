@@ -27,6 +27,7 @@ int main(int argc, char *argv[])
 
     fenetre_principale w(&a);
     w.show();
+    w.fixer_largeur_menu();
     
     return a.exec();
 }

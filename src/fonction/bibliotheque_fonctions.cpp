@@ -234,7 +234,7 @@ QString bibliotheque_fonctions::get_nom(type_id_fonction id)
     if( it == s_fonctions_nom.end() )
         return base_fonction::tr("fonction en cours d'implémentation");
     else
-        return it->second;
+        return base_fonction::tr( qUtf8Printable(it->second) );
 }
 
 /** --------------------------------------------------------------------------------------

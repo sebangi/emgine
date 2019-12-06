@@ -70,6 +70,8 @@ class fenetre_principale : public QMainWindow
         void ajouter_fonction( fonctions_conteneur * conteneur, objet_selectionnable * obj_ref, type_fonction type );
         void ajouter_fonction( fonctions_conteneur * conteneur, objet_selectionnable * obj_ref, base_fonction* f, bool init_defaut );
 
+        void fixer_largeur_menu();
+
     private:
         void init_test();
         void init_widgets();
@@ -91,6 +93,13 @@ class fenetre_principale : public QMainWindow
         void deconnecter_projets();
         void deconnecter();        
         void selectionner_langue(QString langue);
+        void maj_textes();
+
+    signals:
+        /** --------------------------------------------------------------------------------------
+         * \brief Signal informant d'un changement de langue.
+         */
+        void signal_fp_language_changed();
 
     private slots:
         bool on_enregistrer_projet_sous(projet * p);

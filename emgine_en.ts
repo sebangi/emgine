@@ -6,12 +6,12 @@
     <message>
         <location filename="src/element/base_element.cpp" line="271"/>
         <source>non</source>
-        <translation type="unfinished"></translation>
+        <translation>no</translation>
     </message>
     <message>
         <location filename="src/element/base_element.cpp" line="269"/>
         <source>oui</source>
-        <translation type="unfinished"></translation>
+        <translation>yes</translation>
     </message>
     <message>
         <location filename="src/element/texte.cpp" line="137"/>
@@ -566,12 +566,12 @@ En fran&#xe7;ais, l&apos;indice vaut environ 0,0778. Si l&apos;indice de coincid
     <message>
         <location filename="src/fonction/fonction_source/fonction_source_booleen.cpp" line="79"/>
         <source>oui</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">yes</translation>
     </message>
     <message>
         <location filename="src/fonction/fonction_source/fonction_source_booleen.cpp" line="81"/>
         <source>non</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">no</translation>
     </message>
     <message>
         <location filename="src/fonction/fonction_source/fonction_source_fichier_texte.cpp" line="196"/>
@@ -689,12 +689,12 @@ En fran&#xe7;ais, l&apos;indice vaut environ 0,0778. Si l&apos;indice de coincid
     <message>
         <location filename="src/fonction_widget/base_fonction_widget.cpp" line="426"/>
         <source>Oui</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Yes</translation>
     </message>
     <message>
         <location filename="src/fonction_widget/base_fonction_widget.cpp" line="427"/>
         <source>Non</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">No</translation>
     </message>
 </context>
 <context>
@@ -1225,7 +1225,7 @@ Possibilit&#xe9; d&apos;alternance si le mot est une s&#xe9;quence.</source>
     <message>
         <location filename="src/explorateur/explorateur.cpp" line="40"/>
         <source>Explorateur de projets</source>
-        <translation type="unfinished"></translation>
+        <translation>Project explorator</translation>
     </message>
     <message>
         <location filename="src/explorateur/explorateur.cpp" line="603"/>
@@ -1350,110 +1350,120 @@ Possibilit&#xe9; d&apos;alternance si le mot est une s&#xe9;quence.</source>
     <message>
         <location filename="src/explorateur/explorateur.cpp" line="1082"/>
         <source>Oui</source>
-        <translation type="unfinished"></translation>
+        <translation>Yes</translation>
     </message>
     <message>
         <location filename="src/explorateur/explorateur.cpp" line="1083"/>
         <source>Non</source>
-        <translation type="unfinished"></translation>
+        <translation>No</translation>
     </message>
 </context>
 <context>
     <name>fenetre_principale</name>
     <message>
-        <location filename="fenetre_principale.ui" line="14"/>
-        <source>Mon d&#xe9;codeur</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="src/fenetre_principale.cpp" line="172"/>
+        <location filename="src/fenetre_principale.cpp" line="179"/>
         <source>Emgine</source>
-        <translation type="unfinished"></translation>
+        <translation>Emgine</translation>
     </message>
     <message>
-        <location filename="src/fenetre_principale.cpp" line="177"/>
+        <location filename="src/fenetre_principale.cpp" line="666"/>
         <source>Source</source>
-        <translation type="unfinished"></translation>
+        <translation>Source</translation>
     </message>
     <message>
-        <location filename="src/fenetre_principale.cpp" line="183"/>
+        <location filename="src/fenetre_principale.cpp" line="667"/>
         <source>Conversion</source>
-        <translation type="unfinished"></translation>
+        <translation>Conversion</translation>
     </message>
     <message>
-        <location filename="src/fenetre_principale.cpp" line="189"/>
+        <location filename="src/fenetre_principale.cpp" line="668"/>
         <source>R&#xe9;sultat</source>
-        <translation type="unfinished"></translation>
+        <translation>Result</translation>
     </message>
     <message>
-        <location filename="src/fenetre_principale.cpp" line="497"/>
+        <location filename="src/fenetre_principale.cpp" line="662"/>
         <source>Nouveau projet</source>
-        <translation type="unfinished"></translation>
+        <translation>New project</translation>
     </message>
     <message>
-        <location filename="src/fenetre_principale.cpp" line="200"/>
+        <location filename="src/fenetre_principale.cpp" line="663"/>
         <source>Ouvrir un projet</source>
-        <translation type="unfinished"></translation>
+        <translation>Open project</translation>
     </message>
     <message>
-        <location filename="src/fenetre_principale.cpp" line="206"/>
+        <location filename="src/fenetre_principale.cpp" line="665"/>
         <source>Enregistrer sous</source>
-        <translation type="unfinished"></translation>
+        <translation>Save as</translation>
     </message>
     <message>
-        <location filename="src/fenetre_principale.cpp" line="234"/>
+        <location filename="src/fenetre_principale.cpp" line="670"/>
+        <source>Fran&#xe7;ais</source>
+        <translation>French</translation>
+    </message>
+    <message>
+        <location filename="src/fenetre_principale.cpp" line="671"/>
+        <source>Anglais</source>
+        <translation>English</translation>
+    </message>
+    <message>
+        <location filename="src/fenetre_principale.cpp" line="669"/>
         <source>Ex&#xe9;cuter</source>
-        <translation type="unfinished"></translation>
+        <translation>Run</translation>
     </message>
     <message>
-        <location filename="src/fenetre_principale.cpp" line="315"/>
+        <location filename="src/fenetre_principale.cpp" line="335"/>
         <source>Exemple</source>
-        <translation type="unfinished"></translation>
+        <translation>Example</translation>
     </message>
     <message>
-        <location filename="src/fenetre_principale.cpp" line="373"/>
+        <location filename="src/fenetre_principale.cpp" line="393"/>
         <source>Sauvegarder le projet</source>
-        <translation type="unfinished"></translation>
+        <translation>Save the project</translation>
     </message>
     <message>
-        <location filename="src/fenetre_principale.cpp" line="441"/>
+        <location filename="src/fenetre_principale.cpp" line="461"/>
         <source>projet Emgine</source>
-        <translation type="unfinished"></translation>
+        <translation>Emgine project</translation>
     </message>
     <message>
-        <location filename="src/fenetre_principale.cpp" line="459"/>
+        <location filename="src/fenetre_principale.cpp" line="479"/>
         <source>Impossible d&apos;ouvrir le fichier.</source>
-        <translation type="unfinished"></translation>
+        <translation>Fail open the project.</translation>
     </message>
     <message>
-        <location filename="src/fenetre_principale.cpp" line="440"/>
+        <location filename="src/fenetre_principale.cpp" line="460"/>
         <source>Ouvrir un projet Emgine</source>
-        <translation type="unfinished"></translation>
+        <translation>Open Emgine project</translation>
     </message>
     <message>
-        <location filename="src/fenetre_principale.cpp" line="450"/>
+        <location filename="src/fenetre_principale.cpp" line="470"/>
         <source>Ouverture de projet</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="src/fenetre_principale.cpp" line="450"/>
+        <location filename="src/fenetre_principale.cpp" line="470"/>
         <source>Le projet est d&#xe9;j&#xe0; ouvert !</source>
+        <translation>The project is already opened !</translation>
+    </message>
+    <message>
+        <location filename="src/fenetre_principale.cpp" line="664"/>
+        <source>Enregistrer</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="src/fenetre_principale.cpp" line="781"/>
+        <location filename="src/fenetre_principale.cpp" line="861"/>
         <source>Le projet n&apos;est pas enregistr&#xe9;.</source>
-        <translation type="unfinished"></translation>
+        <translation>The project is not saved.</translation>
     </message>
     <message>
-        <location filename="src/fenetre_principale.cpp" line="782"/>
+        <location filename="src/fenetre_principale.cpp" line="862"/>
         <source>Souhaitez-vous enregistrer les changements ?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="src/fenetre_principale.cpp" line="825"/>
+        <location filename="src/fenetre_principale.cpp" line="905"/>
         <source>copie</source>
-        <translation type="unfinished"></translation>
+        <translation>copy</translation>
     </message>
 </context>
 <context>
@@ -1484,12 +1494,12 @@ Possibilit&#xe9; d&apos;alternance si le mot est une s&#xe9;quence.</source>
     <message>
         <location filename="src/fonction_widget/fonction_source_widget/fonction_source_booleen_widget.cpp" line="32"/>
         <source>oui</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">yes</translation>
     </message>
     <message>
         <location filename="src/fonction_widget/fonction_source_widget/fonction_source_booleen_widget.cpp" line="43"/>
         <source>non</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">no</translation>
     </message>
 </context>
 <context>
