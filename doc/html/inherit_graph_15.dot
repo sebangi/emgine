@@ -3,5 +3,5 @@ digraph "Graphe hiérarchique des classes"
   edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
   node [fontname="Helvetica",fontsize="10",shape=record];
   rankdir="LR";
-  Node0 [label="frequence",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classfrequence.html",tooltip="Classe décrivant la fréquence d&#39;un élément. "];
+  Node0 [label="indice_lettre",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classindice__lettre.html"];
 }

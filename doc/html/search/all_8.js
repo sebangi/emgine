@@ -5,7 +5,7 @@ var searchData=
   ['ligne_2ecpp',['ligne.cpp',['../ligne_8cpp.html',1,'']]],
   ['ligne_2eh',['ligne.h',['../ligne_8h.html',1,'']]],
   ['ligne_5fcourante',['ligne_courante',['../classalgo___i_p_l.html#aca1574ac06f7502a67dd84ce6c40967d',1,'algo_IPL']]],
-  ['liste_5fchoix',['liste_choix',['../classliste__choix.html',1,'liste_choix'],['../classliste__choix.html#a5ac44b1361ce5aef940a6aecbc3003eb',1,'liste_choix::liste_choix()']]],
+  ['liste_5fchoix',['liste_choix',['../classliste__choix.html',1,'liste_choix'],['../classliste__choix.html#a180eae227fe1046e32ffced5fab93814',1,'liste_choix::liste_choix()'],['../classliste__choix.html#acdb8aedba97379765928a32eea4b578a',1,'liste_choix::liste_choix(const liste_choix &amp;l_choix)'],['../classliste__choix.html#a5ac44b1361ce5aef940a6aecbc3003eb',1,'liste_choix::liste_choix(const QStringList &amp;liste_choix_possibles, const QStringList &amp;liste_choix_par_defaut)']]],
   ['liste_5fchoix_2ecpp',['liste_choix.cpp',['../liste__choix_8cpp.html',1,'']]],
   ['liste_5fchoix_2eh',['liste_choix.h',['../liste__choix_8h.html',1,'']]],
   ['liste_5fchoix_5fpar_5fdefaut',['liste_choix_par_defaut',['../classliste__choix.html#ac66a134a7155029c871f2b99ebcfd9f0',1,'liste_choix']]],

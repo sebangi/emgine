@@ -1,0 +1,19 @@
+digraph "fenetre_principale::selectionner_langue"
+{
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="LR";
+  Node1921 [label="fenetre_principale\l::selectionner_langue",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black"];
+  Node1921 -> Node1922 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node1922 [label="fenetre_principale\l::maj_langues",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classfenetre__principale.html#a3f1f7cfbc1969008ede81e69befd2381",tooltip="Met à jour les textes selon la langue choisie. "];
+  Node1921 -> Node1923 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node1923 [label="explorateur::maj_langues",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classexplorateur.html#a305b2dd61276494f9c571ea7582d56c9",tooltip="Met à jour les textes selon la langue choisie. "];
+  Node1921 -> Node1924 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node1924 [label="vue_fonctions::maj\l_langues",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classvue__fonctions.html#a810a001089eecf860f129d3a3886b42d",tooltip="Met à jour les textes selon la langue choisie. "];
+  Node1924 -> Node1925 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node1925 [label="base_fonction_widget\l::maj_langues",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classbase__fonction__widget.html#a53a7a59459acab8c90723893a03a8424",tooltip="Met à jour les textes selon la langue choisie. "];
+  Node1925 -> Node1926 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node1926 [label="base_fonction_widget\l::get_nom",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classbase__fonction__widget.html#a49158595d1376bdf84a712ff18cb00b2",tooltip="Fonction retournant le nom de la fonction à afficher. "];
+  Node1926 -> Node1927 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node1927 [label="base_fonction::get_nom",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classbase__fonction.html#aa184addbc0e71b3fd255b2f0b9e7c99e",tooltip="Accesseur du nom de la fonction. "];
+}

@@ -106,6 +106,9 @@ Fonctions membres publiques</h2></td></tr>
 <tr class="memitem:a31796da6c046e8616994c323c710da89"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classbase__parametre__widget.html#a31796da6c046e8616994c323c710da89">informer_verrouillage_change</a> ()</td></tr>
 <tr class="memdesc:a31796da6c046e8616994c323c710da89"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fonction appelé lorsque le verrouillage du paramètre change.  <a href="#a31796da6c046e8616994c323c710da89">Plus de détails...</a><br /></td></tr>
 <tr class="separator:a31796da6c046e8616994c323c710da89"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adb7ba8cb6097b498dc327ebdd5d2b670"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classbase__parametre__widget.html#adb7ba8cb6097b498dc327ebdd5d2b670">maj_langues</a> ()</td></tr>
+<tr class="memdesc:adb7ba8cb6097b498dc327ebdd5d2b670"><td class="mdescLeft">&#160;</td><td class="mdescRight">Met à jour les textes selon la langue choisie.  <a href="#adb7ba8cb6097b498dc327ebdd5d2b670">Plus de détails...</a><br /></td></tr>
+<tr class="separator:adb7ba8cb6097b498dc327ebdd5d2b670"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-methods"></a>
 Fonctions membres protégées</h2></td></tr>
@@ -160,12 +163,20 @@ QPushButton *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" h
 QPushButton *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classbase__parametre__widget.html#a6176994fe6bbd762b073e8854ee1a5cd">m_aide_bouton</a></td></tr>
 <tr class="memdesc:a6176994fe6bbd762b073e8854ee1a5cd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Un pointeur sur le bouton d'aide du paramètre. <br /></td></tr>
 <tr class="separator:a6176994fe6bbd762b073e8854ee1a5cd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a311c640b6a4b53bbf9960e9e70338db7"><td class="memItemLeft" align="right" valign="top"><a id="a311c640b6a4b53bbf9960e9e70338db7"></a>
+QLabel *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classbase__parametre__widget.html#a311c640b6a4b53bbf9960e9e70338db7">m_nom_label</a></td></tr>
+<tr class="memdesc:a311c640b6a4b53bbf9960e9e70338db7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Un pointeur sur le label du nom du paramètre. <br /></td></tr>
+<tr class="separator:a311c640b6a4b53bbf9960e9e70338db7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a565c0e4bf2b373b67b788240b22bf11c"><td class="memItemLeft" align="right" valign="top"><a id="a565c0e4bf2b373b67b788240b22bf11c"></a>
+QLabel *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classbase__parametre__widget.html#a565c0e4bf2b373b67b788240b22bf11c">m_valeur_label</a></td></tr>
+<tr class="memdesc:a565c0e4bf2b373b67b788240b22bf11c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Un pointeur sur le label de la valeur du paramètre. <br /></td></tr>
+<tr class="separator:a565c0e4bf2b373b67b788240b22bf11c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Description détaillée</h2>
 <div class="textblock"><p>Classe décrivant un widget de base affichant un paramètre. </p>
 <dl class="section author"><dt>Auteur</dt><dd>Sébastien Angibaud </dd></dl>
 
-<p class="definition">Définition à la ligne <a class="el" href="base__parametre__widget_8h_source.html#l00020">20</a> du fichier <a class="el" href="base__parametre__widget_8h_source.html">base_parametre_widget.h</a>.</p>
+<p class="definition">Définition à la ligne <a class="el" href="base__parametre__widget_8h_source.html#l00021">21</a> du fichier <a class="el" href="base__parametre__widget_8h_source.html">base_parametre_widget.h</a>.</p>
 </div><h2 class="groupheader">Documentation des constructeurs et destructeur</h2>
 <a id="aaea22dd4fbb9de4beb9f8fe26fb6c906"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#aaea22dd4fbb9de4beb9f8fe26fb6c906">&#9670;&nbsp;</a></span>base_parametre_widget()</h2>
@@ -281,7 +292,7 @@ Voici le graphe d'appel pour cette fonction :</div>
 <p>Affiche l'aide du paramètre associé. </p>
 <hr/>
  
-<p class="definition">Définition à la ligne <a class="el" href="base__parametre__widget_8cpp_source.html#l00134">134</a> du fichier <a class="el" href="base__parametre__widget_8cpp_source.html">base_parametre_widget.cpp</a>.</p>
+<p class="definition">Définition à la ligne <a class="el" href="base__parametre__widget_8cpp_source.html#l00143">143</a> du fichier <a class="el" href="base__parametre__widget_8cpp_source.html">base_parametre_widget.cpp</a>.</p>
 
 </div>
 </div>
@@ -312,7 +323,7 @@ Voici le graphe d'appel pour cette fonction :</div>
 <hr/>
  <dl class="section return"><dt>Renvoie</dt><dd>La valeur courte du paramètre associé. </dd></dl>
 
-<p class="definition">Définition à la ligne <a class="el" href="base__parametre__widget_8cpp_source.html#l00145">145</a> du fichier <a class="el" href="base__parametre__widget_8cpp_source.html">base_parametre_widget.cpp</a>.</p>
+<p class="definition">Définition à la ligne <a class="el" href="base__parametre__widget_8cpp_source.html#l00154">154</a> du fichier <a class="el" href="base__parametre__widget_8cpp_source.html">base_parametre_widget.cpp</a>.</p>
 <div class="dynheader">
 Voici le graphe d'appel pour cette fonction :</div>
 <div class="dyncontent">
@@ -357,7 +368,7 @@ Voici le graphe d'appel pour cette fonction :</div>
 </dl>
 <dl class="section return"><dt>Renvoie</dt><dd>Un booléen indiquant sur l'événement a été traité. </dd></dl>
 
-<p class="definition">Définition à la ligne <a class="el" href="base__parametre__widget_8cpp_source.html#l00164">164</a> du fichier <a class="el" href="base__parametre__widget_8cpp_source.html">base_parametre_widget.cpp</a>.</p>
+<p class="definition">Définition à la ligne <a class="el" href="base__parametre__widget_8cpp_source.html#l00173">173</a> du fichier <a class="el" href="base__parametre__widget_8cpp_source.html">base_parametre_widget.cpp</a>.</p>
 
 </div>
 </div>
@@ -420,7 +431,7 @@ Voici le graphe d'appel pour cette fonction :</div>
 <p>Initialise le widget. </p>
 <hr/>
  
-<p class="definition">Définition à la ligne <a class="el" href="base__parametre__widget_8cpp_source.html#l00066">66</a> du fichier <a class="el" href="base__parametre__widget_8cpp_source.html">base_parametre_widget.cpp</a>.</p>
+<p class="definition">Définition à la ligne <a class="el" href="base__parametre__widget_8cpp_source.html#l00075">75</a> du fichier <a class="el" href="base__parametre__widget_8cpp_source.html">base_parametre_widget.cpp</a>.</p>
 <div class="dynheader">
 Voici le graphe d'appel pour cette fonction :</div>
 <div class="dyncontent">
@@ -443,6 +454,35 @@ Voici le graphe d'appel pour cette fonction :</div>
 <area shape="rect" id="node14" href="classobjet__selectionnable.html#a1cf41e42861e0b033d2704802905e81a" title="objet_selectionnable\l::est_verrouille_avec\l_parent" alt="" coords="707,393,850,449"/>
 <area shape="rect" id="node15" href="classobjet__selectionnable.html#a8b9cf156597fe8cc1b8f9408e1bfee8c" title="objet_selectionnable\l::est_verrouille" alt="" coords="926,401,1066,442"/>
 <area shape="rect" id="node17" href="classbase__parametre__widget.html#a111b8e68e610e34757d0722e04a7b8ed" title="base_parametre_widget\l::aide" alt="" coords="456,369,616,410"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="adb7ba8cb6097b498dc327ebdd5d2b670"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adb7ba8cb6097b498dc327ebdd5d2b670">&#9670;&nbsp;</a></span>maj_langues()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void base_parametre_widget::maj_langues </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Met à jour les textes selon la langue choisie. </p>
+<hr/>
+ 
+<p class="definition">Définition à la ligne <a class="el" href="base__parametre__widget_8cpp_source.html#l00066">66</a> du fichier <a class="el" href="base__parametre__widget_8cpp_source.html">base_parametre_widget.cpp</a>.</p>
+<div class="dynheader">
+Voici le graphe d'appel pour cette fonction :</div>
+<div class="dyncontent">
+<div class="center"><img src="classbase__parametre__widget_adb7ba8cb6097b498dc327ebdd5d2b670_cgraph.png" border="0" usemap="#classbase__parametre__widget_adb7ba8cb6097b498dc327ebdd5d2b670_cgraph" alt=""/></div>
+<map name="classbase__parametre__widget_adb7ba8cb6097b498dc327ebdd5d2b670_cgraph" id="classbase__parametre__widget_adb7ba8cb6097b498dc327ebdd5d2b670_cgraph">
 </map>
 </div>
 
@@ -474,7 +514,7 @@ Voici le graphe d'appel pour cette fonction :</div>
 <p>Met à jour la visualisation de la configuration. </p>
 <hr/>
  
-<p class="definition">Définition à la ligne <a class="el" href="base__parametre__widget_8cpp_source.html#l00108">108</a> du fichier <a class="el" href="base__parametre__widget_8cpp_source.html">base_parametre_widget.cpp</a>.</p>
+<p class="definition">Définition à la ligne <a class="el" href="base__parametre__widget_8cpp_source.html#l00117">117</a> du fichier <a class="el" href="base__parametre__widget_8cpp_source.html">base_parametre_widget.cpp</a>.</p>
 <div class="dynheader">
 Voici le graphe d'appel pour cette fonction :</div>
 <div class="dyncontent">
@@ -521,7 +561,7 @@ Voici le graphe d'appel pour cette fonction :</div>
   </dd>
 </dl>
 
-<p class="definition">Définition à la ligne <a class="el" href="base__parametre__widget_8cpp_source.html#l00205">205</a> du fichier <a class="el" href="base__parametre__widget_8cpp_source.html">base_parametre_widget.cpp</a>.</p>
+<p class="definition">Définition à la ligne <a class="el" href="base__parametre__widget_8cpp_source.html#l00214">214</a> du fichier <a class="el" href="base__parametre__widget_8cpp_source.html">base_parametre_widget.cpp</a>.</p>
 <div class="dynheader">
 Voici le graphe d'appel pour cette fonction :</div>
 <div class="dyncontent">
@@ -567,7 +607,7 @@ Voici le graphe d'appel pour cette fonction :</div>
   </dd>
 </dl>
 
-<p class="definition">Définition à la ligne <a class="el" href="base__parametre__widget_8cpp_source.html#l00215">215</a> du fichier <a class="el" href="base__parametre__widget_8cpp_source.html">base_parametre_widget.cpp</a>.</p>
+<p class="definition">Définition à la ligne <a class="el" href="base__parametre__widget_8cpp_source.html#l00224">224</a> du fichier <a class="el" href="base__parametre__widget_8cpp_source.html">base_parametre_widget.cpp</a>.</p>
 <div class="dynheader">
 Voici le graphe d'appel pour cette fonction :</div>
 <div class="dyncontent">
@@ -606,7 +646,7 @@ Voici le graphe d'appel pour cette fonction :</div>
 <p>Fonction appelée lors d'une demande d'affichage de l'aide. </p>
 <hr/>
  
-<p class="definition">Définition à la ligne <a class="el" href="base__parametre__widget_8cpp_source.html#l00187">187</a> du fichier <a class="el" href="base__parametre__widget_8cpp_source.html">base_parametre_widget.cpp</a>.</p>
+<p class="definition">Définition à la ligne <a class="el" href="base__parametre__widget_8cpp_source.html#l00196">196</a> du fichier <a class="el" href="base__parametre__widget_8cpp_source.html">base_parametre_widget.cpp</a>.</p>
 <div class="dynheader">
 Voici le graphe d'appel pour cette fonction :</div>
 <div class="dyncontent">
@@ -644,7 +684,7 @@ Voici le graphe d'appel pour cette fonction :</div>
 <p>Fonction appelée lors d'une demande d'inversion de configuration. </p>
 <hr/>
  
-<p class="definition">Définition à la ligne <a class="el" href="base__parametre__widget_8cpp_source.html#l00195">195</a> du fichier <a class="el" href="base__parametre__widget_8cpp_source.html">base_parametre_widget.cpp</a>.</p>
+<p class="definition">Définition à la ligne <a class="el" href="base__parametre__widget_8cpp_source.html#l00204">204</a> du fichier <a class="el" href="base__parametre__widget_8cpp_source.html">base_parametre_widget.cpp</a>.</p>
 <div class="dynheader">
 Voici le graphe d'appel pour cette fonction :</div>
 <div class="dyncontent">
@@ -717,7 +757,7 @@ Voici le graphe d'appel pour cette fonction :</div>
 <p>Met à jour du nom de l'objet. </p>
 <hr/>
  
-<p class="definition">Définition à la ligne <a class="el" href="base__parametre__widget_8cpp_source.html#l00123">123</a> du fichier <a class="el" href="base__parametre__widget_8cpp_source.html">base_parametre_widget.cpp</a>.</p>
+<p class="definition">Définition à la ligne <a class="el" href="base__parametre__widget_8cpp_source.html#l00132">132</a> du fichier <a class="el" href="base__parametre__widget_8cpp_source.html">base_parametre_widget.cpp</a>.</p>
 
 </div>
 </div>
@@ -728,7 +768,7 @@ Voici le graphe d'appel pour cette fonction :</div>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Généré le Jeudi 5 Décembre 2019 09:58:21 pour Emgine par &#160;<a href="http://www.doxygen.org/index.html">
+Généré le Vendredi 6 Décembre 2019 09:52:15 pour Emgine par &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.13
 </small></address>

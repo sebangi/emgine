@@ -7,5 +7,5 @@ digraph "entete/explorateur" {
   dir_e800d7e2ca9e3ab33519b856916cc0a5 [shape=box, label="explorateur", style="filled", fillcolor="#eeeeff", pencolor="black", URL="dir_e800d7e2ca9e3ab33519b856916cc0a5.html"];
   }
   dir_2a17f3b6bd0d472023dbd77d40fac0ed [shape=box label="fonction" fillcolor="white" style="filled" color="red" URL="dir_2a17f3b6bd0d472023dbd77d40fac0ed.html"];
-  dir_e800d7e2ca9e3ab33519b856916cc0a5->dir_2a17f3b6bd0d472023dbd77d40fac0ed [headlabel="1", labeldistance=1.5 headhref="dir_000005_000006.html"];
+  dir_e800d7e2ca9e3ab33519b856916cc0a5->dir_2a17f3b6bd0d472023dbd77d40fac0ed [headlabel="1", labeldistance=1.5 headhref="dir_000004_000005.html"];
 }

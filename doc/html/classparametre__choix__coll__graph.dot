@@ -22,4 +22,5 @@ digraph "parametre_choix"
   Node7 -> Node12 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" m_conteneur" ,fontname="Helvetica"];
   Node13 -> Node5 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" m_choix" ,fontname="Helvetica"];
   Node13 [label="liste_choix",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classliste__choix.html",tooltip="Classe décrivant une liste de choix. "];
+  Node9 -> Node13 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
 }

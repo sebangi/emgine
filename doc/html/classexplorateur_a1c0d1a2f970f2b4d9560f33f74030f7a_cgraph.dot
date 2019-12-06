@@ -3,11 +3,11 @@ digraph "explorateur::mettre_a_jour_activation"
   edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
   node [fontname="Helvetica",fontsize="10",shape=record];
   rankdir="LR";
-  Node771 [label="explorateur::mettre\l_a_jour_activation",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black"];
-  Node771 -> Node772 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
-  Node772 [label="base_noeud::get_save\l_expanded",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classbase__noeud.html#a32dabd19461a1e4db86b6e1c79bf9cbc",tooltip="Retourne l&#39;état d&#39;expansion sauvegardé avant le compactage automatique. "];
-  Node771 -> Node773 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
-  Node773 [label="base_noeud::save_expanded",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classbase__noeud.html#a5fe905edcc9ff83f21a5d324c8a21bda",tooltip="Sauvegarde l&#39;état d&#39;expansion. "];
-  Node771 -> Node774 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
-  Node774 [label="base_noeud::mettre\l_a_jour_style",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classbase__noeud.html#a12165cb731bfc08c958ccabad752d092",tooltip="Met à jour le style du noeud. "];
+  Node772 [label="explorateur::mettre\l_a_jour_activation",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black"];
+  Node772 -> Node773 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node773 [label="base_noeud::get_save\l_expanded",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classbase__noeud.html#a32dabd19461a1e4db86b6e1c79bf9cbc",tooltip="Retourne l&#39;état d&#39;expansion sauvegardé avant le compactage automatique. "];
+  Node772 -> Node774 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node774 [label="base_noeud::save_expanded",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classbase__noeud.html#a5fe905edcc9ff83f21a5d324c8a21bda",tooltip="Sauvegarde l&#39;état d&#39;expansion. "];
+  Node772 -> Node775 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node775 [label="base_noeud::mettre\l_a_jour_style",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classbase__noeud.html#a12165cb731bfc08c958ccabad752d092",tooltip="Met à jour le style du noeud. "];
 }

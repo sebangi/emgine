@@ -3,7 +3,9 @@ digraph "Graphe hiérarchique des classes"
   edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
   node [fontname="Helvetica",fontsize="10",shape=record];
   rankdir="LR";
-  Node83 [label="QListWidget",height=0.2,width=0.4,color="grey75", fillcolor="white", style="filled"];
-  Node83 -> Node0 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
-  Node0 [label="liste_texte_widget",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classliste__texte__widget.html",tooltip="Classe décrivant un widget affichant une liste de texte. "];
+  Node89 [label="QDialog",height=0.2,width=0.4,color="grey75", fillcolor="white", style="filled"];
+  Node89 -> Node0 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node0 [label="parametre_aide_message_box",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classparametre__aide__message__box.html",tooltip="Classe décrivant une fenêtre affichant l&#39;éaide d&#39;un paramètre. "];
+  Node89 -> Node91 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node91 [label="selecteur_fonction\l_dialog",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classselecteur__fonction__dialog.html",tooltip="Classe décrivant une fenêtre de dialog permettant de sélectionner une fonction, puis de l&#39;instancier..."];
 }

@@ -1,0 +1,9 @@
+digraph "vue_fonctions::on_externe_fonction_widget_size_change"
+{
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="LR";
+  Node298 [label="vue_fonctions::on_externe\l_fonction_widget_size_change",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black"];
+  Node298 -> Node299 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node299 [label="vue_fonctions::adjust\l_size_vue_fonction",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classvue__fonctions.html#a782d0cc63a33af720f8c44958d595425",tooltip="Ajuste la taille de chaque ligne du widget. "];
+}

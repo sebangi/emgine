@@ -7,5 +7,5 @@ digraph "entete/fonction/algorithme" {
   dir_274fa83ce043f6ee607c914e53843dbb [shape=box, label="algorithme", style="filled", fillcolor="#eeeeff", pencolor="black", URL="dir_274fa83ce043f6ee607c914e53843dbb.html"];
   }
   dir_4832fa68ea590285dd7ec4a85118439c [shape=box label="element" URL="dir_4832fa68ea590285dd7ec4a85118439c.html"];
-  dir_274fa83ce043f6ee607c914e53843dbb->dir_4832fa68ea590285dd7ec4a85118439c [headlabel="1", labeldistance=1.5 headhref="dir_000007_000004.html"];
+  dir_274fa83ce043f6ee607c914e53843dbb->dir_4832fa68ea590285dd7ec4a85118439c [headlabel="1", labeldistance=1.5 headhref="dir_000006_000003.html"];
 }

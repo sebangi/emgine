@@ -3,15 +3,15 @@ digraph "fenetre_principale::ajouter_source"
   edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
   node [fontname="Helvetica",fontsize="10",shape=record];
   rankdir="LR";
-  Node322 [label="fenetre_principale\l::ajouter_source",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black"];
-  Node322 -> Node323 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
-  Node323 [label="objet_selectionnable\l::existe_selection",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classobjet__selectionnable.html#ad3c9ec08e1036a463b6b82176d52364d",tooltip="Indique s&#39;il existe un objet sélectionné. "];
-  Node322 -> Node324 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
-  Node324 [label="fenetre_principale\l::ajouter_fonction",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classfenetre__principale.html#a0257f102b5827b67ca870579e062232e",tooltip="Ajoute une fonction dans un conteneur donné. "];
-  Node324 -> Node325 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
-  Node325 [label="selecteur_fonction\l_dialog::get_fonction",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classselecteur__fonction__dialog.html#a35a75e577db0e5ca0e9ac64b5202e176",tooltip="Accessur de la fonction créée. "];
-  Node324 -> Node326 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
-  Node326 [label="base_fonction::set\l_conteneur",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classbase__fonction.html#aa487a07ab1961bfbdf04ddd3c72b4d3c",tooltip="Initialise le conteneur de la fonction. "];
-  Node322 -> Node327 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
-  Node327 [label="objet_selectionnable\l::get_selection",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classobjet__selectionnable.html#ae6be76843c7b502410ec8d2c1fff88a3",tooltip="Retourne l&#39;objet sélectionné. "];
+  Node330 [label="fenetre_principale\l::ajouter_source",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black"];
+  Node330 -> Node331 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node331 [label="objet_selectionnable\l::existe_selection",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classobjet__selectionnable.html#ad3c9ec08e1036a463b6b82176d52364d",tooltip="Indique s&#39;il existe un objet sélectionné. "];
+  Node330 -> Node332 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node332 [label="fenetre_principale\l::ajouter_fonction",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classfenetre__principale.html#a0257f102b5827b67ca870579e062232e",tooltip="Ajoute une fonction dans un conteneur donné. "];
+  Node332 -> Node333 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node333 [label="selecteur_fonction\l_dialog::get_fonction",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classselecteur__fonction__dialog.html#a35a75e577db0e5ca0e9ac64b5202e176",tooltip="Accessur de la fonction créée. "];
+  Node332 -> Node334 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node334 [label="base_fonction::set\l_conteneur",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classbase__fonction.html#aa487a07ab1961bfbdf04ddd3c72b4d3c",tooltip="Initialise le conteneur de la fonction. "];
+  Node330 -> Node335 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node335 [label="objet_selectionnable\l::get_selection",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classobjet__selectionnable.html#ae6be76843c7b502410ec8d2c1fff88a3",tooltip="Retourne l&#39;objet sélectionné. "];
 }

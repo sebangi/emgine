@@ -1,0 +1,29 @@
+digraph "fenetre_principale::on_anglais_click"
+{
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="LR";
+  Node1143 [label="fenetre_principale\l::on_anglais_click",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black"];
+  Node1143 -> Node1144 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node1144 [label="fenetre_principale\l::selectionner_langue",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classfenetre__principale.html#ae32e8773306ca299d987888a1f5f3f1c",tooltip="Sélectionne une langue donnée. "];
+  Node1144 -> Node1145 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node1145 [label="fenetre_principale\l::maj_langues",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classfenetre__principale.html#a3f1f7cfbc1969008ede81e69befd2381",tooltip="Met à jour les textes selon la langue choisie. "];
+  Node1144 -> Node1146 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node1146 [label="explorateur::maj_langues",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classexplorateur.html#a305b2dd61276494f9c571ea7582d56c9",tooltip="Met à jour les textes selon la langue choisie. "];
+  Node1144 -> Node1147 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node1147 [label="vue_fonctions::maj\l_langues",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classvue__fonctions.html#a810a001089eecf860f129d3a3886b42d",tooltip="Met à jour les textes selon la langue choisie. "];
+  Node1147 -> Node1148 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node1148 [label="base_fonction_widget\l::maj_langues",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classbase__fonction__widget.html#a53a7a59459acab8c90723893a03a8424",tooltip="Met à jour les textes selon la langue choisie. "];
+  Node1148 -> Node1149 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node1149 [label="base_fonction_widget\l::get_nom",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classbase__fonction__widget.html#a49158595d1376bdf84a712ff18cb00b2",tooltip="Fonction retournant le nom de la fonction à afficher. "];
+  Node1149 -> Node1150 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node1150 [label="base_fonction::get_nom",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classbase__fonction.html#aa184addbc0e71b3fd255b2f0b9e7c99e",tooltip="Accesseur du nom de la fonction. "];
+  Node1143 -> Node1151 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node1151 [label="fenetre_principale\l::on_externe_demande\l_ajout_fonction",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classfenetre__principale.html#afd877cacd6b210f002e5728eab9aee2b",tooltip="Fonction appelée lorsqu&#39;il y a une demande externe d&#39;ajout de fonction. "];
+  Node1151 -> Node1152 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node1152 [label="fenetre_principale\l::ajouter_fonction",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classfenetre__principale.html#a0257f102b5827b67ca870579e062232e",tooltip="Ajoute une fonction dans un conteneur donné. "];
+  Node1152 -> Node1153 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node1153 [label="selecteur_fonction\l_dialog::get_fonction",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classselecteur__fonction__dialog.html#a35a75e577db0e5ca0e9ac64b5202e176",tooltip="Accessur de la fonction créée. "];
+  Node1152 -> Node1154 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node1154 [label="base_fonction::set\l_conteneur",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classbase__fonction.html#aa487a07ab1961bfbdf04ddd3c72b4d3c",tooltip="Initialise le conteneur de la fonction. "];
+}

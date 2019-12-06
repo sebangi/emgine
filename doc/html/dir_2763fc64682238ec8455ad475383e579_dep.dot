@@ -7,5 +7,5 @@ digraph "src/fonction_widget/fonction_sortie_widget" {
   dir_2763fc64682238ec8455ad475383e579 [shape=box, label="fonction_sortie_widget", style="filled", fillcolor="#eeeeff", pencolor="black", URL="dir_2763fc64682238ec8455ad475383e579.html"];
   }
   dir_2db5f1c5034b754c69755a32007f81b7 [shape=box label="entete" fillcolor="white" style="filled" color="red" URL="dir_2db5f1c5034b754c69755a32007f81b7.html"];
-  dir_2763fc64682238ec8455ad475383e579->dir_2db5f1c5034b754c69755a32007f81b7 [headlabel="14", labeldistance=1.5 headhref="dir_000027_000001.html"];
+  dir_2763fc64682238ec8455ad475383e579->dir_2db5f1c5034b754c69755a32007f81b7 [headlabel="14", labeldistance=1.5 headhref="dir_000026_000000.html"];
 }

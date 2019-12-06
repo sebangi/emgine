@@ -1,7 +1,7 @@
 var searchData=
 [
   ['ligne',['ligne',['../classligne.html#ab9ab2dab09a1d5335f0f33911a5f0fdf',1,'ligne::ligne()'],['../classligne.html#a716d489af0b55a8e9a7c6f840e94ea94',1,'ligne::ligne(const QString &amp;valeur, const QString &amp;separateur_mot=&quot; &quot;)'],['../classligne.html#ac795ba0aed9e4e5094efb6687435d5bc',1,'ligne::ligne(const ligne &amp;l)']]],
-  ['liste_5fchoix',['liste_choix',['../classliste__choix.html#a5ac44b1361ce5aef940a6aecbc3003eb',1,'liste_choix']]],
+  ['liste_5fchoix',['liste_choix',['../classliste__choix.html#a180eae227fe1046e32ffced5fab93814',1,'liste_choix::liste_choix()'],['../classliste__choix.html#acdb8aedba97379765928a32eea4b578a',1,'liste_choix::liste_choix(const liste_choix &amp;l_choix)'],['../classliste__choix.html#a5ac44b1361ce5aef940a6aecbc3003eb',1,'liste_choix::liste_choix(const QStringList &amp;liste_choix_possibles, const QStringList &amp;liste_choix_par_defaut)']]],
   ['liste_5fchoix_5fpar_5fdefaut',['liste_choix_par_defaut',['../classliste__choix.html#ac66a134a7155029c871f2b99ebcfd9f0',1,'liste_choix']]],
   ['liste_5fchoix_5fpossibles',['liste_choix_possibles',['../classliste__choix.html#a385994981d0bd7768ae5165ce5683d77',1,'liste_choix']]],
   ['liste_5ftexte_5fwidget',['liste_texte_widget',['../classliste__texte__widget.html#a0548a37c423530270c05051953191a17',1,'liste_texte_widget']]],

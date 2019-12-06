@@ -1,0 +1,21 @@
+digraph "fenetre_principale::on_francais_click"
+{
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="LR";
+  Node1561 [label="fenetre_principale\l::on_francais_click",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black"];
+  Node1561 -> Node1562 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node1562 [label="fenetre_principale\l::selectionner_langue",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classfenetre__principale.html#ae32e8773306ca299d987888a1f5f3f1c",tooltip="Sélectionne une langue donnée. "];
+  Node1562 -> Node1563 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node1563 [label="fenetre_principale\l::maj_langues",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classfenetre__principale.html#a3f1f7cfbc1969008ede81e69befd2381",tooltip="Met à jour les textes selon la langue choisie. "];
+  Node1562 -> Node1564 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node1564 [label="explorateur::maj_langues",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classexplorateur.html#a305b2dd61276494f9c571ea7582d56c9",tooltip="Met à jour les textes selon la langue choisie. "];
+  Node1562 -> Node1565 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node1565 [label="vue_fonctions::maj\l_langues",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classvue__fonctions.html#a810a001089eecf860f129d3a3886b42d",tooltip="Met à jour les textes selon la langue choisie. "];
+  Node1565 -> Node1566 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node1566 [label="base_fonction_widget\l::maj_langues",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classbase__fonction__widget.html#a53a7a59459acab8c90723893a03a8424",tooltip="Met à jour les textes selon la langue choisie. "];
+  Node1566 -> Node1567 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node1567 [label="base_fonction_widget\l::get_nom",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classbase__fonction__widget.html#a49158595d1376bdf84a712ff18cb00b2",tooltip="Fonction retournant le nom de la fonction à afficher. "];
+  Node1567 -> Node1568 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node1568 [label="base_fonction::get_nom",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classbase__fonction.html#aa184addbc0e71b3fd255b2f0b9e7c99e",tooltip="Accesseur du nom de la fonction. "];
+}
