@@ -31,7 +31,6 @@
 #include <QHBoxLayout>
 #include <QMessageBox>
 #include <QString>
-#include <QtGui>
 #include <QVBoxLayout>
 #include <QXmlStreamReader>
 #include <QXmlStreamWriter>

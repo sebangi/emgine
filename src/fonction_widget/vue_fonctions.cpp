@@ -12,7 +12,6 @@
 #include <QApplication>
 #include <QHeaderView>
 #include <QScrollBar>
-#include <QtGui>
 
 #include <iostream>
 
