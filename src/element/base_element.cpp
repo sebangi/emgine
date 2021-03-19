@@ -87,7 +87,7 @@ base_element::base_element(QString valeur, bool force_upper_case)
  * \brief Accesseur de l'attribut type.
  * \return Le type de l'élément.
  */
-type_element base_element::get_type() const
+typeCategorie base_element::get_type() const
 {
     return m_type;
 }

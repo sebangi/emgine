@@ -35,6 +35,7 @@
 #include "entete/fonction/fonction_conversion/fonction_inversion.h"
 #include "entete/fonction/fonction_conversion/fonction_lecture_morse.h"
 //#include "entete/fonction/fonction_conversion/fonction_lecture_braille.h"
+#include "entete/fonction/fonction_conversion/fonction_patron.h"
 #include "entete/fonction/fonction_conversion/fonction_rotation.h"
 #include "entete/fonction/fonction_conversion/fonction_scission.h"
 #include "entete/fonction/fonction_conversion/fonction_selection_selon_dictionnaire.h"
@@ -62,6 +63,7 @@ std::map<type_id_fonction, QString> bibliotheque_fonctions::s_fonctions_nom =
     { f_conversion_formatage, base_fonction::tr("Formatage") },
     { f_conversion_selection_selon_dictionnaire, base_fonction::tr("Sélection selon dictionnaire") },
     { f_conversion_anagramme, base_fonction::tr("Anagramme") },
+    { f_conversion_patron, base_fonction::tr("Patron") },
     { f_conversion_entier_en_chiffre_romain, base_fonction::tr("Écriture en chiffre romain") },
     { f_conversion_ajout_espace_selon_dictionnaire, base_fonction::tr("Ajout d'espaces selon dictionnaire") },
     { f_conversion_fusion, base_fonction::tr("Fusion") },
@@ -103,6 +105,7 @@ std::map<type_id_fonction, QString> bibliotheque_fonctions::s_fonctions_aide =
     { f_conversion_formatage, base_fonction::tr("Formate le texte, i.e. mise en majuscule, retrait des accents et éventuellement de la ponctuation.") },
     { f_conversion_selection_selon_dictionnaire, base_fonction::tr("Sélectionne les textes selon un dictionnaire donné. Cela permet de filtrer par exemple les textes écrits en français.") },
     { f_conversion_anagramme, base_fonction::tr("Affiche les anagrammes de chaque mot.") },
+    { f_conversion_patron, base_fonction::tr("Affiche les mots ayant un patron donné.") },
     { f_conversion_entier_en_chiffre_romain, base_fonction::tr("Convertit les entiers en chiffres romains.") },
     { f_conversion_ajout_espace_selon_dictionnaire, base_fonction::tr("Ajoute les espaces entre mot selon un dictionnaire donné.") },
     { f_conversion_formatage, base_fonction::tr("Fusion des caractères, des mots, des lignes et/ou des textes.") },
@@ -178,6 +181,7 @@ base_fonction * bibliotheque_fonctions::get_fonction(type_id_fonction id)
         case f_conversion_formatage : return new fonction_formatage(NULL);            
         case f_conversion_selection_selon_dictionnaire : return new fonction_selection_selon_dictionnaire(NULL);
         case f_conversion_anagramme : return new fonction_anagramme(NULL);
+        case f_conversion_patron : return new fonction_patron(NULL);
         case f_conversion_entier_en_chiffre_romain : return new fonction_entier_en_chiffre_romain(NULL);
         case f_conversion_ajout_espace_selon_dictionnaire : return new fonction_ajout_espace_selon_dictionnaire(NULL);
         case f_conversion_fusion : return new fonction_fusion(NULL);

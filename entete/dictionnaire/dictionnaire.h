@@ -26,6 +26,8 @@ class dictionnaire : public QObject
         typedef std::map<unsigned int, map_comptage_indice> map_code_comptage;
         typedef std::vector<map_code_comptage> vector_codes;
 
+        typedef std::map<QString, uint_list> patron_map;
+
     public:
         dictionnaire( const QString & nom_fichier );
         ~dictionnaire();
@@ -34,6 +36,7 @@ class dictionnaire : public QObject
 
         bool existe( const QString& motif ) const;
         void anagramme( const QString& motif, uint_set& mots ) const;
+        void patron( const QString& motif, uint_set& mots ) const;
         void recherche_expression_reguliere( const QString& motif, qstring_set& mots ) const;
         void sur_anagramme( const QString& motif, uint_set& mots ) const;
         void sous_anagramme( const QString& motif, uint_set& mots ) const;
@@ -47,6 +50,7 @@ class dictionnaire : public QObject
 
     private:
         void formater( QString& s, bool format_expression_reguliere = false ) const;
+        QString cle_patron( const QString & line ) const;
         void charger_dictionnaire( const QString & nom_fichier );
         void clear();
         void ajouter_mot_dans_arbre( const QString& s);
@@ -62,6 +66,9 @@ class dictionnaire : public QObject
 
         /** \brief Le tableau des clés.*/
         vector_codes m_cles;
+
+        /** \brief La map des patrons.*/
+        patron_map m_patrons;
 
         /** \brief Tous les mots du dictionnaire. */
         std::vector<QString> m_mots;

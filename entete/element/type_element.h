@@ -10,7 +10,7 @@
  *  \author Sébastien Angibaud
  *  \brief Enumération représentant les différents types d'élément.
  */
-enum type_element{
+enum typeCategorie{
     /** \brief Valeur pour les éléments indéfinis. */
     type_element_indefini = 0,
 
@@ -33,7 +33,7 @@ enum type_element{
  * \param b Le second type_element à considérer.
  * \return Le type_element résultant.
  */
-inline type_element operator|(type_element a, type_element b)
-{return static_cast<type_element>(static_cast<int>(a) | static_cast<int>(b));}
+inline typeCategorie operator|(typeCategorie a, typeCategorie b)
+{return static_cast<typeCategorie>(static_cast<int>(a) | static_cast<int>(b));}
 
 #endif // TYPE_ELEMENT_H

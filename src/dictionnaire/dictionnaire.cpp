@@ -6,6 +6,7 @@
 #include <QFile>
 #include <QFileInfo>
 #include <QMessageBox>
+#include <algorithm>
 
 #include <iostream>
 
@@ -83,6 +84,18 @@ void dictionnaire::anagramme( const QString& motif, uint_set& mots ) const
         if ( it_compte != it_code->second.end() )
             mots.insert( it_compte->second.begin(), it_compte->second.end() );
     }
+}
+
+/*----------------------------------------------------------------------------*/
+void dictionnaire::patron(const QString &motif, dictionnaire::uint_set &mots) const
+{
+    QString cle_p = cle_patron(motif);
+
+    patron_map::const_iterator it;
+    it = m_patrons.find( cle_p );
+
+    if ( it != m_patrons.end() )
+        mots.insert( it->second.begin(), it->second.end() );
 }
 
 /*----------------------------------------------------------------------------*/
@@ -249,6 +262,38 @@ void dictionnaire::formater( QString& s, bool format_expression_reguliere ) cons
 
 } // dictionnaire::formater()
 
+
+/*----------------------------------------------------------------------------*/
+QString dictionnaire::cle_patron( const QString & line ) const
+{
+    QString res;
+    std::map< char, std::list<unsigned int> > tab;
+    std::map< char, std::list<unsigned int> >::iterator it_m;
+
+    std::vector< QString > l;
+    std::vector< QString >::iterator it;
+
+    for ( unsigned int i = 0; i != line.size(); ++i )
+        tab[line[i].toLatin1()].push_back(i);
+
+    for( it_m = tab.begin(); it_m != tab.end(); ++it_m )
+    {
+        QString s;
+        for ( std::list<unsigned int>::iterator itl = it_m->second.begin(); itl != it_m->second.end(); ++itl )
+            s = s + QString::number(*itl) + ",";
+
+        l.push_back(s);
+    }
+
+    std::sort(l.begin(),l.end());
+
+    for( it = l.begin(); it != l.end(); ++it )
+        res = res + *it + "|";
+
+    return res;
+}
+
+/*----------------------------------------------------------------------------*/
 void dictionnaire::charger_dictionnaire( const QString & nom_fichier )
 {
     if (nom_fichier.isEmpty())
@@ -273,6 +318,9 @@ void dictionnaire::charger_dictionnaire( const QString & nom_fichier )
 
         m_mots.push_back(line);
         ajouter_mot_dans_arbre(line);
+
+        QString cle_p = cle_patron(line);
+        m_patrons[cle_p].push_front(m_mots.size() - 1);
 
         cle_de_mot cle(line);
         m_cles[ cle.taille() ][ cle.code_binaire() ][ cle.comptage() ].push_front( m_mots.size() - 1 );

@@ -27,7 +27,7 @@ class base_element
         base_element( QString valeur, bool force_upper_case );
         base_element( const base_element & elem );
 
-        type_element get_type() const;
+        typeCategorie get_type() const;
         bool get_booleen() const;
         int get_entier() const;
         QChar get_caractere() const;
@@ -48,7 +48,7 @@ class base_element
 
     private:
         /** \brief Le type de l'élément. */
-        type_element m_type;
+        typeCategorie m_type;
 
         /** \brief La valeur booléenne de l'élément. */
         bool m_booleen;

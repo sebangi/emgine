@@ -105,7 +105,8 @@ SOURCES += \
     src/fonction/fonction_conversion/fonction_lecture_braille.cpp \
     src/fonction/fonction_conversion/fonction_expression_reguliere.cpp \
     src/fonction/fonction_source/fonction_source_ensemble_sources.cpp \
-    src/fonction/fonction_conversion/fonction_ordonnancement.cpp
+    src/fonction/fonction_conversion/fonction_ordonnancement.cpp \
+    src/fonction/fonction_conversion/fonction_patron.cpp
 
 HEADERS  += \
         entete/compilation/compilateur.h \
@@ -200,7 +201,8 @@ HEADERS  += \
     entete/fonction/fonction_conversion/fonction_lecture_braille.h \
     entete/fonction/fonction_conversion/fonction_expression_reguliere.h \
     entete/fonction/fonction_source/fonction_source_ensemble_sources.h \
-    entete/fonction/fonction_conversion/fonction_ordonnancement.h
+    entete/fonction/fonction_conversion/fonction_ordonnancement.h \
+    entete/fonction/fonction_conversion/fonction_patron.h
 
 FORMS    += \
     fenetre_principale.ui

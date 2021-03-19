@@ -149,6 +149,9 @@ enum type_id_fonction{
     /** \brief Fonction réordonnant les mots ou les caractères. */
     f_conversion_ordonnancement,
 
+    /** \brief Fonction de conversion affichant les anagrammes de chaque mot. */
+    f_conversion_patron,
+
     /** \brief Fin des fonctions de conversions. */
     fin_fonction_conversion,
 
